@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>先生のPDF道具箱 — インストール不要・完全無料・通信ゼロのPDFツール</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin: 0; padding: 0; }
+    body { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; background: #fff; color: #24292F; -webkit-font-smoothing: antialiased; }
+    * { box-sizing: border-box; }
+    a { -webkit-tap-highlight-color: transparent; }
+    /* 画像がまだ無いとき用のやさしいフォールバック（img/ に書き出したら消えます） */
+    img { background: #EDEAE4; }
+    .nav-link:hover { color: #2B6CB0; }
+    .btn-blue:hover { background: #245C97 !important; }
+    .btn-outline:hover { background: rgba(43,108,176,0.05) !important; }
+    .btn-white:hover { background: #EAF2FA !important; }
+    .lnk-note:hover { color: #fff !important; }
+    .btn-support:hover { background: rgba(43,108,176,0.05) !important; }
+  </style>
+</head>
+<body>
+<div style="background:#fff; color:#24292F; overflow-x:hidden">
+
+  <!-- Header -->
+  <header style="background:#fff; border-bottom:1px solid #EDEAE4">
+    <div style="max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap">
+      <div style="display:flex; align-items:center; gap:9px; font-weight:900; font-size:19px; letter-spacing:0.03em">
+        <span style="display:inline-flex; width:30px; height:30px; background:#2B6CB0; border-radius:7px; align-items:center; justify-content:center; font-size:16px">🧰</span>
+        <span>先生のPDF道具箱</span>
+      </div>
+      <nav style="display:flex; align-items:center; gap:28px; flex-wrap:wrap">
+        <a href="#features" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">できること</a>
+        <a href="#steps" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">使い方</a>
+        <a href="#maker" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">作り手の想い</a>
+        <a href="#faq" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">よくある質問</a>
+        <a href="download/pdf-toolbox.html" download="先生のPDF道具箱.html" class="btn-blue" style="display:inline-flex; align-items:center; background:#2B6CB0; color:#fff; text-decoration:none; font-weight:700; font-size:14px; padding:11px 22px; border-radius:10px">無料でダウンロード</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section style="background:#FFF5EA">
+    <div style="max-width:1180px; margin:0 auto; padding:56px 24px 56px; display:flex; flex-wrap:wrap; align-items:center; gap:48px">
+      <div style="flex:1 1 320px; min-width:290px">
+        <h1 style="margin:0 0 20px; font-size:clamp(34px, 4.8vw, 52px); line-height:1.35; font-weight:900; letter-spacing:0.02em; text-wrap:pretty">児童の情報を、<br>外に出さない。</h1>
+        <p style="margin:0 0 30px; font-size:17px; line-height:1.9; font-weight:700; color:#3A4149">ぜんぶ、このパソコンの中だけで。<br>完全無料・登録不要。</p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:24px">
+          <a href="download/pdf-toolbox.html" download="先生のPDF道具箱.html" class="btn-blue" style="display:inline-flex; align-items:center; gap:9px; justify-content:center; background:#2B6CB0; color:#fff; text-decoration:none; font-weight:700; font-size:16px; padding:16px 30px; border-radius:12px; box-shadow:0 3px 10px rgba(43,108,176,0.25)">
+            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+            無料でダウンロード</a>
+          <a href="#steps" class="btn-outline" style="display:inline-flex; align-items:center; justify-content:center; background:#fff; color:#2B6CB0; text-decoration:none; font-weight:700; font-size:16px; padding:14px 30px; border-radius:12px; border:2px solid #2B6CB0">使い方を見る</a>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:9px">
+          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>👤</span>登録不要</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>🚫</span>広告なし</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>📡</span>通信ゼロ</span>
+          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>🪟</span>Windowsでそのまま動く</span>
+        </div>
+      </div>
+      <div style="flex:1 1 560px; min-width:320px">
+        <div style="border-radius:14px; overflow:hidden; box-shadow:0 22px 55px rgba(36,41,47,0.20); border:1px solid #E6E0D6; background:#fff">
+          <div style="height:36px; background:#ECE7DF; display:flex; align-items:center; gap:7px; padding:0 15px">
+            <span style="width:11px; height:11px; border-radius:50%; background:#E8746B; display:inline-block"></span>
+            <span style="width:11px; height:11px; border-radius:50%; background:#F3C05A; display:inline-block"></span>
+            <span style="width:11px; height:11px; border-radius:50%; background:#7CC47F; display:inline-block"></span>
+            <span style="margin-left:10px; font-size:12px; color:#9A9186; font-weight:700">🧰 先生のPDF道具箱</span>
+          </div>
+          <img src="img/tool-screen.png" alt="先生のPDF道具箱を実際に使っている画面（PDFを3つまとめている様子）" style="display:block; width:100%; height:auto">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pains -->
+  <section style="background:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:64px 24px 70px">
+      <h2 style="margin:0 0 36px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.04em">4月の、あの手間。</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px">
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <img src="img/pain1.png" alt="積み上がったプリントの山" style="display:block; width:100%; height:180px; object-fit:cover">
+          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">何枚ものPDFを<br>1つにまとめたい</p>
+        </div>
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <img src="img/pain2.png" alt="名簿と赤ペン" style="display:block; width:100%; height:180px; object-fit:cover">
+          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">名簿やお便りの文字を、<br>ちょっとだけ直したい</p>
+        </div>
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <img src="img/pain3.png" alt="パソコンの上の鍵" style="display:block; width:100%; height:180px; object-fit:cover">
+          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">専用ソフトは入れられないし、<br>ネットのツールは児童の情報が心配</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Trust band -->
+  <section style="background:#EAF1F8">
+    <div style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:stretch">
+      <div style="flex:1 1 360px; min-width:280px; min-height:260px">
+        <img src="img/trust.png" alt="鍵マークが表示されたノートパソコン" style="display:block; width:100%; height:100%; min-height:260px; object-fit:cover">
+      </div>
+      <div style="flex:1 1 420px; min-width:300px; padding:52px 36px; display:flex; flex-direction:column; justify-content:center; gap:20px">
+        <h2 style="margin:0; font-size:clamp(28px, 3.6vw, 40px); font-weight:900; letter-spacing:0.03em">通信は、一切しません。</h2>
+        <p style="margin:0; font-size:15px; line-height:2.2; font-weight:500; color:#3A4149; max-width:480px; text-wrap:pretty">読み込んだPDFはすべてこのパソコンの中だけで処理され、インターネットにもどこにも送られません。児童の名前や写真が入ったPDFも、安心して扱えます。</p>
+        <div style="display:flex; align-items:center; gap:clamp(6px, 1.6vw, 14px); flex-wrap:nowrap; margin-top:8px; max-width:100%">
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px; flex-shrink:0">
+            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="17" stroke="#24292F" stroke-width="2.5"></circle><ellipse cx="22" cy="22" rx="8" ry="17" stroke="#24292F" stroke-width="2.5"></ellipse><path d="M5 22h34M7.5 13.5h29M7.5 30.5h29" stroke="#24292F" stroke-width="2.5"></path></svg>
+            <span style="font-size:12px; font-weight:700; color:#3A4149">インターネット</span>
+          </div>
+          <span style="letter-spacing:2px; color:#5A6470; font-weight:700; padding-bottom:22px; overflow:hidden; flex-shrink:1; white-space:nowrap">・・・・</span>
+          <span style="color:#D9342B; font-size:30px; font-weight:900; line-height:1; padding-bottom:22px; flex-shrink:0">✕</span>
+          <span style="letter-spacing:2px; color:#5A6470; font-weight:700; padding-bottom:22px; overflow:hidden; flex-shrink:1; white-space:nowrap">・・・</span>
+          <div style="display:flex; flex-direction:column; align-items:center; gap:8px; flex-shrink:0">
+            <svg width="52" height="44" viewBox="0 0 52 44" fill="none" aria-hidden="true"><rect x="8" y="4" width="36" height="24" rx="3" fill="#24292F"></rect><rect x="3" y="30" width="46" height="6" rx="3" fill="#24292F"></rect><rect x="21" y="13" width="10" height="8" rx="1.5" fill="#fff"></rect><path d="M23.5 13v-2.5a2.5 2.5 0 0 1 5 0V13" stroke="#fff" stroke-width="2" fill="none"></path></svg>
+            <span style="font-size:12px; font-weight:700; color:#3A4149">このパソコンの中だけで完結</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features" style="background:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:70px 24px 56px">
+      <h2 style="margin:0 0 38px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.06em">できること</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px">
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">まとめる・並べ替え</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="display:flex; align-items:center; gap:7px">
+              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px;transform:rotate(-4deg)"><div style="height:4px;background:#2B6CB0;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
+              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px"><div style="height:4px;background:#F6B93B;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
+              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px;transform:rotate(4deg)"><div style="height:4px;background:#2B6CB0;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
+              <span style="color:#9AA6B2;font-weight:900">⋯</span>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">複数のPDFをまとめたり、ドラッグで順番を入れ替え。回転・削除も。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">ページ番号・2面付け・分割</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="display:flex; align-items:center; gap:6px">
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">1</div>
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">2</div>
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">3</div>
+              <span style="color:#2B6CB0;font-weight:900;font-size:16px">→</span>
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">1|2</div>
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">3|4</div>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">通し番号を付ける・2ページを1枚に・分割も自在に。1ページずつ保存もできます。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">修正テープ・文字入れ</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="display:flex; align-items:center; gap:8px">
+              <div style="border:1.5px solid #C9D3DE;border-radius:5px;background:#fff;padding:7px 12px;display:flex;gap:8px;align-items:center">
+                <span style="font-size:15px;font-weight:700">あ</span>
+                <span style="display:inline-block;width:34px;height:16px;background:#fff;border:1.5px dashed #F6B93B;border-radius:3px"></span>
+                <span style="font-size:15px;font-weight:700;color:#2B6CB0">ア</span>
+              </div>
+              <span style="font-size:22px">🩹</span>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">修正テープでつぶしたり、自由な位置に文字を入れられる。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">元の文字を修正</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="border:1.5px solid #2B6CB0;border-radius:5px;background:#fff;padding:8px 16px;display:flex;align-items:center;gap:2px">
+              <span style="font-size:16px;font-weight:700;letter-spacing:3px">お知らせ</span>
+              <span style="display:inline-block;width:2px;height:18px;background:#2B6CB0"></span>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">もとの文字をクリックで消して、ローマ字や漢字で打ち直せる。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">縦書きに対応</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="display:flex;border:1.5px solid #C9D3DE;border-radius:5px;background:#fff;padding:6px 8px">
+              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;border-right:1px solid #DDE4EB;padding:2px 5px">保護者の皆様へ</div>
+              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;border-right:1px solid #DDE4EB;padding:2px 5px">平素より大変</div>
+              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;border-right:1px solid #DDE4EB;padding:2px 5px">お世話になって</div>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">縦書きのPDFもしっかりと読める向きに整えられる。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">パソコンのフォントが使える</h3>
+          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
+            <div style="display:flex; align-items:baseline; gap:14px">
+              <span style="font-size:30px;font-weight:700">あ</span>
+              <span style="font-size:30px;font-family:serif">ア</span>
+              <span style="font-size:30px;font-family:serif;font-weight:900">愛</span>
+            </div>
+          </div>
+          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">UDデジタル教科書体・MS明朝など、入っているフォントがそのまま使える。</p>
+        </div>
+
+      </div>
+      <p style="margin:26px 0 0; display:flex; align-items:center; justify-content:center; gap:8px; font-size:13px; color:#5A6470; font-weight:500"><span style="color:#2B6CB0; font-weight:900">↺</span>やり直し（元に戻す）付き。画面は拡大もできます。</p>
+    </div>
+  </section>
+
+  <!-- Steps -->
+  <section id="steps" style="background:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:10px 24px 70px">
+      <div style="border:1px solid #EDEAE4; border-radius:16px; padding:40px 30px; box-shadow:0 2px 8px rgba(36,41,47,0.04)">
+        <h2 style="margin:0 0 34px; text-align:center; font-size:clamp(22px, 2.8vw, 30px); font-weight:900; letter-spacing:0.04em">使い方は、3ステップ。</h2>
+        <div style="display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:22px">
+
+          <div style="display:flex; align-items:center; gap:22px">
+            <div style="display:flex; align-items:center; gap:16px; min-width:210px">
+              <div style="width:44px; height:44px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:19px; display:flex; align-items:center; justify-content:center; flex-shrink:0">1</div>
+              <div style="display:flex; flex-direction:column; gap:8px">
+                <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">ファイルを1つダウンロード</p>
+                <span style="font-size:24px; color:#2B6CB0; line-height:1"><svg width="26" height="26" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 3v12m0 0l-4.5-4.2M13 15l4.5-4.2M4 22h18" stroke="#2B6CB0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              </div>
+            </div>
+            <span style="letter-spacing:4px; color:#2B6CB0; font-weight:900">・・・・</span>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:22px">
+            <div style="display:flex; align-items:center; gap:16px; min-width:210px">
+              <div style="width:44px; height:44px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:19px; display:flex; align-items:center; justify-content:center; flex-shrink:0">2</div>
+              <div style="display:flex; flex-direction:column; gap:8px">
+                <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">ダブルクリックで開く（ブラウザで開くだけ）</p>
+                <span style="font-size:24px; color:#2B6CB0; line-height:1"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h6l2.5 3H24a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" stroke="#2B6CB0" stroke-width="2.2" stroke-linejoin="round"></path></svg></span>
+              </div>
+            </div>
+            <span style="letter-spacing:4px; color:#2B6CB0; font-weight:900">・・・・</span>
+          </div>
+
+          <div style="display:flex; align-items:center; gap:22px">
+            <div style="display:flex; align-items:center; gap:16px; min-width:210px">
+              <div style="width:44px; height:44px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:19px; display:flex; align-items:center; justify-content:center; flex-shrink:0">3</div>
+              <div style="display:flex; flex-direction:column; gap:8px">
+                <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">PDFを入れて、保存する</p>
+                <span style="font-size:24px; color:#2B6CB0; line-height:1"><svg width="28" height="24" viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h6l2.5 3H24a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" stroke="#2B6CB0" stroke-width="2.2" stroke-linejoin="round"></path><path d="M14 9v7m0 0l-3-2.8m3 2.8l3-2.8" stroke="#2B6CB0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Maker -->
+  <section id="maker" style="background:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:0 24px 70px">
+      <div style="background:#F5EFE4; border-radius:16px; overflow:hidden; display:flex; flex-wrap:wrap; align-items:stretch">
+        <div style="flex:0 1 280px; min-width:220px">
+          <img src="img/maker2.png" alt="作り手・外崎顕博" style="display:block; width:100%; height:100%; min-height:220px; object-fit:cover">
+        </div>
+        <div style="flex:1 1 380px; min-width:280px; padding:40px 36px; display:flex; flex-direction:column; justify-content:center; gap:18px">
+          <p style="margin:0; font-size:clamp(15px, 1.8vw, 17px); line-height:2.3; font-weight:700; text-wrap:pretty">現役の小学校教員が、<br>自分の“めんどくさい”を減らすために作りました。<br>完成品は、いつも無料です。<br>明日の準備が少し軽くなって、ゆとりが生まれますように。</p>
+          <p style="margin:0; font-size:13.5px; color:#5A6470; font-weight:500; text-align:right">外崎顕博（神教材製作所 / School Stock）</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq" style="background:#FFF5EA">
+    <div style="max-width:840px; margin:0 auto; padding:64px 24px 70px">
+      <h2 style="margin:0 0 36px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.06em">よくある質問</h2>
+      <div style="display:flex; flex-direction:column; gap:16px">
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
+          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>ダウンロードしたあと、どうやって開くの？</p>
+          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>ファイルをダブルクリックするだけです。いつものブラウザ（EdgeやChrome）で開きます。インストールも、管理者への申請もいりません。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
+          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>保存したPDFはどこにいくの？</p>
+          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>パソコンの「ダウンロード」フォルダに入ります。名前を付けて保存もできます。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
+          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>本当に通信しないの？</p>
+          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>はい。読み込んだPDFはすべてこのパソコンの中だけで処理され、インターネットには一切送られません。ネットにつながっていない教室のパソコンでも動きます。</p>
+        </div>
+
+        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
+          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>パスワード付きのPDFは使える？</p>
+          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>いまは対応していません。パスワードを外したPDFでお使いください。</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Final CTA -->
+  <section style="background:#fff">
+    <div style="max-width:1120px; margin:0 auto; padding:0 24px 60px">
+      <div style="background:#1E4E8C; border-radius:16px; overflow:hidden; display:flex; flex-wrap:wrap; align-items:stretch">
+        <div style="flex:1 1 460px; min-width:290px; padding:44px 40px; display:flex; flex-direction:column; gap:22px; justify-content:center">
+          <div style="display:flex; flex-wrap:wrap; align-items:center; gap:26px">
+            <h2 style="margin:0; color:#fff; font-size:clamp(21px, 2.6vw, 27px); font-weight:900; letter-spacing:0.03em">まずは、さわってみてください。</h2>
+            <a href="download/pdf-toolbox.html" download="先生のPDF道具箱.html" class="btn-white" style="display:inline-flex; align-items:center; gap:9px; background:#fff; color:#1E4E8C; text-decoration:none; font-weight:900; font-size:16px; padding:15px 30px; border-radius:12px">
+              <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#1E4E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+              無料でダウンロード</a>
+          </div>
+          <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener" class="lnk-note" style="color:#C9DCF2; font-size:14px; font-weight:500; text-decoration:underline; text-underline-offset:4px">ほかの無料教材や、作り手の記事はこちら（note）↗</a>
+          <p style="margin:0; font-size:12px; color:#9FB6D4; line-height:1.8">ダウンロード・ご利用の前に <a href="terms.html" style="color:#C9DCF2; text-decoration:underline">利用規約</a> をご確認ください（無料・免責事項あり）。</p>
+        </div>
+        <div style="flex:0 1 260px; min-width:180px">
+          <img src="img/cta.png" alt="机の上のノートとめがね" style="display:block; width:100%; height:100%; min-height:150px; object-fit:cover">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support strip -->
+  <section style="background:#fff; border-top:1px solid #EDEAE4">
+    <div style="max-width:1120px; margin:0 auto; padding:22px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px">
+      <p style="margin:0; font-size:13.5px; font-weight:500; color:#3A4149; text-align:center">👥「うちの学校でも使いたい」というお声には、研修や導入のお手伝いというかたちでもお応えしています。</p>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener" class="btn-support" style="display:inline-flex; align-items:center; gap:8px; border:1.5px solid #2B6CB0; color:#2B6CB0; text-decoration:none; font-size:13px; font-weight:700; padding:10px 20px; border-radius:10px">研修・導入サポートについて →</a>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer style="background:#1B2733">
+    <div style="max-width:1120px; margin:0 auto; padding:26px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px">
+      <p style="margin:0; font-size:13px; color:#B9C2CC; font-weight:500">© School Stock　<a href="terms.html" style="color:#B9C2CC; text-decoration:underline; text-underline-offset:3px">利用規約</a></p>
+      <p style="margin:0; font-size:11.5px; line-height:1.9; color:#8794A1; font-weight:400; text-align:right; text-wrap:pretty">このツールは、オープンソースライブラリを使用しています。<br>pdf.js / pdf-lib / fontkit ・ 同梱フォント：BIZ UDGothic（SIL OFL）</p>
+    </div>
+  </footer>
+
+</div>
+</body>
+</html>

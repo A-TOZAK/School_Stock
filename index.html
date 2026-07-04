@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>School Stock — 先生のための、無料の道具と教材の棚</title>
+  <meta name="description" content="現役の教員がつくる、先生のための無料ツール・教材のおすそ分け。完成品はいつも無料です。">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <style>
+    html, body { margin:0; padding:0; }
+    body { font-family:'Noto Sans JP','Hiragino Kaku Gothic ProN',sans-serif; background:#FFF5EA; color:#24292F; -webkit-font-smoothing:antialiased; }
+    * { box-sizing:border-box; }
+    a { text-decoration:none; }
+    .wrap { max-width:1040px; margin:0 auto; padding:0 24px; }
+    header { padding:22px 0; }
+    .brand { display:inline-flex; align-items:center; gap:10px; font-weight:900; font-size:20px; letter-spacing:0.04em; color:#24292F; }
+    .brand .mark { width:32px; height:32px; border-radius:9px; background:#2B6CB0; color:#fff; display:inline-flex; align-items:center; justify-content:center; font-size:17px; }
+    .hero { padding:44px 0 34px; }
+    .hero h1 { font-size:clamp(28px,4vw,42px); font-weight:900; line-height:1.4; letter-spacing:0.02em; margin:0 0 16px; }
+    .hero p { font-size:16px; line-height:2; color:#4A5158; font-weight:500; margin:0; }
+    .shelf { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; padding:16px 0 60px; }
+    .item { display:block; background:#fff; border:1px solid #EDDFCB; border-radius:16px; overflow:hidden; box-shadow:0 2px 10px rgba(36,41,47,0.05); transition:transform .12s, box-shadow .12s; color:inherit; }
+    .item:hover { transform:translateY(-3px); box-shadow:0 12px 26px rgba(36,41,47,0.12); }
+    .item .thumb { display:block; width:100%; aspect-ratio:16/10; object-fit:cover; background:#F0EAE0; border-bottom:1px solid #EDDFCB; }
+    .item .body { padding:18px 20px 22px; }
+    .item .tag { display:inline-block; font-size:11px; font-weight:700; color:#2B6CB0; background:#EAF1F8; border-radius:999px; padding:3px 10px; margin-bottom:10px; }
+    .item h2 { font-size:18px; font-weight:900; margin:0 0 6px; }
+    .item p { font-size:13.5px; line-height:1.9; color:#5A6470; margin:0 0 12px; font-weight:500; }
+    .item .go { font-size:14px; font-weight:700; color:#2B6CB0; }
+    .soon { border:1px dashed #E2D3BC; background:#FFFBF4; display:flex; align-items:center; justify-content:center; text-align:center; color:#A99B84; font-size:13.5px; font-weight:700; line-height:1.9; padding:30px; border-radius:16px; }
+    footer { border-top:1px solid #EDDFCB; padding:24px 0 40px; color:#8A8177; font-size:12.5px; display:flex; flex-wrap:wrap; gap:10px; justify-content:space-between; }
+    footer a { color:#2B6CB0; font-weight:700; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <span class="brand"><span class="mark">📚</span>School Stock</span>
+    </header>
+
+    <section class="hero">
+      <h1>先生のための、<br>ちいさな道具と教材の棚。</h1>
+      <p>現役の教員がつくる、先生のためのツール・教材のおすそ分け。<br>完成品は、いつも無料です。</p>
+    </section>
+
+    <section class="shelf">
+      <a class="item" href="tools/pdf-toolbox/">
+        <img class="thumb" src="tools/pdf-toolbox/img/tool-screen.png" alt="先生のPDF道具箱の画面">
+        <div class="body">
+          <span class="tag">🧰 ツール</span>
+          <h2>先生のPDF道具箱</h2>
+          <p>インストール不要・完全無料・通信ゼロ。PDFの結合・修正・縦書きも、このパソコンの中だけで。</p>
+          <span class="go">くわしく見る →</span>
+        </div>
+      </a>
+
+      <div class="soon">🖨️ プリント教材ほか<br>じゅんび中です</div>
+    </section>
+
+    <footer>
+      <span>© School Stock（外崎顕博）</span>
+      <span><a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></span>
+    </footer>
+  </div>
+</body>
+</html>
