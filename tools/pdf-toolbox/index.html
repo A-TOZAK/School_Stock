@@ -1,369 +1,331 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>先生のPDF道具箱 — インストール不要・完全無料・通信ゼロのPDFツール</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap" rel="stylesheet">
-  <style>
-    html, body { margin: 0; padding: 0; }
-    body { font-family: 'Noto Sans JP', 'Hiragino Kaku Gothic ProN', sans-serif; background: #fff; color: #24292F; -webkit-font-smoothing: antialiased; }
-    * { box-sizing: border-box; }
-    a { -webkit-tap-highlight-color: transparent; }
-    /* 画像がまだ無いとき用のやさしいフォールバック（img/ に書き出したら消えます） */
-    img { background: #EDEAE4; }
-    .nav-link:hover { color: #2B6CB0; }
-    .btn-blue:hover { background: #245C97 !important; }
-    .btn-outline:hover { background: rgba(43,108,176,0.05) !important; }
-    .btn-white:hover { background: #EAF2FA !important; }
-    .lnk-note:hover { color: #fff !important; }
-    .btn-support:hover { background: rgba(43,108,176,0.05) !important; }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先生のPDF道具箱 ── 児童の個人情報を、校外に出さないPDFツール｜School Stock</title>
+<meta name="description" content="無料のオンラインPDFツールの多くは、ファイルをサーバーに送信します。『先生のPDF道具箱』はすべてを端末内で処理。通信ゼロ・インストール不要・無料。稟議も申請もいらず、全校に配れます。">
+<style>
+  :root {
+    --ink: #15181c; --sub: #767b83; --accent: #2b5fd9;
+    --paper: #ffffff; --wash: #f6f6f4; --line: #e6e6e3; --black: #0e0f11; --danger: #c0392b;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16.5px; line-height: 1.95; letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+  a:hover { opacity: .75; }
+
+  /* ── 上部バー ── */
+  .topbar { background: var(--black); color: #fff; }
+  .topbar-in { max-width: 680px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-size: 12.5px; font-weight: 700; letter-spacing: 0.28em; }
+  .topbar .shelf { font-size: 11px; letter-spacing: 0.18em; color: #b9bcc2; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px 72px; }
+
+  /* ── ヒーロー ── */
+  .hero { padding: 50px 0 34px; border-bottom: 1px solid var(--ink); }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--black); padding: 4px 12px; margin-bottom: 22px; }
+  h1 { font-size: clamp(27px, 6.6vw, 40px); font-weight: 700; line-height: 1.42; letter-spacing: 0.01em; margin-bottom: 20px; }
+  .lead { font-size: 16px; color: #3d4148; margin-bottom: 24px; }
+  .meta { font-size: 12.5px; color: var(--sub); letter-spacing: 0.05em; display: flex; flex-wrap: wrap; gap: 8px 16px; }
+  .meta span { display: inline-flex; align-items: center; gap: 6px; }
+  .meta b { color: var(--ink); font-weight: 700; }
+  .meta .dot { color: var(--accent); }
+
+  /* ── ヒーロー図版 ── */
+  figure { margin: 30px 0 4px; }
+  .shot { display: block; width: 100%; border: 1px solid var(--ink); }
+  figcaption { font-size: 12px; color: var(--sub); margin-top: 8px; letter-spacing: 0.03em; }
+
+  /* ── 3行でわかる ── */
+  .digest { margin: 34px 0 8px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line); padding: 18px 4px 16px; }
+  .digest .dt { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 12px; }
+  .digest ol { list-style: none; }
+  .digest li { display: flex; gap: 14px; padding: 11px 0; font-size: 15.5px; font-weight: 500; line-height: 1.7; }
+  .digest li + li { border-top: 1px solid var(--line); }
+  .digest .n { font-family: Georgia, serif; font-style: italic; color: var(--accent); font-weight: 700; flex: none; font-size: 17px; }
+  .digest b { font-weight: 700; }
+
+  /* ── セクション ── */
+  section { padding: 46px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 4px; }
+  .sec-no { font-family: Georgia, serif; font-style: italic; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); }
+  h2 { font-size: clamp(21px, 5.2vw, 26px); font-weight: 700; line-height: 1.48; margin: 8px 0 18px; }
+  p { margin-bottom: 16px; }
+  .em { background: linear-gradient(transparent 68%, #ffe796 68%); font-weight: 600; }
+
+  /* ── 引き（プルクオート）── */
+  .pull { border-left: 4px solid var(--ink); padding: 8px 0 8px 22px; margin: 28px 0; font-size: clamp(18px, 4.6vw, 21px); font-weight: 700; line-height: 1.62; }
+
+  /* ── 図解（オフライン）── */
+  .diagram { border: 1px solid var(--ink); padding: 30px 20px; margin: 24px 0; display: flex; align-items: center; justify-content: center; gap: clamp(10px, 3vw, 26px); }
+  .node { display: flex; flex-direction: column; align-items: center; gap: 9px; flex: none; }
+  .node .nl { font-size: 11.5px; font-weight: 700; letter-spacing: 0.04em; }
+  .node .nl.mut { color: var(--sub); }
+  .cut { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+  .cut .x { color: var(--danger); font-size: 26px; font-weight: 900; line-height: 1; }
+  .cut .cl { font-size: 10px; color: var(--danger); font-weight: 700; letter-spacing: 0.1em; }
+  .dots { letter-spacing: 3px; color: #c3c7cc; }
+
+  /* ── 根拠ボックス ── */
+  .src { background: var(--wash); border-top: 1px solid var(--ink); padding: 18px 20px 16px; margin: 24px 0 10px; font-size: 14px; line-height: 2.05; }
+  .src .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); display: block; margin-bottom: 8px; }
+  .src ul { list-style: none; }
+  .src li { padding-left: 1.3em; text-indent: -1.3em; margin-bottom: 4px; }
+  .src li::before { content: "─ "; color: var(--accent); font-weight: 700; }
+
+  /* ── 機能リスト ── */
+  .feat { border-top: 1px solid var(--ink); margin: 20px 0 8px; }
+  .feat-row { display: flex; gap: 16px; padding: 15px 4px; border-bottom: 1px solid var(--line); }
+  .feat-row .fk { flex: none; width: 128px; font-size: 14px; font-weight: 700; line-height: 1.6; }
+  .feat-row .fd { font-size: 14px; color: #3d4148; line-height: 1.75; }
+  @media (max-width: 480px) { .feat-row { flex-direction: column; gap: 4px; } .feat-row .fk { width: auto; } }
+  .feat-note { font-size: 12.5px; color: var(--sub); margin-top: 12px; }
+
+  /* ── 比較表 ── */
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 18px 0 12px; }
+  th, td { border-bottom: 1px solid var(--line); padding: 13px 10px 13px 2px; text-align: left; vertical-align: top; line-height: 1.7; }
+  thead th { font-size: 11.5px; letter-spacing: 0.1em; color: var(--sub); border-bottom: 1px solid var(--ink); font-weight: 700; }
+  td.rk, th.rk { font-weight: 700; white-space: nowrap; padding-right: 14px; color: var(--ink); }
+  td.good { font-weight: 700; }
+  .tick { color: var(--accent); font-weight: 900; }
+  .cross { color: var(--sub); }
+
+  /* ── ダウンロード（黒箱）── */
+  .tool { border: 1px solid var(--ink); margin: 26px 0 10px; }
+  .tool-head { background: var(--black); color: #fff; padding: 17px 22px; }
+  .tool-head .tl { font-size: 11px; letter-spacing: 0.22em; color: #b9bcc2; margin-bottom: 5px; }
+  .tool-head .tn { font-size: 18px; font-weight: 700; line-height: 1.5; }
+  .tool-body { padding: 22px; }
+  .tool-body p { margin-bottom: 18px; font-size: 15px; }
+  .cta { display: inline-flex; align-items: center; gap: 9px; background: var(--black); color: #fff; text-decoration: none; font-weight: 700; font-size: 15.5px; padding: 14px 30px; letter-spacing: 0.05em; }
+  .cta:hover { opacity: .85; }
+  .caution { font-size: 12.5px; color: var(--sub); margin-top: 16px; line-height: 1.85; }
+
+  /* ── FAQ ── */
+  details { border-top: 1px solid var(--line); padding: 15px 2px; }
+  details:last-of-type { border-bottom: 1px solid var(--line); }
+  summary { cursor: pointer; font-weight: 700; font-size: 15px; list-style: none; display: flex; gap: 12px; line-height: 1.7; }
+  summary::-webkit-details-marker { display: none; }
+  summary::before { content: "＋"; color: var(--accent); font-weight: 900; flex: none; }
+  details[open] summary::before { content: "−"; }
+  .fa { font-size: 14px; color: #3d4148; line-height: 1.95; margin: 12px 0 2px; padding-left: 24px; }
+
+  /* ── サポート（越境1行）── */
+  .support { border: 1px solid var(--ink); padding: 22px; margin: 24px 0 8px; }
+  .support .st { font-size: 15px; font-weight: 700; margin-bottom: 8px; }
+  .support .sd { font-size: 14px; color: #3d4148; line-height: 1.9; margin-bottom: 12px; }
+
+  /* ── 著者 ── */
+  .author { display: flex; gap: 20px; align-items: flex-start; border-top: 3px solid var(--ink); margin-top: 50px; padding: 26px 2px 8px; }
+  .avatar-img { flex: none; width: 84px; height: 84px; border-radius: 50%; object-fit: cover; }
+  .author .al { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); margin-bottom: 6px; }
+  .author .an { font-size: 18px; font-weight: 700; }
+  .author .an small { font-size: 11.5px; font-weight: 500; color: var(--sub); margin-left: 8px; letter-spacing: 0.08em; }
+  .author .ap { font-size: 13px; color: #3d4148; line-height: 1.9; margin-top: 6px; }
+  .author .ap b { color: var(--ink); }
+  .author .aw { font-size: 12.5px; color: var(--sub); line-height: 1.9; margin-top: 10px; border-top: 1px solid var(--line); padding-top: 10px; }
+  .author .aw b { color: var(--ink); }
+  @media (max-width: 430px) { .author { flex-direction: column; gap: 14px; } }
+
+  /* ── フッター ── */
+  .foot { background: var(--black); color: #b9bcc2; margin-top: 56px; }
+  .foot-in { max-width: 680px; margin: 0 auto; padding: 30px 24px; font-size: 12.5px; line-height: 2; }
+  .foot .fw { color: #fff; font-weight: 700; letter-spacing: 0.26em; font-size: 12px; margin-bottom: 10px; }
+  .foot a { color: #d7dade; }
+  .foot .lic { margin-top: 12px; color: #868b92; font-size: 11.5px; line-height: 1.9; }
+</style>
 </head>
 <body>
-<div style="background:#fff; color:#24292F; overflow-x:hidden">
 
-  <!-- Header -->
-  <header style="background:#fff; border-bottom:1px solid #EDEAE4">
-    <div style="max-width:1120px; margin:0 auto; padding:14px 24px; display:flex; align-items:center; justify-content:space-between; gap:18px; flex-wrap:wrap">
-      <div style="display:flex; align-items:center; gap:9px; font-weight:900; font-size:19px; letter-spacing:0.03em">
-        <span style="display:inline-flex; width:30px; height:30px; background:#2B6CB0; border-radius:7px; align-items:center; justify-content:center; font-size:16px">🧰</span>
-        <span>先生のPDF道具箱</span>
-      </div>
-      <nav style="display:flex; align-items:center; gap:28px; flex-wrap:wrap">
-        <a href="#features" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">できること</a>
-        <a href="#steps" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">使い方</a>
-        <a href="#maker" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">作り手の想い</a>
-        <a href="#faq" class="nav-link" style="color:#24292F; text-decoration:none; font-size:14px; font-weight:500">よくある質問</a>
-        <a href="https://github.com/A-TOZAK/School_Stock/releases/latest/download/pdf-toolbox.html" class="btn-blue" style="display:inline-flex; align-items:center; background:#2B6CB0; color:#fff; text-decoration:none; font-weight:700; font-size:14px; padding:11px 22px; border-radius:10px">無料でダウンロード</a>
-      </nav>
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="wordmark">先生のPDF道具箱</div>
+    <div class="shelf">SCHOOL STOCK</div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <span class="kicker">校務の情報管理 × 働き方改革</span>
+    <h1>その無料PDFツール、<br>児童の名簿は“どこ”へ<br>送られていますか。</h1>
+    <p class="lead">PDFの結合や修正のために、先生方がブラウザの無料ツールへファイルをアップロードする——その多くは、いったん外部のサーバーに送信されています。『先生のPDF道具箱』は、読み込んだPDFを<b>その一台の中だけ</b>で処理します。通信は一切しません。インストールも登録も不要で、無料です。</p>
+    <div class="meta">
+      <span><span class="dot">●</span><b>通信ゼロ</b>（端末内で完結）</span>
+      <span><span class="dot">●</span><b>インストール不要</b></span>
+      <span><span class="dot">●</span><b>登録・広告なし</b></span>
+      <span><span class="dot">●</span>Windowsのブラウザで動作</span>
     </div>
-  </header>
+    <figure>
+      <img class="shot" src="img/tool-screen.png" alt="『先生のPDF道具箱』の操作画面。複数のPDFを1つにまとめているところ">
+      <figcaption>実際の操作画面。ダウンロードしたHTMLファイルを開くだけで、この編集画面が立ち上がります。</figcaption>
+    </figure>
+  </div>
 
-  <!-- Hero -->
-  <section style="background:#FFF5EA">
-    <div style="max-width:1180px; margin:0 auto; padding:56px 24px 56px; display:flex; flex-wrap:wrap; align-items:center; gap:48px">
-      <div style="flex:1 1 320px; min-width:290px">
-        <p style="margin:0 0 14px; display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:#2B6CB0; letter-spacing:0.04em; background:#fff; border:1px solid #D8E4F0; border-radius:999px; padding:6px 14px">インストール不要のPDF編集ツール</p>
-        <h1 style="margin:0 0 18px; font-size:clamp(34px, 4.8vw, 52px); line-height:1.35; font-weight:900; letter-spacing:0.02em; text-wrap:pretty">児童の情報を、<br>外に出さない。</h1>
-        <p style="margin:0 0 30px; font-size:17px; line-height:1.9; font-weight:700; color:#3A4149">PDFのまとめ・文字直し・ページ番号ふりを、<br>ぜんぶこのパソコンの中だけで。完全無料・登録不要。</p>
-        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-bottom:24px">
-          <a href="https://github.com/A-TOZAK/School_Stock/releases/latest/download/pdf-toolbox.html" class="btn-blue" style="display:inline-flex; align-items:center; gap:9px; justify-content:center; background:#2B6CB0; color:#fff; text-decoration:none; font-weight:700; font-size:16px; padding:16px 30px; border-radius:12px; box-shadow:0 3px 10px rgba(43,108,176,0.25)">
-            <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-            無料でダウンロード</a>
-          <a href="#steps" class="btn-outline" style="display:inline-flex; align-items:center; justify-content:center; background:#fff; color:#2B6CB0; text-decoration:none; font-weight:700; font-size:16px; padding:14px 30px; border-radius:12px; border:2px solid #2B6CB0">使い方を見る</a>
-        </div>
-        <div style="display:flex; flex-wrap:wrap; gap:9px">
-          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>👤</span>登録不要</span>
-          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>🚫</span>広告なし</span>
-          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>📡</span>通信ゼロ</span>
-          <span style="display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid #EDDFCB; border-radius:999px; padding:8px 15px; font-size:13px; font-weight:700; color:#3A4149"><span>🪟</span>Windowsでそのまま動く</span>
-        </div>
+  <!-- 3行でわかる -->
+  <div class="digest">
+    <div class="dt">3行でわかる</div>
+    <ol>
+      <li><span class="n">1</span><span><b>児童情報が校外に出ない。</b>PDFの処理はすべて端末の中で完結し、通信は一切しません。ネットにつながっていない教室のPCでも動きます。</span></li>
+      <li><span class="n">2</span><span><b>稟議も申請もいりません。</b>インストール不要。HTMLファイル1つを開くだけ。管理者権限・予算・調達手続きは一切不要です。</span></li>
+      <li><span class="n">3</span><span><b>全校に配っても無料。</b>登録・広告・アカウントなし。現役の小学校教員が作り、完成品はいつでも無料です。</span></li>
+    </ol>
+  </div>
+
+  <!-- 01 課題 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">ISSUE</span></div>
+    <h2>便利さの裏で、個人情報が校外へ出ている</h2>
+    <p>お便りを1つにまとめる、名簿の一文字を直す、2枚を1枚に面付けする——PDFのちょっとした加工は、日々の校務でくり返し発生します。手が足りない現場では、検索して出てきた<b>無料のオンラインPDFツール</b>に頼るのが自然な流れです。</p>
+    <p>ただ、それらの多くは、ファイルを<span class="em">いったん外部のサーバーに送信して</span>処理しています。つまり、名簿・成績・写真といった要配慮個人情報が、気づかないうちに校外を経由している。管理職・情報管理を預かる立場からすると、<b>誰が・どのツールに・何を上げたのかを把握できず、説明もできない</b>状態が生まれます。</p>
+    <div class="pull">手軽なツールほど、“どこへ送られたか”が見えない。</div>
+  </section>
+
+  <!-- 02 解決 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">SOLUTION</span></div>
+    <h2>すべて、この一台の中だけで完結する</h2>
+    <p>『先生のPDF道具箱』は、読み込んだPDFを<b>端末の中だけ</b>で処理します。データを外部へ送る仕組みそのものを持たないため、児童生徒の情報がネットワークに出ることがありません。だから、ネットから切り離された教室のPCでも動きます。</p>
+    <div class="diagram">
+      <div class="node">
+        <svg width="46" height="46" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="17" stroke="#767b83" stroke-width="2.4"></circle><ellipse cx="22" cy="22" rx="8" ry="17" stroke="#767b83" stroke-width="2.4"></ellipse><path d="M5 22h34M7.5 13.5h29M7.5 30.5h29" stroke="#767b83" stroke-width="2.4"></path></svg>
+        <span class="nl mut">インターネット</span>
       </div>
-      <div style="flex:1 1 560px; min-width:320px">
-        <div style="border-radius:14px; overflow:hidden; box-shadow:0 10px 30px rgba(36,41,47,0.12); border:1px solid #E6E0D6; background:#fff">
-          <div style="height:36px; background:#ECE7DF; display:flex; align-items:center; gap:7px; padding:0 15px">
-            <span style="width:11px; height:11px; border-radius:50%; background:#E8746B; display:inline-block"></span>
-            <span style="width:11px; height:11px; border-radius:50%; background:#F3C05A; display:inline-block"></span>
-            <span style="width:11px; height:11px; border-radius:50%; background:#7CC47F; display:inline-block"></span>
-            <span style="margin-left:10px; font-size:12px; color:#9A9186; font-weight:700">🧰 先生のPDF道具箱</span>
-          </div>
-          <img src="img/tool-screen.png" alt="先生のPDF道具箱を実際に使っている画面（PDFを3つまとめている様子）" style="display:block; width:100%; height:auto">
-        </div>
+      <span class="dots">・・・</span>
+      <div class="cut"><span class="x">✕</span><span class="cl">遮断</span></div>
+      <span class="dots">・・・</span>
+      <div class="node">
+        <svg width="54" height="46" viewBox="0 0 52 44" fill="none" aria-hidden="true"><rect x="8" y="4" width="36" height="24" rx="2.5" fill="#15181c"></rect><rect x="3" y="30" width="46" height="6" rx="3" fill="#15181c"></rect><rect x="21" y="13" width="10" height="8" rx="1.5" fill="#fff"></rect><path d="M23.5 13v-2.5a2.5 2.5 0 0 1 5 0V13" stroke="#fff" stroke-width="2" fill="none"></path></svg>
+        <span class="nl">この端末の中だけで処理</span>
+      </div>
+    </div>
+    <div class="src">
+      <span class="lb">なぜ言い切れるか</span>
+      <ul>
+        <li>外部と通信するコード（サーバー送信・外部読み込み）を設計上まったく含んでいません。</li>
+        <li>PDFの結合・編集は、オープンソースの pdf.js / pdf-lib を使い、すべてブラウザ内で実行します。</li>
+        <li>ネットワークを遮断した環境でも同じように動くことが、その証拠です。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- 03 できること -->
+  <section>
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">FEATURES</span></div>
+    <h2>校務で必要な操作が、ひと通りそろう</h2>
+    <p>専用ソフトを入れなくても、日々のPDF加工はこれで足ります。</p>
+    <div class="feat">
+      <div class="feat-row"><div class="fk">まとめる・並べ替え</div><div class="fd">複数のPDFを1つに結合。ドラッグで順番の入れ替え、回転・削除・抽出も。</div></div>
+      <div class="feat-row"><div class="fk">ページ番号・面付け・分割</div><div class="fd">通し番号をふる／2ページを1枚に／分割。1ページずつの保存もできます。</div></div>
+      <div class="feat-row"><div class="fk">修正テープ・文字入れ</div><div class="fd">修正テープで隠す、好きな位置に文字を入れる。お便りの微修正に。</div></div>
+      <div class="feat-row"><div class="fk">元の文字を直す</div><div class="fd">もとの文字をクリックで消し、漢字・ローマ字で打ち直せます。</div></div>
+      <div class="feat-row"><div class="fk">縦書き・PCのフォント</div><div class="fd">縦書きPDFも読める向きに。UDデジタル教科書体など端末のフォントが使えます。</div></div>
+    </div>
+    <p class="feat-note">やり直し（元に戻す）付き。画面の拡大も可能です。</p>
+  </section>
+
+  <!-- 04 導入のしやすさ -->
+  <section>
+    <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">DEPLOY</span></div>
+    <h2>稟議も、インストールも、予算もいらない</h2>
+    <p>配布物は<b>HTMLファイル1つ</b>だけ。ダブルクリックすれば、いつものブラウザ（Edge・Chrome）で開きます。ソフトのインストール、管理者権限、アカウント作成、予算措置、調達手続き——そのいずれも要りません。だからこそ、<b>全校の先生にそのまま配れます</b>。</p>
+    <table>
+      <thead><tr><th class="rk">確認項目</th><th>一般的な専用ソフト／オンラインツール</th><th>先生のPDF道具箱</th></tr></thead>
+      <tbody>
+        <tr><td class="rk">データの居場所</td><td><span class="cross">外部サーバーに送信されることがある</span></td><td class="good"><span class="tick">端末内のみ</span></td></tr>
+        <tr><td class="rk">インストール</td><td><span class="cross">必要／管理者権限を要することが多い</span></td><td class="good"><span class="tick">不要</span>（ファイルを開くだけ）</td></tr>
+        <tr><td class="rk">費用・調達</td><td><span class="cross">ライセンス費・手続きが発生</span></td><td class="good"><span class="tick">無料・手続き不要</span></td></tr>
+        <tr><td class="rk">アカウント</td><td><span class="cross">登録が必要な場合がある</span></td><td class="good"><span class="tick">不要・広告なし</span></td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- ダウンロード -->
+  <section>
+    <div class="tool">
+      <div class="tool-head">
+        <div class="tl">DOWNLOAD</div>
+        <div class="tn">先生のPDF道具箱（無料・HTMLファイル1つ）</div>
+      </div>
+      <div class="tool-body">
+        <p>ダウンロードしたファイルをダブルクリックで開けば、すぐに使えます。まずは職員室の1台で試してみてください。</p>
+        <a class="cta" href="https://github.com/A-TOZAK/School_Stock/releases/latest/download/pdf-toolbox.html">
+          <svg width="16" height="16" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
+          無料でダウンロード</a>
+        <p class="caution">Windows の Edge・Chrome で開くよう作っています。ご利用の前に <a href="terms.html">利用規約</a> をご確認ください（無料・免責事項あり）。パスワード付きPDFには現在対応していません。</p>
       </div>
     </div>
   </section>
 
-  <!-- Pains -->
-  <section style="background:#fff">
-    <div style="max-width:1120px; margin:0 auto; padding:64px 24px 70px">
-      <h2 style="margin:0 0 36px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.04em">4月の、あの手間。</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:24px">
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <div style="height:150px; background:#FFF5EA; display:flex; align-items:center; justify-content:center">
-            <svg width="120" height="82" viewBox="0 0 120 82" fill="none" aria-hidden="true">
-              <rect x="6" y="14" width="34" height="46" rx="3" fill="#fff" stroke="#C9D3DE" stroke-width="2" transform="rotate(-6 23 37)"></rect>
-              <rect x="20" y="8" width="34" height="46" rx="3" fill="#fff" stroke="#C9D3DE" stroke-width="2"></rect>
-              <rect x="27" y="16" width="20" height="3" rx="1.5" fill="#F6B93B"></rect>
-              <rect x="27" y="24" width="20" height="2.5" rx="1.25" fill="#DDE4EB"></rect>
-              <rect x="27" y="31" width="15" height="2.5" rx="1.25" fill="#DDE4EB"></rect>
-              <path d="M62 31h20m0 0l-6-6m6 6l-6 6" stroke="#2B6CB0" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"></path>
-              <rect x="90" y="10" width="30" height="42" rx="3" fill="#fff" stroke="#2B6CB0" stroke-width="2.2"></rect>
-              <rect x="97" y="18" width="16" height="3" rx="1.5" fill="#2B6CB0"></rect>
-              <rect x="97" y="25" width="16" height="2.5" rx="1.25" fill="#DDE4EB"></rect>
-              <rect x="97" y="32" width="12" height="2.5" rx="1.25" fill="#DDE4EB"></rect>
-              <rect x="97" y="39" width="14" height="2.5" rx="1.25" fill="#DDE4EB"></rect>
-            </svg>
-          </div>
-          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">何枚ものPDFを<br>1つにまとめたい</p>
-        </div>
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <div style="height:150px; background:#FFF5EA; display:flex; align-items:center; justify-content:center">
-            <svg width="118" height="82" viewBox="0 0 118 82" fill="none" aria-hidden="true">
-              <rect x="24" y="10" width="54" height="62" rx="4" fill="#fff" stroke="#C9D3DE" stroke-width="2"></rect>
-              <rect x="34" y="22" width="34" height="3" rx="1.5" fill="#DDE4EB"></rect>
-              <rect x="34" y="32" width="20" height="3" rx="1.5" fill="#F6B93B"></rect>
-              <rect x="34" y="32" width="20" height="9" fill="#FDECC8" opacity="0.7"></rect>
-              <rect x="34" y="45" width="34" height="3" rx="1.5" fill="#DDE4EB"></rect>
-              <rect x="34" y="55" width="26" height="3" rx="1.5" fill="#DDE4EB"></rect>
-              <path d="M70 58l24-24 8 8-24 24-10 2z" fill="#fff" stroke="#2B6CB0" stroke-width="2.4" stroke-linejoin="round"></path>
-              <path d="M88 40l8 8" stroke="#2B6CB0" stroke-width="2.4"></path>
-              <path d="M70 58l-3 10 10-3" fill="#2B6CB0"></path>
-            </svg>
-          </div>
-          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">名簿やお便りの文字を、<br>ちょっとだけ直したい</p>
-        </div>
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; overflow:hidden; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <div style="height:150px; background:#FFF5EA; display:flex; align-items:center; justify-content:center">
-            <svg width="112" height="82" viewBox="0 0 112 82" fill="none" aria-hidden="true">
-              <rect x="18" y="20" width="60" height="38" rx="3" fill="#fff" stroke="#C9D3DE" stroke-width="2"></rect>
-              <rect x="12" y="60" width="72" height="6" rx="3" fill="#C9D3DE"></rect>
-              <rect x="40" y="34" width="30" height="22" rx="3" fill="#EAF1F8" stroke="#2B6CB0" stroke-width="2.2"></rect>
-              <path d="M50 34v-4a5 5 0 0 1 10 0v4" stroke="#2B6CB0" stroke-width="2.2" fill="none"></path>
-              <circle cx="55" cy="43" r="2.6" fill="#2B6CB0"></circle>
-              <path d="M55 45v4" stroke="#2B6CB0" stroke-width="2.2" stroke-linecap="round"></path>
-              <path d="M84 16l10 4v8c0 6-4 10-10 12-6-2-10-6-10-12v-8l10-4z" fill="#fff" stroke="#D9342B" stroke-width="2.2" stroke-linejoin="round"></path>
-              <path d="M80 27l3 3 5-6" stroke="#D9342B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path>
-            </svg>
-          </div>
-          <p style="margin:0; padding:20px 18px 24px; text-align:center; font-size:15px; font-weight:700; line-height:1.9; text-wrap:pretty">専用ソフトは入れられないし、<br>ネットのツールは児童の情報が心配</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Trust band -->
-  <section style="background:#EAF1F8">
-    <div style="max-width:1120px; margin:0 auto; display:flex; flex-wrap:wrap; align-items:stretch">
-      <div style="flex:1 1 360px; min-width:280px; min-height:260px; display:flex; align-items:center; justify-content:center; padding:40px 24px">
-        <svg width="240" height="200" viewBox="0 0 240 200" fill="none" aria-hidden="true" role="img" style="max-width:100%; height:auto">
-          <rect x="46" y="42" width="148" height="94" rx="8" fill="#fff" stroke="#24292F" stroke-width="3"></rect>
-          <rect x="34" y="142" width="172" height="12" rx="6" fill="#24292F"></rect>
-          <path d="M120 58l30 11v22c0 18-12 30-30 37-18-7-30-19-30-37V69l30-11z" fill="#EAF1F8" stroke="#2B6CB0" stroke-width="3" stroke-linejoin="round"></path>
-          <rect x="110" y="92" width="20" height="17" rx="2.5" fill="#2B6CB0"></rect>
-          <path d="M113 92v-4a7 7 0 0 1 14 0v4" stroke="#2B6CB0" stroke-width="3" fill="none"></path>
-          <circle cx="120" cy="100" r="2.8" fill="#fff"></circle>
-        </svg>
-      </div>
-      <div style="flex:1 1 420px; min-width:300px; padding:52px 36px; display:flex; flex-direction:column; justify-content:center; gap:20px">
-        <h2 style="margin:0; font-size:clamp(28px, 3.6vw, 40px); font-weight:900; letter-spacing:0.03em">通信は、一切しません。</h2>
-        <p style="margin:0; font-size:15px; line-height:2.2; font-weight:500; color:#3A4149; max-width:480px; text-wrap:pretty">読み込んだPDFはすべてこのパソコンの中だけで処理され、インターネットにもどこにも送られません。児童の名前や写真が入ったPDFも、安心して扱えます。</p>
-        <div style="display:flex; align-items:center; gap:clamp(6px, 1.6vw, 14px); flex-wrap:nowrap; margin-top:8px; max-width:100%">
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px; flex-shrink:0">
-            <svg width="44" height="44" viewBox="0 0 44 44" fill="none" aria-hidden="true"><circle cx="22" cy="22" r="17" stroke="#24292F" stroke-width="2.5"></circle><ellipse cx="22" cy="22" rx="8" ry="17" stroke="#24292F" stroke-width="2.5"></ellipse><path d="M5 22h34M7.5 13.5h29M7.5 30.5h29" stroke="#24292F" stroke-width="2.5"></path></svg>
-            <span style="font-size:12px; font-weight:700; color:#3A4149">インターネット</span>
-          </div>
-          <span style="letter-spacing:2px; color:#5A6470; font-weight:700; padding-bottom:22px; overflow:hidden; flex-shrink:1; white-space:nowrap">・・・・</span>
-          <span style="color:#D9342B; font-size:30px; font-weight:900; line-height:1; padding-bottom:22px; flex-shrink:0">✕</span>
-          <span style="letter-spacing:2px; color:#5A6470; font-weight:700; padding-bottom:22px; overflow:hidden; flex-shrink:1; white-space:nowrap">・・・</span>
-          <div style="display:flex; flex-direction:column; align-items:center; gap:8px; flex-shrink:0">
-            <svg width="52" height="44" viewBox="0 0 52 44" fill="none" aria-hidden="true"><rect x="8" y="4" width="36" height="24" rx="3" fill="#24292F"></rect><rect x="3" y="30" width="46" height="6" rx="3" fill="#24292F"></rect><rect x="21" y="13" width="10" height="8" rx="1.5" fill="#fff"></rect><path d="M23.5 13v-2.5a2.5 2.5 0 0 1 5 0V13" stroke="#fff" stroke-width="2" fill="none"></path></svg>
-            <span style="font-size:12px; font-weight:700; color:#3A4149">このパソコンの中だけで完結</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Features -->
-  <section id="features" style="background:#fff">
-    <div style="max-width:1120px; margin:0 auto; padding:70px 24px 56px">
-      <h2 style="margin:0 0 38px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.06em">できること</h2>
-      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:22px">
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">まとめる・並べ替え</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="display:flex; align-items:center; gap:7px">
-              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px;transform:rotate(-4deg)"><div style="height:4px;background:#2B6CB0;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
-              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px"><div style="height:4px;background:#F6B93B;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
-              <div style="background:#fff;border:1.5px solid #C9D3DE;border-radius:4px;width:34px;height:44px;padding:5px;display:flex;flex-direction:column;gap:3px;transform:rotate(4deg)"><div style="height:4px;background:#2B6CB0;border-radius:2px;width:70%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:90%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:78%"></div><div style="height:3px;background:#DDE4EB;border-radius:2px;width:66%"></div></div>
-              <span style="color:#9AA6B2;font-weight:900">⋯</span>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">複数のPDFをまとめたり、ドラッグで順番を入れ替え。回転・削除も。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">ページ番号・2面付け・分割</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="display:flex; align-items:center; gap:6px">
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">1</div>
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">2</div>
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">3</div>
-              <span style="color:#2B6CB0;font-weight:900;font-size:16px">→</span>
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">1|2</div>
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;min-width:26px;height:28px;display:flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;color:#3A4149;padding:0 4px;background:#fff">3|4</div>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">通し番号を付ける・2ページを1枚に・分割も自在に。1ページずつ保存もできます。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">修正テープ・文字入れ</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="display:flex; align-items:center; gap:8px">
-              <div style="border:1.5px solid #C9D3DE;border-radius:5px;background:#fff;padding:7px 12px;display:flex;gap:8px;align-items:center">
-                <span style="font-size:15px;font-weight:700">あ</span>
-                <span style="display:inline-block;width:34px;height:16px;background:#fff;border:1.5px dashed #F6B93B;border-radius:3px"></span>
-                <span style="font-size:15px;font-weight:700;color:#2B6CB0">ア</span>
-              </div>
-              <span style="font-size:22px">🩹</span>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">修正テープでつぶしたり、自由な位置に文字を入れられる。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">元の文字を修正</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="border:1.5px solid #2B6CB0;border-radius:5px;background:#fff;padding:8px 16px;display:flex;align-items:center;gap:2px">
-              <span style="font-size:16px;font-weight:700;letter-spacing:3px">お知らせ</span>
-              <span style="display:inline-block;width:2px;height:18px;background:#2B6CB0"></span>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">もとの文字をクリックで消して、ローマ字や漢字で打ち直せる。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">縦書きに対応</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="display:flex;flex-direction:row-reverse;border:1.5px solid #C9D3DE;border-radius:5px;background:#fff;padding:6px 8px">
-              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;padding:2px 5px">保護者の皆様へ</div>
-              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;border-right:1px solid #DDE4EB;padding:2px 5px">平素より大変</div>
-              <div style="writing-mode:vertical-rl;font-size:11px;font-weight:500;color:#3A4149;letter-spacing:2px;border-right:1px solid #DDE4EB;padding:2px 5px">お世話になって</div>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">縦書きのPDFもしっかりと読める向きに整えられる。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:26px 24px; display:flex; flex-direction:column; gap:16px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-          <h3 style="margin:0; text-align:center; font-size:16px; font-weight:900; color:#2B6CB0; letter-spacing:0.05em">パソコンのフォントが使える</h3>
-          <div style="min-height:76px; display:flex; align-items:center; justify-content:center">
-            <div style="display:flex; align-items:baseline; gap:14px">
-              <span style="font-size:30px;font-weight:700">あ</span>
-              <span style="font-size:30px;font-family:serif">ア</span>
-              <span style="font-size:30px;font-family:serif;font-weight:900">愛</span>
-            </div>
-          </div>
-          <p style="margin:0; font-size:13.5px; line-height:2; color:#4A5158; font-weight:500; text-wrap:pretty">UDデジタル教科書体・MS明朝など、入っているフォントがそのまま使える。</p>
-        </div>
-
-      </div>
-      <p style="margin:26px 0 0; display:flex; align-items:center; justify-content:center; gap:8px; font-size:13px; color:#5A6470; font-weight:500"><span style="color:#2B6CB0; font-weight:900">↺</span>やり直し（元に戻す）付き。画面は拡大もできます。</p>
-    </div>
-  </section>
-
-  <!-- Steps -->
-  <section id="steps" style="background:#fff">
-    <div style="max-width:1120px; margin:0 auto; padding:10px 24px 70px">
-      <div style="border:1px solid #EDEAE4; border-radius:16px; padding:40px 30px; box-shadow:0 1px 3px rgba(36,41,47,0.05)">
-        <h2 style="margin:0 0 34px; text-align:center; font-size:clamp(22px, 2.8vw, 30px); font-weight:900; letter-spacing:0.04em">使い方は、3ステップ。</h2>
-        <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(220px, 1fr)); gap:14px; align-items:stretch">
-
-          <div style="background:#F7FAFD; border:1px solid #E1EAF4; border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px">
-            <div style="width:46px; height:46px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:20px; display:flex; align-items:center; justify-content:center">1</div>
-            <span style="color:#2B6CB0; line-height:1"><svg width="30" height="30" viewBox="0 0 26 26" fill="none" aria-hidden="true"><path d="M13 3v12m0 0l-4.5-4.2M13 15l4.5-4.2M4 22h18" stroke="#2B6CB0" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">ファイルを1つ<br>ダウンロード</p>
-          </div>
-
-          <div style="background:#F7FAFD; border:1px solid #E1EAF4; border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px">
-            <div style="width:46px; height:46px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:20px; display:flex; align-items:center; justify-content:center">2</div>
-            <span style="color:#2B6CB0; line-height:1"><svg width="32" height="28" viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h6l2.5 3H24a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" stroke="#2B6CB0" stroke-width="2.2" stroke-linejoin="round"></path></svg></span>
-            <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">ダブルクリックで開く<br>（ブラウザで開くだけ）</p>
-          </div>
-
-          <div style="background:#F7FAFD; border:1px solid #E1EAF4; border-radius:14px; padding:26px 22px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:12px">
-            <div style="width:46px; height:46px; border-radius:50%; background:#2B6CB0; color:#fff; font-weight:900; font-size:20px; display:flex; align-items:center; justify-content:center">3</div>
-            <span style="color:#2B6CB0; line-height:1"><svg width="32" height="28" viewBox="0 0 28 24" fill="none" aria-hidden="true"><path d="M2 5a2 2 0 0 1 2-2h6l2.5 3H24a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5z" stroke="#2B6CB0" stroke-width="2.2" stroke-linejoin="round"></path><path d="M14 9v7m0 0l-3-2.8m3 2.8l3-2.8" stroke="#2B6CB0" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"></path></svg></span>
-            <p style="margin:0; font-size:14.5px; font-weight:700; line-height:1.75">PDFを入れて、<br>保存する</p>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Maker -->
-  <section id="maker" style="background:#fff">
-    <div style="max-width:1120px; margin:0 auto; padding:0 24px 70px">
-      <div style="background:#F5EFE4; border-radius:16px; padding:clamp(30px,4vw,46px) clamp(24px,4vw,46px)">
-        <p style="margin:0 0 26px; font-size:clamp(15px, 1.8vw, 17px); line-height:2.3; font-weight:700; text-wrap:pretty; max-width:660px">現役の小学校教員が、自分の“めんどくさい”を減らすために作りました。完成品は、いつも無料です。<br>明日の準備が少し軽くなって、ゆとりが生まれますように。</p>
-        <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:flex-start; border-top:3px solid #24292F; padding-top:24px">
-          <img src="img/author.jpg" alt="外﨑顯博" style="flex:none; width:84px; height:84px; border-radius:50%; object-fit:cover">
-          <div style="flex:1 1 260px; min-width:220px">
-            <div style="font-size:10.5px; font-weight:700; letter-spacing:0.24em; color:#767B83; margin-bottom:6px">AUTHOR</div>
-            <div style="font-size:18px; font-weight:700; color:#15181C">外﨑顯博<span style="font-size:11.5px; font-weight:500; color:#767B83; margin-left:8px; letter-spacing:0.08em">とざき あきひろ</span></div>
-            <div style="font-size:13px; color:#3D4148; line-height:1.9; margin-top:6px">福岡県飯塚市 公立小学校教員（<b style="color:#15181C">4年担任・主題研修担当・ICT担当</b>）<br><b style="color:#15181C">GEG Chikuho</b> 共同リーダー</div>
-            <div style="font-size:12.5px; color:#767B83; line-height:1.9; margin-top:10px; border-top:1px solid #E6E6E3; padding-top:10px"><b style="color:#15181C">LiFE with</b> ──「ゆとりをもって人を育てる社会をつくる」<br><b style="color:#15181C">School Stock</b> ──「先生向けの、現場で使える教材・便利ツールの共有」</div>
-          </div>
-        </div>
-      </div>
+  <!-- 05 サポート（越境1行） -->
+  <section>
+    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">SUPPORT</span></div>
+    <h2>学校ぐるみで使うなら</h2>
+    <p>完成品はいつでも無料です。そのうえで、校内研修で使い方を広げたい、学校の運用に合わせて導入を伴走してほしい——そうした「あなたの学校に合わせる」部分は、<b>LiFE with</b> が有償でお手伝いします。</p>
+    <div class="support">
+      <div class="st">研修・導入のご相談</div>
+      <div class="sd">職員研修・校内での展開・運用設計など。まずは近況報告がてら、気軽にどうぞ。</div>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">作り手の記事・ほかの無料教材はこちら（note）↗</a>
     </div>
   </section>
 
   <!-- FAQ -->
-  <section id="faq" style="background:#FFF5EA">
-    <div style="max-width:840px; margin:0 auto; padding:64px 24px 70px">
-      <h2 style="margin:0 0 36px; text-align:center; font-size:clamp(24px, 3vw, 32px); font-weight:900; letter-spacing:0.06em">よくある質問</h2>
-      <div style="display:flex; flex-direction:column; gap:16px">
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
-          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>ダウンロードしたあと、どうやって開くの？</p>
-          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>ファイルをダブルクリックするだけです。いつものブラウザ（EdgeやChrome）で開きます。インストールも、管理者への申請もいりません。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
-          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>保存したPDFはどこにいくの？</p>
-          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>パソコンの「ダウンロード」フォルダに入ります。名前を付けて保存もできます。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
-          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>本当に通信しないの？</p>
-          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>はい。読み込んだPDFはすべてこのパソコンの中だけで処理され、インターネットには一切送られません。ネットにつながっていない教室のパソコンでも動きます。</p>
-        </div>
-
-        <div style="background:#fff; border:1px solid #EDEAE4; border-radius:14px; padding:24px 26px; display:flex; flex-direction:column; gap:10px">
-          <p style="margin:0; display:flex; gap:12px; font-size:15.5px; font-weight:700; line-height:1.8"><span style="color:#2B6CB0; font-weight:900; flex-shrink:0">Q.</span>パスワード付きのPDFは使える？</p>
-          <p style="margin:0; display:flex; gap:12px; font-size:14px; font-weight:500; line-height:2; color:#4A5158; text-wrap:pretty"><span style="color:#F6B93B; font-weight:900; flex-shrink:0">A.</span>いまは対応していません。パスワードを外したPDFでお使いください。</p>
-        </div>
-
-      </div>
-    </div>
+  <section>
+    <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">Q &amp; A</span></div>
+    <h2>上に説明するときのために</h2>
+    <details>
+      <summary>本当に通信しない、と言い切れますか？</summary>
+      <div class="fa">はい。外部と通信するコードを設計上含んでいません。読み込んだPDFはすべて端末内で処理され、インターネットへ送られることはありません。ネットワークを遮断した環境でも動作します。</div>
+    </details>
+    <details>
+      <summary>ライセンス・著作権の扱いは？</summary>
+      <div class="fa">PDFの処理には pdf.js・pdf-lib・fontkit といったオープンソースのライブラリを使用しています。同梱フォントは再配布が認められた BIZ UDGothic（SIL OFL）です。安心してご利用・配布いただけます。</div>
+    </details>
+    <details>
+      <summary>児童生徒の個人情報が入ったPDFを扱ってよいですか？</summary>
+      <div class="fa">そのために作られたツールです。データが端末の外へ出ないため、名簿・成績・写真の入ったPDFも、この一台の中だけで加工できます（各校の情報管理規程に沿ってご判断ください）。</div>
+    </details>
+    <details>
+      <summary>費用は本当にかかりませんか？</summary>
+      <div class="fa">完成品の利用・配布は無料です。アカウント登録も広告もありません。校内研修や個別の導入伴走をご希望の場合のみ、別途 LiFE with が有償で承ります。</div>
+    </details>
+    <details>
+      <summary>保存したPDFはどこに入りますか？</summary>
+      <div class="fa">パソコンの「ダウンロード」フォルダに保存されます。名前を付けて保存することもできます。</div>
+    </details>
   </section>
 
-  <!-- Final CTA -->
-  <section style="background:#fff">
-    <div style="max-width:1120px; margin:0 auto; padding:0 24px 60px">
-      <div style="background:#1E4E8C; border-radius:16px; overflow:hidden; padding:52px 40px; display:flex; flex-direction:column; align-items:center; text-align:center; gap:22px">
-        <h2 style="margin:0; color:#fff; font-size:clamp(22px, 2.8vw, 30px); font-weight:900; letter-spacing:0.03em">まずは、さわってみてください。</h2>
-        <a href="https://github.com/A-TOZAK/School_Stock/releases/latest/download/pdf-toolbox.html" class="btn-white" style="display:inline-flex; align-items:center; gap:9px; background:#fff; color:#1E4E8C; text-decoration:none; font-weight:900; font-size:16px; padding:16px 34px; border-radius:12px; box-shadow:0 4px 14px rgba(0,0,0,0.18)">
-          <svg width="17" height="17" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#1E4E8C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-          無料でダウンロード</a>
-        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener" class="lnk-note" style="color:#C9DCF2; font-size:14px; font-weight:500; text-decoration:underline; text-underline-offset:4px">ほかの無料教材や、作り手の記事はこちら（note）↗</a>
-        <p style="margin:0; font-size:12px; color:#9FB6D4; line-height:1.8">ダウンロード・ご利用の前に <a href="terms.html" style="color:#C9DCF2; text-decoration:underline">利用規約</a> をご確認ください（無料・免責事項あり）。</p>
-      </div>
+  <!-- 著者 -->
+  <div class="author">
+    <img class="avatar-img" src="img/author.jpg" alt="外﨑顯博">
+    <div>
+      <div class="al">AUTHOR</div>
+      <div class="an">外﨑顯博<small>とざき あきひろ</small></div>
+      <div class="ap">福岡県飯塚市 公立小学校教員（<b>4年担任・主題研修担当・ICT担当</b>）<br><b>GEG Chikuho</b> 共同リーダー</div>
+      <div class="aw"><b>LiFE with</b> ──「ゆとりをもって人を育てる社会をつくる」<br><b>School Stock</b> ──「先生向けの、現場で使える教材・便利ツールの共有」</div>
     </div>
-  </section>
-
-  <!-- Support strip -->
-  <section style="background:#fff; border-top:1px solid #EDEAE4">
-    <div style="max-width:1120px; margin:0 auto; padding:22px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:center; gap:16px">
-      <p style="margin:0; font-size:13.5px; font-weight:500; color:#3A4149; text-align:center">👥「うちの学校でも使いたい」というお声には、研修や導入のお手伝いというかたちでもお応えしています。</p>
-      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener" class="btn-support" style="display:inline-flex; align-items:center; gap:8px; border:1.5px solid #2B6CB0; color:#2B6CB0; text-decoration:none; font-size:13px; font-weight:700; padding:10px 20px; border-radius:10px">研修・導入サポートについて →</a>
-    </div>
-  </section>
-
-  <!-- Footer -->
-  <footer style="background:#1B2733">
-    <div style="max-width:1120px; margin:0 auto; padding:26px 24px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px">
-      <p style="margin:0; font-size:13px; color:#B9C2CC; font-weight:500">© School Stock　<a href="terms.html" style="color:#B9C2CC; text-decoration:underline; text-underline-offset:3px">利用規約</a></p>
-      <p style="margin:0; font-size:11.5px; line-height:1.9; color:#8794A1; font-weight:400; text-align:right; text-wrap:pretty">このツールは、オープンソースライブラリを使用しています。<br>pdf.js / pdf-lib / fontkit ・ 同梱フォント：BIZ UDGothic（SIL OFL）</p>
-    </div>
-  </footer>
+  </div>
 
 </div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。<br>
+    © School Stock　<a href="terms.html">利用規約</a>
+    <div class="lic">このツールは、オープンソースライブラリ（pdf.js / pdf-lib / fontkit）を使用しています。<br>同梱フォント：BIZ UDGothic（SIL OFL）</div>
+  </div>
+</footer>
+
 </body>
 </html>
