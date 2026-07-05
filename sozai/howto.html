@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>素材シートの使い方 ── 1枚から必要なパーツだけ切り取る｜School Stock</title>
+<meta name="description" content="School Stockの授業イラスト素材シートを、Googleスライド・ドキュメント・Canvaで使う手順。トリミングのコツ、白黒版の使いどころ、利用ルールまで。">
+<style>
+  :root { --ink:#15181c; --sub:#767b83; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .figure { border:1px solid var(--ink); background:var(--wash); margin:16px 0 20px; }
+  .figure img { display:block; width:100%; height:auto; }
+  .figure figcaption { font-size:12px; color:var(--sub); padding:8px 14px; border-top:1px solid var(--line); }
+  .tip { background:#f2f6fd; border:1px solid #cdd9f4; padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:8px 12px; text-align:left; vertical-align:top; }
+  th { background:var(--wash); font-size:12px; letter-spacing:0.08em; }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:#fff; background:var(--black); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../">SCHOOL STOCK</a>
+    <div class="nav"><a href="./">← 素材集にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../">棚</a> ／ <a href="./">授業イラスト素材集</a> ／ 使い方</div>
+
+  <span class="kicker">HOW TO USE｜素材シート</span>
+  <h1>素材シートの使い方<br>── 1枚から、必要なパーツだけ切り取る</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 対象：Googleスライド・ドキュメント・Canva・PowerPoint</p>
+
+  <p class="lead">この素材集は「1点ずつのイラスト」ではなく、<strong>1枚に色ちがい・型ちがいのパーツが並んだ「素材シート」</strong>で配っています。シートごと保存して、使う場面で必要なパーツだけ切り抜く——このやり方だと、探す時間がいちばん短くなります。</p>
+
+  <div class="figure">
+    <img src="img/64_grade5_physics_pendulum_conditions_parts_sheet.jpg" alt="素材シートの例：ふりこの条件のパーツが色ちがいで並んでいる">
+    <figcaption>シートの例（5年・ふりこの条件）。同じパーツの色ちがいが横に並ぶ。学級のチーム色や、比較する条件ごとに色を使い分けられる。</figcaption>
+  </div>
+
+  <h2>基本の3ステップ（Googleスライド）</h2>
+  <ol class="steps">
+    <li><strong>保存する。</strong>素材集で使いたいシートの「カラー」（または「白黒」）をタップしてダウンロード。</li>
+    <li><strong>貼る。</strong>スライドに挿入（「挿入」→「画像」→「パソコンからアップロード」。画像をスライドに直接ドラッグでもOK）。</li>
+    <li><strong>切り抜く。</strong>画像を選んで「切り抜き」（ツールバーの切り抜きアイコン、または画像をダブルクリック）。枠を動かして、使いたいパーツだけ残す。</li>
+  </ol>
+  <div class="tip"><b>コツ：</b>同じシートから複数のパーツを使いたいときは、画像をコピー＆ペーストしてから、それぞれ別の場所を切り抜く。1回のダウンロードで何通りにも使えます。</div>
+
+  <h2>アプリ別の切り抜き方</h2>
+  <table>
+    <tr><th>アプリ</th><th>操作</th></tr>
+    <tr><td>Googleスライド／図形描画</td><td>画像を選択 → ツールバーの「画像を切り抜く」→ 黒いハンドルをドラッグ</td></tr>
+    <tr><td>Googleドキュメント</td><td>画像を選択 → 「画像オプション」→ サイズと回転ではなく、画像をダブルクリックで切り抜きモード</td></tr>
+    <tr><td>Canva</td><td>画像をダブルクリック → 切り抜き範囲をドラッグ → 完了</td></tr>
+    <tr><td>PowerPoint</td><td>画像を選択 → 「図の形式」→「トリミング」</td></tr>
+  </table>
+
+  <h2>白黒版の使いどころ</h2>
+  <p>各シートには白黒版があります。<strong>印刷プリント・ワークシート・学級通信</strong>は白黒版が向いています（印刷コストが安く、輪郭がはっきり出ます）。スライドや電子黒板に映すときはカラー版を。同じパーツの色ちがいは、「予想A／予想B」「1組／2組」など、<strong>比較や分類の色分け</strong>にそのまま使えます。</p>
+
+  <h2>授業でのつかい方の例（理科）</h2>
+  <ol class="steps">
+    <li><strong>実験計画の板書・スライドに。</strong>「実験の進め方」シート（共通）のパーツを並べれば、問題→予想→計画→結果→考察の流れが毎時間同じ形で示せます。</li>
+    <li><strong>ワークシートの挿絵に。</strong>器具のイラスト（共通）を切り抜いて、実験プリントの手順欄へ。器具の名前当てクイズにも。</li>
+    <li><strong>子どものスライドづくりに。</strong>調べたことをまとめる活動で、子ども自身がシートから切り抜いて使う。「使っていい画像」を先生が用意しておける安心感があります。</li>
+  </ol>
+
+  <h2>利用ルール（かんたん版）</h2>
+  <p>学校・園・家庭での授業、校務資料、学級通信などに自由に使えます。加工・トリミングOK、クレジット表記は不要です。素材そのものの再配布・販売、自作素材としての公開はご遠慮ください。くわしくは<a href="./">素材集トップ</a>の利用ルールをどうぞ。</p>
+
+  <a class="back" href="./">← 素材集で使うシートをさがす</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../">棚トップ</a>　/　<a href="./">授業イラスト素材集</a>　/　<a href="../prints/kokugo/">国語プリント</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）
+  </div>
+</footer>
+
+</body>
+</html>

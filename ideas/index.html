@@ -3,17 +3,33 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>実践アイデア村 ── Gemini × Google Workspace の授業・校務アイデア集｜School Stock</title>
-<meta name="description" content="Gemini、NotebookLM、Google Workspaceで生まれた授業や校務のアイデアを、見つけて、持ち帰って、明日の教室で試せる場所。">
+<title>実践アイデア村 ── 授業・校務の実践アイデア集｜School Stock</title>
+<meta name="description" content="授業や校務を軽くする実践アイデア集。ツール・教材・AI活用レシピを、見つけて、持ち帰って、明日の教室で試せる場所。各アイデアの「詳細」から使い方が読めます。">
 <style>
   :root { --ink:#15181c; --sub:#767b83; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
   a { color:var(--accent); text-decoration:none; }
-  .topbar { background:var(--black); color:#fff; }
-  .topbar-in { max-width:960px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
-  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; }
-  .topbar a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.14em; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
   .hero-band { height:190px; overflow:hidden; border-bottom:1px solid var(--ink); background:#fdfdfb; }
   .hero-band img { width:100%; height:100%; object-fit:cover; object-position:center 60%; display:block; }
   @media (max-width:600px){ .hero-band { height:120px; } }
@@ -42,7 +58,17 @@
   .count { font-size:13px; color:var(--sub); margin:6px 0 16px; }
   .count b { color:var(--ink); font-weight:700; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:18px; }
-  .card { border:1px solid var(--line); display:flex; flex-direction:column; }
+  .card { border:1px solid var(--line); border-top:3px solid var(--vc,var(--ink)); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); border-top-color:var(--vc,var(--ink)); }
+  .card[data-v="gemini"]   { --vc:#2b5fd9; }
+  .card[data-v="notebook"] { --vc:#0e8a6d; }
+  .card[data-v="workspace"]{ --vc:#c2571a; }
+  .card[data-v="materials"]{ --vc:#7a4bd0; }
+  .abtn .dot { display:inline-block; width:8px; height:8px; margin-right:6px; vertical-align:1px; }
+  .abtn[data-v="gemini"] .dot   { background:#2b5fd9; }
+  .abtn[data-v="notebook"] .dot { background:#0e8a6d; }
+  .abtn[data-v="workspace"] .dot{ background:#c2571a; }
+  .abtn[data-v="materials"] .dot{ background:#7a4bd0; }
   .card .b { padding:18px 18px 8px; flex:1; }
   .chips { display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin-bottom:10px; }
   .vil { font-size:10.5px; font-weight:700; letter-spacing:0.08em; color:#fff; background:var(--black); padding:3px 9px; }
@@ -60,19 +86,53 @@
   .empty { display:none; padding:30px 4px; color:var(--sub); font-size:14px; }
   .note { border:1px solid var(--line); background:var(--wash); padding:16px 18px; margin:22px 0 0; font-size:12.5px; color:var(--sub); line-height:1.9; }
   .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
-  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
-  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:8px; }
-  .foot a { color:#d7dade; text-decoration:underline; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="wordmark">SCHOOL STOCK</div>
-    <a href="../">← 棚にもどる</a>
+    <a class="wordmark" href="../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../tools/pdf-toolbox/">ツール</a>
+      <a href="../prints/kokugo/">プリント</a>
+      <a href="../sozai/">素材</a>
+      <a href="./">アイデア村</a>
+      <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">News Letter ↗</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
   </div>
 </div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">TOOL</div>
+    <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../prints/kokugo/">国語プリント<small>全79枚・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">IDEAS</div>
+    <a href="./">実践アイデア村<small>Gemini × Workspace の実践集</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗<small>先生のための最新情報（毎週）</small></a>
+    <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
+    <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗<small>コピペで使えるプロンプト集</small></a>
+    <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗<small>GEG Fukuoka City のGem集</small></a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
 
 <div class="hero-band"><img src="../assets/hero-shelf.png" alt="道具と教材が並ぶ棚と机のイラスト"></div>
 
@@ -80,9 +140,9 @@
   <div class="crumb"><a href="../">棚</a> ／ 実践アイデア村</div>
 
   <div class="head">
-    <span class="kicker">IDEAS｜Gemini × Google Workspace</span>
+    <span class="kicker">IDEAS｜実践アイデア</span>
     <h1>実践アイデア村</h1>
-    <p class="lead">Gemini、NotebookLM、Google Workspaceで生まれた授業や校務のアイデアを、ふらっと見つけて、持ち帰って、明日の教室で試せる場所です。「何ができるか」から見て、気になったら開いて試せます。</p>
+    <p class="lead">授業や校務を軽くする実践アイデアを、ふらっと見つけて、持ち帰って、明日の教室で試せる場所です。それぞれの「詳細」から、できること・使い方・リンクが読めます。</p>
     <div class="cta-row">
       <a class="cta solid" href="https://docs.google.com/forms/d/e/1FAIpQLSe8YIX53kWB1ExSFH4BcK1j-GnhedBfpWPoiBOchNAagixQ9g/viewform" target="_blank" rel="noopener">
         <svg viewBox="0 0 16 16" fill="none"><path d="M8 3v10M3 8h10" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg>アイデアを置く</a>
@@ -90,8 +150,8 @@
     </div>
     <div class="meta">
       <span><b id="mcount">0</b>件のアイデア</span>
-      <span>Gemini ／ NotebookLM ／ Google Workspace ／ GAS</span>
-      <span>© 外﨑顯博（GEG Chikuho）</span>
+      <span>Gemini ／ NotebookLM ／ Google Workspace ／ GAS ／ Web教材</span>
+      <span>作：外﨑顯博 / 小学校</span>
     </div>
   </div>
 
@@ -103,10 +163,10 @@
     <div class="frow" aria-label="村のエリアで探す">
       <span class="fl">エリア</span>
       <button class="abtn on" data-v="all">村ぜんぶ</button>
-      <button class="abtn" data-v="gemini">ひらめき広場</button>
-      <button class="abtn" data-v="notebook">読み解き書斎</button>
-      <button class="abtn" data-v="workspace">校務の工房</button>
-      <button class="abtn" data-v="materials">教材の畑</button>
+      <button class="abtn" data-v="gemini"><span class="dot"></span>ひらめき広場</button>
+      <button class="abtn" data-v="notebook"><span class="dot"></span>読み解き書斎</button>
+      <button class="abtn" data-v="workspace"><span class="dot"></span>校務の工房</button>
+      <button class="abtn" data-v="materials"><span class="dot"></span>教材の畑</button>
     </div>
   </div>
 
@@ -114,36 +174,52 @@
   <div id="grid" class="grid"></div>
   <p id="empty" class="empty">条件に合うアイデアはまだありません。ことばを変えて探してみてください。</p>
 
-  <div class="note">このページは、GEG Chikuho の Gemini for Education アイデアソンで集まったアイデアを、School Stock の棚に静的に並べたものです。新しいアイデアやお願いごとは、上のフォームから置けます（順次このページに追加します）。児童生徒の個人情報は投稿しない運用です。</div>
+  <div class="note">このページは、GEG Chikuho のアイデアソンなどで集まった実践を School Stock の棚に並べたものです。新しいアイデアやお願いごとは、上のフォームから置けます（順次このページに追加します）。児童生徒の個人情報は投稿しない運用です。<br>Gemini の「Gem」を探すなら、GEG Fukuoka City の <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗</a> もどうぞ。</div>
 
 </div>
 
 <footer class="foot">
   <div class="foot-in">
     <div class="fw">SCHOOL STOCK</div>
-    先生向けの、現場で使える教材・便利ツールの棚。<br>
-    © School Stock　<a href="../">棚トップ</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../">棚トップ</a>
+        <a href="../tools/pdf-toolbox/">先生のPDF道具箱</a>
+        <a href="../prints/kokugo/">国語プリント</a>
+        <a href="../sozai/">授業イラスト素材集</a>
+        <a href="./">実践アイデア村</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
+        <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ GEG Chikuho</div>
   </div>
 </footer>
 
 <script>
 const IDEAS = [
-  {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、NotebookLM、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやNotebookLMに貼って試す。', to:'Gemini, NotebookLM, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, NotebookLM, 授業準備, 校務改善', url:'https://a-tozak.github.io/ai-prompt-library/', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/NotebookLM用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, NotebookLM, GitHub Pages', tg:'社会科, プロンプト集, Gemini, NotebookLM, 資料読解', url:'https://github.com/A-TOZAK/kids-social-studies-prompt-library', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物名を入力すると各プロンプトに反映され、選ぶ・調べる・確かめる・構成する・推敲するをGeminiとの対話で支える1ページサイト。', pr:'子どもが生き物を選び、調べ、構成し、リーフレットにまとめるまでを一人で進めるのは難しい。', fs:'生き物名を入力し、学習段階に合うプロンプトをコピーしてGeminiに貼り付ける。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'https://a-tozak.github.io/ikimono-zukan-gemini/', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'小学校の学びが変わるICTと生成AIの活用 研修資料', ar:'G-Appsコミュニティで共有した研修資料、ふきだしくん共有プロンプト、AI検索おたすけ集などを含む実践共有。', pr:'生成AIやICTの話が便利ツール紹介で終わると、発達段階や授業づくりにどう落とすかが見えにくい。', fs:'共有資料を見て、校内で配れる紙資料やプロンプト例を1つ選び、自校の先生向けに紹介する。', to:'Gemini, Google Slides, Google Docs, Claude Code', tg:'生成AI, ICT研修, 小学校, Gemini, G-Apps', url:'https://note.com/tozaki_edu/n/nba8d439b7040', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'Classroom一括削除・一括作成GAS', ar:'アクティブなコース一覧、不要コースの一括削除、クラスルーム一括作成、共有ドライブから教師メール取得、一括招待までを支えるGAS。', pr:'年度末・新年度にGoogle Classroomを1つずつ削除・作成・招待する作業が情報担当に集中する。', fs:'手順を見ながら、まず現在のClassroom一覧を取得するところだけ試し、削除や招待は管理者と確認してから進める。', to:'GAS, Google Classroom, Google Sheets, Google Drive', tg:'Classroom, GAS, 情報担当, 年度末, 校務改善', url:'https://note.com/tozaki_edu/n/na08d50159da2', sc:'小学校', ro:'情報担当 / GEG Chikuho'},
-  {t:'Googleスライド全ページ一括コピーGAS', ar:'選択した図形・テキストボックス・画像・表などを、全スライドの同じ位置に一括配置するGAS。', pr:'デジタルワークシートをスライドで作ると、児童分のスライドに同じ要素を何度も配置する必要がある。', fs:'コピーしたい要素を1つ選び、Apps Scriptにコードを貼ってメニューから一括コピーを実行する。', to:'GAS, Google Slides, Claude Code', tg:'Googleスライド, GAS, 教材作成, デジタルワークシート', url:'https://note.com/tozaki_edu/n/n61be88172570', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'すぐ印刷して使える全学年対応ノート集', ar:'5mm方眼、低学年向け算数ノート、さんすうマス、こくご8マス、低学年作文ノートなど、印刷してすぐ使えるノート用紙集。', pr:'ノートやワークシートの形式を少しだけ使いたい時に、毎回自作したり探したりする時間がかかる。', fs:'マガジンから必要なノート形式を選び、印刷して授業や宿題、教材研究用に使う。', to:'Google Drive, Google Docs', tg:'神教材製作所, 印刷教材, ノート, ワークシート, 無料配布', url:'https://note.com/tozaki_edu/m/m4d4dc399b274', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'小学校算数プリント集とレビューツール', ar:'生成AIで作成した算数プリント集と、先生方にレビュー協力を依頼するためのレビューツール。', pr:'授業や宿題、自学で使えるプリントを作りたいが、AI生成教材はレビューと改善の仕組みが必要になる。', fs:'プリント集を1単元だけ開いて使い、気になる問題や改善点をレビューツールに残す。', to:'Antigravity, GitHub Pages, Google Sheets, Google Forms', tg:'算数, プリント, 教材レビュー, 生成AI, 神教材製作所', url:'https://note.com/tozaki_edu/n/n921c460a76e9', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'飯塚市 地域教材デジタル副読本', ar:'飯塚市の地域学習に使える内容を、子どもが見やすい形のデジタル副読本として整理したWeb教材。', pr:'地域学習で使える資料が散らばっており、子どもが地域の情報にアクセスしにくい。', fs:'地域学習の単元で、子どもに見せたいページを1つ選び、問いとセットで提示する。', to:'GitHub Pages, Google Sites, Gemini', tg:'地域教材, 飯塚市, 社会科, デジタル副読本', url:'https://github.com/A-TOZAK/iizuka-fukudokuhon', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'中学社会科向け資料読解ミニプリント集', ar:'中学社会科向けに、資料を読んで考えるためのミニプリント集として整理したWeb教材。', pr:'社会科の資料読解は、何を読み取るか・どんな根拠で考えるかを短時間で練習する場面が必要。', fs:'1枚だけ選び、資料から読み取れる事実と自分の考えを分けて書かせる。', to:'GitHub Pages, Google Docs, Gemini', tg:'中学社会, 資料読解, ミニプリント, 社会科', url:'https://github.com/A-TOZAK/oita-source-reading-mini', sc:'中学校', ro:'教材制作者 / GEG Chikuho'},
-  {t:'小学校現場で使える学習ボードゲーム集', ar:'小学校現場で使えるドット絵風の学習ボードゲーム集。', pr:'授業の導入や復習で、楽しさと学習内容を両立した活動を用意するのに時間がかかる。', fs:'単元に近いゲームを1つ選び、授業の最後5分または復習場面で試す。', to:'GitHub Pages, JavaScript', tg:'学習ゲーム, ボードゲーム, 神教材製作所, 復習', url:'https://github.com/A-TOZAK/kami-kyozai-boardgame-lab', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'あたまおしりことばゲーム', ar:'日本語かなを使った、あたまとおしりの文字から言葉を考えるゲーム。', pr:'語彙やかなへの関心を、短時間で楽しく扱える活動がほしい。', fs:'朝の活動や授業の導入で1回だけ開き、ルールを説明して全員で言葉を出してみる。', to:'GitHub Pages, JavaScript', tg:'国語, 語彙, ゲーム, かな, 学級活動', url:'https://github.com/A-TOZAK/atama-oshiri-game', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'授業で使えるゲーム集', ar:'授業で使えるゲームを作成・シェアするためのリポジトリ。', pr:'授業で使える小さなゲーム教材が、単発で散らばると再利用しにくい。', fs:'リポジトリから授業に合いそうなゲームを1つ選び、短時間の活動として試す。', to:'GitHub Pages, JavaScript', tg:'授業ゲーム, 教材共有, 神教材製作所', url:'https://github.com/A-TOZAK/Games', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'国語プリントギャラリー', ar:'国語系プリントをギャラリーとして整理するためのWeb教材リポジトリ。', pr:'国語のプリントや作文支援教材を、必要な時にすぐ見つけて印刷できる形にしたい。', fs:'単元や力をつけたい領域に合うプリントを1つ探し、授業か宿題で使う。', to:'GitHub Pages, JavaScript', tg:'国語, プリント, 作文, 神教材製作所', url:'https://github.com/A-TOZAK/kokugo-print-gallery', sc:'小学校', ro:'担任 / 神教材製作所'},
-  {t:'NotebookLMで校内研修の問いを作る', ar:'研修資料とアンケート結果をNotebookLMに入れて、対話用の問いを生成する流れ。', pr:'研修資料はあるが、先生たちが自分事として話せる問いを作るのが難しい。', fs:'研修で使う資料を3つNotebookLMに入れて「先生たちが自分事として話せる問いを10個出して」と聞く。', to:'NotebookLM, Google Docs', tg:'校内研修, NotebookLM, 問いづくり', url:'', sc:'小学校', ro:'担任 / GEG Chikuho'},
-  {t:'FormsとSheetsで振り返りを見える化する', ar:'Googleフォームで振り返りを集め、スプレッドシートで分類して見える化する。', pr:'子どもの振り返りを毎回読むのに時間がかかり、次の授業に生かしきれない。', fs:'フォームに「今日わかったこと」「まだわからないこと」を入れ、Geminiに分類の観点を考えてもらう。', to:'Google Forms, Google Sheets, Gemini', tg:'振り返り, 形成的評価, 校務改善', url:'', sc:'小学校', ro:'担任 / GEG Chikuho'}
+  {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、NotebookLM、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやNotebookLMに貼って試す。', to:'Gemini, NotebookLM, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, NotebookLM, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/NotebookLM用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, NotebookLM, GitHub Pages', tg:'社会科, プロンプト集, Gemini, NotebookLM, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物名を入力すると各プロンプトに反映され、選ぶ・調べる・確かめる・構成する・推敲するをGeminiとの対話で支える1ページサイト。', pr:'子どもが生き物を選び、調べ、構成し、リーフレットにまとめるまでを一人で進めるのは難しい。', fs:'生き物名を入力し、学習段階に合うプロンプトをコピーしてGeminiに貼り付ける。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'a/ikimono-zukan.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校の学びが変わるICTと生成AIの活用 研修資料', ar:'G-Appsコミュニティで共有した研修資料、ふきだしくん共有プロンプト、AI検索おたすけ集などを含む実践共有。', pr:'生成AIやICTの話が便利ツール紹介で終わると、発達段階や授業づくりにどう落とすかが見えにくい。', fs:'共有資料を見て、校内で配れる紙資料やプロンプト例を1つ選び、自校の先生向けに紹介する。', to:'Gemini, Google Slides, Google Docs, Claude Code', tg:'生成AI, ICT研修, 小学校, Gemini, G-Apps', url:'a/kenshu-ict-ai.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Classroom一括削除・一括作成GAS', ar:'アクティブなコース一覧、不要コースの一括削除、クラスルーム一括作成、共有ドライブから教師メール取得、一括招待までを支えるGAS。', pr:'年度末・新年度にGoogle Classroomを1つずつ削除・作成・招待する作業が情報担当に集中する。', fs:'手順を見ながら、まず現在のClassroom一覧を取得するところだけ試し、削除や招待は管理者と確認してから進める。', to:'GAS, Google Classroom, Google Sheets, Google Drive', tg:'Classroom, GAS, 情報担当, 年度末, 校務改善', url:'a/classroom-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Googleスライド全ページ一括コピーGAS', ar:'選択した図形・テキストボックス・画像・表などを、全スライドの同じ位置に一括配置するGAS。', pr:'デジタルワークシートをスライドで作ると、児童分のスライドに同じ要素を何度も配置する必要がある。', fs:'コピーしたい要素を1つ選び、Apps Scriptにコードを貼ってメニューから一括コピーを実行する。', to:'GAS, Google Slides, Claude Code', tg:'Googleスライド, GAS, 教材作成, デジタルワークシート', url:'a/slides-copy-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'すぐ印刷して使える全学年対応ノート集', ar:'5mm方眼、低学年向け算数ノート、さんすうマス、こくご8マス、低学年作文ノートなど、印刷してすぐ使えるノート用紙集。', pr:'ノートやワークシートの形式を少しだけ使いたい時に、毎回自作したり探したりする時間がかかる。', fs:'マガジンから必要なノート形式を選び、印刷して授業や宿題、教材研究用に使う。', to:'Google Drive, Google Docs', tg:'神教材製作所, 印刷教材, ノート, ワークシート, 無料配布', url:'a/note-print.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校算数プリント集とレビューツール', ar:'生成AIで作成した算数プリント集と、先生方にレビュー協力を依頼するためのレビューツール。', pr:'授業や宿題、自学で使えるプリントを作りたいが、AI生成教材はレビューと改善の仕組みが必要になる。', fs:'プリント集を1単元だけ開いて使い、気になる問題や改善点をレビューツールに残す。', to:'Antigravity, GitHub Pages, Google Sheets, Google Forms', tg:'算数, プリント, 教材レビュー, 生成AI, 神教材製作所', url:'a/sansu-print-review.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'飯塚市 地域教材デジタル副読本', ar:'飯塚市の地域学習に使える内容を、子どもが見やすい形のデジタル副読本として整理したWeb教材。', pr:'地域学習で使える資料が散らばっており、子どもが地域の情報にアクセスしにくい。', fs:'地域学習の単元で、子どもに見せたいページを1つ選び、問いとセットで提示する。', to:'GitHub Pages, Google Sites, Gemini', tg:'地域教材, 飯塚市, 社会科, デジタル副読本', url:'a/iizuka-fukudokuhon.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'中学社会科向け資料読解ミニプリント集', ar:'中学社会科向けに、資料を読んで考えるためのミニプリント集として整理したWeb教材。', pr:'社会科の資料読解は、何を読み取るか・どんな根拠で考えるかを短時間で練習する場面が必要。', fs:'1枚だけ選び、資料から読み取れる事実と自分の考えを分けて書かせる。', to:'GitHub Pages, Google Docs, Gemini', tg:'中学社会, 資料読解, ミニプリント, 社会科', url:'a/oita-source-mini.html', sc:'中学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校現場で使える学習ボードゲーム集', ar:'小学校現場で使えるドット絵風の学習ボードゲーム集。', pr:'授業の導入や復習で、楽しさと学習内容を両立した活動を用意するのに時間がかかる。', fs:'単元に近いゲームを1つ選び、授業の最後5分または復習場面で試す。', to:'GitHub Pages, JavaScript', tg:'学習ゲーム, ボードゲーム, 神教材製作所, 復習', url:'a/boardgame.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'あたまおしりことばゲーム', ar:'日本語かなを使った、あたまとおしりの文字から言葉を考えるゲーム。', pr:'語彙やかなへの関心を、短時間で楽しく扱える活動がほしい。', fs:'朝の活動や授業の導入で1回だけ開き、ルールを説明して全員で言葉を出してみる。', to:'GitHub Pages, JavaScript', tg:'国語, 語彙, ゲーム, かな, 学級活動', url:'a/atama-oshiri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'授業で使えるゲーム集', ar:'授業で使えるゲームを作成・シェアするためのリポジトリ。', pr:'授業で使える小さなゲーム教材が、単発で散らばると再利用しにくい。', fs:'リポジトリから授業に合いそうなゲームを1つ選び、短時間の活動として試す。', to:'GitHub Pages, JavaScript', tg:'授業ゲーム, 教材共有, 神教材製作所', url:'a/games.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'国語プリントギャラリー', ar:'国語系プリントをギャラリーとして整理するためのWeb教材リポジトリ。', pr:'国語のプリントや作文支援教材を、必要な時にすぐ見つけて印刷できる形にしたい。', fs:'単元や力をつけたい領域に合うプリントを1つ探し、授業か宿題で使う。', to:'GitHub Pages, JavaScript', tg:'国語, プリント, 作文, 神教材製作所', url:'a/kokugo-gallery.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'NotebookLMで校内研修の問いを作る', ar:'研修資料とアンケート結果をNotebookLMに入れて、対話用の問いを生成する流れ。', pr:'研修資料はあるが、先生たちが自分事として話せる問いを作るのが難しい。', fs:'研修で使う資料を3つNotebookLMに入れて「先生たちが自分事として話せる問いを10個出して」と聞く。', to:'NotebookLM, Google Docs', tg:'校内研修, NotebookLM, 問いづくり', url:'a/notebooklm-kenshu-toi.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'FormsとSheetsで振り返りを見える化する', ar:'Googleフォームで振り返りを集め、スプレッドシートで分類して見える化する。', pr:'子どもの振り返りを毎回読むのに時間がかかり、次の授業に生かしきれない。', fs:'フォームに「今日わかったこと」「まだわからないこと」を入れ、Geminiに分類の観点を考えてもらう。', to:'Google Forms, Google Sheets, Gemini', tg:'振り返り, 形成的評価, 校務改善', url:'a/forms-furikaeri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'}
 ];
 
 const VILLAGES = { gemini:'ひらめき広場', notebook:'読み解き書斎', workspace:'校務の工房', materials:'教材の畑' };
@@ -180,8 +256,13 @@ function matches(it){
 function cardHtml(it){
   const tools = list(it.to).slice(0,3).map(t=>`<span class="chip">${esc(t)}</span>`).join('');
   const tags = list(it.tg).slice(0,4).map(t=>`<span class="tg">#${esc(t)}</span>`).join('');
-  const use = it.url ? `<a class="use" href="${esc(it.url)}" target="_blank" rel="noopener">使ってみる<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>` : `<span class="author">リンクは準備中</span>`;
-  return `<article class="card">
+  const internal = it.url && !/^https?:/.test(it.url);
+  const use = it.url
+    ? (internal
+        ? `<a class="use" href="${esc(it.url)}">詳細 →</a>`
+        : `<a class="use" href="${esc(it.url)}" target="_blank" rel="noopener">使ってみる<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`)
+    : `<span class="author">リンクは準備中</span>`;
+  return `<article class="card" data-v="${esc(it.v)}">
     <div class="b">
       <div class="chips"><span class="vil">${esc(VILLAGES[it.v])}</span>${tools}<span class="chip sch">${esc(it.sc)}</span></div>
       <h3>${esc(it.t)}</h3>
@@ -211,6 +292,16 @@ document.querySelectorAll('.abtn').forEach(b => b.addEventListener('click', () =
   render();
 }));
 render();
+
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
 </script>
 
 </body>

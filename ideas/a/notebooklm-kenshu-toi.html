@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NotebookLMで校内研修の「問い」を作る ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="研修資料とアンケート結果をNotebookLMに入れて、先生たちが自分事として話せる問いを作る手順。プロンプト例つき。">
+<style>
+  :root { --ink:#15181c; --sub:#767b83; --accent:#0e8a6d; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  h3 { font-size:15.5px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .prompt { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:16px 18px; margin:14px 0 20px; font-size:14px; line-height:1.9; white-space:pre-wrap; font-family:inherit; }
+  .prompt b { display:block; font-size:11px; letter-spacing:0.16em; color:var(--sub); margin-bottom:6px; }
+  .tip { background:#f2faf7; border:1px solid #bfe3d6; padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:#fff; background:var(--black); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ 読み解き書斎</div>
+
+  <span class="kicker">AI活用レシピ｜NotebookLM</span>
+  <h1>NotebookLMで校内研修の「問い」を作る</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 所要時間：じゅんび10分 ／ 使うもの：NotebookLM・研修資料・アンケート結果</p>
+
+  <p class="lead">研修資料はそろっている。でも当日、先生たちが「自分の教室の話」として語り出す問いがない——。その最後のひと押しを、NotebookLMにやってもらうレシピです。</p>
+
+  <h2>なぜNotebookLMなのか</h2>
+  <p>ふつうのチャットAIに「研修の問いを作って」と頼むと、どこの学校にも当てはまる一般論が返ってきます。NotebookLMは<strong>入れた資料の中身だけを根拠に</strong>答えるので、自校のアンケートの言葉や、実際の研修資料の文脈に沿った問いが出てきます。ここが決定的なちがいです。</p>
+
+  <h2>手順（3ステップ）</h2>
+  <ol class="steps">
+    <li><strong>ノートブックを作り、資料を入れる。</strong>研修で使うスライドや指導案、そして事前アンケートの結果（スプレッドシートならPDFかDocsに書き出し）を、ソースとして3つほど追加します。</li>
+    <li><strong>問いを出してもらう。</strong>下のプロンプトを貼り付けます。</li>
+    <li><strong>10個から3個にしぼる。</strong>出てきた問いを全部使わないのがコツ。「これは職員室で本当に声が出るか？」で自分の感覚でしぼり、言葉を現場の言い方に直します。</li>
+  </ol>
+
+  <div class="prompt"><b>PROMPT（コピーして使う）</b>あなたは校内研修のファシリテーターです。ソースの研修資料とアンケート結果をふまえて、参加する先生たちが「自分の教室のこと」として話し出せる問いを10個作ってください。
+
+条件：
+・アンケートに実際に出てきた言葉や困りごとを、問いの中に織り込むこと
+・「〜すべきか」ではなく「あなたの教室では〜」の形にすること
+・5分で話せる小さい問いと、20分話せる深い問いを混ぜること
+・それぞれの問いに、どのアンケート回答をもとにしたかを一言そえること</div>
+
+  <div class="tip"><b>つまずきポイント：</b>アンケート結果に個人名や学級名が入ったまま読み込ませない。ソースに入れる前に、名前の列を消したコピーを作ってから。これは生成AI活用の校内ルールづくりでも、そのまま例題になります。</div>
+
+  <h2>研修当日の使い方</h2>
+  <p>しぼった3つの問いを、研修の「はじめ・なか・おわり」に1つずつ置きます。問いはスライドに大きく1行だけ。NotebookLMが作ったことは伝えても隠してもかまいませんが、伝えると「これ、うちでも使えるかも」という二次的な研修効果が生まれます。実際、この方法自体が生成AI研修の実演になります。</p>
+
+  <a class="back" href="../">← アイデア村で他のレシピを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+</body>
+</html>

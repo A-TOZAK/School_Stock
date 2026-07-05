@@ -10,10 +10,27 @@
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
   a { color:var(--accent); text-decoration:none; }
-  .topbar { background:var(--black); color:#fff; }
-  .topbar-in { max-width:960px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
-  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; }
-  .topbar a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.14em; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
   .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
   .hero { position:relative; background:#fdfdfb; border-bottom:1px solid var(--ink); overflow:hidden; }
   .hero-img { display:block; width:100%; height:auto; }
@@ -34,7 +51,8 @@
   .shelf-head .sn { font-family:Georgia,serif; font-style:italic; font-size:20px; font-weight:700; color:var(--accent); }
   .shelf-head .sl { font-size:11.5px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
   .shelf { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
-  .item { display:flex; flex-direction:column; border:1px solid var(--ink); color:inherit; }
+  .item { display:flex; flex-direction:column; border:1px solid var(--ink); color:inherit; transition:box-shadow .15s; }
+  .item:hover { box-shadow:4px 4px 0 var(--ink); }
   .item .thumb { aspect-ratio:16/10; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; display:flex; align-items:center; justify-content:center; }
   .item .thumb img { width:100%; height:100%; object-fit:cover; }
   .item .b { padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
@@ -46,33 +64,77 @@
   .soon .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:var(--sub); border:1px solid var(--line); padding:3px 10px; margin-bottom:10px; }
   .soon b { font-size:16px; font-weight:700; color:var(--ink); }
   .soon span { font-size:13px; margin-top:4px; }
+  .links { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:16px; }
+  .lk { display:flex; flex-direction:column; gap:4px; border:1px solid var(--line); padding:18px 20px; color:inherit; transition:border-color .15s; }
+  .lk:hover { border-color:var(--ink); }
+  .lk .lt { font-size:10.5px; font-weight:700; letter-spacing:0.16em; color:var(--sub); }
+  .lk b { font-size:15.5px; font-weight:700; }
+  .lk span { font-size:12.5px; color:var(--sub); line-height:1.8; }
+  .lk .go { font-size:12.5px; font-weight:700; color:var(--accent); margin-top:2px; }
   .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
-  .foot-in { max-width:960px; margin:0 auto; padding:30px 24px; font-size:12.5px; line-height:2; display:flex; flex-wrap:wrap; justify-content:space-between; gap:12px; }
-  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; }
-  .foot a { color:#d7dade; text-decoration:underline; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
 </style>
 </head>
 <body>
 
 <div class="topbar">
   <div class="topbar-in">
-    <div class="wordmark">SCHOOL STOCK</div>
-    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <a class="wordmark" href="./">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="tools/pdf-toolbox/">ツール</a>
+      <a href="prints/kokugo/">プリント</a>
+      <a href="sozai/">素材</a>
+      <a href="ideas/">アイデア村</a>
+      <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">News Letter ↗</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
   </div>
 </div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="./">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">TOOL</div>
+    <a href="tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="prints/kokugo/">国語プリント<small>全79枚・無料</small></a>
+    <a class="sub2" href="prints/kokugo/#sec-yomu">読解（読むこと）</a>
+    <a class="sub2" href="prints/kokugo/#sec-kotoba">言葉・語句</a>
+    <a class="sub2" href="prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">IDEAS</div>
+    <a href="ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗<small>先生のための最新情報（毎週）</small></a>
+    <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
+    <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗<small>コピペで使えるプロンプト集</small></a>
+    <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗<small>GEG Fukuoka City のGem集</small></a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
 
 <section class="hero">
   <img class="hero-img" src="assets/hero-shelf.png" alt="現役の教員がつくった道具と教材が並ぶ、棚と机のイラスト">
   <div class="hero-copy"><div class="hero-inner">
     <span class="kicker">先生のための、道具と教材の棚</span>
     <h1>現役の教員がつくった、<br>無料の道具と教材の棚。</h1>
-    <p class="lead">授業と校務を少し軽くする、ツール・プリント・実践のおすそ分け。完成品は、いつも無料です。</p>
+    <p class="lead">授業と校務を少し軽くする、ツール・プリント・素材・実践のおすそ分け。完成品は、いつも無料です。</p>
   </div></div>
 </section>
 
 <div class="container">
 
-  <div class="shelf-head"><span class="sn">01</span><span class="sl">SHELF</span></div>
+  <div class="shelf-head"><span class="sn">01</span><span class="sl">SHELF｜棚の中</span></div>
   <div class="shelf">
 
     <a class="item" href="tools/pdf-toolbox/">
@@ -90,7 +152,17 @@
       <div class="b">
         <span class="tag">PRINTS｜プリント</span>
         <h2>国語プリント</h2>
-        <p>読解・言葉・作文の3分野、全学年ぶん。そのまま印刷して使える、全79枚。すべて自作・無料です。</p>
+        <p>読解・言葉・作文の3分野、全学年ぶん。そのまま印刷して使える、全79枚。検索と解説ページつき。すべて自作・無料です。</p>
+        <span class="go">くわしく見る →</span>
+      </div>
+    </a>
+
+    <a class="item" href="sozai/">
+      <div class="thumb"><img src="sozai/img/64_grade5_physics_pendulum_conditions_parts_sheet.jpg" alt="理科の素材シートの見本（ふりこの条件）"></div>
+      <div class="b">
+        <span class="tag">MATERIALS｜素材</span>
+        <h2>授業イラスト素材集</h2>
+        <p>スライドやプリントに貼って、必要なパーツだけ切り取って使えるイラスト素材シート。まずは理科（3年〜6年・全56枚）から。</p>
         <span class="go">くわしく見る →</span>
       </div>
     </a>
@@ -102,7 +174,7 @@
       <div class="b">
         <span class="tag">IDEAS｜実践</span>
         <h2>実践アイデア村</h2>
-        <p>Gemini・NotebookLM・Google Workspaceで生まれた授業や校務のアイデア集。見つけて、持ち帰って、明日の教室で試せます。</p>
+        <p>授業や校務を軽くする実践アイデア集。ツール・教材・AI活用レシピを、見つけて、持ち帰って、明日の教室で試せます。</p>
         <span class="go">くわしく見る →</span>
       </div>
     </a>
@@ -115,14 +187,83 @@
 
   </div>
 
+  <div class="shelf-head"><span class="sn">02</span><span class="sl">LEARN｜つながる・まなぶ</span></div>
+  <div class="links">
+    <a class="lk" href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">
+      <span class="lt">NEWS LETTER</span>
+      <b>GEG Chikuho News Letter</b>
+      <span>先生のための教育×テクノロジーの最新情報を、読みやすくまとめてお届け。最新号はこちらから。</span>
+      <span class="go">最新号を読む ↗</span>
+    </a>
+    <a class="lk" href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">
+      <span class="lt">COMMUNITY</span>
+      <b>GEG Chikuho</b>
+      <span>筑豊の先生190名+が集うGoogle Educator Group。過去の研修・イベントの記録もこちら。</span>
+      <span class="go">コミュニティを見る ↗</span>
+    </a>
+    <a class="lk" href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">
+      <span class="lt">PROMPTS</span>
+      <b>AIプロンプトライブラリ</b>
+      <span>Gemini・NotebookLMなどでコピペして使える、授業・校務のプロンプト集。小中高の教科別も。</span>
+      <span class="go">ライブラリを開く ↗</span>
+    </a>
+    <a class="lk" href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">
+      <span class="lt">GEMINI</span>
+      <b>Gemひろば（GEG Fukuoka City）</b>
+      <span>先生たちが作ったGemini の「Gem」が集まる広場。Gemini活用のアイデアはこちらへ。</span>
+      <span class="go">Gemひろばを見る ↗</span>
+    </a>
+    <a class="lk" href="https://note.com/tozaki_edu/n/nba8d439b7040" target="_blank" rel="noopener">
+      <span class="lt">TRAINING</span>
+      <b>研修資料「小学校の学びが変わるICTと生成AIの活用」</b>
+      <span>校内研修でそのまま使える資料とプロンプト例。過去の研修のふりかえりにも。</span>
+      <span class="go">資料を読む ↗</span>
+    </a>
+    <a class="lk" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">
+      <span class="lt">NOTE</span>
+      <b>note（外﨑顯博）</b>
+      <span>教材づくりの裏側、授業・校務のGAS、実践記事。新しい教材のお知らせもここから。</span>
+      <span class="go">noteを読む ↗</span>
+    </a>
+  </div>
+
 </div>
 
 <footer class="foot">
   <div class="foot-in">
-    <span><span class="fw">SCHOOL STOCK</span>　先生向けの、現場で使える教材・便利ツールの棚。</span>
-    <span>© School Stock（外﨑顯博）　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></span>
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="./">棚トップ</a>
+        <a href="tools/pdf-toolbox/">先生のPDF道具箱</a>
+        <a href="prints/kokugo/">国語プリント</a>
+        <a href="sozai/">授業イラスト素材集</a>
+        <a href="ideas/">実践アイデア村</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
+        <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
   </div>
 </footer>
+
+<script>
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
 
 </body>
 </html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FormsとSheetsで振り返りを見える化する ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="Googleフォームで子どもの振り返りを集め、スプレッドシートとGeminiで次の授業に生かす手順。質問設計とプロンプト例つき。">
+<style>
+  :root { --ink:#15181c; --sub:#767b83; --accent:#c2571a; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .prompt { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:16px 18px; margin:14px 0 20px; font-size:14px; line-height:1.9; white-space:pre-wrap; font-family:inherit; }
+  .prompt b { display:block; font-size:11px; letter-spacing:0.16em; color:var(--sub); margin-bottom:6px; }
+  .tip { background:#fdf5ef; border:1px solid #ecd0bb; padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  table { width:100%; border-collapse:collapse; margin:12px 0 20px; font-size:13.5px; }
+  th,td { border:1px solid var(--line); padding:8px 12px; text-align:left; vertical-align:top; }
+  th { background:var(--wash); font-size:12px; letter-spacing:0.08em; }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:#fff; background:var(--black); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ 校務の工房</div>
+
+  <span class="kicker">AI活用レシピ｜Forms × Sheets × Gemini</span>
+  <h1>FormsとSheetsで振り返りを見える化する</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 所要時間：初回20分・2回目から0分 ／ 使うもの：Google Forms・Sheets・Gemini</p>
+
+  <p class="lead">子どもの振り返り、毎回ぜんぶ読むのはしんどい。でも読まずに次の授業をするのはもっとこわい。「集める→ながめる→次の一手」を1つの流れにするレシピです。</p>
+
+  <h2>質問は2つだけにする</h2>
+  <p>フォームの質問を増やすほど、子どもの入力も先生の分析も重くなります。毎時間まわすなら、この2つで十分です。</p>
+  <table>
+    <tr><th>質問</th><th>形式</th><th>ねらい</th></tr>
+    <tr><td>今日わかったこと</td><td>記述（1〜2行）</td><td>学びの自覚化。授業のねらいとのずれが見える</td></tr>
+    <tr><td>まだわからないこと・もやもや</td><td>記述（1〜2行）</td><td>次の授業の出発点。ここが宝の山</td></tr>
+  </table>
+
+  <h2>手順（3ステップ）</h2>
+  <ol class="steps">
+    <li><strong>フォームを作り、回答先をスプレッドシートにする。</strong>クラスルームに貼っておけば、授業の最後5分でスマホ・タブレットから入力できます。フォームは単元でコピーせず、1つを使い回すと蓄積が1枚のシートにたまります。</li>
+    <li><strong>授業後、シートを開いてGeminiに分類させる。</strong>Sheets横のGeminiパネル（または回答をコピーしてGeminiへ）で、下のプロンプトを使います。</li>
+    <li><strong>「次の一手」を1つだけ決める。</strong>分類結果から、次の授業の最初の5分で拾う「もやもや」を1つ選びます。全部に応えようとしないのが続けるコツです。</li>
+  </ol>
+
+  <div class="prompt"><b>PROMPT（コピーして使う）</b>この振り返りの回答一覧を読んで、次の授業の準備をします。
+
+1. 「まだわからないこと」を、内容のまとまりごとに3〜5グループに分類して、それぞれに短い見出しをつけてください
+2. いちばん人数が多いグループと、人数は少なくても学習のかなめになりそうなグループを1つずつ挙げてください
+3. そのグループの子たちに向けて、次の授業の最初の5分でできる手立てを2案、具体的に提案してください
+
+注意：子どもの名前には触れず、回答の内容だけを扱ってください。</div>
+
+  <div class="tip"><b>つまずきポイント：</b>回答に名前列があるままAIに渡さない。シートの「わかったこと」「わからないこと」の2列だけをコピーして渡します。学年で共有するときも同じルールで。</div>
+
+  <h2>続けるとどうなるか</h2>
+  <p>1枚のシートに単元まるごとの振り返りがたまるので、単元末には「この子のもやもやが、いつ、どう解けたか」が縦に読めるようになります。所見や面談の材料としても、そのまま使えます。分析はAIに、判断は先生に——この分担が、毎日続けられる形です。</p>
+
+  <a class="back" href="../">← アイデア村で他のレシピを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+</body>
+</html>
