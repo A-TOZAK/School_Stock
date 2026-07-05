@@ -209,6 +209,8 @@ def topbar(rel):
     <a href="{rel}/sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
     <a href="{rel}/ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="{rel}/about/">このサイトについて<small>つくっている人と思い</small></a>
     <div class="dr-sec">つながる</div>
     <a href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">GEG Chikuho News Letter ↗<small>先生のための最新情報（毎週）</small></a>
     <a href="{LINK_GEG}" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
@@ -232,6 +234,7 @@ def footer(rel):
         <a href="{rel}/prints/kokugo/">国語プリント</a>
         <a href="{rel}/sozai/">授業イラスト素材集</a>
         <a href="{rel}/ideas/">実践アイデア村</a>
+        <a href="{rel}/about/">このサイトについて</a>
       </div>
       <div><b>つながる</b>
         <a href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
