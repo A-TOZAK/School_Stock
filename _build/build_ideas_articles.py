@@ -123,7 +123,7 @@ ARTICLES = [
   steps=["副読本を開き、単元に合うページを1つ選ぶ",
          "「このページから何が分かる？」の問いとセットで提示する",
          "分かったことをノートやスライドにまとめさせる"],
-  tip="地域教材づくりは、他の市町村でも同じ型で再現できます。「自分の町版を作りたい」場合の相談も歓迎です。",
+  tip="地域教材づくりは、他の市町村でも同じ型で再現できます。作り方の裏側はnote（tozaki_edu）に書いています。",
   url="https://github.com/A-TOZAK/iizuka-fukudokuhon", urlLabel="副読本を見る"),
 
  dict(slug="oita-source-mini", v="materials", kicker="実践アイデア｜社会科",
