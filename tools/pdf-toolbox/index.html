@@ -74,6 +74,12 @@
   .cut .x { color: var(--danger); font-size: 26px; font-weight: 900; line-height: 1; }
   .cut .cl { font-size: 10px; color: var(--danger); font-weight: 700; letter-spacing: 0.1em; }
   .dots { letter-spacing: 3px; color: #c3c7cc; }
+  @media (max-width: 480px) {
+    .diagram { padding: 24px 12px; gap: 6px; }
+    .node { flex: 1 1 0; min-width: 0; }
+    .node .nl { white-space: normal; text-align: center; }
+    .dots { letter-spacing: 1px; }
+  }
 
   /* ── 根拠ボックス ── */
   .src { background: var(--wash); border-top: 1px solid var(--ink); padding: 18px 20px 16px; margin: 24px 0 10px; font-size: 14px; line-height: 2.05; }
