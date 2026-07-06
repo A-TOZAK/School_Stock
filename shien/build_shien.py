@@ -231,6 +231,17 @@ a { color:var(--accent); text-decoration:none; }
 .foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
 .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
 .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+/* --- カテゴリ・サイドバー --- */
+.layout { display:flex; gap:34px; align-items:flex-start; }
+.secs { flex:1; min-width:0; }
+.catrail { position:sticky; top:64px; width:190px; flex:0 0 190px; border-top:2px solid var(--ink); padding-top:14px; margin-top:36px; }
+.catrail .crlabel { font-size:10.5px; font-weight:700; letter-spacing:.22em; color:var(--sub); margin-bottom:8px; }
+.catrail a { display:flex; align-items:center; gap:9px; padding:8px 0; font-size:13px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.catrail a:hover { color:var(--accent); }
+.catrail .cdot { width:9px; height:9px; flex:0 0 9px; }
+.catrail .cname { flex:1; }
+.catrail .cc { font-family:Georgia,serif; font-style:italic; color:var(--sub); font-size:12px; }
+@media (max-width:860px){ .layout { display:block; } .catrail { display:none; } }
 /* --- カード操作（解説／PDF） --- */
 .th-btn { display:block; width:100%; border:none; background:none; padding:0; cursor:pointer; font-family:inherit; text-align:left; }
 .pacts { display:flex; gap:8px; margin-top:2px; flex-wrap:wrap; }
@@ -269,6 +280,13 @@ DRAWER_SECS = "".join(
     f'<a class="sub2" href="#sec-{s["key"]}">{E(s["head"])}</a>' for s in sections)
 
 MODALS = "".join(modal_html(it) for s in sections for it in s["items"] if it.get("modal"))
+
+CATRAIL = ('<aside class="catrail"><div class="crlabel">カテゴリ</div>'
+    + "".join(
+        f'<a href="#sec-{s["key"]}"><span class="cdot" style="background:{s["color"]}"></span>'
+        f'<span class="cname">{E(s["head"])}</span><span class="cc">{len(s["items"])}</span></a>'
+        for s in sections)
+    + '</aside>')
 
 PAGE = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -325,7 +343,10 @@ PAGE = f"""<!DOCTYPE html>
     <div class="note-use">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——
     その手続きとセットで使ってください（使う場と根拠は「先生用シート」にまとめてあります）。</div>
   </div>
-  {"".join(section_html(s) for s in sections)}
+  <div class="layout">
+  {CATRAIL}
+  <div class="secs">{"".join(section_html(s) for s in sections)}</div>
+  </div>
 </div>
 
 <div class="m-scrim" id="mScrim"></div>
