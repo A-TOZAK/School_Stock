@@ -3,7 +3,7 @@
 """
 実践アイデア村：詳細記事ジェネレータ
 - ideas/a/ に NotebookLM記事と同じ体裁の詳細ページを生成する。
-- 手書き記事（notebooklm-kenshu-toi.html / forms-furikaeri.html）は対象外（上書きしない）。
+- 手書き記事（notebooklm-kenshu-toi.html / forms-furikaeri.html / iizuka-fukudokuhon.html）は対象外（上書きしない）。
 - 使い方: python3 _build/build_ideas_articles.py
 """
 import html
@@ -114,17 +114,7 @@ ARTICLES = [
   tip="レビューは「どの学年・どの単元・どのレベルの何番か」を添えるだけで反映が速くなります。",
   url="https://note.com/tozaki_edu/n/n921c460a76e9", urlLabel="プリント集を見る"),
 
- dict(slug="iizuka-fukudokuhon", v="materials", kicker="実践アイデア｜地域教材",
-  title="飯塚市 地域教材デジタル副読本",
-  meta="対象：小3〜小4 社会科・総合 ／ 形式：Web教材",
-  lead="地域学習の資料は、紙の副読本と配布プリントとWebにバラバラに散らばりがちです。飯塚市の地域学習に使える内容を、子どもが自分の端末で見られるデジタル副読本として整理しました。",
-  can="地域の産業・歴史・くらしに関するページを、子どもが見やすいWeb形式で提示できます。授業では「問い」とセットで1ページを示す使い方ができます。",
-  when="地域学習で子どもに資料を持たせたいが、紙の資料が足りない・古いとき。端末を使った調べ学習の「安全な行き先」を用意したいとき。",
-  steps=["副読本を開き、単元に合うページを1つ選ぶ",
-         "「このページから何が分かる？」の問いとセットで提示する",
-         "分かったことをノートやスライドにまとめさせる"],
-  tip="地域教材づくりは、他の市町村でも同じ型で再現できます。作り方の裏側はnote（tozaki_edu）に書いています。",
-  url="https://github.com/A-TOZAK/iizuka-fukudokuhon", urlLabel="副読本を見る"),
+ # iizuka-fukudokuhon は手書き記事（ideas/a/iizuka-fukudokuhon.html）に格上げ済み。ここでは生成しない。
 
  dict(slug="oita-source-mini", v="materials", kicker="実践アイデア｜社会科",
   title="中学社会科向け 資料読解ミニプリント集",

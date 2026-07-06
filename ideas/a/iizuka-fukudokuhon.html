@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>飯塚市 地域教材デジタル副読本 ── 実践アイデア村｜School Stock</title>
-<meta name="description" content="地域学習の資料は、紙の副読本と配布プリントとWebにバラバラに散らばりがちです。飯塚市の地域学習に使える内容を、子どもが自分の端末で見られるデジタル副読本として整理しました。">
+<title>飯塚市の「市の様子」を、書き込めるデジタル副読本にした ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="3年社会科「市の様子」の地域資料を、ブラウザで開いて電子黒板や一人一台端末に書き込めるデジタル副読本に整理しました。全9ページ・ペン・蛍光ペン・レーザーポインターつき。作り方の型は他の市町村でも再現できます。">
 <style>
   :root { --ink:#15181c; --sub:#767b83; --accent:#7a4bd0; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -23,7 +23,12 @@
   .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
   .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
   h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  h3 { font-size:15.5px; font-weight:700; margin:22px 0 6px; }
   p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.feat { list-style:none; margin:14px 0 20px; }
+  ul.feat li { position:relative; padding:0 0 10px 20px; font-size:15px; }
+  ul.feat li::before { content:""; position:absolute; left:0; top:14px; width:7px; height:7px; background:var(--accent); border-radius:50%; }
+  ul.feat b { color:var(--ink); }
   ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
   ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
   ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
@@ -49,27 +54,37 @@
   <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ 教材の畑</div>
 
   <span class="kicker">実践アイデア｜地域教材</span>
-  <h1>飯塚市 地域教材デジタル副読本</h1>
-  <p class="meta">作：外﨑顯博 / 小学校 ／ 対象：小3〜小4 社会科・総合 ／ 形式：Web教材</p>
+  <h1>飯塚市の「市の様子」を、書き込めるデジタル副読本にした</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 対象：小3 社会科「市の様子」 ／ 形式：ブラウザで開くWeb教材（全9ページ）</p>
 
-  <p class="lead">地域学習の資料は、紙の副読本と配布プリントとWebにバラバラに散らばりがちです。飯塚市の地域学習に使える内容を、子どもが自分の端末で見られるデジタル副読本として整理しました。</p>
+  <p class="lead">3年生の社会科「市の様子」は、地域の資料がいのちです。でも副読本は数が足りず、配るプリントは散らばり、Webの資料は子どもに見せるには余計なものが多い。飯塚市に取材して集めた資料を、ブラウザで開いて電子黒板や一人一台端末にそのまま書き込める「デジタル副読本」に一つにまとめました。</p>
 
-  <h2>これでできること</h2>
-  <p>地域の産業・歴史・くらしに関するページを、子どもが見やすいWeb形式で提示できます。授業では「問い」とセットで1ページを示す使い方ができます。</p>
+  <h2>どんな教材か</h2>
+  <p>飯塚市の「市の様子」を学ぶための全9ページの資料集を、1つのWebページにしたものです。リンクを開くだけで動くので、インストールも配布ファイルも要りません。学校の端末でも、電子黒板でも、同じ画面が開きます。</p>
+  <p>ページには、土地の使われ方・交通のようす・市役所の仕事・コンパクトシティ・公共施設・古くから残る建物（長崎街道の内野宿や旧伊藤伝右衛門邸など）といった、単元の流れに沿った内容が並んでいます。市役所への取材や提供資料、自分で撮った地域の写真をもとに作りました。</p>
 
-  <h2>こんなときに</h2>
-  <p>地域学習で子どもに資料を持たせたいが、紙の資料が足りない・古いとき。端末を使った調べ学習の「安全な行き先」を用意したいとき。</p>
+  <h2>ふつうのPDFと何がちがうか</h2>
+  <p>いちばんの特徴は、資料の上に直接書き込めることです。電子黒板で説明しながら印をつけたり、子どもが自分の端末で気づいたところに線を引いたりできます。</p>
+  <ul class="feat">
+    <li><b>ペン・蛍光ペン</b>で、着目させたい場所を囲む・線を引く（色と太さも選べます）</li>
+    <li><b>レーザーポインター</b>で、電子黒板で「ここを見て」を一瞬で示す</li>
+    <li><b>拡大・全画面</b>で、地図や写真の細かいところまで大きく見せる</li>
+    <li>書き込みは<b>消す・元に戻す</b>ができるので、クラスをまたいで何度でも使える</li>
+  </ul>
 
-  <h2>まず試すなら（3ステップ）</h2>
+  <h2>授業での使い方（3ステップ）</h2>
   <ol class="steps">
-    <li>副読本を開き、単元に合うページを1つ選ぶ</li>
-    <li>「このページから何が分かる？」の問いとセットで提示する</li>
-    <li>分かったことをノートやスライドにまとめさせる</li>
+    <li>その時間の単元に合うページを1つ開く（全部を一度に見せない）</li>
+    <li>「このページから何が分かる？」「気づいたことは？」の問いとセットで提示する</li>
+    <li>子どもが見つけたことに、ペンや蛍光ペンで印をつけながら全体で確かめる</li>
   </ol>
-  <div class="tip"><b>コツ：</b>地域教材づくりは、他の市町村でも同じ型で再現できます。作り方の裏側はnote（tozaki_edu）に書いています。</div>
+  <div class="tip"><b>コツ：</b>資料を「見せて終わり」にしないために、1ページにつき問いは1つに絞ります。書き込み機能は先生が独占せず、子どもに端末で書かせて「どこに線を引いた？」を交流させると、同じ資料から読み取りの差が生まれて授業が動きます。</div>
+
+  <h2>他の市町村でも同じ型で作れる</h2>
+  <p>これは飯塚市版ですが、仕組みは「地域の資料画像を並べて、書き込み機能をのせたビューア」です。自分の市町村の資料に差し替えれば、同じ型でその地域の副読本が作れます。作り方の裏側と、取材から教材化までの流れはnote（tozaki_edu）に書いています。</p>
 
   <h2>リンク</h2>
-  <a class="cta" href="https://github.com/A-TOZAK/iizuka-fukudokuhon" target="_blank" rel="noopener">副読本を見る ↗</a>
+  <a class="cta" href="https://a-tozak.github.io/iizuka-fukudokuhon/" target="_blank" rel="noopener">副読本を開く ↗</a>
 
   <br><a class="back" href="../">← アイデア村で他のアイデアを見る</a>
 </div>
