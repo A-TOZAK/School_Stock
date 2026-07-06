@@ -19,6 +19,7 @@ PDFDIR.mkdir(exist_ok=True); THUMB.mkdir(exist_ok=True)
 CARDS = json.loads((SRC04 / "cards12.json").read_text(encoding="utf-8"))
 WAKEI = json.loads((SRC06 / "wakei.json").read_text(encoding="utf-8"))
 CATS = CARDS["categories"]
+REFERENCES = CARDS.get("references", {})
 
 def plain(s):
     """ルビ《》・空白を除いた素の文字列"""
@@ -72,7 +73,8 @@ for ck, cv in CATS.items():
                           tag=cv["label"], tagcolor=cv["color"], pdf=pdf, thumb=th,
                           modal=True, aikotoba=plain(c["aikotoba"]),
                           steps=plain_steps(c["steps"]), badge=badge,
-                          bamen=c.get("bamen", ""), naze=c.get("naze", "")))
+                          bamen=c.get("bamen", ""), naze=c.get("naze", ""),
+                          refs=c.get("refs", [])))
     sections.append(dict(key=f"cat-{ck}", head=cv["label"], en=cv["sub"],
                          color=cv["color"], items=items))
 
@@ -146,9 +148,23 @@ def card_html(it):
       f'<a class="dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
       f'</div></div>')
 
+def ref_links(keys):
+    """参照キー配列 → <a>リンクのHTML（実在URLのみ・REFERENCESに無いキーは黙って除外）"""
+    items = []
+    for k in keys:
+        r = REFERENCES.get(k)
+        if not r:
+            continue
+        label, url = r
+        items.append(f'<li><a href="{E(url)}" target="_blank" rel="noopener">{E(label)}<span class="ext"> ↗</span></a></li>')
+    return "".join(items)
+
 def modal_html(it):
     steps = "".join(f'<li>{E(s)}</li>' for s in it["steps"])
     badge = f'<span class="m-badge">{E(it["badge"])}</span>' if it.get("badge") else ""
+    refs = ref_links(it.get("refs", []))
+    refs_block = (f'<div class="m-refs"><span class="m-lbl">参考にした研究</span><ul>{refs}</ul>'
+                  f'<p class="m-refnote">研究の知見をかみくだいて要約したものです。くわしくは各リンク先の原典を参照。</p></div>') if refs else ""
     return (
       f'<div class="modal" id="m-{E(it["id"])}" role="dialog" aria-modal="true" aria-label="{E(it["title"])}">'
       f'<div class="m-card" style="--tc:{it["tagcolor"]}">'
@@ -161,6 +177,7 @@ def modal_html(it):
       f'<ol class="m-steps">{steps}</ol>'
       f'<div class="m-block"><span class="m-lbl">こんなときに使う</span><p>{E(it["bamen"])}</p></div>'
       f'<div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>{E(it["naze"])}</p></div>'
+      f'{refs_block}'
       f'<a class="m-dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}カードのPDFをひらく</a>'
       f'<p class="m-note">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——その手続きとセットで使ってください。</p>'
       f'</div></div></div>')
@@ -272,7 +289,26 @@ a { color:var(--accent); text-decoration:none; }
 .m-dl { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700; color:#fff; background:var(--ink); border:1px solid var(--ink); padding:9px 18px; margin-top:2px; }
 .m-dl:hover { background:#000; }
 .m-dl svg { width:15px; height:15px; }
+.m-refs { border-top:1px solid var(--line); margin-top:18px; padding-top:14px; }
+.m-refs .m-lbl { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--ink); margin-bottom:8px; }
+.m-refs ul { list-style:none; display:flex; flex-direction:column; gap:6px; margin-bottom:8px; }
+.m-refs li { font-size:12.5px; line-height:1.55; padding-left:14px; position:relative; }
+.m-refs li::before { content:"—"; position:absolute; left:0; color:var(--sub); }
+.m-refs a { color:var(--accent); text-decoration:none; }
+.m-refs a:hover { text-decoration:underline; text-underline-offset:2px; }
+.m-refs .ext { font-size:10px; color:var(--sub); }
+.m-refnote { font-size:11px; color:var(--sub); line-height:1.6; }
 .m-note { margin-top:16px; font-size:11.5px; line-height:1.75; color:var(--sub); background:var(--wash); padding:10px 14px; }
+/* --- 参考文献セクション（ページ下部） --- */
+.refsection { margin-top:52px; border-top:2px solid var(--ink); padding-top:8px; }
+.refsection .reflead { font-size:13px; line-height:1.9; color:#3d4148; max-width:720px; margin:6px 0 18px; }
+.reflist { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 28px; }
+.reflist li { font-size:12.5px; line-height:1.55; padding-left:15px; position:relative; }
+.reflist li::before { content:"—"; position:absolute; left:0; color:var(--sub); }
+.reflist a { color:var(--accent); }
+.reflist a:hover { text-decoration:underline; text-underline-offset:2px; }
+.reflist .ext { font-size:10px; color:var(--sub); }
+@media (max-width:680px){ .reflist { grid-template-columns:1fr; } }
 @media (max-width:520px){ .modal { padding:20px 10px; } .m-head,.m-body { padding-left:18px; padding-right:18px; } }
 """
 
@@ -280,6 +316,21 @@ DRAWER_SECS = "".join(
     f'<a class="sub2" href="#sec-{s["key"]}">{E(s["head"])}</a>' for s in sections)
 
 MODALS = "".join(modal_html(it) for s in sections for it in s["items"] if it.get("modal"))
+
+# 全出典リスト（ページ下部）——cards12.json の references をそのまま実URLで列挙
+REFLIST = "".join(
+    f'<li><a href="{E(url)}" target="_blank" rel="noopener">{E(label)}<span class="ext"> ↗</span></a></li>'
+    for label, url in REFERENCES.values())
+REFSECTION = (
+    '<section class="refsection" id="references">'
+    '<div class="sh"><span class="sbar" style="background:#0e0f11"></span>'
+    '<h2>参考にした研究・資料</h2>'
+    '<span class="sen">各カードの「なぜ効くのか」の根拠</span></div>'
+    '<p class="reflead">このカード集は、下の研究・資料で効果が確認された支援だけを土台にしています。'
+    'カードの解説は知見をかみくだいた要約で、正確な内容は各リンク先の原典をご確認ください。'
+    '（英語の原典を含みます）</p>'
+    f'<ul class="reflist">{REFLIST}</ul>'
+    '</section>')
 
 CATRAIL = ('<aside class="catrail"><div class="crlabel">カテゴリ</div>'
     + "".join(
@@ -347,6 +398,7 @@ PAGE = f"""<!DOCTYPE html>
   {CATRAIL}
   <div class="secs">{"".join(section_html(s) for s in sections)}</div>
   </div>
+  {REFSECTION}
 </div>
 
 <div class="m-scrim" id="mScrim"></div>
