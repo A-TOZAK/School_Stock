@@ -1,0 +1,275 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+"""
+School Stock 支援カード棚ビルダー
+支援カード集プロジェクト（04_エビデンス版・06_話型集）から、掲示カード23・机上ミニ6・
+先生用2・話型4のPDFとサムネイルを shien/ に取り込み、一覧ページ index.html を生成する。
+使い方: python3 shien/build_shien.py
+"""
+import json, re, shutil, subprocess, html
+from pathlib import Path
+
+SITE = Path(__file__).resolve().parent          # .../School_Stock/shien
+PROJ = Path.home() / "Claude" / "Projects" / "🃏-支援カード集"
+SRC04 = PROJ / "04_エビデンス版"
+SRC06 = PROJ / "06_話型集"
+PDFDIR = SITE / "pdf"; THUMB = SITE / "thumb"
+PDFDIR.mkdir(exist_ok=True); THUMB.mkdir(exist_ok=True)
+
+CARDS = json.loads((SRC04 / "cards12.json").read_text(encoding="utf-8"))
+WAKEI = json.loads((SRC06 / "wakei.json").read_text(encoding="utf-8"))
+CATS = CARDS["categories"]
+
+def plain(s):
+    """ルビ《》・空白を除いた素の文字列"""
+    return re.sub(r"《[^》]*》", "", s).replace("｜", "").replace("　", " ").strip()
+
+def slug(s):
+    """ファイル名用：ルビ除去・空白と記号を整理"""
+    s = plain(s).replace(" ", "").replace("？", "").replace("?", "")
+    return s
+
+def copy_pdf(src, dest_name):
+    dest = PDFDIR / dest_name
+    shutil.copy2(src, dest)
+    return dest.name
+
+def make_thumb(src_png, out_name, width=520):
+    out = THUMB / out_name
+    shutil.copy2(src_png, out)
+    subprocess.run(["sips", "-Z", str(width), str(out)],
+                   stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+    return out.name
+
+# ---------- 収集：(section, items[]) を作る ----------
+# item = dict(id, title, sub, tag, tagcolor, pdf, thumb)
+sections = []
+
+# 1) 掲示カード（カテゴリ別）
+by_cat = {}
+for c in CARDS["cards"]:
+    by_cat.setdefault(c["cat"], []).append(c)
+for ck, cv in CATS.items():
+    items = []
+    for c in by_cat.get(ck, []):
+        cid = c["id"]
+        name = plain(c["name"])
+        pdf = copy_pdf(SRC04 / "pdf" / f"{cid}.pdf", f"{cid}_{slug(c['name'])}.pdf")
+        th = make_thumb(SRC04 / "png" / f"{cid}.png", f"{cid}.png")
+        items.append(dict(id=cid, title=name, sub=plain(c["aikotoba"]),
+                          tag=cv["label"], tagcolor=cv["color"], pdf=pdf, thumb=th))
+    sections.append(dict(key=f"cat-{ck}", head=cv["label"], en=cv["sub"],
+                         color=cv["color"], items=items))
+
+# 2) 机上ミニ版
+mini_items = []
+mini_label = {"_howto": "つかいかた", "_jibun": "じぶんのカード"}
+for ms in CARDS["mini_sheets"]:
+    f = ms["file"]  # ミニ01..06
+    contents = "・".join(
+        mini_label.get(i, plain(next((c["name"] for c in CARDS["cards"] if c["id"] == i), i)).replace("カード", ""))
+        for i in ms["ids"])
+    pdf = copy_pdf(SRC04 / "pdf" / f"{f}.pdf", f"{f}_机上ミニ版.pdf")
+    th = make_thumb(SRC04 / "png" / f"{f}.png", f"{f}.png")
+    mini_items.append(dict(id=f, title=f"机上ミニ版　{f[-2:]}", sub=contents,
+                           tag="机上ミニ（A6×4面）", tagcolor="#5b616b", pdf=pdf, thumb=th))
+sections.append(dict(key="mini", head="机上ミニ版", en="切って机の上に・テスト中OKバッジつき",
+                     color="#5b616b", items=mini_items))
+
+# 3) 話型シート
+wakei_items = []
+for s in WAKEI["sheets"]:
+    wid = s["id"]
+    pdf = copy_pdf(SRC06 / "pdf" / f"{wid}.pdf", f"{wid}_{slug(s['title'])}.pdf")
+    th = make_thumb(SRC06 / "png" / f"{wid}.png", f"{wid}.png")
+    wakei_items.append(dict(id=wid, title=plain(s["title"]), sub=plain(s["sub"]),
+                            tag="話型シート", tagcolor=s["accent"], pdf=pdf, thumb=th))
+sections.append(dict(key="wakei", head="話型シート", en="考え方・話し方・つなぎ方（ふきだし版）",
+                     color="#2b5fd9", items=wakei_items))
+
+# 4) 先生用シート
+teach_items = []
+for mark, ascii_no, label in [("①", "1", "よみとり・かかわり・とりかかり"),
+                               ("②", "2", "まなびかた・せいかつ")]:
+    pdf = copy_pdf(SRC04 / "pdf" / f"先生用{mark}.pdf", f"先生用{ascii_no}_使い方.pdf")
+    th = make_thumb(SRC04 / "png" / f"先生用{mark}.png", f"先生用{ascii_no}.png")
+    teach_items.append(dict(id=f"T{ascii_no}", title=f"先生用シート　{mark}", sub=label,
+                            tag="先生向け", tagcolor="#333", pdf=pdf, thumb=th))
+sections.append(dict(key="teacher", head="先生用シート", en="使う場・根拠の一覧（先生向け）",
+                     color="#333", items=teach_items))
+
+total = sum(len(s["items"]) for s in sections)
+
+# ---------- HTML ----------
+E = html.escape
+DL_SVG = ('<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7'
+          'M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" '
+          'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+def card_html(it):
+    return (
+      f'<div class="pc">'
+      f'<a class="th" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">'
+      f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></a>'
+      f'<div class="pm">'
+      f'<span class="ptag" style="--tc:{it["tagcolor"]}">{E(it["tag"])}</span>'
+      f'<h3>{E(it["title"])}</h3>'
+      f'<p class="ai">{E(it["sub"])}</p>'
+      f'<a class="dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
+      f'</div></div>')
+
+def section_html(sec):
+    cards = "".join(card_html(it) for it in sec["items"])
+    return (
+      f'<section data-sec id="sec-{sec["key"]}">'
+      f'<div class="sh"><span class="sbar" style="background:{sec["color"]}"></span>'
+      f'<h2>{E(sec["head"])}</h2><span class="sen">{E(sec["en"])}</span>'
+      f'<span class="scount">{len(sec["items"])}</span></div>'
+      f'<div class="grid">{cards}</div></section>')
+
+STYLE = """
+:root { --ink:#15181c; --sub:#767b83; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+.drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+.drawer.open { transform:none; }
+.drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+.drawer-head b { font-size:12px; letter-spacing:.22em; }
+.drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+.drawer nav { padding:10px 0 30px; }
+.dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:.2em; color:var(--sub); }
+.drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
+.drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+.drawer nav a:hover { background:var(--wash); }
+.scrim { position:fixed; inset:0; background:rgba(14,15,17,.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+.scrim.show { opacity:1; pointer-events:auto; }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 24px; margin-bottom:8px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:14.5px; color:#3d4148; line-height:1.85; max-width:660px; }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.sh { display:flex; align-items:center; gap:12px; margin:36px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .sen { font-size:12px; color:var(--sub); }
+.sh .scount { margin-left:auto; font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--sub); font-size:15px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:20px; }
+.pc { border:1px solid var(--ink); display:flex; flex-direction:column; transition:box-shadow .15s; background:#fff; }
+.pc:hover { box-shadow:4px 4px 0 var(--ink); }
+.th { display:block; }
+.thumb { aspect-ratio:210/297; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; }
+.thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.pm { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.ptag { align-self:flex-start; font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:2px 8px; }
+.pm h3 { font-size:14.5px; font-weight:700; line-height:1.4; }
+.pm .ai { font-size:12px; color:var(--sub); line-height:1.6; flex:1; }
+.dl { align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; margin-top:2px; }
+.dl:hover { background:var(--accent); color:#fff; }
+.dl svg { width:14px; height:14px; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+"""
+
+DRAWER_SECS = "".join(
+    f'<a class="sub2" href="#sec-{s["key"]}">{E(s["head"])}</a>' for s in sections)
+
+PAGE = f"""<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>支援カード ── School Stock</title>
+<meta name="description" content="通常学級で使える支援カード。エビデンスのある支援を『声に出す合言葉』にした、どの教科でも使える無料カード集。掲示・机上ミニ・話型シートを無料配布。">
+<style>{STYLE}</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../tools/pdf-toolbox/">ツール</a>
+    <a href="../prints/kokugo/">プリント</a>
+    <a href="./">支援カード</a>
+    <a href="../sozai/">素材</a>
+    <a href="../ideas/">アイデア村</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+</div></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">TOOL</div>
+    <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../prints/kokugo/">国語プリント<small>読解・言葉・作文</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="./">支援カード<small>全{total}枚・無料</small></a>
+    {DRAWER_SECS}
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">IDEAS</div>
+    <a href="../ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+
+<div class="container">
+  <div class="head">
+    <span class="kicker">SUPPORT CARDS</span>
+    <h1>支援カード</h1>
+    <p class="lead">つまずきのある子が「自分を助ける」ための、声に出す合言葉カード。研究で効果が確かめられた支援だけを土台に、
+    どの教科・どの場面でも使えるようにしました。難易度で分けず、<b>子どもが自分に合う1枚を選ぶ</b>——その設計です。</p>
+    <div class="meta"><b>全{total}枚・無料</b>　｜　掲示カード・机上ミニ版・話型シート・先生用シート　｜　A4／PDF　｜　© School Stock</div>
+    <div class="note-use">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——
+    その手続きとセットで使ってください（使う場と根拠は「先生用シート」にまとめてあります）。</div>
+  </div>
+  {"".join(section_html(s) for s in sections)}
+</div>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../">棚トップにもどる</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></footer>
+
+<script>
+(function(){{
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){{d.classList.add('open');s.classList.add('show');}}
+  function close(){{d.classList.remove('open');s.classList.remove('show');}}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){{if(e.key==='Escape')close();}});
+}})();
+</script>
+</body>
+</html>
+"""
+
+(SITE / "index.html").write_text(PAGE, encoding="utf-8")
+print(f"built shien/index.html  ({total} cards, {len(sections)} sections)")
+print(f"  pdf/  -> {len(list(PDFDIR.glob('*.pdf')))} files")
+print(f"  thumb/ -> {len(list(THUMB.glob('*.png')))} files")
