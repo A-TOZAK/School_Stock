@@ -24,6 +24,17 @@ def plain(s):
     """ルビ《》・空白を除いた素の文字列"""
     return re.sub(r"《[^》]*》", "", s).replace("｜", "").replace("　", " ").strip()
 
+def plain_steps(steps):
+    """掲示カードの手順を素テキストのリストに。書き込み欄はラベル or （書きこみ）"""
+    out = []
+    for s in steps:
+        if isinstance(s, dict):
+            w = plain(s.get("w") or "")
+            out.append(w if w else "（じぶんで 書きこむ）")
+        else:
+            out.append(plain(s))
+    return out
+
 def slug(s):
     """ファイル名用：ルビ除去・空白と記号を整理"""
     s = plain(s).replace(" ", "").replace("？", "").replace("?", "")
@@ -56,8 +67,12 @@ for ck, cv in CATS.items():
         name = plain(c["name"])
         pdf = copy_pdf(SRC04 / "pdf" / f"{cid}.pdf", f"{cid}_{slug(c['name'])}.pdf")
         th = make_thumb(SRC04 / "png" / f"{cid}.png", f"{cid}.png")
+        badge = plain(CARDS["badges"].get(c["badge"], "")) if c.get("badge") else ""
         items.append(dict(id=cid, title=name, sub=plain(c["aikotoba"]),
-                          tag=cv["label"], tagcolor=cv["color"], pdf=pdf, thumb=th))
+                          tag=cv["label"], tagcolor=cv["color"], pdf=pdf, thumb=th,
+                          modal=True, aikotoba=plain(c["aikotoba"]),
+                          steps=plain_steps(c["steps"]), badge=badge,
+                          bamen=c.get("bamen", ""), naze=c.get("naze", "")))
     sections.append(dict(key=f"cat-{ck}", head=cv["label"], en=cv["sub"],
                          color=cv["color"], items=items))
 
@@ -107,6 +122,19 @@ DL_SVG = ('<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5
           'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 def card_html(it):
+    if it.get("modal"):
+        return (
+          f'<div class="pc">'
+          f'<button class="th th-btn" data-modal="{E(it["id"])}" aria-label="{E(it["title"])}の解説をひらく">'
+          f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></button>'
+          f'<div class="pm">'
+          f'<span class="ptag" style="--tc:{it["tagcolor"]}">{E(it["tag"])}</span>'
+          f'<h3>{E(it["title"])}</h3>'
+          f'<p class="ai">{E(it["sub"])}</p>'
+          f'<div class="pacts">'
+          f'<button class="dl kaisetsu" data-modal="{E(it["id"])}">解説を見る</button>'
+          f'<a class="dl ghost" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
+          f'</div></div></div>')
     return (
       f'<div class="pc">'
       f'<a class="th" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">'
@@ -117,6 +145,25 @@ def card_html(it):
       f'<p class="ai">{E(it["sub"])}</p>'
       f'<a class="dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
       f'</div></div>')
+
+def modal_html(it):
+    steps = "".join(f'<li>{E(s)}</li>' for s in it["steps"])
+    badge = f'<span class="m-badge">{E(it["badge"])}</span>' if it.get("badge") else ""
+    return (
+      f'<div class="modal" id="m-{E(it["id"])}" role="dialog" aria-modal="true" aria-label="{E(it["title"])}">'
+      f'<div class="m-card" style="--tc:{it["tagcolor"]}">'
+      f'<button class="m-close" data-close aria-label="閉じる">×</button>'
+      f'<div class="m-head">'
+      f'<div class="m-tags"><span class="m-tag">{E(it["tag"])}</span>{badge}</div>'
+      f'<h3>{E(it["title"])}</h3>'
+      f'<p class="m-ai">{E(it["aikotoba"])}</p></div>'
+      f'<div class="m-body">'
+      f'<ol class="m-steps">{steps}</ol>'
+      f'<div class="m-block"><span class="m-lbl">こんなときに使う</span><p>{E(it["bamen"])}</p></div>'
+      f'<div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>{E(it["naze"])}</p></div>'
+      f'<a class="m-dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}カードのPDFをひらく</a>'
+      f'<p class="m-note">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——その手続きとセットで使ってください。</p>'
+      f'</div></div></div>')
 
 def section_html(sec):
     cards = "".join(card_html(it) for it in sec["items"])
@@ -184,10 +231,44 @@ a { color:var(--accent); text-decoration:none; }
 .foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
 .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
 .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+/* --- カード操作（解説／PDF） --- */
+.th-btn { display:block; width:100%; border:none; background:none; padding:0; cursor:pointer; font-family:inherit; text-align:left; }
+.pacts { display:flex; gap:8px; margin-top:2px; flex-wrap:wrap; }
+.dl.kaisetsu { color:#fff; background:var(--accent); border-color:var(--accent); cursor:pointer; font-family:inherit; }
+.dl.kaisetsu:hover { background:#1f49b0; border-color:#1f49b0; }
+.dl.ghost { color:var(--sub); border-color:var(--line); }
+.dl.ghost:hover { background:var(--wash); color:var(--ink); }
+/* --- モーダル解説 --- */
+.m-scrim { position:fixed; inset:0; background:rgba(14,15,17,.55); z-index:80; opacity:0; pointer-events:none; transition:opacity .2s; }
+.m-scrim.show { opacity:1; pointer-events:auto; }
+.modal { position:fixed; inset:0; z-index:90; display:none; align-items:flex-start; justify-content:center; padding:40px 18px; overflow-y:auto; }
+.modal.open { display:flex; }
+.m-card { position:relative; width:min(560px,100%); background:#fff; border:1px solid var(--ink); box-shadow:8px 8px 0 var(--ink); }
+.m-close { position:absolute; top:8px; right:10px; background:none; border:none; font-size:24px; line-height:1; cursor:pointer; color:var(--ink); font-family:inherit; }
+.m-head { border-top:6px solid var(--tc); padding:22px 26px 18px; border-bottom:1px solid var(--line); }
+.m-tags { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+.m-tag { font-size:10.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:3px 10px; }
+.m-badge { font-size:10.5px; font-weight:700; color:var(--tc); border:1px solid var(--tc); padding:2px 9px; }
+.m-head h3 { font-size:21px; font-weight:700; line-height:1.4; }
+.m-ai { margin-top:6px; font-size:15px; font-weight:700; color:var(--tc); }
+.m-body { padding:20px 26px 26px; }
+.m-steps { list-style:none; counter-reset:st; margin:0 0 20px; display:flex; flex-direction:column; gap:9px; }
+.m-steps li { counter-increment:st; position:relative; padding-left:34px; font-size:14.5px; line-height:1.6; }
+.m-steps li::before { content:counter(st); position:absolute; left:0; top:1px; width:23px; height:23px; background:var(--tc); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.m-block { border-left:3px solid var(--tc); padding:2px 0 2px 14px; margin-bottom:16px; }
+.m-block .m-lbl { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--tc); margin-bottom:4px; }
+.m-block p { font-size:14px; line-height:1.85; color:#2c3036; }
+.m-dl { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700; color:#fff; background:var(--ink); border:1px solid var(--ink); padding:9px 18px; margin-top:2px; }
+.m-dl:hover { background:#000; }
+.m-dl svg { width:15px; height:15px; }
+.m-note { margin-top:16px; font-size:11.5px; line-height:1.75; color:var(--sub); background:var(--wash); padding:10px 14px; }
+@media (max-width:520px){ .modal { padding:20px 10px; } .m-head,.m-body { padding-left:18px; padding-right:18px; } }
 """
 
 DRAWER_SECS = "".join(
     f'<a class="sub2" href="#sec-{s["key"]}">{E(s["head"])}</a>' for s in sections)
+
+MODALS = "".join(modal_html(it) for s in sections for it in s["items"] if it.get("modal"))
 
 PAGE = f"""<!DOCTYPE html>
 <html lang="ja">
@@ -247,6 +328,9 @@ PAGE = f"""<!DOCTYPE html>
   {"".join(section_html(s) for s in sections)}
 </div>
 
+<div class="m-scrim" id="mScrim"></div>
+{MODALS}
+
 <footer class="foot"><div class="foot-in">
   <div class="fw">SCHOOL STOCK</div>
   先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
@@ -263,6 +347,16 @@ PAGE = f"""<!DOCTYPE html>
   document.getElementById('drawerClose').addEventListener('click',close);
   s.addEventListener('click',close);
   document.addEventListener('keydown',function(e){{if(e.key==='Escape')close();}});
+}})();
+(function(){{
+  var sc=document.getElementById('mScrim');
+  function openM(id){{var m=document.getElementById('m-'+id);if(!m)return;m.classList.add('open');sc.classList.add('show');document.body.style.overflow='hidden';m.scrollTop=0;}}
+  function closeM(){{Array.prototype.forEach.call(document.querySelectorAll('.modal.open'),function(m){{m.classList.remove('open');}});sc.classList.remove('show');document.body.style.overflow='';}}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modal]'),function(b){{b.addEventListener('click',function(){{openM(b.getAttribute('data-modal'));}});}});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(b){{b.addEventListener('click',closeM);}});
+  sc.addEventListener('click',closeM);
+  Array.prototype.forEach.call(document.querySelectorAll('.modal'),function(m){{m.addEventListener('click',function(e){{if(e.target===m)closeM();}});}});
+  document.addEventListener('keydown',function(e){{if(e.key==='Escape')closeM();}});
 }})();
 </script>
 </body>
