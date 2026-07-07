@@ -24,6 +24,8 @@
   .topbar-in { max-width: 680px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
   .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.32em; }
   .topbar .cat { font-size: 11px; letter-spacing: 0.18em; color: #b9bcc2; }
+  .topbar a { color: #fff; text-decoration: none; }
+  .topbar a:hover { opacity: .8; }
 
   .container { max-width: 680px; margin: 0 auto; padding: 0 24px 72px; }
 
@@ -76,6 +78,9 @@
   /* ── フッター ── */
   .foot { border-top: 3px solid var(--ink); margin-top: 56px; padding: 24px 2px 8px; }
   .foot .fs { font-size: 13.5px; color: #3d4148; line-height: 2.0; margin-bottom: 14px; }
+  .foot-map { font-size: 13px; line-height: 2.2; margin-bottom: 18px; }
+  .foot-map b { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); margin-top: 12px; }
+  .foot-map a { color: var(--ink); }
   .credit { font-size: 12px; color: var(--sub); letter-spacing: 0.08em; }
 </style>
 </head>
@@ -83,8 +88,8 @@
 
 <div class="topbar">
   <div class="topbar-in">
-    <span class="wordmark">SCHOOL STOCK</span>
-    <span class="cat">ENTERTAINMENT</span>
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <a class="cat" href="../../">← 棚にもどる</a>
   </div>
 </div>
 
@@ -393,6 +398,12 @@
 
 <footer class="foot">
   <p class="fs">プロンプトは全部、書きかえて使ってかまいません。「45分」を「30分」に、「職員室」を「学年部」に。自分の学校仕様に育てていくのが、いちばんの正解です。よい寄り道を。</p>
+  <div class="foot-map">
+    <b>棚の中</b>
+    <a href="../../">棚トップ</a>　／　<a href="../../tools/pdf-toolbox/">先生のPDF道具箱</a>　／　<a href="../../prints/kokugo/">国語プリント</a>　／　<a href="../../shien/">支援カード</a>　／　<a href="../../tankyu/">探究・問題解決サポート</a>　／　<a href="../../sozai/">授業イラスト素材集</a>　／　<a href="../../ideas/">実践アイデア村</a>　／　<a href="../../about/">このサイトについて</a>
+    <b>もっとプロンプト</b>
+    <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>（授業・校務で使う真面目なほうはこちら）　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
   <p class="credit">© School Stock</p>
 </footer>
 
