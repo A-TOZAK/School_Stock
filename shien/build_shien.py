@@ -2,8 +2,9 @@
 # -*- coding: utf-8 -*-
 """
 School Stock 支援カード棚ビルダー
-支援カード集プロジェクト（04_エビデンス版・06_話型集）から、掲示カード23・机上ミニ6・
-先生用2・話型4のPDFとサムネイルを shien/ に取り込み、一覧ページ index.html を生成する。
+支援カード集プロジェクト（04_エビデンス版・06_話型集）から、掲示カード・机上ミニ・
+先生用・話型のPDFとサムネイルを shien/ に取り込み、一覧ページ index.html を生成する。
+枚数は cards12.json / wakei.json から自動で拾う（2026-07-07現在：掲示43・ミニ11・話型6・先生用3）。
 使い方: python3 shien/build_shien.py
 """
 import json, re, shutil, subprocess, html
@@ -37,9 +38,11 @@ def plain_steps(steps):
     return out
 
 def modal_steps(c):
-    """モーダルに出す手順。wordlist型（しつもんの言葉・学習用語）は ことば（意味） の一覧にする"""
+    """モーダルに出す手順。wordlist型は ことば（意味） の一覧、word1型（1枚1概念）は いみ・れい にする"""
     if "words" in c:
         return [f'{plain(w["w"])}（{plain(w["m"])}）' for w in c["words"]]
+    if "imi" in c:
+        return [f'いみ：{plain(c["imi"])}', f'れい：{plain(c["rei"])}']
     return plain_steps(c["steps"])
 
 def slug(s):
@@ -86,7 +89,9 @@ for ck, cv in CATS.items():
 
 # 2) 机上ミニ版
 mini_items = []
-mini_label = {"_howto": "つかいかた", "_jibun": "じぶんのカード"}
+mini_label = {"_howto": "つかいかた", "_jibun": "じぶんのカード",
+              "_t0": "たすけてください", "_t1": "ヒントをください",
+              "_t2": "じかんをください", "_t3": "ここまでできました"}
 for ms in CARDS["mini_sheets"]:
     f = ms["file"]  # ミニ01..06
     contents = "・".join(
@@ -112,8 +117,10 @@ sections.append(dict(key="wakei", head="話型シート", en="考えの書き方
 
 # 4) 先生用シート
 teach_items = []
-for mark, ascii_no, label in [("①", "1", "よみとり・かかわり・とりかかり"),
-                               ("②", "2", "まなびかた・せいかつ・がくしゅうのことば")]:
+for mark, ascii_no, label in [("①", "1", "よみとり・かかわり"),
+                               ("②", "2", "とりかかり・まなびかた"),
+                               ("③", "3", "せいかつ"),
+                               ("④", "4", "がくしゅうのことば")]:
     pdf = copy_pdf(SRC04 / "pdf" / f"先生用{mark}.pdf", f"先生用{ascii_no}_使い方.pdf")
     th = make_thumb(SRC04 / "png" / f"先生用{mark}.png", f"先生用{ascii_no}.png")
     teach_items.append(dict(id=f"T{ascii_no}", title=f"先生用シート　{mark}", sub=label,
