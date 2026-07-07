@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>調べる、の前に。──探究を「発表会」で終わらせない7つの視点 ｜ School Stock</title>
+<meta name="description" content="探究・PBLで、調べて発表して終わり…になっていないか。問いへの答え・一次情報・取材のマナー・チームのコミュニケーション・AIと手書きの使い分け。現場の教員が書いた、探究の進め方の考え方。">
+<style>
+:root { --ink:#15181c; --sub:#767b83; --accent:#6d3bd1; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+.nav a.on { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+
+.article { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:20px 0 26px; margin-bottom:34px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--accent); padding:4px 12px; margin-bottom:18px; }
+.head h1 { font-size:clamp(26px,4.6vw,40px); font-weight:700; line-height:1.42; letter-spacing:.01em; }
+.head .sub { margin-top:16px; font-size:15px; color:#3d4148; line-height:1.9; }
+.head .meta { margin-top:20px; font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.head .meta b { color:var(--ink); font-weight:700; }
+
+.lead { font-size:17px; line-height:2.05; color:#20242a; margin-bottom:8px; }
+.lead b { font-weight:700; }
+h2 { font-size:22px; font-weight:700; line-height:1.5; margin:52px 0 6px; padding-top:14px; border-top:2px solid var(--ink); }
+h2 .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); margin-right:12px; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; letter-spacing:.06em; margin-bottom:20px; }
+p { font-size:15.5px; line-height:2.02; margin:18px 0; color:#20242a; }
+p .em { background:linear-gradient(transparent 62%, #efe7fb 62%); font-weight:700; }
+.pull { border-left:4px solid var(--accent); padding:6px 0 6px 22px; margin:30px 0; }
+.pull q { font-size:20px; font-weight:700; line-height:1.7; color:var(--ink); quotes:none; display:block; }
+.pull q::before, .pull q::after { content:""; }
+.pull cite { display:block; margin-top:10px; font-size:12.5px; color:var(--sub); font-style:normal; }
+.cardlink { display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:5px 14px; border-radius:2px; margin:6px 0 2px; }
+.cardlink:hover { background:var(--accent); color:#fff; }
+.cardrow { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 2px; }
+
+.checklist { background:var(--wash); border-left:3px solid var(--ink); padding:20px 24px; margin:34px 0; }
+.checklist h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin-bottom:12px; }
+.checklist ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.checklist li { font-size:14.5px; line-height:1.7; padding-left:26px; position:relative; }
+.checklist li::before { content:"□"; position:absolute; left:0; top:-1px; font-size:16px; color:var(--sub); }
+
+.end { margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; }
+.end p { font-size:15.5px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin:22px 0 6px; }
+.grid2 a { display:block; border:1px solid var(--line); padding:12px 14px; font-size:13.5px; font-weight:700; color:var(--ink); }
+.grid2 a:hover { border-color:var(--ink); background:var(--wash); }
+.grid2 a small { display:block; font-size:11.5px; font-weight:400; color:var(--sub); margin-top:2px; letter-spacing:.02em; }
+@media (max-width:560px){ .grid2 { grid-template-columns:1fr; } }
+.note { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:20px; }
+
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../../tools/pdf-toolbox/">ツール</a>
+    <a href="../../prints/kokugo/">プリント</a>
+    <a href="../../shien/">支援カード</a>
+    <a class="on" href="../">探究サポート</a>
+    <a href="../../sozai/">素材</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../">探究・問題解決サポート</a> ／ 読み物</div>
+  <div class="head">
+    <span class="kicker">読み物 ｜ INQUIRY</span>
+    <h1>調べる、の前に。<br>探究を「発表会」で終わらせない7つの視点</h1>
+    <p class="sub">調べた。まとめた。発表した。——それで、はじめの問いには答えられたのだろうか。
+    現場で探究・PBLをやってきて、いちばん立ち止まってほしいと思うところを、7つの視点にしました。
+    掲示カードとセットで読んでください。</p>
+    <div class="meta"><b>探究・問題解決サポート</b><span>｜</span><span>先生向け読み物</span><span>｜</span><span>© School Stock</span></div>
+  </div>
+
+  <p class="lead">探究やプロジェクト学習をやっていると、いつのまにか活動が
+  <b>「調べて、まとめて、発表して、終わり」</b>になっていることがあります。
+  子どもたちはよく動いている。資料もたくさん集まっている。ポスターもできた。
+  でも、ふと立ち止まって聞いてみたい。——<b>それは、はじめの問いに答えるために必要なことだったのか。</b></p>
+
+  <p>置いてけぼりを出さないための「学びの地図」や「計画・リハーサル・振り返りシート」は、
+  <a href="../">探究サポートの棚</a>にまとめました。ここではその一歩先、
+  <span class="em">活動そのものの「進め方」を、子ども自身が問い直すための視点</span>を書きます。
+  難しく感じたら、まず一枚、教室に貼るところから。</p>
+
+  <h2><span class="n">1</span>その活動は、問いの答えに向かっているか</h2>
+  <div class="h2sub">ふり返り ── 問いと目的に、もどる</div>
+  <p>探究は「調べる時間」ではなく、<span class="em">問いに答えるための時間</span>です。
+  ところが活動が進むほど、「調べること」そのものが目的になっていきます。
+  集めた情報の量が増えるほど、なんだか進んでいる気がしてしまう。</p>
+  <p>だから、リハーサルや中間交流のたびに、班で立ち止まって<span class="em">振り返って</span>ほしいのです。
+  「ここまでやってきたことは、はじめに立てた問いの答えにつながっている？」と。
+  そしてときには一歩戻って、<span class="em">問いそのもの・目的が今も正しいか</span>を見つめ直す。
+  安宅和人さんの『イシューからはじめよ』が言うように、大事なのは "解く前に、解くべき問い（イシュー）を見きわめる" こと。
+  走り出したあとも、その問いでよかったのかを問い直していいのです。</p>
+  <p>なくても困らない活動は、<span class="em">やめる勇気</span>も探究のうち。
+  Gold Standard PBLが「批評と改訂」を必須要素に置くのは、ムダをそぎ落とすこの往復こそが、学びを深めるからです。
+  そして先生に見てもらうときは、答えをもらうのではなく、<span class="em">「壁打ち」＝意見をもらう相手</span>になってもらいましょう。</p>
+  <div class="pull"><q>調べたことの「量」ではなく、はじめの問いの「答え」に近づいたか。</q><cite>── ふり返りの合言葉</cite></div>
+  <div class="cardrow"><a class="cardlink" href="../">▸ カード T01「ふり返り」を見る</a></div>
+
+  <h2><span class="n">2</span>現場に、答えがある</h2>
+  <div class="h2sub">一次情報 ── ネットとAIのコピーで終わらせない</div>
+  <p>いちばん大事なのは、<span class="em">一次情報を取りに行くこと</span>だと思っています。
+  ネットで調べたことをそのまま写す。生成AIが出した文章をそのまま貼る。——それだけなら、正直、
+  何の意味もありません。だってそれは、「AIに聞けばいいじゃん」で終わってしまう。</p>
+  <p>現場に足を運んで、初めて分かることがあります。運ばなければ分からないことが、いっぱいある。
+  自分たちが立てた仮説が本当に正しいのか。教室の中で「そうじゃない、ああじゃない」と話し合っても、
+  実際のところはどうなのか、見たり聞いたりしないと分からないことがあります。<span class="em">現場を知らなければ、どこの世界でも役に立たない。</span>
+  だからこそ、本人に聞いたか、現場に行ったか——できれば<span class="em">五感をつかって</span>——を、活動の計画に入れてほしいのです。</p>
+  <p>PBLでいう「本物らしさ（Authenticity）」は、実世界の道具・場・当事者に触れること。
+  コピー＆ペーストの対極にあるものです。行って初めて分かったことは、必ず書きとめておく。それが探究を本物にします。</p>
+  <div class="cardrow"><a class="cardlink" href="../">▸ カード T02「一次情報」を見る</a></div>
+
+  <h2><span class="n">3</span>お願いする、ということ</h2>
+  <div class="h2sub">取材のマナー ── 相手にも、しごとがある</div>
+  <p>現場に行く、誰かに取材する。そのとき忘れてはいけないのが、<span class="em">相手にも仕事があり、生活がある</span>ということです。
+  子どもが一生懸命に学ぼうとしてお願いすれば、大人はできるだけ応えようとしてくれます。
+  でも、すべてに応えるのは持続可能ではない。だから、こちらの姿勢が問われます。</p>
+  <p>まず、先生やおうちの人に「こういうことを聞きに行っていいか」を確認する。
+  そして、自分が何者なのか——学校・学年・名前・何のためか——を<span class="em">正直に名のる</span>。
+  嘘をつかない、失礼のないようにする。メールの文面も、電話の言い方も、そこから始まります。</p>
+  <p>そして、相手の時間をもらうのだから、<span class="em">取材の練習を必ずして</span>から臨みたい。
+  準備をしないで行くのは、失礼にあたります。そのうえで「自分たちは相手に何を返せるか」を考える。
+  お礼はもちろん、手伝えること、あるいは手紙やチラシなど<span class="em">自分たちにできるお返し</span>はないか。
+  高校生ならなおさら、小学生でも「本当に、聞きに行かないと分からないことなのか」を先に自分に問う。
+  <span class="em">お願いする力は、社会に開かれた探究の入り口</span>です。</p>
+  <div class="pull"><q>相手の時間をもらう。だから、正直に名のり、感謝と「お返し」を添える。</q><cite>── 取材のお願いの合言葉</cite></div>
+  <div class="cardrow"><a class="cardlink" href="../">▸ カード T03「取材のお願い」を見る</a></div>
+
+  <h2><span class="n">4</span>一緒にやってて、楽しいか</h2>
+  <div class="h2sub">チームのコミュニケーションとリーダー</div>
+  <p>探究の多くは、チームで進めます。役割分担はもちろんします。でも、それだけでは、
+  プロジェクトはうまくいかないことが多い。<span class="em">責任の所在があいまいになって、ただ止まってしまう人</span>が出てくる。
+  正しく「ありがとう」を伝えられなくて、「もう、やってられない」と思う人が出てくる。</p>
+  <p>多少は仕方のないことです。でも、そればっかりでは、ちょっとかわいそうだと私は思うのです。
+  だから、話し合いの基準を決めておく。<span class="em">話をちゃんと聞く。アイデアをすぐに否定しない。</span>
+  比べる段階では「こっちが良い理由」で選べばいい。でも、友だちの出したアイデアを正論でぶった切って潰すだけでは、
+  一緒にやっていて楽しくない。目ざすのは、<span class="em">お互いに意見はしっかり言い合う、でも安心して発言できる関係</span>——
+  心理的安全性です。それが、粘り強い探究を支えます。</p>
+  <p>そのうえで、プロジェクトマネージャー的なリーダーを一人つくると、進みやすくなります。
+  長い活動時間には、「今これ、何の時間なんだろう？」という時間が必ず生まれます。
+  私が担任した子たちにも、たくさんありました。手が空いている人・困っている人に気づいてつなぎ、
+  止まったら計画シートに戻す。もめごとは責めるのではなく「どうすれば進む？」で話す。
+  それはPBLの「活動のマネジメント」を、子どものチームに小さく持たせる工夫です。
+  リーダーも一人で抱えこまず、<span class="em">「今〇〇でこまっています。先生ならどうしますか？」</span>と、具体的に相談していいのです。</p>
+  <div class="cardrow">
+    <a class="cardlink" href="../">▸ カード T04「チームの約束」</a>
+    <a class="cardlink" href="../">▸ カード T05「リーダーの仕事」</a>
+  </div>
+
+  <h2><span class="n">5</span>AIも、手書きも──道具は目的のために</h2>
+  <div class="h2sub">考えを深める道具の使い分け</div>
+  <p>Google Workspaceや生成AIは、探究のとても強力な道具になります。だから、使いはじめは
+  ワンステップずつ丁寧に伝えたい。ただし大前提は、<span class="em">貼り付けて終わりにしないこと</span>。
+  それでは「AIに聞けばいい」で終わってしまう。</p>
+  <p>おすすめは、<span class="em">自分の考えをブラッシュアップする相棒</span>として使うことです。
+  自分の考えを先に書いてから、「この考えの弱いところは？」と突かせる。「3つに分けて」「反対の立場は？」と整理させる。
+  ポスターや発信のときは、CanvaやGeminiのキャンバス機能で、動画やポスターの下書き・プロトタイプを素早く作ってみる。
+  試作が速くできると、<span class="em">批評と改訂の回数を増やせる</span>。最後に判断するのは自分。AIの答えは、あくまで「たたき台」です。</p>
+  <p>そして、あえて手書きも大事にしたい。私は、大きな紙にみんなで付箋を貼り、
+  似た意見を動かしながらまとめていくのが好きです。B4やA3の紙を、大きな模造紙に変えていく。
+  手を動かし、囲んで、指さしながらワイワイ話す。そのなかで、思考が深まっていく。
+  <span class="em">ツールは万能ではありません。手書きとデジタルを、場面で使い分ける。</span>それが、良い探究をつくります。</p>
+  <div class="cardrow">
+    <a class="cardlink" href="../">▸ カード T06「AI活用」（プロンプト例つき）</a>
+    <a class="cardlink" href="../">▸ カード T07「手書きの力」</a>
+  </div>
+
+  <div class="checklist">
+    <h3>探究の進め方セルフチェック（班で）</h3>
+    <ul>
+      <li>この活動は、はじめの「問い」の答えに向かっている</li>
+      <li>ネットやAIのコピーで終わらず、本人に聞く・現場に行くを計画した</li>
+      <li>取材の前に、大人に確認し、正直に名のる準備ができている</li>
+      <li>話をちゃんと聞き、アイデアをすぐ否定していない</li>
+      <li>「今、何の時間？」に、チームの誰かが答えられる</li>
+      <li>AIは「たたき台」として使い、最後は自分たちで判断している</li>
+    </ul>
+  </div>
+
+  <div class="end">
+    <p>探究は、小学校から高校まで、どの段階でも大事にしたいものです。
+    掲示もカードも、「配って終わり」では効きません。先生が一度いっしょに使ってみせて、
+    毎時間の最初と最後に戻ってくる。その運用とセットで、この7つの視点を使ってください。</p>
+    <div class="grid2">
+      <a href="../">探究・問題解決サポートの棚<small>掲示・ワークシート・話型カード・進め方の視点</small></a>
+      <a href="../../shien/">支援カードの棚<small>発表・つなぎ言葉の基本話型はこちら</small></a>
+    </div>
+    <p class="note">この読み物は、公的資料・公開資料が示す枠組み（探究の過程／問題解決の過程／Gold Standard PBL）を土台に、
+    文言と設計をすべて自作したものです。くわしい根拠は各カードの解説と参考文献をご確認ください。</p>
+  </div>
+</article>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../">探究サポートにもどる</a>　／　<a href="../../">棚トップ</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></div></footer>
+</body>
+</html>

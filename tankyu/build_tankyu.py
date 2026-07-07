@@ -144,6 +144,14 @@ a { color:var(--accent); text-decoration:none; }
 .head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
 .head .meta b { color:var(--ink); }
 .note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.yomibanner { display:flex; align-items:center; gap:16px; margin:18px 0 2px; border:1px solid var(--ink); padding:16px 20px; background:#fff; transition:box-shadow .15s; }
+.yomibanner:hover { box-shadow:4px 4px 0 var(--ink); }
+.yomibanner .yb-kick { flex:0 0 auto; font-size:10.5px; font-weight:700; letter-spacing:.16em; color:#fff; background:#6d3bd1; padding:5px 10px; }
+.yomibanner .yb-body { flex:1; min-width:0; }
+.yomibanner .yb-body b { display:block; font-size:15px; font-weight:700; color:var(--ink); line-height:1.5; }
+.yomibanner .yb-body span { display:block; font-size:12.5px; color:var(--sub); margin-top:3px; line-height:1.7; }
+.yomibanner .yb-arrow { flex:0 0 auto; font-size:20px; color:#6d3bd1; font-weight:700; }
+@media (max-width:520px){ .yomibanner .yb-kick { display:none; } }
 .sh { display:flex; align-items:center; gap:12px; margin:36px 0 16px; }
 .sh .sbar { width:5px; height:22px; border-radius:2px; }
 .sh h2 { font-size:19px; font-weight:700; }
@@ -288,6 +296,7 @@ PAGE = f"""<!DOCTYPE html>
     <div class="dr-sec">INQUIRY</div>
     <a href="./">探究・問題解決サポート<small>全{total}枚・無料</small></a>
     {DRAWER_SECS}
+    <a class="sub2" href="yomimono/">読み物：進め方の7つの視点</a>
     <div class="dr-sec">MATERIALS</div>
     <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
@@ -309,6 +318,12 @@ PAGE = f"""<!DOCTYPE html>
     <div class="meta"><b>全{total}枚・無料</b>　｜　学びの地図・ワークシート・話型カード・先生用シート　｜　A4／PDF　｜　© School Stock</div>
     <div class="note-use">掲示は「貼って終わり」では効きません。毎時間のはじめに「いま ここ」を確かめる30秒とセットで使ってください
     （手立ての全体像は「先生用シート」に。発表・つなぎ言葉の基本話型は<a href="../shien/">支援カード</a>の棚にあります）。</div>
+    <a class="yomibanner" href="yomimono/">
+      <span class="yb-kick">読み物</span>
+      <span class="yb-body"><b>調べる、の前に。──探究を「発表会」で終わらせない7つの視点</b>
+      <span>問いへの答え・一次情報・取材のマナー・チームの約束・AIと手書きの使い分け。進め方の視点カードの背景を、現場の言葉で。</span></span>
+      <span class="yb-arrow">→</span>
+    </a>
   </div>
   <div class="layout">
   {CATRAIL}
