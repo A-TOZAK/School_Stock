@@ -1,182 +1,95 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-School Stock 支援カード棚ビルダー
-支援カード集プロジェクト（04_エビデンス版・06_話型集）から、掲示カード23・机上ミニ6・
-先生用2・話型4のPDFとサムネイルを shien/ に取り込み、一覧ページ index.html を生成する。
-使い方: python3 shien/build_shien.py
+School Stock 探究・問題解決サポート棚ビルダー
+🧭-探究-問題解決サイト プロジェクトの items.json / pdf / png を読み込み、
+PDFとサムネイルを tankyu/ に取り込んで一覧ページ index.html を生成する。
+使い方: python3 tankyu/build_tankyu.py
 """
 import json, re, shutil, subprocess, html
 from pathlib import Path
 
-SITE = Path(__file__).resolve().parent          # .../School_Stock/shien
-PROJ = Path.home() / "Claude" / "Projects" / "🃏-支援カード集"
-SRC04 = PROJ / "04_エビデンス版"
-SRC06 = PROJ / "06_話型集"
+SITE = Path(__file__).resolve().parent          # .../School_Stock/tankyu
+PROJ = Path.home() / "Claude" / "Projects" / "🧭-探究-問題解決サイト"
 PDFDIR = SITE / "pdf"; THUMB = SITE / "thumb"
 PDFDIR.mkdir(exist_ok=True); THUMB.mkdir(exist_ok=True)
 
-CARDS = json.loads((SRC04 / "cards12.json").read_text(encoding="utf-8"))
-WAKEI = json.loads((SRC06 / "wakei.json").read_text(encoding="utf-8"))
-CATS = CARDS["categories"]
-REFERENCES = CARDS.get("references", {})
-
-def plain(s):
-    """ルビ《》・空白を除いた素の文字列"""
-    return re.sub(r"《[^》]*》", "", s).replace("｜", "").replace("　", " ").strip()
-
-def plain_steps(steps):
-    """掲示カードの手順を素テキストのリストに。書き込み欄はラベル or （書きこみ）"""
-    out = []
-    for s in steps:
-        if isinstance(s, dict):
-            w = plain(s.get("w") or "")
-            out.append(w if w else "（じぶんで 書きこむ）")
-        else:
-            out.append(plain(s))
-    return out
-
-def modal_steps(c):
-    """モーダルに出す手順。wordlist型（しつもんの言葉・学習用語）は ことば（意味） の一覧にする"""
-    if "words" in c:
-        return [f'{plain(w["w"])}（{plain(w["m"])}）' for w in c["words"]]
-    return plain_steps(c["steps"])
+DATA = json.loads((PROJ / "items.json").read_text(encoding="utf-8"))
+ITEMS = DATA["items"]
+REFERENCES = DATA["references"]
 
 def slug(s):
-    """ファイル名用：ルビ除去・空白と記号を整理"""
-    s = plain(s).replace(" ", "").replace("？", "").replace("?", "")
+    s = re.sub(r"[「」『』（）()？?・\s　]", "", s)
     return s
 
-def copy_pdf(src, dest_name):
-    dest = PDFDIR / dest_name
-    shutil.copy2(src, dest)
+def copy_pdf(iid, title):
+    dest = PDFDIR / f"{iid}_{slug(title)}.pdf"
+    shutil.copy2(PROJ / "pdf" / f"{iid}.pdf", dest)
     return dest.name
 
-def make_thumb(src_png, out_name, width=520):
-    out = THUMB / out_name
-    shutil.copy2(src_png, out)
+def make_thumb(iid, width=520):
+    out = THUMB / f"{iid}.png"
+    shutil.copy2(PROJ / "png" / f"{iid}.png", out)
     subprocess.run(["sips", "-Z", str(width), str(out)],
                    stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
     return out.name
 
-# ---------- 収集：(section, items[]) を作る ----------
-# item = dict(id, title, sub, tag, tagcolor, pdf, thumb)
 sections = []
-
-# 1) 掲示カード（カテゴリ別）
-by_cat = {}
-for c in CARDS["cards"]:
-    by_cat.setdefault(c["cat"], []).append(c)
-for ck, cv in CATS.items():
+for sec in DATA["sections"]:
     items = []
-    for c in by_cat.get(ck, []):
-        cid = c["id"]
-        name = plain(c["name"])
-        pdf = copy_pdf(SRC04 / "pdf" / f"{cid}.pdf", f"{cid}_{slug(c['name'])}.pdf")
-        th = make_thumb(SRC04 / "png" / f"{cid}.png", f"{cid}.png")
-        badge = plain(CARDS["badges"].get(c["badge"], "")) if c.get("badge") else ""
-        items.append(dict(id=cid, title=name, sub=plain(c["aikotoba"]),
-                          tag=cv["label"], tagcolor=cv["color"], pdf=pdf, thumb=th,
-                          modal=True, aikotoba=plain(c["aikotoba"]),
-                          steps=modal_steps(c), badge=badge,
-                          bamen=c.get("bamen", ""), naze=c.get("naze", ""),
-                          refs=c.get("refs", [])))
-    sections.append(dict(key=f"cat-{ck}", head=cv["label"], en=cv["sub"],
-                         color=cv["color"], items=items))
-
-# 2) 机上ミニ版
-mini_items = []
-mini_label = {"_howto": "つかいかた", "_jibun": "じぶんのカード"}
-for ms in CARDS["mini_sheets"]:
-    f = ms["file"]  # ミニ01..06
-    contents = "・".join(
-        mini_label.get(i, plain(next((c["name"] for c in CARDS["cards"] if c["id"] == i), i)).replace("カード", ""))
-        for i in ms["ids"])
-    pdf = copy_pdf(SRC04 / "pdf" / f"{f}.pdf", f"{f}_机上ミニ版.pdf")
-    th = make_thumb(SRC04 / "png" / f"{f}.png", f"{f}.png")
-    mini_items.append(dict(id=f, title=f"机上ミニ版　{f[-2:]}", sub=contents,
-                           tag="机上ミニ（A6×4面）", tagcolor="#5b616b", pdf=pdf, thumb=th))
-sections.append(dict(key="mini", head="机上ミニ版", en="切って机の上に・テスト中OKバッジつき",
-                     color="#5b616b", items=mini_items))
-
-# 3) 話型シート
-wakei_items = []
-for s in WAKEI["sheets"]:
-    wid = s["id"]
-    pdf = copy_pdf(SRC06 / "pdf" / f"{wid}.pdf", f"{wid}_{slug(s['title'])}.pdf")
-    th = make_thumb(SRC06 / "png" / f"{wid}.png", f"{wid}.png")
-    wakei_items.append(dict(id=wid, title=plain(s["title"]), sub=plain(s["sub"]),
-                            tag="話型シート", tagcolor=s["accent"], pdf=pdf, thumb=th))
-sections.append(dict(key="wakei", head="話型シート", en="考えの書き方・話し方・つなぎ方（わけを言う型つき）",
-                     color="#2b5fd9", items=wakei_items))
-
-# 4) 先生用シート
-teach_items = []
-for mark, ascii_no, label in [("①", "1", "よみとり・かかわり・とりかかり"),
-                               ("②", "2", "まなびかた・せいかつ・がくしゅうのことば")]:
-    pdf = copy_pdf(SRC04 / "pdf" / f"先生用{mark}.pdf", f"先生用{ascii_no}_使い方.pdf")
-    th = make_thumb(SRC04 / "png" / f"先生用{mark}.png", f"先生用{ascii_no}.png")
-    teach_items.append(dict(id=f"T{ascii_no}", title=f"先生用シート　{mark}", sub=label,
-                            tag="先生向け", tagcolor="#333", pdf=pdf, thumb=th))
-sections.append(dict(key="teacher", head="先生用シート", en="使う場・根拠の一覧（先生向け）",
-                     color="#333", items=teach_items))
+    for iid in sec["items"]:
+        c = ITEMS[iid]
+        pdf = copy_pdf(iid, c["title"])
+        th = make_thumb(iid)
+        items.append(dict(id=iid, title=c["title"], sub=c["sub"], tag=c["tag"],
+                          tagcolor=c["color"], pdf=pdf, thumb=th, modal=True,
+                          aikotoba=c["aikotoba"], steps=c["steps"],
+                          bamen=c["bamen"], naze=c["naze"], refs=c.get("refs", [])))
+    sections.append(dict(key=sec["key"], head=sec["head"], en=sec["en"],
+                         color=sec["color"], items=items))
 
 total = sum(len(s["items"]) for s in sections)
 
-# ---------- HTML ----------
 E = html.escape
 DL_SVG = ('<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7'
           'M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" '
           'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 def card_html(it):
-    if it.get("modal"):
-        return (
-          f'<div class="pc">'
-          f'<button class="th th-btn" data-modal="{E(it["id"])}" aria-label="{E(it["title"])}の解説をひらく">'
-          f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></button>'
-          f'<div class="pm">'
-          f'<span class="ptag" style="--tc:{it["tagcolor"]}">{E(it["tag"])}</span>'
-          f'<h3>{E(it["title"])}</h3>'
-          f'<p class="ai">{E(it["sub"])}</p>'
-          f'<div class="pacts">'
-          f'<button class="dl kaisetsu" data-modal="{E(it["id"])}">解説を見る</button>'
-          f'<a class="dl ghost" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
-          f'</div></div></div>')
     return (
       f'<div class="pc">'
-      f'<a class="th" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">'
-      f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></a>'
+      f'<button class="th th-btn" data-modal="{E(it["id"])}" aria-label="{E(it["title"])}の解説をひらく">'
+      f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></button>'
       f'<div class="pm">'
       f'<span class="ptag" style="--tc:{it["tagcolor"]}">{E(it["tag"])}</span>'
       f'<h3>{E(it["title"])}</h3>'
       f'<p class="ai">{E(it["sub"])}</p>'
-      f'<a class="dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
-      f'</div></div>')
+      f'<div class="pacts">'
+      f'<button class="dl kaisetsu" data-modal="{E(it["id"])}">解説を見る</button>'
+      f'<a class="dl ghost" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
+      f'</div></div></div>')
 
 def ref_links(keys):
-    """参照キー配列 → <a>リンクのHTML（実在URLのみ・REFERENCESに無いキーは黙って除外）"""
-    items = []
+    out = []
     for k in keys:
         r = REFERENCES.get(k)
         if not r:
             continue
         label, url = r
-        items.append(f'<li><a href="{E(url)}" target="_blank" rel="noopener">{E(label)}<span class="ext"> ↗</span></a></li>')
-    return "".join(items)
+        out.append(f'<li><a href="{E(url)}" target="_blank" rel="noopener">{E(label)}<span class="ext"> ↗</span></a></li>')
+    return "".join(out)
 
 def modal_html(it):
     steps = "".join(f'<li>{E(s)}</li>' for s in it["steps"])
-    badge = f'<span class="m-badge">{E(it["badge"])}</span>' if it.get("badge") else ""
     refs = ref_links(it.get("refs", []))
-    refs_block = (f'<div class="m-refs"><span class="m-lbl">参考にした研究</span><ul>{refs}</ul>'
-                  f'<p class="m-refnote">研究の知見をかみくだいて要約したものです。くわしくは各リンク先の原典を参照。</p></div>') if refs else ""
+    refs_block = (f'<div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul>{refs}</ul>'
+                  f'<p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div>') if refs else ""
     return (
       f'<div class="modal" id="m-{E(it["id"])}" role="dialog" aria-modal="true" aria-label="{E(it["title"])}">'
       f'<div class="m-card" style="--tc:{it["tagcolor"]}">'
       f'<button class="m-close" data-close aria-label="閉じる">×</button>'
       f'<div class="m-head">'
-      f'<div class="m-tags"><span class="m-tag">{E(it["tag"])}</span>{badge}</div>'
+      f'<div class="m-tags"><span class="m-tag">{E(it["tag"])}</span></div>'
       f'<h3>{E(it["title"])}</h3>'
       f'<p class="m-ai">{E(it["aikotoba"])}</p></div>'
       f'<div class="m-body">'
@@ -184,8 +97,8 @@ def modal_html(it):
       f'<div class="m-block"><span class="m-lbl">こんなときに使う</span><p>{E(it["bamen"])}</p></div>'
       f'<div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>{E(it["naze"])}</p></div>'
       f'{refs_block}'
-      f'<a class="m-dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}カードのPDFをひらく</a>'
-      f'<p class="m-note">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——その手続きとセットで使ってください。</p>'
+      f'<a class="m-dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDFをひらく</a>'
+      f'<p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p>'
       f'</div></div></div>')
 
 def section_html(sec):
@@ -254,7 +167,6 @@ a { color:var(--accent); text-decoration:none; }
 .foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
 .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
 .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
-/* --- カテゴリ・サイドバー --- */
 .layout { display:flex; gap:34px; align-items:flex-start; }
 .secs { flex:1; min-width:0; }
 .catrail { position:sticky; top:64px; width:190px; flex:0 0 190px; border-top:2px solid var(--ink); padding-top:14px; margin-top:36px; }
@@ -265,14 +177,12 @@ a { color:var(--accent); text-decoration:none; }
 .catrail .cname { flex:1; }
 .catrail .cc { font-family:Georgia,serif; font-style:italic; color:var(--sub); font-size:12px; }
 @media (max-width:860px){ .layout { display:block; } .catrail { display:none; } }
-/* --- カード操作（解説／PDF） --- */
 .th-btn { display:block; width:100%; border:none; background:none; padding:0; cursor:pointer; font-family:inherit; text-align:left; }
 .pacts { display:flex; gap:8px; margin-top:2px; flex-wrap:wrap; }
 .dl.kaisetsu { color:#fff; background:var(--accent); border-color:var(--accent); cursor:pointer; font-family:inherit; }
 .dl.kaisetsu:hover { background:#1f49b0; border-color:#1f49b0; }
 .dl.ghost { color:var(--sub); border-color:var(--line); }
 .dl.ghost:hover { background:var(--wash); color:var(--ink); }
-/* --- モーダル解説 --- */
 .m-scrim { position:fixed; inset:0; background:rgba(14,15,17,.55); z-index:80; opacity:0; pointer-events:none; transition:opacity .2s; }
 .m-scrim.show { opacity:1; pointer-events:auto; }
 .modal { position:fixed; inset:0; z-index:90; display:none; align-items:flex-start; justify-content:center; padding:40px 18px; overflow-y:auto; }
@@ -282,7 +192,6 @@ a { color:var(--accent); text-decoration:none; }
 .m-head { border-top:6px solid var(--tc); padding:22px 26px 18px; border-bottom:1px solid var(--line); }
 .m-tags { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
 .m-tag { font-size:10.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:3px 10px; }
-.m-badge { font-size:10.5px; font-weight:700; color:var(--tc); border:1px solid var(--tc); padding:2px 9px; }
 .m-head h3 { font-size:21px; font-weight:700; line-height:1.4; }
 .m-ai { margin-top:6px; font-size:15px; font-weight:700; color:var(--tc); }
 .m-body { padding:20px 26px 26px; }
@@ -305,7 +214,6 @@ a { color:var(--accent); text-decoration:none; }
 .m-refs .ext { font-size:10px; color:var(--sub); }
 .m-refnote { font-size:11px; color:var(--sub); line-height:1.6; }
 .m-note { margin-top:16px; font-size:11.5px; line-height:1.75; color:var(--sub); background:var(--wash); padding:10px 14px; }
-/* --- 参考文献セクション（ページ下部） --- */
 .refsection { margin-top:52px; border-top:2px solid var(--ink); padding-top:8px; }
 .refsection .reflead { font-size:13px; line-height:1.9; color:#3d4148; max-width:720px; margin:6px 0 18px; }
 .reflist { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 28px; }
@@ -321,20 +229,18 @@ a { color:var(--accent); text-decoration:none; }
 DRAWER_SECS = "".join(
     f'<a class="sub2" href="#sec-{s["key"]}">{E(s["head"])}</a>' for s in sections)
 
-MODALS = "".join(modal_html(it) for s in sections for it in s["items"] if it.get("modal"))
+MODALS = "".join(modal_html(it) for s in sections for it in s["items"])
 
-# 全出典リスト（ページ下部）——cards12.json の references をそのまま実URLで列挙
 REFLIST = "".join(
     f'<li><a href="{E(url)}" target="_blank" rel="noopener">{E(label)}<span class="ext"> ↗</span></a></li>'
     for label, url in REFERENCES.values())
 REFSECTION = (
     '<section class="refsection" id="references">'
     '<div class="sh"><span class="sbar" style="background:#0e0f11"></span>'
-    '<h2>参考にした研究・資料</h2>'
-    '<span class="sen">各カードの「なぜ効くのか」の根拠</span></div>'
-    '<p class="reflead">このカード集は、下の研究・資料で効果が確認された支援だけを土台にしています。'
-    'カードの解説は知見をかみくだいた要約で、正確な内容は各リンク先の原典をご確認ください。'
-    '（英語の原典を含みます）</p>'
+    '<h2>参考にした資料・研究</h2>'
+    '<span class="sen">枠組みの根拠（探究の過程・問題解決の過程・Gold Standard PBL）</span></div>'
+    '<p class="reflead">この教材は、下の公的資料・公開資料が示す枠組みを土台に、文言と設計をすべて自作したものです。'
+    '解説は知見をかみくだいた要約で、正確な内容は各リンク先の原典をご確認ください。（英語の資料を含みます）</p>'
     f'<ul class="reflist">{REFLIST}</ul>'
     '</section>')
 
@@ -350,8 +256,8 @@ PAGE = f"""<!DOCTYPE html>
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>支援カード ── School Stock</title>
-<meta name="description" content="通常学級で使える支援カード。エビデンスのある支援を『声に出す合言葉』にした、どの教科でも使える無料カード集。掲示・机上ミニ・話型シートを無料配布。">
+<title>探究・問題解決サポート ── School Stock</title>
+<meta name="description" content="探究・PBL・問題解決的学習で「今、何をしているのか」を全員に見えるようにする掲示と、計画・リハーサル・振り返りのワークシート、話型カード。理科・社会・総合で使える無料教材。">
 <style>{STYLE}</style>
 </head>
 <body>
@@ -360,8 +266,8 @@ PAGE = f"""<!DOCTYPE html>
   <div class="nav">
     <a href="../tools/pdf-toolbox/">ツール</a>
     <a href="../prints/kokugo/">プリント</a>
-    <a href="./">支援カード</a>
-    <a href="../tankyu/">探究サポート</a>
+    <a href="../shien/">支援カード</a>
+    <a href="./">探究サポート</a>
     <a href="../sozai/">素材</a>
     <a href="../ideas/">アイデア村</a>
     <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
@@ -378,10 +284,10 @@ PAGE = f"""<!DOCTYPE html>
     <div class="dr-sec">PRINTS</div>
     <a href="../prints/kokugo/">国語プリント<small>読解・言葉・作文</small></a>
     <div class="dr-sec">SUPPORT CARDS</div>
-    <a href="./">支援カード<small>全{total}枚・無料</small></a>
-    {DRAWER_SECS}
+    <a href="../shien/">支援カード<small>掲示・机上ミニ・話型シート</small></a>
     <div class="dr-sec">INQUIRY</div>
-    <a href="../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <a href="./">探究・問題解決サポート<small>全{total}枚・無料</small></a>
+    {DRAWER_SECS}
     <div class="dr-sec">MATERIALS</div>
     <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
@@ -395,13 +301,14 @@ PAGE = f"""<!DOCTYPE html>
 
 <div class="container">
   <div class="head">
-    <span class="kicker">SUPPORT CARDS</span>
-    <h1>支援カード</h1>
-    <p class="lead">つまずきのある子が「自分を助ける」ための、声に出す合言葉カード。研究で効果が確かめられた支援だけを土台に、
-    どの教科・どの場面でも使えるようにしました。難易度で分けず、<b>子どもが自分に合う1枚を選ぶ</b>——その設計です。</p>
-    <div class="meta"><b>全{total}枚・無料</b>　｜　掲示カード・机上ミニ版・話型シート・先生用シート　｜　A4／PDF　｜　© School Stock</div>
-    <div class="note-use">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——
-    その手続きとセットで使ってください（使う場と根拠は「先生用シート」にまとめてあります）。</div>
+    <span class="kicker">INQUIRY SUPPORT</span>
+    <h1>探究・問題解決サポート</h1>
+    <p class="lead">探究・PBL・問題解決的な学びで、がんばる子が進む一方の「置いてけぼり」を出さないために。
+    <b>「今、何をしているのか」が全員に見える</b>学びの地図と、計画・リハーサル・振り返りのワークシート、
+    見通しと進み具合をことばにする話型カード。理科・社会科・総合的な学習の時間で使えます。</p>
+    <div class="meta"><b>全{total}枚・無料</b>　｜　学びの地図・ワークシート・話型カード・先生用シート　｜　A4／PDF　｜　© School Stock</div>
+    <div class="note-use">掲示は「貼って終わり」では効きません。毎時間のはじめに「いま ここ」を確かめる30秒とセットで使ってください
+    （手立ての全体像は「先生用シート」に。発表・つなぎ言葉の基本話型は<a href="../shien/">支援カード</a>の棚にあります）。</div>
   </div>
   <div class="layout">
   {CATRAIL}
@@ -446,6 +353,6 @@ PAGE = f"""<!DOCTYPE html>
 """
 
 (SITE / "index.html").write_text(PAGE, encoding="utf-8")
-print(f"built shien/index.html  ({total} cards, {len(sections)} sections)")
+print(f"built tankyu/index.html  ({total} items, {len(sections)} sections)")
 print(f"  pdf/  -> {len(list(PDFDIR.glob('*.pdf')))} files")
 print(f"  thumb/ -> {len(list(THUMB.glob('*.png')))} files")

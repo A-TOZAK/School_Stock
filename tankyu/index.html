@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探究・問題解決サポート ── School Stock</title>
+<meta name="description" content="探究・PBL・問題解決的学習で「今、何をしているのか」を全員に見えるようにする掲示と、計画・リハーサル・振り返りのワークシート、話型カード。理科・社会・総合で使える無料教材。">
+<style>
+:root { --ink:#15181c; --sub:#767b83; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+.drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+.drawer.open { transform:none; }
+.drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+.drawer-head b { font-size:12px; letter-spacing:.22em; }
+.drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+.drawer nav { padding:10px 0 30px; }
+.dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:.2em; color:var(--sub); }
+.drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
+.drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+.drawer nav a:hover { background:var(--wash); }
+.scrim { position:fixed; inset:0; background:rgba(14,15,17,.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+.scrim.show { opacity:1; pointer-events:auto; }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 24px; margin-bottom:8px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:14.5px; color:#3d4148; line-height:1.85; max-width:660px; }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.sh { display:flex; align-items:center; gap:12px; margin:36px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .sen { font-size:12px; color:var(--sub); }
+.sh .scount { margin-left:auto; font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--sub); font-size:15px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:20px; }
+.pc { border:1px solid var(--ink); display:flex; flex-direction:column; transition:box-shadow .15s; background:#fff; }
+.pc:hover { box-shadow:4px 4px 0 var(--ink); }
+.th { display:block; }
+.thumb { aspect-ratio:210/297; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; }
+.thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.pm { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.ptag { align-self:flex-start; font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:2px 8px; }
+.pm h3 { font-size:14.5px; font-weight:700; line-height:1.4; }
+.pm .ai { font-size:12px; color:var(--sub); line-height:1.6; flex:1; }
+.dl { align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; margin-top:2px; }
+.dl:hover { background:var(--accent); color:#fff; }
+.dl svg { width:14px; height:14px; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+.layout { display:flex; gap:34px; align-items:flex-start; }
+.secs { flex:1; min-width:0; }
+.catrail { position:sticky; top:64px; width:190px; flex:0 0 190px; border-top:2px solid var(--ink); padding-top:14px; margin-top:36px; }
+.catrail .crlabel { font-size:10.5px; font-weight:700; letter-spacing:.22em; color:var(--sub); margin-bottom:8px; }
+.catrail a { display:flex; align-items:center; gap:9px; padding:8px 0; font-size:13px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.catrail a:hover { color:var(--accent); }
+.catrail .cdot { width:9px; height:9px; flex:0 0 9px; }
+.catrail .cname { flex:1; }
+.catrail .cc { font-family:Georgia,serif; font-style:italic; color:var(--sub); font-size:12px; }
+@media (max-width:860px){ .layout { display:block; } .catrail { display:none; } }
+.th-btn { display:block; width:100%; border:none; background:none; padding:0; cursor:pointer; font-family:inherit; text-align:left; }
+.pacts { display:flex; gap:8px; margin-top:2px; flex-wrap:wrap; }
+.dl.kaisetsu { color:#fff; background:var(--accent); border-color:var(--accent); cursor:pointer; font-family:inherit; }
+.dl.kaisetsu:hover { background:#1f49b0; border-color:#1f49b0; }
+.dl.ghost { color:var(--sub); border-color:var(--line); }
+.dl.ghost:hover { background:var(--wash); color:var(--ink); }
+.m-scrim { position:fixed; inset:0; background:rgba(14,15,17,.55); z-index:80; opacity:0; pointer-events:none; transition:opacity .2s; }
+.m-scrim.show { opacity:1; pointer-events:auto; }
+.modal { position:fixed; inset:0; z-index:90; display:none; align-items:flex-start; justify-content:center; padding:40px 18px; overflow-y:auto; }
+.modal.open { display:flex; }
+.m-card { position:relative; width:min(560px,100%); background:#fff; border:1px solid var(--ink); box-shadow:8px 8px 0 var(--ink); }
+.m-close { position:absolute; top:8px; right:10px; background:none; border:none; font-size:24px; line-height:1; cursor:pointer; color:var(--ink); font-family:inherit; }
+.m-head { border-top:6px solid var(--tc); padding:22px 26px 18px; border-bottom:1px solid var(--line); }
+.m-tags { display:flex; gap:8px; align-items:center; margin-bottom:10px; }
+.m-tag { font-size:10.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:3px 10px; }
+.m-head h3 { font-size:21px; font-weight:700; line-height:1.4; }
+.m-ai { margin-top:6px; font-size:15px; font-weight:700; color:var(--tc); }
+.m-body { padding:20px 26px 26px; }
+.m-steps { list-style:none; counter-reset:st; margin:0 0 20px; display:flex; flex-direction:column; gap:9px; }
+.m-steps li { counter-increment:st; position:relative; padding-left:34px; font-size:14.5px; line-height:1.6; }
+.m-steps li::before { content:counter(st); position:absolute; left:0; top:1px; width:23px; height:23px; background:var(--tc); color:#fff; font-size:13px; font-weight:700; display:flex; align-items:center; justify-content:center; }
+.m-block { border-left:3px solid var(--tc); padding:2px 0 2px 14px; margin-bottom:16px; }
+.m-block .m-lbl { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--tc); margin-bottom:4px; }
+.m-block p { font-size:14px; line-height:1.85; color:#2c3036; }
+.m-dl { display:inline-flex; align-items:center; gap:7px; font-size:14px; font-weight:700; color:#fff; background:var(--ink); border:1px solid var(--ink); padding:9px 18px; margin-top:2px; }
+.m-dl:hover { background:#000; }
+.m-dl svg { width:15px; height:15px; }
+.m-refs { border-top:1px solid var(--line); margin-top:18px; padding-top:14px; }
+.m-refs .m-lbl { display:block; font-size:12px; font-weight:700; letter-spacing:.08em; color:var(--ink); margin-bottom:8px; }
+.m-refs ul { list-style:none; display:flex; flex-direction:column; gap:6px; margin-bottom:8px; }
+.m-refs li { font-size:12.5px; line-height:1.55; padding-left:14px; position:relative; }
+.m-refs li::before { content:"—"; position:absolute; left:0; color:var(--sub); }
+.m-refs a { color:var(--accent); text-decoration:none; }
+.m-refs a:hover { text-decoration:underline; text-underline-offset:2px; }
+.m-refs .ext { font-size:10px; color:var(--sub); }
+.m-refnote { font-size:11px; color:var(--sub); line-height:1.6; }
+.m-note { margin-top:16px; font-size:11.5px; line-height:1.75; color:var(--sub); background:var(--wash); padding:10px 14px; }
+.refsection { margin-top:52px; border-top:2px solid var(--ink); padding-top:8px; }
+.refsection .reflead { font-size:13px; line-height:1.9; color:#3d4148; max-width:720px; margin:6px 0 18px; }
+.reflist { list-style:none; display:grid; grid-template-columns:1fr 1fr; gap:8px 28px; }
+.reflist li { font-size:12.5px; line-height:1.55; padding-left:15px; position:relative; }
+.reflist li::before { content:"—"; position:absolute; left:0; color:var(--sub); }
+.reflist a { color:var(--accent); }
+.reflist a:hover { text-decoration:underline; text-underline-offset:2px; }
+.reflist .ext { font-size:10px; color:var(--sub); }
+@media (max-width:680px){ .reflist { grid-template-columns:1fr; } }
+@media (max-width:520px){ .modal { padding:20px 10px; } .m-head,.m-body { padding-left:18px; padding-right:18px; } }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../tools/pdf-toolbox/">ツール</a>
+    <a href="../prints/kokugo/">プリント</a>
+    <a href="../shien/">支援カード</a>
+    <a href="./">探究サポート</a>
+    <a href="../sozai/">素材</a>
+    <a href="../ideas/">アイデア村</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+  <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+</div></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">TOOL</div>
+    <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../prints/kokugo/">国語プリント<small>読解・言葉・作文</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../shien/">支援カード<small>掲示・机上ミニ・話型シート</small></a>
+    <div class="dr-sec">INQUIRY</div>
+    <a href="./">探究・問題解決サポート<small>全9枚・無料</small></a>
+    <a class="sub2" href="#sec-map">学びの地図（いま ここボード）</a><a class="sub2" href="#sec-project">プロジェクトの型</a><a class="sub2" href="#sec-wakei">たんきゅうの話型</a><a class="sub2" href="#sec-teacher">先生用シート</a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">IDEAS</div>
+    <a href="../ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+
+<div class="container">
+  <div class="head">
+    <span class="kicker">INQUIRY SUPPORT</span>
+    <h1>探究・問題解決サポート</h1>
+    <p class="lead">探究・PBL・問題解決的な学びで、がんばる子が進む一方の「置いてけぼり」を出さないために。
+    <b>「今、何をしているのか」が全員に見える</b>学びの地図と、計画・リハーサル・振り返りのワークシート、
+    見通しと進み具合をことばにする話型カード。理科・社会科・総合的な学習の時間で使えます。</p>
+    <div class="meta"><b>全9枚・無料</b>　｜　学びの地図・ワークシート・話型カード・先生用シート　｜　A4／PDF　｜　© School Stock</div>
+    <div class="note-use">掲示は「貼って終わり」では効きません。毎時間のはじめに「いま ここ」を確かめる30秒とセットで使ってください
+    （手立ての全体像は「先生用シート」に。発表・つなぎ言葉の基本話型は<a href="../shien/">支援カード</a>の棚にあります）。</div>
+  </div>
+  <div class="layout">
+  <aside class="catrail"><div class="crlabel">カテゴリ</div><a href="#sec-map"><span class="cdot" style="background:#1f9d6b"></span><span class="cname">学びの地図（いま ここボード）</span><span class="cc">3</span></a><a href="#sec-project"><span class="cdot" style="background:#2b5fd9"></span><span class="cname">プロジェクトの型</span><span class="cc">3</span></a><a href="#sec-wakei"><span class="cdot" style="background:#c9366b"></span><span class="cname">たんきゅうの話型</span><span class="cc">2</span></a><a href="#sec-teacher"><span class="cdot" style="background:#333333"></span><span class="cname">先生用シート</span><span class="cc">1</span></a></aside>
+  <div class="secs"><section data-sec id="sec-map"><div class="sh"><span class="sbar" style="background:#1f9d6b"></span><h2>学びの地図（いま ここボード）</h2><span class="sen">過程を教室に常掲して、現在地をみんなで確かめる</span><span class="scount">3</span></div><div class="grid"><div class="pc"><button class="th th-btn" data-modal="M01" aria-label="りか「いま ここ」ボードの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/M01.png" alt="りか「いま ここ」ボード"></div></button><div class="pm"><span class="ptag" style="--tc:#1f9d6b">学びの地図（掲示）</span><h3>りか「いま ここ」ボード</h3><p class="ai">もんだいかいけつの 7ステップを 教室に常掲</p><div class="pacts"><button class="dl kaisetsu" data-modal="M01">解説を見る</button><a class="dl ghost" href="pdf/M01_りかいまここボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div><div class="pc"><button class="th th-btn" data-modal="M02" aria-label="社会科「いま ここ」ボードの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/M02.png" alt="社会科「いま ここ」ボード"></div></button><div class="pm"><span class="ptag" style="--tc:#e8850c">学びの地図（掲示）</span><h3>社会科「いま ここ」ボード</h3><p class="ai">つかむ→しらべる→まとめる→いかす</p><div class="pacts"><button class="dl kaisetsu" data-modal="M02">解説を見る</button><a class="dl ghost" href="pdf/M02_社会科いまここボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div><div class="pc"><button class="th th-btn" data-modal="M03" aria-label="そうごう 探究サイクルボードの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/M03.png" alt="そうごう 探究サイクルボード"></div></button><div class="pm"><span class="ptag" style="--tc:#0f9b8e">学びの地図（掲示）</span><h3>そうごう 探究サイクルボード</h3><p class="ai">課題の設定→情報の収集→整理・分析→まとめ・表現</p><div class="pacts"><button class="dl kaisetsu" data-modal="M03">解説を見る</button><a class="dl ghost" href="pdf/M03_そうごう探究サイクルボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div></div></section><section data-sec id="sec-project"><div class="sh"><span class="sbar" style="background:#2b5fd9"></span><h2>プロジェクトの型</h2><span class="sen">とい・ゴール・やくわり・けいかく・リハーサル</span><span class="scount">3</span></div><div class="grid"><div class="pc"><button class="th th-btn" data-modal="P01" aria-label="プロジェクト けいかくシートの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/P01.png" alt="プロジェクト けいかくシート"></div></button><div class="pm"><span class="ptag" style="--tc:#2b5fd9">ワークシート</span><h3>プロジェクト けいかくシート</h3><p class="ai">とい・ゴール・やくわり・けいかく・リハーサルの日</p><div class="pacts"><button class="dl kaisetsu" data-modal="P01">解説を見る</button><a class="dl ghost" href="pdf/P01_プロジェクトけいかくシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div><div class="pc"><button class="th th-btn" data-modal="P02" aria-label="リハーサルシートの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/P02.png" alt="リハーサルシート"></div></button><div class="pm"><span class="ptag" style="--tc:#2b5fd9">ワークシート</span><h3>リハーサルシート</h3><p class="ai">よかった・考えなおす・本番までに直す</p><div class="pacts"><button class="dl kaisetsu" data-modal="P02">解説を見る</button><a class="dl ghost" href="pdf/P02_リハーサルシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div><div class="pc"><button class="th th-btn" data-modal="P03" aria-label="たんきゅう ふりかえりシートの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/P03.png" alt="たんきゅう ふりかえりシート"></div></button><div class="pm"><span class="ptag" style="--tc:#2b5fd9">ワークシート</span><h3>たんきゅう ふりかえりシート</h3><p class="ai">前の時間→今日→次の時間＋「いま どこ？」</p><div class="pacts"><button class="dl kaisetsu" data-modal="P03">解説を見る</button><a class="dl ghost" href="pdf/P03_たんきゅうふりかえりシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div></div></section><section data-sec id="sec-wakei"><div class="sh"><span class="sbar" style="background:#c9366b"></span><h2>たんきゅうの話型</h2><span class="sen">見通しと進み具合を、ことばにする</span><span class="scount">2</span></div><div class="grid"><div class="pc"><button class="th th-btn" data-modal="K01" aria-label="みとおしカードの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/K01.png" alt="みとおしカード"></div></button><div class="pm"><span class="ptag" style="--tc:#c9366b">話型カード（掲示）</span><h3>みとおしカード</h3><p class="ai">なにを・どうやって・なにが わかりそう</p><div class="pacts"><button class="dl kaisetsu" data-modal="K01">解説を見る</button><a class="dl ghost" href="pdf/K01_みとおしカード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div><div class="pc"><button class="th th-btn" data-modal="K02" aria-label="すすみぐあいカードの解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/K02.png" alt="すすみぐあいカード"></div></button><div class="pm"><span class="ptag" style="--tc:#c9366b">話型カード（掲示）</span><h3>すすみぐあいカード</h3><p class="ai">いま〜しています／ここまでできました／こまっています</p><div class="pacts"><button class="dl kaisetsu" data-modal="K02">解説を見る</button><a class="dl ghost" href="pdf/K02_すすみぐあいカード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div></div></section><section data-sec id="sec-teacher"><div class="sh"><span class="sbar" style="background:#333333"></span><h2>先生用シート</h2><span class="sen">おいてけぼりをつくらない手立て（根拠つき）</span><span class="scount">1</span></div><div class="grid"><div class="pc"><button class="th th-btn" data-modal="S01" aria-label="先生用シート　7つの手立ての解説をひらく"><div class="thumb"><img loading="lazy" src="thumb/S01.png" alt="先生用シート　7つの手立て"></div></button><div class="pm"><span class="ptag" style="--tc:#333333">先生向け</span><h3>先生用シート　7つの手立て</h3><p class="ai">おいてけぼりをつくらない（根拠つき）</p><div class="pacts"><button class="dl kaisetsu" data-modal="S01">解説を見る</button><a class="dl ghost" href="pdf/S01_先生用シート7つの手立て.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a></div></div></div></div></section></div>
+  </div>
+  <section class="refsection" id="references"><div class="sh"><span class="sbar" style="background:#0e0f11"></span><h2>参考にした資料・研究</h2><span class="sen">枠組みの根拠（探究の過程・問題解決の過程・Gold Standard PBL）</span></div><p class="reflead">この教材は、下の公的資料・公開資料が示す枠組みを土台に、文言と設計をすべて自作したものです。解説は知見をかみくだいた要約で、正確な内容は各リンク先の原典をご確認ください。（英語の資料を含みます）</p><ul class="reflist"><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-project-design" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-teaching-practices" target="_blank" rel="noopener">Gold Standard PBL: Project Based Teaching Practices（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/blog/using-project-wall-support-gold-standard-project-based-teaching" target="_blank" rel="noopener">Using a Project Wall to Support Gold Standard Project Based Teaching（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.gvsu.edu/cms4/asset/8FD27608-AF95-77B5-29623F385B8819C8/gold_standard_pbl_essential_v2019.pdf" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（BIE 2019年版・PDF）<span class="ext"> ↗</span></a></li><li><a href="https://www.mext.go.jp/a_menu/shotou/sougou/main14_a2.htm" target="_blank" rel="noopener">総合的な学習（探究）の時間（文部科学省）<span class="ext"> ↗</span></a></li><li><a href="https://www.nits.go.jp/materials/youryou/files/064_001.pdf" target="_blank" rel="noopener">総合的な探究の時間：改訂のポイントと学習評価（教職員支援機構）<span class="ext"> ↗</span></a></li><li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_005_1.pdf" target="_blank" rel="noopener">小学校学習指導要領（平成29年告示）解説 理科編（文部科学省）<span class="ext"> ↗</span></a></li><li><a href="https://www.nits.go.jp/materials/youryou/files/039_001.pdf" target="_blank" rel="noopener">小学校理科：新学習指導要領に対応した学習評価（教職員支援機構）<span class="ext"> ↗</span></a></li><li><a href="https://www.pen-kanagawa.ed.jp/edu-ctr/kenkyu/seikabutsu/documents/19008mondaikaiketsu-gaido.pdf" target="_blank" rel="noopener">「問題解決能力」育成のためのガイドブック（神奈川県立総合教育センター）<span class="ext"> ↗</span></a></li></ul></section>
+</div>
+
+<div class="m-scrim" id="mScrim"></div>
+<div class="modal" id="m-M01" role="dialog" aria-modal="true" aria-label="りか「いま ここ」ボード"><div class="m-card" style="--tc:#1f9d6b"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">学びの地図（掲示）</span></div><h3>りか「いま ここ」ボード</h3><p class="m-ai">いま、どこに いる？</p></div><div class="m-body"><ol class="m-steps"><li>理科の単元のはじめに、黒板の横に貼る</li><li>毎時間のはじめに、マグネットを「いまここ」へ動かす</li><li>まよった子は、席から見て確かめる</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>理科の単元を通して掲示する。「よく見る→問題→予想・仮説→計画→観察・実験→整理→結論」の現在地を毎時間確かめてから活動に入る。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>問題解決の過程が壁に見えていると、「今、何をする時間か」を子どもが自分で確かめ直せる。過程の見える化（プロジェクトウォール）は、置いてけぼり防止のいちばんの土台になる。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.mext.go.jp/component/a_menu/education/micro_detail/__icsFiles/afieldfile/2019/03/18/1387017_005_1.pdf" target="_blank" rel="noopener">小学校学習指導要領（平成29年告示）解説 理科編（文部科学省）<span class="ext"> ↗</span></a></li><li><a href="https://www.nits.go.jp/materials/youryou/files/039_001.pdf" target="_blank" rel="noopener">小学校理科：新学習指導要領に対応した学習評価（教職員支援機構）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/blog/using-project-wall-support-gold-standard-project-based-teaching" target="_blank" rel="noopener">Using a Project Wall to Support Gold Standard Project Based Teaching（PBLWorks）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/M01_りかいまここボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-M02" role="dialog" aria-modal="true" aria-label="社会科「いま ここ」ボード"><div class="m-card" style="--tc:#e8850c"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">学びの地図（掲示）</span></div><h3>社会科「いま ここ」ボード</h3><p class="m-ai">いま、なにを する時間？</p></div><div class="m-body"><ol class="m-steps"><li>社会科の単元のはじめに貼る</li><li>学習問題をつくった日に「つかむ」へ置く</li><li>単元の進行に合わせてマグネットを動かす</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>社会科の単元を通して掲示する。資料しらべや見学が続く「しらべる」の期間も、何のための活動かをボードで確かめられる。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>社会科の問題解決的な学習は「つかむ→調べる→まとめる→いかす」の定型で進む。地図が見えると、目の前の資料しらべが「学習問題のこたえに向かう活動」だと見失いにくい。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pen-kanagawa.ed.jp/edu-ctr/kenkyu/seikabutsu/documents/19008mondaikaiketsu-gaido.pdf" target="_blank" rel="noopener">「問題解決能力」育成のためのガイドブック（神奈川県立総合教育センター）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/blog/using-project-wall-support-gold-standard-project-based-teaching" target="_blank" rel="noopener">Using a Project Wall to Support Gold Standard Project Based Teaching（PBLWorks）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/M02_社会科いまここボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-M03" role="dialog" aria-modal="true" aria-label="そうごう 探究サイクルボード"><div class="m-card" style="--tc:#0f9b8e"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">学びの地図（掲示）</span></div><h3>そうごう 探究サイクルボード</h3><p class="m-ai">なんども まわす</p></div><div class="m-body"><ol class="m-steps"><li>総合的な学習の時間の教室に常掲する</li><li>活動のはじめに「いまここ」を動かす</li><li>一周したら、あたらしい「はてな」でもう一周</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>総合的な学習の時間・プロジェクト学習の常掲用。単元をこえて一年間使い続けられる。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>探究の過程は、4つを一度通って終わりではなく「発展的に繰り返す」ことが本体。サイクルとして見せることで、いまの活動が「作業」ではなく「探究のどこか」になる。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.mext.go.jp/a_menu/shotou/sougou/main14_a2.htm" target="_blank" rel="noopener">総合的な学習（探究）の時間（文部科学省）<span class="ext"> ↗</span></a></li><li><a href="https://www.nits.go.jp/materials/youryou/files/064_001.pdf" target="_blank" rel="noopener">総合的な探究の時間：改訂のポイントと学習評価（教職員支援機構）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/blog/using-project-wall-support-gold-standard-project-based-teaching" target="_blank" rel="noopener">Using a Project Wall to Support Gold Standard Project Based Teaching（PBLWorks）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/M03_そうごう探究サイクルボード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-P01" role="dialog" aria-modal="true" aria-label="プロジェクト けいかくシート"><div class="m-card" style="--tc:#2b5fd9"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">ワークシート</span></div><h3>プロジェクト けいかくシート</h3><p class="m-ai">この5つで、まいごに なりにくい</p></div><div class="m-body"><ol class="m-steps"><li>プロジェクトの1時間目に、班ごとに書く</li><li>学びの地図の横に貼っておく</li><li>こまったら、いつでもこのシートにもどる</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>プロジェクト・探究のスタート時に。問いとゴールを決め、役割を分担し、計画とリハーサルの日まで最初に見えるようにする。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>とい（挑戦的な問い）・ゴール（公開の成果物）・役割と計画（子どもの声と選択）・リハーサル（批評と改訂）は、Gold Standard PBLの必須要素と対応する。最初に決めて見える場所に置くと、「何のためにやっているか」を見失わない。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-project-design" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.gvsu.edu/cms4/asset/8FD27608-AF95-77B5-29623F385B8819C8/gold_standard_pbl_essential_v2019.pdf" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（BIE 2019年版・PDF）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/P01_プロジェクトけいかくシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-P02" role="dialog" aria-modal="true" aria-label="リハーサルシート"><div class="m-card" style="--tc:#2b5fd9"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">ワークシート</span></div><h3>リハーサルシート</h3><p class="m-ai">「もっと よく する」ための日</p></div><div class="m-body"><ol class="m-steps"><li>本番の少し前に、リハーサルの時間を計画に入れる</li><li>見てもらった直後に「よかった・考えなおす」を書く</li><li>「なにを・だれが・いつまでに」まで決める</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>発表・公開の本番前に一度、見てもらう場をつくったときに。見てくれた人の意見も書き込む。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>一度見てもらい、フィードバックを受けて作り直す「批評と改訂」で、成果物と学びは大きく伸びる。「だめさがし」ではなく「もっとよくする」のフレームで行うのがこつ。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-project-design" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（PBLWorks）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/P02_リハーサルシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-P03" role="dialog" aria-modal="true" aria-label="たんきゅう ふりかえりシート"><div class="m-card" style="--tc:#2b5fd9"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">ワークシート</span></div><h3>たんきゅう ふりかえりシート</h3><p class="m-ai">つぎの時間は、ここから はじめる</p></div><div class="m-body"><ol class="m-steps"><li>毎時間の終わり5分に書く</li><li>次の時間の最初5分に、読んでから始める</li><li>「こまっていること」欄は先生が回収して支援に使う</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>探究・プロジェクトの毎時間の終わりに。前回→今日→次回がつながるので、時間が空いても再開しやすい。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>振り返りが「前と比べて」つながると、「今日は何するんだっけ」の迷子が減る。振り返りはGold Standard PBLの必須要素で、自己調整学習の入口にもなる。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-project-design" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.mext.go.jp/a_menu/shotou/sougou/main14_a2.htm" target="_blank" rel="noopener">総合的な学習（探究）の時間（文部科学省）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/P03_たんきゅうふりかえりシート.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-K01" role="dialog" aria-modal="true" aria-label="みとおしカード"><div class="m-card" style="--tc:#c9366b"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">話型カード（掲示）</span></div><h3>みとおしカード</h3><p class="m-ai">なにを？ どうやって？ なにが わかりそう？</p></div><div class="m-body"><ol class="m-steps"><li>調べ活動に入る前の「見通しタイム」で全員が口に出す</li><li>掲示しておき、指差しで確かめる</li><li>「まだ決まっていません」も大切な自己主張として認める</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>調べ学習・実験・見学など、活動に入る直前に。見通しを言葉にしてから動き出す習慣をつくる。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>見通しの言語化は、計画→実行→振り返りという自己調整の入口。言えない子が「まだ決まっていません。いっしょに考えてください」と言えれば、そこから支援を始められる。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-teaching-practices" target="_blank" rel="noopener">Gold Standard PBL: Project Based Teaching Practices（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.pen-kanagawa.ed.jp/edu-ctr/kenkyu/seikabutsu/documents/19008mondaikaiketsu-gaido.pdf" target="_blank" rel="noopener">「問題解決能力」育成のためのガイドブック（神奈川県立総合教育センター）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/K01_みとおしカード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-K02" role="dialog" aria-modal="true" aria-label="すすみぐあいカード"><div class="m-card" style="--tc:#c9366b"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">話型カード（掲示）</span></div><h3>すすみぐあいカード</h3><p class="m-ai">ここまで できました</p></div><div class="m-body"><ol class="m-steps"><li>活動の途中、先生の見回りや中間交流のときに使う</li><li>すすんでいる子は「てつだえるよ」で声をかける</li><li>こまったら、先生のところへ確かめに行ってよいと伝える</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>長い活動時間の途中経過を伝え合う場面で。自己主張が苦手な子が、進み具合と困りごとを言える型として。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>進み具合を伝える型があると、援助要請（「ヒントをください」）へのハードルが下がる。「てつだえるよ」の一言が、支え合うチームの文化をつくる。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-teaching-practices" target="_blank" rel="noopener">Gold Standard PBL: Project Based Teaching Practices（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/blog/using-project-wall-support-gold-standard-project-based-teaching" target="_blank" rel="noopener">Using a Project Wall to Support Gold Standard Project Based Teaching（PBLWorks）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/K02_すすみぐあいカード.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div><div class="modal" id="m-S01" role="dialog" aria-modal="true" aria-label="先生用シート　7つの手立て"><div class="m-card" style="--tc:#333333"><button class="m-close" data-close aria-label="閉じる">×</button><div class="m-head"><div class="m-tags"><span class="m-tag">先生向け</span></div><h3>先生用シート　7つの手立て</h3><p class="m-ai">画面ではなく、表情を見る</p></div><div class="m-body"><ol class="m-steps"><li>職員室の机上・学年会での共有に</li><li>学びの地図・計画シート・話型カードとセットで運用する</li><li>支援は固定せず、子どもの様子を見て出し入れする</li></ol><div class="m-block"><span class="m-lbl">こんなときに使う</span><p>探究・PBL・問題解決的学習を仕組むときの教師用チェックリスト。校内研修の話題提供にも。</p></div><div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>7つの手立ては、Gold Standard PBLの指導実践（足場かけ・エンゲージ＆コーチ）と探究の過程を、教室の毎時間の動きに翻訳したもの。</p></div><div class="m-refs"><span class="m-lbl">参考にした資料・研究</span><ul><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-teaching-practices" target="_blank" rel="noopener">Gold Standard PBL: Project Based Teaching Practices（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.pblworks.org/what-is-pbl/gold-standard-project-design" target="_blank" rel="noopener">Gold Standard PBL: Essential Project Design Elements（PBLWorks）<span class="ext"> ↗</span></a></li><li><a href="https://www.mext.go.jp/a_menu/shotou/sougou/main14_a2.htm" target="_blank" rel="noopener">総合的な学習（探究）の時間（文部科学省）<span class="ext"> ↗</span></a></li></ul><p class="m-refnote">枠組みの知見をかみくだいて教材化したものです。くわしくは各リンク先の原典を参照。</p></div><a class="m-dl" href="pdf/S01_先生用シート7つの手立て.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをひらく</a><p class="m-note">掲示もシートも「配って終わり」では効きません。先生が一度いっしょに使ってみせて、毎時間の最初と最後に戻ってくる——その運用とセットで使ってください。</p></div></div></div>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../">棚トップにもどる</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></footer>
+
+<script>
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+(function(){
+  var sc=document.getElementById('mScrim');
+  function openM(id){var m=document.getElementById('m-'+id);if(!m)return;m.classList.add('open');sc.classList.add('show');document.body.style.overflow='hidden';m.scrollTop=0;}
+  function closeM(){Array.prototype.forEach.call(document.querySelectorAll('.modal.open'),function(m){m.classList.remove('open');});sc.classList.remove('show');document.body.style.overflow='';}
+  Array.prototype.forEach.call(document.querySelectorAll('[data-modal]'),function(b){b.addEventListener('click',function(){openM(b.getAttribute('data-modal'));});});
+  Array.prototype.forEach.call(document.querySelectorAll('[data-close]'),function(b){b.addEventListener('click',closeM);});
+  sc.addEventListener('click',closeM);
+  Array.prototype.forEach.call(document.querySelectorAll('.modal'),function(m){m.addEventListener('click',function(e){if(e.target===m)closeM();});});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')closeM();});
+})();
+</script>
+</body>
+</html>
