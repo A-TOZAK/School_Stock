@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先生の寄り道プロンプト帳｜School Stock</title>
+<style>
+  :root {
+    --ink: #15181c; --sub: #767b83; --accent: #2b5fd9;
+    --paper: #ffffff; --wash: #f6f6f4; --line: #e6e6e3; --black: #0e0f11;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16.5px; line-height: 1.95; letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  /* ── 上部バー ── */
+  .topbar { background: var(--black); color: #fff; }
+  .topbar-in { max-width: 680px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.32em; }
+  .topbar .cat { font-size: 11px; letter-spacing: 0.18em; color: #b9bcc2; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px 72px; }
+
+  /* ── ヒーロー ── */
+  .hero { padding: 48px 0 36px; border-bottom: 1px solid var(--ink); }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--black); padding: 4px 12px; margin-bottom: 20px; }
+  h1 { font-size: clamp(26px, 6.4vw, 38px); font-weight: 700; line-height: 1.45; letter-spacing: 0.01em; margin-bottom: 18px; }
+  .lead { font-size: 16px; color: #3d4148; margin-bottom: 22px; }
+  .meta { font-size: 12.5px; color: var(--sub); letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  /* ── 使い方3ステップ ── */
+  .howto { margin: 36px 0 8px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line); padding: 18px 4px 16px; }
+  .howto .dt { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 10px; }
+  .howto ol { list-style: none; }
+  .howto li { display: flex; gap: 14px; padding: 7px 0; font-size: 15.5px; font-weight: 500; line-height: 1.75; }
+  .howto li + li { border-top: 1px solid var(--line); }
+  .howto .n { font-family: Georgia, serif; font-style: italic; color: var(--accent); font-weight: 700; flex: none; }
+  .howto .ph { font-family: "SF Mono", Menlo, monospace; font-size: 13px; background: var(--wash); border: 1px solid var(--line); padding: 1px 7px; }
+
+  /* ── 注意書き ── */
+  .caution-box { background: var(--wash); border-top: 1px solid var(--ink); padding: 16px 20px 14px; margin: 26px 0 4px; font-size: 13.5px; line-height: 2.0; }
+  .caution-box .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); display: block; margin-bottom: 4px; }
+
+  /* ── 章 ── */
+  section { padding: 46px 0 4px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-no { font-family: Georgia, serif; font-style: italic; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); }
+  h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 700; line-height: 1.5; margin: 6px 0 6px; }
+  .sec-lead { font-size: 14.5px; color: #3d4148; margin-bottom: 10px; }
+
+  /* ── プロンプト1本 ── */
+  .pr { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 22px; }
+  .pr-head { display: flex; align-items: baseline; gap: 12px; }
+  .pr-no { font-family: Georgia, serif; font-style: italic; font-size: 19px; font-weight: 700; color: var(--accent); flex: none; }
+  .pr-title { font-size: 18px; font-weight: 700; line-height: 1.6; }
+  .pr-scene { font-size: 14px; color: var(--sub); line-height: 1.85; margin: 6px 0 12px; }
+  .prompt-wrap { position: relative; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; z-index: 2;
+    background: #fff; color: var(--ink); border: 1px solid var(--ink); padding: 7px 18px;
+    font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer; }
+  .copy-btn:active { transform: scale(.97); }
+  .copy-btn.done { background: var(--black); color: #fff; }
+  .prompt-box { background: var(--wash); border: 1px solid var(--line); padding: 18px 16px; }
+  .prompt-box pre { white-space: pre-wrap; word-break: break-word; font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; line-height: 1.85; color: #33373d; }
+  .followup { font-size: 13.5px; color: #3d4148; margin-top: 10px; }
+  .followup b { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); margin-right: 8px; }
+
+  /* ── フッター ── */
+  .foot { border-top: 3px solid var(--ink); margin-top: 56px; padding: 24px 2px 8px; }
+  .foot .fs { font-size: 13.5px; color: #3d4148; line-height: 2.0; margin-bottom: 14px; }
+  .credit { font-size: 12px; color: var(--sub); letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="wordmark">SCHOOL STOCK</span>
+    <span class="cat">ENTERTAINMENT</span>
+  </div>
+</div>
+
+<div class="container">
+
+<header class="hero">
+  <span class="kicker">エンタメ枠 ── Gemini プロンプト集</span>
+  <h1>先生の寄り道プロンプト帳</h1>
+  <p class="lead">出張のごはん、職員室へのおみやげ、研究大会あとのすきま時間。仕事の「ついで」がちょっと楽しくなる、コピペで使えるGeminiプロンプト10本です。授業でも校務でもありません。それがいいんです。</p>
+  <div class="meta">
+    <span>対象：<b>先生（人間のほう）</b></span>
+    <span>使うAI：<b>Gemini</b>（他のAIでも動きます）</span>
+    <span>所要：<b>コピペ10秒</b></span>
+  </div>
+</header>
+
+<div class="howto">
+  <div class="dt">使い方は3ステップ</div>
+  <ol>
+    <li><span class="n">1.</span><span>使いたいプロンプトの「コピー」ボタンを押す</span></li>
+    <li><span class="n">2.</span><span><span class="ph">[　]</span> の中を自分の予定に書きかえて、Geminiに貼る</span></li>
+    <li><span class="n">3.</span><span>出てきた答えに、遠慮なく追い質問する（「雨なら？」「予算半分なら？」）</span></li>
+  </ol>
+</div>
+
+<div class="caution-box">
+  <span class="lb">ひとつだけ、お約束</span>
+  お店や施設の情報は変わります。営業時間・定休日・予約の要否は、出発前に公式サイトか電話で最終確認を。Geminiの答えは「候補出しの相棒」と割り切るのが、いちばん楽しい使い方です。
+</div>
+
+<!-- ═══════════ 01 出張ごはん ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">SHUTCHO GOURMET</span></div>
+  <h2>出張ごはん</h2>
+  <p class="sec-lead">出張の楽しみの8割はごはんです。異論は認めます。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№1</span><span class="pr-title">昼休憩45分のランチ作戦</span></div>
+    <p class="pr-scene">午後の部が始まる前に、サッと、でもせっかくなら地元のものを。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは出張慣れした、地元通のグルメガイドです。
+
+# 状況
+出張で [市町村名・会場名] に来ています。
+昼休憩は [45分] だけ。会場から徒歩 [5分] 圏内で探します。
+
+# 条件
+- 一人でサッと入れて、提供が早い店
+- できればこの土地らしいもの（チェーン店は最終手段）
+- 行列必至の有名店は外す
+- 予算は [1,000円前後]
+
+# 出力形式
+候補を3つ、次の表で：
+店名｜ジャンル｜会場からの徒歩時間｜おすすめ理由（1行）｜混雑リスク
+
+最後に「時間が押したときの保険の1軒」も足してください。
+※営業時間・定休日が不確かな場合は、その旨を正直に書くこと。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「会議が長引いて残り20分になった。プランBは？」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№2</span><span class="pr-title">一人夜ごはん、地元の名物</span></div>
+    <p class="pr-scene">泊まりの出張。ホテルのコンビニ飯で済ませたら、もったいない夜に。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは一人めし・一人飲みの達人で、この土地の食に詳しい案内人です。
+
+# 状況
+出張で [市町村名] に泊まります。ホテルは [駅名・ホテル名] の周辺。
+夜は自由時間。せっかくなので地元の名物が食べたい。
+
+# 条件
+- 一人でも入りやすい店（カウンター席がある、常連だけの空気じゃない）
+- 予算は [3,000円] くらい
+- お酒は [少し飲む／飲まない]
+- 明日も仕事。21時台にはホテルに戻る
+
+# 出力形式
+1. 「この土地に来たらまずこれ」という名物料理を3つ、理由つきで
+2. それが食べられる一人向きの店を、それぞれ1軒ずつ
+3. 最後に「迷ったらここ」の第1推薦を1つ、断言してください
+
+※営業時間・定休日は変わるので、公式情報での最終確認をすすめる一文も添えて。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「2軒目に軽く甘いものを食べるなら？」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№3</span><span class="pr-title">帰りの駅弁、選んで</span></div>
+    <p class="pr-scene">発車まで20分。駅弁売り場の前で固まる時間も含めて、出張です。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは駅弁と車内グルメの評論家です。解説は軽妙に。
+
+# 状況
+[駅名] から [新幹線／特急] で帰ります。乗車時間は [約2時間]。
+発車まで [20分]。駅の構内で調達します。
+
+# 出力形式
+- この駅で買うべき駅弁ベスト3（名前・値段の目安・推しポイント1行）
+- 駅弁以外の「実はこっちが正解」枠を1つ
+- 飲み物とお茶うけの組み合わせ提案も1つ
+
+選んでいる時間まで楽しくなる解説をお願いします。
+※商品の入れ替わりがありうることは正直に書いてください。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「車内で食べやすさ重視ならどれ？（においが強くないもの）」</p>
+  </div>
+</section>
+
+<!-- ═══════════ 02 おみやげ ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">OMIYAGE</span></div>
+  <h2>おみやげ</h2>
+  <p class="sec-lead">「個包装・日持ち・人数分」。職員室おみやげは、実は条件整理の問題です。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№4</span><span class="pr-title">職員室おみやげ会議</span></div>
+    <p class="pr-scene">30人分・個包装・切り分け不要。この三重条件を一発で解いてもらう。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは「職場へのおみやげ選び」専門のコンシェルジュです。
+
+# 状況
+[都道府県・都市名] への出張帰り。職員室におみやげを買います。
+買える場所は [駅／空港] の売店です。
+
+# 絶対条件
+- 職員室の人数：[30人]。全員に行き渡ること
+- 個包装で、切り分け・お皿・冷蔵庫が不要
+- 日持ちが1週間以上
+- 予算：[2,000円以内]
+
+# 出力形式
+候補3つを表で：
+商品名｜個数と価格の目安｜日持ち｜「これどこの？」と聞かれたときの返し（1行）
+
+最後に、個数が足りないときの「2箱作戦」も添えてください。
+※定番商品を優先し、実在があやしいものは出さないこと。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「甘いものが苦手な先生用に、しょっぱい枠を1つ足すなら？」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№5</span><span class="pr-title">家族へのおみやげ＋30秒の小話</span></div>
+    <p class="pr-scene">モノだけじゃなく「おみやげ話」も一緒に持って帰るためのプロンプト。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは、渡す相手の顔を思い浮かべながらおみやげを選ぶプロです。
+
+# 状況
+[都道府県・都市名] への出張帰り。家族におみやげを買います。
+渡す相手：[小3の娘と妻]（好み：[甘いもの好き・キャラクターもの好き] など）
+買える場所は [駅／空港]、予算は合計 [2,000円]。
+
+# 出力形式
+1. 相手ごとにおすすめを2つずつ（品名と、その人に合う理由）
+2. 渡すときの「30秒の小話」台本
+   （「これはね、〇〇っていう土地でね…」から始まる、
+     その土地の豆知識を1つ混ぜたひとこと話）
+
+小話はウケ狙いすぎず、食卓でそのまま話せるトーンで。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「小話をもう少し面白く。オチを1つつけて」</p>
+  </div>
+</section>
+
+<!-- ═══════════ 03 研究大会のすきま時間 ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">KENKYU-TAIKAI TRIP</span></div>
+  <h2>研究大会のすきま時間</h2>
+  <p class="sec-lead">せっかく遠くまで来たんです。帰りの便までの2時間、無駄にしない。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№6</span><span class="pr-title">帰りの便まで2時間、観光プラン</span></div>
+    <p class="pr-scene">大会終了から出発まで。キャリーを引きずらない、乗り遅れない、でも満喫する。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは「限られた時間で土地を味わう」プランニングの達人です。
+
+# 状況
+研究大会で [市町村名] に来ています。
+[会場名・最寄り駅] を [15:30] に出て、[駅・空港名] を [18:00] の便で発ちます。
+使えるのは正味 [2時間]。荷物は [キャリーあり（ロッカーに預けたい）]。
+
+# 条件
+- 移動は徒歩と公共交通のみ
+- 「ここに来た」と思える場所を最低1つ入れる
+- 乗り遅れリスクは絶対に取らない（駅・空港には出発30分前に着く）
+
+# 出力形式
+タイムライン形式で：
+時刻｜場所・行動｜移動手段と所要時間｜ひとことメモ
+
+プランは「王道コース」と「渋いコース」の2本立てでお願いします。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「雨が降ってきた。屋内版に組み替えて」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№7</span><span class="pr-title">大会前の朝さんぽ</span></div>
+    <p class="pr-scene">早起きは先生の職業病。どうせ目が覚めるなら、知らない街の朝を歩く。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは早起きが得意な、まちあるきの案内人です。
+
+# 状況
+[市町村名] の [駅名・ホテル名] 周辺に泊まっています。
+明日の朝、[6:30] から [1時間] だけ自由時間があります。
+
+# 出力形式
+- 朝の空気が気持ちいい散歩コースを1つ（往復の目安時間つき）
+- 途中で寄れる朝ごはん・モーニングの店を1〜2つ
+  （早朝から開いている店に限る。開店時間も書くこと）
+- 「朝のうちに見ると得をする」この土地ならではの風景があれば1つ
+
+戻る時刻から逆算して、無理のないコースにしてください。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「30分しか取れなくなった。短縮版は？」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№8</span><span class="pr-title">1時間しかない。1つに絞って</span></div>
+    <p class="pr-scene">あれこれ調べる時間すらないとき。目利きに「これだけ」を断言してもらう。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは「その土地の外せない1つ」を断言してくれる旅の目利きです。
+
+# 状況
+[市町村名] に来ましたが、自由時間は [1時間] だけ。
+今いる場所は [駅名・会場名] のあたり。あれこれ回れません。
+
+# 出力形式
+1. 「迷わずこれ」を1つだけ断言（観光・食・体験、なんでもよい）
+2. なぜそれか、3行で
+3. 「次に来たときのお楽しみリスト」を3つ
+   （今回は見送るが、覚えておく価値のあるもの）
+
+複数の候補を並べて選ばせるのは禁止。あなたが決めてください。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「それ、行ってきた。次の30分でもう1つやるなら？」</p>
+  </div>
+</section>
+
+<!-- ═══════════ 04 ふだん使い ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">EVERYDAY</span></div>
+  <h2>ふだん使い</h2>
+  <p class="sec-lead">出張がなくても使えます。金曜の夜と週末のために。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№9</span><span class="pr-title">週末3時間のリフレッシュ処方箋</span></div>
+    <p class="pr-scene">「休めるときに休む」も仕事のうち。プランニングごと外注しましょう。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは、がんばりすぎる人に「休み方」を処方するプランナーです。
+
+# 状況
+今週末、[土曜の午後] に [3時間] だけ自由時間ができました。
+自宅は [市町村名] の周辺。移動は [車／電車]。
+
+# 希望
+- 気分：[自然に癒されたい／おいしいもの／一人で静かに／体を動かしたい]
+- 予算：[2,000円くらい]
+
+# 出力形式
+- 晴れプランと雨プランを1本ずつ、タイムラインで
+- それぞれ「これをやったら帰る」という切り上げポイントを明示
+  （ずるずる延ばして疲れて帰るのを防ぐため）
+
+「何もしないで昼寝」が最適解だと思ったら、正直にそう書いてください。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「家族（[構成]）も一緒に行けるプランに変えて」</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№10</span><span class="pr-title">幹事になってしまった</span></div>
+    <p class="pr-scene">歓送迎会、打ち上げ、忘年会。幹事の不安を段取りごと引き受けてもらう。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>あなたは経験豊富な宴会幹事のアドバイザーです。
+
+# 状況
+[歓送迎会／打ち上げ／忘年会] の幹事になりました。
+場所は [市町村名・駅名] の周辺、日程は [金曜19:00] を予定。
+
+# 条件
+- 人数：[20人]（出欠の変動あり。前日まで人数調整できる店が安心）
+- 予算：一人 [4,000円]（飲み放題 [あり／なし]）
+- そのほか：[個室希望／アレルギー対応が必要 など]
+
+# 出力形式
+1. この条件をグルメサイトで探すための「検索キーワード」1行
+2. このエリア・この会の趣旨に合うおすすめジャンル3つと理由
+3. 幹事の段取りチェックリスト
+   （予約→事前アナウンス→当日→会計→お礼まで、時系列で10項目）
+
+チェックリストには「幹事がいちばん忘れがちなこと」を1つ含めてください。</pre></div>
+    </div>
+    <p class="followup"><b>追い質問</b>「乾杯挨拶を頼む人への依頼文も書いて（丁寧すぎない感じで）」</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <p class="fs">プロンプトは全部、書きかえて使ってかまいません。「45分」を「30分」に、「職員室」を「学年部」に。自分の学校仕様に育てていくのが、いちばんの正解です。よい寄り道を。</p>
+  <p class="credit">© School Stock</p>
+</footer>
+
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    btn.textContent = 'コピーしました';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('done'); }, 1800);
+  });
+}
+</script>
+
+</body>
+</html>
