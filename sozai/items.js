@@ -1,451 +1,362 @@
-// 自動生成: scripts/publish_schoolstock_sozai.py（手で編集しない）
+// 自動生成: scripts/publish_sozai_v2.py（手で編集しない）
+// 1次ソース: 17素材集/site_assets/sozai_catalog.json
 const SOZAI = [
  {
-  "id": "53_rika_safety_observation_problem_solving_parts_sheet",
-  "grade": "共通",
-  "field": "共通（観察・実験）",
-  "title": "安全な観察・実験のパーツ",
-  "img": "img/53_rika_safety_observation_problem_solving_parts_sheet.jpg",
-  "mono": "img/53_rika_safety_observation_problem_solving_parts_sheet_mono.jpg"
+  "id": "rika5_toke_01_mesucylinder",
+  "title": "メスシリンダーの目もりを読む",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "水の体積を正しくはかる"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "水面のへこみ（メニスカス）を目の高さで読む、正しい姿勢の図。",
+  "howto": "器具の使い方指導や、実験の準備の説明に。",
+  "img": "img/rika5_toke_01_mesucylinder.jpg",
+  "thumb": "img/rika5_toke_01_mesucylinder_thumb.jpg",
+  "mono": "img/rika5_toke_01_mesucylinder_mono.jpg"
  },
  {
-  "id": "05_rika_experiment_process_sheet",
-  "grade": "共通",
-  "field": "共通（観察・実験）",
-  "title": "実験の進め方（問題→予想→計画→結果→考察）",
-  "img": "img/05_rika_experiment_process_sheet.jpg",
-  "mono": "img/05_rika_experiment_process_sheet_mono.jpg"
+  "id": "rika5_toke_02_tenbin_omosa",
+  "title": "とけても重さは変わらない（上皿てんびん）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "とかす前後の重さを比べる"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "食塩がとけても、水と合わせた重さは変わらないことを示す上皿てんびん。",
+  "howto": "「重さは変わらない」の考察・まとめの図に。",
+  "img": "img/rika5_toke_02_tenbin_omosa.jpg",
+  "thumb": "img/rika5_toke_02_tenbin_omosa_thumb.jpg",
+  "mono": "img/rika5_toke_02_tenbin_omosa_mono.jpg"
  },
  {
-  "id": "80_rika_common_experiment_plan_condition_control_parts_sheet",
-  "grade": "共通",
-  "field": "共通（観察・実験）",
-  "title": "実験計画と条件制御のパーツ",
-  "img": "img/80_rika_common_experiment_plan_condition_control_parts_sheet.jpg",
-  "mono": "img/80_rika_common_experiment_plan_condition_control_parts_sheet_mono.jpg"
+  "id": "rika5_toke_03_yusen_atatameru",
+  "title": "湯せんであたためてとかす",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "水の温度を上げてとかす"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "湯せんであたためてミョウバンをとかす。炎を使わない（あたためる）点がポイント。",
+  "howto": "「温度を上げるととける量は？」の実験場面に。",
+  "img": "img/rika5_toke_03_yusen_atatameru.jpg",
+  "thumb": "img/rika5_toke_03_yusen_atatameru_thumb.jpg",
+  "mono": "img/rika5_toke_03_yusen_atatameru_mono.jpg"
  },
  {
-  "id": "70_rika_common_compare_classify_relationship_cards_parts_sheet",
-  "grade": "共通",
-  "field": "共通（観察・実験）",
-  "title": "比べる・分ける・関係づけるカード",
-  "img": "img/70_rika_common_compare_classify_relationship_cards_parts_sheet.jpg",
-  "mono": "img/70_rika_common_compare_classify_relationship_cards_parts_sheet_mono.jpg"
+  "id": "rika5_toke_04_roka",
+  "title": "ろ過のしかた",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "液をこして分ける"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "ガラス棒を伝わらせ、ろうとの足を内壁につける、正しいろ過のしかた。",
+  "howto": "ろ過の手順指導・技能の評価に。",
+  "img": "img/rika5_toke_04_roka.jpg",
+  "thumb": "img/rika5_toke_04_roka_thumb.jpg",
+  "mono": "img/rika5_toke_04_roka_mono.jpg"
  },
  {
-  "id": "33_rika_observation_experiment_tools_parts_sheet",
-  "grade": "共通",
-  "field": "共通（観察・実験）",
-  "title": "観察・実験の器具イラスト",
-  "img": "img/33_rika_observation_experiment_tools_parts_sheet.jpg",
-  "mono": "img/33_rika_observation_experiment_tools_parts_sheet_mono.jpg"
+  "id": "rika5_toke_05_johatsu",
+  "title": "水をじょう発させて取り出す",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "とけた物を取り出す"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "蒸発皿を熱して水をじょう発させ、とけていた食塩を取り出す。",
+  "howto": "「とけた物を取り出す」まとめの図に。",
+  "img": "img/rika5_toke_05_johatsu.jpg",
+  "thumb": "img/rika5_toke_05_johatsu_thumb.jpg",
+  "mono": "img/rika5_toke_05_johatsu_mono.jpg"
  },
  {
-  "id": "36_grade3_physics_light_magnet_electric_parts_sheet",
+  "id": "rika5_toke_cover",
+  "title": "「物のとけ方」道具の俯瞰（表紙用）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "単元の扉・表紙"
+  ],
+  "uses": [
+   "スライド用",
+   "掲示・おたより用"
+  ],
+  "description": "ビーカー・ガラス棒・食塩・メスシリンダーをクラフト紙に並べた俯瞰。左に余白。",
+  "howto": "プリントの表紙・スライドの扉・単元サムネに。",
+  "img": "img/rika5_toke_cover.jpg",
+  "thumb": "img/rika5_toke_cover_thumb.jpg"
+ },
+ {
+  "id": "rika5_toke_photo_kakimaze",
+  "title": "ビーカーでとかす手元（教室）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "食塩をとかす活動"
+  ],
+  "uses": [
+   "導入",
+   "スライド用"
+  ],
+  "description": "自然光の教室で、ガラス棒でかき混ぜて食塩をとかす子どもの手元。",
+  "howto": "単元の導入・実験の雰囲気づくりに。",
+  "img": "img/rika5_toke_photo_kakimaze.jpg",
+  "thumb": "img/rika5_toke_photo_kakimaze_thumb.jpg"
+ },
+ {
+  "id": "rika5_toke_photo_roka",
+  "title": "ろ過を見つめる手元（教室）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "物のとけ方",
+  "scenes": [
+   "ろ過の活動"
+  ],
+  "uses": [
+   "導入",
+   "スライド用"
+  ],
+  "description": "自然光の教室で、ろ過装置から落ちる液を見つめる子どもの手元。",
+  "howto": "ろ過の場面の導入・掲示に。",
+  "img": "img/rika5_toke_photo_roka.jpg",
+  "thumb": "img/rika5_toke_photo_roka_thumb.jpg"
+ },
+ {
+  "id": "denki3_01_kairo_tsuku",
+  "title": "明かりがつく回路",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "エネルギー（物理）",
-  "title": "光・磁石・電気のはたらき",
-  "img": "img/36_grade3_physics_light_magnet_electric_parts_sheet.jpg",
-  "mono": "img/36_grade3_physics_light_magnet_electric_parts_sheet_mono.jpg"
+  "unit": "電気の通り道",
+  "scenes": [
+   "回路がつながっている"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "豆電球・かん電池・導線が1つの輪でつながり、明かりがつく回路。",
+  "howto": "「どうつなぐと明かりがつくか」の説明に。",
+  "img": "img/denki3_01_kairo_tsuku.jpg",
+  "thumb": "img/denki3_01_kairo_tsuku_thumb.jpg",
+  "mono": "img/denki3_01_kairo_tsuku_mono.jpg"
  },
  {
-  "id": "60_grade3_physics_sound_vibration_parts_sheet",
+  "id": "denki3_02_kairo_tsukanai",
+  "title": "明かりがつかない回路（輪が切れている）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "エネルギー（物理）",
-  "title": "音のせいしつ（音のふるえ）",
-  "img": "img/60_grade3_physics_sound_vibration_parts_sheet.jpg",
-  "mono": "img/60_grade3_physics_sound_vibration_parts_sheet_mono.jpg"
+  "unit": "電気の通り道",
+  "scenes": [
+   "回路が切れている"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "同じ部品でも、導線が極からはずれて輪が切れると明かりはつかない。",
+  "howto": "つく／つかないの比較・問いづくりに。",
+  "img": "img/denki3_02_kairo_tsukanai.jpg",
+  "thumb": "img/denki3_02_kairo_tsukanai_thumb.jpg",
+  "mono": "img/denki3_02_kairo_tsukanai_mono.jpg"
  },
  {
-  "id": "52_grade3_physics_wind_rubber_parts_sheet",
+  "id": "denki3_03_toosu_toosanai",
+  "title": "電気を通す物・通さない物",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "エネルギー（物理）",
-  "title": "風とゴムの力",
-  "img": "img/52_grade3_physics_wind_rubber_parts_sheet.jpg",
-  "mono": "img/52_grade3_physics_wind_rubber_parts_sheet_mono.jpg"
+  "unit": "電気の通り道",
+  "scenes": [
+   "回路に物をはさむ"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "鉄のくぎをはさむと明かりがつき、木のつまようじではつかない。",
+  "howto": "「何が電気を通すか」の実験・記録に。",
+  "img": "img/denki3_03_toosu_toosanai.jpg",
+  "thumb": "img/denki3_03_toosu_toosanai_thumb.jpg",
+  "mono": "img/denki3_03_toosu_toosanai_mono.jpg"
  },
  {
-  "id": "37_grade3_earth_sun_shadow_ground_parts_sheet",
+  "id": "jishaku3_01_tsuku_tsukanai",
+  "title": "じしゃくにつく物・つかない物",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "地球",
-  "title": "太陽とかげ・地面のようす",
-  "img": "img/37_grade3_earth_sun_shadow_ground_parts_sheet.jpg",
-  "mono": "img/37_grade3_earth_sun_shadow_ground_parts_sheet_mono.jpg"
+  "unit": "じしゃくのせいしつ",
+  "scenes": [
+   "いろいろな物を近づける"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "鉄のクリップやくぎはつき、木・プラスチック・アルミはつかない。",
+  "howto": "「じしゃくにつくのはどんな物か」の分類に。",
+  "img": "img/jishaku3_01_tsuku_tsukanai.jpg",
+  "thumb": "img/jishaku3_01_tsuku_tsukanai_thumb.jpg",
+  "mono": "img/jishaku3_01_tsuku_tsukanai_mono.jpg"
  },
  {
-  "id": "61_grade3_earth_sun_shadow_ground_temperature_parts_sheet",
+  "id": "jishaku3_02_kyoku",
+  "title": "きょく：引き合う・退け合う",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "地球",
-  "title": "太陽とかげ・地面の温度",
-  "img": "img/61_grade3_earth_sun_shadow_ground_temperature_parts_sheet.jpg",
-  "mono": "img/61_grade3_earth_sun_shadow_ground_temperature_parts_sheet_mono.jpg"
+  "unit": "じしゃくのせいしつ",
+  "scenes": [
+   "じしゃくどうしを近づける"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "ちがうきょくは引き合い、同じきょくは退け合う。",
+  "howto": "きょくのはたらきの説明・まとめに。",
+  "img": "img/jishaku3_02_kyoku.jpg",
+  "thumb": "img/jishaku3_02_kyoku_thumb.jpg",
+  "mono": "img/jishaku3_02_kyoku_mono.jpg"
  },
  {
-  "id": "29_rika_insect_growth_morphology_parts_sheet",
+  "id": "jishaku3_03_hedatete",
+  "title": "紙を隔てても鉄を引きつける",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
   "grade": "3年",
-  "field": "生命",
-  "title": "こん虫の育ちと体のつくり",
-  "img": "img/29_rika_insect_growth_morphology_parts_sheet.jpg",
-  "mono": "img/29_rika_insect_growth_morphology_parts_sheet_mono.jpg"
+  "unit": "じしゃくのせいしつ",
+  "scenes": [
+   "間に物をはさむ"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "じしゃくは、間に紙をはさんでも・離れていても鉄を引きつける。",
+  "howto": "「離れていてもはたらく力」の説明に。",
+  "img": "img/jishaku3_03_hedatete.jpg",
+  "thumb": "img/jishaku3_03_hedatete_thumb.jpg",
+  "mono": "img/jishaku3_03_hedatete_mono.jpg"
  },
  {
-  "id": "54_grade3_life_plant_insect_growth_parts_sheet",
+  "id": "denki3_cover",
+  "title": "「電気・じしゃく」道具の俯瞰（表紙用）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "理科",
   "grade": "3年",
-  "field": "生命",
-  "title": "植物とこん虫の育ち",
-  "img": "img/54_grade3_life_plant_insect_growth_parts_sheet.jpg",
-  "mono": "img/54_grade3_life_plant_insect_growth_parts_sheet_mono.jpg"
+  "unit": "電気とじしゃく",
+  "scenes": [
+   "単元の扉・表紙"
+  ],
+  "uses": [
+   "スライド用",
+   "掲示・おたより用"
+  ],
+  "description": "豆電球・かん電池・導線・棒じしゃく・クリップ・方位じしんをクラフト紙に並べた俯瞰。左に余白。",
+  "howto": "プリントの表紙・スライドの扉・単元サムネに。",
+  "img": "img/denki3_cover.jpg",
+  "thumb": "img/denki3_cover_thumb.jpg"
  },
  {
-  "id": "30_rika_familiar_nature_observation_parts_sheet",
+  "id": "denki3_photo_kairo",
+  "title": "明かりがつく回路（全体）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "理科",
   "grade": "3年",
-  "field": "生命",
-  "title": "身近な自然の観察",
-  "img": "img/30_rika_familiar_nature_observation_parts_sheet.jpg",
-  "mono": "img/30_rika_familiar_nature_observation_parts_sheet_mono.jpg"
+  "unit": "電気の通り道",
+  "scenes": [
+   "回路の全体を見る"
+  ],
+  "uses": [
+   "説明",
+   "スライド用"
+  ],
+  "description": "電池ボックス・豆電球・導線が輪になった、明かりがつく回路の全体。",
+  "howto": "回路の全体像を見せる導入・説明に。",
+  "img": "img/denki3_photo_kairo.jpg",
+  "thumb": "img/denki3_photo_kairo_thumb.jpg"
  },
  {
-  "id": "45_grade3_chemistry_weight_material_parts_sheet",
+  "id": "denki3_photo_jishaku",
+  "title": "じしゃくにクリップがつながる手元（教室）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
   "grade": "3年",
-  "field": "粒子（化学）",
-  "title": "ものの重さと材質",
-  "img": "img/45_grade3_chemistry_weight_material_parts_sheet.jpg",
-  "mono": "img/45_grade3_chemistry_weight_material_parts_sheet_mono.jpg"
- },
- {
-  "id": "71_grade3_chemistry_weight_same_amount_parts_sheet",
-  "grade": "3年",
-  "field": "粒子（化学）",
-  "title": "ものの重さ（同じ体積でくらべる）",
-  "img": "img/71_grade3_chemistry_weight_same_amount_parts_sheet.jpg",
-  "mono": "img/71_grade3_chemistry_weight_same_amount_parts_sheet_mono.jpg"
- },
- {
-  "id": "73_grade4_physics_motor_propeller_circuit_parts_sheet",
-  "grade": "4年",
-  "field": "エネルギー（物理）",
-  "title": "モーター・プロペラと回路",
-  "img": "img/73_grade4_physics_motor_propeller_circuit_parts_sheet.jpg",
-  "mono": "img/73_grade4_physics_motor_propeller_circuit_parts_sheet_mono.jpg"
- },
- {
-  "id": "12_rika_electric_current_parts_sheet",
-  "grade": "4年",
-  "field": "エネルギー（物理）",
-  "title": "電流のはたらき",
-  "img": "img/12_rika_electric_current_parts_sheet.jpg",
-  "mono": "img/12_rika_electric_current_parts_sheet_mono.jpg"
- },
- {
-  "id": "48_grade4_physics_electric_current_deepening_parts_sheet",
-  "grade": "4年",
-  "field": "エネルギー（物理）",
-  "title": "電流のはたらき（発展）",
-  "img": "img/48_grade4_physics_electric_current_deepening_parts_sheet.jpg",
-  "mono": "img/48_grade4_physics_electric_current_deepening_parts_sheet_mono.jpg"
- },
- {
-  "id": "11_rika_weather_temperature_parts_sheet",
-  "grade": "4年",
-  "field": "地球",
-  "title": "天気と気温",
-  "img": "img/11_rika_weather_temperature_parts_sheet.jpg",
-  "mono": "img/11_rika_weather_temperature_parts_sheet_mono.jpg"
- },
- {
-  "id": "46_grade4_earth_moon_stars_parts_sheet",
-  "grade": "4年",
-  "field": "地球",
-  "title": "月と星",
-  "img": "img/46_grade4_earth_moon_stars_parts_sheet.jpg",
-  "mono": "img/46_grade4_earth_moon_stars_parts_sheet_mono.jpg"
- },
- {
-  "id": "62_grade4_earth_rainwater_weather_temperature_parts_sheet",
-  "grade": "4年",
-  "field": "地球",
-  "title": "雨水のゆくえ・天気と気温",
-  "img": "img/62_grade4_earth_rainwater_weather_temperature_parts_sheet.jpg",
-  "mono": "img/62_grade4_earth_rainwater_weather_temperature_parts_sheet_mono.jpg"
- },
- {
-  "id": "40_grade4_life_body_seasons_parts_sheet",
-  "grade": "4年",
-  "field": "生命",
-  "title": "体のつくりと季節の生き物",
-  "img": "img/40_grade4_life_body_seasons_parts_sheet.jpg",
-  "mono": "img/40_grade4_life_body_seasons_parts_sheet_mono.jpg"
- },
- {
-  "id": "72_grade4_life_body_movement_joints_parts_sheet",
-  "grade": "4年",
-  "field": "生命",
-  "title": "体の動きとほね・関節",
-  "img": "img/72_grade4_life_body_movement_joints_parts_sheet.jpg",
-  "mono": "img/72_grade4_life_body_movement_joints_parts_sheet_mono.jpg"
- },
- {
-  "id": "55_grade4_life_seasonal_living_things_parts_sheet",
-  "grade": "4年",
-  "field": "生命",
-  "title": "季節と生き物",
-  "img": "img/55_grade4_life_seasonal_living_things_parts_sheet.jpg",
-  "mono": "img/55_grade4_life_seasonal_living_things_parts_sheet_mono.jpg"
- },
- {
-  "id": "58_grade4_chemistry_air_water_properties_deepening_parts_sheet",
-  "grade": "4年",
-  "field": "粒子（化学）",
-  "title": "空気と水の性質（発展）",
-  "img": "img/58_grade4_chemistry_air_water_properties_deepening_parts_sheet.jpg",
-  "mono": "img/58_grade4_chemistry_air_water_properties_deepening_parts_sheet_mono.jpg"
- },
- {
-  "id": "38_grade4_chemistry_air_water_temperature_parts_sheet",
-  "grade": "4年",
-  "field": "粒子（化学）",
-  "title": "空気と水・温度による変化",
-  "img": "img/38_grade4_chemistry_air_water_temperature_parts_sheet.jpg",
-  "mono": "img/38_grade4_chemistry_air_water_temperature_parts_sheet_mono.jpg"
- },
- {
-  "id": "63_grade4_chemistry_metal_water_air_temperature_parts_sheet",
-  "grade": "4年",
-  "field": "粒子（化学）",
-  "title": "金属・水・空気と温度",
-  "img": "img/63_grade4_chemistry_metal_water_air_temperature_parts_sheet.jpg",
-  "mono": "img/63_grade4_chemistry_metal_water_air_temperature_parts_sheet_mono.jpg"
- },
- {
-  "id": "39_grade5_physics_pendulum_electromagnet_parts_sheet",
-  "grade": "5年",
-  "field": "エネルギー（物理）",
-  "title": "ふりこと電磁石",
-  "img": "img/39_grade5_physics_pendulum_electromagnet_parts_sheet.jpg",
-  "mono": "img/39_grade5_physics_pendulum_electromagnet_parts_sheet_mono.jpg"
- },
- {
-  "id": "64_grade5_physics_pendulum_conditions_parts_sheet",
-  "grade": "5年",
-  "field": "エネルギー（物理）",
-  "title": "ふりこの条件",
-  "img": "img/64_grade5_physics_pendulum_conditions_parts_sheet.jpg",
-  "mono": "img/64_grade5_physics_pendulum_conditions_parts_sheet_mono.jpg"
- },
- {
-  "id": "65_grade5_physics_electromagnet_strength_parts_sheet",
-  "grade": "5年",
-  "field": "エネルギー（物理）",
-  "title": "電磁石の強さ",
-  "img": "img/65_grade5_physics_electromagnet_strength_parts_sheet.jpg",
-  "mono": "img/65_grade5_physics_electromagnet_strength_parts_sheet_mono.jpg"
- },
- {
-  "id": "79_grade5_earth_typhoon_cloud_weather_info_parts_sheet",
-  "grade": "5年",
-  "field": "地球",
-  "title": "台風と雲・気象情報",
-  "img": "img/79_grade5_earth_typhoon_cloud_weather_info_parts_sheet.jpg",
-  "mono": "img/79_grade5_earth_typhoon_cloud_weather_info_parts_sheet_mono.jpg"
- },
- {
-  "id": "47_grade5_earth_weather_change_parts_sheet",
-  "grade": "5年",
-  "field": "地球",
-  "title": "天気の変化",
-  "img": "img/47_grade5_earth_weather_change_parts_sheet.jpg",
-  "mono": "img/47_grade5_earth_weather_change_parts_sheet_mono.jpg"
- },
- {
-  "id": "34_rika_flowing_water_land_change_parts_sheet",
-  "grade": "5年",
-  "field": "地球",
-  "title": "流れる水と土地の変化",
-  "img": "img/34_rika_flowing_water_land_change_parts_sheet.jpg",
-  "mono": "img/34_rika_flowing_water_land_change_parts_sheet_mono.jpg"
- },
- {
-  "id": "59_grade5_earth_running_water_land_change_parts_sheet",
-  "grade": "5年",
-  "field": "地球",
-  "title": "流れる水のはたらきと土地の変化",
-  "img": "img/59_grade5_earth_running_water_land_change_parts_sheet.jpg",
-  "mono": "img/59_grade5_earth_running_water_land_change_parts_sheet_mono.jpg"
- },
- {
-  "id": "31_rika_medaka_egg_microscope_parts_sheet",
-  "grade": "5年",
-  "field": "生命",
-  "title": "メダカのたまごとけんび鏡",
-  "img": "img/31_rika_medaka_egg_microscope_parts_sheet.jpg",
-  "mono": "img/31_rika_medaka_egg_microscope_parts_sheet_mono.jpg"
- },
- {
-  "id": "69_grade5_life_animal_birth_development_parts_sheet",
-  "grade": "5年",
-  "field": "生命",
-  "title": "動物のたんじょう",
-  "img": "img/69_grade5_life_animal_birth_development_parts_sheet.jpg",
-  "mono": "img/69_grade5_life_animal_birth_development_parts_sheet_mono.jpg"
- },
- {
-  "id": "28_rika_plant_growth_observation_parts_sheet",
-  "grade": "5年",
-  "field": "生命",
-  "title": "植物の成長の観察",
-  "img": "img/28_rika_plant_growth_observation_parts_sheet.jpg",
-  "mono": "img/28_rika_plant_growth_observation_parts_sheet_mono.jpg"
- },
- {
-  "id": "32_rika_germination_conditions_parts_sheet",
-  "grade": "5年",
-  "field": "生命",
-  "title": "発芽の条件",
-  "img": "img/32_rika_germination_conditions_parts_sheet.jpg",
-  "mono": "img/32_rika_germination_conditions_parts_sheet_mono.jpg"
- },
- {
-  "id": "56_grade5_life_flower_pollination_fruiting_parts_sheet",
-  "grade": "5年",
-  "field": "生命",
-  "title": "花のつくりと受粉・結実",
-  "img": "img/56_grade5_life_flower_pollination_fruiting_parts_sheet.jpg",
-  "mono": "img/56_grade5_life_flower_pollination_fruiting_parts_sheet_mono.jpg"
- },
- {
-  "id": "74_grade5_chemistry_solubility_amount_temperature_parts_sheet",
-  "grade": "5年",
-  "field": "粒子（化学）",
-  "title": "とける量と水の量・温度",
-  "img": "img/74_grade5_chemistry_solubility_amount_temperature_parts_sheet.jpg",
-  "mono": "img/74_grade5_chemistry_solubility_amount_temperature_parts_sheet_mono.jpg"
- },
- {
-  "id": "35_rika_solution_crystal_experiment_parts_sheet",
-  "grade": "5年",
-  "field": "粒子（化学）",
-  "title": "もののとけ方と結晶",
-  "img": "img/35_rika_solution_crystal_experiment_parts_sheet.jpg",
-  "mono": "img/35_rika_solution_crystal_experiment_parts_sheet_mono.jpg"
- },
- {
-  "id": "49_grade5_chemistry_dissolving_deepening_parts_sheet",
-  "grade": "5年",
-  "field": "粒子（化学）",
-  "title": "もののとけ方（発展）",
-  "img": "img/49_grade5_chemistry_dissolving_deepening_parts_sheet.jpg",
-  "mono": "img/49_grade5_chemistry_dissolving_deepening_parts_sheet_mono.jpg"
- },
- {
-  "id": "68_grade6_physics_lever_balance_conditions_parts_sheet",
-  "grade": "6年",
-  "field": "エネルギー（物理）",
-  "title": "てこのつり合いの条件",
-  "img": "img/68_grade6_physics_lever_balance_conditions_parts_sheet.jpg",
-  "mono": "img/68_grade6_physics_lever_balance_conditions_parts_sheet_mono.jpg"
- },
- {
-  "id": "43_grade6_physics_lever_electric_use_parts_sheet",
-  "grade": "6年",
-  "field": "エネルギー（物理）",
-  "title": "てこのはたらきと電気の利用",
-  "img": "img/43_grade6_physics_lever_electric_use_parts_sheet.jpg",
-  "mono": "img/43_grade6_physics_lever_electric_use_parts_sheet_mono.jpg"
- },
- {
-  "id": "51_grade6_physics_electric_use_deepening_parts_sheet",
-  "grade": "6年",
-  "field": "エネルギー（物理）",
-  "title": "電気の利用（発展）",
-  "img": "img/51_grade6_physics_electric_use_deepening_parts_sheet.jpg",
-  "mono": "img/51_grade6_physics_electric_use_deepening_parts_sheet_mono.jpg"
- },
- {
-  "id": "67_grade6_earth_strata_rocks_fossils_parts_sheet",
-  "grade": "6年",
-  "field": "地球",
-  "title": "地層・岩石・化石",
-  "img": "img/67_grade6_earth_strata_rocks_fossils_parts_sheet.jpg",
-  "mono": "img/67_grade6_earth_strata_rocks_fossils_parts_sheet_mono.jpg"
- },
- {
-  "id": "42_grade6_earth_layers_moon_sun_parts_sheet",
-  "grade": "6年",
-  "field": "地球",
-  "title": "大地のつくり・月と太陽",
-  "img": "img/42_grade6_earth_layers_moon_sun_parts_sheet.jpg",
-  "mono": "img/42_grade6_earth_layers_moon_sun_parts_sheet_mono.jpg"
- },
- {
-  "id": "66_grade6_earth_moon_sun_model_parts_sheet",
-  "grade": "6年",
-  "field": "地球",
-  "title": "月と太陽のモデル",
-  "img": "img/66_grade6_earth_moon_sun_model_parts_sheet.jpg",
-  "mono": "img/66_grade6_earth_moon_sun_model_parts_sheet_mono.jpg"
- },
- {
-  "id": "41_grade6_life_body_plants_environment_parts_sheet",
-  "grade": "6年",
-  "field": "生命",
-  "title": "人と植物・環境とのかかわり",
-  "img": "img/41_grade6_life_body_plants_environment_parts_sheet.jpg",
-  "mono": "img/41_grade6_life_body_plants_environment_parts_sheet_mono.jpg"
- },
- {
-  "id": "76_grade6_life_plant_water_path_transpiration_parts_sheet",
-  "grade": "6年",
-  "field": "生命",
-  "title": "植物の水の通り道と蒸散",
-  "img": "img/76_grade6_life_plant_water_path_transpiration_parts_sheet.jpg",
-  "mono": "img/76_grade6_life_plant_water_path_transpiration_parts_sheet_mono.jpg"
- },
- {
-  "id": "57_grade6_life_digestive_respiratory_circulatory_parts_sheet",
-  "grade": "6年",
-  "field": "生命",
-  "title": "消化・呼吸・血液のじゅんかん",
-  "img": "img/57_grade6_life_digestive_respiratory_circulatory_parts_sheet.jpg",
-  "mono": "img/57_grade6_life_digestive_respiratory_circulatory_parts_sheet_mono.jpg"
- },
- {
-  "id": "77_grade6_life_ecosystem_food_relationship_parts_sheet",
-  "grade": "6年",
-  "field": "生命",
-  "title": "生き物どうしのつながり（食物連鎖）",
-  "img": "img/77_grade6_life_ecosystem_food_relationship_parts_sheet.jpg",
-  "mono": "img/77_grade6_life_ecosystem_food_relationship_parts_sheet_mono.jpg"
- },
- {
-  "id": "75_grade6_chemistry_combustion_gases_parts_sheet",
-  "grade": "6年",
-  "field": "粒子（化学）",
-  "title": "ものの燃え方と気体",
-  "img": "img/75_grade6_chemistry_combustion_gases_parts_sheet.jpg",
-  "mono": "img/75_grade6_chemistry_combustion_gases_parts_sheet_mono.jpg"
- },
- {
-  "id": "44_grade6_chemistry_combustion_solution_parts_sheet",
-  "grade": "6年",
-  "field": "粒子（化学）",
-  "title": "ものの燃え方と水よう液",
-  "img": "img/44_grade6_chemistry_combustion_solution_parts_sheet.jpg",
-  "mono": "img/44_grade6_chemistry_combustion_solution_parts_sheet_mono.jpg"
- },
- {
-  "id": "78_grade6_chemistry_solution_metal_reaction_parts_sheet",
-  "grade": "6年",
-  "field": "粒子（化学）",
-  "title": "水よう液と金属の反応",
-  "img": "img/78_grade6_chemistry_solution_metal_reaction_parts_sheet.jpg",
-  "mono": "img/78_grade6_chemistry_solution_metal_reaction_parts_sheet_mono.jpg"
- },
- {
-  "id": "50_grade6_chemistry_solution_properties_deepening_parts_sheet",
-  "grade": "6年",
-  "field": "粒子（化学）",
-  "title": "水よう液の性質（発展）",
-  "img": "img/50_grade6_chemistry_solution_properties_deepening_parts_sheet.jpg",
-  "mono": "img/50_grade6_chemistry_solution_properties_deepening_parts_sheet_mono.jpg"
+  "unit": "じしゃくのせいしつ",
+  "scenes": [
+   "クリップを引きつける"
+  ],
+  "uses": [
+   "導入",
+   "スライド用"
+  ],
+  "description": "自然光の教室で、棒じしゃくにクリップが数珠つなぎに引きつけられる手元。",
+  "howto": "じしゃくの力の導入・掲示に。",
+  "img": "img/denki3_photo_jishaku.jpg",
+  "thumb": "img/denki3_photo_jishaku_thumb.jpg"
  }
 ];
