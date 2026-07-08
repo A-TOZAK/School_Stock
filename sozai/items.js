@@ -358,5 +358,307 @@ const SOZAI = [
   "howto": "じしゃくの力の導入・掲示に。",
   "img": "img/denki3_photo_jishaku.jpg",
   "thumb": "img/denki3_photo_jishaku_thumb.jpg"
+ },
+ {
+  "id": "denki4_01_kandenchi_single",
+  "title": "かん電池（＋極と−極）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "かん電池の向きをたしかめる"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "かん電池の＋極と−極を示した基本の図。回路づくりの導入に。",
+  "howto": "回路を組む前の「向き」の確認に。",
+  "img": "img/denki4_01_kandenchi_single.jpg",
+  "thumb": "img/denki4_01_kandenchi_single_thumb.jpg",
+  "mono": "img/denki4_01_kandenchi_single_mono.jpg"
+ },
+ {
+  "id": "denki4_02_motor_propeller",
+  "title": "モーターとプロペラ",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "モーターにプロペラをつける"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "軸にプロペラをつけたモーター。電気で回る部分の説明に。",
+  "howto": "「何が回るのか」部品のはたらきの説明に。",
+  "img": "img/denki4_02_motor_propeller.jpg",
+  "thumb": "img/denki4_02_motor_propeller_thumb.jpg",
+  "mono": "img/denki4_02_motor_propeller_mono.jpg"
+ },
+ {
+  "id": "denki4_03_kenryukei",
+  "title": "検流計（けん流計）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電流の向きと大きさをはかる"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "電流の向きと大きさを調べる検流計。赤・黒のクリップでつなぐ。",
+  "howto": "器具の使い方の説明に。",
+  "img": "img/denki4_03_kenryukei.jpg",
+  "thumb": "img/denki4_03_kenryukei_thumb.jpg",
+  "mono": "img/denki4_03_kenryukei_mono.jpg"
+ },
+ {
+  "id": "denki4_04_circuit_forward",
+  "title": "かん電池とモーターの回路（電流の向き）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電流の向きとモーターの回転"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "かん電池・導線・モーターがつながった回路。＋極から−極へ電流が流れ、プロペラが回る。",
+  "howto": "回路のきほんの図として。電流の向きの説明に。",
+  "img": "img/denki4_04_circuit_forward.jpg",
+  "thumb": "img/denki4_04_circuit_forward_thumb.jpg",
+  "mono": "img/denki4_04_circuit_forward_mono.jpg"
+ },
+ {
+  "id": "denki4_05_circuit_reversed",
+  "title": "かん電池の向きを変える（逆に回る）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電池の向きと回転の向き"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "かん電池の向きを反対にすると電流の向きも変わり、モーターが逆に回ることを示す図。",
+  "howto": "04と並べて「向きを変えると？」の比較に。",
+  "img": "img/denki4_05_circuit_reversed.jpg",
+  "thumb": "img/denki4_05_circuit_reversed_thumb.jpg",
+  "mono": "img/denki4_05_circuit_reversed_mono.jpg"
+ },
+ {
+  "id": "denki4_06_series",
+  "title": "かん電池2個の直列つなぎ",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "直列つなぎ"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "かん電池2個を直列につないだ回路。電流が大きくなり、モーターが速く回る。",
+  "howto": "直列と並列の比較の図に。",
+  "img": "img/denki4_06_series.jpg",
+  "thumb": "img/denki4_06_series_thumb.jpg",
+  "mono": "img/denki4_06_series_mono.jpg"
+ },
+ {
+  "id": "denki4_07_parallel",
+  "title": "かん電池2個の並列つなぎ",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "並列つなぎ"
+  ],
+  "uses": [
+   "説明",
+   "記録",
+   "ワークシート用"
+  ],
+  "description": "かん電池2個を並列につないだ回路。電流の大きさは1個のときと変わらない。",
+  "howto": "直列と並列の比較の図に。",
+  "img": "img/denki4_07_parallel.jpg",
+  "thumb": "img/denki4_07_parallel_thumb.jpg",
+  "mono": "img/denki4_07_parallel_mono.jpg"
+ },
+ {
+  "id": "denki4_08_propeller_car",
+  "title": "プロペラカー",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電気で動く車をつくる"
+  ],
+  "uses": [
+   "説明",
+   "ワークシート用",
+   "スライド用"
+  ],
+  "description": "モーターとプロペラで走るプロペラカー。スイッチを入れると動く。",
+  "howto": "単元のまとめ・ものづくりの場面に。",
+  "img": "img/denki4_08_propeller_car.jpg",
+  "thumb": "img/denki4_08_propeller_car_thumb.jpg",
+  "mono": "img/denki4_08_propeller_car_mono.jpg"
+ },
+ {
+  "id": "denki4_09_hands_connect",
+  "title": "導線をつなぐ（手元）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "導線を端子につなぐ"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "モーターとかん電池を導線でつなぐ手元の図。＋極・−極への配線を示す。",
+  "howto": "配線の手順の説明に。",
+  "img": "img/denki4_09_hands_connect.jpg",
+  "thumb": "img/denki4_09_hands_connect_thumb.jpg",
+  "mono": "img/denki4_09_hands_connect_mono.jpg"
+ },
+ {
+  "id": "denki4_10_switch",
+  "title": "スイッチ",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電流を入れる・切る"
+  ],
+  "uses": [
+   "操作",
+   "説明",
+   "ワークシート用"
+  ],
+  "description": "回路に入れて、電流を入れたり切ったりするスイッチ。",
+  "howto": "スイッチのはたらきの説明に。",
+  "img": "img/denki4_10_switch.jpg",
+  "thumb": "img/denki4_10_switch_thumb.jpg",
+  "mono": "img/denki4_10_switch_mono.jpg"
+ },
+ {
+  "id": "denki4_masuda_11_parts_flatlay",
+  "title": "電気のはたらき　実験セット（俯瞰）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "実験の道具をそろえる"
+  ],
+  "uses": [
+   "導入",
+   "掲示・おたより用",
+   "スライド用"
+  ],
+  "description": "検流計・かん電池・電池ボックス・モーター・プロペラ・導線をならべた俯瞰写真。",
+  "howto": "単元の導入や、準備物の確認に。",
+  "img": "img/denki4_masuda_11_parts_flatlay.jpg",
+  "thumb": "img/denki4_masuda_11_parts_flatlay_thumb.jpg"
+ },
+ {
+  "id": "denki4_suou_12_motor_spin",
+  "title": "モーターを回す（手元）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "回路をつないでモーターを回す"
+  ],
+  "uses": [
+   "導入",
+   "掲示・おたより用",
+   "スライド用"
+  ],
+  "description": "教室で子どもが回路をつなぎ、プロペラが回る手元の写真。自然光。",
+  "howto": "導入や振り返りの掲示に。",
+  "img": "img/denki4_suou_12_motor_spin.jpg",
+  "thumb": "img/denki4_suou_12_motor_spin_thumb.jpg"
+ },
+ {
+  "id": "denki4_suou_13_read_meter",
+  "title": "検流計を読む（手元）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "電流の大きさを読み取る"
+  ],
+  "uses": [
+   "導入",
+   "掲示・おたより用",
+   "スライド用"
+  ],
+  "description": "検流計の目もりを読む子どもの手元の写真。",
+  "howto": "「調べる」場面の掲示・導入に。",
+  "img": "img/denki4_suou_13_read_meter.jpg",
+  "thumb": "img/denki4_suou_13_read_meter_thumb.jpg"
+ },
+ {
+  "id": "denki4_suou_14_series_build",
+  "title": "直列つなぎを組む（手元）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電気のはたらき",
+  "scenes": [
+   "かん電池2個をつなぐ"
+  ],
+  "uses": [
+   "導入",
+   "掲示・おたより用",
+   "スライド用"
+  ],
+  "description": "かん電池2個を直列につなぐ子どもの手元の写真。",
+  "howto": "つなぎ方を調べる場面の掲示・導入に。",
+  "img": "img/denki4_suou_14_series_build.jpg",
+  "thumb": "img/denki4_suou_14_series_build_thumb.jpg"
  }
 ];

@@ -2,15 +2,15 @@
 const AUTHORS = {
  "makabe": {
   "romaji": "Makabe",
-  "count": 11
+  "count": 21
  },
  "masuda": {
   "romaji": "Masuda",
-  "count": 3
+  "count": 4
  },
  "suou": {
   "romaji": "Suou",
-  "count": 3
+  "count": 6
  },
  "sumire": {
   "romaji": "Nonomiya",
