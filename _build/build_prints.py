@@ -6,7 +6,7 @@ School Stock 国語プリント棚ビルダー
   一覧ページ(index.html)と個別解説ページ(p/*.html)を生成する。
 - 使い方: python3 _build/build_prints.py
 """
-import os, re, html, json
+import os, re, html, json, zipfile
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -97,7 +97,7 @@ TYPE_INFO = {
 }
 
 SPEC = {
-    "yomu": ["A4横向き・縦書き・全漢字ルビつき","読解ページ＋解答解説ページの2枚組","モリサワUD教科書体を埋め込み・そのまま印刷OK"],
+    "yomu": ["A4横向き・縦書き・全漢字ルビつき","問題＋赤字解答＋解説の3枚組（答えは問題面に赤字で書きこみ済み）","学年・番号・題名入りで、複数配布しても区別しやすい","モリサワUD教科書体を埋め込み・そのまま印刷OK"],
     "kotoba": ["A4縦に同じプリントを上下2面付け（切って2人分）","100点満点の小テスト形式","2ページ目に赤字解答つき・全漢字ルビ"],
     "sakubun": ["A4横向き：右＝問題面（資料＋条件）／左＝原稿用紙（10行×20字）","標準学力調査スタイルの条件作文","資料のグラフ・表つき・そのまま印刷OK"],
 }
@@ -185,9 +185,10 @@ def topbar(rel):
     <div class="nav">
       <a href="{rel}/tools/pdf-toolbox/">ツール</a>
       <a href="{rel}/prints/kokugo/">プリント</a>
+      <a href="{rel}/shien/">支援カード</a>
+      <a href="{rel}/tankyu/">探究サポート</a>
       <a href="{rel}/sozai/">素材</a>
       <a href="{rel}/ideas/">アイデア村</a>
-      <a href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">News Letter ↗</a>
       <a href="{LINK_NOTE}" target="_blank" rel="noopener">note ↗</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
@@ -205,10 +206,16 @@ def topbar(rel):
     <a class="sub2" href="{rel}/prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="{rel}/shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">INQUIRY</div>
+    <a href="{rel}/tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
     <div class="dr-sec">MATERIALS</div>
     <a href="{rel}/sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
     <a href="{rel}/ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ENTERTAINMENT</div>
+    <a href="{rel}/entertainment/prompt-book/">先生の寄り道プロンプト帳<small>出張・おみやげ・すきま時間のGeminiプロンプト</small></a>
     <div class="dr-sec">ABOUT</div>
     <a href="{rel}/about/">このサイトについて<small>つくっている人と思い</small></a>
     <div class="dr-sec">つながる</div>
@@ -232,8 +239,11 @@ def footer(rel):
         <a href="{rel}/">棚トップ</a>
         <a href="{rel}/tools/pdf-toolbox/">先生のPDF道具箱</a>
         <a href="{rel}/prints/kokugo/">国語プリント</a>
+        <a href="{rel}/shien/">支援カード</a>
+        <a href="{rel}/tankyu/">探究・問題解決サポート</a>
         <a href="{rel}/sozai/">授業イラスト素材集</a>
         <a href="{rel}/ideas/">実践アイデア村</a>
+        <a href="{rel}/entertainment/prompt-book/">先生の寄り道プロンプト帳</a>
         <a href="{rel}/about/">このサイトについて</a>
       </div>
       <div><b>つながる</b>
@@ -242,6 +252,14 @@ def footer(rel):
         <a href="{LINK_PROMPT}" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
         <a href="{LINK_GEM}" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
         <a href="{LINK_NOTE}" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:center;border-top:1px solid #33363c;margin-top:16px;padding-top:16px">
+      <img src="{rel}/about/author.jpg" alt="外﨑顯博の写真" style="flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div style="font-size:12px;line-height:1.9">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.24em;color:#8a8f97">AUTHOR｜つくっている人</div>
+        <div style="color:#fff;font-weight:700;font-size:13.5px">外﨑顯博<span style="font-weight:500;font-size:11px;color:#b9bcc2;margin-left:8px">とざき あきひろ</span></div>
+        <div>福岡県の公立小学校教員／GEG Chikuho 共同リーダー。教室で使う物を自分でつくって、この棚に並べています。<a href="{rel}/about/">くわしく →</a></div>
       </div>
     </div>
     <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
@@ -262,8 +280,29 @@ def footer(rel):
 
 DL_ICON = '<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>'
 
+# ---------- 長期パック（夏休み・連休用のまとめzip） ----------
+def build_packs(items):
+    """学年帯ごとの全プリントを1つのzipに。連休・長期休み・自習用のまとめ配布向け。"""
+    PACKDIR = KOKUGO / "packs"
+    PACKDIR.mkdir(exist_ok=True)
+    catlabel = {"yomu": "読解", "kotoba": "言葉・語句", "sakubun": "作文"}
+    packs = []
+    def _zip(name, label, short, sel):
+        zp = PACKDIR / name
+        with zipfile.ZipFile(zp, "w", zipfile.ZIP_DEFLATED) as zf:
+            for i in sel:
+                zf.write(KOKUGO / i["pdf"], f"{label}/{catlabel[i['cat']]}/{Path(i['pdf']).name}")
+        packs.append(dict(label=label, short=short, file=f"packs/{name}", count=len(sel),
+                          mb=zp.stat().st_size / 1048576))
+    _zip("国語プリント_中学年まとめパック.zip", "国語まとめパック（中学年）", "中学年パック",
+         [i for i in items if i["band"] == "mid"])
+    _zip("国語プリント_高学年まとめパック.zip", "国語まとめパック（高学年）", "高学年パック",
+         [i for i in items if i["band"] == "high"])
+    _zip("国語プリント_全部まとめパック.zip", "国語まとめパック（全学年）", "全部入り（低学年ふくむ）", items)
+    return packs
+
 # ---------- 一覧ページ ----------
-def build_index(items):
+def build_index(items, packs):
     counts = {c: sum(1 for i in items if i["cat"] == c) for c in CATS}
     total = len(items)
 
@@ -344,6 +383,16 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
   .dl {{ display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; }}
   .dl svg {{ width:12px; height:12px; }}
   .empty {{ display:none; font-size:14px; color:var(--sub); padding:8px 0 4px; }}
+  .packband {{ border:1px solid var(--ink); margin:26px 0 6px; padding:20px 22px; }}
+  .packband .pb-kick {{ display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }}
+  .packband b.pb-t {{ display:block; font-size:17px; margin-bottom:4px; }}
+  .packband .pb-note {{ font-size:12.5px; color:var(--sub); margin-bottom:14px; }}
+  .pb-btns {{ display:flex; flex-wrap:wrap; gap:10px; }}
+  .pbtn {{ display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:9px 16px; }}
+  .pbtn:hover {{ background:var(--black); color:#fff; }}
+  .pbtn svg {{ width:14px; height:14px; }}
+  .pbtn small {{ font-weight:500; font-size:11px; color:var(--sub); }}
+  .pbtn:hover small {{ color:#d7dade; }}
 </style>
 </head>
 <body>
@@ -359,6 +408,15 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
       <span>読解 {counts["yomu"]} ／ 言葉・語句 {counts["kotoba"]} ／ 作文 {counts["sakubun"]}</span>
       <span>小1〜小6</span>
       <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="packband">
+    <span class="pb-kick">長期パック</span>
+    <b class="pb-t">夏休み・連休・自習は、まとめてどうぞ</b>
+    <p class="pb-note">学年ぶんのプリントをzipひとつにまとめました。答えは各PDFの2枚目に赤字で入っています（3枚目に解説）。</p>
+    <div class="pb-btns">
+{chr(10).join(f'      <a class="pbtn" href="{esc(p["file"])}" download>{DL_ICON}{esc(p["short"])} <small>{p["count"]}枚・約{p["mb"]:.0f}MB</small></a>' for p in packs)}
     </div>
   </div>
 
@@ -551,12 +609,14 @@ def build_pages(items):
 
 def main():
     items = scan()
-    build_index(items)
+    packs = build_packs(items)
+    build_index(items, packs)
     build_pages(items)
     (ROOT / "_build" / "prints_kokugo_manifest.json").write_text(
         json.dumps(items, ensure_ascii=False, indent=1), encoding="utf-8")
     print(f"OK: index + {len(items)} detail pages generated.")
     for c in CATS: print(f"  {c}: {sum(1 for i in items if i['cat']==c)}")
+    for p in packs: print(f"  pack: {p['label']} {p['count']}枚 {p['mb']:.1f}MB")
 
 if __name__ == "__main__":
     main()

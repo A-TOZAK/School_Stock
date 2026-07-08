@@ -6,7 +6,7 @@ School Stock 探究・問題解決サポート棚ビルダー
 PDFとサムネイルを tankyu/ に取り込んで一覧ページ index.html を生成する。
 使い方: python3 tankyu/build_tankyu.py
 """
-import json, re, shutil, subprocess, html
+import json, re, shutil, subprocess, html, zipfile
 from pathlib import Path
 
 SITE = Path(__file__).resolve().parent          # .../School_Stock/tankyu
@@ -49,6 +49,15 @@ for sec in DATA["sections"]:
                          color=sec["color"], items=items))
 
 total = sum(len(s["items"]) for s in sections)
+
+# ---------- まとめてダウンロードzip ----------
+ZIP_NAME = "探究サポート_まとめてダウンロード.zip"
+ZIP_PATH = SITE / ZIP_NAME
+with zipfile.ZipFile(ZIP_PATH, "w", zipfile.ZIP_DEFLATED) as zf:
+    for s in sections:
+        for it in s["items"]:
+            zf.write(PDFDIR / it["pdf"], f"探究サポート/{s['head']}/{it['pdf']}")
+ZIP_MB = ZIP_PATH.stat().st_size / 1048576
 
 E = html.escape
 DL_SVG = ('<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7'
@@ -170,6 +179,10 @@ a { color:var(--accent); text-decoration:none; }
 .dl { align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; margin-top:2px; }
 .dl:hover { background:var(--accent); color:#fff; }
 .dl svg { width:14px; height:14px; }
+.dlall { display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:13.5px; font-weight:700; color:#fff; background:var(--accent); border:1px solid var(--accent); padding:9px 18px; }
+.dlall:hover { background:#1f49b0; border-color:#1f49b0; }
+.dlall svg { width:15px; height:15px; }
+.dlall small { font-weight:500; font-size:11.5px; opacity:.9; }
 .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
 .foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
 .foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
@@ -301,6 +314,8 @@ PAGE = f"""<!DOCTYPE html>
     <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
     <a href="../ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ENTERTAINMENT</div>
+    <a href="../entertainment/prompt-book/">先生の寄り道プロンプト帳<small>出張・おみやげ・すきま時間のGeminiプロンプト</small></a>
     <div class="dr-sec">ABOUT</div>
     <a href="../about/">このサイトについて<small>つくっている人と思い</small></a>
     <div class="dr-sec">つながる</div>
@@ -316,6 +331,7 @@ PAGE = f"""<!DOCTYPE html>
     <b>「今、何をしているのか」が全員に見える</b>学びの地図と、計画・リハーサル・振り返りのワークシート、
     見通しと進み具合をことばにする話型カード。理科・社会科・総合的な学習の時間で使えます。</p>
     <div class="meta"><b>全{total}枚・無料</b>　｜　学びの地図・ワークシート・話型カード・先生用シート　｜　A4／PDF　｜　© School Stock</div>
+    <a class="dlall" href="{ZIP_NAME}" download>{DL_SVG}まとめてダウンロード<small>（全{total}枚・zip・約{ZIP_MB:.0f}MB）</small></a>
     <div class="note-use">掲示は「貼って終わり」では効きません。毎時間のはじめに「いま ここ」を確かめる30秒とセットで使ってください
     （手立ての全体像は「先生用シート」に。発表・つなぎ言葉の基本話型は<a href="../shien/">支援カード</a>の棚にあります）。</div>
     <a class="yomibanner" href="yomimono/">
@@ -339,6 +355,14 @@ PAGE = f"""<!DOCTYPE html>
   <div class="fw">SCHOOL STOCK</div>
   先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
   <div style="margin-top:12px"><a href="../">棚トップにもどる</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div style="display:flex;gap:14px;align-items:center;border-top:1px solid #33363c;margin-top:16px;padding-top:16px">
+    <img src="../about/author.jpg" alt="外﨑顯博の写真" style="flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover">
+    <div style="font-size:12px;line-height:1.9">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.24em;color:#8a8f97">AUTHOR｜つくっている人</div>
+      <div style="color:#fff;font-weight:700;font-size:13.5px">外﨑顯博<span style="font-weight:500;font-size:11px;color:#b9bcc2;margin-left:8px">とざき あきひろ</span></div>
+      <div>福岡県の公立小学校教員／GEG Chikuho 共同リーダー。教室で使う物を自分でつくって、この棚に並べています。<a href="../about/">くわしく →</a></div>
+    </div>
+  </div>
   <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
 </div></footer>
 

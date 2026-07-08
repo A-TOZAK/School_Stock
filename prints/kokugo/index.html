@@ -83,6 +83,16 @@
   .dl { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; }
   .dl svg { width:12px; height:12px; }
   .empty { display:none; font-size:14px; color:var(--sub); padding:8px 0 4px; }
+  .packband { border:1px solid var(--ink); margin:26px 0 6px; padding:20px 22px; }
+  .packband .pb-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .packband b.pb-t { display:block; font-size:17px; margin-bottom:4px; }
+  .packband .pb-note { font-size:12.5px; color:var(--sub); margin-bottom:14px; }
+  .pb-btns { display:flex; flex-wrap:wrap; gap:10px; }
+  .pbtn { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:9px 16px; }
+  .pbtn:hover { background:var(--black); color:#fff; }
+  .pbtn svg { width:14px; height:14px; }
+  .pbtn small { font-weight:500; font-size:11px; color:var(--sub); }
+  .pbtn:hover small { color:#d7dade; }
 </style>
 </head>
 <body>
@@ -93,9 +103,10 @@
     <div class="nav">
       <a href="../../tools/pdf-toolbox/">ツール</a>
       <a href="../../prints/kokugo/">プリント</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../tankyu/">探究サポート</a>
       <a href="../../sozai/">素材</a>
       <a href="../../ideas/">アイデア村</a>
-      <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">News Letter ↗</a>
       <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
@@ -113,6 +124,10 @@
     <a class="sub2" href="../../prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="../../prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="../../prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">INQUIRY</div>
+    <a href="../../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
     <div class="dr-sec">MATERIALS</div>
     <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
@@ -141,6 +156,17 @@
       <span>読解 56 ／ 言葉・語句 10 ／ 作文 13</span>
       <span>小1〜小6</span>
       <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="packband">
+    <span class="pb-kick">長期パック</span>
+    <b class="pb-t">夏休み・連休・自習は、まとめてどうぞ</b>
+    <p class="pb-note">学年ぶんのプリントをzipひとつにまとめました。答えは各PDFの2枚目に赤字で入っています（3枚目に解説）。</p>
+    <div class="pb-btns">
+      <a class="pbtn" href="packs/国語プリント_中学年まとめパック.zip" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>中学年パック <small>35枚・約9MB</small></a>
+      <a class="pbtn" href="packs/国語プリント_高学年まとめパック.zip" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>高学年パック <small>42枚・約15MB</small></a>
+      <a class="pbtn" href="packs/国語プリント_全部まとめパック.zip" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部入り（低学年ふくむ） <small>79枚・約24MB</small></a>
     </div>
   </div>
 
@@ -1067,6 +1093,8 @@
         <a href="../../">棚トップ</a>
         <a href="../../tools/pdf-toolbox/">先生のPDF道具箱</a>
         <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../tankyu/">探究・問題解決サポート</a>
         <a href="../../sozai/">授業イラスト素材集</a>
         <a href="../../ideas/">実践アイデア村</a>
         <a href="../../entertainment/prompt-book/">先生の寄り道プロンプト帳</a>
