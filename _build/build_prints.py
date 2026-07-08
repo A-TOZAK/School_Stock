@@ -21,9 +21,10 @@ LINK_NOTE = "https://note.com/tozaki_edu"
 LINK_GEM = "https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0"
 
 CATS = {
-    "yomu":    {"label": "読解（読むこと）", "en": "READING",    "no": "01"},
-    "kotoba":  {"label": "言葉・語句",       "en": "VOCABULARY", "no": "02"},
-    "sakubun": {"label": "作文（時事・意見文）", "en": "WRITING", "no": "03"},
+    "yomu":     {"label": "読解（読むこと）", "en": "READING",    "no": "01"},
+    "kotoba":   {"label": "言葉・語句",       "en": "VOCABULARY", "no": "02"},
+    "sakubun":  {"label": "作文（時事・意見文）", "en": "WRITING", "no": "03"},
+    "kikitori": {"label": "聞き取り（聞くこと）", "en": "LISTENING", "no": "04"},
 }
 
 # 言葉・語句プリントの型（ファイル名に型トークンが無いもの）
@@ -37,7 +38,8 @@ KOTOBA_TYPE = {
     "6年_No01_熟語の成り立ち": "熟語",
 }
 
-BAND = {"1年":"low","2年":"low","3年":"mid","4年":"mid","中学年":"mid","5年":"high","6年":"high","高学年":"high"}
+BAND = {"1年":"low","2年":"low","3年":"mid","4年":"mid","中学年":"mid","5年":"high","6年":"high","高学年":"high",
+        "小1":"low","小2":"low","小3":"mid","小4":"mid","小5":"high","小6":"high"}
 BAND_LABEL = {"low":"低学年","mid":"中学年","high":"高学年"}
 
 # ---- 型ごとの解説素材（事実ベース：仕様と使い方だけを書く） ----
@@ -106,11 +108,14 @@ def esc(s): return html.escape(str(s), quote=True)
 
 def scan():
     items = []
-    for cat in ["yomu", "kotoba", "sakubun"]:
+    for cat in ["yomu", "kotoba", "sakubun", "kikitori"]:
         d = KOKUGO / cat
         for f in sorted(d.glob("*.pdf")):
             stem = f.stem
-            if cat == "yomu":
+            if cat == "kikitori":
+                m = re.match(r"小(\d)_No(\d+)_([^_]+)_(.+)", stem)
+                grade, no, typ, title = f"小{m.group(1)}", m.group(2), m.group(3), m.group(4)
+            elif cat == "yomu":
                 m = re.match(r"(中学年|高学年)_No(\d+)_([^_]+)_(.+)", stem)
                 grade, no, typ, title = m.group(1), m.group(2), m.group(3), m.group(4)
             elif cat == "kotoba":
@@ -202,10 +207,11 @@ def topbar(rel):
     <div class="dr-sec">TOOL</div>
     <a href="{rel}/tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
     <div class="dr-sec">PRINTS</div>
-    <a href="{rel}/prints/kokugo/">国語プリント<small>全79枚・無料</small></a>
+    <a href="{rel}/prints/kokugo/">国語プリント<small>全259枚・無料</small></a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
+    <a class="sub2" href="{rel}/prints/kokugo/#sec-kikitori">聞き取り（聞くこと）</a>
     <div class="dr-sec">SUPPORT CARDS</div>
     <a href="{rel}/shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
     <div class="dr-sec">INQUIRY</div>
@@ -286,6 +292,8 @@ def build_packs(items):
     PACKDIR = KOKUGO / "packs"
     PACKDIR.mkdir(exist_ok=True)
     catlabel = {"yomu": "読解", "kotoba": "言葉・語句", "sakubun": "作文"}
+    # 聞き取り（音声が別配布）は長期パックzipに含めない
+    items = [i for i in items if i["cat"] != "kikitori"]
     packs = []
     def _zip(name, label, short, sel):
         zp = PACKDIR / name
@@ -313,7 +321,22 @@ def build_index(items, packs):
             tags = f'<span class="tag type">{esc(it["type"])}</span><span class="tag">{esc(it["grade"])}</span>'
             img = f'<img loading="lazy" src="{esc(it["thumb"])}" alt="{esc(it["type"])} {esc(it["title"])}">' if it["thumb"] else ""
             hay = f'{it["title"]} {it["type"]} {it["grade"]} {meta["label"]}'
-            cards.append(
+            if cat == "kikitori":
+                # 聞き取りは個別ページを持たず、カードからPDFへ直リンク
+                cards.append(
+f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
+  <a class="th" href="{esc(it["pdf"])}"><div class="thumb">{img}</div></a>
+  <div class="b">
+    <div class="tags">{tags}</div>
+    <a class="tt" href="{esc(it["pdf"])}">{esc(it["title"])}</a>
+    <div class="acts">
+      <span class="more" style="color:var(--sub)">先生用ページつき</span>
+      <a class="dl" href="{esc(it["pdf"])}">{DL_ICON}PDF</a>
+    </div>
+  </div>
+</div>''')
+            else:
+                cards.append(
 f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
   <a class="th" href="p/{esc(it["id"])}.html"><div class="thumb">{img}</div></a>
   <div class="b">
@@ -342,7 +365,7 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>国語プリント ── 現役教員がつくった無料の国語プリント｜School Stock</title>
-<meta name="description" content="現役の小学校教員がつくった、そのまま印刷して使える国語プリント。読解・言葉・作文の3分野、全{total}枚。すべて自作・無料です。">
+<meta name="description" content="現役の小学校教員がつくった、そのまま印刷して使える国語プリント。読解・言葉・作文・聞き取りの4分野、全{total}枚。すべて自作・無料です。">
 <style>
 {BASE_CSS}
   .head {{ padding:30px 0; border-bottom:1px solid var(--ink); }}
@@ -402,10 +425,10 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
   <div class="head">
     <span class="kicker">PRINTS｜国語</span>
     <h1>国語プリント</h1>
-    <p class="lead">現役の小学校教員がつくった、そのまま印刷して使える国語プリント。読解・言葉・作文の3分野、全学年ぶん。すべて自作・無料です。各プリントの「解説を見る」から、ねらい・使いどころ・関連プリントが見られます。</p>
+    <p class="lead">現役の小学校教員がつくった、そのまま印刷して使える国語プリント。読解・言葉・作文・聞き取りの4分野、全学年ぶん。すべて自作・無料です。読解・言葉・作文は「解説を見る」からねらいや使いどころが見られます。聞き取りは先生用ページ（放送文つき）まで1つのPDFに入っています。</p>
     <div class="meta">
       <span><b>全{total}枚</b></span>
-      <span>読解 {counts["yomu"]} ／ 言葉・語句 {counts["kotoba"]} ／ 作文 {counts["sakubun"]}</span>
+      <span>読解 {counts["yomu"]} ／ 言葉・語句 {counts["kotoba"]} ／ 作文 {counts["sakubun"]} ／ 聞き取り {counts["kikitori"]}</span>
       <span>小1〜小6</span>
       <span>© School Stock</span>
     </div>
@@ -435,6 +458,7 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
       <button class="fbtn" data-cat="sec-yomu">読解</button>
       <button class="fbtn" data-cat="sec-kotoba">言葉・語句</button>
       <button class="fbtn" data-cat="sec-sakubun">作文</button>
+      <button class="fbtn" data-cat="sec-kikitori">聞き取り</button>
     </div>
     <p class="count"><b id="shown">{total}</b> 枚を表示中</p>
   </div>
@@ -500,6 +524,8 @@ def build_pages(items):
     PAGES.mkdir(exist_ok=True)
     cat_label = {c: m["label"] for c, m in CATS.items()}
     for it in items:
+        if it["cat"] == "kikitori":
+            continue  # 聞き取りはカードからPDF直リンク（個別解説ページなし）
         info = TYPE_INFO[it["type"]]
         about = info["about"].format(title=it["title"])
         skills = "".join(f"<li>{esc(s)}</li>" for s in info["skills"])
