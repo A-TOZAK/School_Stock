@@ -2,8 +2,8 @@
 
 神教材製作所の「棚」。先生のための**無料ツール・教材**をおすそ分けする、GitHub Pages 公開用リポジトリ。
 
-- 公開URL（予定）：https://a-tozak.github.io/School_Stock/
-- 運営：School Stock（外崎顕博）／ note: https://note.com/tozaki_edu
+- 公開URL：https://a-tozak.github.io/School_Stock/
+- 運営：School Stock（外﨑顯博）／ note: https://note.com/tozaki_edu
 
 ## 階層設計（増えても迷子にならない形）
 
