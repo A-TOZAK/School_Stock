@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>しんどさの正体 ── テストで手が止まる子を、4つの部屋で見る ｜ School Stock</title>
+<meta name="description" content="テストの問題のどこを見たらいいか分からない。書き方がわからない。──その子はさぼっていない。input・記憶の保持・output・コミュニケーションの4つの部屋で「どこで詰まっているか」を見る、担任のための読み物。研究の根拠つき。">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="しんどさの正体 ── テストで手が止まる子を、4つの部屋で見る">
+<meta property="og:description" content="その子はさぼっていない。「どこで詰まっているか」を場所で見ると、明日の声かけが変わる。担任のための読み物。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/shien/yomimono/">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+.nav a.on { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+
+.article { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:20px 0 26px; margin-bottom:34px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:3px 11px; margin-bottom:16px; }
+h1 { font-size:clamp(24px,4.6vw,34px); font-weight:700; line-height:1.5; }
+.head .sub { margin-top:16px; font-size:14.5px; color:#3d4148; line-height:2; }
+.head .meta { margin-top:20px; font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.head .meta b { color:var(--ink); font-weight:700; }
+
+.lead { font-size:17px; line-height:2.05; color:#20242a; margin-bottom:8px; }
+.lead b { font-weight:700; }
+h2 { font-size:22px; font-weight:700; line-height:1.5; margin:52px 0 6px; padding-top:14px; border-top:2px solid var(--ink); }
+h2 .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); margin-right:12px; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; letter-spacing:.06em; margin-bottom:20px; }
+h3 { font-size:16.5px; font-weight:700; margin:30px 0 4px; }
+p { font-size:15.5px; line-height:2.02; margin:18px 0; color:#20242a; }
+p .em, li .em { background:linear-gradient(transparent 62%, #e3ebfb 62%); font-weight:700; }
+.pull { border-left:4px solid var(--accent); padding:6px 0 6px 22px; margin:30px 0; }
+.pull q { font-size:20px; font-weight:700; line-height:1.7; color:var(--ink); quotes:none; display:block; }
+.pull q::before, .pull q::after { content:""; }
+.pull cite { display:block; margin-top:10px; font-size:12.5px; color:var(--sub); font-style:normal; }
+.cardlink { display:inline-flex; align-items:center; gap:7px; font-size:13.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:5px 14px; border-radius:2px; margin:6px 0 2px; }
+.cardlink:hover { background:var(--accent); color:#fff; }
+.cardrow { display:flex; gap:10px; flex-wrap:wrap; margin:14px 0 2px; }
+
+.evidence { background:var(--wash); border-left:3px solid var(--accent); padding:16px 20px; margin:24px 0; font-size:13.5px; line-height:1.95; color:#3d4148; }
+.evidence b { color:var(--ink); }
+
+.checklist { background:var(--wash); border-left:3px solid var(--ink); padding:20px 24px; margin:34px 0; }
+.checklist h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin:0 0 12px; }
+.checklist ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.checklist li { font-size:14.5px; line-height:1.8; padding-left:26px; position:relative; }
+.checklist li::before { content:"□"; position:absolute; left:0; top:-1px; font-size:16px; color:var(--sub); }
+
+ul.refs { list-style:none; margin:14px 0; }
+ul.refs li { font-size:12.5px; color:var(--sub); line-height:1.9; padding:4px 0 4px 18px; position:relative; border-bottom:1px solid var(--wash); }
+ul.refs li::before { content:"—"; position:absolute; left:0; color:var(--line); }
+ul.refs a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+ul.refs a:hover { color:var(--accent); }
+
+.end { margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; }
+.end p { font-size:15.5px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin:22px 0 6px; }
+.grid2 a { display:block; border:1px solid var(--line); padding:12px 14px; font-size:13.5px; font-weight:700; color:var(--ink); }
+.grid2 a:hover { border-color:var(--ink); background:var(--wash); }
+.grid2 a small { display:block; font-size:11.5px; font-weight:400; color:var(--sub); margin-top:2px; letter-spacing:.02em; }
+@media (max-width:560px){ .grid2 { grid-template-columns:1fr; } }
+.note { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:20px; }
+
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../../tools/pdf-toolbox/">ツール</a>
+    <a href="../../prints/kokugo/">プリント</a>
+    <a class="on" href="../">支援カード</a>
+    <a href="../../tankyu/">探究サポート</a>
+    <a href="../../sozai/">素材</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../">支援カード</a> ／ 読み物</div>
+  <div class="head">
+    <span class="kicker">読み物 ｜ SUPPORT</span>
+    <h1>しんどさの正体<br>── テストで手が止まる子を、4つの部屋で見る</h1>
+    <p class="sub">テストの問題の、どこを見たらいいか分からない。書き方がわからない。指示が入らない。話し合いに入れない。
+    ──その子は、さぼっていない。「どこで詰まっているのか」を場所で見ると、明日の声かけが変わります。
+    現場の担任が、研究の根拠を引きながら書いた長めの読み物です。</p>
+    <div class="meta"><b>支援カードの読み物</b><span>｜</span><span>担任の先生向け</span><span>｜</span><span>© School Stock</span></div>
+  </div>
+
+  <p class="lead">テストの時間。教室を回っていると、手が止まっている子がいます。
+  問題用紙をじっと見ている。でも、鉛筆は動かない。声をかけると「どこを見たらいいか、分からん」と言う。
+  あるいは、設問の意味は分かっているのに「書き方が、わからん」と言う。<b>その子は、さぼっていません。やる気がないのでもありません。</b>
+  情報の通り道の、どこかで詰まっているのです。</p>
+
+  <p>まず数字をひとつ。文部科学省の2022年の調査では、通常の学級に在籍する子どものうち、
+  学習面または行動面で著しい困難を示すとされた割合は<span class="em">小・中学校で8.8%、小学校では10.4%</span>でした
+  （担任等の回答による推定値で、発達障害のある子どもの割合を示すものではありません）。
+  35人学級なら、3〜4人。「しんどい子がめっちゃいる」というあの実感は、錯覚ではなく、統計と一致しています。
+  そしてこの数字は診断の有無とは関係ありません。<span class="em">診断がなくても、しんどさは教室に実在する。</span>
+  だから、担任である私たちが「見る枠組み」を持っておく必要があるのです。</p>
+
+  <h2><span class="n">0</span>「どこで詰まっているか」を、場所で見る</h2>
+  <div class="h2sub">4つの部屋 ── input・記憶の保持・output・コミュニケーション</div>
+
+  <p>人が学ぶとき、情報はおおまかに次の道を通ります。
+  <span class="em">①目や耳から入る（input）→ ②頭の中に保持する（記憶の保持）→ ③口や手から出す（output）</span>。
+  そしてこの3つの道すべてに関わる土台として、<span class="em">④人とのやりとり（コミュニケーション）</span>がある。
+  認知心理学でいう情報処理モデルを、教室で使える形にならすと、この4つの「部屋」になります。</p>
+
+  <p>この枠組みのいちばんの効き目は、支援の技を増やすことではありません。<span class="em">見方が変わること</span>です。
+  「やる気がない」「集中力がない」「何度言っても聞かない」──性格や努力の問題に見えていたものが、
+  「inputの部屋で詰まっている」「保持の部屋から消えている」と<span class="em">場所の問題</span>に置き換わる。
+  場所の問題なら、責める理由がなくなり、手の打ちようが生まれます。
+  以下、部屋を1つずつ歩きます。それぞれ、⑴教室でどう見えるか ⑵何が起きているのか（研究から） ⑶担任に打てる手、の順です。</p>
+
+  <div class="pull"><q>「なんでできないの」から、「どこで詰まってるんだろう」へ。</q><cite>── 見方が変われば、声かけが変わる</cite></div>
+
+  <h2><span class="n">1</span>input ── 目と耳から、入ってこない</h2>
+  <div class="h2sub">文字・イラスト・写真／人の話・音</div>
+
+  <h3>教室でどう見えるか</h3>
+  <p>「テストのどこを見たらいいか分からない」は、まずこの部屋を疑います。
+  問題用紙は、大人が思うよりずっと情報の密度が高い。大問番号、設問、選択肢、資料、行間の詰まった本文。
+  視線をどこに置き、どの順で読むかという<span class="em">「見る技術」は、教えられなければ身につかない</span>のに、
+  私たちはそれを教えずに「よく読みなさい」と言ってしまいがちです。
+  耳も同じです。「教科書23ページを開いて、3番の問題を読んで、ノートに考えを書きます」──
+  この一文には指示が3つ入っています。聞き取れなかったのではなく、<span class="em">全部を受け取る前に、あふれた</span>のです。</p>
+
+  <h3>何が起きているのか</h3>
+  <p>認知負荷理論（Sweller）が示すとおり、人が一度に処理できる情報量には固い上限があります。
+  レイアウトが混み合った教材や、口頭の複数指示は、課題そのものの難しさとは別のところで処理容量を食いつぶす。
+  通常学級のユニバーサルデザイン（UD）研究で繰り返し言われる<span class="em">「視覚化・焦点化・共有化」</span>のうち、
+  「焦点化」──刺激を減らし、いま見るべき1点に絞る──は、まさにこの部屋への手当てです。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>学習障害（LD）のある子への読解指導のメタ分析では、
+  「だれが・なにを・どうした？」と自分に問いながら読む<b>自己質問</b>や、文章の型を知って読む<b>文章構造の指導</b>など、
+  認知方略の指導に大きな効果（効果量はおよそ1前後）が確認されています（Gajria らのメタ分析）。
+  ポイントは、カードやプリントを渡すだけでは効かないこと。<b>教師がやって見せる→一緒にやる→独りでやる</b>、の順で移すことが効果の条件です。</div>
+
+  <h3>担任に打てる手</h3>
+  <p>⑴ <span class="em">指示は1つずつ、動詞で切る。</span>「開く→読む→書く」を一気に言わず、1つ済んでから次を言う。
+  黒板の隅に番号つきで書き残せば、聞き逃した子が自力で戻れます（これは次の「保持」の部屋への手当てでもあります）。<br>
+  ⑵ <span class="em">「問いを○で囲む」を全員の作法にする。</span>設問文の「なにを・どう答えるか」の部分を○で囲み、使う言葉や数に線を引く。
+  テストの前に、教師が実物投影機で1問ぶんやって見せる。<br>
+  ⑶ <span class="em">見る場所を先に教える。</span>市販テストや学力調査には決まった「型」があります。
+  大問の並び、設問の言い回し、解答欄の形式。型を事前に一度体験させておくだけで、本番の視覚的な迷子は大きく減ります。</p>
+  <div class="cardrow"><a class="cardlink" href="../">▸ 支援カード「じぶんに きく」「わけは 本文」を見る</a></div>
+
+  <h2><span class="n">2</span>記憶の保持 ── 入ったのに、消える</h2>
+  <div class="h2sub">短期記憶・ワーキングメモリ（WM）の低さ</div>
+
+  <h3>教室でどう見えるか</h3>
+  <p>「さっき言ったでしょう」と言いたくなる場面で、この部屋を疑います。
+  指示を聞いた直後は分かっている。席に戻る数歩のあいだに、消える。
+  計算の途中でくり上がりを忘れる。作文で、書こうと思った文を書いている途中に忘れる。
+  大事なのは、これが<span class="em">「聞いていない」のでも「忘れっぽい性格」なのでもない</span>ことです。
+  頭の中の作業机（ワーキングメモリ）が小さくて、載せた物が押し出されているのです。</p>
+
+  <h3>何が起きているのか</h3>
+  <p>ワーキングメモリ研究の第一人者ギャザコールとアロウェイは、
+  どの教室にもワーキングメモリの弱い子が<span class="em">おおよそ1割程度</span>いて、
+  その弱さが「不注意」「聞いていない」「やる気がない」と<span class="em">誤解されやすい</span>ことを繰り返し指摘しています。
+  さらにアロウェイらの追跡研究では、5歳時点のワーキングメモリが、その後の読み書き・算数の学力を
+  <span class="em">IQよりも強く予測</span>しました。つまりこの部屋は、学力のしんどさの本丸に近い。
+  そして重要なのは、<span class="em">ワーキングメモリは鍛えて増やすより、負荷を減らして外に預ける方が確実</span>だという点です。</p>
+
+  <h3>担任に打てる手</h3>
+  <p>⑴ <span class="em">記憶を外部化する。</span>手順表を机上に置く、指示を黒板に残す、例題を消さずに残しておく。
+  「覚えておきなさい」を「見れば分かる状態にしておく」に置き換える。視覚支援と課題分析（手順の分解）は、
+  米国NCAEPの2020年報告でエビデンスの確立した実践（established EBP）に分類されています。<br>
+  ⑵ <span class="em">完成見本（ワークドイグザンプル）を先に見せる。</span>認知負荷理論の中でも再現性の高い知見で、
+  白紙から考えさせるより、解き切った見本を見てから類題に向かう方が、作業机の小さい子は学べます。
+  「れい（完成見本）→もんだい」の順に並べる教材の型は、ここから来ています。<br>
+  ⑶ <span class="em">途中経過を書く場所を用意する。</span>くり上がりのメモ欄、考えの下書き欄。
+  頭の中に置いておけない物を、紙の上に置ける設計にする。</p>
+  <div class="cardrow"><a class="cardlink" href="../">▸ 支援カード「じゅんばん」「まず 1こ」を見る</a></div>
+
+  <h2><span class="n">3</span>output ── 分かっているのに、出せない</h2>
+  <div class="h2sub">口で言う・言葉に書く・絵にする</div>
+
+  <h3>教室でどう見えるか</h3>
+  <p>「書き方が、わからん」。この一言は、outputの部屋の詰まりをよく表しています。
+  頭の中に答えらしきものはある。でも、どの言葉から始めて、どの順に並べればいいのかが分からない。
+  結果、解答欄は空白になる。ここで私たちが踏みたくない地雷は、<span class="em">空白を「理解ゼロ」と読むこと</span>です。
+  inputと保持を通り抜けた情報が、最後の出口で詰まっただけかもしれない。
+  口で言わせれば言える子、絵に描かせれば描ける子は、教室に確実にいます。</p>
+
+  <h3>何が起きているのか</h3>
+  <p>書くという行為は、内容を思い出し、文を組み立て、文字を正しく書き、
+  それらを同時進行させる、認知的に最も高くつく出力です。作業机（WM）の小さい子には二重三重の負荷になる。
+  作文研究では、グレアムとハリスの<span class="em">SRSD（自己調整方略発達）</span>──
+  書き方の型を明示的に教え、自分で手順を唱えながら書けるようにする枠組み──が、
+  書くことに困難のある子への指導として最も効果の確かめられた方法の一つとされています。
+  算数の文章題でも同じで、問題を少数の型に当てはめて考える<span class="em">スキーマ型指導</span>（Jitendra、Fuchs ら）が、
+  LD・算数困難のある子の正答を確実に増やすことが示されています。共通するのは、<span class="em">「型」を外から渡す</span>ことです。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>「型を渡す」は、思考を縛ることではありません。
+  SRSDもスキーマ型指導も、型はやがて<b>本人の中に取り込まれて外せる足場（スキャフォールディング）</b>として設計されています。
+  効果の条件はここでも「教師がモデルを見せる→一緒に→独りで」の段階的な移行です。</div>
+
+  <h3>担任に打てる手</h3>
+  <p>⑴ <span class="em">書き出しの型を渡す。</span>「わたしは〜だと思います。なぜなら〜からです。」
+  「①式 ②言葉で説明 ③たしかめ」。型は掲示ではなく、<span class="em">声に出して唱えられる短さ</span>にするのがコツです。<br>
+  ⑵ <span class="em">出口を複数用意する。</span>口で言う・言葉に書く・絵や図にする。
+  まず口で言わせて、それをそのまま書かせる「言ってから書く」は、最も安い書字支援です。
+  学びのユニバーサルデザイン（UDL）が「表現の方法を複数保障する」ことを原則に置くのは、この部屋のためです。<br>
+  ⑶ <span class="em">解答欄に設計を仕込む。</span>「答え方の指示を設問に書く」「欄の大きさで期待する分量を伝える」。
+  空白の欄は、子どもへの問いであると同時に、教材側の設計の問題でもあります。</p>
+  <div class="cardrow"><a class="cardlink" href="../">▸ 支援カード「どの計算？」「文しょうだい 4ステップ」を見る</a></div>
+
+  <h2><span class="n">4</span>コミュニケーション ── やりとりの中で、すり減る</h2>
+  <div class="h2sub">関わり・相手の表情を想像する</div>
+
+  <h3>教室でどう見えるか</h3>
+  <p>ペア学習で話し合いが始まった瞬間、止まる子がいます。休み時間、遊びの輪に「入れて」が言えない子がいます。
+  相手の表情から気持ちを読むこと、話の順番を待つこと、断られたときに立て直すこと──
+  この部屋のしんどさは、学習の3つの部屋とちがって<span class="em">失敗が人間関係の傷として蓄積する</span>のが怖いところです。
+  そして今の授業は、対話的な学びを前提に組まれています。やりとりが苦手なことは、そのまま学習参加のしんどさになる。</p>
+
+  <h3>何が起きているのか</h3>
+  <p>ソーシャルスキルは、性格ではなく<span class="em">スキル（＝教えられるもの）</span>だというのが研究の一致点です。
+  NCAEPの報告では、ソーシャルスキルトレーニング（SST）、望ましい行動を短い筋書きで事前に共有するソーシャルナラティブ、
+  仲間を支援の担い手にするピア媒介の指導が、いずれもエビデンスの確立した実践に挙げられています。
+  ソーシャルストーリーのメタ分析（Qi ら、2018）では、特に不適切な行動の低減に効果が確認されていますが、
+  <span class="em">単体では不十分で、ロールプレイや強化（できたら認める）と組み合わせたときに効く</span>ことも分かっています。</p>
+
+  <h3>担任に打てる手</h3>
+  <p>⑴ <span class="em">入り方の台本を渡して、1回練習してから本番へ。</span>「近づく→『いっしょにいい？』→返事を聞く」。
+  休み時間の前に教室で30秒のロールプレイをする。台本なしの本番だけを重ねさせない。
+  そして、できていたら<span class="em">その日のうちに一言、認める</span>──ここまでで手続きが1周です。<br>
+  ⑵ <span class="em">話し合いの共通ルールを学級全体に敷く。</span>「話を最後まで聞く」「アイデアをすぐに否定しない」。
+  その子のための支援を、<span class="em">全員のルールとして</span>導入すれば、誰も特別扱いにならない。<br>
+  ⑶ <span class="em">「相手の表情を想像する」を言葉にして返す。</span>「いま○○さん、どんな顔してた？」と事実から入る。
+  読み取りを責めるのではなく、読み取る練習の機会に変える。</p>
+  <div class="cardrow"><a class="cardlink" href="../">▸ 支援カード「なかまに 入る」「聞いて ひとこと」を見る</a></div>
+
+  <h2><span class="n">5</span>4つの部屋を貫く、3つの原則</h2>
+  <div class="h2sub">支援を「配って終わり」にしないために</div>
+
+  <h3>原則1：道具は、手続きの中でしか効かない</h3>
+  <p>支援カードも手順表も、<span class="em">配るだけ・貼るだけでは効きません</span>。
+  効果が確認された研究はどれも、①教師がモデルを見せ、②本人が使う場面を設計し、③できたら認める、
+  という手続きの中で道具を使っています。とくに<span class="em">自己記録（できたら自分で○を付ける）と称賛のセット</span>は、
+  ADHD傾向のある子の課題従事をめぐる複数のメタ分析で、最も安定して効果が確認されている介入の一つです。
+  道具を増やすより、1つの道具を手続きに載せる方が、確実に前に進みます。</p>
+
+  <h3>原則2：その子だけ、特別にしない</h3>
+  <p>支援がその子への「印」になった瞬間、子どもは支援を拒みます。
+  だから、<span class="em">支援は学級全体の選択肢として置く</span>。
+  ヒントカードは全員が取れる場所に置く。書き出しの型は全員の掲示にする。
+  そのうえで「どの支援を使うかは、自分で選んでいい」ことにする。
+  自分で選んだ支援は、与えられた支援より使われます。到達目標は全員同じ、変えるのは支援の量──
+  この考え方なら、支援を使うことは「劣っていること」ではなく「自分に合う道具を知っていること」になります。</p>
+
+  <h3>原則3：最後に守るのは、点数ではなく自尊感情</h3>
+  <p>4つの部屋の詰まりは、放っておくと二次的なしんどさに育ちます。
+  「どうせ自分はできない」という学習性の無力感、教室が怖くなること、荒れること。
+  逆に言えば、担任の仕事の核心は、しんどさの正体が見えないまま<span class="em">「努力不足」という誤診</span>を重ねないことです。
+  「あなたはさぼっていない。詰まっている場所があるだけだ。一緒に探そう」──
+  この一言が言える担任がいる教室は、それだけで安全です。</p>
+
+  <div class="pull"><q>支援を使うことは、劣っていることではなく、自分に合う道具を知っていること。</q><cite>── 学級に敷きたい文化</cite></div>
+
+  <h2><span class="n">6</span>テストの日に、できること</h2>
+  <div class="h2sub">明日から使えるチェックリスト</div>
+
+  <p>最後に、冒頭のテスト場面に戻ります。「どこを見たらいいか分からない」「書き方がわからない」への手当てを、
+  事前・当日・事後に分けて置いておきます。全部やる必要はありません。<span class="em">1つ選んで、来週のテストで試す</span>。それで十分です。</p>
+
+  <div class="checklist">
+    <h3>テスト前（見る技術と型を渡す）</h3>
+    <ul>
+      <li>テストと同じ「型」の問題を1枚、授業で一緒に解いておく（大問の並び・設問の言い回しに慣れる）</li>
+      <li>「問いを○で囲む→使う言葉・数に線を引く」を実物投影機で見せ、全員で1問やる</li>
+      <li>記述の書き出しの型（「なぜなら〜からです」など）を声に出して練習しておく</li>
+    </ul>
+  </div>
+  <div class="checklist">
+    <h3>テスト中（詰まりを外から減らす）</h3>
+    <ul>
+      <li>開始前に「まず名前→次に大問1の問いを○で囲む」と最初の2手だけ全員に指示する</li>
+      <li>手が止まっている子には「どこまで読めた？」と場所を聞く（「がんばって」ではなく）</li>
+      <li>設問の読み上げが必要な子には読み上げる──全国学力・学習状況調査でも認められている配慮です。ただし、読む力そのものを測る設問は対象から外すことと、当日その子だけを目立たせない段取り（事前に本人と決めておく・座席の工夫）まで含めて設計する</li>
+    </ul>
+  </div>
+  <div class="checklist">
+    <h3>テスト後（空白を誤診しない）</h3>
+    <ul>
+      <li>空白だった問題を、後日1対1で口頭で聞いてみる（口で言えるなら、詰まりはoutput）</li>
+      <li>「どの問題が読みにくかった？」と紙面の側の問題を子どもに聞く</li>
+      <li>どの部屋で詰まったかをメモしておく（次の単元・次のテストの支援設計がそのまま決まる）</li>
+    </ul>
+  </div>
+
+  <h2><span class="n">7</span>おわりに ── 担任ひとりで、抱えない</h2>
+  <div class="h2sub">4つの部屋は、連携のための共通言語にもなる</div>
+
+  <p>ここまで書いてきたことは、すべて「担任が教室でできること」です。
+  でも、それは「担任がひとりで背負うこと」とは違います。
+  4つの部屋の見立ては、特別支援コーディネーターや通級の先生、保護者と話すときの<span class="em">共通言語</span>になります。
+  「本人はまじめなんですが……」より、「口頭指示の保持で詰まっていて、視覚化すると通ります」の方が、
+  支援は何倍も速く動く。観察のメモが、そのまま連携の資料になります。</p>
+
+  <p>そして最後に。この読み物は、しんどさを抱えた子のために書きましたが、
+  4つの部屋への手当ては、実は学級の全員を楽にします。指示が短くなり、見本があり、型があり、
+  話し合いが安全になった教室は、詰まっていない子にとっても学びやすい。
+  <span class="em">いちばんしんどい子に合わせて設計した授業は、誰にとってもいい授業になる。</span>
+  ユニバーサルデザインという言葉の、いちばん実務的な意味はこれだと思っています。</p>
+
+  <div class="end">
+    <p><b>この読み物とセットで使えるもの</b></p>
+    <div class="grid2">
+      <a href="../">支援カード<small>「声に出す合言葉」のカード全35枚。この記事の各部屋に対応</small></a>
+      <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り 全259枚。問いの見つけ方の練習に</small></a>
+      <a href="../../tankyu/">探究・問題解決サポート<small>「今なにをしているか」が見える学びの地図</small></a>
+      <a href="../../">School Stock 棚トップ<small>先生のための無料の道具と教材の棚</small></a>
+    </div>
+    <p class="note">この読み物は、通常学級の担任としての実践と、下記の研究を土台に書いています。
+    個々の子どもの診断・評価に代わるものではありません。心配があるときは、校内の特別支援教育コーディネーター・
+    スクールカウンセラー・専門機関につないでください。</p>
+  </div>
+
+  <h2>参考にした主な研究・資料</h2>
+  <ul class="refs">
+    <li>文部科学省（2022）「通常の学級に在籍する特別な教育的支援を必要とする児童生徒に関する調査結果」（小・中8.8%、小学校10.4%）</li>
+    <li>Gathercole, S. E., & Alloway, T. P. (2008). <i>Working Memory and Learning: A Practical Guide for Teachers.</i>（教室のWMの弱い子は約1割・誤解されやすいこと）</li>
+    <li>Alloway, T. P., & Alloway, R. G. (2010). Investigating the predictive roles of working memory and IQ in academic attainment. <i>Journal of Experimental Child Psychology.</i></li>
+    <li>Sweller, J. ほか：認知負荷理論とワークドイグザンプル効果（完成見本を先に見せる指導の根拠）</li>
+    <li>Gajria, M., Jitendra, A. K. ほか：LD児への読解介入のメタ分析（自己質問・文章構造など認知方略指導の大きな効果）</li>
+    <li>Graham, S., & Harris, K. R.：SRSD（自己調整方略発達）による作文指導の効果研究</li>
+    <li>Jitendra, A. K., Fuchs, L. S. ほか：<a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6130842/" target="_blank" rel="noopener">スキーマ型文章題指導（Schema-Based Instruction）↗</a></li>
+    <li><a href="https://ncaep.fpg.unc.edu/wp-content/uploads/EBP-Report-2020.pdf" target="_blank" rel="noopener">NCAEP (2020) Evidence-Based Practices Report ↗</a>（視覚支援・課題分析・自己管理・SST・ソーシャルナラティブ等）</li>
+    <li>Qi, C. H. ほか (2018)：ソーシャルストーリー介入のメタ分析（22研究）</li>
+    <li>セルフモニタリングのメタ分析（Bruhn ら）／<a href="https://onlinelibrary.wiley.com/doi/abs/10.1002/bin.1946" target="_blank" rel="noopener">Sulu (2023) インクルーシブ学級での自己管理 ↗</a>／大対ら（行動療法研究35）通常学級での自己記録</li>
+    <li>各県教育センターの通常学級UD資料（視覚化・焦点化・共有化）：<a href="https://www.city.saitama.lg.jp/003/002/017/005/p073418_d/fil/universaldesign-jugyo.pdf" target="_blank" rel="noopener">さいたま市ガイドブック ↗</a> ほか</li>
+    <li>CAST：学びのユニバーサルデザイン（UDL）ガイドライン（表現方法の複数保障）</li>
+  </ul>
+</article>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。<br>
+    <a href="../../">棚トップ</a>　/　<a href="../">支援カード</a>　/　<a href="../../prints/kokugo/">国語プリント</a>　/　<a href="../../tankyu/">探究・問題解決サポート</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+  </div>
+</footer>
+
+</body>
+</html>
