@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>社会プリント ── 現役教員がつくった無料の社会プリント｜School Stock</title>
+<meta name="description" content="現役の小学校教員がつくった、そのまま印刷して使える社会の資料読み取りプリント。グラフや表は自作、答えは各PDFの2枚目に赤字で入っています。すべて自作・無料です。">
+<style>
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .search { flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .search:focus { box-shadow:0 0 0 3px rgba(43,95,217,0.12); }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .acts { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .more { font-size:12.5px; font-weight:700; color:var(--accent); }
+  .dl { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; }
+  .dl svg { width:12px; height:12px; }
+  .empty { display:none; font-size:14px; color:var(--sub); padding:8px 0 4px; }
+  .packband { border:1px solid var(--ink); margin:26px 0 6px; padding:20px 22px; }
+  .packband .pb-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .packband b.pb-t { display:block; font-size:17px; margin-bottom:4px; }
+  .packband .pb-note { font-size:12.5px; color:var(--sub); margin-bottom:14px; }
+  .pb-btns { display:flex; flex-wrap:wrap; gap:10px; }
+  .pbtn { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:9px 16px; }
+  .pbtn:hover { background:var(--black); color:#fff; }
+  .pbtn svg { width:14px; height:14px; }
+  .pbtn small { font-weight:500; font-size:11px; color:var(--sub); }
+  .pbtn:hover small { color:#d7dade; }
+</style>
+</head>
+<body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../prints/kokugo/">国語</a>
+      <a href="../../prints/rika/">理科</a>
+      <a href="../../prints/shakai/">社会</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">素材</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能</small></a>
+    <a href="../../prints/shakai/">社会プリント<small>資料の読み取り</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ 社会プリント</div>
+  <div class="head">
+    <span class="kicker">PRINTS｜社会</span>
+    <h1>社会プリント</h1>
+    <p class="lead">現役の小学校教員がつくった、そのまま印刷して使える社会の資料読み取りプリント。グラフや表は自作、答えは各PDFの2枚目に赤字で入っています。すべて自作・無料です。</p>
+    <div class="meta">
+      <span><b>全12枚</b></span>
+      <span>3年 4／4年 4／5年 4</span>
+      <span>PDFは1枚目が問題・2枚目が赤字解答</span>
+      <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div class="frow">
+      <input id="q" class="search" type="search" placeholder="さがす（例: グラフ、水、ごみ、自動車）">
+    </div>
+    <div class="frow">
+      <span class="fl">学年</span>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button>
+    </div>
+    <p class="count"><b id="shown">12</b> 枚を表示中</p>
+  </div>
+
+  <section data-sec id="sec-g3">
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <h2>3年</h2>
+    <p class="sec-note"><span class="cnt">全4枚</span></p>
+    <div class="grid">
+<div class="card" data-band="g3" data-hay="買い物調べのグラフ はたらく人とくらし 3年">
+  <a class="th" href="pdf/shakai3_kaimono.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai3_kaimono.png" alt="買い物調べのグラフ"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">はたらく人とくらし</span></div>
+    <a class="tt" href="pdf/shakai3_kaimono.pdf">買い物調べのグラフ</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai3_kaimono.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="市の土地の使われ方 わたしたちのまちと市 3年">
+  <a class="th" href="pdf/shakai3_shi.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai3_shi.png" alt="市の土地の使われ方"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">わたしたちのまちと市</span></div>
+    <a class="tt" href="pdf/shakai3_shi.pdf">市の土地の使われ方</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai3_shi.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="事故や事件からまちを守る 地いきの安全を守る 3年">
+  <a class="th" href="pdf/shakai3_jiko.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai3_jiko.png" alt="事故や事件からまちを守る"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">地いきの安全を守る</span></div>
+    <a class="tt" href="pdf/shakai3_jiko.pdf">事故や事件からまちを守る</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai3_jiko.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="火事からまちを守る 地いきの安全を守る 3年">
+  <a class="th" href="pdf/shakai3_kaji.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai3_kaji.png" alt="火事からまちを守る"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">地いきの安全を守る</span></div>
+    <a class="tt" href="pdf/shakai3_kaji.pdf">火事からまちを守る</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai3_kaji.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g4">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <h2>4年</h2>
+    <p class="sec-note"><span class="cnt">全4枚</span></p>
+    <div class="grid">
+<div class="card" data-band="g4" data-hay="電気はどこから 健康なくらしとまちづくり 4年">
+  <a class="th" href="pdf/shakai4_denki.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai4_denki.png" alt="電気はどこから"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">健康なくらしとまちづくり</span></div>
+    <a class="tt" href="pdf/shakai4_denki.pdf">電気はどこから</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai4_denki.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="ごみの処理とリサイクル 健康なくらしとまちづくり 4年">
+  <a class="th" href="pdf/shakai4_gomi.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai4_gomi.png" alt="ごみの処理とリサイクル"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">健康なくらしとまちづくり</span></div>
+    <a class="tt" href="pdf/shakai4_gomi.pdf">ごみの処理とリサイクル</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai4_gomi.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="水はどこから 健康なくらしとまちづくり 4年">
+  <a class="th" href="pdf/shakai4_mizu.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai4_mizu.png" alt="水はどこから"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">健康なくらしとまちづくり</span></div>
+    <a class="tt" href="pdf/shakai4_mizu.pdf">水はどこから</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai4_mizu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="地しんにそなえる 自然災害にそなえるまちづくり 4年">
+  <a class="th" href="pdf/shakai4_jishin.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai4_jishin.png" alt="地しんにそなえる"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">自然災害にそなえるまちづくり</span></div>
+    <a class="tt" href="pdf/shakai4_jishin.pdf">地しんにそなえる</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai4_jishin.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g5">
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <h2>5年</h2>
+    <p class="sec-note"><span class="cnt">全4枚</span></p>
+    <div class="grid">
+<div class="card" data-band="g5" data-hay="情報を伝える人々 未来とつながる情報 5年">
+  <a class="th" href="pdf/shakai5_joho.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai5_joho.png" alt="情報を伝える人々"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">未来とつながる情報</span></div>
+    <a class="tt" href="pdf/shakai5_joho.pdf">情報を伝える人々</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai5_joho.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="自動車の生産 未来をつくり出す工業生産 5年">
+  <a class="th" href="pdf/shakai5_jidosha.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai5_jidosha.png" alt="自動車の生産"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">未来をつくり出す工業生産</span></div>
+    <a class="tt" href="pdf/shakai5_jidosha.pdf">自動車の生産</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai5_jidosha.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="米づくりのさかんな地域 未来を支える食料生産 5年">
+  <a class="th" href="pdf/shakai5_kome.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai5_kome.png" alt="米づくりのさかんな地域"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">未来を支える食料生産</span></div>
+    <a class="tt" href="pdf/shakai5_kome.pdf">米づくりのさかんな地域</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai5_kome.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="水産業のさかんな地域 未来を支える食料生産 5年">
+  <a class="th" href="pdf/shakai5_suisan.pdf"><div class="thumb"><img loading="lazy" src="thumb/shakai5_suisan.png" alt="水産業のさかんな地域"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">未来を支える食料生産</span></div>
+    <a class="tt" href="pdf/shakai5_suisan.pdf">水産業のさかんな地域</a>
+    <div class="acts">
+      <span class="more">問題＋赤字解答</span>
+      <a class="dl" href="pdf/shakai5_suisan.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../">棚トップ</a>
+        <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../prints/rika/">理科プリント</a>
+        <a href="../../prints/shakai/">社会プリント</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../sozai/">授業イラスト素材集</a>
+        <a href="../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+(function(){var state={q:'',band:'all'};
+function apply(){var shown=0;
+document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
+sec.querySelectorAll('.card').forEach(function(c){
+var ok=(state.band==='all'||c.dataset.band===state.band)&&(!state.q||c.dataset.hay.toLowerCase().indexOf(state.q)>=0);
+c.style.display=ok?'':'none';if(ok)vis++;});
+sec.style.display=vis===0?'none':'';shown+=vis;});
+document.getElementById('shown').textContent=shown;}
+document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.trim().toLowerCase();apply();});
+document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
+state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+})();
+</script>
+</body>
+</html>
