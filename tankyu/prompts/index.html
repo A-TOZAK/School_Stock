@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>探究の壁打ちプロンプト集──段階別・コピーしてそのまま使える ｜ School Stock</title>
+<meta name="description" content="課題の設定→情報の収集→整理・分析→まとめ・表現。探究の4つの段階ごとに、AIを「答えを写す相手」ではなく「壁打ち相手」にするプロンプト集。小学校の総合的な学習の時間から中学・高校の探究まで。コピーしてそのまま使えます。">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#0e7c86; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover, .nav a.on { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.article { max-width:760px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:20px 0 26px; margin-bottom:30px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--accent); padding:4px 12px; margin-bottom:18px; }
+.head h1 { font-size:clamp(26px,4.6vw,38px); font-weight:700; line-height:1.42; }
+.head .sub { margin-top:16px; font-size:15px; color:#3d4148; line-height:1.9; }
+.head .meta { margin-top:18px; font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; }
+.head .meta b { color:var(--ink); }
+.rules { background:var(--wash); border-left:3px solid var(--ink); padding:18px 22px; margin:0 0 8px; }
+.rules h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin-bottom:10px; }
+.rules ol { margin-left:20px; display:flex; flex-direction:column; gap:6px; }
+.rules li { font-size:14px; line-height:1.8; }
+.rules .gnote { margin-top:12px; font-size:12.5px; color:var(--sub); line-height:1.8; border-top:1px solid var(--line); padding-top:10px; }
+h2 { font-size:21px; font-weight:700; line-height:1.5; margin:46px 0 4px; padding-top:14px; border-top:2px solid var(--ink); }
+h2 .stg { display:inline-block; font-size:11px; font-weight:700; letter-spacing:.14em; color:#fff; background:var(--sc,#0e7c86); padding:3px 10px; margin-right:12px; vertical-align:3px; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; margin-bottom:18px; }
+.pb { border:1px solid var(--ink); margin:16px 0; background:#fff; }
+.pb .pbh { display:flex; align-items:center; gap:10px; padding:10px 16px; border-bottom:1px solid var(--line); }
+.pb .pbh b { font-size:14px; flex:1; }
+.pb .pbh .dot { width:9px; height:9px; flex:0 0 9px; background:var(--sc,#0e7c86); }
+.copybtn { font-family:inherit; font-size:12px; font-weight:700; color:var(--ink); background:#fff; border:1px solid var(--ink); padding:4px 14px; cursor:pointer; white-space:nowrap; }
+.copybtn:hover { background:var(--ink); color:#fff; }
+.copybtn.done { background:var(--accent); border-color:var(--accent); color:#fff; }
+.pb pre { font-family:inherit; font-size:15px; line-height:1.95; white-space:pre-wrap; word-break:break-word; padding:14px 18px 16px; color:#20242a; border-left:4px solid var(--sc,#0e7c86); margin:12px 16px 16px; background:var(--wash); }
+.pb pre .ph { background:#fff; border:1px dashed var(--sub); padding:0 4px; color:var(--sub); }
+.when { font-size:13.5px; color:#3d4148; margin:10px 0 2px; }
+.when b { color:var(--ink); }
+.cardrow { display:flex; gap:10px; flex-wrap:wrap; margin:16px 0 2px; }
+.cardlink { display:inline-flex; align-items:center; gap:7px; font-size:13px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:5px 14px; border-radius:2px; }
+.cardlink:hover { background:var(--accent); color:#fff; }
+p { font-size:15px; line-height:2; margin:14px 0; color:#20242a; }
+p .em { background:linear-gradient(transparent 62%, #dff0f1 62%); font-weight:700; }
+.end { margin-top:48px; border-top:2px solid var(--ink); padding-top:20px; }
+.end .grid2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; margin:18px 0; }
+.end .grid2 a { border:1px solid var(--ink); padding:14px 16px; font-size:14px; font-weight:700; color:var(--ink); }
+.end .grid2 a:hover { box-shadow:4px 4px 0 var(--ink); }
+.end .grid2 a small { display:block; font-size:11.5px; font-weight:400; color:var(--sub); margin-top:3px; line-height:1.6; }
+@media (max-width:560px){ .end .grid2 { grid-template-columns:1fr; } }
+.end .note { font-size:12px; color:var(--sub); line-height:1.8; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../../tools/pdf-toolbox/">ツール</a>
+    <a href="../../prints/kokugo/">プリント</a>
+    <a href="../../shien/">支援カード</a>
+    <a class="on" href="../">探究サポート</a>
+    <a href="../../sozai/">素材</a>
+    <a href="../../ideas/">アイデア村</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> › <a href="../">探究・問題解決サポート</a> › 壁打ちプロンプト集</div>
+  <div class="head">
+    <span class="kicker">AI壁打ち</span>
+    <h1>探究の壁打ちプロンプト集</h1>
+    <p class="sub"><b>課題の設定 → 情報の収集 → 整理・分析 → まとめ・表現。</b>
+    探究の4つの段階ごとに、AIを「答えを写す相手」ではなく<b>「壁打ち相手」</b>にするプロンプトを並べました。
+    コピーして、そのまま生成AIに貼り付けて使えます。この4段階は文部科学省の示す探究の過程なので、
+    小学校の総合的な学習の時間から、中学・高校の探究まで、同じ型で使えます。</p>
+    <div class="meta"><b>全15本・無料</b><span>コピーしてそのまま使える</span><span>© School Stock</span></div>
+  </div>
+
+  <div class="rules">
+    <h3>使う前の、3つの約束</h3>
+    <ol>
+      <li><b>自分の考えが先。</b>考えてから聞く。コピペで終わらせない。</li>
+      <li><b>名前・学校名などの個人情報は書かない。</b></li>
+      <li><b>AIの答えは「たたき台」。</b>最後は自分で決める。</li>
+    </ol>
+    <div class="gnote">〔 〕のところは、自分のことばに置きかえてから送ってください。
+    学校で生成AIを使うときは、学校のきまりと先生の指示が最優先です（先生向け：年齢制限・同意などの考え方は
+    文部科学省「<a href="https://www.mext.go.jp/a_menu/other/mext_02412.html" target="_blank" rel="noopener">初等中等教育段階における生成AIの利活用に関するガイドライン ↗</a>」へ）。</div>
+  </div>
+
+  <h2 style="--sc:#0e7c86"><span class="stg" style="background:#0e7c86">はじめに</span>壁打ちモードにする一文</h2>
+  <p class="h2sub">どの段階でも、まずこれを送ってから始める</p>
+  <p>壁打ちとは、テニスの壁打ちのように、<span class="em">打ち返してもらいながら自分の考えをきたえる</span>話し方のこと。
+  最初にこの一文を送ると、AIが「答えを教える先生」ではなく「壁打ち相手」になります。</p>
+  <div class="pb" style="--sc:#0e7c86">
+    <div class="pbh"><span class="dot"></span><b>はじめの一文</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>あなたは私の壁打ち相手です。答えは教えないで、質問と意見で返してください。私は「〔テーマ〕」について探究しています。</pre>
+  </div>
+
+  <h2 style="--sc:#c9366b"><span class="stg" style="background:#c9366b">STEP 1</span>課題の設定──問いをみがく</h2>
+  <p class="h2sub">いつ使う？──問いを決めるとき。決めた問いに、いまいち自信がないとき。</p>
+  <div class="pb" style="--sc:#c9366b">
+    <div class="pbh"><span class="dot"></span><b>問いを見せる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>私の問いは「〔自分の問い〕」です。この問いのおもしろいところと、調べにくいところを教えて。</pre>
+  </div>
+  <div class="pb" style="--sc:#c9366b">
+    <div class="pbh"><span class="dot"></span><b>問いを育てる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>もっと調べたくなる問いに変えるアイデアを3つ出して。</pre>
+  </div>
+  <div class="pb" style="--sc:#c9366b">
+    <div class="pbh"><span class="dot"></span><b>予想を話す</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>答えの予想は「〔自分の予想〕」です。どう思うか、質問で返して。</pre>
+  </div>
+
+  <h2 style="--sc:#e8850c"><span class="stg" style="background:#e8850c">STEP 2</span>情報の収集──調べ方を決める</h2>
+  <p class="h2sub">いつ使う？──調べはじめる前。「とりあえず検索」になりかけたとき。</p>
+  <div class="pb" style="--sc:#e8850c">
+    <div class="pbh"><span class="dot"></span><b>調べ方をならべる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>「〔調べたいこと〕」について調べます。調べ方を5つあげて、それぞれ何がわかりそうかも教えて。</pre>
+  </div>
+  <div class="pb" style="--sc:#e8850c">
+    <div class="pbh"><span class="dot"></span><b>くわしい人をさがす</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>このことをよく知っているのは、どんな人？ その人に何を質問すればいい？</pre>
+  </div>
+  <div class="pb" style="--sc:#e8850c">
+    <div class="pbh"><span class="dot"></span><b>インタビューの練習</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>あなたが「〔話を聞く相手〕」になって、私のインタビューの練習につきあって。終わったら、よかったところと直したほうがいいところを教えて。</pre>
+  </div>
+  <p>いちばんたしかなのは<span class="em">一次情報</span>。実際に見る、本人に聞く。AIはその準備の相手です
+  （取材のマナーはカード<a href="../">T03「取材のお願い」</a>へ）。</p>
+
+  <h2 style="--sc:#6d3bd1"><span class="stg" style="background:#6d3bd1">STEP 3</span>整理・分析──考えを深める</h2>
+  <p class="h2sub">いつ使う？──情報は集まったけれど、そこから何が言えるか迷うとき。</p>
+  <div class="pb" style="--sc:#6d3bd1">
+    <div class="pbh"><span class="dot"></span><b>分けてみる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>調べてわかったことを書きます。「〔わかったこと〕」
+これを3つのグループに分けるなら、どう分ける？</pre>
+  </div>
+  <div class="pb" style="--sc:#6d3bd1">
+    <div class="pbh"><span class="dot"></span><b>弱いところを聞く</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>私の考えは「〔自分の考え〕」です。この考えの弱いところを3つ教えて。</pre>
+  </div>
+  <div class="pb" style="--sc:#6d3bd1">
+    <div class="pbh"><span class="dot"></span><b>問いにもどる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>この考えは、はじめの問い「〔自分の問い〕」の答えになっていますか。たりないところは？</pre>
+  </div>
+
+  <h2 style="--sc:#2b5fd9"><span class="stg" style="background:#2b5fd9">STEP 4</span>まとめ・表現──伝わるかをためす</h2>
+  <p class="h2sub">いつ使う？──発表やポスターの形が見えてきたとき。リハーサルの前に。</p>
+  <div class="pb" style="--sc:#2b5fd9">
+    <div class="pbh"><span class="dot"></span><b>原稿を見せる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>発表の原稿です。「〔原稿〕」
+聞いていて、わかりにくいところはどこ？</pre>
+  </div>
+  <div class="pb" style="--sc:#2b5fd9">
+    <div class="pbh"><span class="dot"></span><b>お客さんになってもらう</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>あなたがお客さんになって、この発表に質問を5つして。</pre>
+  </div>
+  <div class="pb" style="--sc:#2b5fd9">
+    <div class="pbh"><span class="dot"></span><b>相手に合わせる</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>聞く人は「〔伝える相手〕」です。その人にもっと伝わる工夫を3つ教えて。</pre>
+  </div>
+  <p>リハーサルでいちばん大切なのは、<span class="em">本物の人に見てもらう</span>こと。AIはその前の練習です
+  （リハーサルの記録は<a href="../">P02「リハーサルシート」</a>で）。</p>
+
+  <h2 style="--sc:#1f9d6b"><span class="stg" style="background:#1f9d6b">いつでも</span>ふりかえりの壁打ち</h2>
+  <p class="h2sub">いつ使う？──1時間の終わりに。探究がひとつ終わったときに。</p>
+  <div class="pb" style="--sc:#1f9d6b">
+    <div class="pbh"><span class="dot"></span><b>今日のふりかえり</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>今日やったことを話します。「〔今日やったこと〕」
+次の時間、最初に何をすればいいと思う？ 質問で確かめてから、意見をちょうだい。</pre>
+  </div>
+  <div class="pb" style="--sc:#1f9d6b">
+    <div class="pbh"><span class="dot"></span><b>一周のふりかえり</b><button class="copybtn" data-copy>コピー</button></div>
+    <pre>探究がひとつ終わりました。やったことを話します。「〔やったことのまとめ〕」
+次の探究をもっとよくするために、「続けるといいこと」と「変えるといいこと」を私から聞き出す質問をして。</pre>
+  </div>
+
+  <div class="end">
+    <h2 style="border:none; margin-top:0; padding-top:0">先生向け──壁打ちの伴走</h2>
+    <p>壁打ちの様子は、<span class="em">画面ではなく表情を見る</span>。手が止まっている子は、プロンプト以前に
+    「自分の考え」がまだことばになっていないことが多いです。そのときは「なにを・どうやって・なにがわかりそう」
+    （みとおしカードK01）に戻ってください。最初は先生がスクリーンで一度壁打ちをやって見せると、
+    学級のイメージがそろいます。</p>
+    <p>教室に貼れる印刷用カード（ふりがな付き・A4）もあります。タブレットのそばに貼っておくと、いつでも戻れます。</p>
+    <div class="cardrow">
+      <a class="cardlink" href="../pdf/A01_といをみがくかべうち.pdf" target="_blank" rel="noopener">▸ STEP1 問いをみがく（PDF）</a>
+      <a class="cardlink" href="../pdf/A02_しらべ方をきめるかべうち.pdf" target="_blank" rel="noopener">▸ STEP2 調べ方をきめる（PDF）</a>
+      <a class="cardlink" href="../pdf/A03_考えを深めるかべうち.pdf" target="_blank" rel="noopener">▸ STEP3 考えを深める（PDF）</a>
+      <a class="cardlink" href="../pdf/A04_つたわるかをためすかべうち.pdf" target="_blank" rel="noopener">▸ STEP4 つたわるかをためす（PDF）</a>
+    </div>
+    <div class="grid2">
+      <a href="../">探究・問題解決サポートの棚<small>いま ここボード・計画/話し合い/ふりかえりシート・話型カード</small></a>
+      <a href="../yomimono/">読み物：進め方の7つの視点<small>探究を「発表会」で終わらせないために</small></a>
+    </div>
+    <p class="note">このプロンプト集は、文部科学省の示す探究の過程（課題の設定・情報の収集・整理・分析・まとめ・表現）と
+    Gold Standard PBL の知見を土台に、文言をすべて自作したものです。根拠となる資料は<a href="../#references">棚の参考文献</a>をご確認ください。</p>
+  </div>
+</article>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../">探究サポートにもどる</a>　／　<a href="../../">棚トップ</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></footer>
+
+<script>
+document.querySelectorAll('.copybtn').forEach(function(btn){
+  btn.addEventListener('click', function(){
+    var pre = btn.closest('.pb').querySelector('pre');
+    var text = pre.innerText;
+    function done(){
+      var old = btn.textContent;
+      btn.textContent = 'コピーしました！';
+      btn.classList.add('done');
+      setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+    }
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(text).then(done, function(){ fallback(); done(); });
+    } else { fallback(); done(); }
+    function fallback(){
+      var ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); document.execCommand('copy'); ta.remove();
+    }
+  });
+});
+</script>
+</body>
+</html>

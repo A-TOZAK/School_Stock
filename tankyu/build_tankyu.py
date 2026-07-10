@@ -309,6 +309,7 @@ PAGE = f"""<!DOCTYPE html>
     <div class="dr-sec">INQUIRY</div>
     <a href="./">探究・問題解決サポート<small>全{total}枚・無料</small></a>
     {DRAWER_SECS}
+    <a class="sub2" href="prompts/">壁打ちプロンプト集（コピーして使える）</a>
     <a class="sub2" href="yomimono/">読み物：進め方の7つの視点</a>
     <div class="dr-sec">MATERIALS</div>
     <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
@@ -328,12 +329,18 @@ PAGE = f"""<!DOCTYPE html>
     <span class="kicker">INQUIRY SUPPORT</span>
     <h1>探究・問題解決サポート</h1>
     <p class="lead">探究・PBL・問題解決的な学びで、がんばる子が進む一方の「置いてけぼり」を出さないために。
-    <b>「今、何をしているのか」が全員に見える</b>学びの地図と、計画・リハーサル・振り返りのワークシート、
-    見通しと進み具合をことばにする話型カード。理科・社会科・総合的な学習の時間で使えます。</p>
-    <div class="meta"><b>全{total}枚・無料</b>　｜　学びの地図・ワークシート・話型カード・先生用シート　｜　A4／PDF　｜　© School Stock</div>
+    <b>「今、何をしているのか」が全員に見える</b>学びの地図と、計画・話し合い・リハーサル・振り返りのワークシート、
+    見通しと進み具合をことばにする話型カード、段階別のAI壁打ちプロンプト。理科・社会科・総合的な学習の時間で使えます。</p>
+    <div class="meta"><b>全{total}枚・無料</b>　｜　学びの地図・ワークシート・話型カード・AI壁打ち・先生用シート　｜　A4／PDF　｜　© School Stock</div>
     <a class="dlall" href="{ZIP_NAME}" download>{DL_SVG}まとめてダウンロード<small>（全{total}枚・zip・約{ZIP_MB:.0f}MB）</small></a>
     <div class="note-use">掲示は「貼って終わり」では効きません。毎時間のはじめに「いま ここ」を確かめる30秒とセットで使ってください
     （手立ての全体像は「先生用シート」に。発表・つなぎ言葉の基本話型は<a href="../shien/">支援カード</a>の棚にあります）。</div>
+    <a class="yomibanner" href="prompts/">
+      <span class="yb-kick" style="background:#0e7c86">プロンプト集</span>
+      <span class="yb-body"><b>探究の壁打ちプロンプト集──段階別・コピーしてそのまま使える</b>
+      <span>課題の設定→情報の収集→整理・分析→まとめ・表現。AIを「壁打ち相手」にするプロンプト全15本。教室掲示用のカード版（下のAIとの壁打ち）も。</span></span>
+      <span class="yb-arrow" style="color:#0e7c86">→</span>
+    </a>
     <a class="yomibanner" href="yomimono/">
       <span class="yb-kick">読み物</span>
       <span class="yb-body"><b>調べる、の前に。──探究を「発表会」で終わらせない7つの視点</b>
