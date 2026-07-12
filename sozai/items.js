@@ -576,5 +576,157 @@ const SOZAI = [
   "img": "img/denki4_10_switch.jpg",
   "thumb": "img/denki4_10_switch_thumb.jpg",
   "mono": "img/denki4_10_switch_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_01_hub",
+  "title": "朝の机（ノートとタブレット）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "教室のゆとり",
+  "scenes": [
+   "紙とクラウド、どちらも道具"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵",
+   "研修資料"
+  ],
+  "description": "朝の光の机に、ひらいたノートとタブレット、小さな鉢植え。「ゆとり」の情景。",
+  "howto": "研修資料・おたより・ICT紹介の扉や見出しに。",
+  "img": "img/kensyu_ws_01_hub.jpg",
+  "thumb": "img/kensyu_ws_01_hub_thumb.jpg",
+  "mono": "img/kensyu_ws_01_hub_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_02_kaku",
+  "title": "ノートに向かう子ども（後ろ姿）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "書く・学ぶ",
+  "scenes": [
+   "ひとつのノートに向かう時間"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵",
+   "おたより"
+  ],
+  "description": "机で鉛筆を持ち、ノートに書き込む子どもの後ろ姿。椅子が少し引かれている。",
+  "howto": "国語・学習・ふり返りの見出しに。",
+  "img": "img/kensyu_ws_02_kaku.jpg",
+  "thumb": "img/kensyu_ws_02_kaku_thumb.jpg",
+  "mono": "img/kensyu_ws_02_kaku_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_03_graph",
+  "title": "紙の上のグラフと鉢植え",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "見える化",
+  "scenes": [
+   "数を見える化する"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵",
+   "研修資料"
+  ],
+  "description": "紙に描かれた三本の棒（青・緑・からし色）と鉛筆、そばに鉢植え。",
+  "howto": "集計・データ・見える化の見出しに。",
+  "img": "img/kensyu_ws_03_graph.jpg",
+  "thumb": "img/kensyu_ws_03_graph_thumb.jpg",
+  "mono": "img/kensyu_ws_03_graph_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_04_easel",
+  "title": "イーゼルと色の形（発表）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "発表・表現",
+  "scenes": [
+   "見せて、話す"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵"
+  ],
+  "description": "イーゼルに立てた紙に、円・三角・四角の色の形。発表の情景。",
+  "howto": "発表・スライド・表現活動の見出しに。",
+  "img": "img/kensyu_ws_04_easel.jpg",
+  "thumb": "img/kensyu_ws_04_easel_thumb.jpg",
+  "mono": "img/kensyu_ws_04_easel_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_05_check",
+  "title": "チェックマークと鉛筆",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "ふり返り・評価",
+  "scenes": [
+   "○つけ・確認"
+  ],
+  "uses": [
+   "見出し",
+   "アイコン的に",
+   "おたより"
+  ],
+  "description": "紙に、からし色のチェックマークひとつと鉛筆。やわらかな一筆。",
+  "howto": "小テスト・ふり返り・チェックの見出しに。",
+  "img": "img/kensyu_ws_05_check.jpg",
+  "thumb": "img/kensyu_ws_05_check_thumb.jpg",
+  "mono": "img/kensyu_ws_05_check_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_06_class",
+  "title": "朝の光の教室",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "教室",
+  "scenes": [
+   "朝の教室"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵",
+   "掲示"
+  ],
+  "description": "窓から朝の光が差す、だれもいない教室。木の机と椅子、窓辺の鉢植え。",
+  "howto": "学級・行事・おたよりの情景見出しに。",
+  "img": "img/kensyu_ws_06_class.jpg",
+  "thumb": "img/kensyu_ws_06_class_thumb.jpg",
+  "mono": "img/kensyu_ws_06_class_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_07_folder",
+  "title": "書類フォルダと窓辺",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "整理・保管",
+  "scenes": [
+   "クラウドの棚に置く"
+  ],
+  "uses": [
+   "見出し",
+   "扉絵"
+  ],
+  "description": "窓辺に重ねた書類フォルダと、紙の入った浅い箱、そばに鉢植え。",
+  "howto": "整理・保管・ドライブ・校務の見出しに。",
+  "img": "img/kensyu_ws_07_folder.jpg",
+  "thumb": "img/kensyu_ws_07_folder_thumb.jpg",
+  "mono": "img/kensyu_ws_07_folder_mono.jpg"
  }
 ];
