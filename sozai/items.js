@@ -728,5 +728,70 @@ const SOZAI = [
   "img": "img/kensyu_ws_07_folder.jpg",
   "thumb": "img/kensyu_ws_07_folder_thumb.jpg",
   "mono": "img/kensyu_ws_07_folder_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_08_copies",
+  "title": "机に散らばる同じ紙（コピー）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "クラウドの説明",
+  "scenes": [
+   "どれが最新？"
+  ],
+  "uses": [
+   "図解",
+   "扉絵",
+   "研修資料"
+  ],
+  "description": "机の上に、同じ紙が何枚も散らばっている。「どれが最新？」を表す情景。",
+  "howto": "クラウド・共有・ファイル整理の“これまで”の説明図に。",
+  "img": "img/kensyu_ws_08_copies.jpg",
+  "thumb": "img/kensyu_ws_08_copies_thumb.jpg",
+  "mono": "img/kensyu_ws_08_copies_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_09_together",
+  "title": "1冊のノートを3人で囲む",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "クラウドの説明",
+  "scenes": [
+   "1つをみんなで見る"
+  ],
+  "uses": [
+   "図解",
+   "扉絵",
+   "研修資料"
+  ],
+  "description": "3人の子どもが後ろ姿で、1冊のひらいたノートをいっしょにのぞきこむ。",
+  "howto": "クラウド・共同編集・協働の“これから”の説明図に。",
+  "img": "img/kensyu_ws_09_together.jpg",
+  "thumb": "img/kensyu_ws_09_together_thumb.jpg",
+  "mono": "img/kensyu_ws_09_together_mono.jpg"
+ },
+ {
+  "id": "kensyu_ws_10_handover",
+  "title": "1冊のノートを手渡す（共有）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "共有の説明",
+  "scenes": [
+   "選んだ相手に渡す"
+  ],
+  "uses": [
+   "図解",
+   "扉絵"
+  ],
+  "description": "1冊のノートを、相手にそっと手渡している（手はそでから先だけ）。共有の情景。",
+  "howto": "共有・権限・受け渡しの説明図に。",
+  "img": "img/kensyu_ws_10_handover.jpg",
+  "thumb": "img/kensyu_ws_10_handover_thumb.jpg",
+  "mono": "img/kensyu_ws_10_handover_mono.jpg"
  }
 ];
