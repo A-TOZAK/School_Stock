@@ -85,6 +85,28 @@
   .use svg { width:12px; height:12px; }
   .empty { display:none; padding:30px 4px; color:var(--sub); font-size:14px; }
   .note { border:1px solid var(--line); background:var(--wash); padding:16px 18px; margin:22px 0 0; font-size:12.5px; color:var(--sub); line-height:1.9; }
+  /* サムネ（表紙）：千早リコの作風＝輪郭線なしの色面・むら色＋1段濃い面 */
+  .card .thumb, .sc-card .thumb { border-bottom:1px solid var(--line); background:#fff; line-height:0; }
+  .card .thumb svg, .sc-card .thumb svg { display:block; width:100%; height:auto; }
+  /* 先生の実践ショーケース（蓄積の器） */
+  .showcase { margin:46px 0 0; border-top:3px solid var(--black); padding-top:30px; }
+  .sc-kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:#9e3b45; padding:4px 12px; margin-bottom:14px; }
+  .showcase h2 { font-size:clamp(21px,3.6vw,27px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+  .sc-lead { font-size:14.5px; color:#3d4148; max-width:660px; margin-bottom:24px; line-height:1.95; }
+  .sc-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:18px; }
+  .sc-card { border:1px solid var(--line); border-top:3px solid #9e3b45; display:flex; flex-direction:column; background:#fff; }
+  .sc-card .b { padding:16px 18px 8px; flex:1; }
+  .sc-card .who { font-size:13.5px; font-weight:700; color:var(--ink); }
+  .sc-card .org { font-size:11.5px; color:var(--sub); margin-bottom:10px; }
+  .sc-card h3 { font-size:15.5px; font-weight:700; line-height:1.5; margin-bottom:8px; }
+  .sc-card p { font-size:13px; color:#3d4148; line-height:1.85; }
+  .sc-card .f { display:flex; align-items:center; justify-content:space-between; gap:10px; border-top:1px solid var(--line); padding:12px 18px; margin-top:10px; }
+  .sc-card .cr { font-size:11px; color:var(--sub); }
+  .sc-card .go { font-size:12.5px; font-weight:700; color:#fff; background:#9e3b45; padding:7px 13px; display:inline-flex; gap:6px; align-items:center; white-space:nowrap; }
+  .sc-invite { border:1px dashed #c9a1a6; background:#fbf5f5; justify-content:center; padding:22px 20px; }
+  .sc-invite b { font-size:14.5px; color:#9e3b45; display:block; margin-bottom:9px; }
+  .sc-invite .txt { font-size:12.5px; color:#6b5b5c; line-height:1.9; margin-bottom:15px; }
+  .sc-invite a { font-size:12.5px; font-weight:700; color:#9e3b45; text-decoration:underline; text-underline-offset:3px; }
   .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
   .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
   .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
@@ -180,6 +202,13 @@
 
   <div class="note">このページは、GEG Chikuho のアイデアソンなどで集まった実践を School Stock の棚に並べたものです。新しいアイデアやお願いごとは、上のフォームから置けます（順次このページに追加します）。児童生徒の個人情報は投稿しない運用です。<br>Gemini の「Gem」を探すなら、GEG Fukuoka City の <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗</a> もどうぞ。</div>
 
+  <section class="showcase" id="showcase">
+    <span class="sc-kicker">SHOWCASE｜先生の実践</span>
+    <h2>先生の実践ショーケース</h2>
+    <p class="sc-lead">Gemini for Education などで発表された、先生方の「がんばり」を紹介していく場所です。ここでは実践を丸ごと転載せず、ご本人の許可を得たうえで、実践への入り口（公式ページや note）へリンクします。写真や個人情報は載せません。ここから少しずつ、筑豊の・全国の実践が並んでいきます。</p>
+    <div class="sc-grid" id="scGrid"></div>
+  </section>
+
 </div>
 
 <footer class="foot">
@@ -218,6 +247,7 @@
 
 <script>
 const IDEAS = [
+  {t:'Workspace Studioの「フロー」で校務のくり返しを自動化', v:'workspace', ar:'やりたいことを日本語で書くと、Geminiが「きっかけ→手順」の自動化を組み立ててくれるWorkspace Studioのフロー。メール受信やスケジュールをきっかけに、Chat通知・ドキュメント作成・フォーム回答の整理などをコードなしで自動化できる。', pr:'毎週おなじ連絡・おなじ集計・おなじ準備を手作業でくり返している。GASまでは手が出ないが、自動化はしたい。', fs:'studio.workspace.google.com を開き、「いつ・何を」を日本語で書いて作成、手順を確認しテスト実行してからオンにする。', to:'Google Workspace Studio, Gemini, Google Chat, Google Docs, Google Forms', tg:'校務改善, 自動化, Gemini, Workspace, ノーコード', url:'a/workspace-studio-flow.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、NotebookLM、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやNotebookLMに貼って試す。', to:'Gemini, NotebookLM, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, NotebookLM, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/NotebookLM用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, NotebookLM, GitHub Pages', tg:'社会科, プロンプト集, Gemini, NotebookLM, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物名を入力すると各プロンプトに反映され、選ぶ・調べる・確かめる・構成する・推敲するをGeminiとの対話で支える1ページサイト。', pr:'子どもが生き物を選び、調べ、構成し、リーフレットにまとめるまでを一人で進めるのは難しい。', fs:'生き物名を入力し、学習段階に合うプロンプトをコピーしてGeminiに貼り付ける。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'a/ikimono-zukan.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
@@ -238,6 +268,27 @@ const IDEAS = [
 
 const VILLAGES = { gemini:'ひらめき広場', notebook:'読み解き書斎', workspace:'校務の工房', materials:'教材の畑' };
 
+// 表紙（サムネ）：作画＝千早リコの作風（レーンV/SVG）。輪郭線なしの色面・むら色＋1段濃い面・呼吸のドット。
+function coverSvg(v){
+  const C = { gemini:{c:'#2b5fd9',d:'#1f47a3'}, notebook:{c:'#0e8a6d',d:'#0a6650'}, workspace:{c:'#c2571a',d:'#9a4413'}, materials:{c:'#7a4bd0',d:'#5d37a3'} }[v] || {c:'#38424b',d:'#20262c'};
+  const motif = {
+    gemini:`<g><circle cx="306" cy="98" r="27" fill="#fff"/><g stroke="#fff" stroke-width="6" stroke-linecap="round"><path d="M306 44v-13"/><path d="M306 165v13"/><path d="M360 98h13"/><path d="M239 98h13"/><path d="M345 59l9-9"/><path d="M267 137l-9 9"/></g><rect x="297" y="122" width="18" height="9" rx="3" fill="${C.d}"/></g>`,
+    notebook:`<g><path d="M306 62l42 11v62l-42-11z" fill="#fff"/><path d="M306 62l-42 11v62l42-11z" fill="#eaf3ef"/><path d="M306 62v62" stroke="${C.d}" stroke-width="3"/><path d="M276 92l24 6M276 108l24 6" stroke="${C.d}" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/></g>`,
+    workspace:`<g><rect x="250" y="80" width="46" height="36" rx="8" fill="#fff"/><rect x="322" y="80" width="46" height="36" rx="8" fill="#fff"/><path d="M300 98h16" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M314 92l9 6-9 6z" fill="#fff"/><circle cx="273" cy="98" r="6" fill="${C.d}"/><path d="M338 91h20M338 99h20M338 107h12" stroke="${C.d}" stroke-width="2.6" stroke-linecap="round"/></g>`,
+    materials:`<g><path d="M306 150v-44" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M306 112q-28-6-33-32 28 2 33 28z" fill="#fff"/><path d="M306 104q28-10 37-34-30 0-37 28z" fill="#eae6f5"/></g>`
+  }[v] || '';
+  const name = VILLAGES[v] || '';
+  return `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">`
+    + `<rect width="400" height="200" fill="#fff"/>`
+    + `<path d="M256 0H400V200H206Q234 100 256 0Z" fill="${C.c}"/>`
+    + `<rect x="372" y="0" width="28" height="200" fill="${C.d}" opacity="0.55"/>`
+    + motif
+    + `<circle cx="58" cy="150" r="7" fill="#eec209"/>`
+    + `<text x="32" y="48" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" font-weight="700" fill="#38424b" letter-spacing="0.03em">${name}</text>`
+    + `<text x="32" y="72" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="10" fill="#a2a8ae" letter-spacing="0.16em">SCHOOL STOCK</text>`
+    + `</svg>`;
+}
+
 function classify(it){
   const s = [it.t, it.to, it.tg].join(' ');
   if (/プロンプト|Gemini|Claude|ChatGPT|生成AI/.test(s)) return 'gemini';
@@ -246,7 +297,7 @@ function classify(it){
   if (/プリント|教材|ゲーム|ノート|副読本|神教材|国語|算数|社会科/.test(s)) return 'materials';
   return 'materials';
 }
-IDEAS.forEach(it => { it.v = classify(it); });
+IDEAS.forEach(it => { it.v = it.v || classify(it); });
 
 const state = { q:'', tool:'all', v:'all' };
 const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
@@ -277,6 +328,7 @@ function cardHtml(it){
         : `<a class="use" href="${esc(it.url)}" target="_blank" rel="noopener">使ってみる<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`)
     : `<span class="author">リンクは準備中</span>`;
   return `<article class="card" data-v="${esc(it.v)}">
+    <div class="thumb">${coverSvg(it.v)}</div>
     <div class="b">
       <div class="chips"><span class="vil">${esc(VILLAGES[it.v])}</span>${tools}<span class="chip sch">${esc(it.sc)}</span></div>
       <h3>${esc(it.t)}</h3>
@@ -306,6 +358,34 @@ document.querySelectorAll('.abtn').forEach(b => b.addEventListener('click', () =
   render();
 }));
 render();
+
+// ── 先生の実践ショーケース（許可ベース・転載しない・入り口へリンク）──
+const SHOWCASE = [
+  {who:'外﨑顯博', org:'福岡県の公立小学校 ／ GEG Chikuho 共同リーダー', v:'workspace',
+   title:'Workspace Studioの「フロー」で校務を自動化', ar:'くり返しの校務連絡を、Geminiが組み立てる自動化フローで軽くする実践。ショーケースの1本目は、村の主の実践から。',
+   url:'a/workspace-studio-flow.html', internal:true, cr:'© School Stock'}
+];
+function scCard(s){
+  const link = s.internal
+    ? `<a class="go" href="${esc(s.url)}">実践を見る →</a>`
+    : `<a class="go" href="${esc(s.url)}" target="_blank" rel="noopener">実践を見る<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`;
+  return `<article class="sc-card">
+    <div class="thumb">${coverSvg(s.v)}</div>
+    <div class="b">
+      <div class="who">${esc(s.who)}</div>
+      <div class="org">${esc(s.org)}</div>
+      <h3>${esc(s.title)}</h3>
+      <p>${esc(s.ar)}</p>
+    </div>
+    <div class="f"><span class="cr">${esc(s.cr)}</span>${link}</div>
+  </article>`;
+}
+const scInvite = `<div class="sc-card sc-invite">
+  <b>あなたの実践も、ここに。</b>
+  <div class="txt">Gemini for Education などで発表された実践や、校内・GEG での取り組みを、ご本人の許可を得て紹介していきます。実践は転載せず、写真や個人情報も載せません。入り口へのリンクだけを並べます。</div>
+  <a href="https://docs.google.com/forms/d/e/1FAIpQLSe8YIX53kWB1ExSFH4BcK1j-GnhedBfpWPoiBOchNAagixQ9g/viewform" target="_blank" rel="noopener">実践を教える（フォーム）→</a>
+</div>`;
+document.getElementById('scGrid').innerHTML = SHOWCASE.map(scCard).join('') + scInvite;
 
 (function(){
   var d=document.getElementById('drawer'),s=document.getElementById('scrim');

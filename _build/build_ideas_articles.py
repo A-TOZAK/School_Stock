@@ -16,8 +16,71 @@ AUTHOR = "外﨑顯博 / 小学校"
 VC = {"gemini": "#2b5fd9", "notebook": "#0e8a6d", "workspace": "#c2571a", "materials": "#7a4bd0"}
 VNAME = {"gemini": "ひらめき広場", "notebook": "読み解き書斎", "workspace": "校務の工房", "materials": "教材の畑"}
 
-# steps: まず試す3手順 / tip: つまずき・コツ（None可）
+# ── ヒーロー図版（レーンV・SVG／作画：千早リコの作風＝輪郭線なしの色面・2色＋アクセント）──
+# workspace-studio-flow 用。校務の工房＝橙 #c2571a を主役に、フローの正体を1枚で。
+FLOW_HERO = '''<figure class="hero">
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="やりたいことを日本語で書くと、Geminiがきっかけと手順の自動化フローを組み立てる図">
+  <rect width="960" height="300" fill="#ffffff"/>
+  <path d="M900 0 H960 V70 Q930 44 900 0 Z" fill="#f5ede2"/>
+  <text x="44" y="52" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="23" font-weight="700" fill="#38424b">やりたいことを、日本語で書くだけ。</text>
+  <text x="44" y="80" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14.5" fill="#8a7f72">Gemini が「いつ動くか（きっかけ）」から「何をするか（手順）」までを組み立てます。</text>
+  <g font-family="'Hiragino Sans','Noto Sans JP',sans-serif">
+    <!-- きっかけ -->
+    <rect x="44" y="128" width="196" height="120" rx="16" fill="#c2571a"/>
+    <rect x="44" y="128" width="196" height="120" rx="16" fill="#9a4413" opacity="0.0"/>
+    <circle cx="86" cy="170" r="20" fill="#ffffff"/>
+    <path d="M86 170 V156 M86 170 L97 176" stroke="#9a4413" stroke-width="3.4" stroke-linecap="round" fill="none"/>
+    <text x="120" y="167" font-size="16" font-weight="700" fill="#ffffff">きっかけ</text>
+    <text x="120" y="188" font-size="12.5" fill="#f6e3d3">毎週 月曜 8:00</text>
+    <text x="64" y="232" font-size="11.5" fill="#f6e3d3" letter-spacing="0.14em">TRIGGER</text>
+    <!-- arrow -->
+    <path d="M252 188 H300" stroke="#cdbfae" stroke-width="4" stroke-linecap="round"/>
+    <path d="M300 181 L314 188 L300 195 Z" fill="#cdbfae"/>
+    <!-- 手順1 -->
+    <rect x="326" y="128" width="196" height="120" rx="16" fill="#f3ede4"/>
+    <rect x="352" y="158" width="34" height="42" rx="5" fill="#ffffff"/>
+    <path d="M352 158 h24 l10 10 v0 h-34 z" fill="#e4d8c6"/>
+    <path d="M360 176 h18 M360 184 h18 M360 192 h12" stroke="#c2571a" stroke-width="2.4" stroke-linecap="round"/>
+    <text x="398" y="167" font-size="16" font-weight="700" fill="#38424b">手順①</text>
+    <text x="398" y="188" font-size="12.5" fill="#7a7266">予定メモを作成</text>
+    <!-- arrow -->
+    <path d="M534 188 H582" stroke="#cdbfae" stroke-width="4" stroke-linecap="round"/>
+    <path d="M582 181 L596 188 L582 195 Z" fill="#cdbfae"/>
+    <!-- 手順2 -->
+    <rect x="608" y="128" width="196" height="120" rx="16" fill="#f3ede4"/>
+    <path d="M636 156 h40 a8 8 0 0 1 8 8 v20 a8 8 0 0 1 -8 8 h-22 l-12 12 v-12 h-6 a8 8 0 0 1 -8 -8 v-20 a8 8 0 0 1 8 -8 z" fill="#ffffff"/>
+    <circle cx="648" cy="174" r="2.6" fill="#c2571a"/><circle cx="658" cy="174" r="2.6" fill="#c2571a"/><circle cx="668" cy="174" r="2.6" fill="#c2571a"/>
+    <text x="700" y="167" font-size="16" font-weight="700" fill="#38424b">手順②</text>
+    <text x="700" y="188" font-size="12.5" fill="#7a7266">先生へ通知</text>
+    <!-- arrow -->
+    <path d="M816 188 H858" stroke="#cdbfae" stroke-width="4" stroke-linecap="round"/>
+    <path d="M858 181 L872 188 L858 195 Z" fill="#cdbfae"/>
+    <!-- 成果：時間が生まれる -->
+    <circle cx="908" cy="176" r="30" fill="#c2571a"/>
+    <path d="M908 160 l4 10 l10 4 l-10 4 l-4 10 l-4 -10 l-10 -4 l10 -4 z" fill="#ffffff"/>
+    <text x="852" y="240" font-size="13" font-weight="700" fill="#c2571a">ゆとりが生まれる</text>
+  </g>
+  <!-- 有機的な形をひとつ（葉）＋呼吸のドット -->
+  <path d="M120 276 q26 -30 58 -6 q-30 22 -58 6 z" fill="#e7d9c6"/>
+  <circle cx="792" cy="96" r="6" fill="#eec209"/>
+</svg>
+<figcaption>フローの正体：「きっかけ（いつ動くか）」に「手順（何をするか）」をつないだ自動化。むずかしい設定でなく、日本語の指示から始まります。</figcaption>
+</figure>'''
+
+# steps: まず試す3手順 / tip: つまずき・コツ（None可） / hero: ヒーロー図版のraw HTML（省略可）
 ARTICLES = [
+ dict(slug="workspace-studio-flow", v="workspace", kicker="実践アイデア｜校務×自動化", hero=FLOW_HERO,
+  title="Workspace Studioの「フロー」で校務のくり返しを自動化",
+  meta="対象：先生（18歳以上のアカウント） ／ 使うもの：Google Workspace Studio・Gemini ／ 費用：無料",
+  lead="「毎週おなじ時間に、おなじ人へ、おなじ連絡」——校務にはこの手のくり返しがたくさんあります。Workspace Studio の「フロー」は、やりたいことを日本語で書くと、Gemini が「いつ動くか（きっかけ）→何をするか（手順）」の自動化を組み立ててくれる無料の道具です。GAS を書けなくても、対話だけで自分専用の自動化が持てます。",
+  can="「◯◯からメールが来たら Chat で知らせて」「毎週月曜の朝に、その週の予定メモを用意して」のように、きっかけ（メール受信・毎週◯曜など）と手順（Chat 通知・ドキュメント作成・フォーム回答の整理など）を、コードを書かずに組めます。提案された手順は入れ替え・削除・追加ができ、テスト実行で確かめてから動かせます。",
+  when="同じ連絡・同じ集計・同じ準備を、毎回手作業でくり返しているとき。フォームの回答を毎回コピペで整理しているとき。「自動化したいけれど GAS までは手が出ない」というとき。",
+  steps=["studio.workspace.google.com を開き、「Gemini にタスクを説明」の欄に、やりたいことを“いつ・何を”の形で書く（例：毎週月曜の朝8時に、今週の予定メモのドキュメントを作る）",
+         "「作成」を押すと手順が提案されるので、中身を1つずつ確認して直す（順番の入れ替え・削除・追加ができる）",
+         "テスト実行で動きを確かめてから「オンにする」。まずは“通知だけ”の軽いフローから始めるのが安全です"],
+  tip="きっかけと手順は具体的に書くほど精度が上がります（「メールが来たら」より「保護者アンケートのアドレスからメールが来たら」）。※18歳未満の学校アカウントでは Studio の AI 機能は使えません。児童生徒の個人情報を扱う自動化は、作らない・共有しないのが約束です。",
+  url="https://studio.workspace.google.com/", urlLabel="Workspace Studio を開く"),
+
  dict(slug="prompt-library", v="gemini", kicker="実践アイデア｜プロンプト集",
   title="AIプロンプトライブラリ",
   meta="使うもの：Gemini・NotebookLM・ChatGPT など ／ 費用：無料",
@@ -201,6 +264,9 @@ TEMPLATE = """<!DOCTYPE html>
   h1 {{ font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }}
   .meta {{ font-size:12.5px; color:var(--sub); margin-bottom:8px; }}
   .lead {{ font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }}
+  .hero {{ margin:26px 0 4px; }}
+  .hero svg {{ width:100%; height:auto; display:block; border:1px solid var(--line); background:#fff; }}
+  .hero figcaption {{ font-size:12px; color:var(--sub); margin-top:9px; line-height:1.8; }}
   h2 {{ font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }}
   p {{ font-size:15px; color:#24272c; margin-bottom:14px; }}
   ol.steps {{ counter-reset:st; list-style:none; margin:14px 0; }}
@@ -230,7 +296,7 @@ TEMPLATE = """<!DOCTYPE html>
   <span class="kicker">{kicker}</span>
   <h1>{title}</h1>
   <p class="meta">作：{author} ／ {meta}</p>
-
+{hero}
   <p class="lead">{lead}</p>
 
   <h2>これでできること</h2>
@@ -272,7 +338,8 @@ def main():
             vc=VC[a["v"]], vname=VNAME[a["v"]], kicker=html.escape(a["kicker"]),
             author=AUTHOR, meta=html.escape(a["meta"]), lead=html.escape(a["lead"]),
             can=html.escape(a["can"]), when=html.escape(a["when"]),
-            steps=steps, tip=tip, url=a["url"], urlLabel=html.escape(a["urlLabel"]))
+            steps=steps, tip=tip, hero=a.get("hero", ""),
+            url=a["url"], urlLabel=html.escape(a["urlLabel"]))
         (OUT / f'{a["slug"]}.html').write_text(page, encoding="utf-8")
     print(f"OK: {len(ARTICLES)} article pages generated in ideas/a/")
 
