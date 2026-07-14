@@ -236,7 +236,7 @@
   "no": 1,
   "title": "九九の表とかけ算",
   "mondai_pages": 5,
-  "kaito_pages": 8,
+  "kaito_pages": 5,
   "levels": 5,
   "point": false,
   "drill": false
@@ -247,7 +247,7 @@
   "no": 2,
   "title": "わり算",
   "mondai_pages": 5,
-  "kaito_pages": 8,
+  "kaito_pages": 7,
   "levels": 5,
   "point": true,
   "drill": false
@@ -269,7 +269,7 @@
   "no": 4,
   "title": "時こくと時間",
   "mondai_pages": 5,
-  "kaito_pages": 7,
+  "kaito_pages": 6,
   "levels": 5,
   "point": false,
   "drill": false
@@ -335,7 +335,7 @@
   "no": 10,
   "title": "円と球",
   "mondai_pages": 5,
-  "kaito_pages": 6,
+  "kaito_pages": 5,
   "levels": 5,
   "point": false,
   "drill": false
@@ -620,7 +620,7 @@
   "grade": 5,
   "no": 1,
   "title": "整数と小数",
-  "mondai_pages": 7,
+  "mondai_pages": 5,
   "kaito_pages": 7,
   "levels": 5,
   "point": true,
