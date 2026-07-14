@@ -1,0 +1,1401 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>算数プリント ── レベル別演習プリント（基礎〜まとめ・問題と解答）｜School Stock</title>
+<meta name="description" content="現役の小学校教員がつくった、算数のレベル別演習プリント。2〜6年の全88単元を、基礎・標準・応用・思考力・まとめの5枚で刷り分けられます。問題と解答は別PDF。啓林館の年間指導計画に沿って作成。すべて自作・無料。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="算数プリント（レベル別演習）｜School Stock">
+<meta property="og:description" content="2〜6年の全88単元。基礎・標準・応用・思考力・まとめの5枚で刷り分け。問題と解答は別PDFで、宿題にもそのまま出せます。すべて自作・無料。">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/prints/sansu-ensyu/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/prints/sansu-ensyu/card.png">
+<style>
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .usebox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; }
+  .usebox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .usebox b.ub-t { display:block; font-size:17px; margin-bottom:6px; }
+  .use-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:8px 18px; font-size:13.5px; }
+  .use-grid b { color:var(--accent); }
+  .note-line { font-size:13px; color:var(--sub); margin:16px 0 0; }
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .search { flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .search:focus { box-shadow:0 0 0 3px rgba(43,95,217,0.12); }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .more { font-size:12px; color:var(--sub); flex:1; line-height:1.7; }
+  .more small { font-size:11px; }
+  .acts { display:flex; align-items:center; gap:8px; }
+  .dl { display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; flex:1; }
+  .dl.alt { background:var(--paper); color:var(--ink); border:1px solid var(--ink); }
+  .dl svg { width:12px; height:12px; }
+  .drill-line { font-size:11.5px; color:var(--sub); }
+  .drill-line a { font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../prints/kokugo/">国語</a>
+      <a href="../../prints/rika/">理科</a>
+      <a href="../../prints/sansu/">算数・式と言葉</a>
+      <a href="../../prints/sansu-ensyu/">算数・演習</a>
+      <a href="../../prints/shakai/">社会</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">素材</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能</small></a>
+    <a href="../../prints/sansu/">算数プリント（式と言葉）<small>実態別・レベル1〜4</small></a>
+    <a href="../../prints/shakai/">社会プリント<small>資料の読み取り</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ 算数プリント（レベル別演習）</div>
+  <div class="head">
+    <span class="kicker">PRINTS｜算数</span>
+    <h1>算数プリント（レベル別演習）</h1>
+    <p class="lead">現役の小学校教員がつくった、算数の演習プリント。2〜6年の全88単元を、<b>基礎・標準・応用・思考力・まとめの5枚</b>で刷り分けられます。問題と解答は別PDFなので、宿題にもそのまま出せます。啓林館の年間指導計画に沿って作成し、単元の並びは教科書の順です。</p>
+    <div class="meta">
+      <span><b>全88単元</b>（2年 21／3年 18／4年 17／5年 17／6年 15）</span>
+      <span>1単元＝問題5枚＋解答5枚</span>
+      <span>36単元に先生用「単元のポイント」付き</span>
+      <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="usebox">
+    <span class="ub-kick">使い分けの目安</span>
+    <b class="ub-t">1単元＝5枚。場面で刷り分けられます</b>
+    <div class="use-grid">
+      <span><b>基礎</b>：朝学習に</span>
+      <span><b>標準</b>：宿題に</span>
+      <span><b>応用・思考力</b>：早く終わった子の次の1枚に</span>
+      <span><b>まとめ</b>：テスト前に</span>
+    </div>
+  </div>
+  <p class="note-line">「式と言葉で説明する」実態別プリント（支援の量で選ぶレベル1〜4）は、<a href="../sansu/">算数プリント（式と言葉）</a>の棚にあります。／ プリントはAIを活用して作り、教室で使いながら手直ししています。誤りに気づかれたら <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note</a> から知らせてもらえると助かります。</p>
+
+  <div class="filter">
+    <div class="frow">
+      <input id="q" class="search" type="search" placeholder="さがす（例: わり算、分数、小数、面積）">
+    </div>
+    <div class="frow">
+      <span class="fl">学年</span>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g2">2年</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button><button class="fbtn" data-band="g6">6年</button>
+    </div>
+    <p class="count"><b id="shown">88</b> 単元を表示中</p>
+  </div>
+
+  <section data-sec id="sec-g2">
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">MATH</span></div>
+    <h2>2年</h2>
+    <p class="sec-note"><span class="cnt">全21単元</span>（教科書の順に並んでいます）</p>
+    <div class="grid">
+<div class="card" data-band="g2" data-hay="ひょうとグラフ 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u01_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u01.png" alt="ひょうとグラフ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元01</span></div>
+    <a class="tt" href="pdf/g2u01_mondai.pdf">ひょうとグラフ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u01_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u01_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="たし算とひき算 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u02_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u02.png" alt="たし算とひき算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元02</span></div>
+    <a class="tt" href="pdf/g2u02_mondai.pdf">たし算とひき算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u02_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u02_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="時こくと時間 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u03_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u03.png" alt="時こくと時間（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元03</span></div>
+    <a class="tt" href="pdf/g2u03_mondai.pdf">時こくと時間</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u03_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u03_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="長さ 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u04_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u04.png" alt="長さ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元04</span></div>
+    <a class="tt" href="pdf/g2u04_mondai.pdf">長さ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u04_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u04_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="たし算とひき算のひっ算 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u05_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u05.png" alt="たし算とひき算のひっ算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元05</span></div>
+    <a class="tt" href="pdf/g2u05_mondai.pdf">たし算とひき算のひっ算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u05_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u05_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="100をこえる数 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u06_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u06.png" alt="100をこえる数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元06</span></div>
+    <a class="tt" href="pdf/g2u06_mondai.pdf">100をこえる数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u06_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u06_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="かさ 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u07_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u07.png" alt="かさ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元07</span></div>
+    <a class="tt" href="pdf/g2u07_mondai.pdf">かさ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u07_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u07_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="見方・考え方をふかめよう 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u08_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u08.png" alt="見方・考え方をふかめよう（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元08</span></div>
+    <a class="tt" href="pdf/g2u08_mondai.pdf">見方・考え方をふかめよう</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u08_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u08_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="たしかめよう（1学期） 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u09_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u09.png" alt="たしかめよう（1学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元09</span></div>
+    <a class="tt" href="pdf/g2u09_mondai.pdf">たしかめよう（1学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u09_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u09_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="たし算とひき算のひっ算2 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u10_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u10.png" alt="たし算とひき算のひっ算2（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元10</span></div>
+    <a class="tt" href="pdf/g2u10_mondai.pdf">たし算とひき算のひっ算2</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u10_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u10_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="長方形と正方形 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u11_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u11.png" alt="長方形と正方形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元11</span></div>
+    <a class="tt" href="pdf/g2u11_mondai.pdf">長方形と正方形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u11_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u11_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="かけ算① 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u12_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u12.png" alt="かけ算①（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元12</span></div>
+    <a class="tt" href="pdf/g2u12_mondai.pdf">かけ算①</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u12_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u12_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="かけ算②（九九） 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u13_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u13.png" alt="かけ算②（九九）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元13</span></div>
+    <a class="tt" href="pdf/g2u13_mondai.pdf">かけ算②（九九）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u13_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u13_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="1000までの数 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u14_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u14.png" alt="1000までの数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元14</span></div>
+    <a class="tt" href="pdf/g2u14_mondai.pdf">1000までの数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u14_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u14_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="三角形と四角形 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u15_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u15.png" alt="三角形と四角形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元15</span></div>
+    <a class="tt" href="pdf/g2u15_mondai.pdf">三角形と四角形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u15_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u15_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="たしかめよう（2学期） 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u16_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u16.png" alt="たしかめよう（2学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元16</span></div>
+    <a class="tt" href="pdf/g2u16_mondai.pdf">たしかめよう（2学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u16_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u16_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="長い長さ 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u17_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u17.png" alt="長い長さ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元17</span></div>
+    <a class="tt" href="pdf/g2u17_mondai.pdf">長い長さ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u17_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u17_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="10000までの数 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u18_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u18.png" alt="10000までの数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元18</span></div>
+    <a class="tt" href="pdf/g2u18_mondai.pdf">10000までの数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u18_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u18_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="はこの形 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u19_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u19.png" alt="はこの形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元19</span></div>
+    <a class="tt" href="pdf/g2u19_mondai.pdf">はこの形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u19_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u19_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="分数 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u20_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u20.png" alt="分数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元20</span></div>
+    <a class="tt" href="pdf/g2u20_mondai.pdf">分数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u20_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u20_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g2" data-hay="2年生のまとめ 2年 演習 レベル別">
+  <a class="th" href="pdf/g2u21_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g2u21.png" alt="2年生のまとめ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">2年</span><span class="tag">単元21</span></div>
+    <a class="tt" href="pdf/g2u21_mondai.pdf">2年生のまとめ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g2u21_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g2u21_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g3">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">MATH</span></div>
+    <h2>3年</h2>
+    <p class="sec-note"><span class="cnt">全18単元</span>（教科書の順に並んでいます）</p>
+    <div class="grid">
+<div class="card" data-band="g3" data-hay="九九の表とかけ算 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u01_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u01.png" alt="九九の表とかけ算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元01</span></div>
+    <a class="tt" href="pdf/g3u01_mondai.pdf">九九の表とかけ算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u01_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u01_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="わり算 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u02_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u02.png" alt="わり算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元02</span></div>
+    <a class="tt" href="pdf/g3u02_mondai.pdf">わり算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u02_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u02_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="たし算とひき算の筆算 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u03_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u03.png" alt="たし算とひき算の筆算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元03</span></div>
+    <a class="tt" href="pdf/g3u03_mondai.pdf">たし算とひき算の筆算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u03_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u03_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="時こくと時間 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u04_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u04.png" alt="時こくと時間（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元04</span></div>
+    <a class="tt" href="pdf/g3u04_mondai.pdf">時こくと時間</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u04_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u04_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="一万をこえる数 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u05_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u05.png" alt="一万をこえる数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元05</span></div>
+    <a class="tt" href="pdf/g3u05_mondai.pdf">一万をこえる数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u05_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u05_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="表とグラフ 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u06_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u06.png" alt="表とグラフ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元06</span></div>
+    <a class="tt" href="pdf/g3u06_mondai.pdf">表とグラフ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u06_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u06_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="たし算とひき算（くふうして計算） 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u07_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u07.png" alt="たし算とひき算（くふうして計算）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元07</span></div>
+    <a class="tt" href="pdf/g3u07_mondai.pdf">たし算とひき算（くふうして計算）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u07_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u07_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="長さ 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u08_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u08.png" alt="長さ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元08</span></div>
+    <a class="tt" href="pdf/g3u08_mondai.pdf">長さ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u08_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u08_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="重さ 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u09_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u09.png" alt="重さ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元09</span></div>
+    <a class="tt" href="pdf/g3u09_mondai.pdf">重さ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u09_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u09_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="円と球 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u10_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u10.png" alt="円と球（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元10</span></div>
+    <a class="tt" href="pdf/g3u10_mondai.pdf">円と球</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u10_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u10_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="小数 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u11_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u11.png" alt="小数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元11</span></div>
+    <a class="tt" href="pdf/g3u11_mondai.pdf">小数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u11_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u11_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="何倍でしょう 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u12_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u12.png" alt="何倍でしょう（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元12</span></div>
+    <a class="tt" href="pdf/g3u12_mondai.pdf">何倍でしょう</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u12_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u12_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="分数 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u13_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u13.png" alt="分数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元13</span></div>
+    <a class="tt" href="pdf/g3u13_mondai.pdf">分数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u13_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u13_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="□を使った式 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u14_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u14.png" alt="□を使った式（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元14</span></div>
+    <a class="tt" href="pdf/g3u14_mondai.pdf">□を使った式</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u14_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u14_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="式と計算 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u15_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u15.png" alt="式と計算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元15</span></div>
+    <a class="tt" href="pdf/g3u15_mondai.pdf">式と計算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u15_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u15_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="三角形 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u16_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u16.png" alt="三角形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元16</span></div>
+    <a class="tt" href="pdf/g3u16_mondai.pdf">三角形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u16_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u16_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="総復習 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u17_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u17.png" alt="総復習（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元17</span></div>
+    <a class="tt" href="pdf/g3u17_mondai.pdf">総復習</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u17_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u17_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g3" data-hay="かけ算とわり算 3年 演習 レベル別">
+  <a class="th" href="pdf/g3u18_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g3u18.png" alt="かけ算とわり算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">3年</span><span class="tag">単元18</span></div>
+    <a class="tt" href="pdf/g3u18_mondai.pdf">かけ算とわり算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g3u18_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g3u18_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g4">
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">MATH</span></div>
+    <h2>4年</h2>
+    <p class="sec-note"><span class="cnt">全17単元</span>（教科書の順に並んでいます）</p>
+    <div class="grid">
+<div class="card" data-band="g4" data-hay="一億をこえる数 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u01_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u01.png" alt="一億をこえる数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元01</span></div>
+    <a class="tt" href="pdf/g4u01_mondai.pdf">一億をこえる数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u01_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u01_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="折れ線グラフ 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u02_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u02.png" alt="折れ線グラフ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元02</span></div>
+    <a class="tt" href="pdf/g4u02_mondai.pdf">折れ線グラフ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u02_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u02_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="わり算の筆算 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u03_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u03.png" alt="わり算の筆算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元03</span></div>
+    <a class="tt" href="pdf/g4u03_mondai.pdf">わり算の筆算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u03_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u03_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="角とその大きさ 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u04_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u04.png" alt="角とその大きさ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元04</span></div>
+    <a class="tt" href="pdf/g4u04_mondai.pdf">角とその大きさ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u04_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u04_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="垂直平行と四角形 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u05_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u05.png" alt="垂直平行と四角形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元05</span></div>
+    <a class="tt" href="pdf/g4u05_mondai.pdf">垂直平行と四角形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u05_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u05_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="小数 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u06_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u06.png" alt="小数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元06</span></div>
+    <a class="tt" href="pdf/g4u06_mondai.pdf">小数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u06_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u06_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    <span class="drill-line">計算ドリルもあります：<a href="pdf/g4u06_drill.pdf" download>問題</a>／<a href="pdf/g4u06_drill_kaito.pdf" download>解答</a></span>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="たしかめよう 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u07_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u07.png" alt="たしかめよう（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元07</span></div>
+    <a class="tt" href="pdf/g4u07_mondai.pdf">たしかめよう</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u07_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u07_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="2けたでわるわり算 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u08_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u08.png" alt="2けたでわるわり算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元08</span></div>
+    <a class="tt" href="pdf/g4u08_mondai.pdf">2けたでわるわり算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u08_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u08_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="式と計算 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u09_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u09.png" alt="式と計算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元09</span></div>
+    <a class="tt" href="pdf/g4u09_mondai.pdf">式と計算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u09_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u09_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="面積 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u10_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u10.png" alt="面積（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元10</span></div>
+    <a class="tt" href="pdf/g4u10_mondai.pdf">面積</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u10_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u10_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    <span class="drill-line">計算ドリルもあります：<a href="pdf/g4u10_drill.pdf" download>問題</a>／<a href="pdf/g4u10_drill_kaito.pdf" download>解答</a></span>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="がい数 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u11_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u11.png" alt="がい数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元11</span></div>
+    <a class="tt" href="pdf/g4u11_mondai.pdf">がい数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u11_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u11_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="小数のかけ算わり算 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u12_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u12.png" alt="小数のかけ算わり算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元12</span></div>
+    <a class="tt" href="pdf/g4u12_mondai.pdf">小数のかけ算わり算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u12_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u12_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="たしかめよう（2学期） 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u13_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u13.png" alt="たしかめよう（2学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元13</span></div>
+    <a class="tt" href="pdf/g4u13_mondai.pdf">たしかめよう（2学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u13_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u13_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="分数 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u14_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u14.png" alt="分数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元14</span></div>
+    <a class="tt" href="pdf/g4u14_mondai.pdf">分数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u14_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u14_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="変わり方 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u15_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u15.png" alt="変わり方（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元15</span></div>
+    <a class="tt" href="pdf/g4u15_mondai.pdf">変わり方</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u15_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u15_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="直方体と立方体 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u16_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u16.png" alt="直方体と立方体（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元16</span></div>
+    <a class="tt" href="pdf/g4u16_mondai.pdf">直方体と立方体</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u16_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u16_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="4年のまとめ 4年 演習 レベル別">
+  <a class="th" href="pdf/g4u17_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g4u17.png" alt="4年のまとめ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">単元17</span></div>
+    <a class="tt" href="pdf/g4u17_mondai.pdf">4年のまとめ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g4u17_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g4u17_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g5">
+    <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">MATH</span></div>
+    <h2>5年</h2>
+    <p class="sec-note"><span class="cnt">全17単元</span>（教科書の順に並んでいます）</p>
+    <div class="grid">
+<div class="card" data-band="g5" data-hay="整数と小数 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u01_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u01.png" alt="整数と小数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元01</span></div>
+    <a class="tt" href="pdf/g5u01_mondai.pdf">整数と小数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u01_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u01_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="体積 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u02_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u02.png" alt="体積（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元02</span></div>
+    <a class="tt" href="pdf/g5u02_mondai.pdf">体積</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u02_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u02_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="比例 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u03_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u03.png" alt="比例（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元03</span></div>
+    <a class="tt" href="pdf/g5u03_mondai.pdf">比例</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u03_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u03_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="小数のかけ算 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u04_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u04.png" alt="小数のかけ算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元04</span></div>
+    <a class="tt" href="pdf/g5u04_mondai.pdf">小数のかけ算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u04_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u04_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="小数のわり算 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u05_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u05.png" alt="小数のわり算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元05</span></div>
+    <a class="tt" href="pdf/g5u05_mondai.pdf">小数のわり算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u05_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u05_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="割合① 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u06_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u06.png" alt="割合①（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元06</span></div>
+    <a class="tt" href="pdf/g5u06_mondai.pdf">割合①</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u06_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u06_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="合同な図形 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u07_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u07.png" alt="合同な図形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元07</span></div>
+    <a class="tt" href="pdf/g5u07_mondai.pdf">合同な図形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u07_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u07_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="たしかめよう 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u08_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u08.png" alt="たしかめよう（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元08</span></div>
+    <a class="tt" href="pdf/g5u08_mondai.pdf">たしかめよう</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u08_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u08_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="整数 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u09_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u09.png" alt="整数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元09</span></div>
+    <a class="tt" href="pdf/g5u09_mondai.pdf">整数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u09_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u09_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="分数のたし算ひき算 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u10_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u10.png" alt="分数のたし算ひき算（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元10</span></div>
+    <a class="tt" href="pdf/g5u10_mondai.pdf">分数のたし算ひき算</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u10_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u10_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="平均 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u11_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u11.png" alt="平均（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元11</span></div>
+    <a class="tt" href="pdf/g5u11_mondai.pdf">平均</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u11_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u11_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="単位量あたりの大きさ 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u12_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u12.png" alt="単位量あたりの大きさ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元12</span></div>
+    <a class="tt" href="pdf/g5u12_mondai.pdf">単位量あたりの大きさ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u12_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u12_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="割合② 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u13_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u13.png" alt="割合②（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元13</span></div>
+    <a class="tt" href="pdf/g5u13_mondai.pdf">割合②</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u13_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u13_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="たしかめよう（2学期） 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u14_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u14.png" alt="たしかめよう（2学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元14</span></div>
+    <a class="tt" href="pdf/g5u14_mondai.pdf">たしかめよう（2学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u14_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u14_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="正多角形と円 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u15_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u15.png" alt="正多角形と円（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元15</span></div>
+    <a class="tt" href="pdf/g5u15_mondai.pdf">正多角形と円</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u15_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u15_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="角柱と円柱 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u16_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u16.png" alt="角柱と円柱（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元16</span></div>
+    <a class="tt" href="pdf/g5u16_mondai.pdf">角柱と円柱</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u16_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u16_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g5" data-hay="5年のまとめ 5年 演習 レベル別">
+  <a class="th" href="pdf/g5u17_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g5u17.png" alt="5年のまとめ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">単元17</span></div>
+    <a class="tt" href="pdf/g5u17_mondai.pdf">5年のまとめ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g5u17_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g5u17_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g6">
+    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">MATH</span></div>
+    <h2>6年</h2>
+    <p class="sec-note"><span class="cnt">全15単元</span>（教科書の順に並んでいます）</p>
+    <div class="grid">
+<div class="card" data-band="g6" data-hay="対称な図形 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u01_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u01.png" alt="対称な図形（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元01</span></div>
+    <a class="tt" href="pdf/g6u01_mondai.pdf">対称な図形</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u01_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u01_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="文字と式 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u02_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u02.png" alt="文字と式（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元02</span></div>
+    <a class="tt" href="pdf/g6u02_mondai.pdf">文字と式</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u02_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u02_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="分数かける整数わる整数 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u03_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u03.png" alt="分数かける整数わる整数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元03</span></div>
+    <a class="tt" href="pdf/g6u03_mondai.pdf">分数かける整数わる整数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚・単元のポイント付き</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u03_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u03_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="分数かける分数 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u04_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u04.png" alt="分数かける分数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元04</span></div>
+    <a class="tt" href="pdf/g6u04_mondai.pdf">分数かける分数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u04_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u04_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="分数わる分数 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u05_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u05.png" alt="分数わる分数（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元05</span></div>
+    <a class="tt" href="pdf/g6u05_mondai.pdf">分数わる分数</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u05_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u05_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="場合を順序よく整理して 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u06_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u06.png" alt="場合を順序よく整理して（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元06</span></div>
+    <a class="tt" href="pdf/g6u06_mondai.pdf">場合を順序よく整理して</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u06_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u06_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="大きい方から何番目 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u07_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u07.png" alt="大きい方から何番目（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元07</span></div>
+    <a class="tt" href="pdf/g6u07_mondai.pdf">大きい方から何番目</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u07_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u07_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="たしかめよう（1学期） 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u08_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u08.png" alt="たしかめよう（1学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元08</span></div>
+    <a class="tt" href="pdf/g6u08_mondai.pdf">たしかめよう（1学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u08_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u08_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="円の面積 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u09_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u09.png" alt="円の面積（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元09</span></div>
+    <a class="tt" href="pdf/g6u09_mondai.pdf">円の面積</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u09_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u09_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="角柱と円柱の体積 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u10_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u10.png" alt="角柱と円柱の体積（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元10</span></div>
+    <a class="tt" href="pdf/g6u10_mondai.pdf">角柱と円柱の体積</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u10_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u10_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="比とその利用 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u11_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u11.png" alt="比とその利用（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元11</span></div>
+    <a class="tt" href="pdf/g6u11_mondai.pdf">比とその利用</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u11_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u11_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="拡大図と縮図 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u12_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u12.png" alt="拡大図と縮図（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元12</span></div>
+    <a class="tt" href="pdf/g6u12_mondai.pdf">拡大図と縮図</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u12_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u12_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="比例と反比例 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u13_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u13.png" alt="比例と反比例（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元13</span></div>
+    <a class="tt" href="pdf/g6u13_mondai.pdf">比例と反比例</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u13_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u13_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="たしかめよう（2学期） 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u14_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u14.png" alt="たしかめよう（2学期）（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元14</span></div>
+    <a class="tt" href="pdf/g6u14_mondai.pdf">たしかめよう（2学期）</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u14_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u14_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+<div class="card" data-band="g6" data-hay="小学校のまとめ 6年 演習 レベル別">
+  <a class="th" href="pdf/g6u15_mondai.pdf"><div class="thumb"><img loading="lazy" src="thumb/g6u15.png" alt="小学校のまとめ（問題の1枚目）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">6年</span><span class="tag">単元15</span></div>
+    <a class="tt" href="pdf/g6u15_mondai.pdf">小学校のまとめ</a>
+    <span class="more">基礎・標準・応用・思考力・まとめ<br><small>問題5枚＋解答5枚</small></span>
+    <div class="acts">
+      <a class="dl" href="pdf/g6u15_mondai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>問題</a>
+      <a class="dl alt" href="pdf/g6u15_kaito.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>解答</a>
+    </div>
+    
+  </div>
+</div>
+    </div>
+  </section>
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../">棚トップ</a>
+        <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../prints/rika/">理科プリント</a>
+        <a href="../../prints/sansu/">算数プリント（式と言葉）</a>
+        <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="../../prints/shakai/">社会プリント</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../sozai/">授業イラスト素材集</a>
+        <a href="../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+(function(){var state={q:'',band:'all'};
+function apply(){var shown=0;
+document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
+sec.querySelectorAll('.card').forEach(function(c){
+var ok=(state.band==='all'||c.dataset.band===state.band)&&(!state.q||c.dataset.hay.toLowerCase().indexOf(state.q)>=0);
+c.style.display=ok?'':'none';if(ok)vis++;});
+sec.style.display=vis===0?'none':'';shown+=vis;});
+document.getElementById('shown').textContent=shown;}
+document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.trim().toLowerCase();apply();});
+document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
+state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+})();
+</script>
+</body>
+</html>
