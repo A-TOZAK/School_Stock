@@ -793,5 +793,73 @@ const SOZAI = [
   "img": "img/kensyu_ws_10_handover.jpg",
   "thumb": "img/kensyu_ws_10_handover_thumb.jpg",
   "mono": "img/kensyu_ws_10_handover_mono.jpg"
+ },
+ {
+  "id": "yozora_miageru",
+  "title": "夜空を見上げる子ども",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "理科・情景",
+  "grade": "全学年",
+  "unit": "月と星・夏の夜空",
+  "scenes": [
+   "星空を見上げる",
+   "指をさす"
+  ],
+  "uses": [
+   "扉絵",
+   "プリントさし絵",
+   "note見出し"
+  ],
+  "description": "夏の夜、庭で星空を見上げて指をさす子ども。夏の大三角と天の川。水彩で、まわりは紙の白へフェード。",
+  "howto": "星・天体・夜空・観察の単元の扉絵やプリントの余白に。",
+  "img": "img/yozora_miageru.jpg",
+  "thumb": "img/yozora_miageru_thumb.jpg",
+  "mono": "img/yozora_miageru_mono.jpg"
+ },
+ {
+  "id": "yozora_oyako",
+  "title": "親子で夜空を見上げる",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "理科・情景",
+  "grade": "全学年",
+  "unit": "月と星・夏の夜空",
+  "scenes": [
+   "親子で星空を見上げる",
+   "指をさす"
+  ],
+  "uses": [
+   "扉絵",
+   "note見出し",
+   "おたより"
+  ],
+  "description": "川べりで親子が並んで夏の夜空を見上げる。夏の大三角。水彩で、まわりは紙の白へフェード。",
+  "howto": "家庭・親子・季節の便りや、夜空・観察の導入に。",
+  "img": "img/yozora_oyako.jpg",
+  "thumb": "img/yozora_oyako_thumb.jpg",
+  "mono": "img/yozora_oyako_mono.jpg"
+ },
+ {
+  "id": "yozora_hayamiban",
+  "title": "星座早見盤を持つ子ども",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "理科・情景",
+  "grade": "全学年",
+  "unit": "月と星・夏の夜空",
+  "scenes": [
+   "早見盤を掲げる",
+   "夜空とくらべる"
+  ],
+  "uses": [
+   "扉絵",
+   "プリントさし絵"
+  ],
+  "description": "まるい星座早見盤を掲げて、夜空とくらべている子ども。水彩で、まわりは紙の白へフェード。",
+  "howto": "星座早見盤・観察の使い方の扉絵に。",
+  "img": "img/yozora_hayamiban.jpg",
+  "thumb": "img/yozora_hayamiban_thumb.jpg",
+  "mono": "img/yozora_hayamiban_mono.jpg"
  }
 ];
