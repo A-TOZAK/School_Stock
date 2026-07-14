@@ -861,5 +861,225 @@ const SOZAI = [
   "img": "img/yozora_hayamiban.jpg",
   "thumb": "img/yozora_hayamiban_thumb.jpg",
   "mono": "img/yozora_hayamiban_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_tsukuri",
+  "title": "なわとびをする子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体つくり運動",
+  "scenes": [
+   "体つくり運動・体つくりあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "なわとびを跳ぶ子どものフラットイラスト。",
+  "howto": "体つくり運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_tsukuri.jpg",
+  "thumb": "img/taiiku_pe_tsukuri_thumb.jpg",
+  "mono": "img/taiiku_pe_tsukuri_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_mat",
+  "title": "マットで前転する子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "器械運動（マット）",
+  "scenes": [
+   "マット運動・マットあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "マットの上で前転する子どものフラットイラスト。",
+  "howto": "マット運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_mat.jpg",
+  "thumb": "img/taiiku_pe_mat_thumb.jpg",
+  "mono": "img/taiiku_pe_mat_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_tetsubo",
+  "title": "鉄棒で支持する子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "器械運動（鉄棒）",
+  "scenes": [
+   "鉄棒運動・てつぼうあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "低鉄棒で支持のポーズをとる子どものフラットイラスト。",
+  "howto": "鉄棒運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_tetsubo.jpg",
+  "thumb": "img/taiiku_pe_tetsubo_thumb.jpg",
+  "mono": "img/taiiku_pe_tetsubo_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_tobibako",
+  "title": "跳び箱で開脚跳びする子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "器械運動（跳び箱）",
+  "scenes": [
+   "跳び箱運動・とびばこあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "跳び箱を開脚跳びで越える子どものフラットイラスト。",
+  "howto": "跳び箱運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_tobibako.jpg",
+  "thumb": "img/taiiku_pe_tobibako_thumb.jpg",
+  "mono": "img/taiiku_pe_tobibako_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_kotei",
+  "title": "ジャングルジムに登る子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "固定施設あそび",
+  "scenes": [
+   "固定施設を使った運動あそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "ジャングルジムに登る子どものフラットイラスト。",
+  "howto": "固定施設あそびの単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_kotei.jpg",
+  "thumb": "img/taiiku_pe_kotei_thumb.jpg",
+  "mono": "img/taiiku_pe_kotei_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_riku",
+  "title": "トラックを走る子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "走・跳の運動／陸上運動",
+  "scenes": [
+   "かけっこ・リレー・短距離走"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "レーンを走る子どものフラットイラスト。",
+  "howto": "走・跳の運動／陸上運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_riku.jpg",
+  "thumb": "img/taiiku_pe_riku_thumb.jpg",
+  "mono": "img/taiiku_pe_riku_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_suiei",
+  "title": "ビート板で泳ぐ子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "水泳運動",
+  "scenes": [
+   "水泳運動・みずあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "ビート板を使って泳ぐ子どものフラットイラスト。",
+  "howto": "水泳運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_suiei.jpg",
+  "thumb": "img/taiiku_pe_suiei_thumb.jpg",
+  "mono": "img/taiiku_pe_suiei_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_game",
+  "title": "ボールをパスする子どもたち",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "ゲーム／ボール運動",
+  "scenes": [
+   "ゲーム・ボール運動・おにあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "ボールを投げて受け取る2人の子どものフラットイラスト。",
+  "howto": "ゲーム／ボール運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_game.jpg",
+  "thumb": "img/taiiku_pe_game_thumb.jpg",
+  "mono": "img/taiiku_pe_game_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_hyogen",
+  "title": "ダンスする子どもたち",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "表現運動",
+  "scenes": [
+   "表現運動・ひょうげんリズムあそび"
+  ],
+  "uses": [
+   "ワークシートの見出し",
+   "学級だより",
+   "掲示"
+  ],
+  "description": "大きく体を動かして踊る2人の子どものフラットイラスト。",
+  "howto": "表現運動の単元カード・掲示物の見出しに。",
+  "img": "img/taiiku_pe_hyogen.jpg",
+  "thumb": "img/taiiku_pe_hyogen_thumb.jpg",
+  "mono": "img/taiiku_pe_hyogen_mono.jpg"
+ },
+ {
+  "id": "taiiku_pe_cover",
+  "title": "朝の校庭で運動する子どもたち",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育 学習カード（表紙）",
+  "scenes": [
+   "体育の授業風景・単元導入"
+  ],
+  "uses": [
+   "表紙",
+   "note見出し",
+   "掲示"
+  ],
+  "description": "朝の校庭でストレッチ・ランニングをする子どもたちの水彩画。低鉄棒とベンチに置かれた道具も描かれている。",
+  "howto": "体育 学習カードの表紙・単元導入の挿絵に。",
+  "img": "img/taiiku_pe_cover.jpg",
+  "thumb": "img/taiiku_pe_cover_thumb.jpg",
+  "mono": "img/taiiku_pe_cover_mono.jpg"
  }
 ];
