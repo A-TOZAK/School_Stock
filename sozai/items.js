@@ -1081,5 +1081,212 @@ const SOZAI = [
   "img": "img/taiiku_pe_cover.jpg",
   "thumb": "img/taiiku_pe_cover_thumb.jpg",
   "mono": "img/taiiku_pe_cover_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_card",
+  "title": "机の横にしゃがんで一緒にプリントを見る先生と子ども",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "個別支援・机間指導の場面"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "しゃがんで目線を合わせ、子どものプリントを一緒に見る先生の水彩画。現代的な学校机と通学袋も。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_card.jpg",
+  "thumb": "img/lab_tokushi_card_thumb.jpg",
+  "mono": "img/lab_tokushi_card_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_hero",
+  "title": "朝の教室で学ぶ子どもたちと寄り添う先生",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "授業風景・学級経営"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "朝の光の教室で、3人の子が机に向かい、先生が1人の子のノートを指さして寄り添う水彩画。黒板・時計・あさがおの鉢も。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_hero.jpg",
+  "thumb": "img/lab_tokushi_hero_thumb.jpg",
+  "mono": "img/lab_tokushi_hero_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part1",
+  "title": "放課後の教室と座席表ノート",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "実態把握・放課後の教室"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "誰もいない放課後の教室。教卓に開いた座席ノートと置かれたばかりのシャープペン。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part1.jpg",
+  "thumb": "img/lab_tokushi_part1_thumb.jpg",
+  "mono": "img/lab_tokushi_part1_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part2",
+  "title": "指でなぞって問題文を読む子",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "読みの支援・音読"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "プリントの行を指でなぞりながら小さくつぶやいて読む子どもの横顔の水彩画。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part2.jpg",
+  "thumb": "img/lab_tokushi_part2_thumb.jpg",
+  "mono": "img/lab_tokushi_part2_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part3",
+  "title": "閉じた教科書で思い出そうとする子",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "記憶・暗記・小テスト"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "教科書を閉じて天井を見上げ、思い出そうとしている子どもの水彩画。机の隅にめくったカードの束。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part3.jpg",
+  "thumb": "img/lab_tokushi_part3_thumb.jpg",
+  "mono": "img/lab_tokushi_part3_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part4",
+  "title": "白いプリントの前で鉛筆が止まる子",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "着手支援・手が止まる場面"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "ほぼ白紙のプリントの上で鉛筆が2cm浮いたまま止まっている子どもの水彩画。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part4.jpg",
+  "thumb": "img/lab_tokushi_part4_thumb.jpg",
+  "mono": "img/lab_tokushi_part4_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part5",
+  "title": "消しゴムで直す手元と消しカス",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "ケアレスミス・見直し"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "答案を消しゴムで直す子どもの手元。消しカスが散らばる机の水彩画。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part5.jpg",
+  "thumb": "img/lab_tokushi_part5_thumb.jpg",
+  "mono": "img/lab_tokushi_part5_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part6",
+  "title": "国語辞典と数え棒ブロックの机上",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "国語×算数・学習道具"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "国語辞典（からし色のふせん）と、5個ずつ2列に並んだ木のブロック、1個だけ動かされたブロックの静物水彩画。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part6.jpg",
+  "thumb": "img/lab_tokushi_part6_thumb.jpg",
+  "mono": "img/lab_tokushi_part6_mono.jpg"
+ },
+ {
+  "id": "lab_tokushi_part7",
+  "title": "放課後にプリントを挟んで相談する先生ふたり",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "連載「教室の中の特別支援」",
+  "scenes": [
+   "同僚連携・校内支援"
+  ],
+  "uses": [
+   "挿絵",
+   "スライド",
+   "研修資料",
+   "note見出し"
+  ],
+  "description": "夕方の教室で、2枚のプリントを並べて相談する2人の先生の後ろ姿の水彩画。",
+  "howto": "個別支援・学級経営・特別支援研修のスライドやおたよりの挿絵に。",
+  "img": "img/lab_tokushi_part7.jpg",
+  "thumb": "img/lab_tokushi_part7_thumb.jpg",
+  "mono": "img/lab_tokushi_part7_mono.jpg"
  }
 ];
