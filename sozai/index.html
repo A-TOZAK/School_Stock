@@ -48,6 +48,14 @@
   .search:focus { border-color:var(--ink); }
   .fbtn { font-family:inherit; font-size:12.5px; font-weight:500; color:var(--sub); background:var(--paper); border:1px solid var(--line); padding:6px 12px; cursor:pointer; }
   .fbtn.on { background:var(--ink); color:#fff; border-color:var(--ink); font-weight:700; }
+  .filter-row.selects { display:none; }
+  .fsel { flex:1; min-width:0; display:flex; align-items:center; border:1px solid var(--line); background:var(--paper); position:relative; }
+  .fsel .fsl { font-size:10px; font-weight:700; letter-spacing:.08em; color:var(--sub); padding-left:9px; white-space:nowrap; }
+  .fsel select { flex:1; min-width:0; font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); border:0; outline:none; background:transparent; padding:10px 22px 10px 6px; -webkit-appearance:none; appearance:none; }
+  .fsel::after { content:"▾"; position:absolute; right:8px; top:50%; transform:translateY(-50%); font-size:10px; color:var(--sub); pointer-events:none; }
+  .fsel.active { border-color:var(--ink); }
+  .fsel.active select { color:var(--ink); }
+  .fsel.active .fsl { color:var(--ink); }
   .count { font-size:12.5px; color:var(--sub); margin:0 0 16px; }
   .count b { color:var(--ink); font-weight:700; }
 
@@ -69,6 +77,18 @@
   .dl.line { background:var(--paper); color:var(--ink); border:1px solid var(--ink); }
   .dl svg { width:11px; height:11px; }
   .empty { display:none; font-size:14px; color:var(--sub); padding:8px 0; }
+  /* スマホは3カラムの一覧性を優先。タグ・保存ボタン・クレジットはタップ先のモーダルに任せる */
+  @media (max-width:600px){
+    .grid { grid-template-columns:repeat(3,1fr); gap:10px 8px; }
+    .b { padding:7px 8px 9px; gap:4px; }
+    .tt { font-size:11px; line-height:1.45; }
+    .tags, .acts, .credit { display:none; }
+    .type-pill { font-size:9px; top:5px; left:5px; padding:1px 5px; }
+    /* フィルタはピルをやめて、プルダウン3つ（教科・学年・用途）に */
+    #subjectRow, #gradeRow, #useRow { display:none; }
+    .filter-row.selects { display:flex; gap:8px; }
+    .search { min-width:0; }
+  }
 
   .modal { position:fixed; inset:0; z-index:70; display:none; }
   .modal.show { display:block; }
@@ -154,6 +174,7 @@
     <div class="filter-row">
       <input id="q" class="search" type="search" placeholder="さがす（例: ろ過、じしゃく、回路、運動会、実験）">
     </div>
+    <div class="filter-row selects" id="selRow"></div>
     <div class="filter-row" id="subjectRow"><span class="fl">教科</span></div>
     <div class="filter-row" id="gradeRow"><span class="fl">学年</span></div>
     <div class="filter-row" id="useRow"><span class="fl">用途</span></div>
@@ -218,17 +239,32 @@ const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replac
 const ICON = '<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const credit = id => '作成：' + ((typeof AUTHORS!=='undefined' && AUTHORS[id] && AUTHORS[id].romaji) ? AUTHORS[id].romaji : id);
 
-function chipBar(rowId, values, key){
+function chipBar(rowId, values, key, label){
   const row=document.getElementById(rowId);
-  const mk=(val,label,on)=>{ const b=document.createElement('button'); b.className='fbtn'+(on?' on':''); b.dataset.val=val; b.textContent=label; return b; };
+  const mk=(val,lab,on)=>{ const b=document.createElement('button'); b.className='fbtn'+(on?' on':''); b.dataset.val=val; b.textContent=lab; return b; };
   row.appendChild(mk('all','すべて',true));
   values.forEach(v=>row.appendChild(mk(v,v,false)));
+
+  // スマホ用プルダウン（ピルと同じ状態を共有）
+  const wrap=document.createElement('label'); wrap.className='fsel';
+  const fsl=document.createElement('span'); fsl.className='fsl'; fsl.textContent=label;
+  const sel=document.createElement('select'); sel.setAttribute('aria-label', label+'でしぼりこむ');
+  const op=(val,lab)=>{ const o=document.createElement('option'); o.value=val; o.textContent=lab; return o; };
+  sel.appendChild(op('all','すべて'));
+  values.forEach(v=>sel.appendChild(op(v,v)));
+  wrap.appendChild(fsl); wrap.appendChild(sel);
+  document.getElementById('selRow').appendChild(wrap);
+
+  const sync=()=>{
+    row.querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('on',x.dataset.val===state[key]));
+    sel.value=state[key];
+    wrap.classList.toggle('active', state[key]!=='all');
+  };
   row.addEventListener('click',e=>{
     const b=e.target.closest('.fbtn'); if(!b) return;
-    state[key]=b.dataset.val;
-    row.querySelectorAll('.fbtn').forEach(x=>x.classList.toggle('on',x===b));
-    render();
+    state[key]=b.dataset.val; sync(); render();
   });
+  sel.addEventListener('change',()=>{ state[key]=sel.value; sync(); render(); });
 }
 const uniq = arr => [...new Set(arr)];
 
@@ -293,9 +329,9 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeModal();
 document.getElementById('mcount').textContent=SOZAI.length;
 const subOrder=['国語','算数','理科','社会','生活','音楽','図工','体育','道徳','外国語','行事','共通'];
 const gradeOrder=['共通','1年','2年','3年','4年','5年','6年'];
-chipBar('subjectRow', uniq(SOZAI.map(x=>x.subject)).sort((a,b)=>subOrder.indexOf(a)-subOrder.indexOf(b)), 'subject');
-chipBar('gradeRow', uniq(SOZAI.map(x=>x.grade)).sort((a,b)=>gradeOrder.indexOf(a)-gradeOrder.indexOf(b)), 'grade');
-chipBar('useRow', uniq(SOZAI.flatMap(x=>x.uses||[])), 'use');
+chipBar('subjectRow', uniq(SOZAI.map(x=>x.subject)).sort((a,b)=>subOrder.indexOf(a)-subOrder.indexOf(b)), 'subject', '教科');
+chipBar('gradeRow', uniq(SOZAI.map(x=>x.grade)).sort((a,b)=>gradeOrder.indexOf(a)-gradeOrder.indexOf(b)), 'grade', '学年');
+chipBar('useRow', uniq(SOZAI.flatMap(x=>x.uses||[])), 'use', '用途');
 document.getElementById('q').addEventListener('input',e=>{ state.q=e.target.value.trim().toLowerCase(); render(); });
 render();
 </script>
