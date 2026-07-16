@@ -284,7 +284,7 @@ function card(it){
 
 function match(it){
   const q=state.q;
-  const hay=(it.title+' '+it.subject+' '+it.grade+' '+it.unit+' '+(it.scenes||[]).join(' ')+' '+(it.uses||[]).join(' ')).toLowerCase();
+  const hay=(it.title+' '+it.subject+' '+it.grade+' '+it.unit+' '+(it.scenes||[]).join(' ')+' '+(it.uses||[]).join(' ')+' '+(it.tags||[]).join(' ')+' '+(it.description||'')).toLowerCase();
   return (state.subject==='all'||it.subject===state.subject)
     && (state.grade==='all'||it.grade===state.grade)
     && (state.use==='all'||(it.uses||[]).indexOf(state.use)>=0)
