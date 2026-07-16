@@ -2978,5 +2978,150 @@ const SOZAI = [
   "img": "img/subject_zukou_enogu.jpg",
   "thumb": "img/subject_zukou_enogu_thumb.jpg",
   "mono": "img/subject_zukou_enogu_mono.jpg"
+ },
+ {
+  "id": "kenshu_slide_classroom_moon",
+  "title": "導入スライドに見入る教室",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "先生向け",
+  "unit": "スライドづくり研修",
+  "scenes": [
+   "授業・一斉提示"
+  ],
+  "uses": [
+   "挿絵",
+   "研修資料",
+   "note見出し",
+   "スライド"
+  ],
+  "description": "大型テレビの月のスライドに、子どもたちが身を乗り出す朝の教室の水彩画。",
+  "howto": "ICT研修・授業提案・学級通信の挿絵に。",
+  "tags": [
+   "スライド",
+   "提示",
+   "電子黒板",
+   "テレビ",
+   "導入",
+   "月",
+   "理科",
+   "教室",
+   "ICT",
+   "GIGA",
+   "一斉",
+   "授業",
+   "先生"
+  ],
+  "img": "img/kenshu_slide_classroom_moon.jpg",
+  "thumb": "img/kenshu_slide_classroom_moon_thumb.jpg",
+  "mono": "img/kenshu_slide_classroom_moon_mono.jpg"
+ },
+ {
+  "id": "kenshu_slide_storyboard",
+  "title": "紙に四角3つ・スライドの設計",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "先生向け",
+  "unit": "スライドづくり研修",
+  "scenes": [
+   "職員室・仕事"
+  ],
+  "uses": [
+   "挿絵",
+   "研修資料",
+   "note見出し",
+   "スライド"
+  ],
+  "description": "ノートに四角いラフを3つ描いてスライドを設計する手元の水彩画。お茶と閉じたPC。",
+  "howto": "仕事術・研修資料・「つくる前に考える」場面の挿絵に。",
+  "tags": [
+   "設計",
+   "ラフ",
+   "ノート",
+   "下書き",
+   "構想",
+   "鉛筆",
+   "職員室",
+   "仕事術",
+   "準備",
+   "お茶",
+   "スライド"
+  ],
+  "img": "img/kenshu_slide_storyboard.jpg",
+  "thumb": "img/kenshu_slide_storyboard_thumb.jpg",
+  "mono": "img/kenshu_slide_storyboard_mono.jpg"
+ },
+ {
+  "id": "kenshu_slide_pair_teachers",
+  "title": "職員室でスライドを見せ合う",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "先生向け",
+  "unit": "スライドづくり研修",
+  "scenes": [
+   "職員室・研修"
+  ],
+  "uses": [
+   "挿絵",
+   "研修資料",
+   "note見出し",
+   "スライド"
+  ],
+  "description": "放課後の職員室で1台のPCを囲み、スライドを見せ合う二人の先生の水彩画。",
+  "howto": "校内研修・OJT・同僚性の場面の挿絵に。",
+  "tags": [
+   "研修",
+   "ハンズオン",
+   "職員室",
+   "同僚",
+   "ペア",
+   "PC",
+   "ノートパソコン",
+   "相談",
+   "協働",
+   "先生",
+   "放課後"
+  ],
+  "img": "img/kenshu_slide_pair_teachers.jpg",
+  "thumb": "img/kenshu_slide_pair_teachers_thumb.jpg",
+  "mono": "img/kenshu_slide_pair_teachers_mono.jpg"
+ },
+ {
+  "id": "kenshu_yutori_watering",
+  "title": "仕事じまいの水やり",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "先生向け",
+  "unit": "スライドづくり研修",
+  "scenes": [
+   "職員室・放課後"
+  ],
+  "uses": [
+   "挿絵",
+   "研修資料",
+   "note見出し",
+   "スライド"
+  ],
+  "description": "片づいた机で鉢植えにひと滴の水をやる夕方の手元の水彩画。閉じたPCと整った書類。",
+  "howto": "働き方・時短・「浮いた時間を返す」文脈の挿絵に。",
+  "tags": [
+   "ゆとり",
+   "放課後",
+   "植物",
+   "水やり",
+   "机",
+   "夕方",
+   "働き方",
+   "時短",
+   "効率化",
+   "退勤"
+  ],
+  "img": "img/kenshu_yutori_watering.jpg",
+  "thumb": "img/kenshu_yutori_watering_thumb.jpg",
+  "mono": "img/kenshu_yutori_watering_mono.jpg"
  }
 ];
