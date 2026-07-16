@@ -1,0 +1,314 @@
+[
+ {
+  "id": "shuchu1_lv1",
+  "field": "shuchu",
+  "no": 1,
+  "lv": 1,
+  "title": "マークかぞえ",
+  "aim": "おなじ マークだけを さがして かぞえる"
+ },
+ {
+  "id": "shuchu1_lv2",
+  "field": "shuchu",
+  "no": 1,
+  "lv": 2,
+  "title": "マークかぞえ",
+  "aim": "おなじ マークだけを さがして かぞえる"
+ },
+ {
+  "id": "shuchu1_lv3",
+  "field": "shuchu",
+  "no": 1,
+  "lv": 3,
+  "title": "マークかぞえ",
+  "aim": "おなじ マークだけを さがして かぞえる"
+ },
+ {
+  "id": "shuchu2_lv1",
+  "field": "shuchu",
+  "no": 2,
+  "lv": 1,
+  "title": "10づくり",
+  "aim": "たして10に なる くみを さがす"
+ },
+ {
+  "id": "shuchu2_lv2",
+  "field": "shuchu",
+  "no": 2,
+  "lv": 2,
+  "title": "10づくり",
+  "aim": "たして10に なる くみを さがす"
+ },
+ {
+  "id": "shuchu2_lv3",
+  "field": "shuchu",
+  "no": 2,
+  "lv": 3,
+  "title": "10づくり",
+  "aim": "たして10に なる くみを さがす"
+ },
+ {
+  "id": "shuchu3_lv1",
+  "field": "shuchu",
+  "no": 3,
+  "lv": 1,
+  "title": "すうじつなぎ",
+  "aim": "かずを じゅんばんに さがして つなぐ"
+ },
+ {
+  "id": "shuchu3_lv2",
+  "field": "shuchu",
+  "no": 3,
+  "lv": 2,
+  "title": "すうじつなぎ",
+  "aim": "かずを じゅんばんに さがして つなぐ"
+ },
+ {
+  "id": "shuchu3_lv3",
+  "field": "shuchu",
+  "no": 3,
+  "lv": 3,
+  "title": "すうじつなぎ",
+  "aim": "かずを じゅんばんに さがして つなぐ"
+ },
+ {
+  "id": "miru1_lv1",
+  "field": "miru",
+  "no": 1,
+  "lv": 1,
+  "title": "てんてんうつし",
+  "aim": "みほんを よく みて、おなじ かたちを かく"
+ },
+ {
+  "id": "miru1_lv2",
+  "field": "miru",
+  "no": 1,
+  "lv": 2,
+  "title": "てんてんうつし",
+  "aim": "みほんを よく みて、おなじ かたちを かく"
+ },
+ {
+  "id": "miru1_lv3",
+  "field": "miru",
+  "no": 1,
+  "lv": 3,
+  "title": "てんてんうつし",
+  "aim": "みほんを よく みて、おなじ かたちを かく"
+ },
+ {
+  "id": "miru2_lv1",
+  "field": "miru",
+  "no": 2,
+  "lv": 1,
+  "title": "かがみうつし",
+  "aim": "さゆうが はんたいに なる ことを そうぞうして かく"
+ },
+ {
+  "id": "miru2_lv2",
+  "field": "miru",
+  "no": 2,
+  "lv": 2,
+  "title": "かがみうつし",
+  "aim": "さゆうが はんたいに なる ことを そうぞうして かく"
+ },
+ {
+  "id": "miru2_lv3",
+  "field": "miru",
+  "no": 2,
+  "lv": 3,
+  "title": "かがみうつし",
+  "aim": "さゆうが はんたいに なる ことを そうぞうして かく"
+ },
+ {
+  "id": "miru3_lv1",
+  "field": "miru",
+  "no": 3,
+  "lv": 1,
+  "title": "おなじかたち",
+  "aim": "かたちの ちがいを みわける"
+ },
+ {
+  "id": "miru3_lv2",
+  "field": "miru",
+  "no": 3,
+  "lv": 2,
+  "title": "おなじかたち",
+  "aim": "かたちの ちがいを みわける"
+ },
+ {
+  "id": "miru3_lv3",
+  "field": "miru",
+  "no": 3,
+  "lv": 3,
+  "title": "おなじかたち",
+  "aim": "かたちの ちがいを みわける"
+ },
+ {
+  "id": "miru4_lv1",
+  "field": "miru",
+  "no": 4,
+  "lv": 1,
+  "title": "かさなりみっけ",
+  "aim": "かさなった かたちを 1つずつ みわける"
+ },
+ {
+  "id": "miru4_lv2",
+  "field": "miru",
+  "no": 4,
+  "lv": 2,
+  "title": "かさなりみっけ",
+  "aim": "かさなった かたちを 1つずつ みわける"
+ },
+ {
+  "id": "miru4_lv3",
+  "field": "miru",
+  "no": 4,
+  "lv": 3,
+  "title": "かさなりみっけ",
+  "aim": "かさなった かたちを 1つずつ みわける"
+ },
+ {
+  "id": "oboeru1_lv1",
+  "field": "oboeru",
+  "no": 1,
+  "lv": 1,
+  "title": "ばしょおぼえ",
+  "aim": "ばしょを おぼえて、おもいだして かく"
+ },
+ {
+  "id": "oboeru1_lv2",
+  "field": "oboeru",
+  "no": 1,
+  "lv": 2,
+  "title": "ばしょおぼえ",
+  "aim": "ばしょを おぼえて、おもいだして かく"
+ },
+ {
+  "id": "oboeru1_lv3",
+  "field": "oboeru",
+  "no": 1,
+  "lv": 3,
+  "title": "ばしょおぼえ",
+  "aim": "ばしょを おぼえて、おもいだして かく"
+ },
+ {
+  "id": "oboeru2_lv1",
+  "field": "oboeru",
+  "no": 2,
+  "lv": 1,
+  "title": "ことばおぼえ",
+  "aim": "おぼえて、べつの ことを しても、おもいだせる"
+ },
+ {
+  "id": "oboeru2_lv2",
+  "field": "oboeru",
+  "no": 2,
+  "lv": 2,
+  "title": "ことばおぼえ",
+  "aim": "おぼえて、べつの ことを しても、おもいだせる"
+ },
+ {
+  "id": "oboeru2_lv3",
+  "field": "oboeru",
+  "no": 2,
+  "lv": 3,
+  "title": "ことばおぼえ",
+  "aim": "おぼえて、べつの ことを しても、おもいだせる"
+ },
+ {
+  "id": "kangaeru1_lv1",
+  "field": "kangaeru",
+  "no": 1,
+  "lv": 1,
+  "title": "まわすと どうなる？",
+  "aim": "あたまの 中で かたちを まわす"
+ },
+ {
+  "id": "kangaeru1_lv2",
+  "field": "kangaeru",
+  "no": 1,
+  "lv": 2,
+  "title": "まわすと どうなる？",
+  "aim": "あたまの 中で かたちを まわす"
+ },
+ {
+  "id": "kangaeru1_lv3",
+  "field": "kangaeru",
+  "no": 1,
+  "lv": 3,
+  "title": "まわすと どうなる？",
+  "aim": "あたまの 中で かたちを まわす"
+ },
+ {
+  "id": "kangaeru2_lv1",
+  "field": "kangaeru",
+  "no": 2,
+  "lv": 1,
+  "title": "つみきの かず",
+  "aim": "みえない ところを そうぞうして かぞえる"
+ },
+ {
+  "id": "kangaeru2_lv2",
+  "field": "kangaeru",
+  "no": 2,
+  "lv": 2,
+  "title": "つみきの かず",
+  "aim": "みえない ところを そうぞうして かぞえる"
+ },
+ {
+  "id": "kangaeru2_lv3",
+  "field": "kangaeru",
+  "no": 2,
+  "lv": 3,
+  "title": "つみきの かず",
+  "aim": "みえない ところを そうぞうして かぞえる"
+ },
+ {
+  "id": "kangaeru3_lv1",
+  "field": "kangaeru",
+  "no": 3,
+  "lv": 1,
+  "title": "めいろ",
+  "aim": "さきを よそうして みちを えらぶ"
+ },
+ {
+  "id": "kangaeru3_lv2",
+  "field": "kangaeru",
+  "no": 3,
+  "lv": 2,
+  "title": "めいろ",
+  "aim": "さきを よそうして みちを えらぶ"
+ },
+ {
+  "id": "kangaeru3_lv3",
+  "field": "kangaeru",
+  "no": 3,
+  "lv": 3,
+  "title": "めいろ",
+  "aim": "さきを よそうして みちを えらぶ"
+ },
+ {
+  "id": "kangaeru4_lv1",
+  "field": "kangaeru",
+  "no": 4,
+  "lv": 1,
+  "title": "ならびの つづき",
+  "aim": "ならびの きまりを みつける"
+ },
+ {
+  "id": "kangaeru4_lv2",
+  "field": "kangaeru",
+  "no": 4,
+  "lv": 2,
+  "title": "ならびの つづき",
+  "aim": "ならびの きまりを みつける"
+ },
+ {
+  "id": "kangaeru4_lv3",
+  "field": "kangaeru",
+  "no": 4,
+  "lv": 3,
+  "title": "ならびの つづき",
+  "aim": "ならびの きまりを みつける"
+ }
+]
