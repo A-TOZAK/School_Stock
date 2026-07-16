@@ -1288,5 +1288,235 @@ const SOZAI = [
   "img": "img/lab_tokushi_part7.jpg",
   "thumb": "img/lab_tokushi_part7_thumb.jpg",
   "mono": "img/lab_tokushi_part7_mono.jpg"
+ },
+ {
+  "id": "gyoji_undoukai_tamaire",
+  "title": "運動会の玉入れ",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "かごをめがけて紅白の玉を投げる子どもたちのフラットイラスト。",
+  "howto": "運動会・体育祭のおたよりやプログラム、掲示物の挿絵に。",
+  "img": "img/gyoji_undoukai_tamaire.jpg",
+  "thumb": "img/gyoji_undoukai_tamaire_thumb.jpg",
+  "mono": "img/gyoji_undoukai_tamaire_mono.jpg"
+ },
+ {
+  "id": "gyoji_ongakukai_gassou",
+  "title": "音楽会の合唱と合奏",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "音楽会・学習発表会"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ステージで歌う子どもたちとピアノ・リコーダーの合奏のフラットイラスト。",
+  "howto": "音楽会・合唱コンクールのおたよりやプログラムの挿絵に。",
+  "img": "img/gyoji_ongakukai_gassou.jpg",
+  "thumb": "img/gyoji_ongakukai_gassou_thumb.jpg",
+  "mono": "img/gyoji_ongakukai_gassou_mono.jpg"
+ },
+ {
+  "id": "gyoji_gakushuu_happyoukai",
+  "title": "学習発表会の劇",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "音楽会・学習発表会"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "手作り衣装で舞台に立つ子どもたちの劇のフラットイラスト。",
+  "howto": "学習発表会・学芸会のおたよりやプログラムの挿絵に。",
+  "img": "img/gyoji_gakushuu_happyoukai.jpg",
+  "thumb": "img/gyoji_gakushuu_happyoukai_thumb.jpg",
+  "mono": "img/gyoji_gakushuu_happyoukai_mono.jpg"
+ },
+ {
+  "id": "gyoji_shuugaku_ryokou",
+  "title": "修学旅行（新幹線とボストンバッグ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "高学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "修学旅行・遠足"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ボストンバッグを持ってホームで新幹線を待つ子どもたちのフラットイラスト。",
+  "howto": "修学旅行・宿泊学習のしおりやおたよりの挿絵に。",
+  "img": "img/gyoji_shuugaku_ryokou.jpg",
+  "thumb": "img/gyoji_shuugaku_ryokou_thumb.jpg",
+  "mono": "img/gyoji_shuugaku_ryokou_mono.jpg"
+ },
+ {
+  "id": "gyoji_marason_taikai",
+  "title": "マラソン・持久走大会",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "マラソン・持久走"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "秋のトラックを走る子どもたちのフラットイラスト。",
+  "howto": "持久走大会・マラソン大会のおたよりや記録カードの挿絵に。",
+  "img": "img/gyoji_marason_taikai.jpg",
+  "thumb": "img/gyoji_marason_taikai_thumb.jpg",
+  "mono": "img/gyoji_marason_taikai_mono.jpg"
+ },
+ {
+  "id": "gyoji_sakuhinten",
+  "title": "図工の作品展",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "作品展・鑑賞"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "絵と工作を鑑賞する子どもたちの作品展のフラットイラスト。",
+  "howto": "図工作品展・作品鑑賞会のおたよりや掲示の挿絵に。",
+  "img": "img/gyoji_sakuhinten.jpg",
+  "thumb": "img/gyoji_sakuhinten_thumb.jpg",
+  "mono": "img/gyoji_sakuhinten_mono.jpg"
+ },
+ {
+  "id": "gyoji_hinan_kunren",
+  "title": "避難訓練",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "避難訓練・防災"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "防災頭巾をかぶって並んで避難する子どもとダンゴムシ姿勢のフラットイラスト。",
+  "howto": "避難訓練・防災学習のおたよりや掲示の挿絵に。",
+  "img": "img/gyoji_hinan_kunren.jpg",
+  "thumb": "img/gyoji_hinan_kunren_thumb.jpg",
+  "mono": "img/gyoji_hinan_kunren_mono.jpg"
+ },
+ {
+  "id": "gyoji_ensoku_bento",
+  "title": "遠足のお弁当",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "修学旅行・遠足"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "note見出し"
+  ],
+  "description": "芝生のシートでお弁当を広げる子どもたちの水彩画。",
+  "howto": "遠足・社会科見学のおたよりやしおりの挿絵に。",
+  "img": "img/gyoji_ensoku_bento.jpg",
+  "thumb": "img/gyoji_ensoku_bento_thumb.jpg",
+  "mono": "img/gyoji_ensoku_bento_mono.jpg"
+ },
+ {
+  "id": "gyoji_dokusho_no_aki",
+  "title": "読書の秋",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "読書週間"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "note見出し"
+  ],
+  "description": "窓辺で本を読む子どもの水彩画。",
+  "howto": "読書週間・読書の秋のおたよりや図書だよりの挿絵に。",
+  "img": "img/gyoji_dokusho_no_aki.jpg",
+  "thumb": "img/gyoji_dokusho_no_aki_thumb.jpg",
+  "mono": "img/gyoji_dokusho_no_aki_mono.jpg"
+ },
+ {
+  "id": "gyoji_aki_no_shizen",
+  "title": "秋の自然（どんぐり・落ち葉）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "季節・秋"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "背景"
+  ],
+  "description": "どんぐり・栗・もみじ・銀杏を散らした秋のボタニカル水彩画。",
+  "howto": "おたより・掲示の飾りや季節の背景素材に。",
+  "img": "img/gyoji_aki_no_shizen.jpg",
+  "thumb": "img/gyoji_aki_no_shizen_thumb.jpg",
+  "mono": "img/gyoji_aki_no_shizen_mono.jpg"
  }
 ];
