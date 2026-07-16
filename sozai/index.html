@@ -90,6 +90,26 @@
     .search { min-width:0; }
   }
 
+  /* PCは左サイドバーで絞り込み（検索＋プルダウン縦積み） */
+  @media (min-width:900px){
+    .layout { display:grid; grid-template-columns:232px minmax(0,1fr); gap:34px; align-items:start; }
+    .side { position:sticky; top:64px; }
+    .filter { position:static; border:1px solid var(--line); background:var(--paper); padding:16px 16px 18px; margin:8px 0 0; backdrop-filter:none; }
+    .side-title { font-size:11px; font-weight:700; letter-spacing:0.2em; color:var(--sub); margin-bottom:10px; }
+    #subjectRow, #gradeRow, #useRow { display:none; }
+    .filter-row.selects { display:flex; flex-direction:column; align-items:stretch; gap:10px; margin-top:12px; }
+    .filter-row.selects .fsel { width:100%; }
+    .search { width:100%; min-width:0; }
+  }
+
+  .mi-rel { margin-top:6px; border-top:1px solid var(--line); padding-top:14px; }
+  .mi-rel b { font-size:11px; letter-spacing:0.12em; color:var(--sub); display:block; margin-bottom:8px; }
+  .rel-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:8px; }
+  .rel-item { border:1px solid var(--line); cursor:pointer; background:var(--paper); }
+  .rel-item:hover { border-color:var(--ink); }
+  .rel-item img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; }
+  .rel-item span { display:-webkit-box; -webkit-box-orient:vertical; -webkit-line-clamp:2; overflow:hidden; font-size:10px; font-weight:700; line-height:1.45; padding:4px 6px 6px; }
+
   .modal { position:fixed; inset:0; z-index:70; display:none; }
   .modal.show { display:block; }
   .modal-scrim { position:absolute; inset:0; background:rgba(14,15,17,0.55); }
@@ -170,19 +190,25 @@
     <div class="meta"><b id="mcount">0</b>点／全教科・行事へ順次追加</div>
   </div>
 
-  <div class="filter">
-    <div class="filter-row">
-      <input id="q" class="search" type="search" placeholder="さがす（例: ろ過、じしゃく、回路、運動会、実験）">
-    </div>
-    <div class="filter-row selects" id="selRow"></div>
-    <div class="filter-row" id="subjectRow"><span class="fl">教科</span></div>
-    <div class="filter-row" id="gradeRow"><span class="fl">学年</span></div>
-    <div class="filter-row" id="useRow"><span class="fl">用途</span></div>
+  <div class="layout">
+    <aside class="side">
+      <div class="filter">
+        <div class="side-title">しぼりこみ</div>
+        <div class="filter-row">
+          <input id="q" class="search" type="search" placeholder="さがす（例: ろ過、うんどうかい）">
+        </div>
+        <div class="filter-row selects" id="selRow"></div>
+        <div class="filter-row" id="subjectRow"><span class="fl">教科</span></div>
+        <div class="filter-row" id="gradeRow"><span class="fl">学年</span></div>
+        <div class="filter-row" id="useRow"><span class="fl">用途</span></div>
+      </div>
+    </aside>
+    <main class="main">
+      <p class="count"><b id="shown">0</b> 点を表示中</p>
+      <div id="grid" class="grid"></div>
+      <p id="empty" class="empty">条件に合う素材はまだありません。ことばを変えて探してみてください。</p>
+    </main>
   </div>
-
-  <p class="count"><b id="shown">0</b> 点を表示中</p>
-  <div id="grid" class="grid"></div>
-  <p id="empty" class="empty">条件に合う素材はまだありません。ことばを変えて探してみてください。</p>
 
   <div class="rules">
     <b>利用ルール</b>：学校・園・家庭での授業、校務資料、学級通信などに自由に使えます（加工・トリミングOK）。
@@ -297,12 +323,27 @@ function render(){
   document.getElementById('empty').style.display=items.length?'none':'block';
 }
 
+function related(it){
+  return SOZAI.filter(x=>x.id!==it.id).map(x=>{
+    let s=0;
+    const t=new Set(it.tags||[]); (x.tags||[]).forEach(v=>{ if(t.has(v)) s+=2; });
+    const sc=new Set(it.scenes||[]); (x.scenes||[]).forEach(v=>{ if(sc.has(v)) s+=2; });
+    if(x.unit===it.unit) s+=3;
+    if(x.subject===it.subject) s+=2;
+    return [s,x];
+  }).filter(p=>p[0]>=2).sort((a,b)=>b[0]-a[0]).slice(0,6).map(p=>p[1]);
+}
+
 function openModal(id){
   const it=SOZAI.find(x=>x.id===id); if(!it) return;
   document.getElementById('miImg').src=it.img;
   document.getElementById('miImg').alt=it.title;
   const uses=(it.uses||[]).map(u=>'<span class="tag">'+esc(u)+'</span>').join('');
   const scenes=(it.scenes||[]).map(u=>'<span class="tag sub">'+esc(u)+'</span>').join('');
+  const rel=related(it);
+  const relHtml=rel.length?'<div class="mi-rel"><b>おすすめの素材</b><div class="rel-grid">'
+    +rel.map(r=>'<div class="rel-item" data-rel="'+esc(r.id)+'"><img loading="lazy" src="'+esc(r.thumb)+'" alt="'+esc(r.title)+'"><span>'+esc(r.title)+'</span></div>').join('')
+    +'</div></div>':'';
   document.getElementById('miInfo').innerHTML =
      '<h2>'+esc(it.title)+'</h2>'
     +'<div class="mi-tags"><span class="tag sub">'+esc(it.subject)+'</span><span class="tag">'+esc(it.grade)+'</span><span class="tag">'+esc(it.unit)+'</span><span class="tag">'+(it.type==='photo'?'写真':'イラスト')+'</span></div>'
@@ -311,9 +352,14 @@ function openModal(id){
     +(scenes||uses?'<div class="mi-uses">'+scenes+uses+'</div>':'')
     +'<div class="mi-dl"><a class="dl" href="'+esc(it.img)+'" download>'+ICON+'カラーを保存</a>'
     +(it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download>'+ICON+'白黒を保存</a>':'')+'</div>'
-    +'<div class="mi-credit">'+esc(credit(it.author))+'</div>';
+    +'<div class="mi-credit">'+esc(credit(it.author))+'</div>'
+    +relHtml;
+  const box=document.querySelector('.modal-box'); if(box) box.scrollTop=0;
   document.getElementById('modal').classList.add('show');
 }
+document.getElementById('miInfo').addEventListener('click',e=>{
+  const r=e.target.closest('.rel-item'); if(r) openModal(r.dataset.rel);
+});
 function closeModal(){ document.getElementById('modal').classList.remove('show'); }
 
 document.getElementById('grid').addEventListener('click',e=>{
