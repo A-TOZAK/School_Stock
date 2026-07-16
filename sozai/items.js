@@ -3123,5 +3123,237 @@ const SOZAI = [
   "img": "img/kenshu_yutori_watering.jpg",
   "thumb": "img/kenshu_yutori_watering_thumb.jpg",
   "mono": "img/kenshu_yutori_watering_mono.jpg"
+ },
+ {
+  "id": "kidslib_01_hero",
+  "title": "ふたりで地図帳をひらく調べ学習",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4〜6年",
+  "unit": "調べ学習(全般)",
+  "scenes": [
+   "調べ学習の導入",
+   "ペア学習"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "おたより"
+  ],
+  "description": "机をならべて地図帳を指さす、ふたりの子どもの水彩イラスト。",
+  "howto": "調べ学習やペア活動の導入スライド・おたよりの挿絵に。",
+  "tags": [
+   "ちずちょう",
+   "地図帳",
+   "しらべがくしゅう",
+   "調べ学習",
+   "ペア",
+   "ふたり",
+   "社会",
+   "タブレット",
+   "教室"
+  ],
+  "img": "img/kidslib_01_hero.jpg",
+  "thumb": "img/kidslib_01_hero_thumb.jpg",
+  "mono": "img/kidslib_01_hero_mono.jpg"
+ },
+ {
+  "id": "kidslib_02_tsukamu",
+  "title": "ふしぎを見つけて考える子",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4〜6年",
+  "unit": "学習問題づくり",
+  "scenes": [
+   "単元の導入",
+   "学習問題をつくる"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "ワークシート用"
+  ],
+  "description": "ほおづえをついて、ふしぎに思ったことを考える子どもの水彩イラスト。",
+  "howto": "「つかむ」場面のスライドや、めあてカードの挿絵に。",
+  "tags": [
+   "かんがえる",
+   "考える",
+   "はてな",
+   "ぎもん",
+   "疑問",
+   "学習問題",
+   "めあて",
+   "導入"
+  ],
+  "img": "img/kidslib_02_tsukamu.jpg",
+  "thumb": "img/kidslib_02_tsukamu_thumb.jpg",
+  "mono": "img/kidslib_02_tsukamu_mono.jpg"
+ },
+ {
+  "id": "kidslib_03_shiraberu",
+  "title": "虫めがねで地図を見る手もと",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4〜6年",
+  "unit": "資料の読み取り",
+  "scenes": [
+   "資料の読み取り",
+   "地図学習"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "ワークシート用"
+  ],
+  "description": "虫めがねで地図帳をくわしく見る手もとの水彩イラスト。",
+  "howto": "「しらべる」場面のスライドや、資料読み取りプリントの挿絵に。",
+  "tags": [
+   "むしめがね",
+   "虫めがね",
+   "ちず",
+   "地図",
+   "しらべる",
+   "調べる",
+   "かくだい",
+   "資料"
+  ],
+  "img": "img/kidslib_03_shiraberu.jpg",
+  "thumb": "img/kidslib_03_shiraberu_thumb.jpg",
+  "mono": "img/kidslib_03_shiraberu_mono.jpg"
+ },
+ {
+  "id": "kidslib_04_matomeru",
+  "title": "ノートにまとめを書く子",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4〜6年",
+  "unit": "まとめ・表現",
+  "scenes": [
+   "まとめを書く",
+   "ノート指導"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "ワークシート用"
+  ],
+  "description": "ノートにえんぴつでまとめを書く子どもの水彩イラスト。",
+  "howto": "「まとめる」場面のスライドや、ノート指導の掲示に。",
+  "tags": [
+   "ノート",
+   "まとめ",
+   "かく",
+   "書く",
+   "えんぴつ",
+   "ふりかえり"
+  ],
+  "img": "img/kidslib_04_matomeru.jpg",
+  "thumb": "img/kidslib_04_matomeru_thumb.jpg",
+  "mono": "img/kidslib_04_matomeru_mono.jpg"
+ },
+ {
+  "id": "kidslib_05_ikasu",
+  "title": "ペットボトルをリサイクルの箱へ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4年",
+  "unit": "ごみのしょりと利用",
+  "scenes": [
+   "ごみ・リサイクルの学習",
+   "選択・判断"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "ワークシート用"
+  ],
+  "description": "家でペットボトルをリサイクルの箱に入れる子どもの水彩イラスト。ふたは別のかごへ。",
+  "howto": "4年「ごみ」単元や、学んだことをくらしにいかす場面の挿絵に。",
+  "tags": [
+   "ぺっとぼとる",
+   "ペットボトル",
+   "りさいくる",
+   "リサイクル",
+   "ぶんべつ",
+   "分別",
+   "ごみ",
+   "エコ",
+   "くらし"
+  ],
+  "img": "img/kidslib_05_ikasu.jpg",
+  "thumb": "img/kidslib_05_ikasu_thumb.jpg",
+  "mono": "img/kidslib_05_ikasu_mono.jpg"
+ },
+ {
+  "id": "kidslib_06_tashikameru",
+  "title": "教科書とタブレットを見くらべる手もと",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4〜6年",
+  "unit": "情報の確かめ方",
+  "scenes": [
+   "情報の確かめ",
+   "メディアリテラシー"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "ワークシート用"
+  ],
+  "description": "開いた教科書とタブレットの画面を見くらべる手もとの水彩イラスト。",
+  "howto": "AIやインターネットの情報を教科書とくらべて確かめる指導に。",
+  "tags": [
+   "たぶれっと",
+   "タブレット",
+   "きょうかしょ",
+   "教科書",
+   "くらべる",
+   "たしかめる",
+   "じょうほう",
+   "情報",
+   "AI"
+  ],
+  "img": "img/kidslib_06_tashikameru.jpg",
+  "thumb": "img/kidslib_06_tashikameru_thumb.jpg",
+  "mono": "img/kidslib_06_tashikameru_mono.jpg"
+ },
+ {
+  "id": "kidslib_07_kengaku",
+  "title": "見学の窓から見る子どもたち",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "3〜6年",
+  "unit": "社会科見学",
+  "scenes": [
+   "社会科見学",
+   "校外学習"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "おたより"
+  ],
+  "description": "黄色いぼうしをかぶって、見学の大きな窓から中を見る3人の子どもの水彩イラスト。",
+  "howto": "社会科見学のしおりや、見学前後の学習の挿絵に。",
+  "tags": [
+   "けんがく",
+   "見学",
+   "こうがいがくしゅう",
+   "校外学習",
+   "ぼうし",
+   "メモ",
+   "くりーんせんたー",
+   "工場"
+  ],
+  "img": "img/kidslib_07_kengaku.jpg",
+  "thumb": "img/kidslib_07_kengaku_thumb.jpg",
+  "mono": "img/kidslib_07_kengaku_mono.jpg"
  }
 ];

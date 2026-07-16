@@ -14,7 +14,7 @@ const AUTHORS = {
  },
  "sumire": {
   "romaji": "Nonomiya",
-  "count": 35
+  "count": 42
  },
  "riko": {
   "romaji": "Chihaya",
