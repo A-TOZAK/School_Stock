@@ -3355,5 +3355,77 @@ const SOZAI = [
   "img": "img/kidslib_07_kengaku.jpg",
   "thumb": "img/kidslib_07_kengaku_thumb.jpg",
   "mono": "img/kidslib_07_kengaku_mono.jpg"
+ },
+ {
+  "id": "hoshibon_01_kaidan_asa",
+  "title": "夜明けの石段を半歩ずつ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "星本のトリセツ",
+  "scenes": [
+   "支援",
+   "面談",
+   "学級経営"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "おたより"
+  ],
+  "description": "星の残る夜明けの空の下、先生と子どもが石段を半歩ずつ上っていく後ろ姿の水彩イラスト。",
+  "howto": "支援や個別の学びの話をする資料・懇談スライドの表紙に。左上の空はタイトル文字を置ける余白。",
+  "tags": [
+   "ほしぼん",
+   "星本",
+   "かいだん",
+   "階段",
+   "よあけ",
+   "夜明け",
+   "ほし",
+   "星",
+   "ふたり",
+   "先生"
+  ],
+  "img": "img/hoshibon_01_kaidan_asa.jpg",
+  "thumb": "img/hoshibon_01_kaidan_asa_thumb.jpg",
+  "mono": "img/hoshibon_01_kaidan_asa_mono.jpg"
+ },
+ {
+  "id": "hoshibon_02_tsukue_tomoni",
+  "title": "机の横にしゃがんで一緒に",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "星本のトリセツ",
+  "scenes": [
+   "個別支援",
+   "放課後",
+   "学級経営"
+  ],
+  "uses": [
+   "掲示",
+   "スライド",
+   "おたより"
+  ],
+  "description": "放課後の教室で、先生が机の横にしゃがみ、子どもと一冊の本をのぞきこむ水彩イラスト。",
+  "howto": "個別の学び・寄り添う支援を伝える資料の挿絵に。",
+  "tags": [
+   "きょうしつ",
+   "教室",
+   "つくえ",
+   "机",
+   "ほん",
+   "本",
+   "しえん",
+   "支援",
+   "ほうかご",
+   "放課後"
+  ],
+  "img": "img/hoshibon_02_tsukue_tomoni.jpg",
+  "thumb": "img/hoshibon_02_tsukue_tomoni_thumb.jpg",
+  "mono": "img/hoshibon_02_tsukue_tomoni_mono.jpg"
  }
 ];

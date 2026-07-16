@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>星本のトリセツ ── 通常学級の先生のための、特別支援学校の教科書ガイド ｜ School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="星本のトリセツ｜School Stock">
+<meta property="og:description" content="特別支援学校の教科書「星本」を、通常学級の先生の道具に。階段マップ・ようすメモ・使い方レシピ・階段対応プリントの全14枚を無料配布。">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/shien/hoshibon/img/card-og.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/shien/hoshibon/img/card-og.png">
+<meta name="description" content="学年の教科書に乗れない子の「現在地」を見つける地図に。文部科学省著作教科書（星本）の紹介と活用ガイド、見取りシート、階段対応プリント全14枚を無料配布。現役小学校教員が制作。">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --gold:#b8860b; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 26px; margin-bottom:8px; display:flex; gap:34px; align-items:flex-start; }
+.head-txt { flex:1.4; }
+.head-art { flex:1; min-width:260px; }
+.head-art img { width:100%; border:1px solid var(--line); display:block; }
+@media (max-width:720px){ .head { flex-direction:column-reverse; } .head-art{ min-width:0; } }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:14.5px; color:#3d4148; line-height:1.85; max-width:660px; }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.warn { margin:14px 0 4px; background:#fdf6ec; border:1.5px solid var(--gold); padding:12px 18px; font-size:13px; line-height:1.8; }
+.warn b { color:#8a6508; }
+.sh { display:flex; align-items:center; gap:12px; margin:40px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; background:var(--accent); }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .sen { font-size:12px; color:var(--sub); }
+.sh .scount { margin-left:auto; font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--sub); font-size:15px; }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(200px,1fr)); gap:20px; }
+.pc { border:1px solid var(--ink); display:flex; flex-direction:column; transition:box-shadow .15s; background:#fff; }
+.pc:hover { box-shadow:4px 4px 0 var(--ink); }
+.thumb { aspect-ratio:210/297; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; }
+.thumb.land { aspect-ratio:297/230; }
+.thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.pm { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.ptag { align-self:flex-start; font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--accent); padding:2px 8px; }
+.pm h3 { font-size:14.5px; font-weight:700; line-height:1.4; }
+.pm p { font-size:11.5px; color:var(--sub); line-height:1.6; }
+.dl { margin-top:auto; display:inline-flex; align-items:center; gap:6px; font-size:11.5px; font-weight:700; border:1px solid var(--ink); color:var(--ink); padding:6px 10px; justify-content:center; }
+.dl:hover { background:var(--ink); color:#fff; }
+.bigdl { display:flex; gap:14px; flex-wrap:wrap; margin-top:16px; }
+.bigdl a { display:inline-flex; align-items:center; gap:8px; font-size:13.5px; font-weight:700; border:1.5px solid var(--ink); padding:12px 20px; color:var(--ink); }
+.bigdl a.primary { background:var(--ink); color:#fff; }
+.bigdl a:hover { box-shadow:3px 3px 0 var(--gold); }
+.src { font-size:11.5px; color:var(--sub); line-height:1.9; }
+.src a { word-break:break-all; }
+.foot { border-top:1px solid var(--line); margin-top:56px; padding-top:18px; font-size:11.5px; color:var(--sub); display:flex; justify-content:space-between; gap:12px; flex-wrap:wrap; }
+.star { color:var(--gold); font-weight:700; }
+table.map { width:100%; border-collapse:collapse; margin-top:8px; font-size:12.5px; }
+table.map th { background:var(--black); color:#fff; font-weight:700; padding:6px 10px; text-align:left; font-size:11px; letter-spacing:.06em; }
+table.map td { border:1px solid var(--line); padding:6px 10px; line-height:1.7; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../../tools/pdf-toolbox/">ツール</a>
+    <a href="../../prints/kokugo/">プリント</a>
+    <a href="../">支援カード</a>
+    <a href="../../lab/">連載</a>
+    <a href="../../sozai/">素材</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<div class="container">
+
+<div class="head">
+  <div class="head-txt">
+    <span class="kicker">GUIDE｜星本のトリセツ</span>
+    <h1>星本のトリセツ</h1>
+    <p class="lead">学年の教科書にまったく乗れない子を前にすると、「どこまで下りればいいのか」が見えなくなります。
+    その下りる階段の地図を、国がもう作っています。特別支援学校で使われている文部科学省著作の教科書、通称<b>「星本（ほしぼん）」</b>。
+    1冊660円から誰でも買えるこの教科書を、通常学級の先生の道具にするためのガイドと教材、全14枚です。</p>
+    <p class="meta"><b>A4・全14枚・無料</b>｜ガイド8枚＋見取りシート＋階段対応プリント6枚｜© School Stock</p>
+  </div>
+  <div class="head-art"><img src="img/hero.png" alt="夜明けの空に星が残るなか、先生と子どもが石段を半歩ずつ上っていく水彩イラスト"></div>
+</div>
+
+<p class="note-use">このページは文部科学省の公式ガイドではありません。現役の小学校教員が、教科書目録・活用実践事例集などの公開資料をもとに作った紹介・活用教材です（出典は下部）。星本の紙面は掲載していません。</p>
+
+<div class="sh"><span class="sbar"></span><h2>ガイド</h2><span class="sen">読む・見取る・使う</span><span class="scount">8</span></div>
+<div class="grid">
+  <div class="pc"><a class="th" href="pdf/G01_星本ってなに.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G01.png" alt="G01 星本ってなに？"></div></a>
+    <div class="pm"><span class="ptag">しる</span><h3>G01 星本ってなに？</h3><p>正体・☆の意味・全20冊と値段の一覧</p><a class="dl" href="pdf/G01_星本ってなに.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G02_どこで買うどう使える.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G02.png" alt="G02 どこで買う？どう使える？"></div></a>
+    <div class="pm"><span class="ptag">しる</span><h3>G02 どこで買う？ どう使える？</h3><p>買い方3歩・解説書・制度の整理</p><a class="dl" href="pdf/G02_どこで買うどう使える.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G03_さんすうの階段マップ.pdf" target="_blank" rel="noopener"><div class="thumb land"><img loading="lazy" src="thumb/G03.png" alt="G03 さんすうの階段マップ"></div></a>
+    <div class="pm"><span class="ptag">みとる</span><h3>G03 さんすうの階段マップ</h3><p>3までの数から小数・分数の入口まで、5段の階段</p><a class="dl" href="pdf/G03_さんすうの階段マップ.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G04_こくごの階段マップ.pdf" target="_blank" rel="noopener"><div class="thumb land"><img loading="lazy" src="thumb/G04.png" alt="G04 こくごの階段マップ"></div></a>
+    <div class="pm"><span class="ptag">みとる</span><h3>G04 こくごの階段マップ</h3><p>身近な言葉から筋道立てて書くまでの階段</p><a class="dl" href="pdf/G04_こくごの階段マップ.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G05_ようすメモさんすう.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G05.png" alt="G05 現在地のようすメモ さんすう"></div></a>
+    <div class="pm"><span class="ptag">みとる</span><h3>G05 現在地のようすメモ（さんすう）</h3><p>3回見て○をつける観察メモ。診断ではありません</p><a class="dl" href="pdf/G05_ようすメモさんすう.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G06_ようすメモこくご.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G06.png" alt="G06 現在地のようすメモ こくご"></div></a>
+    <div class="pm"><span class="ptag">みとる</span><h3>G06 現在地のようすメモ（こくご）</h3><p>ことばの現在地を3回の観察でつかむ</p><a class="dl" href="pdf/G06_ようすメモこくご.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G07_使い方5つのレシピ.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G07.png" alt="G07 通常学級での使い方 5つのレシピ"></div></a>
+    <div class="pm"><span class="ptag">つかう</span><h3>G07 通常学級での使い方 5つのレシピ</h3><p>ものさし・題材・本棚・共通言語・選べるプリント</p><a class="dl" href="pdf/G07_使い方5つのレシピ.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/G08_乗れない子を前にした日に.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/G08.png" alt="G08 学年の学習に乗れない子を前にした日に"></div></a>
+    <div class="pm"><span class="ptag">つかう</span><h3>G08 乗れない子を前にした日に</h3><p>二択から降りる。半歩を毎日。ひとりで抱えない</p><a class="dl" href="pdf/G08_乗れない子を前にした日に.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+</div>
+
+<div class="sh"><span class="sbar" style="background:var(--gold)"></span><h2>階段対応プリント</h2><span class="sen">自作教材の見本・そのまま使える</span><span class="scount">6</span></div>
+<p class="src" style="margin-bottom:10px;">星本の階段に沿って作った自作プリントの見本です（星本の紙面の複製ではありません）。
+その子だけに配らず、学級全体の「選べるプリント」の一つに混ぜるのがおすすめです。紙面には段階を書いていません。対応は下の表で。</p>
+<div class="grid">
+  <div class="pc"><a class="th" href="pdf/P01_なかまあつめ.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P01.png" alt="P01 なかまあつめ"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P01 なかまあつめ</h3><p>おなじものを せんで つなぐ</p><a class="dl" href="pdf/P01_なかまあつめ.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/P02_どちらがおおい.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P02.png" alt="P02 どちらがおおい？"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P02 どちらが おおい？</h3><p>ひとつずつ つないで くらべる</p><a class="dl" href="pdf/P02_どちらがおおい.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/P03_5までのかず.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P03.png" alt="P03 5までのかず"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P03 5までの かず</h3><p>かぞえて すうじに ○</p><a class="dl" href="pdf/P03_5までのかず.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/P04_10までのかず.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P04.png" alt="P04 10までのかず"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P04 10までの かず</h3><p>かぞえて すうじを かく</p><a class="dl" href="pdf/P04_10までのかず.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/P05_えとことば.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P05.png" alt="P05 えとことば"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P05 えと ことば</h3><p>えに あう ことばを つなぐ</p><a class="dl" href="pdf/P05_えとことば.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+  <div class="pc"><a class="th" href="pdf/P06_じゅんばんのおはなし.pdf" target="_blank" rel="noopener"><div class="thumb"><img loading="lazy" src="thumb/P06.png" alt="P06 じゅんばんのおはなし"></div></a>
+    <div class="pm"><span class="ptag" style="background:var(--gold)">プリント</span><h3>P06 じゅんばんの おはなし</h3><p>じゅんに ならべて はなす</p><a class="dl" href="pdf/P06_じゅんばんのおはなし.pdf" target="_blank" rel="noopener">PDF</a></div></div>
+</div>
+
+<table class="map">
+<tr><th>プリント</th><th>対応する段階（先生用）</th></tr>
+<tr><td>P01・P02</td><td>さんすう<span class="star">☆</span>相当（数量の基礎：対応・くらべる）</td></tr>
+<tr><td>P03・P04</td><td>さんすう<span class="star">☆☆</span>相当（10までの数）</td></tr>
+<tr><td>P05</td><td>こくご<span class="star">☆</span>〜<span class="star">☆☆</span>相当（ことばと絵）</td></tr>
+<tr><td>P06</td><td>こくご<span class="star">☆☆☆</span>相当（出来事の順序）</td></tr>
+</table>
+
+<div class="sh"><span class="sbar"></span><h2>まとめてダウンロード</h2></div>
+<div class="bigdl">
+  <a class="primary" href="pdf/星本のトリセツ_全14枚.pdf" target="_blank" rel="noopener">結合PDF（全14枚）</a>
+  <a href="星本のトリセツ_まとめてダウンロード.zip">ZIP（PDF14本）</a>
+</div>
+
+<div class="warn"><b>使うときの3つの約束</b><br>
+① 星本の紙面のコピー配布はしない（本そのものを買って使う・考え方を参考に自作する）。<br>
+② 段階のラベルを子どもに貼らない（「あなたは☆」とは言わない。段階は先生のものさしです）。<br>
+③ ようすメモは診断ではない（就学や学びの場の相談は、校内委員会・教育委員会・専門機関と）。</div>
+
+<div class="sh"><span class="sbar"></span><h2>出典</h2></div>
+<p class="src">
+・文部科学省「特別支援学校用（小・中学部）教科書目録（令和7年度使用）」（書名・予定定価）<br>
+　<a href="https://www.mext.go.jp/content/20240415-mxt_kyokasyo02-000035269_4rr.pdf" target="_blank" rel="noopener">mext.go.jp/content/20240415-mxt_kyokasyo02-000035269_4rr.pdf</a><br>
+・文部科学省「特別支援学校知的障害者用著作教科書 活用実践事例集（国語、算数・数学、音楽）」<br>
+　<a href="https://www.mext.go.jp/content/20250801-mxt_tokubetu01-000041997_007.pdf" target="_blank" rel="noopener">mext.go.jp/content/20250801-mxt_tokubetu01-000041997_007.pdf</a><br>
+・特別支援学校学習指導要領（知的障害の各教科の目標・内容＝階段マップとようすメモの土台）<br>
+・千葉県教育委員会「特別支援学級の教科用図書」（制度の整理）<br>
+　<a href="https://www.pref.chiba.lg.jp/kyouiku/shien/tokubetsushien/documents/r526kyoukasyo.pdf" target="_blank" rel="noopener">pref.chiba.lg.jp（PDF）</a><br>
+・全国教科書供給協会（教科書取扱書店の探し方）　<a href="https://text-kyoukyuu.or.jp/" target="_blank" rel="noopener">text-kyoukyuu.or.jp</a>
+</p>
+
+<div class="foot">
+  <span>星本のトリセツ｜<a href="../">支援カードの棚へ</a>｜<a href="../../">School Stock トップへ</a></span>
+  <span>© School Stock</span>
+</div>
+
+</div>
+</body>
+</html>
