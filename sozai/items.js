@@ -1518,5 +1518,236 @@ const SOZAI = [
   "img": "img/gyoji_aki_no_shizen.jpg",
   "thumb": "img/gyoji_aki_no_shizen_thumb.jpg",
   "mono": "img/gyoji_aki_no_shizen_mono.jpg"
+ },
+ {
+  "id": "gyoji_undoukai_relay",
+  "title": "運動会のリレー",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "バトンをつなぐ子どもたちのリレーのフラットイラスト。",
+  "howto": "運動会・体育祭のおたよりやプログラムの挿絵に。",
+  "img": "img/gyoji_undoukai_relay.jpg",
+  "thumb": "img/gyoji_undoukai_relay_thumb.jpg",
+  "mono": "img/gyoji_undoukai_relay_mono.jpg"
+ },
+ {
+  "id": "gyoji_kengaku_bus",
+  "title": "社会科見学のバス",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "社会科見学・遠足"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "見学バスに乗り込む子どもたちのフラットイラスト。",
+  "howto": "社会科見学・校外学習のおたよりやしおりの挿絵に。",
+  "img": "img/gyoji_kengaku_bus.jpg",
+  "thumb": "img/gyoji_kengaku_bus_thumb.jpg",
+  "mono": "img/gyoji_kengaku_bus_mono.jpg"
+ },
+ {
+  "id": "gyoji_imohori",
+  "title": "芋掘り",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "低学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "生活科・秋の活動"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "さつまいもを掘る子どもたちのフラットイラスト。",
+  "howto": "芋掘り・生活科・収穫のおたよりや掲示の挿絵に。",
+  "img": "img/gyoji_imohori.jpg",
+  "thumb": "img/gyoji_imohori_thumb.jpg",
+  "mono": "img/gyoji_imohori_mono.jpg"
+ },
+ {
+  "id": "gyoji_kyuushoku_touban",
+  "title": "給食当番",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "給食・当番活動"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "白衣で給食を配膳する当番の子どもたちのフラットイラスト。",
+  "howto": "給食だより・当番表・食育の掲示の挿絵に。",
+  "img": "img/gyoji_kyuushoku_touban.jpg",
+  "thumb": "img/gyoji_kyuushoku_touban_thumb.jpg",
+  "mono": "img/gyoji_kyuushoku_touban_mono.jpg"
+ },
+ {
+  "id": "gyoji_oosouji",
+  "title": "大掃除",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "大掃除・学期末"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "教室を雑巾がけ・ほうき・窓ふきで掃除する子どもたちのフラットイラスト。",
+  "howto": "学期末の大掃除・年末のおたよりや掲示の挿絵に。",
+  "img": "img/gyoji_oosouji.jpg",
+  "thumb": "img/gyoji_oosouji_thumb.jpg",
+  "mono": "img/gyoji_oosouji_mono.jpg"
+ },
+ {
+  "id": "gyoji_nawatobi",
+  "title": "なわとび",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "体力づくり・冬"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "なわとびをする子どもたちのフラットイラスト。",
+  "howto": "なわとび大会・冬の体力づくりのおたよりや記録カードの挿絵に。",
+  "img": "img/gyoji_nawatobi.jpg",
+  "thumb": "img/gyoji_nawatobi_thumb.jpg",
+  "mono": "img/gyoji_nawatobi_mono.jpg"
+ },
+ {
+  "id": "gyoji_omiseyasan",
+  "title": "お店屋さんごっこ（秋祭り）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "低学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "生活科・秋祭り"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "スライド"
+  ],
+  "description": "手作りのお店で品物をやりとりする子どもたちのフラットイラスト。",
+  "howto": "お店屋さんごっこ・秋祭り・生活科発表のおたよりの挿絵に。",
+  "img": "img/gyoji_omiseyasan.jpg",
+  "thumb": "img/gyoji_omiseyasan_thumb.jpg",
+  "mono": "img/gyoji_omiseyasan_mono.jpg"
+ },
+ {
+  "id": "gyoji_ochiba_hiroi",
+  "title": "落ち葉ひろい",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "季節・秋の活動"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "note見出し"
+  ],
+  "description": "落ち葉やどんぐりを拾う子どもたちの水彩画。",
+  "howto": "秋の自然観察・生活科・おたよりの挿絵に。",
+  "img": "img/gyoji_ochiba_hiroi.jpg",
+  "thumb": "img/gyoji_ochiba_hiroi_thumb.jpg",
+  "mono": "img/gyoji_ochiba_hiroi_mono.jpg"
+ },
+ {
+  "id": "gyoji_ichou_namiki",
+  "title": "銀杏並木の下校道",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "季節・秋"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "背景",
+   "note見出し"
+  ],
+  "description": "黄葉した銀杏並木の道にランドセルと靴を置いた気配のみの水彩画。",
+  "howto": "おたより・掲示の季節の背景やnote見出しに。",
+  "img": "img/gyoji_ichou_namiki.jpg",
+  "thumb": "img/gyoji_ichou_namiki_thumb.jpg",
+  "mono": "img/gyoji_ichou_namiki_mono.jpg"
+ },
+ {
+  "id": "gyoji_aki_no_minori",
+  "title": "秋の実り（柿・みかん・さつまいも）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "二学期の行事",
+  "scenes": [
+   "季節・秋"
+  ],
+  "uses": [
+   "挿絵",
+   "おたより",
+   "掲示",
+   "背景"
+  ],
+  "description": "柿・みかん・さつまいもを集めた秋の実りのボタニカル水彩画。",
+  "howto": "おたより・掲示の飾りや季節の背景素材に。",
+  "img": "img/gyoji_aki_no_minori.jpg",
+  "thumb": "img/gyoji_aki_no_minori_thumb.jpg",
+  "mono": "img/gyoji_aki_no_minori_mono.jpg"
  }
 ];
