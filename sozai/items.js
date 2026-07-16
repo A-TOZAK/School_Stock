@@ -3427,5 +3427,273 @@ const SOZAI = [
   "img": "img/hoshibon_02_tsukue_tomoni.jpg",
   "thumb": "img/hoshibon_02_tsukue_tomoni_thumb.jpg",
   "mono": "img/hoshibon_02_tsukue_tomoni_mono.jpg"
+ },
+ {
+  "id": "shakai_sentakuita",
+  "title": "洗濯板とたらい（昔の道具）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "3年",
+  "unit": "市のうつりかわり",
+  "scenes": [
+   "昔のくらし",
+   "道具しらべ"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "木のたらいに立てかけた洗濯板と石けん、しぼった布。線画淡彩の図鑑調で、昔の洗濯道具のつくりがよく分かる。",
+  "howto": "3年「市のうつりかわり」「昔の道具」の資料に。",
+  "tags": [
+   "せんたくいた",
+   "洗濯板",
+   "たらい",
+   "むかしのどうぐ",
+   "昔の道具",
+   "くらし",
+   "しゃかい",
+   "社会"
+  ],
+  "img": "img/shakai_sentakuita.jpg",
+  "thumb": "img/shakai_sentakuita_thumb.jpg",
+  "mono": "img/shakai_sentakuita_mono.jpg"
+ },
+ {
+  "id": "shakai_kamado",
+  "title": "かまど（昔の道具）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "3年",
+  "unit": "市のうつりかわり",
+  "scenes": [
+   "昔のくらし",
+   "道具しらべ"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "羽釜と木のふたをのせた土のかまど。たき口に火が見え、まきがそばに積んである線画淡彩。",
+  "howto": "昔のごはんづくり・道具のうつりかわりの資料に。",
+  "tags": [
+   "かまど",
+   "はがま",
+   "羽釜",
+   "むかしのどうぐ",
+   "昔の道具",
+   "ごはん",
+   "しゃかい",
+   "社会"
+  ],
+  "img": "img/shakai_kamado.jpg",
+  "thumb": "img/shakai_kamado_thumb.jpg",
+  "mono": "img/shakai_kamado_mono.jpg"
+ },
+ {
+  "id": "shakai_jomon_mura",
+  "title": "縄文のむらのくらし（想像図）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "日本の歴史",
+  "scenes": [
+   "歴史導入",
+   "資料読み取り"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "たて穴住居と土器、魚の干し場、木の実を運ぶ子どもをえがいた縄文のむらの水彩想像図。",
+  "howto": "6年歴史「むらからくにへ」の導入・読み取り資料に。※土器の縄目文様は薄いので文様の設問には使わない。",
+  "tags": [
+   "じょうもん",
+   "縄文",
+   "たてあなじゅうきょ",
+   "たて穴住居",
+   "れきし",
+   "歴史",
+   "むら",
+   "そうぞうず"
+  ],
+  "img": "img/shakai_jomon_mura.jpg",
+  "thumb": "img/shakai_jomon_mura_thumb.jpg",
+  "mono": "img/shakai_jomon_mura_mono.jpg"
+ },
+ {
+  "id": "shakai_taue_mukashi",
+  "title": "昔の田植え（手植え）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "5年",
+  "unit": "米づくり",
+  "scenes": [
+   "米づくり",
+   "昔と今のくらべ"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "すげがさをかぶった人たちが列になって手でなえを植える、およそ60年前の田植えの水彩画。「今の田植え」と同じ田んぼの対になっている。",
+  "howto": "5年「米づくり」の昔と今の比較資料に（対の絵とセットで）。",
+  "tags": [
+   "たうえ",
+   "田植え",
+   "こめづくり",
+   "米づくり",
+   "むかし",
+   "昔",
+   "のうぎょう",
+   "農業"
+  ],
+  "img": "img/shakai_taue_mukashi.jpg",
+  "thumb": "img/shakai_taue_mukashi_thumb.jpg",
+  "mono": "img/shakai_taue_mukashi_mono.jpg"
+ },
+ {
+  "id": "shakai_taue_ima",
+  "title": "今の田植え（田植え機）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "5年",
+  "unit": "米づくり",
+  "scenes": [
+   "米づくり",
+   "昔と今のくらべ"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "乗用の田植え機が同じ田んぼにまっすぐな列を植えていく水彩画。「昔の田植え」と対。",
+  "howto": "5年「米づくり」の機械化・昔と今の比較資料に（対の絵とセットで）。",
+  "tags": [
+   "たうえ",
+   "田植え",
+   "たうえき",
+   "田植え機",
+   "こめづくり",
+   "米づくり",
+   "きかいか",
+   "機械化"
+  ],
+  "img": "img/shakai_taue_ima.jpg",
+  "thumb": "img/shakai_taue_ima_thumb.jpg",
+  "mono": "img/shakai_taue_ima_mono.jpg"
+ },
+ {
+  "id": "shakai_supermarket",
+  "title": "スーパーのやさい売り場",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "3年",
+  "unit": "店ではたらく人",
+  "scenes": [
+   "買い物しらべ",
+   "はたらく人"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "種類ごとに並んだやさいの棚、品出しをする店員さん、カートのお客さんのフラットイラスト。値札は白チップで文字なし。",
+  "howto": "3年「店ではたらく人」の売り場のくふう資料に。",
+  "tags": [
+   "すーぱー",
+   "スーパー",
+   "うりば",
+   "売り場",
+   "やさい",
+   "かいもの",
+   "買い物",
+   "みせ",
+   "店"
+  ],
+  "img": "img/shakai_supermarket.jpg",
+  "thumb": "img/shakai_supermarket_thumb.jpg",
+  "mono": "img/shakai_supermarket_mono.jpg"
+ },
+ {
+  "id": "shakai_jidosha_kojo",
+  "title": "自動車工場の組み立てライン",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "5年",
+  "unit": "自動車をつくる工業",
+  "scenes": [
+   "工業生産",
+   "はたらく人"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "コンベヤーで運ばれる車体、ようせつロボット、ドアを取り付ける2人の作業員のフラットイラスト。",
+  "howto": "5年「自動車をつくる工業」の流れ作業・分担の資料に。",
+  "tags": [
+   "じどうしゃ",
+   "自動車",
+   "こうじょう",
+   "工場",
+   "らいん",
+   "ライン",
+   "こうぎょう",
+   "工業",
+   "ろぼっと",
+   "ロボット"
+  ],
+  "img": "img/shakai_jidosha_kojo.jpg",
+  "thumb": "img/shakai_jidosha_kojo_thumb.jpg",
+  "mono": "img/shakai_jidosha_kojo_mono.jpg"
+ },
+ {
+  "id": "shakai_shobosho",
+  "title": "消防署のようす",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "3年",
+  "unit": "火事からまちを守る",
+  "scenes": [
+   "安全を守る",
+   "まちたんけん"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "シャッターの開いた車庫の消防車、ホースを点検する消防士、ホース乾燥塔のあるフラットな消防署。",
+  "howto": "3年「火事からまちを守る」の消防署のはたらき資料に。",
+  "tags": [
+   "しょうぼうしょ",
+   "消防署",
+   "しょうぼうしゃ",
+   "消防車",
+   "かじ",
+   "火事",
+   "あんぜん",
+   "安全",
+   "まち"
+  ],
+  "img": "img/shakai_shobosho.jpg",
+  "thumb": "img/shakai_shobosho_thumb.jpg",
+  "mono": "img/shakai_shobosho_mono.jpg"
  }
 ];
