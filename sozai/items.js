@@ -8473,5 +8473,375 @@ const SOZAI = [
   "img": "img/tayori_monshiro_makabe.jpg",
   "thumb": "img/tayori_monshiro_makabe_thumb.jpg",
   "mono": "img/tayori_monshiro_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_sakura_sumire",
+  "title": "桜満開（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・入学",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "満開の桜の枝と、舞い散る花びら。",
+  "howto": "桜は日本の学校の始まりの花。入学・進級のおたよりの主役にどうぞ。花びらの先の切れ込みが桜の目印です。",
+  "tags": [
+   "桜",
+   "満開",
+   "入学",
+   "4月",
+   "春",
+   "始業式",
+   "新学期",
+   "花見",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sakura_sumire.jpg",
+  "thumb": "img/tayori_sakura_sumire_thumb.jpg",
+  "mono": "img/tayori_sakura_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_sakura_makabe",
+  "title": "桜満開（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・入学",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "満開の桜の枝と、舞い散る花びら。",
+  "howto": "桜は日本の学校の始まりの花。入学・進級のおたよりの主役にどうぞ。花びらの先の切れ込みが桜の目印です。",
+  "tags": [
+   "桜",
+   "満開",
+   "入学",
+   "4月",
+   "春",
+   "始業式",
+   "新学期",
+   "花見",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sakura_makabe.jpg",
+  "thumb": "img/tayori_sakura_makabe_thumb.jpg",
+  "mono": "img/tayori_sakura_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_randoseru_sumire",
+  "title": "ランドセル（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・入学",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "花びらをのせた赤いランドセル。金具や肩ベルトまで描いた一枚。",
+  "howto": "ランドセルは6年間の相棒。入学のおたよりや1年生を迎える掲示に。色は差し替えの相談もできます。",
+  "tags": [
+   "ランドセル",
+   "入学",
+   "1年生",
+   "4月",
+   "春",
+   "新入学",
+   "入学式",
+   "小学校",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_randoseru_sumire.jpg",
+  "thumb": "img/tayori_randoseru_sumire_thumb.jpg",
+  "mono": "img/tayori_randoseru_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_randoseru_makabe",
+  "title": "ランドセル（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・入学",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "花びらをのせた赤いランドセル。金具や肩ベルトまで描いた一枚。",
+  "howto": "ランドセルは6年間の相棒。入学のおたよりや1年生を迎える掲示に。色は差し替えの相談もできます。",
+  "tags": [
+   "ランドセル",
+   "入学",
+   "1年生",
+   "4月",
+   "春",
+   "新入学",
+   "入学式",
+   "小学校",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_randoseru_makabe.jpg",
+  "thumb": "img/tayori_randoseru_makabe_thumb.jpg",
+  "mono": "img/tayori_randoseru_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tulip_sumire",
+  "title": "チューリップ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "赤・黄・つぼみの三本のチューリップ。",
+  "howto": "チューリップは1年生の生活科でおなじみの花。球根から育てる春の定番です。",
+  "tags": [
+   "チューリップ",
+   "花",
+   "春",
+   "4月",
+   "5月",
+   "生活科",
+   "球根",
+   "1年生",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tulip_sumire.jpg",
+  "thumb": "img/tayori_tulip_sumire_thumb.jpg",
+  "mono": "img/tayori_tulip_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tulip_makabe",
+  "title": "チューリップ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "赤・黄・つぼみの三本のチューリップ。",
+  "howto": "チューリップは1年生の生活科でおなじみの花。球根から育てる春の定番です。",
+  "tags": [
+   "チューリップ",
+   "花",
+   "春",
+   "4月",
+   "5月",
+   "生活科",
+   "球根",
+   "1年生",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tulip_makabe.jpg",
+  "thumb": "img/tayori_tulip_makabe_thumb.jpg",
+  "mono": "img/tayori_tulip_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_nanohana_sumire",
+  "title": "菜の花（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "黄色い菜の花の群れ。四弁の花とつぼみ。",
+  "howto": "菜の花の黄色は春の野原の主役。アブラナの仲間で、種からは菜種油がとれます。",
+  "tags": [
+   "菜の花",
+   "なのはな",
+   "アブラナ",
+   "春",
+   "4月",
+   "3月",
+   "黄色",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_nanohana_sumire.jpg",
+  "thumb": "img/tayori_nanohana_sumire_thumb.jpg",
+  "mono": "img/tayori_nanohana_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_nanohana_makabe",
+  "title": "菜の花（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "黄色い菜の花の群れ。四弁の花とつぼみ。",
+  "howto": "菜の花の黄色は春の野原の主役。アブラナの仲間で、種からは菜種油がとれます。",
+  "tags": [
+   "菜の花",
+   "なのはな",
+   "アブラナ",
+   "春",
+   "4月",
+   "3月",
+   "黄色",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_nanohana_makabe.jpg",
+  "thumb": "img/tayori_nanohana_makabe_thumb.jpg",
+  "mono": "img/tayori_nanohana_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tsubame_sumire",
+  "title": "つばめ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "すべるように飛ぶつばめ。喉の赤と燕尾まで正確に。",
+  "howto": "つばめは春に南から渡ってくる夏鳥。軒先の巣づくりが始まります。低く飛ぶと雨、の言い伝えも。",
+  "tags": [
+   "つばめ",
+   "ツバメ",
+   "渡り鳥",
+   "春",
+   "4月",
+   "5月",
+   "巣",
+   "自然観察",
+   "理科",
+   "学校だより"
+  ],
+  "img": "img/tayori_tsubame_sumire.jpg",
+  "thumb": "img/tayori_tsubame_sumire_thumb.jpg",
+  "mono": "img/tayori_tsubame_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tsubame_makabe",
+  "title": "つばめ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "すべるように飛ぶつばめ。喉の赤と燕尾まで正確に。",
+  "howto": "つばめは春に南から渡ってくる夏鳥。軒先の巣づくりが始まります。低く飛ぶと雨、の言い伝えも。",
+  "tags": [
+   "つばめ",
+   "ツバメ",
+   "渡り鳥",
+   "春",
+   "4月",
+   "5月",
+   "巣",
+   "自然観察",
+   "理科",
+   "学校だより"
+  ],
+  "img": "img/tayori_tsubame_makabe.jpg",
+  "thumb": "img/tayori_tsubame_makabe_thumb.jpg",
+  "mono": "img/tayori_tsubame_makabe_mono.jpg"
  }
 ];
