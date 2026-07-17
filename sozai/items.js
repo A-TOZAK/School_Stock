@@ -9213,5 +9213,112 @@ const SOZAI = [
   "img": "img/tayori_shincha_makabe.jpg",
   "thumb": "img/tayori_shincha_makabe_thumb.jpg",
   "mono": "img/tayori_shincha_makabe_mono.jpg"
+ },
+ {
+  "id": "zukou_gemini_tsukuru_riko",
+  "title": "先生がAIで図工のおたよりを作る（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "図工・準備のおたより",
+  "scenes": [
+   "図工",
+   "校務・働き方",
+   "生成AI活用",
+   "おたより作成"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "LP",
+   "note見出し"
+  ],
+  "description": "ノートPCで家庭向けのおたよりを作る先生。刷り上がった紙と空き箱。輪郭線なしのフラット。",
+  "howto": "図工の準備を家庭にゆるく伝える記事の主役カット。生成AI活用×校務の場面に。",
+  "tags": [
+   "図工",
+   "先生",
+   "ノートPC",
+   "生成AI",
+   "おたより",
+   "校務",
+   "働き方",
+   "空き箱",
+   "フラットイラスト"
+  ],
+  "img": "img/zukou_gemini_tsukuru_riko.jpg",
+  "thumb": "img/zukou_gemini_tsukuru_riko_thumb.jpg",
+  "mono": "img/zukou_gemini_tsukuru_riko_mono.jpg"
+ },
+ {
+  "id": "zukou_gemini_tegaki_riko",
+  "title": "手書きでおたよりを書く先生（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "図工・準備のおたより",
+  "scenes": [
+   "校務・働き方",
+   "おたより作成",
+   "業務改善"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "before/after"
+  ],
+  "description": "机で1枚ずつ手書きするおたより。積まれた紙と時計。少し疲れた表情。輪郭線なしのフラット。",
+  "howto": "「毎回手で書く」負担を表すbeforeカット。働き方・業務改善の記事に。",
+  "tags": [
+   "先生",
+   "手書き",
+   "おたより",
+   "時計",
+   "校務",
+   "働き方",
+   "忙しい",
+   "フラットイラスト"
+  ],
+  "img": "img/zukou_gemini_tegaki_riko.jpg",
+  "thumb": "img/zukou_gemini_tegaki_riko_thumb.jpg",
+  "mono": "img/zukou_gemini_tegaki_riko_mono.jpg"
+ },
+ {
+  "id": "zukou_gemini_atsumeru_riko",
+  "title": "図工の材料を集める子ども（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "図工",
+  "grade": "全学年",
+  "unit": "図工・準備のおたより",
+  "scenes": [
+   "図工",
+   "家庭",
+   "リサイクル材料",
+   "準備"
+  ],
+  "uses": [
+   "記事挿絵",
+   "おたより",
+   "掲示"
+  ],
+  "description": "空き箱・ペットボトル・牛乳パック・紙コップを紙袋に集める子ども。道具（はさみ等）は描かない。",
+  "howto": "図工の「集めておく材料」を家庭でためる場面。準備のおたよりや掲示に。",
+  "tags": [
+   "図工",
+   "子ども",
+   "空き箱",
+   "ペットボトル",
+   "牛乳パック",
+   "リサイクル",
+   "材料集め",
+   "準備",
+   "フラットイラスト"
+  ],
+  "img": "img/zukou_gemini_atsumeru_riko.jpg",
+  "thumb": "img/zukou_gemini_atsumeru_riko_thumb.jpg",
+  "mono": "img/zukou_gemini_atsumeru_riko_mono.jpg"
  }
 ];
