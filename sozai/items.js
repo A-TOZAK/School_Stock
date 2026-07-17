@@ -4874,5 +4874,227 @@ const SOZAI = [
   "img": "img/tayori_label_12.jpg",
   "thumb": "img/tayori_label_12_thumb.jpg",
   "mono": "img/tayori_label_12_mono.jpg"
+ },
+ {
+  "id": "tayori_usagi_sumire",
+  "title": "月でもちつきするうさぎ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・お月見",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "満月の中で杵をふるう2羽の白うさぎ。お月見の伝統の図像。",
+  "howto": "月の模様をうさぎのもちつきに見立てるのは日本の昔からの言い伝え。お月見の話のタネにどうぞ。",
+  "tags": [
+   "うさぎ",
+   "もちつき",
+   "満月",
+   "お月見",
+   "十五夜",
+   "9月",
+   "秋",
+   "月",
+   "伝承",
+   "学校だより"
+  ],
+  "img": "img/tayori_usagi_sumire.jpg",
+  "thumb": "img/tayori_usagi_sumire_thumb.jpg",
+  "mono": "img/tayori_usagi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_usagi_makabe",
+  "title": "月でもちつきするうさぎ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・お月見",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "満月の中で杵をふるう2羽の白うさぎ。お月見の伝統の図像。",
+  "howto": "月の模様をうさぎのもちつきに見立てるのは日本の昔からの言い伝え。お月見の話のタネにどうぞ。",
+  "tags": [
+   "うさぎ",
+   "もちつき",
+   "満月",
+   "お月見",
+   "十五夜",
+   "9月",
+   "秋",
+   "月",
+   "伝承",
+   "学校だより"
+  ],
+  "img": "img/tayori_usagi_makabe.jpg",
+  "thumb": "img/tayori_usagi_makabe_thumb.jpg",
+  "mono": "img/tayori_usagi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_higanbana_sumire",
+  "title": "彼岸花（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・お彼岸",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "葉のない茎の先に放射状に咲く彼岸花。実物どおり「花のとき葉がない」姿で描いた一枚。",
+  "howto": "彼岸花はお彼岸のころにぴたりと咲きます。花の時期に葉がない「葉見ず花見ず」の話も子どもに人気です。",
+  "tags": [
+   "彼岸花",
+   "ヒガンバナ",
+   "曼珠沙華",
+   "お彼岸",
+   "9月",
+   "秋",
+   "赤",
+   "花",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_higanbana_sumire.jpg",
+  "thumb": "img/tayori_higanbana_sumire_thumb.jpg",
+  "mono": "img/tayori_higanbana_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_higanbana_makabe",
+  "title": "彼岸花（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・お彼岸",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "葉のない茎の先に放射状に咲く彼岸花。実物どおり「花のとき葉がない」姿で描いた一枚。",
+  "howto": "彼岸花はお彼岸のころにぴたりと咲きます。花の時期に葉がない「葉見ず花見ず」の話も子どもに人気です。",
+  "tags": [
+   "彼岸花",
+   "ヒガンバナ",
+   "曼珠沙華",
+   "お彼岸",
+   "9月",
+   "秋",
+   "赤",
+   "花",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_higanbana_makabe.jpg",
+  "thumb": "img/tayori_higanbana_makabe_thumb.jpg",
+  "mono": "img/tayori_higanbana_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_budou_sumire",
+  "title": "ぶどう（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・実りの秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "果粉（ブルーム）をまとった巨峰の房。葉と巻きひげつき。",
+  "howto": "秋の実りの定番。皮の白い粉は「果粉」といって、新鮮なぶどうのしるしです。給食だよりにも。",
+  "tags": [
+   "ぶどう",
+   "巨峰",
+   "果物",
+   "実りの秋",
+   "9月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_budou_sumire.jpg",
+  "thumb": "img/tayori_budou_sumire_thumb.jpg",
+  "mono": "img/tayori_budou_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_budou_makabe",
+  "title": "ぶどう（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・実りの秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "果粉（ブルーム）をまとった巨峰の房。葉と巻きひげつき。",
+  "howto": "秋の実りの定番。皮の白い粉は「果粉」といって、新鮮なぶどうのしるしです。給食だよりにも。",
+  "tags": [
+   "ぶどう",
+   "巨峰",
+   "果物",
+   "実りの秋",
+   "9月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_budou_makabe.jpg",
+  "thumb": "img/tayori_budou_makabe_thumb.jpg",
+  "mono": "img/tayori_budou_makabe_mono.jpg"
  }
 ];
