@@ -4294,5 +4294,585 @@ const SOZAI = [
   "img": "img/chiiki_49_juujika.jpg",
   "thumb": "img/chiiki_49_juujika_thumb.jpg",
   "mono": "img/chiiki_49_juujika_mono.jpg"
+ },
+ {
+  "id": "tayori_cosmos_sumire",
+  "title": "コスモスと赤とんぼ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "コスモスのつぼみに赤とんぼがとまる水彩ワンポイント。紙の白を光に使ったやわらかい一枚。",
+  "howto": "学校だより9月号の巻頭言の隣や、行事予定の空きマスに。3〜4cm角で使うときれいに収まります。",
+  "tags": [
+   "コスモス",
+   "赤とんぼ",
+   "秋",
+   "9月",
+   "季節",
+   "学校だより",
+   "学級通信",
+   "水彩",
+   "花",
+   "ワンポイント"
+  ],
+  "img": "img/tayori_cosmos_sumire.jpg",
+  "thumb": "img/tayori_cosmos_sumire_thumb.jpg",
+  "mono": "img/tayori_cosmos_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_cosmos_makabe",
+  "title": "コスモスと赤とんぼ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "図鑑調の精密線画によるコスモスと赤とんぼ。白黒印刷でも線がつぶれない。",
+  "howto": "白黒で刷る学校だより・学年だよりに。理科の秋の観察プリントの挿絵にも使えます。",
+  "tags": [
+   "コスモス",
+   "赤とんぼ",
+   "秋",
+   "9月",
+   "季節",
+   "学校だより",
+   "線画",
+   "白黒",
+   "図鑑",
+   "ワンポイント"
+  ],
+  "img": "img/tayori_cosmos_makabe.jpg",
+  "thumb": "img/tayori_cosmos_makabe_thumb.jpg",
+  "mono": "img/tayori_cosmos_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tsukimi_sumire",
+  "title": "十五夜のおそなえ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・十五夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "十五夜・お月見"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "三方に積んだ月見だんごとすすきの水彩ワンポイント。静かな秋の気配。",
+  "howto": "9月号のお月見・十五夜の記事に。給食だより（お月見献立）にも合います。",
+  "tags": [
+   "十五夜",
+   "お月見",
+   "月見だんご",
+   "すすき",
+   "秋",
+   "9月",
+   "学校だより",
+   "水彩",
+   "行事食",
+   "ワンポイント"
+  ],
+  "img": "img/tayori_tsukimi_sumire.jpg",
+  "thumb": "img/tayori_tsukimi_sumire_thumb.jpg",
+  "mono": "img/tayori_tsukimi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tsukimi_makabe",
+  "title": "十五夜のおそなえ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月・十五夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月",
+   "十五夜・お月見"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "三方・月見だんご・すすきを図鑑調の線画で。三方の継ぎ手まで正確に描いた一枚。",
+  "howto": "白黒印刷のおたよりに。だんごの積み方（9・4・2）の話題づくりにも。",
+  "tags": [
+   "十五夜",
+   "お月見",
+   "月見だんご",
+   "すすき",
+   "三方",
+   "秋",
+   "9月",
+   "学校だより",
+   "線画",
+   "白黒"
+  ],
+  "img": "img/tayori_tsukimi_makabe.jpg",
+  "thumb": "img/tayori_tsukimi_makabe_thumb.jpg",
+  "mono": "img/tayori_tsukimi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_label_01",
+  "title": "月ラベル 1月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「1月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより1月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "1月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_01.jpg",
+  "thumb": "img/tayori_label_01_thumb.jpg",
+  "mono": "img/tayori_label_01_mono.jpg"
+ },
+ {
+  "id": "tayori_label_02",
+  "title": "月ラベル 2月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「2月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより2月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "2月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_02.jpg",
+  "thumb": "img/tayori_label_02_thumb.jpg",
+  "mono": "img/tayori_label_02_mono.jpg"
+ },
+ {
+  "id": "tayori_label_03",
+  "title": "月ラベル 3月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「3月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより3月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "3月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_03.jpg",
+  "thumb": "img/tayori_label_03_thumb.jpg",
+  "mono": "img/tayori_label_03_mono.jpg"
+ },
+ {
+  "id": "tayori_label_04",
+  "title": "月ラベル 4月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "4月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "4月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「4月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより4月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "4月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_04.jpg",
+  "thumb": "img/tayori_label_04_thumb.jpg",
+  "mono": "img/tayori_label_04_mono.jpg"
+ },
+ {
+  "id": "tayori_label_05",
+  "title": "月ラベル 5月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「5月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより5月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "5月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_05.jpg",
+  "thumb": "img/tayori_label_05_thumb.jpg",
+  "mono": "img/tayori_label_05_mono.jpg"
+ },
+ {
+  "id": "tayori_label_06",
+  "title": "月ラベル 6月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「6月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより6月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "6月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_06.jpg",
+  "thumb": "img/tayori_label_06_thumb.jpg",
+  "mono": "img/tayori_label_06_mono.jpg"
+ },
+ {
+  "id": "tayori_label_07",
+  "title": "月ラベル 7月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「7月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより7月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "7月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_07.jpg",
+  "thumb": "img/tayori_label_07_thumb.jpg",
+  "mono": "img/tayori_label_07_mono.jpg"
+ },
+ {
+  "id": "tayori_label_08",
+  "title": "月ラベル 8月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「8月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより8月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "8月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_08.jpg",
+  "thumb": "img/tayori_label_08_thumb.jpg",
+  "mono": "img/tayori_label_08_mono.jpg"
+ },
+ {
+  "id": "tayori_label_09",
+  "title": "月ラベル 9月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "9月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "9月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「9月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより9月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "9月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_09.jpg",
+  "thumb": "img/tayori_label_09_thumb.jpg",
+  "mono": "img/tayori_label_09_mono.jpg"
+ },
+ {
+  "id": "tayori_label_10",
+  "title": "月ラベル 10月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「10月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより10月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "10月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_10.jpg",
+  "thumb": "img/tayori_label_10_thumb.jpg",
+  "mono": "img/tayori_label_10_mono.jpg"
+ },
+ {
+  "id": "tayori_label_11",
+  "title": "月ラベル 11月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「11月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより11月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "11月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_11.jpg",
+  "thumb": "img/tayori_label_11_thumb.jpg",
+  "mono": "img/tayori_label_11_mono.jpg"
+ },
+ {
+  "id": "tayori_label_12",
+  "title": "月ラベル 12月（明朝・飾り枠）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月号",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月号の題字まわり"
+  ],
+  "uses": [
+   "おたより",
+   "題字",
+   "見出し",
+   "掲示"
+  ],
+  "description": "「12月」の明朝体と細罫の二重枠を組んだ月ラベル。ワードアートの置き換えに。",
+  "howto": "学校だより12月号のタイトルまわりや行事予定の見出しに。季節のワンポイントと並べて使えます。",
+  "tags": [
+   "12月",
+   "月ラベル",
+   "題字",
+   "飾り枠",
+   "見出し",
+   "学校だより",
+   "学級通信",
+   "明朝",
+   "ラベル",
+   "フレーム"
+  ],
+  "img": "img/tayori_label_12.jpg",
+  "thumb": "img/tayori_label_12_thumb.jpg",
+  "mono": "img/tayori_label_12_mono.jpg"
  }
 ];
