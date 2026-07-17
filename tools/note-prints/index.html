@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>すぐ印刷して使えるノートプリント集 ── 方眼・マス・作文｜School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="すぐ印刷して使えるノートプリント集（方眼・マス・作文）｜School Stock">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/tools/note-prints/img/hougan-b4.jpeg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/tools/note-prints/img/hougan-b4.jpeg">
+<meta name="description" content="「先生、紙がありません」の一枚に。方眼ノート・こくご/さんすうのマスノート・作文ノート・漢字プリントを、そのまま印刷して使えます。全学年対応・無料。note で配布中。">
+<style>
+  :root {
+    --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9;
+    --paper:#ffffff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; scroll-behavior:smooth; }
+  body {
+    font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+    background:var(--paper); color:var(--ink);
+    font-size:16.5px; line-height:1.95; letter-spacing:0.02em;
+    -webkit-font-smoothing:antialiased;
+  }
+  a { color:var(--accent); text-underline-offset:3px; text-decoration-thickness:1px; }
+  a:hover { opacity:.75; }
+
+  .topbar { background:var(--black); color:#fff; }
+  .topbar-in { max-width:760px; margin:0 auto; padding:14px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.24em; }
+  .topbar .shelf { font-size:11px; letter-spacing:0.16em; color:#b9bcc2; text-decoration:none; }
+
+  .container { max-width:760px; margin:0 auto; padding:0 24px 72px; }
+
+  /* ヒーロー */
+  .hero { padding:50px 0 30px; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:12px; font-weight:700; letter-spacing:0.14em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:20px; }
+  h1 { font-size:clamp(26px,6.2vw,38px); font-weight:700; line-height:1.42; letter-spacing:0.01em; margin-bottom:18px; }
+  .lead { font-size:16px; color:#3d4148; margin-bottom:22px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:8px 16px; }
+  .meta span { display:inline-flex; align-items:center; gap:6px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .meta .dot { color:var(--accent); }
+
+  /* 使い方の3点 */
+  .digest { margin:30px 0 4px; border-top:3px solid var(--ink); border-bottom:1px solid var(--line); padding:16px 4px 14px; }
+  .digest .dt { font-size:12px; font-weight:700; letter-spacing:0.22em; margin-bottom:10px; }
+  .digest ol { list-style:none; }
+  .digest li { display:flex; gap:14px; padding:10px 0; font-size:15px; font-weight:500; line-height:1.7; }
+  .digest li + li { border-top:1px solid var(--line); }
+  .digest .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); font-weight:700; flex:none; font-size:17px; }
+  .digest b { font-weight:700; }
+
+  /* セクション見出し */
+  section { padding:44px 0 8px; }
+  .sec-head { display:flex; align-items:baseline; gap:14px; margin-bottom:6px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:22px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11.5px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:clamp(20px,4.8vw,25px); font-weight:700; line-height:1.48; margin:6px 0 8px; }
+  .sec-lede { font-size:14.5px; color:#3d4148; margin-bottom:22px; }
+
+  /* カードグリッド */
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(230px,1fr)); gap:20px; }
+  .card { display:flex; flex-direction:column; border:1px solid var(--line); background:var(--paper); text-decoration:none; color:var(--ink); transition:border-color .15s, transform .15s; overflow:hidden; }
+  .card:hover { border-color:var(--ink); transform:translateY(-2px); opacity:1; }
+  .card .thumb { aspect-ratio:1.91/1; overflow:hidden; background:var(--wash); border-bottom:1px solid var(--line); }
+  .card .thumb img { width:100%; height:100%; object-fit:cover; display:block; }
+  .card .body { padding:15px 16px 16px; display:flex; flex-direction:column; gap:7px; flex:1; }
+  .card .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.06em; color:var(--accent); border:1px solid var(--accent); border-radius:2px; padding:1px 7px; }
+  .card h3 { font-size:15.5px; font-weight:700; line-height:1.5; }
+  .card p { font-size:12.5px; color:#4a4e55; line-height:1.75; flex:1; }
+  .card .go { font-size:12px; font-weight:700; color:var(--sub); letter-spacing:0.04em; }
+  .card:hover .go { color:var(--accent); }
+
+  /* マガジンへ */
+  .allbox { border:1px solid var(--ink); padding:22px; margin:30px 0 8px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:14px; }
+  .allbox .at { font-size:15px; font-weight:700; }
+  .allbox .ad { font-size:13px; color:#3d4148; margin-top:4px; }
+  .allcta { display:inline-flex; align-items:center; gap:8px; background:var(--black); color:#fff; text-decoration:none; font-weight:700; font-size:14.5px; padding:12px 24px; letter-spacing:0.04em; white-space:nowrap; }
+  .allcta:hover { opacity:.85; }
+
+  .note { font-size:12.5px; color:var(--sub); line-height:1.9; margin-top:16px; }
+
+  /* 著者 */
+  .author { display:flex; gap:20px; align-items:flex-start; border-top:3px solid var(--ink); margin-top:50px; padding:26px 2px 8px; }
+  .author .al { font-size:10.5px; font-weight:700; letter-spacing:0.24em; color:var(--sub); margin-bottom:6px; }
+  .author .an { font-size:18px; font-weight:700; }
+  .author .an small { font-size:11.5px; font-weight:500; color:var(--sub); margin-left:8px; letter-spacing:0.08em; }
+  .author .ap { font-size:13px; color:#3d4148; line-height:1.9; margin-top:6px; }
+  .author .ap b { color:var(--ink); }
+
+  /* フッター */
+  .foot { background:var(--black); color:#b9bcc2; margin-top:52px; }
+  .foot-in { max-width:760px; margin:0 auto; padding:30px 24px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <div class="wordmark">ノートプリント集</div>
+    <a class="shelf" href="../../">← SCHOOL STOCK の棚へ</a>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ヒーロー -->
+  <div class="hero">
+    <span class="kicker">全学年対応 × 印刷してすぐ使える</span>
+    <h1>「先生、紙がありません」の、<br>その一枚に。</h1>
+    <p class="lead">方眼・マス・作文。授業でよく使うノートを、そのまま印刷して配れる形にしました。ドリルの升目が合わない、書くスペースが足りない、そんなときの一枚に。全学年で使えて、ぜんぶ無料です。配布は note でしています。</p>
+    <div class="meta">
+      <span><span class="dot">●</span><b>全学年対応</b></span>
+      <span><span class="dot">●</span><b>印刷するだけ</b></span>
+      <span><span class="dot">●</span><b>登録・費用なし</b></span>
+      <span><span class="dot">●</span>PDFで配布（note）</span>
+    </div>
+  </div>
+
+  <!-- 使い方 -->
+  <div class="digest">
+    <div class="dt">つかいかた</div>
+    <ol>
+      <li><span class="n">1</span><span>使いたいノートのカードを開くと、<b>note の記事</b>に飛びます。</span></li>
+      <li><span class="n">2</span><span>記事の中の <b>PDF をダウンロード</b>して、そのまま印刷します。</span></li>
+      <li><span class="n">3</span><span>必要な枚数だけ刷って配るだけ。<b>登録も費用もいりません。</b></span></li>
+    </ol>
+  </div>
+
+  <!-- ノート一覧 -->
+  <section>
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">NOTEBOOKS｜ノートの種類</span></div>
+    <h2>そろっているノート</h2>
+    <p class="sec-lede">カードをタップすると note の配布記事が開きます。</p>
+
+    <div class="grid">
+
+      <a class="card" href="https://note.com/tozaki_edu/n/nd5807da178e1" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/hougan-b4.jpeg" loading="lazy" alt="5mm方眼ノート B4サイズ"></div>
+        <div class="body">
+          <span class="tag">全学年・万能</span>
+          <h3>5mm方眼ノート（B4）</h3>
+          <p>教科を選ばない方眼の一枚。図も表も計算も、これ一枚で受けとめます。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/nb28e9f418d01" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/kokugo-8mas.jpeg" loading="lazy" alt="こくご 8マスノート"></div>
+        <div class="body">
+          <span class="tag">国語</span>
+          <h3>こくご 8マスノート</h3>
+          <p>大きめのマスで、ひらがな・漢字の書き取りに。低・中学年の練習に。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/n60b0633d5902" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/sansu-10x6.jpeg" loading="lazy" alt="さんすう 10×6マスノート"></div>
+        <div class="body">
+          <span class="tag">算数</span>
+          <h3>さんすう 10×6マスノート</h3>
+          <p>筆算・図・表にちょうどいい升目。ゆったり書けるマス目のノート。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/nc7f75fb7df47" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/sansu-12x7.jpeg" loading="lazy" alt="さんすう 12×7マスノート"></div>
+        <div class="body">
+          <span class="tag">算数</span>
+          <h3>さんすう 12×7マスノート</h3>
+          <p>計算量が増える学年に。升目が多めで、一枚にたっぷり書けます。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/n8a723107846a" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/sansu-10x14.jpeg" loading="lazy" alt="低学年向け 算数10×14マスノート"></div>
+        <div class="body">
+          <span class="tag">低学年・算数</span>
+          <h3>さんすう 10×14マスノート</h3>
+          <p>数字を大きく書きたい低学年に。マスがはっきりして書きやすい形。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/nf6aafc39195f" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/sakubun.jpeg" loading="lazy" alt="低学年 作文ノート"></div>
+        <div class="body">
+          <span class="tag">低学年・国語</span>
+          <h3>低学年 作文ノート</h3>
+          <p>はじめての作文に。マス目つきで、文の書き方が自然に身につきます。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+      <a class="card" href="https://note.com/tozaki_edu/n/n8d7c8e611914" target="_blank" rel="noopener">
+        <div class="thumb"><img src="img/kanji.jpeg" loading="lazy" alt="漢字・熟語 学習プリント"></div>
+        <div class="body">
+          <span class="tag">国語</span>
+          <h3>漢字・熟語 学習プリント</h3>
+          <p>漢字と熟語をまとめて練習できるプリント。すきま時間の一枚に。</p>
+          <span class="go">note で開く ↗</span>
+        </div>
+      </a>
+
+    </div>
+
+    <div class="allbox">
+      <div>
+        <div class="at">まとめて見たいときは</div>
+        <div class="ad">note のマガジンに、ノート系のプリントをまとめています。</div>
+      </div>
+      <a class="allcta" href="https://note.com/tozaki_edu/m/m4d4dc399b274" target="_blank" rel="noopener">note のマガジンを開く ↗</a>
+    </div>
+
+    <p class="note">配布ファイルは note の各記事内にあります。サムネイル画像は制作当時のもので、旧屋号「神教材製作所」の表記が残っているものがあります（現在のブランド名は School Stock です）。</p>
+  </section>
+
+  <!-- 著者 -->
+  <div class="author">
+    <div>
+      <div class="al">AUTHOR</div>
+      <div class="an">外﨑顯博<small>とざき あきひろ</small></div>
+      <div class="ap">福岡県飯塚市 公立小学校教員（<b>ICT教育担当・研究主任</b>）／<b>GEG Chikuho</b> 共同リーダー<br><b>School Stock</b> ──「先生向けの、現場で使える教材・便利ツールの共有」</div>
+    </div>
+  </div>
+
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。<br>
+    <a href="../../">棚トップ</a>　/　<a href="../pdf-toolbox/">先生のPDF道具箱</a>　/　<a href="../../prints/kokugo/">国語プリント</a>　/　<a href="../../sozai/">授業イラスト素材集</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    <div style="margin-top:16px">© School Stock</div>
+  </div>
+</footer>
+
+</body>
+</html>
