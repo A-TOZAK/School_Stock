@@ -7662,5 +7662,446 @@ const SOZAI = [
   "img": "img/tayori_ehomaki_makabe.jpg",
   "thumb": "img/tayori_ehomaki_makabe_thumb.jpg",
   "mono": "img/tayori_ehomaki_makabe_mono.jpg"
+ },
+ {
+  "id": "hoken_shisei_sumire",
+  "title": "よい姿勢（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "姿勢・体づくり",
+  "scenes": [
+   "保健だより",
+   "姿勢",
+   "体づくり",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "机でよい姿勢で座る子ども。",
+  "howto": "正しい姿勢・座り方のたよりに。背筋・足のうらの話題に。",
+  "tags": [
+   "姿勢",
+   "すがた",
+   "正しい姿勢",
+   "座り方",
+   "保健だより",
+   "養護教諭",
+   "生活習慣",
+   "水彩"
+  ],
+  "img": "img/hoken_shisei_sumire.jpg",
+  "thumb": "img/hoken_shisei_sumire_thumb.jpg",
+  "mono": "img/hoken_shisei_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_me_sumire",
+  "title": "目を休める（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "目の健康",
+  "scenes": [
+   "保健だより",
+   "目の健康",
+   "視力",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "窓の外を見て目を休める子ども。",
+  "howto": "目の健康・視力のたよりに。ゲームや読書のあとに遠くを見る話題に。",
+  "tags": [
+   "目",
+   "視力",
+   "目の健康",
+   "目を休める",
+   "保健だより",
+   "養護教諭",
+   "水彩"
+  ],
+  "img": "img/hoken_me_sumire.jpg",
+  "thumb": "img/hoken_me_sumire_thumb.jpg",
+  "mono": "img/hoken_me_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_seki_sumire",
+  "title": "せきエチケット（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "咳エチケット・感染症予防",
+  "scenes": [
+   "保健だより",
+   "感染症予防",
+   "咳エチケット",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "ハンカチで口をおさえてせきをする子ども。",
+  "howto": "咳エチケット・感染症予防のたよりに。ハンカチやマスクの話題に。",
+  "tags": [
+   "咳エチケット",
+   "せき",
+   "ハンカチ",
+   "感染症予防",
+   "保健だより",
+   "養護教諭",
+   "水彩"
+  ],
+  "img": "img/hoken_seki_sumire.jpg",
+  "thumb": "img/hoken_seki_sumire_thumb.jpg",
+  "mono": "img/hoken_seki_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_hokenshitsu_sumire",
+  "title": "保健室で休む（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "保健室・休養",
+  "scenes": [
+   "保健だより",
+   "保健室",
+   "休養",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "保健室のベッドで休む子ども。",
+  "howto": "保健室の使い方・体調が悪いときの話題に。休養のたよりに。",
+  "tags": [
+   "保健室",
+   "休む",
+   "休養",
+   "ベッド",
+   "養護教諭",
+   "保健だより",
+   "水彩"
+  ],
+  "img": "img/hoken_hokenshitsu_sumire.jpg",
+  "thumb": "img/hoken_hokenshitsu_sumire_thumb.jpg",
+  "mono": "img/hoken_hokenshitsu_sumire_mono.jpg"
+ },
+ {
+  "id": "kyushoku_yokukamu_sumire",
+  "title": "よくかんで食べる（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "給食・よく噛む",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "よく噛む",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "お茶碗を持ってよくかんで食べる子ども。",
+  "howto": "よくかんで食べる大切さのたよりに。かむ回数・だ液の話題に。",
+  "tags": [
+   "よく噛む",
+   "かむ",
+   "咀嚼",
+   "給食",
+   "食育",
+   "給食だより",
+   "栄養教諭",
+   "水彩"
+  ],
+  "img": "img/kyushoku_yokukamu_sumire.jpg",
+  "thumb": "img/kyushoku_yokukamu_sumire_thumb.jpg",
+  "mono": "img/kyushoku_yokukamu_sumire_mono.jpg"
+ },
+ {
+  "id": "kyushoku_asagohan_sumire",
+  "title": "朝ごはん（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・朝ごはん",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "朝ごはん",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "朝ごはんを食べる子ども（ごはん・みそ汁・焼き魚）。",
+  "howto": "朝ごはんの大切さ・早ね早おき朝ごはんのたよりに。",
+  "tags": [
+   "朝ごはん",
+   "朝食",
+   "朝ごはんを食べよう",
+   "食育",
+   "給食だより",
+   "栄養教諭",
+   "生活習慣",
+   "水彩"
+  ],
+  "img": "img/kyushoku_asagohan_sumire.jpg",
+  "thumb": "img/kyushoku_asagohan_sumire_thumb.jpg",
+  "mono": "img/kyushoku_asagohan_sumire_mono.jpg"
+ },
+ {
+  "id": "shokuiku_sanshoku_aka_riko",
+  "title": "三色食品群・赤（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・三色食品群",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "三色食品群",
+   "栄養指導"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "体をつくる赤の食品（魚・肉・卵・豆腐・牛乳・大豆）。",
+  "howto": "三色食品群の指導・給食だよりに。赤＝体をつくる（たんぱく質）の話題に。",
+  "tags": [
+   "三色食品群",
+   "赤",
+   "体をつくる",
+   "たんぱく質",
+   "魚",
+   "肉",
+   "卵",
+   "牛乳",
+   "大豆",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_sanshoku_aka_riko.jpg",
+  "thumb": "img/shokuiku_sanshoku_aka_riko_thumb.jpg",
+  "mono": "img/shokuiku_sanshoku_aka_riko_mono.jpg"
+ },
+ {
+  "id": "shokuiku_sanshoku_ki_riko",
+  "title": "三色食品群・黄（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・三色食品群",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "三色食品群",
+   "栄養指導"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "エネルギーになる黄の食品（ごはん・パン・めん・いも・バター）。",
+  "howto": "黄＝エネルギーになる（炭水化物・脂質）の指導に。",
+  "tags": [
+   "三色食品群",
+   "黄",
+   "エネルギー",
+   "炭水化物",
+   "ごはん",
+   "パン",
+   "いも",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_sanshoku_ki_riko.jpg",
+  "thumb": "img/shokuiku_sanshoku_ki_riko_thumb.jpg",
+  "mono": "img/shokuiku_sanshoku_ki_riko_mono.jpg"
+ },
+ {
+  "id": "shokuiku_sanshoku_midori_riko",
+  "title": "三色食品群・緑（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・三色食品群",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "三色食品群",
+   "栄養指導"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "体の調子を整える緑の食品（野菜・果物・きのこ）。",
+  "howto": "緑＝体の調子を整える（ビタミン・ミネラル）の指導に。",
+  "tags": [
+   "三色食品群",
+   "緑",
+   "体の調子を整える",
+   "ビタミン",
+   "野菜",
+   "果物",
+   "きのこ",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_sanshoku_midori_riko.jpg",
+  "thumb": "img/shokuiku_sanshoku_midori_riko_thumb.jpg",
+  "mono": "img/shokuiku_sanshoku_midori_riko_mono.jpg"
+ },
+ {
+  "id": "shokuiku_yasai_riko",
+  "title": "やさいいろいろ（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・野菜",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "野菜",
+   "好き嫌い"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "いろいろな野菜（にんじん・トマト・きゅうり・はくさい・たまねぎ・かぼちゃ・ブロッコリー）。",
+  "howto": "野菜を食べよう・好き嫌いの指導に。旬の野菜の話題に。",
+  "tags": [
+   "野菜",
+   "やさい",
+   "好き嫌い",
+   "にんじん",
+   "トマト",
+   "ブロッコリー",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_yasai_riko.jpg",
+  "thumb": "img/shokuiku_yasai_riko_thumb.jpg",
+  "mono": "img/shokuiku_yasai_riko_mono.jpg"
+ },
+ {
+  "id": "shokuiku_kudamono_riko",
+  "title": "くだものいろいろ（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・果物",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "果物",
+   "おやつ"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "いろいろな果物（りんご・バナナ・みかん・いちご・ぶどう・メロン）。",
+  "howto": "果物・食育のたよりに。旬の果物やビタミンの話題に。",
+  "tags": [
+   "果物",
+   "くだもの",
+   "りんご",
+   "バナナ",
+   "みかん",
+   "いちご",
+   "ぶどう",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_kudamono_riko.jpg",
+  "thumb": "img/shokuiku_kudamono_riko_thumb.jpg",
+  "mono": "img/shokuiku_kudamono_riko_mono.jpg"
+ },
+ {
+  "id": "shokuiku_balance_riko",
+  "title": "バランスのよい食事（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "食育・栄養バランス",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "栄養バランス",
+   "主食主菜副菜"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "主食・主菜・副菜のそろったバランスのよい一食（ごはん・焼き魚・煮物・みそ汁・牛乳）。",
+  "howto": "栄養バランス・主食主菜副菜のそろえ方の指導に。給食だよりに。",
+  "tags": [
+   "バランス",
+   "栄養バランス",
+   "主食",
+   "主菜",
+   "副菜",
+   "献立",
+   "食育",
+   "給食だより",
+   "栄養教諭"
+  ],
+  "img": "img/shokuiku_balance_riko.jpg",
+  "thumb": "img/shokuiku_balance_riko_thumb.jpg",
+  "mono": "img/shokuiku_balance_riko_mono.jpg"
  }
 ];
