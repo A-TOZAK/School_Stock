@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作例② 図工「はこでつくったよ」ちょっとお願い（題材ごと）</title>
+<style>
+  @page { size: A4 portrait; margin: 16mm; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; color:#1a1a1a; background:#e9e9e6; line-height:1.8; -webkit-font-smoothing:antialiased; }
+  .sheet { width:210mm; min-height:297mm; margin:18px auto; background:#fff; padding:16mm; box-shadow:0 2px 14px rgba(0,0,0,.16); }
+  .demo-tag { position:fixed; top:10px; left:10px; background:#c2571a; color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:3px; z-index:5; }
+  /* 「A4の半分くらい」の小さめカードを上に置く */
+  .card { border:2px solid #2b5fd9; border-radius:12px; padding:22px 26px; max-width:150mm; margin:0 auto; }
+  .top { display:flex; justify-content:space-between; font-size:12.5px; color:#555; margin-bottom:14px; }
+  .top .ph { color:#b8632a; font-weight:700; }
+  .mark { display:inline-block; font-size:12.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:#2b5fd9; padding:3px 13px; border-radius:20px; }
+  h1 { font-size:22px; font-weight:800; margin:12px 0 12px; }
+  .body { font-size:15px; margin-bottom:16px; }
+  .body b { color:#c2571a; }
+  .items { display:flex; flex-direction:column; gap:10px; margin:0 0 16px; }
+  .item { display:flex; align-items:center; gap:13px; background:#f6f8fd; border:1px solid #dde5f4; border-radius:10px; padding:10px 14px; }
+  .item svg { flex:0 0 auto; width:38px; height:38px; }
+  .item .nm { font-size:15px; font-weight:800; }
+  .item .nm small { display:block; font-size:12px; font-weight:400; color:#7a7a70; }
+  .when { font-size:13.5px; background:#fff7ee; border-radius:8px; padding:11px 15px; margin-bottom:14px; }
+  .when b { color:#c2571a; }
+  .close { font-size:15px; font-weight:800; text-align:center; color:#2b5fd9; }
+  .note-line { font-size:12px; color:#888; text-align:center; margin-top:8px; }
+  .foot { max-width:150mm; margin:16px auto 0; text-align:right; font-size:11px; color:#aaa; }
+  @media print { body{ background:#fff; } .sheet{ box-shadow:none; margin:0; width:auto; min-height:auto; padding:0; } .demo-tag{ display:none; } }
+</style>
+</head>
+<body>
+<div class="demo-tag">作例（見本）</div>
+<div class="sheet">
+
+  <div class="card">
+    <div class="top">
+      <div><span class="mark">図工の おしらせ</span></div>
+      <div><span class="ph">［　年　組］</span>　<span class="ph">［　月　日］</span></div>
+    </div>
+
+    <h1>図工「はこでつくったよ」ちょっとお願い</h1>
+
+    <p class="body">今度、空き箱を組み合わせて、生きものや乗り物をつくる学習をします。もしご家庭に、下のようなものがあれば、<b>よかったら持たせてください。</b>無くても大丈夫です。学校でも用意します。</p>
+
+    <div class="items">
+      <div class="item">
+        <svg viewBox="0 0 48 48"><path d="M9 19h30v18a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2z" fill="#f0d8b6" stroke="#b9895a" stroke-width="2"/><path d="M7 12h34l-2 7H9z" fill="#e6c79a" stroke="#b9895a" stroke-width="2"/><path d="M24 12v27" stroke="#b9895a" stroke-width="1.6"/></svg>
+        <span class="nm">空き箱<small>大小いろいろ・2〜3こあると助かります</small></span>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><rect x="16" y="9" width="16" height="30" rx="3" fill="#eae2d4" stroke="#b9895a" stroke-width="2"/><rect x="16" y="9" width="16" height="7" rx="3" fill="#e05a4a"/><path d="M18 22h12M18 28h12" stroke="#c9b48f" stroke-width="1.6"/></svg>
+        <span class="nm">円柱のお菓子の容器<small>ポテトチップスの筒のようなもの（あれば）</small></span>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><path d="M14 16h20v22H14z" fill="#f4e2c4" stroke="#a9783f" stroke-width="2"/><path d="M19 16v-4h10v4" fill="none" stroke="#a9783f" stroke-width="2"/></svg>
+        <span class="nm">大きめの紙袋<small>あれば（作品を持ち帰るのにも使います）</small></span>
+      </div>
+    </div>
+
+    <div class="when">使うのは <b>［　月　　週ごろ］</b> です。それまでに、少しずつためておいていただけると助かります。</div>
+
+    <p class="close">できる範囲で、よかったらお願いします。</p>
+    <p class="note-line">はさみ・のりなどの道具は学校にあります。</p>
+  </div>
+
+  <p class="foot">＊これは School Stock の作例（見本）です。学年・日付は［　］のままにしています。</p>
+</div>
+</body>
+</html>

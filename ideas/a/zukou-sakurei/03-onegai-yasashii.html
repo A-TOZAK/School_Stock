@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作例③ ずこう「はこで つくったよ」ちょっと おねがい（やさしい版）</title>
+<style>
+  @page { size: A4 portrait; margin: 16mm; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; color:#222; background:#e9e9e6; line-height:1.9; -webkit-font-smoothing:antialiased; }
+  .sheet { width:210mm; min-height:297mm; margin:18px auto; background:#fff; padding:16mm; box-shadow:0 2px 14px rgba(0,0,0,.16); }
+  .demo-tag { position:fixed; top:10px; left:10px; background:#c2571a; color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:3px; z-index:5; }
+  ruby rt { font-size:9px; font-weight:600; color:#e0692a; }
+  .card { border:3px solid #f7a13d; border-radius:16px; padding:22px 26px; max-width:155mm; margin:0 auto; }
+  .top { display:flex; justify-content:space-between; font-size:12.5px; color:#666; margin-bottom:12px; }
+  .top .ph { color:#c2571a; font-weight:700; }
+  .mark { display:inline-block; background:#f7a13d; color:#fff; font-size:13px; font-weight:800; padding:4px 16px; border-radius:22px; }
+  h1 { font-size:24px; font-weight:800; margin:12px 0 14px; }
+  .body { font-size:16.5px; margin-bottom:16px; }
+  .body b { color:#e0692a; }
+  .items { display:flex; flex-direction:column; gap:11px; margin-bottom:16px; }
+  .item { display:flex; align-items:center; gap:14px; background:#fff6e9; border:2px solid #f6d3a0; border-radius:12px; padding:11px 16px; }
+  .item svg { flex:0 0 auto; width:42px; height:42px; }
+  .item .nm { font-size:17px; font-weight:800; }
+  .item .nm small { display:block; font-size:12.5px; font-weight:400; color:#8a7a5a; }
+  .when { font-size:15px; background:#fdeede; border-radius:10px; padding:12px 16px; margin-bottom:14px; }
+  .when b { color:#e0692a; }
+  .close { font-size:17px; font-weight:800; text-align:center; color:#e0692a; }
+  .note-line { font-size:13px; color:#999; text-align:center; margin-top:8px; }
+  .foot { max-width:155mm; margin:16px auto 0; text-align:right; font-size:11px; color:#bbb; }
+  @media print { body{ background:#fff; } .sheet{ box-shadow:none; margin:0; width:auto; min-height:auto; padding:0; } .demo-tag{ display:none; } }
+</style>
+</head>
+<body>
+<div class="demo-tag">作例（見本）</div>
+<div class="sheet">
+
+  <div class="card">
+    <div class="top">
+      <div><span class="mark">ずこうの おしらせ</span></div>
+      <div><span class="ph">［　ねん　くみ］</span>　<span class="ph">［　がつ　にち］</span></div>
+    </div>
+
+    <h1><ruby>図工<rt>ずこう</rt></ruby>「はこで つくったよ」ちょっと おねがい</h1>
+
+    <p class="body">こんど、あきばこを くみあわせて、いきものや のりものを つくります。おうちに あきばこが あったら、<b>よかったら もたせて ください。</b>なくても だいじょうぶ。がっこうにも あります。</p>
+
+    <div class="items">
+      <div class="item">
+        <svg viewBox="0 0 48 48"><path d="M9 19h30v18a2 2 0 0 1-2 2H11a2 2 0 0 1-2-2z" fill="#f0d8b6" stroke="#b9895a" stroke-width="2"/><path d="M7 12h34l-2 7H9z" fill="#e6c79a" stroke="#b9895a" stroke-width="2"/></svg>
+        <span class="nm">あきばこ<small>おおきいの・ちいさいの、いくつか</small></span>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><rect x="16" y="9" width="16" height="30" rx="3" fill="#eae2d4" stroke="#b9895a" stroke-width="2"/><rect x="16" y="9" width="16" height="7" rx="3" fill="#e05a4a"/></svg>
+        <span class="nm">つつの ようき<small>おかしの つつ（あれば）</small></span>
+      </div>
+      <div class="item">
+        <svg viewBox="0 0 48 48"><path d="M14 16h20v22H14z" fill="#f4e2c4" stroke="#a9783f" stroke-width="2"/><path d="M19 16v-4h10v4" fill="none" stroke="#a9783f" stroke-width="2"/></svg>
+        <span class="nm">おおきな かみぶくろ<small>あれば</small></span>
+      </div>
+    </div>
+
+    <div class="when"><b>［　がつ　　しゅうめ ごろ］</b>に つかいます。それまでに ためて おいて もらえると たすかります。</div>
+
+    <p class="close">できる ぶんだけ、よかったら おねがいします。</p>
+    <p class="note-line">はさみ・のりは、がっこうに あります。</p>
+  </div>
+
+  <p class="foot">＊これは School Stock の作例（見本）です。</p>
+</div>
+</body>
+</html>

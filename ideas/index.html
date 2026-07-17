@@ -184,14 +184,14 @@
     </div>
     <div class="meta">
       <span><b id="mcount">0</b>件のアイデア</span>
-      <span>Gemini ／ NotebookLM ／ Google Workspace ／ GAS ／ Web教材</span>
+      <span>Gemini ／ Gemini Notebook ／ Google Workspace ／ GAS ／ Web教材</span>
       <span>作：外﨑顯博 / 小学校</span>
     </div>
   </div>
 
   <div class="filter">
     <div class="frow">
-      <input id="q" class="search" type="search" placeholder="例: プロンプト、NotebookLM、Classroom、プリント">
+      <input id="q" class="search" type="search" placeholder="例: プロンプト、Gemini Notebook、Classroom、プリント">
       <select id="tool" class="sel" aria-label="ツールで絞り込み"><option value="all">すべてのツール</option></select>
     </div>
     <div class="frow" aria-label="村のエリアで探す">
@@ -255,9 +255,11 @@
 
 <script>
 const IDEAS = [
+  {t:'見通しをもって、ゲストティーチャーと出会う', v:'gemini', ar:'地域の方は、お仕事のなかでご厚意で協力してくださる。早めのお願いがいちばんの礼儀。去年の記録をGemini Notebookに読ませて今年お世話になりたい方を思い出し、失礼のない連絡の目安・管理職への相談メモ・感謝を軸にした依頼文を整えるプロンプト集。', pr:'毎年の方ほど「大丈夫だろう」と後回しにして、直前のお願いで相手に無理をさせてしまう。正式な依頼は担任ひとりでは進めにくく、管理職の力も要る。', fs:'去年の記録をGemini Notebookに読ませ、①で今年お世話になりたい方を思い出す。②で失礼のない連絡の目安、③で管理職への相談メモと感謝ベースの依頼文を作る。', to:'Gemini, Gemini Notebook', tg:'ゲストティーチャー, 外部講師, 総合的な学習, 地域連携, 見通し, 敬意, プロンプト集', url:'a/guest-teacher-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'図工の準備は「よかったら」でいい', v:'gemini', ar:'図工の年間計画を渡すと、家庭向けの「1年間の見通し」と「題材ごとの、よかったらお願い」をGemini Canvasが作る。集める材料だけ・ゆるいトーンにそろえたコピペ用プロンプト集。', pr:'図工で家庭にお願いするのは空き箱やペットボトルなど「ためておくもの」。急に「明日持ってきて」では家庭も困るし、義務のように頼むと続かない。', fs:'年度はじめは①、その都度は②のプロンプトをコピーし、[　]を自分の学年・題材に変えてGeminiのCanvasに貼る。', to:'Gemini, Canvas, Googleサイト', tg:'図工, プロンプト集, Gemini, 年間の見通し, 保護者おたより, ゆるいお願い', url:'a/zukou-junbi-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'Workspace Studioの「フロー」で校務のくり返しを自動化', v:'workspace', ar:'やりたいことを日本語で書くと、Geminiが「きっかけ→手順」の自動化を組み立ててくれるWorkspace Studioのフロー。メール受信やスケジュールをきっかけに、Chat通知・ドキュメント作成・フォーム回答の整理などをコードなしで自動化できる。', pr:'毎週おなじ連絡・おなじ集計・おなじ準備を手作業でくり返している。GASまでは手が出ないが、自動化はしたい。', fs:'studio.workspace.google.com を開き、「いつ・何を」を日本語で書いて作成、手順を確認しテスト実行してからオンにする。', to:'Google Workspace Studio, Gemini, Google Chat, Google Docs, Google Forms', tg:'校務改善, 自動化, Gemini, Workspace, ノーコード', url:'a/workspace-studio-flow.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、NotebookLM、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやNotebookLMに貼って試す。', to:'Gemini, NotebookLM, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, NotebookLM, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/NotebookLM用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, NotebookLM, GitHub Pages', tg:'社会科, プロンプト集, Gemini, NotebookLM, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、Gemini Notebook、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやGemini Notebookに貼って試す。', to:'Gemini, Gemini Notebook, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, Gemini Notebook, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/Gemini Notebook用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, Gemini Notebook, GitHub Pages', tg:'社会科, プロンプト集, Gemini, Gemini Notebook, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物名を入力すると各プロンプトに反映され、選ぶ・調べる・確かめる・構成する・推敲するをGeminiとの対話で支える1ページサイト。', pr:'子どもが生き物を選び、調べ、構成し、リーフレットにまとめるまでを一人で進めるのは難しい。', fs:'生き物名を入力し、学習段階に合うプロンプトをコピーしてGeminiに貼り付ける。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'a/ikimono-zukan.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'小学校の学びが変わるICTと生成AIの活用 研修資料', ar:'G-Appsコミュニティで共有した研修資料、ふきだしくん共有プロンプト、AI検索おたすけ集などを含む実践共有。', pr:'生成AIやICTの話が便利ツール紹介で終わると、発達段階や授業づくりにどう落とすかが見えにくい。', fs:'共有資料を見て、校内で配れる紙資料やプロンプト例を1つ選び、自校の先生向けに紹介する。', to:'Gemini, Google Slides, Google Docs, Claude Code', tg:'生成AI, ICT研修, 小学校, Gemini, G-Apps', url:'a/kenshu-ict-ai.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'Classroom一括削除・一括作成GAS', ar:'アクティブなコース一覧、不要コースの一括削除、クラスルーム一括作成、共有ドライブから教師メール取得、一括招待までを支えるGAS。', pr:'年度末・新年度にGoogle Classroomを1つずつ削除・作成・招待する作業が情報担当に集中する。', fs:'手順を見ながら、まず現在のClassroom一覧を取得するところだけ試し、削除や招待は管理者と確認してから進める。', to:'GAS, Google Classroom, Google Sheets, Google Drive', tg:'Classroom, GAS, 情報担当, 年度末, 校務改善', url:'a/classroom-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
@@ -270,7 +272,7 @@ const IDEAS = [
   {t:'あたまおしりことばゲーム', ar:'日本語かなを使った、あたまとおしりの文字から言葉を考えるゲーム。', pr:'語彙やかなへの関心を、短時間で楽しく扱える活動がほしい。', fs:'朝の活動や授業の導入で1回だけ開き、ルールを説明して全員で言葉を出してみる。', to:'GitHub Pages, JavaScript', tg:'国語, 語彙, ゲーム, かな, 学級活動', url:'a/atama-oshiri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'授業で使えるゲーム集', ar:'授業で使えるゲームを作成・シェアするためのリポジトリ。', pr:'授業で使える小さなゲーム教材が、単発で散らばると再利用しにくい。', fs:'リポジトリから授業に合いそうなゲームを1つ選び、短時間の活動として試す。', to:'GitHub Pages, JavaScript', tg:'授業ゲーム, 教材共有, 神教材製作所', url:'a/games.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'国語プリントギャラリー', ar:'国語系プリントをギャラリーとして整理するためのWeb教材リポジトリ。', pr:'国語のプリントや作文支援教材を、必要な時にすぐ見つけて印刷できる形にしたい。', fs:'単元や力をつけたい領域に合うプリントを1つ探し、授業か宿題で使う。', to:'GitHub Pages, JavaScript', tg:'国語, プリント, 作文, 神教材製作所', url:'a/kokugo-gallery.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'NotebookLMで校内研修の問いを作る', ar:'研修資料とアンケート結果をNotebookLMに入れて、対話用の問いを生成する流れ。', pr:'研修資料はあるが、先生たちが自分事として話せる問いを作るのが難しい。', fs:'研修で使う資料を3つNotebookLMに入れて「先生たちが自分事として話せる問いを10個出して」と聞く。', to:'NotebookLM, Google Docs', tg:'校内研修, NotebookLM, 問いづくり', url:'a/notebooklm-kenshu-toi.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Gemini Notebookで校内研修の問いを作る', ar:'研修資料とアンケート結果をGemini Notebookに入れて、対話用の問いを生成する流れ。', pr:'研修資料はあるが、先生たちが自分事として話せる問いを作るのが難しい。', fs:'研修で使う資料を3つGemini Notebookに入れて「先生たちが自分事として話せる問いを10個出して」と聞く。', to:'Gemini Notebook, Google Docs', tg:'校内研修, Gemini Notebook, 問いづくり', url:'a/notebooklm-kenshu-toi.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
   {t:'FormsとSheetsで振り返りを見える化する', ar:'Googleフォームで振り返りを集め、スプレッドシートで分類して見える化する。', pr:'子どもの振り返りを毎回読むのに時間がかかり、次の授業に生かしきれない。', fs:'フォームに「今日わかったこと」「まだわからないこと」を入れ、Geminiに分類の観点を考えてもらう。', to:'Google Forms, Google Sheets, Gemini', tg:'振り返り, 形成的評価, 校務改善', url:'a/forms-furikaeri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'}
 ];
 
@@ -300,7 +302,7 @@ function coverSvg(v){
 function classify(it){
   const s = [it.t, it.to, it.tg].join(' ');
   if (/プロンプト|Gemini|Claude|ChatGPT|生成AI/.test(s)) return 'gemini';
-  if (/NotebookLM|資料読解|問い/.test(s)) return 'notebook';
+  if (/Gemini Notebook|資料読解|問い/.test(s)) return 'notebook';
   if (/GAS|Google Forms|Google Sheets|Google Slides|Google Classroom|Classroom|校務|研修/.test(s)) return 'workspace';
   if (/プリント|教材|ゲーム|ノート|副読本|神教材|国語|算数|社会科/.test(s)) return 'materials';
   return 'materials';

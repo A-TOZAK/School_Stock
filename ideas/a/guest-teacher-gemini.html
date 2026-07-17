@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>見通しをもって、ゲストティーチャーと出会う ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="ゲストティーチャーに来ていただくのは、お仕事のある地域の方が、子どものために時間をつくってくださること。早めのお願いは、いちばんの礼儀です。年度はじめに1年を見通して、どなたに・いつごろ・何をお願いするかを整え、管理職への相談まで下ごしらえする。Gemini・Gemini Notebookを、見通しと相談のために使うプロンプト集です。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:760px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.6vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 24px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:40px 0 14px; }
+  h3 { font-size:15px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.plain { list-style:none; margin:8px 0 16px; }
+  ul.plain li { position:relative; padding:2px 0 10px 20px; font-size:14.5px; color:#24272c; }
+  ul.plain li::before { content:""; position:absolute; left:2px; top:15px; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:2px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:1.9; }
+  .tip b { color:var(--accent); }
+  .hero { margin:24px 0 6px; }
+  .hero svg { width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  .hero figcaption { font-size:12.5px; color:var(--sub); margin-top:9px; line-height:1.8; }
+  .prompt { border:1px solid var(--ink); margin:16px 0 26px; background:#fff; }
+  .prompt-head { display:flex; justify-content:space-between; align-items:center; gap:12px; background:var(--wash); border-bottom:1px solid var(--ink); padding:10px 14px; }
+  .pnum { font-size:13.5px; font-weight:700; letter-spacing:0.01em; }
+  .pnum .eng { font-size:11px; font-weight:700; color:#fff; padding:2px 7px; margin-right:7px; border-radius:2px; }
+  .pnum .nb { background:#0e8a6d; }
+  .pnum .gm { background:#2b5fd9; }
+  .copy { font-family:inherit; font-size:12px; font-weight:700; color:#fff; background:var(--black); border:none; padding:7px 15px; cursor:pointer; white-space:nowrap; transition:background .15s; }
+  .copy:hover { background:var(--accent); }
+  .copy.done { background:var(--accent); }
+  .prompt pre { margin:0; padding:16px; font-family:"SFMono-Regular",Menlo,Consolas,"Hiragino Sans","Noto Sans JP",monospace; font-size:12.5px; line-height:1.9; white-space:pre-wrap; word-break:break-word; color:#1a1d21; }
+  .prompt .note { font-size:12px; color:var(--sub); padding:0 16px 14px; line-height:1.8; }
+  .samples { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:16px 0 6px; }
+  .scard { display:block; border:1px solid var(--ink); padding:14px 16px; background:#fff; color:var(--ink); transition:background .15s; }
+  .scard:hover { background:var(--wash); }
+  .scard .sn { display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); padding:2px 9px; margin-bottom:8px; }
+  .scard b { display:block; font-size:15px; margin-bottom:5px; }
+  .scard .sd { display:block; font-size:12.5px; color:var(--sub); line-height:1.7; margin-bottom:8px; }
+  .scard .sl { font-size:12.5px; font-weight:700; color:var(--accent); }
+  @media (max-width:520px){ .samples{ grid-template-columns:1fr; } .prompt pre { font-size:12px; } }
+  .src { font-size:12.5px; color:var(--sub); line-height:1.9; margin-top:6px; }
+  .src a { text-decoration:underline; text-underline-offset:2px; }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .back:hover { background:var(--wash); }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ ひらめき広場</div>
+
+  <span class="kicker">実践アイデア｜総合・地域学習 × Gemini</span>
+  <h1>見通しをもって、ゲストティーチャーと出会う</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 使うもの：Gemini（チャット＋Notebook）／ 費用：無料</p>
+
+  <p class="lead">ゲストティーチャーに来ていただく。それは、お仕事や暮らしのある地域の方が、子どもたちのために時間をつくってくださる、ということです。だから、お願いは早いほどいい。同じ「秋にお願いします」でも、9月に伝えるのと、春に伝えるのとでは、受け取る側の余裕がまるでちがいます。</p>
+
+  <p>早めにお願いすることは、いちばんの礼儀だと思っています。年度のはじめに1年を見通して、どなたに・いつごろ・何をお願いしたいかを整える。担任ひとりで抱えず、必要なら管理職にも早めに相談しておく。その下ごしらえを、Geminiに手伝ってもらいます。目的は、手配を効率よくすることではありません。<b>相手を大切にする一手間を、忙しさで飛ばさずにすむようにする</b>ためです。</p>
+
+  <figure class="hero">
+    <svg viewBox="0 0 760 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="去年の記録をGemini Notebookに読ませ、今年の見通し・連絡の目安・管理職への相談メモと依頼文・当日の準備を整えるしくみ図">
+      <rect x="0" y="0" width="760" height="250" fill="#ffffff"/>
+      <rect x="14" y="92" width="150" height="66" rx="4" fill="#f6f6f4" stroke="#15181c" stroke-width="1.5"/>
+      <text x="89" y="119" text-anchor="middle" font-family="Hiragino Sans, sans-serif" font-size="12.5" font-weight="700" fill="#15181c">去年の記録</text>
+      <text x="89" y="138" text-anchor="middle" font-family="Hiragino Sans, sans-serif" font-size="10" fill="#6b7077">年間計画・記録・依頼状</text>
+      <line x1="168" y1="125" x2="206" y2="125" stroke="#15181c" stroke-width="1.5"/><path d="M206 125 l-9 -5 v10 z" fill="#15181c"/>
+      <rect x="210" y="80" width="150" height="42" rx="4" fill="#0e8a6d"/>
+      <text x="285" y="106" text-anchor="middle" font-family="Hiragino Sans, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Gemini Notebook</text>
+      <rect x="210" y="128" width="150" height="42" rx="4" fill="#2b5fd9"/>
+      <text x="285" y="154" text-anchor="middle" font-family="Hiragino Sans, sans-serif" font-size="13" font-weight="700" fill="#ffffff">Gemini</text>
+      <line x1="364" y1="125" x2="402" y2="125" stroke="#15181c" stroke-width="1.5"/><path d="M402 125 l-9 -5 v10 z" fill="#15181c"/>
+      <g font-family="Hiragino Sans, sans-serif">
+        <rect x="408" y="26" width="338" height="44" rx="4" fill="#ffffff" stroke="#15181c" stroke-width="1.3"/>
+        <text x="424" y="45" font-size="12" font-weight="700" fill="#15181c">① 今年お世話になりたい方</text>
+        <text x="424" y="61" font-size="10" fill="#6b7077">去年の記録から、忘れずに</text>
+        <rect x="408" y="76" width="338" height="44" rx="4" fill="#ffffff" stroke="#15181c" stroke-width="1.3"/>
+        <text x="424" y="95" font-size="12" font-weight="700" fill="#15181c">② 失礼のない連絡の目安</text>
+        <text x="424" y="111" font-size="10" fill="#6b7077">相手に余裕をもって、逆算で</text>
+        <rect x="408" y="126" width="338" height="44" rx="4" fill="#ffffff" stroke="#15181c" stroke-width="1.3"/>
+        <text x="424" y="145" font-size="12" font-weight="700" fill="#15181c">③ 管理職への相談メモ＋依頼文</text>
+        <text x="424" y="161" font-size="10" fill="#6b7077">感謝を軸に。ひとりで抱えない</text>
+        <rect x="408" y="176" width="338" height="44" rx="4" fill="#ffffff" stroke="#15181c" stroke-width="1.3"/>
+        <text x="424" y="195" font-size="12" font-weight="700" fill="#15181c">④ 相手が気持ちよく話せる準備</text>
+        <text x="424" y="211" font-size="10" fill="#6b7077">相手の負担を減らす</text>
+      </g>
+    </svg>
+    <figcaption>去年の記録をGemini Notebookに読ませて「今年お世話になりたい方」を思い出し、Geminiで連絡の目安・相談メモ・依頼文を整える。効率のためではなく、ていねいに動くための下ごしらえです。</figcaption>
+  </figure>
+
+  <h2>なぜ、早めなのか</h2>
+  <p>外部への依頼は、授業の3〜6か月前が目安、とよく言われます。これは段取りの都合というより、<b>相手への礼儀</b>です。相手にも仕事があり、予定があります。直前のお願いは、相手に無理をさせ、断りにくくさせてしまいます。「来てもらえるのが当たり前」になっていないか。ときどき立ち止まりたいところです。</p>
+  <p>そして、地域の方への正式なお願いは、担任ひとりで完結しないことも多いものです。教頭先生や校長先生に動いてもらう。地域との関係を大切にしながら、学校として筋を通す。そういう場面があります。だからこそ、年度のはじめに「今年はこの方に、この時期に」を見通して、<b>早めに管理職と共有しておく</b>。それが、相手にも学校にも、ていねいなやり方だと思います。</p>
+
+  <h2>アイデアのしくみ</h2>
+  <p>使うのは、Gemini Notebook（旧NotebookLM）とGeminiです。目的は2つ。<b>見通しを持つこと</b>と、<b>相談やお願いのハードルを下げること</b>です。</p>
+  <ul class="plain">
+    <li><b>Gemini Notebook</b>：去年の年間指導計画や記録を読ませて、「去年、どなたに・いつごろ・何をお願いしたか」を思い出す。毎年来てくださる方ほど、"大丈夫だろう"と忘れては失礼です。</li>
+    <li><b>Gemini</b>：早めに動くための見通し（いつ声をかけると相手に余裕があるか）と、管理職への相談メモ・相手へのていねいな依頼文の下ごしらえ。</li>
+  </ul>
+  <div class="tip"><b>大事なのは：</b>Geminiで「効率よく手配する」ことではありません。相手を大切にする一手間（早めのお願い、ていねいな言葉、管理職への相談）を、忙しさで飛ばさずにすむようにするための道具です。感謝の言葉と、当日の関係づくりは、先生自身の仕事です。</div>
+
+  <h2>コピペするプロンプト</h2>
+  <p>①はGemini Notebook、②③④はGeminiのチャットで使います。[　] のところを、自分の学年や学習に書き換えてください。</p>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum"><span class="eng nb">Gemini Notebook</span>① 去年の記録から「今年お世話になりたい方」の見通し</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>あなたは、小学校の先生を手伝うアシスタントです。
+アップロードした去年の資料（総合・生活・社会などの年間指導計画、授業の記録、去年の依頼状やお礼状など）を読んで、今年、地域の方（ゲストティーチャー）にお世話になる授業の見通しを整えてください。
+
+■ わたしの状況
+・学年：[3年生]
+・今年も同じような学習を予定：[はい／わからない]
+
+■ 資料から拾ってほしいこと
+1. 去年、どの学習で・いつごろ・どなたに来ていただいたか（お名前が資料にあればそのまま、なければ「◯◯をしてくださった方」と役割で）。
+2. その方に、何を・どのくらいの時間お願いしたか。子どもがどんなことを受け取ったか。
+3. 今年、お世話になりたい方の一覧（学習・時期・お願いしたいこと・お声がけの目安の時期）を表で。
+
+■ 大事にしてほしいこと
+・相手は、お仕事のあるなかで、ご厚意で協力してくださる方です。敬意のある、ていねいな言葉で書く。
+・「活用する」「手配する」ではなく、「お世話になる」「来ていただく」という言葉で。
+・資料にないことは想像で埋めず、「資料からは不明」と書く。
+・個人の連絡先などのこまかい個人情報は出さない（お名前や役割まででよい）。
+・最後に「毎年来てくださっていて、忘れると失礼になりそうな方」がいれば、そっと教えてください。</pre>
+    <div class="note">去年の記録をアップしてから送ります。「毎年の、あの方」を思い出せるのがいちばんの値打ちです。</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum"><span class="eng gm">Gemini</span>② 相手に余裕をもってお願いするための「連絡の目安」</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>次の地域の方へのお願いについて、「いつ、お声がけするか」の目安を作ってください。相手に余裕をもってお返事いただけるよう、早めに動くための見通しです。
+
+■ 情報
+・授業でお世話になりたい時期（だいたいでよい）：[10月ごろ]
+・お願いしたい相手：[地域の〇〇さん など]
+・今日の日付：[　月　日]
+
+■ 作ってほしいもの
+・授業の時期から逆算して、「いつ・何をするか」の目安を表で。次を入れる：
+　最初のお声がけ（3〜6か月前・相手に余裕をもって）／ 管理職への相談・共有 ／ 日程と内容のご相談 ／ 正式な依頼（管理職の確認後）／ 事前の打ち合わせ ／ 前日のご連絡 ／ 当日 ／ お礼。
+・それぞれ「今日から見て、いつごろまでに」を目安で。
+・「相手のご都合が第一。こちらの候補日は幅をもって、断りやすいように伝える」と一言添える。
+
+学校名・相手のお名前は [　] のままにしてください。</pre>
+    <div class="note">「秋の授業は、春に動く」が目で見えます。年度はじめの学年会で共有する用にも。</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum"><span class="eng gm">Gemini</span>③ 管理職への相談メモ ＋ 相手へのていねいな依頼文</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>地域の方へのお願いを進めるための「① 管理職への相談メモ」と「② 相手へのていねいな依頼文」のたたき台を作ってください。
+
+■ 情報
+・学習と学年：[3年 総合／地域の仕事について]
+・お世話になりたい方：[地域の〇〇さん（去年もお世話になった）]
+・お願いしたいこと：[お仕事のお話と道具の実演を、子どもに]
+・時期の候補：[10月　　日ごろ]
+
+■ ① 管理職への相談メモ（教頭先生に早めに相談・共有するためのもの）
+・今年お世話になりたい方・時期・内容を、簡潔に。
+・確認・お願いしたいことを箇条書きで（正式な依頼文の要否／謝礼・交通費の手続き／地域との窓口はどなたか／保険 など）。
+・「担任だけで進めず、早めにご相談したい」という姿勢で。
+
+■ ② 相手へのていねいな依頼文（感謝を軸に）
+・去年のお礼から始める。今年もぜひ、というお願い。相手のご都合を最優先にする一文。
+・こちらの候補日は幅をもって示し、「ご無理のない範囲で」と添える。
+・謝礼・交通費は「学校の規定にそってご用意します」とだけ。金額は [　]。
+・最後は、先生ご自身の言葉で感謝を書き足せるよう、しめくくりは控えめにしておく。
+
+※この依頼文は下書きです。送る前に管理職の確認を通し、感謝の言葉はご自分の言葉で仕上げてください。</pre>
+    <div class="note">③がこの記事の中心です。「ひとりで抱えず、管理職に相談する」「感謝は自分の言葉で」を、そのまま形にしています。</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum"><span class="eng gm">Gemini</span>④ 相手が気持ちよく話せるための準備リスト</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>ゲストティーチャーの授業について、「相手が気持ちよく話せて、子どもにもよく伝わる」ための事前準備リストを作ってください。学校の都合を守るためではなく、来てくださる方の負担を減らすためのものです。
+
+・チェックボックス（□）つきで、「何を・いつまでに」の形に。
+・項目の例：ねらいと内容を一緒に確認する（相手に丸投げしない）／時間の目安を一緒に決める（話しやすいように）／持ち物・機材はできるだけ学校で用意する／駐車場・受付・控室の案内／謝礼・交通費の手続き／当日の連絡先／子どもへの事前指導（あいさつ・聞く姿勢）／お礼の準備。
+・最後に「打ち合わせの内容は簡単にメモを残し、当日と食い違わないようにする」の一行を入れる。
+・A4たて1枚・印刷して使える、1つで完結したHTMLにする。</pre>
+    <div class="note">「当日を乗り切る」ためではなく、来てくださる方に気持ちよく過ごしてもらうための1枚です。</div>
+  </div>
+
+  <h2>実際の作例（このプロンプトで作れるもの）</h2>
+  <p>③のプロンプトで作れる「管理職への相談メモ＋相手への依頼文」の見本です。学校名・お名前・金額は空欄のまま、感謝を軸にした文面にしています。</p>
+  <div class="samples">
+    <a class="scard" href="guest-teacher-sakurei/irai-set.html" target="_blank" rel="noopener">
+      <span class="sn">作例</span>
+      <b>管理職への相談メモ＋依頼文</b>
+      <span class="sd">プロンプト③の出力例。教頭先生に早めに相談するメモと、去年のお礼から始めるていねいな依頼文。</span>
+      <span class="sl">見本を開く ↗</span>
+    </a>
+  </div>
+
+  <h2>まず試すなら（3ステップ）</h2>
+  <ol class="steps">
+    <li>去年の年間指導計画・記録を、Gemini Notebook（旧NotebookLM）にアップロードする（校内アカウントで）。</li>
+    <li>①で「今年お世話になりたい方」の見通しを出す。毎年の方を思い出したら、②で「失礼のない連絡の目安」を作る。</li>
+    <li>お世話になる方が見えたら、③で管理職への相談メモと依頼文、④で当日の準備を。正式な依頼は管理職の確認を通してから。</li>
+  </ol>
+  <div class="tip"><b>コツ：</b>年度はじめの、少し落ち着いた時間に、1年分を見通しておく。早めに動けること自体が、相手への礼儀になります。</div>
+
+  <h2>気をつけること</h2>
+  <ul class="plain">
+    <li><b>感謝と関係づくりは、先生の言葉で。</b>AIがやるのは段取りの下ごしらえまで。お礼は、自分の言葉で・自筆で伝えてください。ここは省かない、いちばん大事なところです。</li>
+    <li><b>ひとりで抱えない。</b>早めに管理職・地域連携担当と共有を。正式な依頼は、管理職の確認を通してから送ります。</li>
+    <li><b>相手のご都合が第一。</b>候補日は幅をもって、断りやすいように伝える。「来てもらって当たり前」にしない。</li>
+    <li><b>個人情報は校内で。</b>連絡先や過去のやりとりは外に出さない。Gemini Notebookは校内（自治体）のアカウントで使ってください。</li>
+    <li><b>最後は人が。</b>会って、声を聞いて、お礼を伝える。その時間が、来年もまたお願いできる関係をつくります。</li>
+  </ul>
+
+  <p class="src">参考：みんなの教育技術「ゲストティーチャーを活用するコツ」（<a href="https://kyoiku.sho.jp/270572/" target="_blank" rel="noopener">小学館 ↗</a>）／ PHP人材開発「外部研修講師への依頼の仕方と確認事項」（<a href="https://hrd.php.co.jp/hr-strategy/hrm/post-717.php" target="_blank" rel="noopener">依頼は3〜6か月前・事前打ち合わせ ↗</a>）／ 熊本県「外部講師依頼の基本的な流れ－学校－」（<a href="https://www.pref.kumamoto.jp/uploaded/attachment/117249.pdf" target="_blank" rel="noopener">PDF ↗</a>）</p>
+
+  <br><a class="back" href="../">← アイデア村で他のアイデアを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ 総合・地域学習 × Gemini
+  </div>
+</footer>
+
+<script>
+function copyPrompt(btn){
+  var pre = btn.closest('.prompt').querySelector('pre');
+  var text = pre.innerText;
+  var flash = function(){
+    if(btn.classList.contains('done')) return;
+    var old = btn.textContent;
+    btn.textContent = 'コピーしました ✓';
+    btn.classList.add('done');
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(flash, function(){ legacyCopy(text); flash(); });
+  } else { legacyCopy(text); flash(); }
+}
+function legacyCopy(text){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly','');
+  ta.style.position = 'absolute'; ta.style.left = '-9999px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+}
+</script>
+
+</body>
+</html>

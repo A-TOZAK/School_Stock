@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作例 管理職への相談メモ＋ゲストティーチャーへの依頼文</title>
+<style>
+  @page { size: A4 portrait; margin: 14mm 15mm; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; color:#1a1a1a; background:#e9e9e6; line-height:1.85; -webkit-font-smoothing:antialiased; }
+  .sheet { width:210mm; min-height:297mm; margin:18px auto; background:#fff; padding:14mm 15mm; box-shadow:0 2px 14px rgba(0,0,0,.16); }
+  .demo-tag { position:fixed; top:10px; left:10px; background:#c2571a; color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:3px; z-index:5; }
+  .label { display:inline-block; font-size:12px; font-weight:800; letter-spacing:.08em; color:#fff; background:#0e8a6d; padding:4px 14px; border-radius:2px; margin-bottom:12px; }
+  .label2 { background:#2b5fd9; }
+  .ph { color:#b8632a; font-weight:700; }
+  /* 相談メモ */
+  .memo { border:1px solid #cfe3db; border-radius:6px; overflow:hidden; margin-bottom:24px; }
+  .memo-h { background:#eef6f3; border-bottom:1px solid #cfe3db; padding:9px 15px; font-size:13px; }
+  .memo-b { padding:14px 17px; font-size:13.5px; }
+  .memo-b p { margin-bottom:9px; }
+  .memo-b ul { list-style:none; margin:4px 0 4px; }
+  .memo-b li { position:relative; padding:4px 0 4px 18px; font-size:13px; }
+  .memo-b li::before { content:"□"; position:absolute; left:0; top:4px; color:#0e8a6d; }
+  .memo-b .close { color:#0a6650; font-weight:700; }
+  /* 依頼文 */
+  .mail { border:1px solid #d0d5de; border-radius:6px; overflow:hidden; }
+  .mail-h { background:#f2f5fb; border-bottom:1px solid #d0d5de; padding:9px 15px; font-size:12.5px; }
+  .mail-b { padding:15px 17px; font-size:13.5px; line-height:1.95; }
+  .mail-b p { margin-bottom:10px; }
+  .selfnote { background:#fff7ee; border:1px dashed #e0b784; border-radius:6px; padding:10px 14px; font-size:12.5px; color:#7a5a38; margin-top:6px; }
+  .selfnote b { color:#c2571a; }
+  .foot { margin-top:14px; text-align:right; font-size:11px; color:#aaa; }
+  @media print { body{ background:#fff; } .sheet{ box-shadow:none; margin:0; width:auto; min-height:auto; padding:0; } .demo-tag{ display:none; } }
+</style>
+</head>
+<body>
+<div class="demo-tag">作例（見本）</div>
+<div class="sheet">
+
+  <span class="label">① 管理職への相談メモ</span>
+  <div class="memo">
+    <div class="memo-h"><b>教頭先生へ</b>　3年 総合「地域の仕事」でお世話になりたい方について（早めのご相談）</div>
+    <div class="memo-b">
+      <p>今年も3年生の総合で、地域の方にお話をお願いしたいと考えています。担任だけで進めず、早めにご相談させてください。</p>
+      <p><b>お世話になりたい方：</b><span class="ph">〇〇さん</span>（昨年度もお世話になりました）／<b>時期の候補：</b><span class="ph">10月ごろ</span>／<b>内容：</b>お仕事のお話と道具の実演</p>
+      <p><b>ご確認・ご相談したいこと：</b></p>
+      <ul>
+        <li>正式な依頼文は、学校名で出す形がよいでしょうか（下書きは用意しました）。</li>
+        <li>謝礼・交通費の手続きは、どの範囲で・どなたに確認すればよいでしょうか。</li>
+        <li>この地域の方への窓口は、どなたかいらっしゃいますか。</li>
+        <li>当日のボランティア保険など、必要な手続きはありますか。</li>
+      </ul>
+      <p class="close">早めにお声がけできると、相手にもご都合をつけていただきやすくなります。よろしくお願いします。</p>
+    </div>
+  </div>
+
+  <span class="label label2">② 相手へのていねいな依頼文（下書き）</span>
+  <div class="mail">
+    <div class="mail-h"><b>宛先：</b><span class="ph">〇〇 様</span>　　<b>件名：</b>【<span class="ph">〇〇小学校</span>】今年も、子どもたちにお力をお借りできませんか</div>
+    <div class="mail-b">
+      <p><span class="ph">〇〇</span>様　いつもお世話になっております。<span class="ph">〇〇</span>小学校で3年生を担任しております <span class="ph">［　　　　］</span> と申します。</p>
+      <p>昨年度は、お仕事のお話と道具の実演で、子どもたちに貴重な時間をいただき、本当にありがとうございました。<span class="ph">〇〇</span>さんのお話は、子どもたちの心にしっかり残っています。</p>
+      <p>今年度も同じ学習を予定しており、もしご都合がつくようでしたら、ぜひ今年も<span class="ph">〇〇</span>さんにお力をお借りできればと思っております。お仕事のあるなか恐れ入りますので、<b>ご無理のない範囲で</b>ご検討いただけますと幸いです。</p>
+      <p>・時期の候補：<span class="ph">10月　　日</span>／<span class="ph">10月　　日</span> など、幅をもってご相談させてください<br>
+      ・謝礼・交通費：学校の規定にそってご用意いたします（くわしくはあらためて）</p>
+      <p>まずはご都合だけでも、お聞かせいただけますでしょうか。どうぞよろしくお願いいたします。</p>
+    </div>
+  </div>
+  <div class="selfnote"><b>ここは自分の言葉で：</b>この依頼文は下書きです。送る前に管理職の確認を通し、<b>去年の感謝のひとことは、ご自分の言葉で書き足して</b>ください。お礼の気持ちは、AIに書かせるところではありません。</div>
+
+  <p class="foot">＊これは School Stock の作例（見本）です。学校名・お名前・日付・金額は［　］のままにしています。</p>
+</div>
+</body>
+</html>

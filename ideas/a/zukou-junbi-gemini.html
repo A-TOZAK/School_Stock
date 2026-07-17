@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>図工の準備は「よかったら」でいい ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="「あ、ペットボトル集めてなかった」。図工の準備物の言い忘れ、ありませんか。年度はじめに『1年間の見通し』を1枚、題材の前に『よかったら』のひとことを早めに。家庭にも自分にも無理をさせない、図工の準備のおたよりをGeminiで作るコピペ用プロンプト集です。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:760px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.6vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  .ill { margin:24px 0 6px; }
+  .ill img { width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:8px; background:#fbfbf9; }
+  .ill figcaption { font-size:12.5px; color:var(--sub); margin-top:9px; line-height:1.8; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:40px 0 14px; }
+  h3 { font-size:15px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.plain { list-style:none; margin:8px 0 16px; }
+  ul.plain li { position:relative; padding:2px 0 10px 20px; font-size:14.5px; color:#24272c; }
+  ul.plain li::before { content:""; position:absolute; left:2px; top:15px; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:2px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:1.9; }
+  .tip b { color:var(--accent); }
+  .prompt { border:1px solid var(--ink); margin:16px 0 26px; background:#fff; }
+  .prompt-head { display:flex; justify-content:space-between; align-items:center; gap:12px; background:var(--wash); border-bottom:1px solid var(--ink); padding:10px 14px; }
+  .pnum { font-size:13.5px; font-weight:700; letter-spacing:0.01em; }
+  .copy { font-family:inherit; font-size:12px; font-weight:700; color:#fff; background:var(--black); border:none; padding:7px 15px; cursor:pointer; white-space:nowrap; transition:background .15s; }
+  .copy:hover { background:var(--accent); }
+  .copy.done { background:var(--accent); }
+  .prompt pre { margin:0; padding:16px; font-family:"SFMono-Regular",Menlo,Consolas,"Hiragino Sans","Noto Sans JP",monospace; font-size:12.5px; line-height:1.9; white-space:pre-wrap; word-break:break-word; color:#1a1d21; }
+  .prompt .note { font-size:12px; color:var(--sub); padding:0 16px 14px; line-height:1.8; }
+  .adjust { border:1px solid var(--line); background:var(--wash); padding:6px 18px 14px; margin:16px 0 26px; }
+  .adjust li { font-size:13.5px; padding:8px 0 2px 20px; position:relative; list-style:none; line-height:1.7; }
+  .adjust li::before { content:"↳"; position:absolute; left:0; top:8px; color:var(--accent); font-weight:700; }
+  .samples { display:grid; grid-template-columns:repeat(2,1fr); gap:12px; margin:16px 0 6px; }
+  .scard { display:block; border:1px solid var(--ink); padding:14px 16px; background:#fff; color:var(--ink); transition:background .15s; }
+  .scard:hover { background:var(--wash); }
+  .scard .sn { display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--accent); padding:2px 9px; margin-bottom:8px; }
+  .scard b { display:block; font-size:15px; margin-bottom:5px; }
+  .scard .sd { display:block; font-size:12.5px; color:var(--sub); line-height:1.7; margin-bottom:8px; }
+  .scard .sl { font-size:12.5px; font-weight:700; color:var(--accent); }
+  @media (max-width:520px){ .samples{ grid-template-columns:1fr; } .prompt pre { font-size:12px; } }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .back:hover { background:var(--wash); }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ ひらめき広場</div>
+
+  <span class="kicker">実践アイデア｜図工 × Gemini</span>
+  <h1>図工の準備は「よかったら」でいい</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 使うもの：Gemini（Canvas）／ 費用：無料</p>
+
+  <p class="lead">「あ、明日ペットボトル使うんだった。集めて、って言ってなかった……」<br>図工の準備物で、こんな冷や汗をかいたこと、ありませんか。</p>
+
+  <p>気づいたら授業の前日。放課後にスーパーでこっそり2本買って、自分で飲んで空にする。あるいは急いで「明日持ってきて」と流して、持ってきたのは半分の子だけ。そんな経験が一度もない先生は、ここで閉じてもらって大丈夫です。ここから先は、「また準備物、言い忘れた」をなくしたい先生のための話です。</p>
+
+  <p>図工で家庭にお願いするものは、空き箱もペットボトルも牛乳パックも、意外と多い。しかも来週いきなりでは、家庭もそろえられません。やることは一つだけ。<b>年度はじめに「1年間の見通し」を1枚。あとは題材の前に、「よかったら」の一言を早めに。</b>家庭に無理をさせず、こっちも自腹でコンビニに走らずにすみます。その2枚を、Geminiが作ります。地味だけれど、これも立派な働き方改革だと思っています。</p>
+
+  <figure class="ill">
+    <img src="zukou-img/riko_zukou_01.png" alt="先生が図工の年間計画をもとに、Geminiで家庭向けのおたよりを作っているイラスト">
+    <figcaption>先生が図工の年間計画を渡すと、Geminiが家庭向けのおたよりに組み替えてくれます。挿絵はGeminiが描くSVGだけで、外から画像は持ってきません。</figcaption>
+  </figure>
+
+  <h2>こんな場面から</h2>
+  <p>年度が始まると、国語も算数も、行事も校務分掌も一気に来ます。図工の準備物は、どうしても後回し。「あとで言おう」と思っているうちに、授業の前日になっている。よくあることです。でも、空き箱やペットボトルは、家庭も急にはそろえられません。お願いするのは、はさみやのりのような道具ではなく（それは学校にあります）、家でためておける物ばかり。だからこそ、早めに・まとめて渡しておくのが効きます。</p>
+
+  <figure class="ill">
+    <img src="zukou-img/riko_zukou_02.png" alt="先生が題材ごとに、保護者へのおたよりを手書きしているイラスト">
+    <figcaption>思い出したときに、その都度、手で書く。だから抜けるし、家庭にも急な連絡になりがちです。</figcaption>
+  </figure>
+
+  <p>だから、早めに・ゆるく・まとめて伝えられると助かります。はさみやカッター、のりは学校にあります。お願いしたいのは、集めておいてもらえる材料だけ。それも「必ず」ではなく、できる範囲で、よかったら。こういうおたよりを、Geminiに手伝ってもらいます。</p>
+
+  <h2>アイデアのしくみ</h2>
+  <p>使うのはGeminiの「Canvas」です。図工の年間計画（月・題材・使う材料の一覧）を渡すと、家庭向けのおたよりに組み替えてくれます。作るのは2種類です。</p>
+  <ul class="plain">
+    <li><b>① 年間の見通し</b>（年度はじめに1枚）：この時期にこんな材料を使う、という一覧。「ためておいてもらえると助かるもの」を先に伝えるので、家庭は少しずつ集められます。</li>
+    <li><b>② 題材ごとのひとことお願い</b>（その都度）：「今度こんなことをします。よかったら◯◯を」。「無くても大丈夫」「学校でも用意します」も、いっしょに書いてくれます。</li>
+  </ul>
+  <div class="tip"><b>大事なのは：</b>トーンを「よかったら・できる範囲で」にそろえること。はさみなど学校にある道具は入れません。挿絵はGeminiが描くSVGだけなので、そのまま配れます。</div>
+
+  <h2>コピペするプロンプト</h2>
+  <p>Geminiを開いて、下のプロンプトをコピーして貼るだけです。[　] のところを、自分の学年や題材に書き換えてください。</p>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum">① 年間の見通しおたより（年度はじめに1枚）</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>あなたは、小学校で図画工作を教える先生を手伝うアシスタントです。
+図工の年間の予定をもとに、保護者向けの「1年間の準備の見通し」おたよりを作ってください。
+
+■ わたしが渡すもの（どちらかでよい）
+・図工の年間計画（月・題材・使う材料の一覧）を、そのまま貼りつけます。
+　[ここに貼る]
+・無ければ、箇条書きでもよい。例：10月「たいせつボックス」→ 空き箱・モール／2月「はこでつくったよ」→ 空き箱・段ボール
+
+■ 作ってほしいもの
+A4たて1枚。年度のはじめに配って、家庭が少しずつ材料をためておけるようにします。
+1. あいさつ：1年間でこんな材料を使うこと。すぐ用意できない物もあるので、早めにお知らせすること。
+2. 時期ごとの見通し：季節（4〜6月／7〜9月／10〜12月／1〜3月）ごとに「こんなことをします・こんな材料を使います」を、ざっくり表で。
+3. 「ためておいてもらえると助かるもの」の一覧を目立つように（空き箱・ペットボトル〈キャップつき〉・牛乳パック・紙コップ・トイレットペーパーの芯・段ボール・大きな紙袋・使わなくなった布 など）。きれいにして・つぶさずに、も一言。
+4. しめくくり：はさみ・のり・クレヨンなどの道具は学校にあること。あらためて買う物はないこと。
+
+■ ぜったいに守るトーン（大事）
+・「必ず」「絶対」を使わない。「よかったら」「できる範囲で」「無くても大丈夫」「学校でも用意します」で書く。
+・「持ってこられない時は相談してください」は入れない（家庭に気をつかわせない）。
+・はさみ・カッター・のりなど、学校にある道具は書かない。お願いするのは"集めておく材料"だけ。
+・提出欄・サイン欄はつけない（義務にしない）。
+・学校名・担任名・年度は [　] のままにする。
+
+■ 出力の形
+・そのまま印刷できる、1つで完結したHTML（A4たて・文字は大きめ）。
+・写真は使わない。飾りは簡単なSVGだけ自分で描く（外部の画像URLは使わない）。
+・「⌘/Ctrl＋P → PDFに保存」で崩れないCSSにする。</pre>
+    <div class="note">年間計画をそのまま貼れば、季節ごとにまとめてくれます。まずはこの1本から。</div>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum">② 題材ごとのひとことお願い（その都度・軽く）</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>次の図工の題材について、保護者向けの「ちょっとお願い」を1枚作ってください。
+年間の見通しを配ったあと、その都度、軽く渡すものです。
+
+■ 題材の情報
+・学年：[2年生]
+・題材名：[はこでつくったよ]
+・する時期：[2月ごろ]
+・使う"集めておく材料"：[空き箱・段ボール　※わかる範囲でよい]
+
+■ 作ってほしいもの
+・「今度こんなことをします」を1〜2文で。
+・「もしあれば、よかったら持たせてください」という材料を、SVGの小さな挿絵つきで。
+・「いつごろ使うか」と「それまでにためておいてもらえると助かる」を一言。
+・A4の半分くらいの小さめでよい。掲示にもGoogleサイトにも使える、1つで完結したHTML。
+
+■ ぜったいに守るトーン（①と同じ）
+・「よかったら」「できる範囲で」「無くても大丈夫」「学校でも用意します」で書く。
+・「相談してください」「必ず」は入れない。はさみなど学校の道具は書かない。提出欄はつけない。
+・学校名・担任名・日付は [　] のままにする。
+・写真は使わず、挿絵は簡単なSVGだけ自分で描く。</pre>
+    <div class="note">題材名と時期を変えるだけで、その回の分が作れます。Canvasの会話でそのまま直せます。</div>
+  </div>
+
+  <h3>③ 調整プロンプト（そのまま送って、細かく直す）</h3>
+  <p>できあがりを見ながら、直したいところだけを短く伝えます。Canvasが同じ画面を作り直してくれます。</p>
+  <ul class="adjust">
+    <li>全部の漢字にふりがなをつけて。</li>
+    <li>もっとやさしい、1年生にもわかる言葉に直して。</li>
+    <li>季節（春・夏など）の小さな飾りを、SVGで角に足して。</li>
+    <li>Googleサイトに貼れるように、スマホでも読める1枚のHTMLにして。</li>
+    <li>材料の挿絵（空き箱・ペットボトルなど）を大きくして。</li>
+    <li>色を使わず、白黒印刷でもはっきり見えるようにして。</li>
+  </ul>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum">④ 発展：活動カード（子ども向け・掲示用）</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>同じ題材で、教室に掲示する「図工の めあて と ながれ カード」を作ってください。
+
+・めあて（この時間でやること）を1文で。
+・作り方のながれを、3〜5ステップの絵（SVG）と短い言葉で。
+・かたづけと安全のやくそくを1〜2つ。
+・A4よこ1枚・1つで完結するHTML・写真は使わない。低学年ならふりがなを多めに。</pre>
+    <div class="note">これは子ども向け。保護者へのお願い（①②）とは別に、授業の掲示物として使えます。</div>
+  </div>
+
+  <h2>実際の作例（このプロンプトで作れるもの）</h2>
+  <p>上のプロンプトを実行すると、こんな物ができます。実物を見本として置いておきます。学校名・担任名・時期は空欄のまま、トーンは「よかったら・できる範囲で」にそろえています。</p>
+  <div class="samples">
+    <a class="scard" href="zukou-sakurei/01-nenkan-mitoshi.html" target="_blank" rel="noopener">
+      <span class="sn">作例①</span>
+      <b>年間の見通しおたより</b>
+      <span class="sd">プロンプト①の出力例。1年分の材料を季節ごとに。「ためておいてね」を年度はじめに1枚で。</span>
+      <span class="sl">見本を開く ↗</span>
+    </a>
+    <a class="scard" href="zukou-sakurei/02-onegai-print.html" target="_blank" rel="noopener">
+      <span class="sn">作例②</span>
+      <b>題材ごとのひとことお願い</b>
+      <span class="sd">プロンプト②の出力例。2年「はこでつくったよ」。挿絵つき・ゆるいお願い・提出欄なし。</span>
+      <span class="sl">見本を開く ↗</span>
+    </a>
+    <a class="scard" href="zukou-sakurei/03-onegai-yasashii.html" target="_blank" rel="noopener">
+      <span class="sn">作例③</span>
+      <b>低学年のやさしい版</b>
+      <span class="sd">プロンプト②＋③の出力例。全部ふりがな・やさしい言葉。低学年の学級で。</span>
+      <span class="sl">見本を開く ↗</span>
+    </a>
+    <a class="scard" href="zukou-sakurei/04-katsudo-card.html" target="_blank" rel="noopener">
+      <span class="sn">作例④</span>
+      <b>活動カード（掲示用）</b>
+      <span class="sd">プロンプト④の出力例。子ども向け。めあてと作り方のながれを、教室に掲示できるA4よこ1枚に。</span>
+      <span class="sl">見本を開く ↗</span>
+    </a>
+  </div>
+
+  <h2>まず試すなら（3ステップ）</h2>
+  <ol class="steps">
+    <li>Geminiを開いて、入力欄の「Canvas」をオンにする。</li>
+    <li>年度はじめなら①、その都度なら②のプロンプトをコピーして、[　] を自分の学年・題材に書き換えて貼る。</li>
+    <li>できたHTMLを、印刷（⌘/Ctrl＋P → PDFに保存）して配る。Googleサイトにも貼れます。</li>
+  </ol>
+  <div class="tip"><b>コツ：</b>まず年度はじめに①を1枚配っておくと、あとは②を軽く出すだけで回ります。うまくいかない言い回しは、③でそのまま直せます。</div>
+
+  <h2>気をつけること</h2>
+  <ul class="plain">
+    <li><b>お願いは「集めておく材料」だけ。</b>はさみ・のり・クレヨンなどの道具は学校にあります。あらためて買ってもらう物は書きません。</li>
+    <li><b>トーンは「よかったら・できる範囲で」。</b>「必ず」「相談してください」は入れないでください。家庭に気をつかわせると、かえって続きません。無い物は学校で用意します。</li>
+    <li><b>材料は自分で1回見直す。</b>AIは材料を多めに挙げがちです。自分の授業に照らして、いる物だけに絞ってください。</li>
+    <li><b>名前と時期は空けたまま配らない。</b>学校名・担任名・時期は [　] のまま。自分で書き込んでから配ってください。</li>
+    <li><b>挿絵はGeminiのSVGだけ。</b>教科書の絵やネットの画像は貼りません。自作なら、そのまま配れます。</li>
+  </ul>
+
+  <figure class="ill">
+    <img src="zukou-img/riko_zukou_03.png" alt="子どもが、家でためておいた空き箱やペットボトルを袋に入れて学校へ持っていくイラスト">
+    <figcaption>空き箱やペットボトルは、家で少しずつためておけば、図工の時間にちょうど間に合います。</figcaption>
+  </figure>
+
+  <br><a class="back" href="../">← アイデア村で他のアイデアを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ 図工 × Gemini
+  </div>
+</footer>
+
+<script>
+function copyPrompt(btn){
+  var pre = btn.closest('.prompt').querySelector('pre');
+  var text = pre.innerText;
+  var flash = function(){
+    if(btn.classList.contains('done')) return;
+    var old = btn.textContent;
+    btn.textContent = 'コピーしました ✓';
+    btn.classList.add('done');
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(flash, function(){ legacyCopy(text); flash(); });
+  } else { legacyCopy(text); flash(); }
+}
+function legacyCopy(text){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly','');
+  ta.style.position = 'absolute'; ta.style.left = '-9999px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+}
+</script>
+
+</body>
+</html>

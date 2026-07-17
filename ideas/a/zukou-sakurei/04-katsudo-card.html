@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>作例④ ずこう「たいせつボックス」めあてと ながれ カード（掲示用）</title>
+<style>
+  @page { size: A4 landscape; margin: 10mm; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP",sans-serif; color:#232323; background:#e9e9e6; -webkit-font-smoothing:antialiased; }
+  .card { width:297mm; min-height:210mm; margin:18px auto; background:#fff; padding:12mm 14mm; box-shadow:0 2px 14px rgba(0,0,0,.16); }
+  .demo-tag { position:fixed; top:10px; left:10px; background:#c2571a; color:#fff; font-size:11px; font-weight:700; padding:5px 12px; border-radius:3px; z-index:5; }
+  ruby rt { font-size:10px; font-weight:600; color:#e0692a; }
+  .head { display:flex; align-items:center; gap:16px; border-bottom:5px solid #f7a13d; padding-bottom:12px; margin-bottom:16px; }
+  .head .badge { background:#f7a13d; color:#fff; font-size:17px; font-weight:800; padding:8px 20px; border-radius:26px; white-space:nowrap; }
+  .head h1 { font-size:32px; font-weight:800; }
+  .meate { background:#fff6e9; border:3px solid #f6c986; border-radius:16px; padding:16px 22px; margin-bottom:20px; display:flex; align-items:center; gap:16px; }
+  .meate .lbl { flex:0 0 auto; background:#e0692a; color:#fff; font-size:18px; font-weight:800; padding:8px 16px; border-radius:12px; }
+  .meate p { font-size:24px; font-weight:800; line-height:1.5; }
+  .meate p b { color:#e0692a; }
+  h2 { font-size:20px; font-weight:800; margin:0 0 12px; display:flex; align-items:center; gap:8px; }
+  h2 .dot { width:16px; height:16px; background:#2b5fd9; border-radius:50%; }
+  .flow { display:grid; grid-template-columns:repeat(5,1fr); gap:10px; margin-bottom:20px; }
+  .step { border:2.5px solid #d7e0f0; border-radius:14px; padding:12px 8px; text-align:center; position:relative; background:#fafbff; }
+  .step .no { position:absolute; top:-14px; left:50%; transform:translateX(-50%); width:30px; height:30px; background:#2b5fd9; color:#fff; border-radius:50%; font-size:16px; font-weight:800; display:flex; align-items:center; justify-content:center; }
+  .step .pic { height:76px; display:flex; align-items:center; justify-content:center; margin:10px 0 6px; }
+  .step .pic svg { width:70px; height:70px; }
+  .step .tx { font-size:15px; font-weight:700; line-height:1.5; }
+  .arrow { display:flex; align-items:center; justify-content:center; }
+  .yakusoku { display:flex; gap:14px; }
+  .yakusoku .y { flex:1; display:flex; align-items:center; gap:12px; background:#fdeede; border:2px solid #f2ddc0; border-radius:14px; padding:12px 18px; font-size:17px; font-weight:700; }
+  .yakusoku .y svg { flex:0 0 auto; width:40px; height:40px; }
+  .foot { margin-top:14px; text-align:right; font-size:11px; color:#bbb; }
+  @media print { body{ background:#fff; } .card{ box-shadow:none; margin:0; width:auto; min-height:auto; padding:0; } .demo-tag{ display:none; } }
+</style>
+</head>
+<body>
+<div class="demo-tag">作例（見本）</div>
+<div class="card">
+
+  <div class="head">
+    <span class="badge">ずこう カード</span>
+    <h1><ruby>図工<rt>ずこう</rt></ruby>「たいせつボックス」</h1>
+  </div>
+
+  <div class="meate">
+    <span class="lbl">めあて</span>
+    <p>あきばこを つかって、<b>たからものを いれる はこ</b>を つくろう。</p>
+  </div>
+
+  <h2><span class="dot"></span>つくりかたの ながれ</h2>
+  <div class="flow">
+    <div class="step">
+      <div class="no">1</div>
+      <div class="pic"><svg viewBox="0 0 60 60"><path d="M10 24h40v24a2 2 0 0 1-2 2H12a2 2 0 0 1-2-2z" fill="#f0d8b6" stroke="#b9895a" stroke-width="2.4"/><path d="M8 14h44l-2 10H10z" fill="#e6c79a" stroke="#b9895a" stroke-width="2.4"/></svg></div>
+      <div class="tx">はこを えらぶ</div>
+    </div>
+    <div class="step">
+      <div class="no">2</div>
+      <div class="pic"><svg viewBox="0 0 60 60"><rect x="14" y="20" width="32" height="24" rx="2" fill="#eaf0fb" stroke="#4a78b8" stroke-width="2.4"/><circle cx="24" cy="26" r="4" fill="none" stroke="#4a78b8" stroke-width="2.2"/><path d="M22 26l1.5 1.5 3-3.5" stroke="#e0692a" stroke-width="2" fill="none" stroke-linecap="round"/><path d="M14 20l16 12 16-12" fill="none" stroke="#4a78b8" stroke-width="2.4"/></svg></div>
+      <div class="tx">かたちを よく みる</div>
+    </div>
+    <div class="step">
+      <div class="no">3</div>
+      <div class="pic"><svg viewBox="0 0 60 60"><path d="M30 14l4.5 9 10 1.5-7 7 1.7 10L30 47l-9.2 5 1.7-10-7-7 10-1.5z" fill="#ffe08a" stroke="#e0a92a" stroke-width="2.2" stroke-linejoin="round"/></svg></div>
+      <div class="tx">いれる ものを きめる</div>
+    </div>
+    <div class="step">
+      <div class="no">4</div>
+      <div class="pic"><svg viewBox="0 0 60 60"><path d="M8 38c10-5 34-5 44 0" fill="none" stroke="#e05aa0" stroke-width="3.5" stroke-linecap="round"/><path d="M16 28c9-4 19-4 28 0" fill="none" stroke="#5aa0e0" stroke-width="3.5" stroke-linecap="round"/><circle cx="30" cy="20" r="4" fill="#f7a13d"/></svg></div>
+      <div class="tx">かざりを つける</div>
+    </div>
+    <div class="step">
+      <div class="no">5</div>
+      <div class="pic"><svg viewBox="0 0 60 60"><path d="M12 24h36v20a2 2 0 0 1-2 2H14a2 2 0 0 1-2-2z" fill="#f0d8b6" stroke="#b9895a" stroke-width="2.4"/><path d="M20 24v-4a10 10 0 0 1 20 0v4" fill="none" stroke="#b9895a" stroke-width="2.4"/><path d="M26 34l3 3 6-6" stroke="#e0692a" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div class="tx">なまえを つけて できあがり</div>
+    </div>
+  </div>
+
+  <h2><span class="dot" style="background:#c2571a;"></span>やくそく</h2>
+  <div class="yakusoku">
+    <div class="y">
+      <svg viewBox="0 0 48 48"><circle cx="15" cy="16" r="5.5" fill="none" stroke="#c2571a" stroke-width="2.8"/><circle cx="15" cy="30" r="5.5" fill="none" stroke="#c2571a" stroke-width="2.8"/><path d="M19 19l19 11M19 27l19-11" stroke="#c2571a" stroke-width="2.8" stroke-linecap="round"/></svg>
+      はさみは <span style="color:#c2571a;">すわって</span>、まえを むいて つかう。
+    </div>
+    <div class="y">
+      <svg viewBox="0 0 48 48"><rect x="10" y="22" width="28" height="16" rx="2" fill="#fde9d0" stroke="#c2571a" stroke-width="2.6"/><path d="M14 22v-3a4 4 0 0 1 8 0v3M26 22v-3a4 4 0 0 1 8 0v3" fill="none" stroke="#c2571a" stroke-width="2.4"/></svg>
+      さいごまで <span style="color:#c2571a;">かたづけ</span>を する。
+    </div>
+  </div>
+
+  <p class="foot">＊これは School Stock の作例（見本）です。教室に掲示して使えます。</p>
+</div>
+</body>
+</html>

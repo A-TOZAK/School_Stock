@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 """
 実践アイデア村：詳細記事ジェネレータ
-- ideas/a/ に NotebookLM記事と同じ体裁の詳細ページを生成する。
+- ideas/a/ に Gemini Notebook記事と同じ体裁の詳細ページを生成する。
 - 手書き記事（notebooklm-kenshu-toi.html / forms-furikaeri.html / iizuka-fukudokuhon.html）は対象外（上書きしない）。
 - 使い方: python3 _build/build_ideas_articles.py
 """
@@ -83,19 +83,19 @@ ARTICLES = [
 
  dict(slug="prompt-library", v="gemini", kicker="実践アイデア｜プロンプト集",
   title="AIプロンプトライブラリ",
-  meta="使うもの：Gemini・NotebookLM・ChatGPT など ／ 費用：無料",
-  lead="Claude、Gemini、NotebookLM……使うAIが増えるほど、「あのとき使ったプロンプト、どこに書いたっけ」が起こります。よく使うプロンプトをWeb上の棚に並べて、ワンクリックでコピーできるようにしたのがこのライブラリです。",
+  meta="使うもの：Gemini・Gemini Notebook・ChatGPT など ／ 費用：無料",
+  lead="Claude、Gemini、Gemini Notebook……使うAIが増えるほど、「あのとき使ったプロンプト、どこに書いたっけ」が起こります。よく使うプロンプトをWeb上の棚に並べて、ワンクリックでコピーできるようにしたのがこのライブラリです。",
   can="AIツール別・業務カテゴリ別・校種と教科別にプロンプトを探して、コピーボタン1つで持ち帰れます。授業準備・教材作成・校務効率化・研修などのカテゴリに加え、小中高の授業向けの構造化プロンプトも収録しています。",
   when="授業準備や校務でAIを使いたいが、毎回ゼロから指示文を考えるのが面倒なとき。学年団や校内に「まずこれを貼ってみて」と紹介できる入口がほしいとき。",
   steps=["サイトを開き、校種・教科・AIツールで絞り込む",
-         "気になるプロンプトを1つコピーして、GeminiやNotebookLMに貼って試す",
+         "気になるプロンプトを1つコピーして、GeminiやGemini Notebookに貼って試す",
          "自分の学級に合わせて[プレースホルダ]部分を書きかえて使う"],
   tip="プロンプトは「役割・条件・出力形式」の構造で書かれています。うまく動かないときは条件を1つずつ足すより、まず出力形式（表で・箇条書きで・○字以内で）を指定し直すのが近道です。",
   url="https://a-tozak.github.io/ai-prompt-library/", urlLabel="ライブラリを開く"),
 
  dict(slug="kids-shakai-prompt", v="gemini", kicker="実践アイデア｜社会科×AI",
   title="子どものための社会科プロンプトライブラリ",
-  meta="対象：小4以上 ／ 使うもの：Gemini・NotebookLM",
+  meta="対象：小4以上 ／ 使うもの：Gemini・Gemini Notebook",
   lead="社会科でAIを使うと、子どもは「答え」だけをもらって終わりがちです。調べるヒントをもらう・考えをつくる・根拠を確かめる——学習の段階ごとに使えるプロンプトを、子ども向けに整えたライブラリです。",
   can="「調べるヒント」「考えづくり」「ブラッシュアップ」「まとめ」の場面別に、子どもがそのまま使えるプロンプトカードを選べます。子どもの入力に合わせて中身が変わる形式なので、単元を問わず使い回せます。",
   when="社会科の調べ学習でAIを使わせたいが、丸写しにならない使い方を示したいとき。資料の読み取りや根拠の確認を、AIとの対話で練習させたいとき。",
