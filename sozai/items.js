@@ -8843,5 +8843,375 @@ const SOZAI = [
   "img": "img/tayori_tsubame_makabe.jpg",
   "thumb": "img/tayori_tsubame_makabe_thumb.jpg",
   "mono": "img/tayori_tsubame_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_koinobori_sumire",
+  "title": "こいのぼり（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "矢車・吹き流し・三匹の鯉のこいのぼり。",
+  "howto": "端午の節句のこいのぼり。滝をのぼって竜になる鯉の話から、子どもの健やかな成長を願います。",
+  "tags": [
+   "こいのぼり",
+   "鯉のぼり",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "春",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_koinobori_sumire.jpg",
+  "thumb": "img/tayori_koinobori_sumire_thumb.jpg",
+  "mono": "img/tayori_koinobori_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_koinobori_makabe",
+  "title": "こいのぼり（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "矢車・吹き流し・三匹の鯉のこいのぼり。",
+  "howto": "端午の節句のこいのぼり。滝をのぼって竜になる鯉の話から、子どもの健やかな成長を願います。",
+  "tags": [
+   "こいのぼり",
+   "鯉のぼり",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "春",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_koinobori_makabe.jpg",
+  "thumb": "img/tayori_koinobori_makabe_thumb.jpg",
+  "mono": "img/tayori_koinobori_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kashiwamochi_sumire",
+  "title": "かしわもち（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "柏の葉で包んだかしわもち。",
+  "howto": "柏の葉は新芽が出るまで古い葉が落ちません。「家系が絶えない」縁起物として端午の節句に食べます。",
+  "tags": [
+   "かしわもち",
+   "柏餅",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "行事食",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kashiwamochi_sumire.jpg",
+  "thumb": "img/tayori_kashiwamochi_sumire_thumb.jpg",
+  "mono": "img/tayori_kashiwamochi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kashiwamochi_makabe",
+  "title": "かしわもち（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "柏の葉で包んだかしわもち。",
+  "howto": "柏の葉は新芽が出るまで古い葉が落ちません。「家系が絶えない」縁起物として端午の節句に食べます。",
+  "tags": [
+   "かしわもち",
+   "柏餅",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "行事食",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kashiwamochi_makabe.jpg",
+  "thumb": "img/tayori_kashiwamochi_makabe_thumb.jpg",
+  "mono": "img/tayori_kashiwamochi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kabuto_sumire",
+  "title": "兜（五月人形）（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "鍬形と吹返しの兜飾り。スタンドつき。",
+  "howto": "五月人形の兜は身を守るしるし。子どもを災いから守ってほしいという願いが込められています。",
+  "tags": [
+   "兜",
+   "五月人形",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "行事",
+   "伝統",
+   "武者",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kabuto_sumire.jpg",
+  "thumb": "img/tayori_kabuto_sumire_thumb.jpg",
+  "mono": "img/tayori_kabuto_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kabuto_makabe",
+  "title": "兜（五月人形）（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・端午の節句",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "鍬形と吹返しの兜飾り。スタンドつき。",
+  "howto": "五月人形の兜は身を守るしるし。子どもを災いから守ってほしいという願いが込められています。",
+  "tags": [
+   "兜",
+   "五月人形",
+   "端午の節句",
+   "こどもの日",
+   "5月",
+   "行事",
+   "伝統",
+   "武者",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kabuto_makabe.jpg",
+  "thumb": "img/tayori_kabuto_makabe_thumb.jpg",
+  "mono": "img/tayori_kabuto_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_shinryoku_sumire",
+  "title": "新緑の若葉（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・初夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "みずみずしい黄緑の楓の若葉。",
+  "howto": "5月は新緑がまぶしい季節。若葉のやわらかい黄緑は、この時期だけの色です。",
+  "tags": [
+   "新緑",
+   "若葉",
+   "楓",
+   "初夏",
+   "5月",
+   "6月",
+   "緑",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shinryoku_sumire.jpg",
+  "thumb": "img/tayori_shinryoku_sumire_thumb.jpg",
+  "mono": "img/tayori_shinryoku_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_shinryoku_makabe",
+  "title": "新緑の若葉（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・初夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "みずみずしい黄緑の楓の若葉。",
+  "howto": "5月は新緑がまぶしい季節。若葉のやわらかい黄緑は、この時期だけの色です。",
+  "tags": [
+   "新緑",
+   "若葉",
+   "楓",
+   "初夏",
+   "5月",
+   "6月",
+   "緑",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shinryoku_makabe.jpg",
+  "thumb": "img/tayori_shinryoku_makabe_thumb.jpg",
+  "mono": "img/tayori_shinryoku_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_shincha_sumire",
+  "title": "新茶と茶摘みかご（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・八十八夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "一芯二葉の新芽を摘んだ茶摘みかご。",
+  "howto": "八十八夜（立春から88日目・5月初め）に摘む新茶は縁起物。「一芯二葉」がおいしいお茶の摘み方です。",
+  "tags": [
+   "新茶",
+   "茶摘み",
+   "八十八夜",
+   "お茶",
+   "5月",
+   "初夏",
+   "食育",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shincha_sumire.jpg",
+  "thumb": "img/tayori_shincha_sumire_thumb.jpg",
+  "mono": "img/tayori_shincha_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_shincha_makabe",
+  "title": "新茶と茶摘みかご（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "5月・八十八夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "5月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "一芯二葉の新芽を摘んだ茶摘みかご。",
+  "howto": "八十八夜（立春から88日目・5月初め）に摘む新茶は縁起物。「一芯二葉」がおいしいお茶の摘み方です。",
+  "tags": [
+   "新茶",
+   "茶摘み",
+   "八十八夜",
+   "お茶",
+   "5月",
+   "初夏",
+   "食育",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shincha_makabe.jpg",
+  "thumb": "img/tayori_shincha_makabe_thumb.jpg",
+  "mono": "img/tayori_shincha_makabe_mono.jpg"
  }
 ];
