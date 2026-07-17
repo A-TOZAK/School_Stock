@@ -9320,5 +9320,375 @@ const SOZAI = [
   "img": "img/zukou_gemini_atsumeru_riko.jpg",
   "thumb": "img/zukou_gemini_atsumeru_riko_thumb.jpg",
   "mono": "img/zukou_gemini_atsumeru_riko_mono.jpg"
+ },
+ {
+  "id": "tayori_ajisai_sumire",
+  "title": "あじさいとかたつむり（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "青紫のあじさいと、葉をのぼるかたつむり。",
+  "howto": "あじさいは土の性質で色が変わります。酸性の土だと青、アルカリ性だと赤に。梅雨の理科の話のタネに。",
+  "tags": [
+   "あじさい",
+   "紫陽花",
+   "かたつむり",
+   "梅雨",
+   "6月",
+   "初夏",
+   "花",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ajisai_sumire.jpg",
+  "thumb": "img/tayori_ajisai_sumire_thumb.jpg",
+  "mono": "img/tayori_ajisai_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_ajisai_makabe",
+  "title": "あじさいとかたつむり（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "青紫のあじさいと、葉をのぼるかたつむり。",
+  "howto": "あじさいは土の性質で色が変わります。酸性の土だと青、アルカリ性だと赤に。梅雨の理科の話のタネに。",
+  "tags": [
+   "あじさい",
+   "紫陽花",
+   "かたつむり",
+   "梅雨",
+   "6月",
+   "初夏",
+   "花",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ajisai_makabe.jpg",
+  "thumb": "img/tayori_ajisai_makabe_thumb.jpg",
+  "mono": "img/tayori_ajisai_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_teruteru_sumire",
+  "title": "てるてる坊主（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "晴れを願うてるてる坊主。顔は描いていません。",
+  "howto": "てるてる坊主は晴れを願うおまじない。顔は無地なので、子どもが自分で描き足せます。",
+  "tags": [
+   "てるてる坊主",
+   "梅雨",
+   "雨",
+   "6月",
+   "晴れ",
+   "おまじない",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_teruteru_sumire.jpg",
+  "thumb": "img/tayori_teruteru_sumire_thumb.jpg",
+  "mono": "img/tayori_teruteru_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_teruteru_makabe",
+  "title": "てるてる坊主（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "晴れを願うてるてる坊主。顔は描いていません。",
+  "howto": "てるてる坊主は晴れを願うおまじない。顔は無地なので、子どもが自分で描き足せます。",
+  "tags": [
+   "てるてる坊主",
+   "梅雨",
+   "雨",
+   "6月",
+   "晴れ",
+   "おまじない",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_teruteru_makabe.jpg",
+  "thumb": "img/tayori_teruteru_makabe_thumb.jpg",
+  "mono": "img/tayori_teruteru_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kasa_sumire",
+  "title": "傘と長ぐつ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "子どもの傘と黄色い長ぐつ。雨の日の支度。",
+  "howto": "梅雨の登下校は傘と長ぐつ。雨の日の安全の呼びかけや、持ち物のおたよりにどうぞ。",
+  "tags": [
+   "傘",
+   "長ぐつ",
+   "雨",
+   "梅雨",
+   "6月",
+   "登下校",
+   "安全",
+   "生活",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kasa_sumire.jpg",
+  "thumb": "img/tayori_kasa_sumire_thumb.jpg",
+  "mono": "img/tayori_kasa_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kasa_makabe",
+  "title": "傘と長ぐつ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅雨",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "子どもの傘と黄色い長ぐつ。雨の日の支度。",
+  "howto": "梅雨の登下校は傘と長ぐつ。雨の日の安全の呼びかけや、持ち物のおたよりにどうぞ。",
+  "tags": [
+   "傘",
+   "長ぐつ",
+   "雨",
+   "梅雨",
+   "6月",
+   "登下校",
+   "安全",
+   "生活",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kasa_makabe.jpg",
+  "thumb": "img/tayori_kasa_makabe_thumb.jpg",
+  "mono": "img/tayori_kasa_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_ume_mi_sumire",
+  "title": "梅の実（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅仕事",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "枝についた青梅。梅仕事の季節。",
+  "howto": "6月は梅の実がなる「梅仕事」の季節。梅干しや梅シロップづくりが各家庭で始まります。",
+  "tags": [
+   "梅の実",
+   "青梅",
+   "梅仕事",
+   "6月",
+   "初夏",
+   "梅干し",
+   "食育",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ume_mi_sumire.jpg",
+  "thumb": "img/tayori_ume_mi_sumire_thumb.jpg",
+  "mono": "img/tayori_ume_mi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_ume_mi_makabe",
+  "title": "梅の実（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・梅仕事",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "枝についた青梅。梅仕事の季節。",
+  "howto": "6月は梅の実がなる「梅仕事」の季節。梅干しや梅シロップづくりが各家庭で始まります。",
+  "tags": [
+   "梅の実",
+   "青梅",
+   "梅仕事",
+   "6月",
+   "初夏",
+   "梅干し",
+   "食育",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ume_mi_makabe.jpg",
+  "thumb": "img/tayori_ume_mi_makabe_thumb.jpg",
+  "mono": "img/tayori_ume_mi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_hotaru_sumire",
+  "title": "ホタル（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・初夏の夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "草にとまり、尾を光らせるゲンジボタル。",
+  "howto": "ホタルはきれいな水辺にすむ虫。初夏の夜、お尻の光で仲間と合図します。水の大切さの話にも。",
+  "tags": [
+   "ホタル",
+   "蛍",
+   "初夏",
+   "6月",
+   "7月",
+   "夜",
+   "水辺",
+   "理科",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_hotaru_sumire.jpg",
+  "thumb": "img/tayori_hotaru_sumire_thumb.jpg",
+  "mono": "img/tayori_hotaru_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_hotaru_makabe",
+  "title": "ホタル（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "6月・初夏の夜",
+  "scenes": [
+   "学校だより・学級通信",
+   "6月",
+   "梅雨"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "草にとまり、尾を光らせるゲンジボタル。",
+  "howto": "ホタルはきれいな水辺にすむ虫。初夏の夜、お尻の光で仲間と合図します。水の大切さの話にも。",
+  "tags": [
+   "ホタル",
+   "蛍",
+   "初夏",
+   "6月",
+   "7月",
+   "夜",
+   "水辺",
+   "理科",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_hotaru_makabe.jpg",
+  "thumb": "img/tayori_hotaru_makabe_thumb.jpg",
+  "mono": "img/tayori_hotaru_makabe_mono.jpg"
  }
 ];
