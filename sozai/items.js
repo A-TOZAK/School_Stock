@@ -5096,5 +5096,375 @@ const SOZAI = [
   "img": "img/tayori_budou_makabe.jpg",
   "thumb": "img/tayori_budou_makabe_thumb.jpg",
   "mono": "img/tayori_budou_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_donguri_sumire",
+  "title": "どんぐりと落ち葉（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "殻斗（ぼうし）をかぶったどんぐりと、秋の落ち葉。",
+  "howto": "どんぐりはコナラやクヌギの実。ぼうし（殻斗）の模様で木の種類が見分けられます。秋さがしの導入に。",
+  "tags": [
+   "どんぐり",
+   "落ち葉",
+   "秋",
+   "10月",
+   "木の実",
+   "自然",
+   "生活科",
+   "秋さがし",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_donguri_sumire.jpg",
+  "thumb": "img/tayori_donguri_sumire_thumb.jpg",
+  "mono": "img/tayori_donguri_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_donguri_makabe",
+  "title": "どんぐりと落ち葉（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "殻斗（ぼうし）をかぶったどんぐりと、秋の落ち葉。",
+  "howto": "どんぐりはコナラやクヌギの実。ぼうし（殻斗）の模様で木の種類が見分けられます。秋さがしの導入に。",
+  "tags": [
+   "どんぐり",
+   "落ち葉",
+   "秋",
+   "10月",
+   "木の実",
+   "自然",
+   "生活科",
+   "秋さがし",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_donguri_makabe.jpg",
+  "thumb": "img/tayori_donguri_makabe_thumb.jpg",
+  "mono": "img/tayori_donguri_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_momiji_sumire",
+  "title": "もみじの枝（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・紅葉",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "赤から橙へ色づくもみじの枝と、舞い落ちる一葉。",
+  "howto": "もみじの葉は5〜7つに裂けるのが特徴。葉を眺めて楽しむことを「紅葉狩り」と言います。",
+  "tags": [
+   "もみじ",
+   "紅葉",
+   "楓",
+   "秋",
+   "10月",
+   "11月",
+   "紅葉狩り",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_momiji_sumire.jpg",
+  "thumb": "img/tayori_momiji_sumire_thumb.jpg",
+  "mono": "img/tayori_momiji_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_momiji_makabe",
+  "title": "もみじの枝（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・紅葉",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "赤から橙へ色づくもみじの枝と、舞い落ちる一葉。",
+  "howto": "もみじの葉は5〜7つに裂けるのが特徴。葉を眺めて楽しむことを「紅葉狩り」と言います。",
+  "tags": [
+   "もみじ",
+   "紅葉",
+   "楓",
+   "秋",
+   "10月",
+   "11月",
+   "紅葉狩り",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_momiji_makabe.jpg",
+  "thumb": "img/tayori_momiji_makabe_thumb.jpg",
+  "mono": "img/tayori_momiji_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kaki_sumire",
+  "title": "柿の実（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・実りの秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "枝についた2つの柿の実。四つ葉の星形のヘタまで描いた一枚。",
+  "howto": "柿は日本の秋を代表する果物。ヘタが四つ葉の星形になっているのを子どもと観察してみてください。",
+  "tags": [
+   "柿",
+   "かき",
+   "果物",
+   "実りの秋",
+   "10月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kaki_sumire.jpg",
+  "thumb": "img/tayori_kaki_sumire_thumb.jpg",
+  "mono": "img/tayori_kaki_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kaki_makabe",
+  "title": "柿の実（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・実りの秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "枝についた2つの柿の実。四つ葉の星形のヘタまで描いた一枚。",
+  "howto": "柿は日本の秋を代表する果物。ヘタが四つ葉の星形になっているのを子どもと観察してみてください。",
+  "tags": [
+   "柿",
+   "かき",
+   "果物",
+   "実りの秋",
+   "10月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kaki_makabe.jpg",
+  "thumb": "img/tayori_kaki_makabe_thumb.jpg",
+  "mono": "img/tayori_kaki_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_inaho_sumire",
+  "title": "稲穂（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・収穫",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "こうべを垂れる金色の稲穂。収穫の秋の一枚。",
+  "howto": "「実るほど頭を垂れる稲穂かな」。実った穂ほど深くおじぎをする姿から、謙虚さを学ぶ言葉です。",
+  "tags": [
+   "稲穂",
+   "稲刈り",
+   "収穫",
+   "お米",
+   "新米",
+   "秋",
+   "10月",
+   "食育",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_inaho_sumire.jpg",
+  "thumb": "img/tayori_inaho_sumire_thumb.jpg",
+  "mono": "img/tayori_inaho_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_inaho_makabe",
+  "title": "稲穂（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・収穫",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "こうべを垂れる金色の稲穂。収穫の秋の一枚。",
+  "howto": "「実るほど頭を垂れる稲穂かな」。実った穂ほど深くおじぎをする姿から、謙虚さを学ぶ言葉です。",
+  "tags": [
+   "稲穂",
+   "稲刈り",
+   "収穫",
+   "お米",
+   "新米",
+   "秋",
+   "10月",
+   "食育",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_inaho_makabe.jpg",
+  "thumb": "img/tayori_inaho_makabe_thumb.jpg",
+  "mono": "img/tayori_inaho_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_halloween_sumire",
+  "title": "ハロウィンのかぼちゃ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・ハロウィン",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "顔を刻んだかぼちゃちょうちん（ジャック・オー・ランタン）。",
+  "howto": "刻んだ顔のかぼちゃは「ジャック・オー・ランタン」。悪いものを追い払うおまじないと言われています。",
+  "tags": [
+   "ハロウィン",
+   "かぼちゃ",
+   "ジャックオーランタン",
+   "10月",
+   "秋",
+   "行事",
+   "外国の文化",
+   "学校だより",
+   "季節",
+   "飾り"
+  ],
+  "img": "img/tayori_halloween_sumire.jpg",
+  "thumb": "img/tayori_halloween_sumire_thumb.jpg",
+  "mono": "img/tayori_halloween_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_halloween_makabe",
+  "title": "ハロウィンのかぼちゃ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "10月・ハロウィン",
+  "scenes": [
+   "学校だより・学級通信",
+   "10月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "顔を刻んだかぼちゃちょうちん（ジャック・オー・ランタン）。",
+  "howto": "刻んだ顔のかぼちゃは「ジャック・オー・ランタン」。悪いものを追い払うおまじないと言われています。",
+  "tags": [
+   "ハロウィン",
+   "かぼちゃ",
+   "ジャックオーランタン",
+   "10月",
+   "秋",
+   "行事",
+   "外国の文化",
+   "学校だより",
+   "季節",
+   "飾り"
+  ],
+  "img": "img/tayori_halloween_makabe.jpg",
+  "thumb": "img/tayori_halloween_makabe_thumb.jpg",
+  "mono": "img/tayori_halloween_makabe_mono.jpg"
  }
 ];
