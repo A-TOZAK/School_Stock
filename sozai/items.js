@@ -8103,5 +8103,375 @@ const SOZAI = [
   "img": "img/shokuiku_balance_riko.jpg",
   "thumb": "img/shokuiku_balance_riko_thumb.jpg",
   "mono": "img/shokuiku_balance_riko_mono.jpg"
+ },
+ {
+  "id": "tayori_hina_sumire",
+  "title": "ひな人形（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・ひなまつり",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "金屏風の前のお内裏様とおひな様。笏と扇まで描いた一対。",
+  "howto": "3月3日は桃の節句。ひな人形には子どもの健やかな成長を願う気持ちが込められています。",
+  "tags": [
+   "ひなまつり",
+   "ひな人形",
+   "桃の節句",
+   "3月",
+   "春",
+   "行事",
+   "伝統",
+   "おだいりさま",
+   "おひなさま",
+   "学校だより"
+  ],
+  "img": "img/tayori_hina_sumire.jpg",
+  "thumb": "img/tayori_hina_sumire_thumb.jpg",
+  "mono": "img/tayori_hina_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_hina_makabe",
+  "title": "ひな人形（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・ひなまつり",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "金屏風の前のお内裏様とおひな様。笏と扇まで描いた一対。",
+  "howto": "3月3日は桃の節句。ひな人形には子どもの健やかな成長を願う気持ちが込められています。",
+  "tags": [
+   "ひなまつり",
+   "ひな人形",
+   "桃の節句",
+   "3月",
+   "春",
+   "行事",
+   "伝統",
+   "おだいりさま",
+   "おひなさま",
+   "学校だより"
+  ],
+  "img": "img/tayori_hina_makabe.jpg",
+  "thumb": "img/tayori_hina_makabe_thumb.jpg",
+  "mono": "img/tayori_hina_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_sakuratsubomi_sumire",
+  "title": "桜のつぼみ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ふくらむつぼみと、開き始めた二輪の桜。",
+  "howto": "桜の花びらは先に小さな切れ込みがあります。つぼみがふくらむ様子で「もうすぐ春」を伝える一枚。",
+  "tags": [
+   "桜",
+   "つぼみ",
+   "開花",
+   "3月",
+   "早春",
+   "春",
+   "卒業",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sakuratsubomi_sumire.jpg",
+  "thumb": "img/tayori_sakuratsubomi_sumire_thumb.jpg",
+  "mono": "img/tayori_sakuratsubomi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_sakuratsubomi_makabe",
+  "title": "桜のつぼみ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "ふくらむつぼみと、開き始めた二輪の桜。",
+  "howto": "桜の花びらは先に小さな切れ込みがあります。つぼみがふくらむ様子で「もうすぐ春」を伝える一枚。",
+  "tags": [
+   "桜",
+   "つぼみ",
+   "開花",
+   "3月",
+   "早春",
+   "春",
+   "卒業",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sakuratsubomi_makabe.jpg",
+  "thumb": "img/tayori_sakuratsubomi_makabe_thumb.jpg",
+  "mono": "img/tayori_sakuratsubomi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tsukushi_sumire",
+  "title": "つくし（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "袴の節をまとって並ぶつくし。",
+  "howto": "つくしはスギナの胞子茎。節の「袴」を取って食べる春の楽しみも、地方によっては続いています。",
+  "tags": [
+   "つくし",
+   "土筆",
+   "春",
+   "3月",
+   "早春",
+   "野原",
+   "自然観察",
+   "理科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tsukushi_sumire.jpg",
+  "thumb": "img/tayori_tsukushi_sumire_thumb.jpg",
+  "mono": "img/tayori_tsukushi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tsukushi_makabe",
+  "title": "つくし（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "袴の節をまとって並ぶつくし。",
+  "howto": "つくしはスギナの胞子茎。節の「袴」を取って食べる春の楽しみも、地方によっては続いています。",
+  "tags": [
+   "つくし",
+   "土筆",
+   "春",
+   "3月",
+   "早春",
+   "野原",
+   "自然観察",
+   "理科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tsukushi_makabe.jpg",
+  "thumb": "img/tayori_tsukushi_makabe_thumb.jpg",
+  "mono": "img/tayori_tsukushi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_sotsugyo_sumire",
+  "title": "卒業証書の筒（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・卒業",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "桜の花びらを添えた、えんじ色の卒業証書の筒。",
+  "howto": "卒業式の定番、証書の筒。中の紙は白紙で描いているので、どの学校のおたよりにも使えます。",
+  "tags": [
+   "卒業",
+   "卒業式",
+   "証書",
+   "筒",
+   "3月",
+   "春",
+   "門出",
+   "式",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sotsugyo_sumire.jpg",
+  "thumb": "img/tayori_sotsugyo_sumire_thumb.jpg",
+  "mono": "img/tayori_sotsugyo_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_sotsugyo_makabe",
+  "title": "卒業証書の筒（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・卒業",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "桜の花びらを添えた、えんじ色の卒業証書の筒。",
+  "howto": "卒業式の定番、証書の筒。中の紙は白紙で描いているので、どの学校のおたよりにも使えます。",
+  "tags": [
+   "卒業",
+   "卒業式",
+   "証書",
+   "筒",
+   "3月",
+   "春",
+   "門出",
+   "式",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_sotsugyo_makabe.jpg",
+  "thumb": "img/tayori_sotsugyo_makabe_thumb.jpg",
+  "mono": "img/tayori_sotsugyo_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_monshiro_sumire",
+  "title": "モンシロチョウ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "菜の花にとまるモンシロチョウ。前翅の黒い紋まで正確に。",
+  "howto": "モンシロチョウは3年理科の定番。前翅の黒い紋の数で見分けます。春さがしの導入にどうぞ。",
+  "tags": [
+   "モンシロチョウ",
+   "ちょう",
+   "蝶",
+   "菜の花",
+   "春",
+   "3月",
+   "4月",
+   "理科",
+   "昆虫",
+   "学校だより"
+  ],
+  "img": "img/tayori_monshiro_sumire.jpg",
+  "thumb": "img/tayori_monshiro_sumire_thumb.jpg",
+  "mono": "img/tayori_monshiro_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_monshiro_makabe",
+  "title": "モンシロチョウ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "3月・春",
+  "scenes": [
+   "学校だより・学級通信",
+   "3月",
+   "春"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "菜の花にとまるモンシロチョウ。前翅の黒い紋まで正確に。",
+  "howto": "モンシロチョウは3年理科の定番。前翅の黒い紋の数で見分けます。春さがしの導入にどうぞ。",
+  "tags": [
+   "モンシロチョウ",
+   "ちょう",
+   "蝶",
+   "菜の花",
+   "春",
+   "3月",
+   "4月",
+   "理科",
+   "昆虫",
+   "学校だより"
+  ],
+  "img": "img/tayori_monshiro_makabe.jpg",
+  "thumb": "img/tayori_monshiro_makabe_thumb.jpg",
+  "mono": "img/tayori_monshiro_makabe_mono.jpg"
  }
 ];
