@@ -21095,5 +21095,375 @@ const SOZAI = [
   ],
   "img": "img/kenshu_photo_morning_desk_himi.jpg",
   "thumb": "img/kenshu_photo_morning_desk_himi_thumb.jpg"
+ },
+ {
+  "id": "tayori_kadomatsu_sumire",
+  "title": "門松（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "斜めに切った青竹三本に松と紅い実の枝を添えた門松。",
+  "howto": "門松は年神様が迷わず来られるようにという目印。竹の斜め切りは「そぎ」と呼びます。",
+  "tags": [
+   "門松",
+   "正月",
+   "お正月",
+   "1月",
+   "新年",
+   "竹",
+   "松",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kadomatsu_sumire.jpg",
+  "thumb": "img/tayori_kadomatsu_sumire_thumb.jpg",
+  "mono": "img/tayori_kadomatsu_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kadomatsu_makabe",
+  "title": "門松（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "斜めに切った青竹三本に松と紅い実の枝を添えた門松。",
+  "howto": "門松は年神様が迷わず来られるようにという目印。竹の斜め切りは「そぎ」と呼びます。",
+  "tags": [
+   "門松",
+   "正月",
+   "お正月",
+   "1月",
+   "新年",
+   "竹",
+   "松",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kadomatsu_makabe.jpg",
+  "thumb": "img/tayori_kadomatsu_makabe_thumb.jpg",
+  "mono": "img/tayori_kadomatsu_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kagamimochi_sumire",
+  "title": "鏡もち（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "三方の上に四方紅を敷き、橙をのせた二段の鏡もち。",
+  "howto": "鏡もちの上の橙（だいだい）には「代々栄えるように」の願いが込められています。",
+  "tags": [
+   "鏡もち",
+   "正月",
+   "お正月",
+   "1月",
+   "新年",
+   "橙",
+   "三方",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kagamimochi_sumire.jpg",
+  "thumb": "img/tayori_kagamimochi_sumire_thumb.jpg",
+  "mono": "img/tayori_kagamimochi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kagamimochi_makabe",
+  "title": "鏡もち（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "三方の上に四方紅を敷き、橙をのせた二段の鏡もち。",
+  "howto": "鏡もちの上の橙（だいだい）には「代々栄えるように」の願いが込められています。",
+  "tags": [
+   "鏡もち",
+   "正月",
+   "お正月",
+   "1月",
+   "新年",
+   "橙",
+   "三方",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kagamimochi_makabe.jpg",
+  "thumb": "img/tayori_kagamimochi_makabe_thumb.jpg",
+  "mono": "img/tayori_kagamimochi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tako_sumire",
+  "title": "お正月の凧（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月遊び",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "日の丸模様の和凧。長いしっぽと糸まで描いた一枚。",
+  "howto": "凧あげはお正月の伝統遊び。江戸時代には「いかのぼり」とも呼ばれていました。",
+  "tags": [
+   "凧",
+   "たこあげ",
+   "正月遊び",
+   "1月",
+   "お正月",
+   "伝統遊び",
+   "昔遊び",
+   "生活科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tako_sumire.jpg",
+  "thumb": "img/tayori_tako_sumire_thumb.jpg",
+  "mono": "img/tayori_tako_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tako_makabe",
+  "title": "お正月の凧（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・正月遊び",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "日の丸模様の和凧。長いしっぽと糸まで描いた一枚。",
+  "howto": "凧あげはお正月の伝統遊び。江戸時代には「いかのぼり」とも呼ばれていました。",
+  "tags": [
+   "凧",
+   "たこあげ",
+   "正月遊び",
+   "1月",
+   "お正月",
+   "伝統遊び",
+   "昔遊び",
+   "生活科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tako_makabe.jpg",
+  "thumb": "img/tayori_tako_makabe_thumb.jpg",
+  "mono": "img/tayori_tako_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_nanakusa_sumire",
+  "title": "春の七草（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・七草がゆ",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "すずな・すずしろと青菜たち、七種を数えられる並びで。",
+  "howto": "1月7日は七草がゆの日。せり・なずな・ごぎょう・はこべら・ほとけのざ・すずな・すずしろ、で七つです。",
+  "tags": [
+   "七草",
+   "春の七草",
+   "七草がゆ",
+   "1月",
+   "正月",
+   "食育",
+   "伝統",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_nanakusa_sumire.jpg",
+  "thumb": "img/tayori_nanakusa_sumire_thumb.jpg",
+  "mono": "img/tayori_nanakusa_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_nanakusa_makabe",
+  "title": "春の七草（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・七草がゆ",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "すずな・すずしろと青菜たち、七種を数えられる並びで。",
+  "howto": "1月7日は七草がゆの日。せり・なずな・ごぎょう・はこべら・ほとけのざ・すずな・すずしろ、で七つです。",
+  "tags": [
+   "七草",
+   "春の七草",
+   "七草がゆ",
+   "1月",
+   "正月",
+   "食育",
+   "伝統",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_nanakusa_makabe.jpg",
+  "thumb": "img/tayori_nanakusa_makabe_thumb.jpg",
+  "mono": "img/tayori_nanakusa_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_yukiusagi_sumire",
+  "title": "雪うさぎ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "南天の実の目と葉の耳をもつ、お盆の上の雪うさぎ。",
+  "howto": "雪うさぎの目は南天の実、耳は葉っぱ。「難を転ずる」縁起物の南天を使うのが昔ながらです。",
+  "tags": [
+   "雪うさぎ",
+   "雪",
+   "冬",
+   "1月",
+   "2月",
+   "南天",
+   "昔遊び",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yukiusagi_sumire.jpg",
+  "thumb": "img/tayori_yukiusagi_sumire_thumb.jpg",
+  "mono": "img/tayori_yukiusagi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_yukiusagi_makabe",
+  "title": "雪うさぎ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "1月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "1月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "南天の実の目と葉の耳をもつ、お盆の上の雪うさぎ。",
+  "howto": "雪うさぎの目は南天の実、耳は葉っぱ。「難を転ずる」縁起物の南天を使うのが昔ながらです。",
+  "tags": [
+   "雪うさぎ",
+   "雪",
+   "冬",
+   "1月",
+   "2月",
+   "南天",
+   "昔遊び",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yukiusagi_makabe.jpg",
+  "thumb": "img/tayori_yukiusagi_makabe_thumb.jpg",
+  "mono": "img/tayori_yukiusagi_makabe_mono.jpg"
  }
 ];
