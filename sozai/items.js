@@ -3731,13 +3731,13 @@ const SOZAI = [
   "mono": "img/chiiki_hero_chikuho_mono.jpg"
  },
  {
-  "id": "chiiki_03_chikuho_seika",
-  "title": "筑豊製菓のお菓子「むら里」（地域教材）",
+  "id": "chiiki_03",
+  "title": "和菓子づくりの工場",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "『筑豊製菓のお菓子「むら里」』（工場ではたらく人びと）",
+  "unit": "地域の工場ではたらく人",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3747,24 +3747,28 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "手間ひまを、あえて残す工場。筑豊の地域教材『筑豊製菓のお菓子「むら里」』のモチーフをフラットイラストで。",
-  "howto": "3年社会「『筑豊製菓のお菓子「むら里」』（工場ではたらく人びと）」の導入・資料・掲示に。",
+  "description": "手仕事を大切にする、お菓子づくりの工場をあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "筑豊製菓のお菓子",
-   "むら里"
+   "お菓子",
+   "工場",
+   "和菓子",
+   "製造業",
+   "地域",
+   "社会科"
   ],
-  "img": "img/chiiki_03_chikuho_seika.jpg",
-  "thumb": "img/chiiki_03_chikuho_seika_thumb.jpg",
-  "mono": "img/chiiki_03_chikuho_seika_mono.jpg"
+  "img": "img/chiiki_03.jpg",
+  "thumb": "img/chiiki_03_thumb.jpg",
+  "mono": "img/chiiki_03_mono.jpg"
  },
  {
-  "id": "chiiki_05_shonai_fuki",
-  "title": "庄内フキ（地域教材）",
+  "id": "chiiki_05",
+  "title": "地域の特産野菜の畑",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "「庄内フキ」（農家の仕事）",
+  "unit": "農家の仕事",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3774,23 +3778,28 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "収穫を減らすと、フキは大きくなる。筑豊の地域教材『庄内フキ』のモチーフをフラットイラストで。",
-  "howto": "3年社会「「庄内フキ」（農家の仕事）」の導入・資料・掲示に。",
+  "description": "地域でつくられる特産の野菜（フキ）の畑をあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "庄内フキ"
+   "畑",
+   "野菜",
+   "フキ",
+   "農業",
+   "特産",
+   "地域"
   ],
-  "img": "img/chiiki_05_shonai_fuki.jpg",
-  "thumb": "img/chiiki_05_shonai_fuki_thumb.jpg",
-  "mono": "img/chiiki_05_shonai_fuki_mono.jpg"
+  "img": "img/chiiki_05.jpg",
+  "thumb": "img/chiiki_05_thumb.jpg",
+  "mono": "img/chiiki_05_mono.jpg"
  },
  {
-  "id": "chiiki_07_dressing",
-  "title": "ドレッシング工場（地域教材）",
+  "id": "chiiki_07",
+  "title": "調味料の工場",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "「ものをつくるひとびと」",
+  "unit": "地域の工場ではたらく人",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3800,23 +3809,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "なぜ都会でなく、この町で作るのか。筑豊の地域教材『ドレッシング工場』のモチーフをフラットイラストで。",
-  "howto": "3年社会「「ものをつくるひとびと」」の導入・資料・掲示に。",
+  "description": "調味料（ドレッシング）をつくる工場をあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "ドレッシング工場"
+   "調味料",
+   "ドレッシング",
+   "工場",
+   "製造業",
+   "地域"
   ],
-  "img": "img/chiiki_07_dressing.jpg",
-  "thumb": "img/chiiki_07_dressing_thumb.jpg",
-  "mono": "img/chiiki_07_dressing_mono.jpg"
+  "img": "img/chiiki_07.jpg",
+  "thumb": "img/chiiki_07_thumb.jpg",
+  "mono": "img/chiiki_07_mono.jpg"
  },
  {
-  "id": "chiiki_09_iteibiki",
-  "title": "射手引神社の祭りを受け継ぐ人（地域教材）",
+  "id": "chiiki_09",
+  "title": "地域のお祭り（獅子舞）",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "「射手引神社の祭りを受け継ぐ人」（かわってきた人々のくらし）",
+  "unit": "地域に伝わる行事",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3826,21 +3839,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "250年、獅子が一軒ずつ回る町。筑豊の地域教材『射手引神社の祭りを受け継ぐ人』のモチーフをフラットイラストで。",
-  "howto": "3年社会「「射手引神社の祭りを受け継ぐ人」（かわってきた人々のくらし）」の導入・資料・掲示に。",
-  "tags": [],
-  "img": "img/chiiki_09_iteibiki.jpg",
-  "thumb": "img/chiiki_09_iteibiki_thumb.jpg",
-  "mono": "img/chiiki_09_iteibiki_mono.jpg"
+  "description": "地域に古くから伝わる、獅子舞のあるお祭りをあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
+  "tags": [
+   "祭り",
+   "獅子舞",
+   "伝統行事",
+   "神社",
+   "地域"
+  ],
+  "img": "img/chiiki_09.jpg",
+  "thumb": "img/chiiki_09_thumb.jpg",
+  "mono": "img/chiiki_09_mono.jpg"
  },
  {
-  "id": "chiiki_11_yamano_gaku",
-  "title": "稲築に伝わる祭りや行事（山野の楽）（地域教材）",
+  "id": "chiiki_11",
+  "title": "地域に伝わる祭りと伝統芸能",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "「稲築に伝わる祭りや行事」",
+  "unit": "地域に伝わる行事",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3850,23 +3869,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "800年続く、かっぱ祭りのひみつ。筑豊の地域教材『稲築に伝わる祭りや行事（山野の楽）』のモチーフをフラットイラストで。",
-  "howto": "3年社会「「稲築に伝わる祭りや行事」」の導入・資料・掲示に。",
+  "description": "長く受け継がれてきた祭りと伝統芸能をあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "山野の楽"
+   "祭り",
+   "伝統芸能",
+   "行事",
+   "無形文化",
+   "地域"
   ],
-  "img": "img/chiiki_11_yamano_gaku.jpg",
-  "thumb": "img/chiiki_11_yamano_gaku_thumb.jpg",
-  "mono": "img/chiiki_11_yamano_gaku_mono.jpg"
+  "img": "img/chiiki_11.jpg",
+  "thumb": "img/chiiki_11_thumb.jpg",
+  "mono": "img/chiiki_11_mono.jpg"
  },
  {
-  "id": "chiiki_13_maruboshi",
-  "title": "マルボシ酢で働く人たちと仕事（地域教材）",
+  "id": "chiiki_13",
+  "title": "お酢づくりの工場",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "3年",
-  "unit": "「マルボシ酢で働く人たちと仕事」",
+  "unit": "地域の工場ではたらく人",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3876,21 +3899,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "筑豊から全国へ、酢一筋100年。筑豊の地域教材『マルボシ酢で働く人たちと仕事』のモチーフをフラットイラストで。",
-  "howto": "3年社会「「マルボシ酢で働く人たちと仕事」」の導入・資料・掲示に。",
-  "tags": [],
-  "img": "img/chiiki_13_maruboshi.jpg",
-  "thumb": "img/chiiki_13_maruboshi_thumb.jpg",
-  "mono": "img/chiiki_13_maruboshi_mono.jpg"
+  "description": "お酢をつくる工場と、そこではたらく人をあらわしたフラットイラスト。",
+  "howto": "3年社会の地域学習の導入・資料・掲示に使えます。",
+  "tags": [
+   "酢",
+   "調味料",
+   "工場",
+   "醸造",
+   "製造業"
+  ],
+  "img": "img/chiiki_13.jpg",
+  "thumb": "img/chiiki_13_thumb.jpg",
+  "mono": "img/chiiki_13_mono.jpg"
  },
  {
-  "id": "chiiki_15_akane_zome",
-  "title": "筑穂の宝「茜染め」（地域教材）",
+  "id": "chiiki_15",
+  "title": "草木染め（赤い染め物）",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「筑穂の宝『茜染め』」（地域で受けつがれてきたもの）",
+  "unit": "地域に伝わる技",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3900,24 +3929,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "最初の日の丸は、筑穂で染められた。筑豊の地域教材『筑穂の宝「茜染め」』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「筑穂の宝『茜染め』」（地域で受けつがれてきたもの）」の導入・資料・掲示に。",
+  "description": "草木で赤く染める、昔ながらの染め物をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "筑穂の宝",
-   "茜染め"
+   "染物",
+   "草木染め",
+   "赤",
+   "伝統工芸",
+   "染色"
   ],
-  "img": "img/chiiki_15_akane_zome.jpg",
-  "thumb": "img/chiiki_15_akane_zome_thumb.jpg",
-  "mono": "img/chiiki_15_akane_zome_mono.jpg"
+  "img": "img/chiiki_15.jpg",
+  "thumb": "img/chiiki_15_thumb.jpg",
+  "mono": "img/chiiki_15_mono.jpg"
  },
  {
-  "id": "chiiki_19_urushio_yosui",
-  "title": "漆生用水（地域教材）",
+  "id": "chiiki_19",
+  "title": "田をうるおす用水路",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「漆生用水」（地域の発展に尽くした先人）",
+  "unit": "水はどこから",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3927,23 +3959,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "命がけの願書から400年、いまも田を潤す。筑豊の地域教材『漆生用水』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「漆生用水」（地域の発展に尽くした先人）」の導入・資料・掲示に。",
+  "description": "田畑に水を引くためにつくられた用水路をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "漆生用水"
+   "用水路",
+   "水利",
+   "農業",
+   "治水",
+   "歴史"
   ],
-  "img": "img/chiiki_19_urushio_yosui.jpg",
-  "thumb": "img/chiiki_19_urushio_yosui_thumb.jpg",
-  "mono": "img/chiiki_19_urushio_yosui_mono.jpg"
+  "img": "img/chiiki_19.jpg",
+  "thumb": "img/chiiki_19_thumb.jpg",
+  "mono": "img/chiiki_19_mono.jpg"
  },
  {
-  "id": "chiiki_21_tanko_bushi",
-  "title": "炭坑節（地域教材）",
+  "id": "chiiki_21",
+  "title": "炭鉱の仕事と盆踊り",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「昔から今へと続くまちづくり〜炭坑節〜」",
+  "unit": "昔のくらしと産業",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3953,23 +3989,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "あの盆踊りは、田川の仕事唄だった。筑豊の地域教材『炭坑節』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「昔から今へと続くまちづくり〜炭坑節〜」」の導入・資料・掲示に。",
+  "description": "炭鉱の仕事と、そこから生まれた盆踊り（民謡）をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "炭坑節"
+   "炭鉱",
+   "盆踊り",
+   "民謡",
+   "産業",
+   "歴史"
   ],
-  "img": "img/chiiki_21_tanko_bushi.jpg",
-  "thumb": "img/chiiki_21_tanko_bushi_thumb.jpg",
-  "mono": "img/chiiki_21_tanko_bushi_mono.jpg"
+  "img": "img/chiiki_21.jpg",
+  "thumb": "img/chiiki_21_thumb.jpg",
+  "mono": "img/chiiki_21_mono.jpg"
  },
  {
-  "id": "chiiki_23_sakubei",
-  "title": "山本作兵衛さん（地域教材）",
+  "id": "chiiki_23",
+  "title": "炭鉱の記録画をのこした人",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「昔から今へと続くまちづくり〜山本作兵衛さん〜」",
+  "unit": "昔から今へと続くまちづくり",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -3979,23 +4019,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "孫に伝えたい一心が、世界の記憶になった。筑豊の地域教材『山本作兵衛さん』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「昔から今へと続くまちづくり〜山本作兵衛さん〜」」の導入・資料・掲示に。",
+  "description": "炭鉱で働いた暮らしを、絵と文字で記録にのこした人をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "山本作兵衛さん"
+   "炭鉱",
+   "記録画",
+   "絵",
+   "産業",
+   "歴史"
   ],
-  "img": "img/chiiki_23_sakubei.jpg",
-  "thumb": "img/chiiki_23_sakubei_thumb.jpg",
-  "mono": "img/chiiki_23_sakubei_mono.jpg"
+  "img": "img/chiiki_23.jpg",
+  "thumb": "img/chiiki_23_thumb.jpg",
+  "mono": "img/chiiki_23_mono.jpg"
  },
  {
-  "id": "chiiki_25_horikawa",
-  "title": "堀川運河（地域教材）",
+  "id": "chiiki_25",
+  "title": "人がつくった運河",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「堀川運河」（地域の発展に尽くした先人）",
+  "unit": "昔のくらしと土木",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4005,23 +4049,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "136年かけて掘り抜いた12kmの人工の川。筑豊の地域教材『堀川運河』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「堀川運河」（地域の発展に尽くした先人）」の導入・資料・掲示に。",
+  "description": "長い年月をかけて人の手で掘りぬいた運河をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "堀川運河"
+   "運河",
+   "水路",
+   "土木",
+   "治水",
+   "歴史"
   ],
-  "img": "img/chiiki_25_horikawa.jpg",
-  "thumb": "img/chiiki_25_horikawa_thumb.jpg",
-  "mono": "img/chiiki_25_horikawa_mono.jpg"
+  "img": "img/chiiki_25.jpg",
+  "thumb": "img/chiiki_25_thumb.jpg",
+  "mono": "img/chiiki_25_mono.jpg"
  },
  {
-  "id": "chiiki_27_matsubara",
-  "title": "三里松原海岸（地域教材）",
+  "id": "chiiki_27",
+  "title": "守り育てた海岸の松林",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "4年",
-  "unit": "「昔から今へと続くまちづくり」",
+  "unit": "自然を守る人々",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4031,23 +4079,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "植えて、守って、取り返した砂浜の森。筑豊の地域教材『三里松原海岸』のモチーフをフラットイラストで。",
-  "howto": "4年社会「「昔から今へと続くまちづくり」」の導入・資料・掲示に。",
+  "description": "植えて守り、取りもどした海岸の松林をあらわしたフラットイラスト。",
+  "howto": "4年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "三里松原海岸"
+   "松林",
+   "海岸",
+   "砂浜",
+   "防砂林",
+   "自然"
   ],
-  "img": "img/chiiki_27_matsubara.jpg",
-  "thumb": "img/chiiki_27_matsubara_thumb.jpg",
-  "mono": "img/chiiki_27_matsubara_mono.jpg"
+  "img": "img/chiiki_27.jpg",
+  "thumb": "img/chiiki_27_thumb.jpg",
+  "mono": "img/chiiki_27_mono.jpg"
  },
  {
-  "id": "chiiki_29_chikuho_gyu",
-  "title": "筑穂ブランド「筑穂牛」（地域教材）",
+  "id": "chiiki_29",
+  "title": "ブランド和牛と畜産",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "5年",
-  "unit": "「筑穂ブランド 筑穂牛」（これからの食料生産）",
+  "unit": "農家の仕事",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4057,24 +4109,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "まぼろしの和牛を支える、4戸と応援団。筑豊の地域教材『筑穂ブランド「筑穂牛」』のモチーフをフラットイラストで。",
-  "howto": "5年社会「「筑穂ブランド 筑穂牛」（これからの食料生産）」の導入・資料・掲示に。",
+  "description": "地域で育てるブランド和牛と畜産をあらわしたフラットイラスト。",
+  "howto": "5年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "筑穂ブランド",
-   "筑穂牛"
+   "和牛",
+   "畜産",
+   "牛",
+   "ブランド",
+   "農業"
   ],
-  "img": "img/chiiki_29_chikuho_gyu.jpg",
-  "thumb": "img/chiiki_29_chikuho_gyu_thumb.jpg",
-  "mono": "img/chiiki_29_chikuho_gyu_mono.jpg"
+  "img": "img/chiiki_29.jpg",
+  "thumb": "img/chiiki_29_thumb.jpg",
+  "mono": "img/chiiki_29_mono.jpg"
  },
  {
-  "id": "chiiki_31_suigai",
-  "title": "自然災害とともに生きる〜飯塚大水害〜（地域教材）",
+  "id": "chiiki_31",
+  "title": "川の氾濫と地域の防災",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "5年",
-  "unit": "『自然災害とともに生きる〜飯塚大水害〜』",
+  "unit": "自然災害とともに生きる",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4084,23 +4139,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "同じ雨で、なぜ被害は減ったのか。筑豊の地域教材『自然災害とともに生きる〜飯塚大水害〜』のモチーフをフラットイラストで。",
-  "howto": "5年社会「『自然災害とともに生きる〜飯塚大水害〜』」の導入・資料・掲示に。",
+  "description": "大きな水害と、そこから進んだ地域の防災をあらわしたフラットイラスト。",
+  "howto": "5年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "飯塚大水害"
+   "水害",
+   "防災",
+   "川",
+   "自然災害",
+   "地域"
   ],
-  "img": "img/chiiki_31_suigai.jpg",
-  "thumb": "img/chiiki_31_suigai_thumb.jpg",
-  "mono": "img/chiiki_31_suigai_mono.jpg"
+  "img": "img/chiiki_31.jpg",
+  "thumb": "img/chiiki_31_thumb.jpg",
+  "mono": "img/chiiki_31_mono.jpg"
  },
  {
-  "id": "chiiki_33_narumi",
-  "title": "ナルミ田川工場（自動車づくりにはげむ人々）（地域教材）",
+  "id": "chiiki_33",
+  "title": "自動車部品をつくる工場",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "5年",
-  "unit": "「自動車づくりにはげむ人々」",
+  "unit": "自動車づくりにはげむ人々",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4110,23 +4169,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "シートカバー1枚から見える自動車工業。筑豊の地域教材『ナルミ田川工場（自動車づくりにはげむ人々）』のモチーフをフラットイラストで。",
-  "howto": "5年社会「「自動車づくりにはげむ人々」」の導入・資料・掲示に。",
+  "description": "自動車の部品（シートカバー）をつくる工場をあらわしたフラットイラスト。",
+  "howto": "5年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "ナルミ田川工場"
+   "自動車",
+   "部品",
+   "工場",
+   "製造業",
+   "工業"
   ],
-  "img": "img/chiiki_33_narumi.jpg",
-  "thumb": "img/chiiki_33_narumi_thumb.jpg",
-  "mono": "img/chiiki_33_narumi_mono.jpg"
+  "img": "img/chiiki_33.jpg",
+  "thumb": "img/chiiki_33_thumb.jpg",
+  "mono": "img/chiiki_33_mono.jpg"
  },
  {
-  "id": "chiiki_35_kanezaki",
-  "title": "水産業のさかんな地域〜鐘崎漁港〜（地域教材）",
+  "id": "chiiki_35",
+  "title": "漁港と水産業",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "5年",
-  "unit": "「水産業のさかんな地域」",
+  "unit": "水産業のさかんな地域",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4136,23 +4199,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "鐘崎のとらふくは、なぜ「下関産」になるのか。筑豊の地域教材『水産業のさかんな地域〜鐘崎漁港〜』のモチーフをフラットイラストで。",
-  "howto": "5年社会「「水産業のさかんな地域」」の導入・資料・掲示に。",
+  "description": "漁港と、そこではたらく漁師の水産業をあらわしたフラットイラスト。",
+  "howto": "5年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "鐘崎漁港"
+   "漁港",
+   "水産業",
+   "漁業",
+   "ふぐ",
+   "港"
   ],
-  "img": "img/chiiki_35_kanezaki.jpg",
-  "thumb": "img/chiiki_35_kanezaki_thumb.jpg",
-  "mono": "img/chiiki_35_kanezaki_mono.jpg"
+  "img": "img/chiiki_35.jpg",
+  "thumb": "img/chiiki_35_thumb.jpg",
+  "mono": "img/chiiki_35_mono.jpg"
  },
  {
-  "id": "chiiki_37_chikei_kiko",
-  "title": "日本の地形と気候（地域教材）",
+  "id": "chiiki_37",
+  "title": "日本の地形と気候",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "5年",
-  "unit": "「日本の地形と気候」（わたしたちのくらしと国土）",
+  "unit": "日本の国土と自然",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4162,23 +4229,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "雨は多いのに水不足。この矛盾が使える。筑豊の地域教材『日本の地形と気候』のモチーフをフラットイラストで。",
-  "howto": "5年社会「「日本の地形と気候」（わたしたちのくらしと国土）」の導入・資料・掲示に。",
+  "description": "日本の地形と気候の特色をあらわしたフラットイラスト。",
+  "howto": "5年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "日本の地形と気候"
+   "地形",
+   "気候",
+   "地理",
+   "国土",
+   "自然"
   ],
-  "img": "img/chiiki_37_chikei_kiko.jpg",
-  "thumb": "img/chiiki_37_chikei_kiko_thumb.jpg",
-  "mono": "img/chiiki_37_chikei_kiko_mono.jpg"
+  "img": "img/chiiki_37.jpg",
+  "thumb": "img/chiiki_37_thumb.jpg",
+  "mono": "img/chiiki_37_mono.jpg"
  },
  {
-  "id": "chiiki_41_tateiwa",
-  "title": "前漢鏡と立岩遺跡（地域教材）",
+  "id": "chiiki_41",
+  "title": "遺跡から出土した古代の鏡",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "6年",
-  "unit": "「前漢鏡と立岩遺跡」（縄文のむらから古墳のくにへ）",
+  "unit": "むかしのむらのくらし",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4188,23 +4259,27 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "どうして中国の鏡が、立岩にあるのか。筑豊の地域教材『前漢鏡と立岩遺跡』のモチーフをフラットイラストで。",
-  "howto": "6年社会「「前漢鏡と立岩遺跡」（縄文のむらから古墳のくにへ）」の導入・資料・掲示に。",
+  "description": "遺跡から見つかった古代の鏡をあらわしたフラットイラスト。",
+  "howto": "6年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "前漢鏡と立岩遺跡"
+   "遺跡",
+   "鏡",
+   "古代",
+   "考古",
+   "弥生"
   ],
-  "img": "img/chiiki_41_tateiwa.jpg",
-  "thumb": "img/chiiki_41_tateiwa_thumb.jpg",
-  "mono": "img/chiiki_41_tateiwa_mono.jpg"
+  "img": "img/chiiki_41.jpg",
+  "thumb": "img/chiiki_41_thumb.jpg",
+  "mono": "img/chiiki_41_mono.jpg"
  },
  {
-  "id": "chiiki_43_okura",
-  "title": "山上憶良と大仏づくりから見る奈良時代（地域教材）",
+  "id": "chiiki_43",
+  "title": "奈良時代と万葉のうた",
   "author": "riko",
   "type": "illust",
   "subject": "社会",
   "grade": "6年",
-  "unit": "「山上憶良と大仏づくりから見る奈良時代」",
+  "unit": "貴族の世の中",
   "scenes": [
    "地域学習",
    "社会科資料"
@@ -4214,86 +4289,107 @@ const SOZAI = [
    "スライド",
    "掲示"
   ],
-  "description": "「まされる宝、子にしかめやも」はこの土地で。筑豊の地域教材『山上憶良と大仏づくりから見る奈良時代』のモチーフをフラットイラストで。",
-  "howto": "6年社会「「山上憶良と大仏づくりから見る奈良時代」」の導入・資料・掲示に。",
-  "tags": [],
-  "img": "img/chiiki_43_okura.jpg",
-  "thumb": "img/chiiki_43_okura_thumb.jpg",
-  "mono": "img/chiiki_43_okura_mono.jpg"
- },
- {
-  "id": "chiiki_45_takatori",
-  "title": "高取八山の一生と天下統一への道（地域教材）",
-  "author": "riko",
-  "type": "illust",
-  "subject": "社会",
-  "grade": "6年",
-  "unit": "「高取八山の一生と天下統一への道」（安土桃山〜江戸）",
-  "scenes": [
-   "地域学習",
-   "社会科資料"
-  ],
-  "uses": [
-   "プリント",
-   "スライド",
-   "掲示"
-  ],
-  "description": "一人の陶工の人生に、時代が全部映る。筑豊の地域教材『高取八山の一生と天下統一への道』のモチーフをフラットイラストで。",
-  "howto": "6年社会「「高取八山の一生と天下統一への道」（安土桃山〜江戸）」の導入・資料・掲示に。",
-  "tags": [],
-  "img": "img/chiiki_45_takatori.jpg",
-  "thumb": "img/chiiki_45_takatori_thumb.jpg",
-  "mono": "img/chiiki_45_takatori_mono.jpg"
- },
- {
-  "id": "chiiki_47_itoda",
-  "title": "糸田貞義と鎌倉時代（地域教材）",
-  "author": "riko",
-  "type": "illust",
-  "subject": "社会",
-  "grade": "6年",
-  "unit": "「糸田貞義と鎌倉時代」",
-  "scenes": [
-   "地域学習",
-   "社会科資料"
-  ],
-  "uses": [
-   "プリント",
-   "スライド",
-   "掲示"
-  ],
-  "description": "鎌倉幕府の最期を、町の石碑から読む。筑豊の地域教材『糸田貞義と鎌倉時代』のモチーフをフラットイラストで。",
-  "howto": "6年社会「「糸田貞義と鎌倉時代」」の導入・資料・掲示に。",
-  "tags": [],
-  "img": "img/chiiki_47_itoda.jpg",
-  "thumb": "img/chiiki_47_itoda_thumb.jpg",
-  "mono": "img/chiiki_47_itoda_mono.jpg"
- },
- {
-  "id": "chiiki_49_juujika",
-  "title": "十字架の塔（地域教材）",
-  "author": "riko",
-  "type": "illust",
-  "subject": "社会",
-  "grade": "6年",
-  "unit": "「十字架の塔」（戦争と人々のくらし・国際交流）",
-  "scenes": [
-   "地域学習",
-   "社会科資料"
-  ],
-  "uses": [
-   "プリント",
-   "スライド",
-   "掲示"
-  ],
-  "description": "慰霊の塔から始まった、オランダとの友情。筑豊の地域教材『十字架の塔』のモチーフをフラットイラストで。",
-  "howto": "6年社会「「十字架の塔」（戦争と人々のくらし・国際交流）」の導入・資料・掲示に。",
+  "description": "奈良時代の大仏づくりと万葉のうたをあらわしたフラットイラスト。",
+  "howto": "6年社会の地域学習の導入・資料・掲示に使えます。",
   "tags": [
-   "十字架の塔"
+   "奈良時代",
+   "大仏",
+   "万葉集",
+   "和歌",
+   "歴史"
   ],
-  "img": "img/chiiki_49_juujika.jpg",
-  "thumb": "img/chiiki_49_juujika_thumb.jpg",
-  "mono": "img/chiiki_49_juujika_mono.jpg"
+  "img": "img/chiiki_43.jpg",
+  "thumb": "img/chiiki_43_thumb.jpg",
+  "mono": "img/chiiki_43_mono.jpg"
+ },
+ {
+  "id": "chiiki_45",
+  "title": "焼き物をつくる陶工",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "武士の世の中",
+  "scenes": [
+   "地域学習",
+   "社会科資料"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "登り窯で焼き物をつくる陶工をあらわしたフラットイラスト。",
+  "howto": "6年社会の地域学習の導入・資料・掲示に使えます。",
+  "tags": [
+   "焼き物",
+   "陶芸",
+   "陶工",
+   "登り窯",
+   "伝統工芸"
+  ],
+  "img": "img/chiiki_45.jpg",
+  "thumb": "img/chiiki_45_thumb.jpg",
+  "mono": "img/chiiki_45_mono.jpg"
+ },
+ {
+  "id": "chiiki_47",
+  "title": "鎌倉時代と地域の石碑",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "武士の世の中",
+  "scenes": [
+   "地域学習",
+   "社会科資料"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "鎌倉時代の歴史を地域の石碑から読みとるイメージのフラットイラスト。",
+  "howto": "6年社会の地域学習の導入・資料・掲示に使えます。",
+  "tags": [
+   "鎌倉時代",
+   "石碑",
+   "歴史",
+   "武士"
+  ],
+  "img": "img/chiiki_47.jpg",
+  "thumb": "img/chiiki_47_thumb.jpg",
+  "mono": "img/chiiki_47_mono.jpg"
+ },
+ {
+  "id": "chiiki_49",
+  "title": "慰霊の塔と国際交流",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "世界とつながる日本",
+  "scenes": [
+   "地域学習",
+   "社会科資料"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "掲示"
+  ],
+  "description": "慰霊の塔から生まれた外国との交流をあらわしたフラットイラスト。",
+  "howto": "6年社会の地域学習の導入・資料・掲示に使えます。",
+  "tags": [
+   "慰霊",
+   "塔",
+   "国際交流",
+   "歴史",
+   "平和"
+  ],
+  "img": "img/chiiki_49.jpg",
+  "thumb": "img/chiiki_49_thumb.jpg",
+  "mono": "img/chiiki_49_mono.jpg"
  },
  {
   "id": "tayori_cosmos_sumire",
@@ -21465,5 +21561,375 @@ const SOZAI = [
   "img": "img/tayori_yukiusagi_makabe.jpg",
   "thumb": "img/tayori_yukiusagi_makabe_thumb.jpg",
   "mono": "img/tayori_yukiusagi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_oni_sumire",
+  "title": "節分の鬼の面と豆（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・節分",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "赤鬼の面と、枡いっぱいの福豆。",
+  "howto": "節分は「季節を分ける」日。豆まきには「魔（ま）を滅（め）っする」の語呂も込められています。",
+  "tags": [
+   "節分",
+   "鬼",
+   "豆まき",
+   "福豆",
+   "枡",
+   "2月",
+   "冬",
+   "行事",
+   "伝統",
+   "学校だより"
+  ],
+  "img": "img/tayori_oni_sumire.jpg",
+  "thumb": "img/tayori_oni_sumire_thumb.jpg",
+  "mono": "img/tayori_oni_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_oni_makabe",
+  "title": "節分の鬼の面と豆（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・節分",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "赤鬼の面と、枡いっぱいの福豆。",
+  "howto": "節分は「季節を分ける」日。豆まきには「魔（ま）を滅（め）っする」の語呂も込められています。",
+  "tags": [
+   "節分",
+   "鬼",
+   "豆まき",
+   "福豆",
+   "枡",
+   "2月",
+   "冬",
+   "行事",
+   "伝統",
+   "学校だより"
+  ],
+  "img": "img/tayori_oni_makabe.jpg",
+  "thumb": "img/tayori_oni_makabe_thumb.jpg",
+  "mono": "img/tayori_oni_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_ume_sumire",
+  "title": "梅の花（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ごつごつした枝に咲く紅梅。花びらは丸く、桜と見分けるポイント。",
+  "howto": "梅の花びらは先が丸、桜は先に切れ込み。枝にくっついて咲くのも梅の特徴です。見分け方の話のタネに。",
+  "tags": [
+   "梅",
+   "紅梅",
+   "花",
+   "2月",
+   "3月",
+   "早春",
+   "春",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ume_sumire.jpg",
+  "thumb": "img/tayori_ume_sumire_thumb.jpg",
+  "mono": "img/tayori_ume_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_ume_makabe",
+  "title": "梅の花（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "ごつごつした枝に咲く紅梅。花びらは丸く、桜と見分けるポイント。",
+  "howto": "梅の花びらは先が丸、桜は先に切れ込み。枝にくっついて咲くのも梅の特徴です。見分け方の話のタネに。",
+  "tags": [
+   "梅",
+   "紅梅",
+   "花",
+   "2月",
+   "3月",
+   "早春",
+   "春",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ume_makabe.jpg",
+  "thumb": "img/tayori_ume_makabe_thumb.jpg",
+  "mono": "img/tayori_ume_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_uguisu_sumire",
+  "title": "梅にうぐいす（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "本物のうぐいす色（オリーブ褐色）で描いた、梅の枝のうぐいす。",
+  "howto": "絵でよく見る緑の鳥は実はメジロのことが多いんです。本物のうぐいすは地味な茶色。鳴き声は「ホーホケキョ」。",
+  "tags": [
+   "うぐいす",
+   "鶯",
+   "梅",
+   "鳥",
+   "2月",
+   "3月",
+   "早春",
+   "春告鳥",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_uguisu_sumire.jpg",
+  "thumb": "img/tayori_uguisu_sumire_thumb.jpg",
+  "mono": "img/tayori_uguisu_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_uguisu_makabe",
+  "title": "梅にうぐいす（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・早春",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "本物のうぐいす色（オリーブ褐色）で描いた、梅の枝のうぐいす。",
+  "howto": "絵でよく見る緑の鳥は実はメジロのことが多いんです。本物のうぐいすは地味な茶色。鳴き声は「ホーホケキョ」。",
+  "tags": [
+   "うぐいす",
+   "鶯",
+   "梅",
+   "鳥",
+   "2月",
+   "3月",
+   "早春",
+   "春告鳥",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_uguisu_makabe.jpg",
+  "thumb": "img/tayori_uguisu_makabe_thumb.jpg",
+  "mono": "img/tayori_uguisu_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_fukinotou_sumire",
+  "title": "ふきのとう（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・春の兆し",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "残雪の土から顔を出したふきのとう。",
+  "howto": "ふきのとうは春いちばんに顔を出す山菜。雪の下でじっと春を待っていました。「春の兆し」の一枚に。",
+  "tags": [
+   "ふきのとう",
+   "春の兆し",
+   "山菜",
+   "2月",
+   "3月",
+   "早春",
+   "雪どけ",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_fukinotou_sumire.jpg",
+  "thumb": "img/tayori_fukinotou_sumire_thumb.jpg",
+  "mono": "img/tayori_fukinotou_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_fukinotou_makabe",
+  "title": "ふきのとう（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・春の兆し",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "残雪の土から顔を出したふきのとう。",
+  "howto": "ふきのとうは春いちばんに顔を出す山菜。雪の下でじっと春を待っていました。「春の兆し」の一枚に。",
+  "tags": [
+   "ふきのとう",
+   "春の兆し",
+   "山菜",
+   "2月",
+   "3月",
+   "早春",
+   "雪どけ",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_fukinotou_makabe.jpg",
+  "thumb": "img/tayori_fukinotou_makabe_thumb.jpg",
+  "mono": "img/tayori_fukinotou_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_ehomaki_sumire",
+  "title": "恵方巻（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・節分",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "切り口に七つの具が見える恵方巻。",
+  "howto": "恵方巻の具は七福神にちなんで七種類が基本と言われます。その年の恵方を向いて丸ごとひと巻き。",
+  "tags": [
+   "恵方巻",
+   "節分",
+   "2月",
+   "行事食",
+   "食育",
+   "給食",
+   "七福神",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ehomaki_sumire.jpg",
+  "thumb": "img/tayori_ehomaki_sumire_thumb.jpg",
+  "mono": "img/tayori_ehomaki_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_ehomaki_makabe",
+  "title": "恵方巻（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "2月・節分",
+  "scenes": [
+   "学校だより・学級通信",
+   "2月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "切り口に七つの具が見える恵方巻。",
+  "howto": "恵方巻の具は七福神にちなんで七種類が基本と言われます。その年の恵方を向いて丸ごとひと巻き。",
+  "tags": [
+   "恵方巻",
+   "節分",
+   "2月",
+   "行事食",
+   "食育",
+   "給食",
+   "七福神",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_ehomaki_makabe.jpg",
+  "thumb": "img/tayori_ehomaki_makabe_thumb.jpg",
+  "mono": "img/tayori_ehomaki_makabe_mono.jpg"
  }
 ];
