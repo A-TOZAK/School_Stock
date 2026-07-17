@@ -9690,5 +9690,371 @@ const SOZAI = [
   "img": "img/tayori_hotaru_makabe.jpg",
   "thumb": "img/tayori_hotaru_makabe_thumb.jpg",
   "mono": "img/tayori_hotaru_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_furin_sumire",
+  "title": "風鈴（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "朝顔を描いた江戸風鈴と、白い短冊。",
+  "howto": "風鈴の音を聞くと涼しく感じるのは、音で風を感じ取っているから。昔の人の、暑さをしのぐ知恵です。",
+  "tags": [
+   "風鈴",
+   "ふうりん",
+   "江戸風鈴",
+   "朝顔",
+   "夏",
+   "7月",
+   "涼",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_furin_sumire.jpg",
+  "thumb": "img/tayori_furin_sumire_thumb.jpg",
+  "mono": "img/tayori_furin_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_furin_makabe",
+  "title": "風鈴（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "朝顔を描いた江戸風鈴と、白い短冊。",
+  "howto": "風鈴の音を聞くと涼しく感じるのは、音で風を感じ取っているから。昔の人の、暑さをしのぐ知恵です。",
+  "tags": [
+   "風鈴",
+   "ふうりん",
+   "江戸風鈴",
+   "朝顔",
+   "夏",
+   "7月",
+   "涼",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_furin_makabe.jpg",
+  "thumb": "img/tayori_furin_makabe_thumb.jpg",
+  "mono": "img/tayori_furin_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_himawari_sumire",
+  "title": "ひまわり（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "大きな花と葉、つぼみのついたひまわり。",
+  "howto": "ひまわりが太陽の方を向くのは、花が開く前のつぼみのころ。咲くと東を向いて止まります。まん中は小さな花の集まりです。",
+  "tags": [
+   "ひまわり",
+   "向日葵",
+   "夏",
+   "7月",
+   "盛夏",
+   "花",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_himawari_sumire.jpg",
+  "thumb": "img/tayori_himawari_sumire_thumb.jpg",
+  "mono": "img/tayori_himawari_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_himawari_makabe",
+  "title": "ひまわり（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "大きな花と葉、つぼみのついたひまわり。",
+  "howto": "ひまわりが太陽の方を向くのは、花が開く前のつぼみのころ。咲くと東を向いて止まります。まん中は小さな花の集まりです。",
+  "tags": [
+   "ひまわり",
+   "向日葵",
+   "夏",
+   "7月",
+   "盛夏",
+   "花",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_himawari_makabe.jpg",
+  "thumb": "img/tayori_himawari_makabe_thumb.jpg",
+  "mono": "img/tayori_himawari_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_tanabata_sumire",
+  "title": "七夕の笹飾り（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・七夕",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "短冊・輪つなぎ・星・網飾りをつけた七夕の笹。",
+  "howto": "七夕のかざりには一つずつ願いがこめられています。網かざりは豊作、輪つなぎは願いがつながるように。子どもと意味を話すきっかけに。",
+  "tags": [
+   "七夕",
+   "たなばた",
+   "笹飾り",
+   "短冊",
+   "星",
+   "7月",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tanabata_sumire.jpg",
+  "thumb": "img/tayori_tanabata_sumire_thumb.jpg",
+  "mono": "img/tayori_tanabata_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_tanabata_makabe",
+  "title": "七夕の笹飾り（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・七夕",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "短冊・輪つなぎ・星・網飾りをつけた七夕の笹。",
+  "howto": "七夕のかざりには一つずつ願いがこめられています。網かざりは豊作、輪つなぎは願いがつながるように。子どもと意味を話すきっかけに。",
+  "tags": [
+   "七夕",
+   "たなばた",
+   "笹飾り",
+   "短冊",
+   "星",
+   "7月",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_tanabata_makabe.jpg",
+  "thumb": "img/tayori_tanabata_makabe_thumb.jpg",
+  "mono": "img/tayori_tanabata_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_suika_sumire",
+  "title": "すいか（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "まるごとのすいかと、切ったくさび形の一切れ。",
+  "howto": "すいかは重さの9割以上が水分。あせをかく夏の水分ほきゅうにぴったりです。切って赤いのは、よく熟したしるし。",
+  "tags": [
+   "すいか",
+   "スイカ",
+   "西瓜",
+   "夏",
+   "7月",
+   "果物",
+   "水分",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_suika_sumire.jpg",
+  "thumb": "img/tayori_suika_sumire_thumb.jpg",
+  "mono": "img/tayori_suika_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_suika_makabe",
+  "title": "すいか（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "まるごとのすいかと、切ったくさび形の一切れ。",
+  "howto": "すいかは重さの9割以上が水分。あせをかく夏の水分ほきゅうにぴったりです。切って赤いのは、よく熟したしるし。",
+  "tags": [
+   "すいか",
+   "スイカ",
+   "西瓜",
+   "夏",
+   "7月",
+   "果物",
+   "水分",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_suika_makabe.jpg",
+  "thumb": "img/tayori_suika_makabe_thumb.jpg",
+  "mono": "img/tayori_suika_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_semi_sumire",
+  "title": "せみ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "木の幹にとまるアブラゼミ。",
+  "howto": "せみが鳴くのはオスだけ。おなかの膜をふるわせて鳴きます。土の中で数年すごし、夏のあいだだけ地上に出てきます。",
+  "tags": [
+   "せみ",
+   "セミ",
+   "蝉",
+   "アブラゼミ",
+   "夏",
+   "7月",
+   "盛夏",
+   "昆虫",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_semi_sumire.jpg",
+  "thumb": "img/tayori_semi_sumire_thumb.jpg",
+  "mono": "img/tayori_semi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_semi_makabe",
+  "title": "せみ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "7月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "7月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "木の幹にとまるアブラゼミ。",
+  "howto": "せみが鳴くのはオスだけ。おなかの膜をふるわせて鳴きます。土の中で数年すごし、夏のあいだだけ地上に出てきます。",
+  "tags": [
+   "せみ",
+   "セミ",
+   "蝉",
+   "アブラゼミ",
+   "夏",
+   "7月",
+   "盛夏",
+   "昆虫",
+   "自然観察",
+   "学校だより"
+  ],
+  "img": "img/tayori_semi_makabe.jpg",
+  "thumb": "img/tayori_semi_makabe_thumb.jpg",
+  "mono": "img/tayori_semi_makabe_mono.jpg"
  }
 ];
