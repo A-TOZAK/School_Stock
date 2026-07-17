@@ -10056,5 +10056,375 @@ const SOZAI = [
   "img": "img/tayori_semi_makabe.jpg",
   "thumb": "img/tayori_semi_makabe_thumb.jpg",
   "mono": "img/tayori_semi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_asagao_sumire",
+  "title": "朝顔（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "青むらさきの朝顔の花とつぼみ、ハート形の葉。",
+  "howto": "朝顔は朝早くに花を開き、昼にはしぼみます。つるが支柱に巻きつく向きはいつも同じ。1年生が生活科で育てる夏の花です。",
+  "tags": [
+   "朝顔",
+   "あさがお",
+   "アサガオ",
+   "夏",
+   "8月",
+   "花",
+   "生活科",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_asagao_sumire.jpg",
+  "thumb": "img/tayori_asagao_sumire_thumb.jpg",
+  "mono": "img/tayori_asagao_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_asagao_makabe",
+  "title": "朝顔（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "青むらさきの朝顔の花とつぼみ、ハート形の葉。",
+  "howto": "朝顔は朝早くに花を開き、昼にはしぼみます。つるが支柱に巻きつく向きはいつも同じ。1年生が生活科で育てる夏の花です。",
+  "tags": [
+   "朝顔",
+   "あさがお",
+   "アサガオ",
+   "夏",
+   "8月",
+   "花",
+   "生活科",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_asagao_makabe.jpg",
+  "thumb": "img/tayori_asagao_makabe_thumb.jpg",
+  "mono": "img/tayori_asagao_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kakigori_sumire",
+  "title": "かき氷（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ガラスの器に盛った、いちごシロップのかき氷。",
+  "howto": "かき氷は平安時代からある夏のごちそう。『枕草子』にも「削り氷」として出てきます。夏祭りの楽しみのひとつ。",
+  "tags": [
+   "かき氷",
+   "カキ氷",
+   "氷",
+   "夏",
+   "8月",
+   "夏祭り",
+   "冷たい",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kakigori_sumire.jpg",
+  "thumb": "img/tayori_kakigori_sumire_thumb.jpg",
+  "mono": "img/tayori_kakigori_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kakigori_makabe",
+  "title": "かき氷（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "ガラスの器に盛った、いちごシロップのかき氷。",
+  "howto": "かき氷は平安時代からある夏のごちそう。『枕草子』にも「削り氷」として出てきます。夏祭りの楽しみのひとつ。",
+  "tags": [
+   "かき氷",
+   "カキ氷",
+   "氷",
+   "夏",
+   "8月",
+   "夏祭り",
+   "冷たい",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_kakigori_makabe.jpg",
+  "thumb": "img/tayori_kakigori_makabe_thumb.jpg",
+  "mono": "img/tayori_kakigori_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_hanabi_sumire",
+  "title": "手持ち花火（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "色とりどりの手持ち花火の束と、一本の花火。",
+  "howto": "線香花火の火花は、蕾・牡丹・松葉・散り菊と名前を変えながら姿を変えます。最後の一瞬まで見守るのが楽しみ方。",
+  "tags": [
+   "花火",
+   "はなび",
+   "手持ち花火",
+   "線香花火",
+   "夏",
+   "8月",
+   "夏祭り",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_hanabi_sumire.jpg",
+  "thumb": "img/tayori_hanabi_sumire_thumb.jpg",
+  "mono": "img/tayori_hanabi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_hanabi_makabe",
+  "title": "手持ち花火（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "色とりどりの手持ち花火の束と、一本の花火。",
+  "howto": "線香花火の火花は、蕾・牡丹・松葉・散り菊と名前を変えながら姿を変えます。最後の一瞬まで見守るのが楽しみ方。",
+  "tags": [
+   "花火",
+   "はなび",
+   "手持ち花火",
+   "線香花火",
+   "夏",
+   "8月",
+   "夏祭り",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_hanabi_makabe.jpg",
+  "thumb": "img/tayori_hanabi_makabe_thumb.jpg",
+  "mono": "img/tayori_hanabi_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_mushitori_sumire",
+  "title": "虫とり網とカブトムシ（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "オスのカブトムシと、子ども用の虫とり網。",
+  "howto": "カブトムシは夜、クヌギやコナラの樹液に集まります。オスの大きな角は、ライバルを持ち上げて投げ飛ばすための武器です。",
+  "tags": [
+   "カブトムシ",
+   "かぶとむし",
+   "虫とり網",
+   "昆虫",
+   "夏",
+   "8月",
+   "盛夏",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_mushitori_sumire.jpg",
+  "thumb": "img/tayori_mushitori_sumire_thumb.jpg",
+  "mono": "img/tayori_mushitori_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_mushitori_makabe",
+  "title": "虫とり網とカブトムシ（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・盛夏",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "夏"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "オスのカブトムシと、子ども用の虫とり網。",
+  "howto": "カブトムシは夜、クヌギやコナラの樹液に集まります。オスの大きな角は、ライバルを持ち上げて投げ飛ばすための武器です。",
+  "tags": [
+   "カブトムシ",
+   "かぶとむし",
+   "虫とり網",
+   "昆虫",
+   "夏",
+   "8月",
+   "盛夏",
+   "自然観察",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_mushitori_makabe.jpg",
+  "thumb": "img/tayori_mushitori_makabe_thumb.jpg",
+  "mono": "img/tayori_mushitori_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_shouryouma_sumire",
+  "title": "精霊馬（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・お盆",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "お盆"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "きゅうりの馬となすの牛の精霊馬。",
+  "howto": "お盆のきゅうりの馬は「早く帰ってきて」、なすの牛は「ゆっくり帰って」という願い。ご先祖を迎え、送るための乗り物です。",
+  "tags": [
+   "精霊馬",
+   "しょうりょううま",
+   "お盆",
+   "きゅうり",
+   "なす",
+   "8月",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shouryouma_sumire.jpg",
+  "thumb": "img/tayori_shouryouma_sumire_thumb.jpg",
+  "mono": "img/tayori_shouryouma_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_shouryouma_makabe",
+  "title": "精霊馬（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "8月・お盆",
+  "scenes": [
+   "学校だより・学級通信",
+   "8月",
+   "お盆"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "きゅうりの馬となすの牛の精霊馬。",
+  "howto": "お盆のきゅうりの馬は「早く帰ってきて」、なすの牛は「ゆっくり帰って」という願い。ご先祖を迎え、送るための乗り物です。",
+  "tags": [
+   "精霊馬",
+   "しょうりょううま",
+   "お盆",
+   "きゅうり",
+   "なす",
+   "8月",
+   "行事",
+   "伝統",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_shouryouma_makabe.jpg",
+  "thumb": "img/tayori_shouryouma_makabe_thumb.jpg",
+  "mono": "img/tayori_shouryouma_makabe_mono.jpg"
  }
 ];
