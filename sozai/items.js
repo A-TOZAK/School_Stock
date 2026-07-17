@@ -6058,5 +6058,226 @@ const SOZAI = [
   "img": "img/tayori_minomushi_makabe.jpg",
   "thumb": "img/tayori_minomushi_makabe_thumb.jpg",
   "mono": "img/tayori_minomushi_makabe_mono.jpg"
+ },
+ {
+  "id": "hoken_tearai_sumire",
+  "title": "手あらい（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "手洗い・清潔",
+  "scenes": [
+   "保健だより",
+   "感染症予防",
+   "手洗い・うがい",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "蛇口の下で石けんを泡立てて手を洗う子ども。",
+  "howto": "手洗いの呼びかけや感染症予防のたよりに。石けん・流水・タオルまでそろうので手順の話にも。",
+  "tags": [
+   "手洗い",
+   "手あらい",
+   "石けん",
+   "清潔",
+   "感染症予防",
+   "保健だより",
+   "養護教諭",
+   "生活習慣",
+   "水彩"
+  ],
+  "img": "img/hoken_tearai_sumire.jpg",
+  "thumb": "img/hoken_tearai_sumire_thumb.jpg",
+  "mono": "img/hoken_tearai_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_suimin_sumire",
+  "title": "すいみん（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "睡眠・生活リズム",
+  "scenes": [
+   "保健だより",
+   "生活リズム",
+   "早ね早おき",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "ふとんで気持ちよさそうに眠る子ども。",
+  "howto": "早ね早おきや睡眠の大切さのたよりに。生活リズムカードの挿絵にも。",
+  "tags": [
+   "睡眠",
+   "すいみん",
+   "早寝早起き",
+   "生活リズム",
+   "保健だより",
+   "養護教諭",
+   "生活習慣",
+   "水彩"
+  ],
+  "img": "img/hoken_suimin_sumire.jpg",
+  "thumb": "img/hoken_suimin_sumire_thumb.jpg",
+  "mono": "img/hoken_suimin_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_hamigaki_sumire",
+  "title": "歯みがき（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "歯・口の健康",
+  "scenes": [
+   "保健だより",
+   "歯科保健",
+   "歯みがき",
+   "6月・歯の衛生週間"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "洗面台で歯をみがく子ども。コップと歯みがき粉つき。",
+  "howto": "歯の衛生週間や歯みがき指導のたよりに。仕上げみがきや正しいみがき方の話題にも。",
+  "tags": [
+   "歯みがき",
+   "はみがき",
+   "歯",
+   "口の健康",
+   "歯科保健",
+   "保健だより",
+   "養護教諭",
+   "生活習慣",
+   "水彩"
+  ],
+  "img": "img/hoken_hamigaki_sumire.jpg",
+  "thumb": "img/hoken_hamigaki_sumire_thumb.jpg",
+  "mono": "img/hoken_hamigaki_sumire_mono.jpg"
+ },
+ {
+  "id": "hoken_suibun_sumire",
+  "title": "水分ほきゅう（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・保健",
+  "grade": "全学年",
+  "unit": "熱中症予防・水分補給",
+  "scenes": [
+   "保健だより",
+   "熱中症予防",
+   "夏",
+   "7月・8月"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "帽子をかぶり水筒で水分をとる子ども。",
+  "howto": "熱中症予防や夏の健康のたよりに。こまめな水分補給・帽子の呼びかけに。",
+  "tags": [
+   "水分補給",
+   "熱中症",
+   "熱中症予防",
+   "水筒",
+   "帽子",
+   "夏",
+   "保健だより",
+   "養護教諭",
+   "水彩"
+  ],
+  "img": "img/hoken_suibun_sumire.jpg",
+  "thumb": "img/hoken_suibun_sumire_thumb.jpg",
+  "mono": "img/hoken_suibun_sumire_mono.jpg"
+ },
+ {
+  "id": "kyushoku_itadakimasu_sumire",
+  "title": "いただきます（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "給食・食事のあいさつ",
+  "scenes": [
+   "給食だより",
+   "食育",
+   "食事のマナー",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "給食の前に手を合わせる子ども。一人分の配膳がそろう。",
+  "howto": "給食だよりや食事のあいさつ・マナーの話題に。感謝して食べる食育のたよりに。",
+  "tags": [
+   "いただきます",
+   "給食",
+   "食事のマナー",
+   "あいさつ",
+   "食育",
+   "給食だより",
+   "栄養教諭",
+   "配膳",
+   "水彩"
+  ],
+  "img": "img/kyushoku_itadakimasu_sumire.jpg",
+  "thumb": "img/kyushoku_itadakimasu_sumire_thumb.jpg",
+  "mono": "img/kyushoku_itadakimasu_sumire_mono.jpg"
+ },
+ {
+  "id": "kyushoku_touban_sumire",
+  "title": "給食当番（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・給食",
+  "grade": "全学年",
+  "unit": "給食・配膳",
+  "scenes": [
+   "給食だより",
+   "給食指導",
+   "当番活動",
+   "通年"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "白衣・帽子・マスクで配膳する給食当番の子ども。",
+  "howto": "給食だよりや給食当番・身支度の指導に。清潔な身支度や配膳の話題に。",
+  "tags": [
+   "給食当番",
+   "配膳",
+   "白衣",
+   "給食",
+   "給食指導",
+   "当番",
+   "給食だより",
+   "栄養教諭",
+   "水彩"
+  ],
+  "img": "img/kyushoku_touban_sumire.jpg",
+  "thumb": "img/kyushoku_touban_sumire_thumb.jpg",
+  "mono": "img/kyushoku_touban_sumire_mono.jpg"
  }
 ];
