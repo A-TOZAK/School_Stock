@@ -20918,5 +20918,182 @@ const SOZAI = [
   "img": "img/shakai_zeikin.jpg",
   "thumb": "img/shakai_zeikin_thumb.jpg",
   "mono": "img/shakai_zeikin_mono.jpg"
+ },
+ {
+  "id": "kenshu_photo_desk_flatlay_masuda",
+  "title": "校務机のフラットレイ（PC・付箋・ノート）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "note見出し",
+   "研修サムネ",
+   "校務"
+  ],
+  "uses": [
+   "note見出し",
+   "サムネ",
+   "スライド用",
+   "掲示・おたより用"
+  ],
+  "description": "ノートPC・付箋・スパイラルノート・マグをクラフト紙に45度で。右に文字用の余白。",
+  "howto": "生成AI・校務DX・働き方改革の記事見出しや研修サムネに。右側に見出しを重ねられます。",
+  "tags": [
+   "生成AI",
+   "校務",
+   "働き方改革",
+   "ノートPC",
+   "付箋",
+   "デスク",
+   "フラットレイ",
+   "見出し",
+   "ICT",
+   "研修"
+  ],
+  "img": "img/kenshu_photo_desk_flatlay_masuda.jpg",
+  "thumb": "img/kenshu_photo_desk_flatlay_masuda_thumb.jpg"
+ },
+ {
+  "id": "kenshu_photo_tablet_hero_masuda",
+  "title": "タブレットの俯瞰（ブツ撮り）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "表紙",
+   "サムネ",
+   "ICT"
+  ],
+  "uses": [
+   "スライド用",
+   "プリント表紙",
+   "サムネ",
+   "掲示・おたより用"
+  ],
+  "description": "タブレット・スタイラス・眼鏡・クリップをクラフト紙に俯瞰。周囲に余白。",
+  "howto": "ICT・タブレット活用のスライド扉やプリント表紙、汎用サムネに。",
+  "tags": [
+   "タブレット",
+   "ICT",
+   "端末",
+   "俯瞰",
+   "ブツ撮り",
+   "表紙",
+   "スタイラス",
+   "デジタル",
+   "研修",
+   "GIGA"
+  ],
+  "img": "img/kenshu_photo_tablet_hero_masuda.jpg",
+  "thumb": "img/kenshu_photo_tablet_hero_masuda_thumb.jpg"
+ },
+ {
+  "id": "kenshu_photo_hands_laptop_suou",
+  "title": "PCを打つ手元（校務の空気）",
+  "author": "suou",
+  "type": "photo",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "note見出し",
+   "校務DX",
+   "働き方改革"
+  ],
+  "uses": [
+   "note見出し",
+   "スライド用",
+   "記事挿絵"
+  ],
+  "description": "窓の光でノートPCを打つ手元。顔なし。手前の机にコーヒーの輪と名札ストラップ。",
+  "howto": "生成AIで校務をする先生の「空気」を伝える記事見出し・スライドに。顔が写らないので使いやすい。",
+  "tags": [
+   "生成AI",
+   "校務",
+   "働き方改革",
+   "ノートPC",
+   "手元",
+   "顔なし",
+   "ドキュメンタリー",
+   "先生",
+   "note",
+   "ICT"
+  ],
+  "img": "img/kenshu_photo_hands_laptop_suou.jpg",
+  "thumb": "img/kenshu_photo_hands_laptop_suou_thumb.jpg"
+ },
+ {
+  "id": "kenshu_photo_child_tablet_suou",
+  "title": "タブレットを操作する子どもの手元",
+  "author": "suou",
+  "type": "photo",
+  "subject": "研修・ICT",
+  "grade": "小学校",
+  "unit": "ICT授業",
+  "scenes": [
+   "ICT授業",
+   "GIGA",
+   "端末活用"
+  ],
+  "uses": [
+   "スライド用",
+   "記事挿絵",
+   "掲示・おたより用"
+  ],
+  "description": "窓の光で机のタブレットに触れる子どもの手元。顔なし。水筒・筆箱・けずりかす。",
+  "howto": "授業でのタブレット活用（GIGA端末）の場面に。顔が写らないので配布・掲示にも使えます。",
+  "tags": [
+   "ICT",
+   "GIGA",
+   "タブレット",
+   "授業",
+   "子ども",
+   "手元",
+   "顔なし",
+   "端末活用",
+   "1人1台",
+   "小学校"
+  ],
+  "img": "img/kenshu_photo_child_tablet_suou.jpg",
+  "thumb": "img/kenshu_photo_child_tablet_suou_thumb.jpg"
+ },
+ {
+  "id": "kenshu_photo_morning_desk_himi",
+  "title": "朝の窓辺の机（PCとマグ）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "note見出し",
+   "朝の校務",
+   "季節"
+  ],
+  "uses": [
+   "note見出し",
+   "記事挿絵",
+   "スライド用"
+  ],
+  "description": "朝の光の窓辺に、ノートPC・湯気の立つマグ・開いた手帳。窓の結露と時計のぼかし。",
+  "howto": "朝の校務・働き方・落ち着いた雰囲気のnote見出しに。静かな導入の1枚に。",
+  "tags": [
+   "朝",
+   "校務",
+   "働き方改革",
+   "ノートPC",
+   "窓辺",
+   "マグ",
+   "手帳",
+   "note",
+   "季節",
+   "情景"
+  ],
+  "img": "img/kenshu_photo_morning_desk_himi.jpg",
+  "thumb": "img/kenshu_photo_morning_desk_himi_thumb.jpg"
  }
 ];
