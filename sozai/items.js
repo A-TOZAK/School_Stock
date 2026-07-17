@@ -5466,5 +5466,227 @@ const SOZAI = [
   "img": "img/tayori_halloween_makabe.jpg",
   "thumb": "img/tayori_halloween_makabe_thumb.jpg",
   "mono": "img/tayori_halloween_makabe_mono.jpg"
+ },
+ {
+  "id": "kenshu_ai_talk_riko",
+  "title": "AIと対話する先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "校務",
+   "働き方改革"
+  ],
+  "uses": [
+   "研修スライド",
+   "配布物",
+   "見出し",
+   "note"
+  ],
+  "description": "ノートPCで生成AIと対話する先生。空の吹き出しに文字を入れて使えます。",
+  "howto": "吹き出しは空にしてあります。スライドソフトで見出しやセリフを重ねてください。研修の表紙や導入に。",
+  "tags": [
+   "生成AI",
+   "研修",
+   "AI活用",
+   "ChatGPT",
+   "校務",
+   "先生",
+   "ノートPC",
+   "吹き出し",
+   "働き方改革",
+   "ICT"
+  ],
+  "img": "img/kenshu_ai_talk_riko.jpg",
+  "thumb": "img/kenshu_ai_talk_riko_thumb.jpg",
+  "mono": "img/kenshu_ai_talk_riko_mono.jpg"
+ },
+ {
+  "id": "kenshu_no_personal_info_riko",
+  "title": "個人情報は入れない（注意）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "情報セキュリティ",
+   "ガイドライン"
+  ],
+  "uses": [
+   "研修スライド",
+   "掲示",
+   "配布物",
+   "チェックシート"
+  ],
+  "description": "手を上げて止める先生と、鍵つきの盾。個人情報をAIに入れない注意喚起に。",
+  "howto": "生成AIに児童の名前・成績などの個人情報を入れないルールの説明に。掲示にも使えます。",
+  "tags": [
+   "生成AI",
+   "個人情報",
+   "情報セキュリティ",
+   "注意",
+   "ガイドライン",
+   "ルール",
+   "研修",
+   "盾",
+   "鍵",
+   "ICT"
+  ],
+  "img": "img/kenshu_no_personal_info_riko.jpg",
+  "thumb": "img/kenshu_no_personal_info_riko_thumb.jpg",
+  "mono": "img/kenshu_no_personal_info_riko_mono.jpg"
+ },
+ {
+  "id": "kenshu_draft_shoken_riko",
+  "title": "所見・通知文の下書きをAIで",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "校務効率化",
+   "働き方改革"
+  ],
+  "uses": [
+   "研修スライド",
+   "配布物",
+   "見出し",
+   "note"
+  ],
+  "description": "PCで書類の下書きをする先生と砂時計。校務の時短活用例に。",
+  "howto": "所見・通知文・アンケートのたたき台づくりなど、校務時短の活用例の場面に。",
+  "tags": [
+   "生成AI",
+   "校務",
+   "時短",
+   "所見",
+   "通知文",
+   "働き方改革",
+   "研修",
+   "砂時計",
+   "先生",
+   "ICT"
+  ],
+  "img": "img/kenshu_draft_shoken_riko.jpg",
+  "thumb": "img/kenshu_draft_shoken_riko_thumb.jpg",
+  "mono": "img/kenshu_draft_shoken_riko_mono.jpg"
+ },
+ {
+  "id": "kenshu_staff_training_riko",
+  "title": "職員研修でみんなで試す",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "校内研修",
+   "職員会議"
+  ],
+  "uses": [
+   "研修スライド",
+   "案内",
+   "見出し",
+   "note"
+  ],
+  "description": "1台のPCを囲んで学び合う先生たち。校内研修の案内や表紙に。",
+  "howto": "校内研修・職員研修の案内や表紙に。みんなで触ってみる雰囲気づくりに。",
+  "tags": [
+   "生成AI",
+   "校内研修",
+   "職員研修",
+   "学び合い",
+   "研修",
+   "先生",
+   "PC",
+   "ICT",
+   "働き方改革",
+   "チーム"
+  ],
+  "img": "img/kenshu_staff_training_riko.jpg",
+  "thumb": "img/kenshu_staff_training_riko_thumb.jpg",
+  "mono": "img/kenshu_staff_training_riko_mono.jpg"
+ },
+ {
+  "id": "kenshu_prompt_hands_riko",
+  "title": "プロンプト（指示と返事）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "プロンプト",
+   "使い方"
+  ],
+  "uses": [
+   "研修スライド",
+   "配布物",
+   "図解パーツ",
+   "見出し"
+  ],
+  "description": "キーボードを打つ手と、指示・返事の空の吹き出し2つ。プロンプトの説明に。",
+  "howto": "2つの吹き出しは空です。「指示」と「返事」の文字を入れて、プロンプトの型の説明に使えます。",
+  "tags": [
+   "生成AI",
+   "プロンプト",
+   "指示",
+   "使い方",
+   "研修",
+   "吹き出し",
+   "キーボード",
+   "ChatGPT",
+   "ICT",
+   "図解"
+  ],
+  "img": "img/kenshu_prompt_hands_riko.jpg",
+  "thumb": "img/kenshu_prompt_hands_riko_thumb.jpg",
+  "mono": "img/kenshu_prompt_hands_riko_mono.jpg"
+ },
+ {
+  "id": "kenshu_first_step_riko",
+  "title": "まず一歩ふみ出す先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "研修・ICT",
+  "grade": "教職員",
+  "unit": "生成AI研修",
+  "scenes": [
+   "生成AI研修",
+   "はじめの一歩",
+   "タブレット"
+  ],
+  "uses": [
+   "研修スライド",
+   "見出し",
+   "note",
+   "配布物"
+  ],
+  "description": "タブレットを手に、こわがらず試してみる先生。不安を「やってみたい」に変える場面に。",
+  "howto": "「まず1つ試してみよう」の呼びかけや、不安をやわらげる導入の場面に。右側は文字用の余白です。",
+  "tags": [
+   "生成AI",
+   "はじめの一歩",
+   "不安",
+   "チャレンジ",
+   "研修",
+   "タブレット",
+   "先生",
+   "前向き",
+   "ICT",
+   "導入"
+  ],
+  "img": "img/kenshu_first_step_riko.jpg",
+  "thumb": "img/kenshu_first_step_riko_thumb.jpg",
+  "mono": "img/kenshu_first_step_riko_mono.jpg"
  }
 ];
