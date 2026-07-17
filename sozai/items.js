@@ -5688,5 +5688,375 @@ const SOZAI = [
   "img": "img/kenshu_first_step_riko.jpg",
   "thumb": "img/kenshu_first_step_riko_thumb.jpg",
   "mono": "img/kenshu_first_step_riko_mono.jpg"
+ },
+ {
+  "id": "tayori_icho_sumire",
+  "title": "いちょうと銀杏（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・紅葉",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "黄金色に色づいた扇形のいちょうの葉と、まるい銀杏の実。",
+  "howto": "いちょうの葉は扇の形。実の銀杏（ぎんなん）は茶碗蒸しでおなじみです。落ち葉拾いの季節の一枚。",
+  "tags": [
+   "いちょう",
+   "銀杏",
+   "ぎんなん",
+   "黄葉",
+   "秋",
+   "11月",
+   "落ち葉",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_icho_sumire.jpg",
+  "thumb": "img/tayori_icho_sumire_thumb.jpg",
+  "mono": "img/tayori_icho_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_icho_makabe",
+  "title": "いちょうと銀杏（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・紅葉",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "黄金色に色づいた扇形のいちょうの葉と、まるい銀杏の実。",
+  "howto": "いちょうの葉は扇の形。実の銀杏（ぎんなん）は茶碗蒸しでおなじみです。落ち葉拾いの季節の一枚。",
+  "tags": [
+   "いちょう",
+   "銀杏",
+   "ぎんなん",
+   "黄葉",
+   "秋",
+   "11月",
+   "落ち葉",
+   "自然",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_icho_makabe.jpg",
+  "thumb": "img/tayori_icho_makabe_thumb.jpg",
+  "mono": "img/tayori_icho_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_yakiimo_sumire",
+  "title": "焼きいも（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・晩秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "落ち葉の上の焼きいも。割った中から金色の湯気。",
+  "howto": "落ち葉焚きの焼きいもは晩秋の風物詩。さつまいもは収穫後しばらく寝かせると甘くなります。",
+  "tags": [
+   "焼きいも",
+   "さつまいも",
+   "落ち葉",
+   "晩秋",
+   "11月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yakiimo_sumire.jpg",
+  "thumb": "img/tayori_yakiimo_sumire_thumb.jpg",
+  "mono": "img/tayori_yakiimo_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_yakiimo_makabe",
+  "title": "焼きいも（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・晩秋",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "落ち葉の上の焼きいも。割った中から金色の湯気。",
+  "howto": "落ち葉焚きの焼きいもは晩秋の風物詩。さつまいもは収穫後しばらく寝かせると甘くなります。",
+  "tags": [
+   "焼きいも",
+   "さつまいも",
+   "落ち葉",
+   "晩秋",
+   "11月",
+   "秋",
+   "食育",
+   "給食",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yakiimo_makabe.jpg",
+  "thumb": "img/tayori_yakiimo_makabe_thumb.jpg",
+  "mono": "img/tayori_yakiimo_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_kiku_sumire",
+  "title": "菊の花（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・文化の日",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "黄と白の菊の花とつぼみ。細かい花びらの重なりまで描いた一枚。",
+  "howto": "菊は秋を代表する日本の花。文化の日のころには各地で菊花展が開かれます。",
+  "tags": [
+   "菊",
+   "きく",
+   "花",
+   "秋",
+   "11月",
+   "文化の日",
+   "菊花展",
+   "学校だより",
+   "季節",
+   "和"
+  ],
+  "img": "img/tayori_kiku_sumire.jpg",
+  "thumb": "img/tayori_kiku_sumire_thumb.jpg",
+  "mono": "img/tayori_kiku_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_kiku_makabe",
+  "title": "菊の花（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・文化の日",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "黄と白の菊の花とつぼみ。細かい花びらの重なりまで描いた一枚。",
+  "howto": "菊は秋を代表する日本の花。文化の日のころには各地で菊花展が開かれます。",
+  "tags": [
+   "菊",
+   "きく",
+   "花",
+   "秋",
+   "11月",
+   "文化の日",
+   "菊花展",
+   "学校だより",
+   "季節",
+   "和"
+  ],
+  "img": "img/tayori_kiku_makabe.jpg",
+  "thumb": "img/tayori_kiku_makabe_thumb.jpg",
+  "mono": "img/tayori_kiku_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_chitoseame_sumire",
+  "title": "七五三の千歳飴（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・七五三",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "鶴と松と梅をあしらった千歳飴の袋と、紅白の飴。",
+  "howto": "七五三の千歳飴は「細く長く元気に育つように」という長寿の願い。袋の鶴亀や松竹梅も縁起物です。",
+  "tags": [
+   "七五三",
+   "千歳飴",
+   "11月",
+   "秋",
+   "行事",
+   "伝統",
+   "縁起物",
+   "紅白",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_chitoseame_sumire.jpg",
+  "thumb": "img/tayori_chitoseame_sumire_thumb.jpg",
+  "mono": "img/tayori_chitoseame_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_chitoseame_makabe",
+  "title": "七五三の千歳飴（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・七五三",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "鶴と松と梅をあしらった千歳飴の袋と、紅白の飴。",
+  "howto": "七五三の千歳飴は「細く長く元気に育つように」という長寿の願い。袋の鶴亀や松竹梅も縁起物です。",
+  "tags": [
+   "七五三",
+   "千歳飴",
+   "11月",
+   "秋",
+   "行事",
+   "伝統",
+   "縁起物",
+   "紅白",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_chitoseame_makabe.jpg",
+  "thumb": "img/tayori_chitoseame_makabe_thumb.jpg",
+  "mono": "img/tayori_chitoseame_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_minomushi_sumire",
+  "title": "みのむし（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・冬じたく",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "小枝をつづった蓑をまとい、枝からぶら下がるみのむし。",
+  "howto": "みのむしは小枝や葉で蓑を編んで冬ごしします。名前は雨具の「蓑」から。冬じたくの話のタネに。",
+  "tags": [
+   "みのむし",
+   "ミノムシ",
+   "冬じたく",
+   "11月",
+   "秋",
+   "昆虫",
+   "自然観察",
+   "理科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_minomushi_sumire.jpg",
+  "thumb": "img/tayori_minomushi_sumire_thumb.jpg",
+  "mono": "img/tayori_minomushi_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_minomushi_makabe",
+  "title": "みのむし（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "11月・冬じたく",
+  "scenes": [
+   "学校だより・学級通信",
+   "11月",
+   "秋"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "小枝をつづった蓑をまとい、枝からぶら下がるみのむし。",
+  "howto": "みのむしは小枝や葉で蓑を編んで冬ごしします。名前は雨具の「蓑」から。冬じたくの話のタネに。",
+  "tags": [
+   "みのむし",
+   "ミノムシ",
+   "冬じたく",
+   "11月",
+   "秋",
+   "昆虫",
+   "自然観察",
+   "理科",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_minomushi_makabe.jpg",
+  "thumb": "img/tayori_minomushi_makabe_thumb.jpg",
+  "mono": "img/tayori_minomushi_makabe_mono.jpg"
  }
 ];
