@@ -19,6 +19,8 @@
 <style>
   :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior:smooth; }
+  @media (prefers-reduced-motion:reduce){ html { scroll-behavior:auto; } }
   body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
   a { color:var(--accent); text-decoration:none; }
   .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
@@ -61,19 +63,36 @@
     .hero-inner .kicker, .hero-inner h1, .hero-inner .lead { max-width:none; }
     h1 { font-size:clamp(24px,6vw,32px); }
   }
-  .shelf-head { display:flex; align-items:baseline; gap:13px; margin:40px 0 20px; }
+  section { scroll-margin-top:72px; }
+  .shelf-head { display:flex; align-items:baseline; gap:13px; margin:56px 0 10px; }
+  .container > section:first-child .shelf-head { margin-top:40px; }
   .shelf-head .sn { font-family:Georgia,serif; font-style:italic; font-size:20px; font-weight:700; color:var(--accent); }
   .shelf-head .sl { font-size:11.5px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  .shelf-title { font-size:20px; font-weight:700; margin:0 0 6px; }
+  .shelf-lede { font-size:13.5px; color:#3d4148; margin:0 0 22px; max-width:680px; }
+  .paths { display:grid; grid-template-columns:repeat(4,1fr); gap:14px; }
+  @media (max-width:860px){ .paths { grid-template-columns:repeat(2,1fr); } }
+  @media (max-width:430px){ .paths { grid-template-columns:1fr; } }
+  .path { display:flex; flex-direction:column; gap:5px; border:1px solid var(--ink); padding:16px 18px 14px; color:inherit; transition:box-shadow .15s; }
+  .path:hover { box-shadow:4px 4px 0 var(--ink); }
+  .path b { font-size:15.5px; letter-spacing:0; line-height:1.5; }
+  .path span { font-size:11.5px; color:var(--sub); line-height:1.7; flex:1; word-break:keep-all; }
+  .path .go { font-size:12px; font-weight:700; color:var(--accent); margin-top:4px; }
   .shelf { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
   .item { display:flex; flex-direction:column; border:1px solid var(--ink); color:inherit; transition:box-shadow .15s; }
   .item:hover { box-shadow:4px 4px 0 var(--ink); }
   .item .thumb { aspect-ratio:16/10; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .item .thumb picture { display:block; width:100%; height:100%; }
   .item .thumb img { width:100%; height:100%; object-fit:cover; }
-  .item .b { padding:18px 20px 20px; display:flex; flex-direction:column; gap:8px; flex:1; }
+  .item .b { padding:18px 20px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
   .item .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:var(--black); padding:3px 10px; }
   .item h2 { font-size:19px; font-weight:700; margin:2px 0 0; }
   .item p { font-size:13.5px; line-height:1.85; color:#3d4148; flex:1; }
-  .item .go { font-size:13.5px; font-weight:700; color:var(--accent); margin-top:4px; }
+  .item .meta { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-top:1px solid var(--line); padding-top:11px; margin-top:auto; font-size:12px; color:var(--sub); word-break:keep-all; }
+  .item .meta .go { font-size:12.5px; font-weight:700; color:var(--accent); white-space:nowrap; }
+  .nw { white-space:nowrap; }
+  .crossnote { margin-top:16px; font-size:12.5px; color:var(--sub); }
+  .crossnote a { font-weight:700; }
   .soon { display:flex; flex-direction:column; justify-content:center; border:1px dashed #c9ccd1; color:var(--sub); padding:24px; }
   .soon .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:var(--sub); border:1px solid var(--line); padding:3px 10px; margin-bottom:10px; }
   .soon b { font-size:16px; font-weight:700; color:var(--ink); }
@@ -102,14 +121,11 @@
   <div class="topbar-in">
     <a class="wordmark" href="./">SCHOOL STOCK</a>
     <div class="nav">
-      <a href="tools/pdf-toolbox/">ツール</a>
-      <a href="prints/kokugo/">プリント</a>
-      <a href="shien/">支援カード</a>
-      <a href="tankyu/">探究サポート</a>
-      <a href="sozai/">素材</a>
-      <a href="ideas/">アイデア村</a>
-      <a href="entertainment/prompt-book/">エンタメ</a>
-      <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">News Letter ↗</a>
+      <a href="#prints">プリント</a>
+      <a href="#support">支援</a>
+      <a href="#toolbox">道具</a>
+      <a href="#reading">読みもの</a>
+      <a href="about/">このサイトについて</a>
       <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
     </div>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span>≡</span>MENU</button>
@@ -120,35 +136,31 @@
   <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
   <nav>
     <a href="./">棚トップ<small>School Stock の入り口</small></a>
-    <div class="dr-sec">TOOL</div>
-    <a href="tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
-    <div class="dr-sec">PRINTS</div>
-    <a href="prints/kokugo/">国語プリント<small>全259枚・無料</small></a>
+    <div class="dr-sec">PRINTS｜教科のプリント</div>
+    <a href="prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り 全259枚</small></a>
     <a class="sub2" href="prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
     <a class="sub2" href="prints/kokugo/#sec-kikitori">聞き取り（聞くこと）</a>
+    <a href="prints/sansu-ensyu/">算数プリント（レベル別演習）<small>ふだんの演習・宿題に。全88単元</small></a>
+    <a href="prints/sansu/">算数プリント（式と言葉）<small>実態差のある教室に。4レベルから選ぶ</small></a>
     <a href="prints/rika/">理科プリント<small>基礎知識・技能／答えつき</small></a>
-    <a href="prints/sansu/">算数プリント（式と言葉）<small>式と言葉で説明・実態別</small></a>
-    <a href="prints/sansu-ensyu/">算数プリント（レベル別演習）<small>基礎〜まとめ・全88単元</small></a>
     <a href="prints/shakai/">社会プリント<small>資料の読み取り／答えつき</small></a>
-    <a href="prints/taiiku/">体育 学習カード<small>単元カード・ふりかえりカード</small></a>
+    <a href="prints/taiiku/">体育 学習カード<small>たんげんカード・ふりかえりカード</small></a>
     <a href="prints/atama/">あたまのじゅんび運動<small>すきま5分の認知機能トレーニング</small></a>
-    <div class="dr-sec">READING</div>
-    <a href="lab/">教室の中の特別支援<small>連載・全35回（限定・パスワード）</small></a>
-    <div class="dr-sec">SUPPORT CARDS</div>
-    <a href="shien/">支援カード<small>掲示・机上ミニ・話型シート</small></a>
+    <div class="dr-sec">SUPPORT｜気になる子の支援</div>
+    <a href="shien/">支援カード<small>自分を助ける合言葉 全35枚</small></a>
     <a class="sub2" href="shien/yomimono/">読み物「しんどさの正体」</a>
     <a class="sub2" href="shien/toolbox/">支援の道具箱（限定・パスワード）</a>
-    <a class="sub2" href="shien/hoshibon/">星本のトリセツ（教科書ガイド）</a>
-    <div class="dr-sec">INQUIRY</div>
-    <a href="tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
-    <div class="dr-sec">MATERIALS</div>
+    <a href="lab/">教室の中の特別支援<small>連載・全35回（限定・パスワード）</small></a>
+    <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
+    <a href="tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
     <a href="sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラストと写真</small></a>
-    <div class="dr-sec">IDEAS</div>
+    <a href="tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <a href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">子どものためのプロンプトライブラリ ↗<small>社会科・小4から</small></a>
+    <div class="dr-sec">READING｜読みもの・アイデア</div>
     <a href="ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
-    <div class="dr-sec">ENTERTAINMENT</div>
-    <a href="entertainment/prompt-book/">先生の寄り道プロンプト帳<small>出張・おみやげ・すきま時間のGeminiプロンプト</small></a>
+    <a href="entertainment/prompt-book/">先生の寄り道プロンプト帳<small>すきま時間のGeminiプロンプト</small></a>
     <div class="dr-sec">ABOUT</div>
     <a href="about/">このサイトについて<small>つくっている人と思い</small></a>
     <div class="dr-sec">つながる</div>
@@ -168,225 +180,284 @@
   <div class="hero-copy"><div class="hero-inner">
     <span class="kicker">先生のための、道具と教材の棚</span>
     <h1>現役の教員がつくった、<br>無料の道具と教材の棚。</h1>
-    <p class="lead">授業と校務を少し軽くする、ツール・プリント・素材・実践のおすそ分け。完成品は、いつも無料です。</p>
+    <p class="lead">授業と校務を少し軽くするツール・プリント・素材・実践のおすそ分け。完成品はいつも無料です。</p>
     <p class="hero-about"><a href="about/">つくっているのは、現役の小学校教員です →</a></p>
   </div></div>
 </section>
 
 <div class="container">
 
-  <div class="shelf-head"><span class="sn">01</span><span class="sl">SHELF｜棚の中</span></div>
-  <div class="shelf">
-
-    <a class="item" href="shien/hoshibon/">
-      <div class="thumb"><img src="shien/hoshibon/img/card.jpg" loading="lazy" alt="星本のトリセツ（夜明けの石段を先生と子どもが上る水彩イラスト）"></div>
-      <div class="b">
-        <span class="tag">GUIDE｜教科書ガイド</span>
-        <h2>星本のトリセツ</h2>
-        <p>特別支援学校の教科書「星本」は、学びの階段の地図です。学年の学習に乗れない子の「現在地」を見つける道具として、ガイド・見取りシート・階段対応プリントの全14枚を無料配布。1冊660円から誰でも買えます。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="lab/">
-      <div class="thumb"><img src="lab/img/card.jpg" style="object-position:center 40%;" loading="lazy" alt="連載「教室の中の特別支援」（先生が子どもの机の横にしゃがんで一緒にプリントを見る水彩イラスト）"></div>
-      <div class="b">
-        <span class="tag">READING｜連載読み物</span>
-        <h2>教室の中の特別支援</h2>
-        <p>「問題文が読めない・定着しない・手が止まる・ミスが多い」。通常学級の担任のために、国内の研究と公的資料の根拠で支援を考える連載、全35回。パスワードつきの限定読み物です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="tools/pdf-toolbox/">
-      <div class="thumb"><img src="tools/pdf-toolbox/card.png" style="object-position:center 15%;" loading="lazy" alt="先生のPDF道具箱（結合・修正・縦書き・通信ゼロ）"></div>
-      <div class="b">
-        <span class="tag">TOOL｜ツール</span>
-        <h2>先生のPDF道具箱</h2>
-        <p>インストール不要・完全無料・通信ゼロ。PDFの結合・修正・縦書きも、児童の情報を外に出さず、このパソコンの中だけで。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/kokugo/">
-      <div class="thumb"><img src="prints/kokugo/card.png" style="object-position:center 12%;" loading="lazy" alt="国語プリント（読む・書く・聞く）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>国語プリント</h2>
-        <p>読解・言葉・作文・聞き取りの4分野、全学年ぶん。そのまま印刷して使える、全259枚。検索と解説ページつき。すべて自作・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/rika/">
-      <div class="thumb"><img src="prints/rika/card.png" style="object-position:center 15%;" loading="lazy" alt="理科プリント（基礎・基本の器具）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>理科プリント</h2>
-        <p>基礎知識・技能をおさえる理科プリント。図やグラフは自作、答えは各PDFの2枚目に赤字で。3・4年から順次、全38枚・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/sansu/">
-      <div class="thumb"><img src="prints/sansu/card.png" style="object-position:center 22%;" loading="lazy" alt="算数の実態別プリントの見本（机の上のレベル別プリント）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>算数プリント（式と言葉）</h2>
-        <p>到達目標は全員同じ、変えるのは支援の量だけ。「式と言葉で説明する」レベル1〜4＋解答の5枚セットで、子どもが自分に合う1枚を選べます。全17単元・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/sansu-ensyu/">
-      <div class="thumb"><img src="prints/sansu-ensyu/card.png" style="object-position:center 30%;" loading="lazy" alt="算数のレベル別演習プリントの見本（時計と小数のプリント）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>算数プリント（レベル別演習）</h2>
-        <p>2〜6年の全88単元を、基礎・標準・応用・思考力・まとめの5枚で刷り分け。問題と解答は別PDFで、宿題にもそのまま出せます。啓林館の年間指導計画に沿って作成、無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/shakai/">
-      <div class="thumb"><img src="prints/shakai/card.png" style="object-position:center 15%;" loading="lazy" alt="社会プリント（地図・グラフ・表）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>社会プリント</h2>
-        <p>グラフ・表・年表・雨温図を読み取る社会プリント。資料は自作、答えは各PDFの2枚目に赤字で。3〜6年、全51枚・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">
-      <div class="thumb"><img src="assets/kids-prompt-library-card.jpg" style="object-position:center 35%;" loading="lazy" alt="子どものためのプロンプトライブラリ（地図帳をひらいて調べ学習をするふたりの子どもの水彩イラスト）"></div>
-      <div class="b">
-        <span class="tag">PROMPTS｜プロンプト</span>
-        <h2>子どものためのプロンプトライブラリ（社会科）</h2>
-        <p>社会科の「つかむ・しらべる・まとめる・いかす」に合わせて、子どもがAIへの聞き方をえらべるプロンプト集。一次情報のリンク集と見学セットつき。小4から、無料です。</p>
-        <span class="go">ライブラリを開く ↗</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/taiiku/">
-      <div class="thumb"><img src="prints/taiiku/card.png" style="object-position:center 30%;" loading="lazy" alt="体育 学習カード（グラウンドで運動する子どもたちの水彩イラスト）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>体育 学習カード</h2>
-        <p>体育の全領域で使える学習カード。単元のはじめに配る「たんげんカード」と、毎時間のおわりに書く「ふりかえりカード」の2本立て。低学年は文字を大きくしています。全31枚・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="prints/atama/">
-      <div class="thumb"><img src="prints/atama/card.png" loading="lazy" alt="あたまのじゅんび運動（机で積み木を積む子どもの水彩イラスト）"></div>
-      <div class="b">
-        <span class="tag">PRINTS｜プリント</span>
-        <h2>あたまのじゅんび運動</h2>
-        <p>勉強の前に頭をあたためる、すきま5分の認知機能トレーニング。しゅうちゅう・みるちから・おぼえる・かんがえるの4分野を、★1〜3から子どもが自分で選べます。書く量少なめ・得点なし。無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="shien/">
-      <div class="thumb"><img src="shien/card.png" style="object-position:center 10%;" loading="lazy" alt="支援カード（自分を助ける合言葉）"></div>
-      <div class="b">
-        <span class="tag">CARDS｜支援カード</span>
-        <h2>支援カード</h2>
-        <p>つまずきのある子が「自分を助ける」ための、声に出す合言葉カード。研究で効果が確かめられた支援を、どの教科・場面でも使える形に。全35枚・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="tankyu/">
-      <div class="thumb"><img src="tankyu/card.png" style="object-position:center 12%;" loading="lazy" alt="探究・問題解決サポート（学びの地図）"></div>
-      <div class="b">
-        <span class="tag">INQUIRY｜探究</span>
-        <h2>探究・問題解決サポート</h2>
-        <p>「今、何をしているのか」が全員に見える学びの地図と、計画・リハーサル・振り返りのワークシート、話型カード。理科・社会・総合の問題解決的な学びに。全9枚・無料です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="sozai/">
-      <div class="thumb"><img src="sozai/img/denki3_cover_thumb.jpg" loading="lazy" alt="理科の素材写真の見本（電気の通り道・じしゃく）"></div>
-      <div class="b">
-        <span class="tag">MATERIALS｜素材</span>
-        <h2>授業素材ライブラリ</h2>
-        <p>スライドやプリントにそのまま使える、授業のイラストと写真。イラストはカラーと白黒を選べます。理科の単元から順次追加中です。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="ideas/">
-      <div class="thumb" style="background:#0e0f11; display:flex; align-items:center; justify-content:center;">
-        <span style="color:#fff; font-weight:700; letter-spacing:0.14em; font-size:15px; text-align:center; line-height:1.7;">Gemini × Workspace<br><span style="font-size:12px; color:#b9bcc2; letter-spacing:0.2em;">IDEAS VILLAGE</span></span>
-      </div>
-      <div class="b">
-        <span class="tag">IDEAS｜実践</span>
-        <h2>実践アイデア村</h2>
-        <p>授業や校務を軽くする実践アイデア集。ツール・教材・AI活用レシピを、見つけて、持ち帰って、明日の教室で試せます。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <a class="item" href="entertainment/prompt-book/">
-      <div class="thumb"><img src="entertainment/prompt-book/card.png" style="object-position:center 15%;" loading="lazy" alt="先生の寄り道プロンプト帳（すきま時間に）"></div>
-      <div class="b">
-        <span class="tag">ENTERTAINMENT｜エンタメ</span>
-        <h2>先生の寄り道プロンプト帳</h2>
-        <p>出張のごはん、職員室へのおみやげ、研究大会あとのすきま時間。仕事の「ついで」がちょっと楽しくなる、コピペで使えるGeminiプロンプト10本。</p>
-        <span class="go">くわしく見る →</span>
-      </div>
-    </a>
-
-    <div class="soon">
-      <span class="tag">COMING</span>
-      <b>じゅんび中</b>
-      <span>算数プリントほか、順次ならべていきます。</span>
+  <section id="map">
+    <div class="shelf-head"><span class="sn">00</span><span class="sl">MAP｜棚の地図</span></div>
+    <p class="shelf-lede">棚は4つに分かれています。どれも選んで印刷するだけ。登録はいりません。</p>
+    <div class="paths">
+      <a class="path" href="#prints">
+        <b>教科のプリント</b>
+        <span>国語・算数・理科・社会・体育・すきま5分</span>
+        <span class="go">01 プリントの棚へ ↓</span>
+      </a>
+      <a class="path" href="#support">
+        <b>気になる子の支援</b>
+        <span>支援カード・連載・読みもの</span>
+        <span class="go">02 支援の棚へ ↓</span>
+      </a>
+      <a class="path" href="#toolbox">
+        <b>授業と校務の道具</b>
+        <span>PDF道具箱・授業素材・探究シート</span>
+        <span class="go">03 道具の棚へ ↓</span>
+      </a>
+      <a class="path" href="#reading">
+        <b>実践のアイデア</b>
+        <span>実践アイデア・プロンプト帳</span>
+        <span class="go">04 読みものの棚へ ↓</span>
+      </a>
     </div>
+  </section>
 
-  </div>
+  <section id="prints">
+    <div class="shelf-head"><span class="sn">01</span><span class="sl">PRINTS｜教科のプリント</span></div>
+    <p class="shelf-lede">そのまま印刷して使える教科のプリント。あわせて1,300枚以上。答えつきでぜんぶ無料です。</p>
+    <div class="shelf">
 
-  <div class="shelf-head"><span class="sn">02</span><span class="sl">LEARN｜つながる・まなぶ</span></div>
-  <div class="links">
-    <a class="lk" href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">
-      <span class="lt">NEWS LETTER</span>
-      <b>GEG Chikuho News Letter</b>
-      <span>先生のための教育×テクノロジーの最新情報を、読みやすくまとめてお届け。最新号はこちらから。</span>
-      <span class="go">最新号を読む ↗</span>
-    </a>
-    <a class="lk" href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">
-      <span class="lt">COMMUNITY</span>
-      <b>GEG Chikuho</b>
-      <span>筑豊の先生190名+が集うGoogle Educator Group。過去の研修・イベントの記録もこちら。</span>
-      <span class="go">コミュニティを見る ↗</span>
-    </a>
-    <a class="lk" href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">
-      <span class="lt">PROMPTS</span>
-      <b>AIプロンプトライブラリ</b>
-      <span>Gemini・NotebookLMなどでコピペして使える、授業・校務のプロンプト集。小中高の教科別も。</span>
-      <span class="go">ライブラリを開く ↗</span>
-    </a>
-    <a class="lk" href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">
-      <span class="lt">GEMINI</span>
-      <b>Gemひろば（GEG Fukuoka City）</b>
-      <span>先生たちが作ったGemini の「Gem」が集まる広場。Gemini活用のアイデアはこちらへ。</span>
-      <span class="go">Gemひろばを見る ↗</span>
-    </a>
-    <a class="lk" href="https://note.com/tozaki_edu/n/nba8d439b7040" target="_blank" rel="noopener">
-      <span class="lt">TRAINING</span>
-      <b>研修資料「小学校の学びが変わるICTと生成AIの活用」</b>
-      <span>校内研修でそのまま使える資料とプロンプト例。過去の研修のふりかえりにも。</span>
-      <span class="go">資料を読む ↗</span>
-    </a>
-    <a class="lk" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">
-      <span class="lt">NOTE</span>
-      <b>note（外﨑顯博）</b>
-      <span>教材づくりの裏側、授業・校務のGAS、実践記事。新しい教材のお知らせもここから。</span>
-      <span class="go">noteを読む ↗</span>
-    </a>
-  </div>
+      <a class="item" href="prints/kokugo/">
+        <div class="thumb"><picture><source srcset="prints/kokugo/card_thumb.webp" type="image/webp"><img src="prints/kokugo/card.png" style="object-position:center 12%;" loading="lazy" alt="国語プリント（読む・書く・聞く）"></picture></div>
+        <div class="b">
+          <span class="tag">国語</span>
+          <h2>国語プリント</h2>
+          <p>読解・言葉・作文・聞き取りの4分野を全学年ぶん。検索と解説ページつき。</p>
+          <span class="meta"><span>全259枚・1〜6年</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/sansu-ensyu/">
+        <div class="thumb"><picture><source srcset="prints/sansu-ensyu/card_thumb.webp" type="image/webp"><img src="prints/sansu-ensyu/card.png" style="object-position:center 30%;" loading="lazy" alt="算数のレベル別演習プリントの見本（時計と小数のプリント）"></picture></div>
+        <div class="b">
+          <span class="tag">算数</span>
+          <h2>算数プリント<span class="nw">（レベル別演習）</span></h2>
+          <p>ふだんの演習と宿題に。基礎・標準・応用・思考力・まとめの5枚で刷り分けられます。啓林館の年間指導計画に沿って作成。</p>
+          <span class="meta"><span>全88単元・2〜6年</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/sansu/">
+        <div class="thumb"><picture><source srcset="prints/sansu/card_thumb.webp" type="image/webp"><img src="prints/sansu/card.png" style="object-position:center 22%;" loading="lazy" alt="算数の実態別プリントの見本（机の上のレベル別プリント）"></picture></div>
+        <div class="b">
+          <span class="tag">算数</span>
+          <h2>算数プリント<span class="nw">（式と言葉）</span></h2>
+          <p>実態差のある教室に。到達目標は全員同じで、支援の量だけがちがう4レベル。子どもが自分に合う1枚を選べます。</p>
+          <span class="meta"><span>全17単元・4レベル</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/rika/">
+        <div class="thumb"><picture><source srcset="prints/rika/card_thumb.webp" type="image/webp"><img src="prints/rika/card.png" style="object-position:center 15%;" loading="lazy" alt="理科プリント（基礎・基本の器具）"></picture></div>
+        <div class="b">
+          <span class="tag">理科</span>
+          <h2>理科プリント</h2>
+          <p>基礎知識・技能をおさえる1枚もの。図やグラフは自作。答えは各PDFの2枚目に赤字で。</p>
+          <span class="meta"><span>全38枚・中学年から</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/shakai/">
+        <div class="thumb"><picture><source srcset="prints/shakai/card_thumb.webp" type="image/webp"><img src="prints/shakai/card.png" style="object-position:center 15%;" loading="lazy" alt="社会プリント（地図・グラフ・表）"></picture></div>
+        <div class="b">
+          <span class="tag">社会</span>
+          <h2>社会プリント</h2>
+          <p>グラフ・表・年表・雨温図を読み取る練習に。資料は自作。答えは各PDFの2枚目に赤字で。</p>
+          <span class="meta"><span>全51枚・3〜6年</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/taiiku/">
+        <div class="thumb"><picture><source srcset="prints/taiiku/card_thumb.webp" type="image/webp"><img src="prints/taiiku/card.png" style="object-position:center 30%;" loading="lazy" alt="体育 学習カード（グラウンドで運動する子どもたちの水彩イラスト）"></picture></div>
+        <div class="b">
+          <span class="tag">体育</span>
+          <h2>体育 学習カード</h2>
+          <p>単元のはじめに配る「たんげんカード」と毎時間の「ふりかえりカード」の2本立て。低学年は文字を大きく。</p>
+          <span class="meta"><span>全31枚・低中高</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="prints/atama/">
+        <div class="thumb"><picture><source srcset="prints/atama/card_thumb.webp" type="image/webp"><img src="prints/atama/card.png" loading="lazy" alt="あたまのじゅんび運動（机で積み木を積む子どもの水彩イラスト）"></picture></div>
+        <div class="b">
+          <span class="tag">すきま5分</span>
+          <h2>あたまのじゅんび運動</h2>
+          <p>勉強の前に頭をあたためる認知機能トレーニング。4分野を★1〜3から子どもが自分で選べます。書く量少なめ・得点なし。</p>
+          <span class="meta"><span>全468枚・12ヶ月ぶん</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="support">
+    <div class="shelf-head"><span class="sn">02</span><span class="sl">SUPPORT｜気になる子の支援</span></div>
+    <p class="shelf-lede">「読めない・手が止まる・ミスが多い」。気になる子への支援を、研究の根拠つきで、教室で使える形にした棚です。</p>
+    <div class="shelf">
+
+      <a class="item" href="shien/">
+        <div class="thumb"><picture><source srcset="shien/card_thumb.webp" type="image/webp"><img src="shien/card.png" style="object-position:center 10%;" loading="lazy" alt="支援カード（自分を助ける合言葉）"></picture></div>
+        <div class="b">
+          <span class="tag">合言葉カード</span>
+          <h2>支援カード</h2>
+          <p>つまずきのある子が「自分を助ける」ための、声に出す合言葉カード。研究で効果が確かめられた支援を、どの教科・場面でも使える形に。</p>
+          <span class="meta"><span>全35枚・全教科で</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <!-- 星本のトリセツ：非表示（2026-07-17）。ページ shien/hoshibon/ は存置。再掲するときはこのコメントを外す
+      <a class="item" href="shien/hoshibon/">
+        <div class="thumb"><picture><source srcset="shien/hoshibon/img/card_thumb.webp" type="image/webp"><img src="shien/hoshibon/img/card.jpg" loading="lazy" alt="星本のトリセツ（夜明けの石段を先生と子どもが上る水彩イラスト）"></picture></div>
+        <div class="b">
+          <span class="tag">教科書ガイド</span>
+          <h2>星本のトリセツ</h2>
+          <p>特別支援学校の教科書「星本」は、学びの階段の地図。学年の学習に乗れない子の「現在地」を見つける道具に。星本は1冊660円から誰でも買えます。</p>
+          <span class="meta"><span>ガイド・シート全14枚</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+      -->
+
+      <a class="item" href="lab/">
+        <div class="thumb"><picture><source srcset="lab/img/card_thumb.webp" type="image/webp"><img src="lab/img/card.jpg" style="object-position:center 40%;" loading="lazy" alt="連載「教室の中の特別支援」（先生が子どもの机の横にしゃがんで一緒にプリントを見る水彩イラスト）"></picture></div>
+        <div class="b">
+          <span class="tag">連載・限定</span>
+          <h2>教室の中の特別支援</h2>
+          <p>「問題文が読めない・定着しない・手が止まる」を、国内の研究と公的資料の根拠で考える、通常学級の担任のための連載。</p>
+          <span class="meta"><span>全35回・パスワードつき</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+    </div>
+    <p class="crossnote">算数の<a href="prints/sansu/">実態別プリント（式と言葉で説明）</a>も、この棚と同じ考え方でつくっています。</p>
+  </section>
+
+  <section id="toolbox">
+    <div class="shelf-head"><span class="sn">03</span><span class="sl">TOOLBOX｜授業と校務の道具</span></div>
+    <p class="shelf-lede">授業の準備と校務の手間をへらす道具。インストールも登録もいりません。</p>
+    <div class="shelf">
+
+      <a class="item" href="tools/pdf-toolbox/">
+        <div class="thumb"><picture><source srcset="tools/pdf-toolbox/card_thumb.webp" type="image/webp"><img src="tools/pdf-toolbox/card.png" style="object-position:center 15%;" loading="lazy" alt="先生のPDF道具箱（結合・修正・縦書き・通信ゼロ）"></picture></div>
+        <div class="b">
+          <span class="tag">ブラウザで動く</span>
+          <h2>先生のPDF道具箱</h2>
+          <p>PDFの結合・修正・縦書きを、児童の情報を外に出さず、このパソコンの中だけで。</p>
+          <span class="meta"><span>無料・通信ゼロ</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="sozai/">
+        <div class="thumb"><img src="sozai/img/denki3_cover_thumb.jpg" loading="lazy" alt="理科の素材写真の見本（電気の通り道・じしゃく）"></div>
+        <div class="b">
+          <span class="tag">イラスト・写真</span>
+          <h2>授業素材ライブラリ</h2>
+          <p>スライドやプリントにそのまま使える自作のイラストと写真。イラストはカラーと白黒を選べます。</p>
+          <span class="meta"><span>理科・社会から順次</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="tankyu/">
+        <div class="thumb"><picture><source srcset="tankyu/card_thumb.webp" type="image/webp"><img src="tankyu/card.png" style="object-position:center 12%;" loading="lazy" alt="探究・問題解決サポート（学びの地図）"></picture></div>
+        <div class="b">
+          <span class="tag">ワークシート</span>
+          <h2>探究・問題解決サポート</h2>
+          <p>「今、何をしているのか」が全員に見える学びの地図と、計画・リハーサル・振り返りのシート、話型カード。理科・社会・総合で。</p>
+          <span class="meta"><span>全9枚</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">
+        <div class="thumb"><picture><source srcset="assets/kids-prompt-library-card_thumb.webp" type="image/webp"><img src="assets/kids-prompt-library-card.jpg" style="object-position:center 35%;" loading="lazy" alt="子どものためのプロンプトライブラリ（地図帳をひらいて調べ学習をするふたりの子どもの水彩イラスト）"></picture></div>
+        <div class="b">
+          <span class="tag">子ども×AI</span>
+          <h2>子どものためのプロンプトライブラリ<span class="nw">（社会科）</span></h2>
+          <p>社会科の「つかむ・しらべる・まとめる・いかす」に合わせて、子どもがAIへの聞き方をえらべるプロンプト集。一次情報のリンク集つき。</p>
+          <span class="meta"><span>小4から・別サイト</span><span class="go">開く ↗</span></span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <section id="reading">
+    <div class="shelf-head"><span class="sn">04</span><span class="sl">READING｜読みもの・アイデア</span></div>
+    <p class="shelf-lede">読んで、授業や校務のヒントにできる読みものです。</p>
+    <div class="shelf">
+
+      <a class="item" href="ideas/">
+        <div class="thumb" style="background:#0e0f11; display:flex; align-items:center; justify-content:center;">
+          <span style="color:#fff; font-weight:700; letter-spacing:0.14em; font-size:15px; text-align:center; line-height:1.7;">Gemini × Workspace<br><span style="font-size:12px; color:#b9bcc2; letter-spacing:0.2em;">IDEAS VILLAGE</span></span>
+        </div>
+        <div class="b">
+          <span class="tag">実践レシピ</span>
+          <h2>実践アイデア村</h2>
+          <p>授業や校務の実践アイデア集。ツール・教材・AI活用のレシピを、見つけて持ち帰れます。</p>
+          <span class="meta"><span>随時追加中</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <a class="item" href="entertainment/prompt-book/">
+        <div class="thumb"><picture><source srcset="entertainment/prompt-book/card_thumb.webp" type="image/webp"><img src="entertainment/prompt-book/card.png" style="object-position:center 15%;" loading="lazy" alt="先生の寄り道プロンプト帳（すきま時間に）"></picture></div>
+        <div class="b">
+          <span class="tag">すきま時間に</span>
+          <h2>先生の寄り道プロンプト帳</h2>
+          <p>出張のごはん、職員室へのおみやげ、研究大会あとのすきま時間。仕事の「ついで」がちょっと楽しくなるGeminiプロンプト10本。</p>
+          <span class="meta"><span>コピペで使える</span><span class="go">くわしく見る →</span></span>
+        </div>
+      </a>
+
+      <div class="soon">
+        <span class="tag">COMING</span>
+        <b>じゅんび中</b>
+        <span>新しい棚をじゅんび中。増えたら <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note</a> でお知らせします。</span>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="learn">
+    <div class="shelf-head"><span class="sn">05</span><span class="sl">LEARN｜つながる・まなぶ</span></div>
+    <div class="links">
+      <a class="lk" href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">
+        <span class="lt">NEWS LETTER</span>
+        <b>GEG Chikuho News Letter</b>
+        <span>先生のための教育×テクノロジーの最新情報を、読みやすくまとめてお届け。最新号はこちらから。</span>
+        <span class="go">最新号を読む ↗</span>
+      </a>
+      <a class="lk" href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">
+        <span class="lt">COMMUNITY</span>
+        <b>GEG Chikuho</b>
+        <span>筑豊の先生190名+が集うGoogle Educator Group。過去の研修・イベントの記録もこちら。</span>
+        <span class="go">コミュニティを見る ↗</span>
+      </a>
+      <a class="lk" href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">
+        <span class="lt">PROMPTS</span>
+        <b>AIプロンプトライブラリ</b>
+        <span>Gemini・NotebookLMなどでコピペして使える、授業・校務のプロンプト集。小中高の教科別も。</span>
+        <span class="go">ライブラリを開く ↗</span>
+      </a>
+      <a class="lk" href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">
+        <span class="lt">GEMINI</span>
+        <b>Gemひろば（GEG Fukuoka City）</b>
+        <span>先生たちが作ったGemini の「Gem」が集まる広場。Gemini活用のアイデアはこちらへ。</span>
+        <span class="go">Gemひろばを見る ↗</span>
+      </a>
+      <a class="lk" href="https://note.com/tozaki_edu/n/nba8d439b7040" target="_blank" rel="noopener">
+        <span class="lt">TRAINING</span>
+        <b>研修資料「小学校の学びが変わるICTと生成AIの活用」</b>
+        <span>校内研修でそのまま使える資料とプロンプト例。過去の研修のふりかえりにも。</span>
+        <span class="go">資料を読む ↗</span>
+      </a>
+      <a class="lk" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">
+        <span class="lt">NOTE</span>
+        <b>note（外﨑顯博）</b>
+        <span>教材づくりの裏側、授業・校務のGAS、実践記事。新しい教材のお知らせもここから。</span>
+        <span class="go">noteを読む ↗</span>
+      </a>
+    </div>
+  </section>
 
 </div>
 
@@ -395,20 +466,26 @@
     <div class="fw">SCHOOL STOCK</div>
     先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
     <div class="foot-map">
-      <div><b>棚の中</b>
-        <a href="./">棚トップ</a>
-        <a href="tools/pdf-toolbox/">先生のPDF道具箱</a>
+      <div><b>教科のプリント</b>
         <a href="prints/kokugo/">国語プリント</a>
-        <a href="prints/rika/">理科プリント</a>
-        <a href="prints/sansu/">算数プリント（式と言葉）</a>
         <a href="prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="prints/sansu/">算数プリント（式と言葉）</a>
+        <a href="prints/rika/">理科プリント</a>
         <a href="prints/shakai/">社会プリント</a>
         <a href="prints/taiiku/">体育 学習カード</a>
         <a href="prints/atama/">あたまのじゅんび運動</a>
+      </div>
+      <div><b>気になる子の支援</b>
         <a href="shien/">支援カード</a>
         <a href="lab/">教室の中の特別支援（連載）</a>
-        <a href="tankyu/">探究・問題解決サポート</a>
+      </div>
+      <div><b>授業と校務の道具</b>
+        <a href="tools/pdf-toolbox/">先生のPDF道具箱</a>
         <a href="sozai/">授業素材ライブラリ</a>
+        <a href="tankyu/">探究・問題解決サポート</a>
+        <a href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">子どものためのプロンプトライブラリ ↗</a>
+      </div>
+      <div><b>読みもの・アイデア</b>
         <a href="ideas/">実践アイデア村</a>
         <a href="entertainment/prompt-book/">先生の寄り道プロンプト帳</a>
         <a href="about/">このサイトについて</a>
