@@ -6279,5 +6279,375 @@ const SOZAI = [
   "img": "img/kyushoku_touban_sumire.jpg",
   "thumb": "img/kyushoku_touban_sumire_thumb.jpg",
   "mono": "img/kyushoku_touban_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_wreath_sumire",
+  "title": "クリスマスリース（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・クリスマス",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "もみの葉に松ぼっくりと赤い実、リボンをあしらったリース。",
+  "howto": "リースの輪には「終わりのない永遠」の意味があると言われます。12月の掲示や園だよりにも。",
+  "tags": [
+   "クリスマス",
+   "リース",
+   "12月",
+   "冬",
+   "行事",
+   "飾り",
+   "もみの木",
+   "学校だより",
+   "季節",
+   "掲示"
+  ],
+  "img": "img/tayori_wreath_sumire.jpg",
+  "thumb": "img/tayori_wreath_sumire_thumb.jpg",
+  "mono": "img/tayori_wreath_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_wreath_makabe",
+  "title": "クリスマスリース（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・クリスマス",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "もみの葉に松ぼっくりと赤い実、リボンをあしらったリース。",
+  "howto": "リースの輪には「終わりのない永遠」の意味があると言われます。12月の掲示や園だよりにも。",
+  "tags": [
+   "クリスマス",
+   "リース",
+   "12月",
+   "冬",
+   "行事",
+   "飾り",
+   "もみの木",
+   "学校だより",
+   "季節",
+   "掲示"
+  ],
+  "img": "img/tayori_wreath_makabe.jpg",
+  "thumb": "img/tayori_wreath_makabe_thumb.jpg",
+  "mono": "img/tayori_wreath_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_yukidaruma_sumire",
+  "title": "雪だるま（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "バケツの帽子と赤いマフラーの二段雪だるま。",
+  "howto": "日本の雪だるまは二段、海外では三段が多いのだとか。雪の日の話のタネにどうぞ。",
+  "tags": [
+   "雪だるま",
+   "雪",
+   "冬",
+   "12月",
+   "1月",
+   "2月",
+   "バケツ",
+   "マフラー",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yukidaruma_sumire.jpg",
+  "thumb": "img/tayori_yukidaruma_sumire_thumb.jpg",
+  "mono": "img/tayori_yukidaruma_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_yukidaruma_makabe",
+  "title": "雪だるま（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "バケツの帽子と赤いマフラーの二段雪だるま。",
+  "howto": "日本の雪だるまは二段、海外では三段が多いのだとか。雪の日の話のタネにどうぞ。",
+  "tags": [
+   "雪だるま",
+   "雪",
+   "冬",
+   "12月",
+   "1月",
+   "2月",
+   "バケツ",
+   "マフラー",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_yukidaruma_makabe.jpg",
+  "thumb": "img/tayori_yukidaruma_makabe_thumb.jpg",
+  "mono": "img/tayori_yukidaruma_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_oosouji_sumire",
+  "title": "大掃除の道具（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・年末",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ほうき・バケツ・雑巾・たわしの大掃除セット。",
+  "howto": "年末の大掃除は、1年の汚れを落として新年の神様を迎える「すす払い」が始まりと言われます。",
+  "tags": [
+   "大掃除",
+   "ほうき",
+   "バケツ",
+   "雑巾",
+   "年末",
+   "12月",
+   "冬",
+   "そうじ",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_oosouji_sumire.jpg",
+  "thumb": "img/tayori_oosouji_sumire_thumb.jpg",
+  "mono": "img/tayori_oosouji_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_oosouji_makabe",
+  "title": "大掃除の道具（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・年末",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "ほうき・バケツ・雑巾・たわしの大掃除セット。",
+  "howto": "年末の大掃除は、1年の汚れを落として新年の神様を迎える「すす払い」が始まりと言われます。",
+  "tags": [
+   "大掃除",
+   "ほうき",
+   "バケツ",
+   "雑巾",
+   "年末",
+   "12月",
+   "冬",
+   "そうじ",
+   "学校だより",
+   "季節"
+  ],
+  "img": "img/tayori_oosouji_makabe.jpg",
+  "thumb": "img/tayori_oosouji_makabe_thumb.jpg",
+  "mono": "img/tayori_oosouji_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_yuzuyu_sumire",
+  "title": "冬至のゆず湯（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬至",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "湯気の立つ木の桶に浮かぶゆず。冬至の一枚。",
+  "howto": "冬至は一年で昼がいちばん短い日。ゆず湯に入ると風邪をひかない、と昔から言われています。",
+  "tags": [
+   "冬至",
+   "ゆず湯",
+   "ゆず",
+   "12月",
+   "冬",
+   "伝統",
+   "行事",
+   "学校だより",
+   "季節",
+   "保健"
+  ],
+  "img": "img/tayori_yuzuyu_sumire.jpg",
+  "thumb": "img/tayori_yuzuyu_sumire_thumb.jpg",
+  "mono": "img/tayori_yuzuyu_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_yuzuyu_makabe",
+  "title": "冬至のゆず湯（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬至",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "湯気の立つ木の桶に浮かぶゆず。冬至の一枚。",
+  "howto": "冬至は一年で昼がいちばん短い日。ゆず湯に入ると風邪をひかない、と昔から言われています。",
+  "tags": [
+   "冬至",
+   "ゆず湯",
+   "ゆず",
+   "12月",
+   "冬",
+   "伝統",
+   "行事",
+   "学校だより",
+   "季節",
+   "保健"
+  ],
+  "img": "img/tayori_yuzuyu_makabe.jpg",
+  "thumb": "img/tayori_yuzuyu_makabe_thumb.jpg",
+  "mono": "img/tayori_yuzuyu_makabe_mono.jpg"
+ },
+ {
+  "id": "tayori_yuki_sumire",
+  "title": "雪の結晶（水彩）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "掲示",
+   "スライド"
+  ],
+  "description": "六方対称のかたちで描いた雪の結晶3つ。",
+  "howto": "雪の結晶は必ず六角形。「雪は天から送られた手紙」（中谷宇吉郎）の言葉とあわせてどうぞ。",
+  "tags": [
+   "雪",
+   "結晶",
+   "雪の結晶",
+   "冬",
+   "12月",
+   "1月",
+   "2月",
+   "理科",
+   "自然",
+   "学校だより"
+  ],
+  "img": "img/tayori_yuki_sumire.jpg",
+  "thumb": "img/tayori_yuki_sumire_thumb.jpg",
+  "mono": "img/tayori_yuki_sumire_mono.jpg"
+ },
+ {
+  "id": "tayori_yuki_makabe",
+  "title": "雪の結晶（線画）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "たより・季節",
+  "grade": "全学年",
+  "unit": "12月・冬",
+  "scenes": [
+   "学校だより・学級通信",
+   "12月",
+   "冬"
+  ],
+  "uses": [
+   "おたより",
+   "挿絵",
+   "白黒印刷",
+   "プリント"
+  ],
+  "description": "六方対称のかたちで描いた雪の結晶3つ。",
+  "howto": "雪の結晶は必ず六角形。「雪は天から送られた手紙」（中谷宇吉郎）の言葉とあわせてどうぞ。",
+  "tags": [
+   "雪",
+   "結晶",
+   "雪の結晶",
+   "冬",
+   "12月",
+   "1月",
+   "2月",
+   "理科",
+   "自然",
+   "学校だより"
+  ],
+  "img": "img/tayori_yuki_makabe.jpg",
+  "thumb": "img/tayori_yuki_makabe_thumb.jpg",
+  "mono": "img/tayori_yuki_makabe_mono.jpg"
  }
 ];
