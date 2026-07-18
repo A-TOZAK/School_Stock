@@ -24695,5 +24695,141 @@ const SOZAI = [
   "img": "img/shakai_zeikin.jpg",
   "thumb": "img/shakai_zeikin_thumb.jpg",
   "mono": "img/shakai_zeikin_mono.jpg"
+ },
+ {
+  "id": "sougou_fukushi_kurumaisu",
+  "title": "車椅子体験",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "福祉体験",
+  "scenes": [
+   "福祉体験・車椅子体験"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "車椅子に乗る子と、後ろで押して手伝う子のフラットイラスト。総合的な学習の時間の福祉体験の説明に。",
+  "howto": "福祉体験の事前説明スライドや、学習のまとめ・掲示の見出しに。",
+  "tags": [
+   "福祉",
+   "福祉体験",
+   "車椅子",
+   "車いす",
+   "総合的な学習の時間",
+   "バリアフリー",
+   "思いやり",
+   "共生",
+   "ユニバーサルデザイン"
+  ],
+  "img": "img/sougou_fukushi_kurumaisu.jpg",
+  "thumb": "img/sougou_fukushi_kurumaisu_thumb.jpg",
+  "mono": "img/sougou_fukushi_kurumaisu_mono.jpg"
+ },
+ {
+  "id": "sougou_fukushi_hakujou",
+  "title": "目の不自由な人の体験（アイマスク・白杖）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "福祉体験",
+  "scenes": [
+   "福祉体験・視覚障害の体験・ガイドヘルプ"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "アイマスクと白杖で歩く子を、ひじを持って導く子のフラットイラスト。正しいガイドの形。福祉体験の説明に。",
+  "howto": "視覚障害の体験・ガイドヘルプの説明スライドや掲示に。",
+  "tags": [
+   "福祉",
+   "福祉体験",
+   "白杖",
+   "アイマスク",
+   "視覚障害",
+   "目の不自由",
+   "ガイドヘルプ",
+   "総合的な学習の時間",
+   "共生"
+  ],
+  "img": "img/sougou_fukushi_hakujou.jpg",
+  "thumb": "img/sougou_fukushi_hakujou_thumb.jpg",
+  "mono": "img/sougou_fukushi_hakujou_mono.jpg"
+ },
+ {
+  "id": "sougou_fukushi_kikoenai",
+  "title": "耳の不自由な人の体験（手ぶり・筆談）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "福祉体験",
+  "scenes": [
+   "福祉体験・聴覚障害の体験・伝え合う工夫"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "イヤーマフをつけた子に、手ぶりと筆談ボードで伝える子のフラットイラスト。音のない中で伝え合う工夫。",
+  "howto": "聴覚障害の体験・コミュニケーションの工夫を説明するスライドや掲示に。",
+  "tags": [
+   "福祉",
+   "福祉体験",
+   "聴覚障害",
+   "耳の不自由",
+   "手話",
+   "筆談",
+   "ジェスチャー",
+   "総合的な学習の時間",
+   "共生"
+  ],
+  "img": "img/sougou_fukushi_kikoenai.jpg",
+  "thumb": "img/sougou_fukushi_kikoenai_thumb.jpg",
+  "mono": "img/sougou_fukushi_kikoenai_mono.jpg"
+ },
+ {
+  "id": "sougou_fukushi_matsubazue",
+  "title": "足の不自由な人の体験（松葉づえ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "福祉体験",
+  "scenes": [
+   "福祉体験・肢体不自由の体験・松葉づえ歩行"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "松葉づえで歩く子と、そばで見守る子のフラットイラスト。肢体不自由の体験の説明に。",
+  "howto": "松葉づえ歩行など肢体不自由の体験を説明するスライドや掲示に。",
+  "tags": [
+   "福祉",
+   "福祉体験",
+   "松葉杖",
+   "松葉づえ",
+   "肢体不自由",
+   "足の不自由",
+   "歩行",
+   "総合的な学習の時間",
+   "共生"
+  ],
+  "img": "img/sougou_fukushi_matsubazue.jpg",
+  "thumb": "img/sougou_fukushi_matsubazue_thumb.jpg",
+  "mono": "img/sougou_fukushi_matsubazue_mono.jpg"
  }
 ];
