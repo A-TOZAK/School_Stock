@@ -1,0 +1,509 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>対話型論証モデルの読み込みノート ｜ School Stock</title>
+<meta name="description" content="松下佳代氏の対話型論証モデルを、トゥールミンモデル・三角ロジックの系譜と実践論文から読み込み、中学・高校での使い方と小学校への絞り方まで整理した長い読み物。ワークシート4種つき。">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#6d3bd1; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+
+.article { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:20px 0 26px; margin-bottom:34px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--accent); padding:4px 12px; margin-bottom:18px; }
+.head h1 { font-size:clamp(26px,4.6vw,40px); font-weight:700; line-height:1.42; letter-spacing:.01em; }
+.head .sub { margin-top:16px; font-size:15px; color:#3d4148; line-height:1.9; }
+.head .meta { margin-top:20px; font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.head .meta b { color:var(--ink); font-weight:700; }
+
+.lead { font-size:17px; line-height:2.05; color:#20242a; margin-bottom:8px; }
+.lead b { font-weight:700; }
+h2 { font-size:22px; font-weight:700; line-height:1.5; margin:56px 0 6px; padding-top:14px; border-top:2px solid var(--ink); }
+h2 .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); margin-right:12px; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; letter-spacing:.06em; margin-bottom:20px; }
+h3 { font-size:16.5px; font-weight:700; margin:34px 0 4px; }
+p { font-size:16px; line-height:2.02; margin:18px 0; color:#20242a; }
+p .em, li .em { background:linear-gradient(transparent 62%, #efe7fb 62%); font-weight:700; }
+.pull { border-left:4px solid var(--accent); padding:6px 0 6px 22px; margin:30px 0; }
+.pull q { font-size:19px; font-weight:700; line-height:1.7; color:var(--ink); quotes:none; display:block; }
+.pull q::before, .pull q::after { content:""; }
+.pull cite { display:block; margin-top:10px; font-size:12.5px; color:var(--sub); font-style:normal; }
+
+figure { margin:34px 0; }
+figure svg { width:100%; height:auto; display:block; }
+figcaption { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:10px; }
+.fignote { color:var(--sub); }
+
+table.t { width:100%; border-collapse:collapse; margin:24px 0; font-size:14px; line-height:1.8; }
+table.t th { background:var(--wash); border:1px solid var(--line); padding:9px 12px; text-align:left; font-size:13px; white-space:nowrap; }
+table.t td { border:1px solid var(--line); padding:9px 12px; vertical-align:top; }
+.tablewrap { overflow-x:auto; }
+
+.box { background:var(--wash); border-left:3px solid var(--ink); padding:20px 24px; margin:34px 0; }
+.box h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin:0 0 12px; }
+.box ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.box li { font-size:14.5px; line-height:1.8; padding-left:26px; position:relative; }
+.box li::before { content:"□"; position:absolute; left:0; top:-1px; font-size:16px; color:var(--sub); }
+.box.plain li::before { content:"・"; }
+
+.dl { border:1px solid var(--line); margin:18px 0; }
+.dl a { display:flex; align-items:baseline; gap:12px; padding:14px 18px; border-bottom:1px solid var(--line); color:var(--ink); }
+.dl a:last-child { border-bottom:none; }
+.dl a:hover { background:var(--wash); }
+.dl .tag { font-size:11px; font-weight:700; color:#fff; background:var(--accent); padding:2px 8px; white-space:nowrap; }
+.dl .ttl { font-size:14.5px; font-weight:700; }
+.dl small { font-size:12px; color:var(--sub); font-weight:400; }
+
+.refs { font-size:13px; line-height:1.9; color:#3d4148; }
+.refs li { margin:0 0 10px 1.2em; }
+.note { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:20px; }
+.end { margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; }
+.end p { font-size:16px; }
+
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+      <a href="../../#prints">プリント</a>
+      <a href="../../#support">支援</a>
+      <a href="../../#toolbox">道具</a>
+      <a href="../../#reading" class="on">読みもの</a>
+      <a href="../../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../">探究・問題解決サポート</a> ／ 読み物</div>
+  <div class="head">
+    <span class="kicker">読み物 ｜ ARGUMENTATION</span>
+    <h1>対話型論証モデルの<br>読み込みノート</h1>
+    <p class="sub">「主張と根拠を書きなさい」で止まってしまう授業を、どこから解きほぐすか。
+    松下佳代氏の対話型論証モデルを、トゥールミンモデルからの系譜・実践論文・小学校のアーギュメント研究まで歩いて確かめた、長い読み物です。
+    授業ですぐ使えるワークシート4種を末尾に置きました。</p>
+    <div class="meta"><b>探究・問題解決サポート</b><span>｜</span><span>先生向け読み物（じっくり読む長文）</span><span>｜</span><span>© School Stock</span></div>
+  </div>
+
+  <p class="lead">探究の発表が「調べたことの紹介」で終わる。意見文の理由が「そう思ったから」の一行で止まる。
+  反論を書かせたら、相手を言い負かすための作文になった。
+  この読み物は、そういう場面に心当たりのある先生に向けて書きました。</p>
+  <p class="note">お急ぎの方へ：印刷して使うワークシートだけ欲しい場合は、<a href="#ws">末尾のワークシート4種</a>へどうぞ。</p>
+
+  <p>とりあげるのは、京都大学の松下佳代氏（教育方法学）が提案した<span class="em">「対話型論証モデル」</span>です。
+  2021年の『対話型論証による学びのデザイン』（勁草書房）で世に出て、中学・高校の教科と探究、大学のレポート指導まで、実践がじわじわ広がっています。
+  本稿は原典2冊と公開されている論文・実践報告を読み込んだ上での<b>独立の読み込みノート</b>で、原著者・出版社の監修は受けていません。
+  モデル自体をきちんと学ぶなら、末尾の参考文献にある原典をぜひ手に取ってください。この文章は、その手前の「見取り図」です。</p>
+
+  <h2><span class="n">1</span>対話型論証モデルとは何か</h2>
+  <div class="h2sub">7つの要素 ── 問いから結論まで、他者を通る</div>
+
+  <p>松下氏は対話型論証を「ある問題に対して、他者と対話しながら、根拠をもって主張を組み立て、結論を導く活動」（松下 2021）と定義しています。
+  この一文には、問題解決・論理的思考・批判的思考・コミュニケーションという、学校で育てたい力の名前がひととおり入っています。
+  ばらばらに唱えられてきたそれらを<span class="em">一つながりの活動としてまとめ直した</span>ところが、このモデルの提案の核です。
+  書名の副題「学校で身につけてほしいたった一つのこと」は、あれもこれもと増え続ける資質・能力のリストへの、一つの答え方だと読めます。</p>
+
+  <p>モデルは7つの要素でできています。自分の言葉で言い直すと、こうなります。</p>
+
+  <div class="tablewrap"><table class="t">
+    <tr><th>要素</th><th>はたらき</th></tr>
+    <tr><td><b>① 問題</b></td><td>対象への問題意識とその背景から立てた、問いや課題。論証全体の出発点</td></tr>
+    <tr><td><b>② 主張</b></td><td>問題に対する自分の考え。事実・データと論拠に支えられ、反駁によって強くなる</td></tr>
+    <tr><td><b>③ 事実・データ</b></td><td>主張を支える具体的な材料。テキストの記述、実験結果、統計、取材メモなど</td></tr>
+    <tr><td><b>④ 論拠（理由づけ）</b></td><td>その事実・データが、なぜその主張につながるのかという橋渡しの理由</td></tr>
+    <tr><td><b>⑤ 対立意見</b></td><td>同じ問題への、自分と対立する（少なくとも異なる）意見</td></tr>
+    <tr><td><b>⑥ 反駁</b></td><td>対立意見に応答して、自分の主張を擁護する反論</td></tr>
+    <tr><td><b>⑦ 結論</b></td><td>主張と対立意見の検討を経てたどり着く、問題への答え</td></tr>
+  </table></div>
+
+  <figure>
+  <svg viewBox="0 0 720 470" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="対話型論証モデルの構造図">
+    <defs>
+      <marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15181c"/></marker>
+      <marker id="ahp" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d3bd1"/></marker>
+    </defs>
+    <style>
+      .bx{fill:#fff;stroke:#15181c;stroke-width:1.6;}
+      .bxp{fill:#f1ebfb;stroke:#6d3bd1;stroke-width:1.6;}
+      .bxw{fill:#f6f6f4;stroke:#15181c;stroke-width:1.2;}
+      .lb{font:700 17px "Hiragino Sans",sans-serif;fill:#15181c;}
+      .sm{font:400 12.5px "Hiragino Sans",sans-serif;fill:#6b7077;}
+      .ln{stroke:#15181c;stroke-width:1.6;fill:none;}
+      .lnp{stroke:#6d3bd1;stroke-width:1.8;fill:none;}
+    </style>
+    <!-- 問題 -->
+    <rect class="bx" x="250" y="18" width="220" height="52" />
+    <text class="lb" x="360" y="42" text-anchor="middle">① 問題（問い）</text>
+    <text class="sm" x="360" y="60" text-anchor="middle">問題意識と背景から立てる</text>
+    <!-- 自分の側 -->
+    <text class="sm" x="150" y="110" text-anchor="middle" font-weight="700">自分の側</text>
+    <rect class="bx" x="60" y="122" width="180" height="50"/>
+    <text class="lb" x="150" y="146" text-anchor="middle">② 主張</text>
+    <text class="sm" x="150" y="163" text-anchor="middle">はじめは仮説でよい</text>
+    <rect class="bx" x="60" y="290" width="180" height="50"/>
+    <text class="lb" x="150" y="314" text-anchor="middle">③ 事実・データ</text>
+    <text class="sm" x="150" y="331" text-anchor="middle">主張を支える材料</text>
+    <rect class="bxw" x="270" y="206" width="150" height="46"/>
+    <text class="lb" x="345" y="228" text-anchor="middle" font-size="15">④ 論拠</text>
+    <text class="sm" x="345" y="244" text-anchor="middle">データと主張の橋</text>
+    <path class="ln" d="M150 290 L150 176" marker-end="url(#ah)"/>
+    <path class="ln" d="M270 229 L158 229" marker-end="url(#ah)" stroke-dasharray="5 4"/>
+    <!-- 相手の側 -->
+    <text class="sm" x="570" y="110" text-anchor="middle" font-weight="700">他者の側</text>
+    <rect class="bxp" x="480" y="122" width="180" height="50"/>
+    <text class="lb" x="570" y="146" text-anchor="middle">⑤ 対立意見</text>
+    <text class="sm" x="570" y="163" text-anchor="middle">異なる意見にも根拠がある</text>
+    <rect class="bxp" x="480" y="290" width="180" height="50"/>
+    <text class="lb" x="570" y="314" text-anchor="middle">事実・データ／論拠</text>
+    <text class="sm" x="570" y="331" text-anchor="middle">（ver.3で明示される）</text>
+    <path class="lnp" d="M570 290 L570 176" marker-end="url(#ahp)" stroke-dasharray="5 4"/>
+    <!-- 反駁 -->
+    <rect class="bxp" x="300" y="122" width="120" height="50"/>
+    <text class="lb" x="360" y="146" text-anchor="middle">⑥ 反駁</text>
+    <text class="sm" x="360" y="163" text-anchor="middle">対立意見への応答</text>
+    <path class="lnp" d="M246 147 L298 147"/>
+    <path class="lnp" d="M422 147 L474 147" marker-end="url(#ahp)"/>
+    <!-- 結論 -->
+    <rect class="bx" x="250" y="392" width="220" height="52"/>
+    <text class="lb" x="360" y="416" text-anchor="middle">⑦ 結論</text>
+    <text class="sm" x="360" y="434" text-anchor="middle">問題への答え。次の問いへ</text>
+    <path class="ln" d="M150 345 C150 392 240 405 250 410" marker-end="url(#ah)"/>
+    <path class="lnp" d="M570 345 C570 392 480 405 470 410" marker-end="url(#ahp)" stroke-dasharray="5 4"/>
+    <path class="ln" d="M295 70 C240 88 190 100 165 116" marker-end="url(#ah)" stroke-dasharray="2 5" stroke-width="1.1"/>
+    <path class="ln" d="M425 70 C480 88 530 100 555 116" marker-end="url(#ah)" stroke-dasharray="2 5" stroke-width="1.1"/>
+  </svg>
+  <figcaption>図1　対話型論証モデルの全体像。松下（2021）の構成要素（7要素・ver.3）をもとに筆者が再構成した概念図。左が自分の論証、右が他者の論証、真ん中で反駁が往復し、下で結論に合流する。</figcaption>
+  </figure>
+
+  <p>図を眺めると、このモデルの設計が3つの「編集」でできていることが見えてきます。
+  原型はトゥールミンモデル（次章）です。松下氏はそこに、第一に<span class="em">「問題」と「結論」を足して、問いから答えへ向かう問題解決の軸を通しました</span>。
+  第二に、<span class="em">「対立意見」と「反駁」を右側に取り出して、他者との対話を構造の中に明示しました</span>。
+  そして第三に、トゥールミンモデルにあった「限定詞」と「裏づけ」を思い切って省き、<span class="em">教室で扱える複雑さまで引き算しました</span>（松下 2021、古屋 2024）。
+  足したのは「問い」と「他者」、引いたのは専門的な細部。この足し算と引き算の両方に、学校で使うための設計思想が出ています。</p>
+
+  <p>歩みも書き添えておきます。モデルの土台になった実践は大学から始まりました。新潟大学歯学部のPBLとレポート評価の研究で9年、
+  次いで大阪の高槻中学校・高等学校で3年（いずれも2021年の書籍刊行時点）。2019年には新潟大学教育学部附属新潟中学校の研究図書に「深い学びを促す対話型論証」を寄せています。
+  つまりこのモデルは机上の図式ではなく、<span class="em">レポートと授業を評価し続けた研究の中から逆算されて出てきた道具</span>です。
+  2022年には高槻中高の前田秀樹氏・田中孝平氏との共著で『対話型論証ですすめる探究ワーク』が出て、書籍連動の公式サイト（d-argument.net）も公開されました。</p>
+
+  <h2><span class="n">2</span>系譜をたどる</h2>
+  <div class="h2sub">トゥールミン ── 三角ロジック ── 理科のアーギュメント研究</div>
+
+  <p>対話型論証モデルの「読み」を深くするには、系譜を知っておくのが早道です。出発点は、イギリスの哲学者スティーヴン・トゥールミンが1958年の『The Uses of Argument』（邦訳『議論の技法』2011）で示した議論のモデルです。
+  トゥールミンは、数学のような形式論理ではなく、法廷や日常の「実質的な議論」がどう成り立つかを分解しました。</p>
+
+  <figure>
+  <svg viewBox="0 0 720 330" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="トゥールミンモデルの6要素">
+    <defs><marker id="ah2" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15181c"/></marker></defs>
+    <style>
+      .b2{fill:#fff;stroke:#15181c;stroke-width:1.6;}
+      .b2w{fill:#f6f6f4;stroke:#15181c;stroke-width:1.2;}
+      .b2d{fill:#fff;stroke:#6b7077;stroke-width:1.2;stroke-dasharray:5 4;}
+      .l2{font:700 16px "Hiragino Sans",sans-serif;fill:#15181c;}
+      .s2{font:400 12px "Hiragino Sans",sans-serif;fill:#6b7077;}
+      .n2{stroke:#15181c;stroke-width:1.6;fill:none;}
+    </style>
+    <rect class="b2" x="40" y="60" width="190" height="52"/>
+    <text class="l2" x="135" y="84" text-anchor="middle">データ（事実）</text>
+    <text class="s2" x="135" y="102" text-anchor="middle">Data / Grounds</text>
+    <rect class="b2" x="490" y="60" width="190" height="52"/>
+    <text class="l2" x="585" y="84" text-anchor="middle">主張</text>
+    <text class="s2" x="585" y="102" text-anchor="middle">Claim</text>
+    <path class="n2" d="M230 86 L484 86" marker-end="url(#ah2)"/>
+    <rect class="b2w" x="270" y="150" width="180" height="50"/>
+    <text class="l2" x="360" y="173" text-anchor="middle">論拠</text>
+    <text class="s2" x="360" y="190" text-anchor="middle">Warrant</text>
+    <path class="n2" d="M360 150 L360 92" marker-end="url(#ah2)" stroke-dasharray="5 4"/>
+    <rect class="b2d" x="270" y="248" width="180" height="50"/>
+    <text class="l2" x="360" y="271" text-anchor="middle">裏づけ</text>
+    <text class="s2" x="360" y="288" text-anchor="middle">Backing</text>
+    <path class="n2" d="M360 248 L360 206" marker-end="url(#ah2)" stroke-width="1.1"/>
+    <rect class="b2d" x="490" y="150" width="190" height="50"/>
+    <text class="l2" x="585" y="173" text-anchor="middle">限定詞</text>
+    <text class="s2" x="585" y="190" text-anchor="middle">Qualifier（たぶん・おそらく）</text>
+    <path class="n2" d="M585 150 L585 118" marker-end="url(#ah2)" stroke-width="1.1"/>
+    <rect class="b2d" x="40" y="150" width="190" height="50"/>
+    <text class="l2" x="135" y="173" text-anchor="middle">反証（例外条件）</text>
+    <text class="s2" x="135" y="190" text-anchor="middle">Rebuttal（〜でない限り）</text>
+    <path class="n2" d="M230 175 C300 175 330 120 350 112" marker-end="url(#ah2)" stroke-width="1.1"/>
+    <text class="s2" x="360" y="30" text-anchor="middle">裏づけ・限定詞は省かれ、反証は「対立意見・反駁」へ再編される（第1章の3つの編集）</text>
+  </svg>
+  <figcaption>図2　トゥールミンモデルの6要素。Toulmin（1958＝2011）をもとに筆者作成。データから主張へ渡る橋が論拠（warrant）で、その橋を疑うところから議論が深まる。</figcaption>
+  </figure>
+
+  <p>日本の教室にこの考え方を持ち込んだ先駆けは、国語教育の井上尚美氏です。1989年の『言語論理教育入門』以来、「言語論理教育」の名でトゥールミンの論証を国語科の思考指導に翻訳してきました。
+  その流れを教室の道具に磨き上げたのが<span class="em">「三角ロジック」</span>です。主張・データ・論拠の3点だけを残した簡略形で、鶴田清司氏は「根拠・理由・主張の3点セット」として、
+  <b>根拠（事実そのもの）と理由（事実の解釈）を区別する</b>ことを小学校の国語授業から徹底する提案をしています（鶴田 2017）。
+  日本語の「根拠」は事実と理由の両方を含んでしまう言葉なので、この区別だけでも授業の解像度が一段上がります。</p>
+
+  <p>もう一本の太い流れが、理科教育のアーギュメント研究です。国際的には1990年代後半から科学教育で論証（argumentation）研究が盛んになり、
+  国内でも「主張・証拠・理由づけ」を柱にした授業研究が積み上がってきました。山本智一氏の2024年のレビューによれば、国内の理科教育だけで50本の論文があり、
+  その6割が「書くこと」による論証の産出を扱っています（山本 2024）。ここで大事なのは、<span class="em">この蓄積のかなりの部分が小学校での実証研究だ</span>ということです。この点は第4章でもう一度使います。</p>
+
+  <p>対話型論証モデルは、この二つの流れの合流点に立っています。三角ロジックはモデルの左半分（自分の側の横軸）としてそっくり生きていて、
+  そこに問題解決の縦軸と、対立意見・反駁という「他者の側」を接いだ形です。
+  三角ロジックを教えてきた学校なら、積み上げを捨てずにそのまま増築できます。</p>
+
+  <h2><span class="n">3</span>モデルの解剖 ── 論拠という難所</h2>
+  <div class="h2sub">同じ事実から、違う主張が生まれる</div>
+
+  <p>7要素の中で、授業が最初につまずくのはほぼ決まって<span class="em">④論拠</span>です。トゥールミンの warrant は訳しにくい概念で、対話型論証モデルでも「論拠・理由づけ」と二語を重ねて表記されます。
+  抽象的な説明よりも、自作の例をひとつ置きます。</p>
+
+  <figure>
+  <svg viewBox="0 0 720 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="三角ロジックの例：同じデータから異なる主張">
+    <defs><marker id="ah3" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#15181c"/></marker>
+    <marker id="ah3p" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#6d3bd1"/></marker></defs>
+    <style>
+      .b3{fill:#fff;stroke:#15181c;stroke-width:1.6;}
+      .b3p{fill:#f1ebfb;stroke:#6d3bd1;stroke-width:1.6;}
+      .l3{font:700 15px "Hiragino Sans",sans-serif;fill:#15181c;}
+      .s3{font:400 12.5px "Hiragino Sans",sans-serif;fill:#3d4148;}
+      .c3{font:400 12px "Hiragino Sans",sans-serif;fill:#6b7077;}
+      .n3{stroke:#15181c;stroke-width:1.6;fill:none;}
+      .n3p{stroke:#6d3bd1;stroke-width:1.8;fill:none;}
+    </style>
+    <rect class="b3" x="230" y="24" width="260" height="64"/>
+    <text class="l3" x="360" y="46" text-anchor="middle">事実・データ</text>
+    <text class="s3" x="360" y="66" text-anchor="middle">学級文庫を置いたら、休み時間に</text>
+    <text class="s3" x="360" y="66" dy="16" text-anchor="middle">図書室へ行く子が減った</text>
+    <path class="n3" d="M280 96 C220 140 170 170 150 196" marker-end="url(#ah3)"/>
+    <path class="n3p" d="M440 96 C500 140 550 170 570 196" marker-end="url(#ah3p)"/>
+    <rect class="b3" x="40" y="200" width="270" height="72"/>
+    <text class="l3" x="175" y="226" text-anchor="middle">論拠A</text>
+    <text class="s3" x="175" y="248" text-anchor="middle">教室で読めるなら、わざわざ</text>
+    <text class="s3" x="175" y="248" dy="16" text-anchor="middle">図書室まで行く必要は減る</text>
+    <rect class="b3p" x="410" y="200" width="270" height="72"/>
+    <text class="l3" x="545" y="226" text-anchor="middle">論拠B</text>
+    <text class="s3" x="545" y="248" text-anchor="middle">場所を問わず、本への関心</text>
+    <text class="s3" x="545" y="248" dy="16" text-anchor="middle">そのものが下がっている</text>
+    <path class="n3" d="M175 272 L175 306" marker-end="url(#ah3)"/>
+    <path class="n3p" d="M545 272 L545 306" marker-end="url(#ah3p)"/>
+    <rect class="b3" x="40" y="310" width="270" height="52"/>
+    <text class="l3" x="175" y="334" text-anchor="middle">主張A：学級文庫は機能している</text>
+    <text class="c3" x="175" y="352" text-anchor="middle">読書の場が教室に移っただけ</text>
+    <rect class="b3p" x="410" y="310" width="270" height="52"/>
+    <text class="l3" x="545" y="334" text-anchor="middle">主張B：読書指導の見直しが必要</text>
+    <text class="c3" x="545" y="352" text-anchor="middle">貸出データも合わせて確かめたい</text>
+  </svg>
+  <figcaption>図3　同じ事実・データでも、論拠が変われば主張は逆向きになる（例は筆者作成）。論証の質は、データの量ではなく論拠の吟味で決まる。</figcaption>
+  </figure>
+
+  <p>「図書室へ行く子が減った」という同じ事実が、論拠Aを通れば学級文庫の成功例になり、論拠Bを通れば警戒すべき兆候になります。
+  <span class="em">データは主張を自動的には決めません。決めているのは、ふだん言葉にされない論拠のほうです</span>。
+  会議で同じ資料を見ているのに結論が割れるときも、たいてい割れているのはデータではなく論拠です。だから論証の指導は、隠れた論拠を言葉にする練習だと言い換えられます。</p>
+
+  <p>難しさには実証データもあります。中高一貫校の国語で「羅生門」を教材に対話型論証の授業を行った古屋啓一氏の実践研究では、
+  高校2年生の個人作文26編のうち<span class="em">論拠が書かれていないものが6編、テキストの事実を挙げていないものが2編</span>ありました。
+  一方、グループでの発表資料ではこの「根拠づけ」の評価が全観点中いちばん高く、個人では崩れやすい論拠が、対話の中でなら立ち上がることを示しています（古屋 2024）。
+  生徒アンケートの分析でも、難所として挙がったのは「根拠づけ」「対立意見の考案」「反駁」の3つでした。難しいのは型を覚えることではなく、この3か所です。</p>
+
+  <h3>要素の中身は教科で変わる</h3>
+  <p>もうひとつ、教科の先生方に効く視点があります。松下氏は、三角ロジックの各要素の中身が教科によって変わることを指摘しています。
+  国語であれば、事実・データはテキストの記述、論拠は経験や既有知識、主張は作品の解釈が中心になります（松下 2021、古屋 2024）。
+  この見方を筆者なりに他教科へ延ばすと、理科なら観察・実験の結果をデータに、科学の原理を論拠に、自然現象の説明を主張に。
+  社会なら資料や統計をデータに、概念や因果の見方を論拠に、社会的な判断を主張に。
+  数学なら条件や定義から定理を論拠に命題を導く、という対応になります（この段落の教科への敷衍は筆者の整理です）。
+  <span class="em">型は共通、中身は教科固有</span>。だから「手法の教科横断」が現実的な線になります。内容のすり合わせより、はるかに始めやすい横断です。</p>
+
+  <h2><span class="n">4</span>絞りの階段 ── 小学校まで下ろすには</h2>
+  <div class="h2sub">モデル自身が、簡略版を用意している</div>
+
+  <p>ここからが本稿の主眼です。対話型論証モデルは中学以上でこそ全力が出る道具ですが、<b>要素を絞れば小学校でも成立する</b>と筆者は考えています。
+  希望的観測ではなく、根拠が3系統あります。</p>
+
+  <p>第一に、<span class="em">モデル自身がバリエーションを持っています</span>。原典と公式サイトには、対立意見の側に事実・データや論拠を求めない簡略版（ver.1）、
+  反駁までは求めない版（ver.2）、対立意見の側にも根拠を置く版（ver.3）、探究向けに調査の「方法」を組み込んだ版（ver.4）が示されています（松下 2021；公式サイト）。
+  つまり「全要素か、ゼロか」の道具ではもともとないのです。古屋氏も、生徒の実態に応じて簡略版を使い分けることを実践上の対策として挙げています（古屋 2024）。</p>
+
+  <p>第二に、<span class="em">小学校のアーギュメント研究がすでに実証しています</span>。山本智一氏らの一連の研究は、小学校理科で
+  「主張と証拠」を含む論証から始めて「主張・証拠・理由づけ」へ、さらに「証拠の適切さ・十分さ」の吟味へと、段階的に育成できることを授業実証で示してきました（山本 2015）。
+  討論の場面に対立する主張を意図的に含めることや、異なる主張の子どもで小グループを組むことが反駁を促す、という知見も蓄積されています。
+  国語側でも、鶴田氏の3点セットが小学校での実績を重ねています。<b>「主張＋事実＋理由づけ」までは、小学生で十分に届く</b>。これは推測ではなく、追試された研究結果です。</p>
+
+  <p>第三に、制度側の階段がそろっています。小学校国語では中学年から理由や事例を挙げて話す・書くことが指導事項に並び、
+  中学校では根拠の明確さを吟味する段階に進み、高校の「論理国語」では学習指導要領解説に「論証」の語が繰り返し登場します
+  （解説には、反論とは相手の根拠・理由づけ・前提の誤りや論理の飛躍を論証することだ、という趣旨の説明まであります）。
+  教育課程の側が、論証の階段をすでに描いているわけです。</p>
+
+  <figure>
+  <svg viewBox="0 0 720 430" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="校種別・要素の積み上げマップ">
+    <style>
+      .st{fill:#fff;stroke:#15181c;stroke-width:1.6;}
+      .stp{fill:#f1ebfb;stroke:#6d3bd1;stroke-width:1.6;}
+      .stw{fill:#f6f6f4;stroke:#6b7077;stroke-width:1;}
+      .tl{font:700 15.5px "Hiragino Sans",sans-serif;fill:#15181c;}
+      .ts{font:400 12.5px "Hiragino Sans",sans-serif;fill:#3d4148;}
+      .tc{font:400 12px "Hiragino Sans",sans-serif;fill:#6b7077;}
+      .tg{font:700 12.5px "Hiragino Sans",sans-serif;fill:#6d3bd1;}
+    </style>
+    <text class="tc" x="18" y="30">要素を積む ↑</text>
+    <!-- 段4 -->
+    <rect class="stp" x="330" y="44" width="372" height="76"/>
+    <text class="tl" x="348" y="72">高校・探究：フル装備＋方法（ver.3〜4）</text>
+    <text class="ts" x="348" y="94">対立意見の側にも根拠を置く。調査方法まで設計する</text>
+    <text class="tg" x="348" y="112">「論理国語」「総合的な探究」が受け皿</text>
+    <!-- 段3 -->
+    <rect class="st" x="240" y="140" width="462" height="76"/>
+    <text class="tl" x="258" y="168">中学校：7要素そろえる（ver.1→ver.3）</text>
+    <text class="ts" x="258" y="190">まず対立意見の根拠は求めない簡略版から。慣れたら相手の根拠へ</text>
+    <text class="tc" x="258" y="208">難所は論拠・対立意見・反駁（古屋 2024）。ここに時間を割く</text>
+    <!-- 段2 -->
+    <rect class="st" x="150" y="236" width="552" height="76"/>
+    <text class="tl" x="168" y="264">小学校高学年：三角ロジック＋「ちがう考え」（ver.1の入口）</text>
+    <text class="ts" x="168" y="286">主張・事実・理由づけを書き分ける。「ちがう考えの人なら何と言う？」を1マス足す</text>
+    <text class="tc" x="168" y="304">反駁は「たしかに〜。でも〜」の一文型から</text>
+    <!-- 段1 -->
+    <rect class="st" x="60" y="332" width="642" height="76"/>
+    <text class="tl" x="78" y="360">小学校中学年：主張＋事実（＋理由の芽）</text>
+    <text class="ts" x="78" y="382">「わたしは〜と考えます。りゆうは〜」。事実と気持ちを分けるところから</text>
+    <text class="tc" x="78" y="400">理科のアーギュメント研究が実証済みの段（山本 2015）</text>
+  </svg>
+  <figcaption>図4　「絞りの階段」。原典のver.1〜4と小学校アーギュメント研究の知見を、校種の階段に並べ直したもの（構成は筆者の設計。ver.の区分は松下 2021に基づく）。</figcaption>
+  </figure>
+
+  <p>注意点をひとつ。この階段図は原典にある区分（ver.1〜4）を<b>筆者が校種に割り付けた設計案</b>であって、松下氏が「小学生はver.1」と述べているわけではありません。
+  原典の使い分けはあくまで学習者の実態に応じたものです。ただ、絞る方向はモデルの設計思想（引き算して教室に合わせる）と同じ向きですし、
+  絞った先の形が理科・国語の小学校研究で実証済みの形と一致する。だから安心して絞ってよい、というのが本稿の提案です。</p>
+
+  <div class="pull"><q>フルモデルを薄めるのではなく、実証済みの段から積み上げる。</q><cite>── 小学校に下ろすときの合言葉</cite></div>
+
+  <h2><span class="n">5</span>実践の風景</h2>
+  <div class="h2sub">中学以上では、すでに道が踏まれている</div>
+
+  <p>実践は思いのほか広がっています。露払いはモデル開発に併走した学校です。高槻中学校・高等学校は3年間の共同実践を経て、
+  探究の手順書というべき『対話型論証ですすめる探究ワーク』を共著で世に出しました。問いの設定、仮説から主張へ、事実・データと論拠の区別、
+  対立意見と反駁、結論と提言という章立てそのものが、探究カリキュラムの設計図になっています。
+  大阪の初芝富田林中学校・高等学校は松下氏を教育顧問に迎え、国語・社会・数学・理科・英語の5教科で教科横断の授業実践と公開授業を続けています。</p>
+
+  <p>個別の教科でも論文や報告が出ています。ざっと並べると、国語では「羅生門」の解釈を問いから立ち上げた中1×高2の合同授業（古屋 2024）。
+  数学では紙ヘリコプターの実験を題材にした仮説検定の考え方の指導（安宅 2022）。公民では新科目「公共」への導入設計の検討（先・皆川 2026）。
+  歴史教育の専門誌での概念構築の提案（美那川 2022）。大学では医療系の多職種連携PBL（杉山ほか 2025）や消費者教育（飯尾・三宅 2025）まで。
+  <span class="em">教科も校種も違うのに、同じ図式で授業が語れている</span>こと自体が、このモデルの汎用性の証拠です。</p>
+
+  <p>古屋実践からは、もうひとつ持ち帰りたい数字があります。授業の3週間後に尋ねたところ、<b>6割以上の生徒が、他教科や日常の場面でこの方法を自分から使っていました</b>。
+  ニュースの読み方や友人との議論に転移したという回答もあります。一回の授業の中で完結する技能ではなく、ものの考え方として持ち出されている。
+  論証指導の狙いはまさにここなので、この転移の報告は心強い材料です。</p>
+
+  <h2><span class="n">6</span>授業に落とすときの設計原則</h2>
+  <div class="h2sub">研究知見を、7つの手立てに翻訳する</div>
+
+  <h3>1．問いを練る工程を削らない</h3>
+  <p>「問題と主張がかみ合わない」は、実践報告で繰り返し観察されるつまずきです（古屋 2024）。論証の質は問いの質で頭打ちになります。
+  『探究ワーク』は問いを磨く方法として、観点を変える（なぜ／もし〜だったら／どうすれば）、規模を変える（主語や範囲を限定する）ことを勧めています。
+  質問づくりの手法（QFT）と組み合わせた実践もあります。モデルの図を配る前に、問いに1時間使う価値があります。</p>
+
+  <h3>2．三角ロジックの筋トレを先に</h3>
+  <p>いきなり7要素の図を配ると、枠を埋める作業になって思考が止まります。まず主張・事実・論拠の3点だけで短い練習を重ね、
+  「事実と理由づけはどう違うか」を体で覚えてから右半分（対立意見・反駁）を開放する。二段構えが安全です。鶴田氏の3点セットの実践群が、この段の教材になります。</p>
+
+  <h3>3．対話で立ち上げ、個人で書き切る</h3>
+  <p>古屋実践のデータが示すとおり、論拠はグループの対話では立つのに、個人作文では抜け落ちます。
+  だから順番は「グループで論証を組む→個人で書き直す→モデルの図で自分の文章を点検する」。
+  対話は論拠の発生装置、個人記述は定着の確認、と役割を分けると授業が設計しやすくなります。</p>
+
+  <h3>4．反駁の目的を先に宣言する</h3>
+  <p>反駁は放っておくと「言い負かす技術」に育ちます。古屋氏は、反駁とは相手の否定ではなく、よりよい結論へ進むための吟味だと強調することを対策に挙げています。
+  「たしかに〜。でも〜」の一文型から入り、<span class="em">相手の意見の中のいちばん強い部分に応答する</span>ことをルール化する。
+  人格と主張を切り分ける教室文化そのものが、このモデルの隠れた前提条件です。</p>
+
+  <h3>5.「型はめ」の罠に構えておく</h3>
+  <p>古屋実践の生徒アンケートには、型の一律な強制への批判も記録されています。健全な批判だと思います。
+  型は足場（scaffold）であって、ゴールは型なしで論証できることです。自分なりの方法が確立している学習者には型を外す柔軟さを持つこと。
+  足場は「外す予定」とセットで組むものです。</p>
+
+  <h3>6．評価は要素別に見る</h3>
+  <p>モデルの利点は、作文や発表を「なんとなく良い」ではなく要素別に見られることです。問いと結論の対応、事実の適切さ、論拠の明示、対立意見の検討、反駁の質。
+  松下氏らのレポート評価研究に由来するルーブリックの系譜があり（小野・松下 2016）、古屋実践もこれを授業用に改案して使っています。
+  逆に言えば、7要素は評価規準の骨組みとしてそのまま使えます。指導と評価が同じ図で回るのは、現場にとって大きな節約です。</p>
+
+  <h3>7．生成AIの時代の必修科目として</h3>
+  <p>文部科学省のガイドラインは、生成AIの回答は誤りを含みうるから最後は自分で判断する姿勢が必要だとしています（文部科学省 2023）。
+  「自分で判断する」を分解すると、AIの出力に対して「事実・データはあるか。論拠は通っているか。対立する見方はないか」と問うこと、
+  つまり対話型論証の7要素で検品することにほかなりません。AIが文章を量産する時代に、論証の型を持つ子とそうでない子の差は、これまでより大きく開きます。
+  論証指導は古い教養ではなく、これからの安全装備だと考えています。</p>
+
+  <h2 id="ws"><span class="n">7</span>ワークシートの使い方</h2>
+  <div class="h2sub">絞りの階段に合わせて4種</div>
+
+  <p>本稿の整理をそのまま紙に落としたワークシートを用意しました。すべてA4・印刷即用・記入例つきです。
+  図4の階段と対応しています。どれか1枚なら、中高はB（導入版）、小学校はC（三角ロジック版）からどうぞ。</p>
+
+  <div class="dl">
+    <a href="pdf/WS-A_対話型論証モデルシート_フル版.pdf"><span class="tag">WS-A</span><span class="ttl">フル版（中高・探究）<br><small>7要素＋対立意見の根拠まで。ver.3相当。記入例つき</small></span></a>
+    <a href="pdf/WS-B_対話型論証モデルシート_導入版.pdf"><span class="tag">WS-B</span><span class="ttl">導入版（中学〜）<br><small>対立意見の根拠を求めないver.1相当。はじめての1枚</small></span></a>
+    <a href="pdf/WS-C_三角ロジックシート_小学校版.pdf"><span class="tag">WS-C</span><span class="ttl">小学校高学年版<br><small>考え・わけ・じじつ＋「ちがう考えの人なら？」。全漢字ルビ・記入例つき</small></span></a>
+    <a href="pdf/WS-T_先生用_使い分けガイド.pdf"><span class="tag">WS-T</span><span class="ttl">先生用・使い分けガイド<br><small>どの学年でどの版か、難所への手立て、反駁の言い方の型</small></span></a>
+  </div>
+
+  <div class="box">
+    <h3>授業前の自己点検（本稿の要約として）</h3>
+    <ul>
+      <li>問いは練ったか。問いと主張がかみ合っているか</li>
+      <li>三角ロジックの練習を先にやったか（事実と理由づけの区別）</li>
+      <li>グループで組む→個人で書く、の順番になっているか</li>
+      <li>反駁の目的（否定ではなく吟味）を先に宣言したか</li>
+      <li>学習者の実態に合わせて、簡略版（ver.1・2）を選べているか</li>
+      <li>型を外す時期を決めてあるか</li>
+    </ul>
+  </div>
+
+  <div class="end">
+    <p><b>最後に。</b>この読み物は、原典の代わりにはなりません。
+    モデルの図の正確な形、豊富な実例、各教科の単元展開は、ぜひ原典で確かめてください。
+    理論の背景まで含めて読むなら『対話型論証による学びのデザイン』、明日の探究の授業に落とすなら『対話型論証ですすめる探究ワーク』。
+    この2冊と公式サイト（d-argument.net）があれば、校内研修の輪読テキストとしても十分に回ります。
+    本稿が、その入口の一枚地図になれば幸いです。</p>
+    <p class="note">本稿は公刊されている書籍・論文・公式サイトに基づいて School Stock が独立に執筆した解説であり、原著者・出版社の監修を受けたものではありません。
+    図はいずれも出典の構成要素をもとに筆者が再構成・作成したものです。内容の誤りに気づかれた方は、note のコメント等でお知らせください。</p>
+  </div>
+
+  <h2><span class="n">＊</span>参考文献</h2>
+  <div class="h2sub">本文で参照したもののみ。孫引きを避けたい方のために</div>
+  <ol class="refs">
+    <li>松下佳代（2021）『対話型論証による学びのデザイン――学校で身につけてほしいたった一つのこと』勁草書房</li>
+    <li>松下佳代・前田秀樹・田中孝平（2022）『対話型論証ですすめる探究ワーク』勁草書房（公式サイト：d-argument.net）</li>
+    <li>松下佳代（2019）「深い学びを促す対話型論証」新潟大学教育学部附属新潟中学校研究会編『「主体的・対話的で深い学び」をデザインする「学びの再構成」』所収</li>
+    <li>小野和宏・松下佳代（2016）「初年次教育におけるレポート評価」松下佳代・石井英真編『アクティブラーニングの評価』東信堂</li>
+    <li>Toulmin, S. E.（1958）<i>The Uses of Argument</i>, Cambridge University Press（戸田山和久・福澤一吉訳（2011）『議論の技法――トゥールミンモデルの原点』東京図書）</li>
+    <li>井上尚美（1989）『言語論理教育入門――国語科における思考』明治図書</li>
+    <li>鶴田清司（2017）『授業で使える！論理的思考力・表現力を育てる三角ロジック――根拠・理由・主張の3点セット』図書文化</li>
+    <li>山本智一（2015）『小学校理科教育におけるアーギュメント構成能力の育成』風間書房</li>
+    <li>山本智一（2024）「日本の理科教育におけるアーギュメントの研究動向」『理科教育学研究』65(1)</li>
+    <li>古屋啓一（2024）「対話型論証を用いた国語科授業の実践――批判的思考の育成をめざして」『教育実践学研究』29, 216-226</li>
+    <li>安宅隆（2022）「対話型論証を用いた仮説検定の考え方の指導の検討――紙ヘリコプターを題材として」日本数学教育学会秋期研究大会発表集録55</li>
+    <li>美那川雄一（2022）「対話型論証による歴史概念の構築」『社会科教育』59(8)、明治図書</li>
+    <li>先皇太・皆川直凡（2026）「高等学校公民科『公共』における対話型論証の導入の意義と授業設計の検討」『鳴門教育大学情報教育ジャーナル』23</li>
+    <li>杉山芳生ほか（2025）「ジグソー法の要素を加えた医療系多職種連携PBLの実践」『日本教育工学会論文誌』49(1)</li>
+    <li>飯尾健・三宅元子（2025）「論理的思考の習得を促す消費者教育の授業開発・実践とその効果検証」『日本教育工学会論文誌』49</li>
+    <li>文部科学省（2023）「初等中等教育段階における生成AIの利用に関する暫定的なガイドライン」</li>
+    <li>文部科学省（2018）『高等学校学習指導要領（平成30年告示）解説 国語編』</li>
+  </ol>
+</article>
+
+<div class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  <div>先生のための、無料の道具と教材の棚。プリントは School Stock のサイトからダウンロードできます。</div>
+  <div class="foot-c">© School Stock ／ 本ページの図版・ワークシートは授業・校内研修で自由にお使いください（再配布時はクレジットを残してください）</div>
+</div></div>
+</body>
+</html>

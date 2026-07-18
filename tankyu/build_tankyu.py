@@ -311,6 +311,7 @@ PAGE = f"""<!DOCTYPE html>
     {DRAWER_SECS}
     <a class="sub2" href="prompts/">壁打ちプロンプト集（コピーして使える）</a>
     <a class="sub2" href="yomimono/">読み物：進め方の7つの視点</a>
+    <a class="sub2" href="taiwa-ronsho/">読み物：対話型論証モデルの読み込みノート</a>
     <div class="dr-sec">MATERIALS</div>
     <a href="../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
     <div class="dr-sec">IDEAS</div>
@@ -345,6 +346,12 @@ PAGE = f"""<!DOCTYPE html>
       <span class="yb-kick">読み物</span>
       <span class="yb-body"><b>調べる、の前に。──探究を「発表会」で終わらせない7つの視点</b>
       <span>問いへの答え・一次情報・取材のマナー・チームの約束・AIと手書きの使い分け。進め方の視点カードの背景を、現場の言葉で。</span></span>
+      <span class="yb-arrow">→</span>
+    </a>
+    <a class="yomibanner" href="taiwa-ronsho/">
+      <span class="yb-kick">読み物</span>
+      <span class="yb-body"><b>対話型論証モデルの読み込みノート──トゥールミンから小学校での絞り方まで</b>
+      <span>問い・主張・事実・論拠・対立意見・反駁・結論。理論の系譜と実践論文をじっくり読み込んだ長い読み物。印刷して使えるワークシート4種（中高フル版・導入版・小学校版・先生用）つき。</span></span>
       <span class="yb-arrow">→</span>
     </a>
   </div>
