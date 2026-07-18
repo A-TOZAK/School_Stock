@@ -25152,5 +25152,288 @@ const SOZAI = [
   "img": "img/ud_gyunyu_kirikaki.jpg",
   "thumb": "img/ud_gyunyu_kirikaki_thumb.jpg",
   "mono": "img/ud_gyunyu_kirikaki_mono.jpg"
+ },
+ {
+  "id": "ud_tesuri",
+  "title": "手すり（階段・廊下）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・手すり"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "階段沿いの手すりを握って上る人のフラットイラスト。",
+  "howto": "まちや建物の中のバリアフリー（手すり）の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "手すり",
+   "階段",
+   "バリアフリー",
+   "高齢者"
+  ],
+  "img": "img/ud_tesuri.jpg",
+  "thumb": "img/ud_tesuri_thumb.jpg",
+  "mono": "img/ud_tesuri_mono.jpg"
+ },
+ {
+  "id": "ud_lever",
+  "title": "レバー式のドアノブ・蛇口",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・レバー式"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "手やひじで押せるレバー式ドアハンドルとレバー水栓のフラットイラスト。",
+  "howto": "力の弱い人も使いやすい形のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "レバーハンドル",
+   "ドアノブ",
+   "蛇口",
+   "水栓"
+  ],
+  "img": "img/ud_lever.jpg",
+  "thumb": "img/ud_lever_thumb.jpg",
+  "mono": "img/ud_lever_mono.jpg"
+ },
+ {
+  "id": "ud_kaisatsu",
+  "title": "広い自動改札",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・広い改札"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "幅の広い自動改札を車椅子で通る人のフラットイラスト。",
+  "howto": "車椅子やベビーカーでも通れる改札のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "自動改札",
+   "駅",
+   "車椅子",
+   "IC"
+  ],
+  "img": "img/ud_kaisatsu.jpg",
+  "thumb": "img/ud_kaisatsu_thumb.jpg",
+  "mono": "img/ud_kaisatsu_mono.jpg"
+ },
+ {
+  "id": "ud_pictogram",
+  "title": "ピクトグラム（案内サイン・非常口）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・ピクトグラム"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "トイレ・車椅子・非常口のピクトグラムが並ぶ案内板を見上げる人のフラットイラスト。",
+  "howto": "言葉が分からなくても伝わる絵文字（ピクトグラム）の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "ピクトグラム",
+   "案内サイン",
+   "非常口",
+   "トイレ"
+  ],
+  "img": "img/ud_pictogram.jpg",
+  "thumb": "img/ud_pictogram_thumb.jpg",
+  "mono": "img/ud_pictogram_mono.jpg"
+ },
+ {
+  "id": "ud_can_tenji",
+  "title": "缶の点字（おさけ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・缶の点字"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "缶のフタの点字を指でさわって確かめるフラットイラスト。さわってお酒と分かる工夫。",
+  "howto": "身近な製品のUD（さわって分かる工夫）の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "缶",
+   "点字",
+   "おさけ",
+   "触覚",
+   "身近なUD"
+  ],
+  "img": "img/ud_can_tenji.jpg",
+  "thumb": "img/ud_can_tenji_thumb.jpg",
+  "mono": "img/ud_can_tenji_mono.jpg"
+ },
+ {
+  "id": "ud_bunbougu",
+  "title": "UD文房具（左右両用はさみ・持ちやすい）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・文房具"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "左右どちらの手でも使えるはさみ・持ちやすい鉛筆・ものさしのフラットイラスト。",
+  "howto": "だれでも使いやすい文房具のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "文房具",
+   "はさみ",
+   "左利き",
+   "鉛筆",
+   "ものさし"
+  ],
+  "img": "img/ud_bunbougu.jpg",
+  "thumb": "img/ud_bunbougu_thumb.jpg",
+  "mono": "img/ud_bunbougu_mono.jpg"
+ },
+ {
+  "id": "ud_mizunomiba",
+  "title": "高さ違いの水飲み場・手洗い場",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・水飲み場"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "高い方と低い方の2つの高さを備えた水飲み場を、立つ子と車椅子の子が使うフラットイラスト。",
+  "howto": "だれもが使える高さの工夫のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "水飲み場",
+   "手洗い場",
+   "高さ",
+   "車椅子"
+  ],
+  "img": "img/ud_mizunomiba.jpg",
+  "thumb": "img/ud_mizunomiba_thumb.jpg",
+  "mono": "img/ud_mizunomiba_mono.jpg"
+ },
+ {
+  "id": "ud_kenbaiki",
+  "title": "券売機・タッチパネル（大きな絵表示・低い位置）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・券売機"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "大きな絵ボタン・低い操作部・音声案内のついた券売機を車椅子の人が使うフラットイラスト。",
+  "howto": "だれもが操作しやすい機械のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "券売機",
+   "タッチパネル",
+   "音声案内",
+   "車椅子",
+   "ピクトグラム"
+  ],
+  "img": "img/ud_kenbaiki.jpg",
+  "thumb": "img/ud_kenbaiki_thumb.jpg",
+  "mono": "img/ud_kenbaiki_mono.jpg"
  }
 ];
