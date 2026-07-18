@@ -24831,5 +24831,326 @@ const SOZAI = [
   "img": "img/sougou_fukushi_matsubazue.jpg",
   "thumb": "img/sougou_fukushi_matsubazue_thumb.jpg",
   "mono": "img/sougou_fukushi_matsubazue_mono.jpg"
+ },
+ {
+  "id": "ud_slope",
+  "title": "スロープ（段差のない坂）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・スロープ"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "階段の横にスロープを設けた入り口のフラットイラスト。車椅子でも上れる段差のない坂。",
+  "howto": "UDの具体例として、まちの中のバリアフリーの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "スロープ",
+   "坂",
+   "段差解消",
+   "車椅子",
+   "手すり"
+  ],
+  "img": "img/ud_slope.jpg",
+  "thumb": "img/ud_slope_thumb.jpg",
+  "mono": "img/ud_slope_mono.jpg"
+ },
+ {
+  "id": "ud_tenji_block",
+  "title": "点字ブロック（黄色い誘導ブロック）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・点字ブロック"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "黄色い点字ブロック（線状の誘導＋点状の警告）を白杖で確かめて歩く人のフラットイラスト。",
+  "howto": "視覚障害のある人を助けるまちの工夫の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "点字ブロック",
+   "視覚障害",
+   "白杖",
+   "誘導ブロック",
+   "黄色"
+  ],
+  "img": "img/ud_tenji_block.jpg",
+  "thumb": "img/ud_tenji_block_thumb.jpg",
+  "mono": "img/ud_tenji_block_mono.jpg"
+ },
+ {
+  "id": "ud_auto_door",
+  "title": "自動ドア（センサーで開く）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・自動ドア"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "センサーで開く自動ドアを、荷物を持ったまま通る人のフラットイラスト。",
+  "howto": "手がふさがっていても通れるUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "自動ドア",
+   "センサー",
+   "バリアフリー"
+  ],
+  "img": "img/ud_auto_door.jpg",
+  "thumb": "img/ud_auto_door_thumb.jpg",
+  "mono": "img/ud_auto_door_mono.jpg"
+ },
+ {
+  "id": "ud_multi_toilet",
+  "title": "多機能トイレ（広い・手すり・ピクトグラム）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・多機能トイレ"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "ピクトグラムの案内と手すり・広い空間の多機能トイレのフラットイラスト。",
+  "howto": "だれもが使えるトイレのUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "多機能トイレ",
+   "多目的トイレ",
+   "手すり",
+   "ピクトグラム",
+   "バリアフリー"
+  ],
+  "img": "img/ud_multi_toilet.jpg",
+  "thumb": "img/ud_multi_toilet_thumb.jpg",
+  "mono": "img/ud_multi_toilet_mono.jpg"
+ },
+ {
+  "id": "ud_elevator_button",
+  "title": "エレベーターの低いボタン＋点字",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・エレベーターのボタン"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "低い位置のボタンと点字がついたエレベーターの操作盤を、車椅子の子が押すフラットイラスト。",
+  "howto": "車椅子や目の不自由な人に配慮したボタンの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "エレベーター",
+   "点字",
+   "ボタン",
+   "車椅子",
+   "視覚障害"
+  ],
+  "img": "img/ud_elevator_button.jpg",
+  "thumb": "img/ud_elevator_button_thumb.jpg",
+  "mono": "img/ud_elevator_button_mono.jpg"
+ },
+ {
+  "id": "ud_nonstep_bus",
+  "title": "ノンステップバス（床が低い・スロープ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・ノンステップバス"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "床が低くスロープを出したノンステップバスに、車椅子で乗り込む人と手伝う係員のフラットイラスト。",
+  "howto": "乗り物のバリアフリーの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "ノンステップバス",
+   "低床バス",
+   "バス",
+   "車椅子",
+   "スロープ"
+  ],
+  "img": "img/ud_nonstep_bus.jpg",
+  "thumb": "img/ud_nonstep_bus_thumb.jpg",
+  "mono": "img/ud_nonstep_bus_mono.jpg"
+ },
+ {
+  "id": "ud_oto_shingou",
+  "title": "音の出る信号機（音響式）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・音響式信号機"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "スピーカーから音が出る歩行者信号を、白杖を持って渡る人のフラットイラスト。",
+  "howto": "目の不自由な人を助ける信号の工夫の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "音響式信号機",
+   "信号",
+   "視覚障害",
+   "白杖",
+   "横断歩道"
+  ],
+  "img": "img/ud_oto_shingou.jpg",
+  "thumb": "img/ud_oto_shingou_thumb.jpg",
+  "mono": "img/ud_oto_shingou_mono.jpg"
+ },
+ {
+  "id": "ud_shampoo_kizami",
+  "title": "シャンプーボトルのきざみ",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・シャンプーのきざみ"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "側面にきざみのあるシャンプーと、なめらかなリンスを並べたフラットイラスト。さわって区別できる工夫。",
+  "howto": "身近な製品のUD（さわって分かる工夫）の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "シャンプー",
+   "きざみ",
+   "触覚",
+   "リンス",
+   "身近なUD"
+  ],
+  "img": "img/ud_shampoo_kizami.jpg",
+  "thumb": "img/ud_shampoo_kizami_thumb.jpg",
+  "mono": "img/ud_shampoo_kizami_mono.jpg"
+ },
+ {
+  "id": "ud_gyunyu_kirikaki",
+  "title": "牛乳パックの切り欠き",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・牛乳パックの切り欠き"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "開け口の反対側に半円の切り欠きがある牛乳パックのフラットイラスト。さわって牛乳と分かる工夫。",
+  "howto": "身近な製品のUD（さわって分かる工夫）の説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "福祉",
+   "バリアフリー",
+   "総合的な学習の時間",
+   "共生",
+   "牛乳パック",
+   "切り欠き",
+   "触覚",
+   "身近なUD"
+  ],
+  "img": "img/ud_gyunyu_kirikaki.jpg",
+  "thumb": "img/ud_gyunyu_kirikaki_thumb.jpg",
+  "mono": "img/ud_gyunyu_kirikaki_mono.jpg"
  }
 ];
