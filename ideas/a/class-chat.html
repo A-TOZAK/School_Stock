@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教室の中だけで動く「LINEみたいなやつ」をつくる ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="クラス名簿入りのスプレッドシート＋GASで、教室の中だけで動くチャット教材を先生が自作するアイデア。発言は全部シートに残り、なりすましはできない。SNSの失敗を安全に練習する授業例と、作るためのプロンプトつき。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --accent-weak:#e9effc; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  .hero { margin:26px 0 4px; }
+  .hero svg { width:100%; height:auto; display:block; border:1px solid var(--line); background:#fff; }
+  .hero figcaption { font-size:12px; color:var(--sub); margin-top:9px; line-height:1.8; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.plain { margin:0 0 14px 22px; font-size:15px; color:#24272c; }
+  ul.plain li { margin-bottom:6px; }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  .scene { background:var(--accent-weak); border-radius:8px; padding:16px 18px; margin:0 0 14px; }
+  .scene b { display:block; font-size:15px; margin-bottom:4px; }
+  .scene p { font-size:13.5px; margin:0; color:#3d4148; }
+  .pbox { border:1px solid var(--line); margin:18px 0; }
+  .pbar { display:flex; justify-content:space-between; align-items:center; gap:10px; background:var(--wash); border-bottom:1px solid var(--line); padding:9px 14px; font-size:13px; font-weight:700; }
+  .pbar button { font-family:inherit; font-size:12px; font-weight:700; color:#fff; background:var(--accent); border:none; padding:6px 16px; cursor:pointer; }
+  .pbar button:active { opacity:.8; }
+  .pbox pre { white-space:pre-wrap; font-family:"SF Mono",Menlo,"Hiragino Sans",monospace; font-size:12.5px; line-height:1.9; padding:16px 18px; background:#fff; color:#24272c; overflow-x:auto; }
+  .zukai-fig { margin:22px 0 6px; }
+  .zukai-fig img { width:100%; max-width:540px; display:block; margin:0 auto; border:1px solid var(--line); }
+  .zukai-fig figcaption { font-size:12px; color:var(--sub); margin-top:9px; text-align:center; }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ ひらめき広場</div>
+
+  <span class="kicker">実践アイデア｜デジタル・シティズンシップ</span>
+  <h1>教室の中だけで動く「LINEみたいなやつ」をつくる</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 対象：小4〜中学の学級 ／ 使うもの：Googleスプレッドシート・GAS・Gemini（先生用） ／ 費用：無料</p>
+
+<figure class="hero">
+<svg viewBox="0 0 960 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="教室の中だけで動くチャットの画面と、そのまま先生のスプレッドシートに記録が残るしくみの図">
+  <rect width="960" height="300" fill="#ffffff"/>
+  <path d="M900 0 H960 V70 Q930 44 900 0 Z" fill="#e9effc"/>
+  <text x="44" y="50" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="23" font-weight="700" fill="#38424b">SNSの練習は、失敗しても大丈夫な場所で。</text>
+  <text x="44" y="78" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14.5" fill="#8a8f97">教室の中だけで動くチャットなら、やりとりはぜんぶ先生に見えています。</text>
+  <g font-family="'Hiragino Sans','Noto Sans JP',sans-serif">
+    <!-- 左：チャット画面 -->
+    <rect x="44" y="100" width="330" height="176" rx="14" fill="#f3f5f9"/>
+    <rect x="44" y="100" width="330" height="34" rx="14" fill="#38424b"/>
+    <rect x="44" y="120" width="330" height="14" fill="#38424b"/>
+    <text x="62" y="123" font-size="13.5" font-weight="700" fill="#ffffff">💬 4年1組 グループ</text>
+    <rect x="60" y="146" width="176" height="30" rx="12" fill="#ffffff"/>
+    <text x="72" y="166" font-size="12.5" fill="#38424b">あしたの係活動、たのしみ！</text>
+    <rect x="238" y="184" width="120" height="30" rx="12" fill="#2b5fd9"/>
+    <text x="252" y="205" font-size="13">🎉🎉🎉🎉🎉</text>
+    <rect x="60" y="222" width="298" height="30" rx="8" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5 4"/>
+    <text x="72" y="242" font-size="12" font-weight="700" fill="#d97706">⚠「？？？」さんがグループに入りました</text>
+    <!-- 矢印 -->
+    <path d="M400 190 H470" stroke="#cdd4e0" stroke-width="4" stroke-linecap="round"/>
+    <path d="M470 183 L484 190 L470 197 Z" fill="#cdd4e0"/>
+    <text x="398" y="172" font-size="12" fill="#8a8f97">そのまま</text>
+    <!-- 右：先生のシート -->
+    <rect x="500" y="100" width="410" height="176" rx="14" fill="#ffffff" stroke="#2b5fd9" stroke-width="2.5"/>
+    <rect x="500" y="100" width="410" height="36" rx="14" fill="#2b5fd9"/>
+    <rect x="500" y="122" width="410" height="14" fill="#2b5fd9"/>
+    <text x="520" y="125" font-size="13.5" font-weight="700" fill="#ffffff">📋 先生のスプレッドシート（ログ）</text>
+    <g font-size="12" fill="#38424b">
+      <text x="522" y="162">10:12　はると　　あしたの係活動、たのしみ！</text>
+      <text x="522" y="188">10:12　みお　　　🎉🎉🎉🎉🎉</text>
+      <text x="522" y="214" fill="#d97706">10:14　？？？　　こんにちは。きみの学校、どこ？</text>
+      <text x="522" y="243" font-weight="700" fill="#2b5fd9">▶ 1件のこらず記録。消しても、ここには残る</text>
+    </g>
+  </g>
+  <path d="M120 288 q26 -30 58 -6 q-30 22 -58 6 z" fill="#dbe4f6"/>
+  <circle cx="792" cy="84" r="6" fill="#eec209"/>
+</svg>
+<figcaption>チャット画面のやりとりは、そのまま先生のスプレッドシートに残ります。子どもの画面から消しても、記録は消えません。この「消えない」こと自体が教材です。</figcaption>
+</figure>
+
+  <p class="lead">「クラスの中だけで動く、LINEみたいなチャットがあったら、SNSの練習が教室でできるのに」。この記事は、そんな教材を先生の手でつくるためのアイデアの紹介です。元になっているのは、北九州の知り合いの先生が実践されていたことです。私がゼロから思いついたものではありません。いいなと思ったので、作り方をプロンプトの形にして、おすそ分けします。</p>
+
+  <h2>なんで「チャットの教材」が要るの？</h2>
+  <p>SNSのやりとりで起きるすれちがいは、たいてい学校の外、放課後のスマホの中で起きます。でも、本物のSNSを授業で使って練習するわけにはいきません。それで情報モラルの授業は「動画を見て、話し合う」が中心になりがちで、子どもが実際に指を動かして、失敗してみるところまではなかなかいけません。</p>
+  <p>スタンプを何十連発もされたらどんな気持ちになるか。知らないアカウントに話しかけられたら、何と返すか。これは、読んで知るより、一度体験したほうが早い学びだと思っています。だから「教室の中だけで動く、閉じたチャット」です。失敗しても大丈夫な場所で、先に失敗しておく練習です。</p>
+
+  <h2>しくみはシンプル。そして、ぜんぶ先生に見えている</h2>
+  <p>正体は、Googleスプレッドシートにつないだ GAS（Google Apps Script）のWebアプリ1本です。子どもはブラウザでチャット風の画面を開くだけ。学校のGoogleアカウントでそのまま使えて、追加費用は0円。無料のEducation Fundamentalsの範囲で動きます。</p>
+  <ol class="steps">
+    <li><b>発言は1件のこらずシートに記録。</b>子どもの画面から消えても、先生のシートには残ります。「送った言葉は消えない」を、説教ではなく体験として学べます</li>
+    <li><b>なりすましができない。</b>名前は学校アカウントから自動で表示。名簿にないアカウントは入れません</li>
+    <li><b>記録は職員で共有できる。</b>学年でも生徒指導でも、同じログを見ながら話せます。保護者に説明するときも、記録がある強さは大きいです</li>
+  </ol>
+  <p>Geminiの出番は先生側だけにしています。授業シナリオづくり、「知らない人」役のセリフ案、あとで出てくるふりかえりの分析。子どもにGeminiを触らせない設計にしておくと、自治体ごとのAI利用の設定に左右されません。</p>
+  <div class="tip"><b>はじめる前に：</b>管理職・情報担当の先生に一言相談してから始めてください。この教材は「記録が全部残っていて、いつでも見せられる」つくりなので、説明はしやすいはずです。GASのWebアプリ公開を制限している自治体もあるので、そこも情報担当さんと確認を。</div>
+
+  <h2>授業でできる体験（例を3つ）</h2>
+  <div class="scene"><b>🎉 スタンプ連打</b><p>楽しい話題で盛り上がったところで、スタンプが何十連発。うれしい？ うるさい？ 同じ画面を見ていても感じ方がちがうことを、その場で話し合います。</p></div>
+  <div class="scene"><b>🕵️ 知らない人が入ってきた</b><p>チャットに「？？？」というアカウントが現れて、少しずつ聞いてきます。「きみの学校、どこ？」。正体は先生です。どこまで答えていいか、どう断るか、誰に相談するかを、教室で練習します。</p></div>
+  <div class="scene"><b>💬 文字だけのすれちがい</b><p>「いいよ」の一言が、OKにも「もういい」にも読めます。短い文字のやりとりで誤解が生まれる体験をしてから、ふりかえります。</p></div>
+
+  <h2>道具がなくても、あした15分でできる</h2>
+  <p>「ツールを作るのはハードルが高い」という方へ。この授業の核は「チャットで起きることを、教室の中で再現して話し合う」なので、道具なしでも始められます。大型テレビに Classroom のコメント欄やスライドを映して、先生が「？？？」役を演じる。紙の吹き出しカードで「これ、送っていい？」を判断させる。それだけでも1時間の授業になります。</p>
+  <p>まずはそこから。「もっと本物らしくやりたい」となったら、次のプロンプトの出番です。</p>
+
+  <h2>作ってみたい人へ（コピーして使うプロンプト）</h2>
+  <p>私はこういう道具を作るとき、AIに作らせるためのプロンプトを残しておくことにしています。よかったら使ってください。Geminiに貼って動きます（ClaudeやChatGPTでも大丈夫です）。</p>
+
+  <div class="pbox">
+    <div class="pbar">プロンプト①　ツール本体をAIに作らせる<button onclick="cp(this)">コピー</button></div>
+    <pre>あなたは、学校のGoogle Workspace（無料のEducation Fundamentals）で動く教材ツールを作る、GASの専門家です。
+小学校のデジタル・シティズンシップの授業で使う「教室の中だけで動くチャット教材」を作ってください。
+
+# 作りたいもの
+- Googleスプレッドシートにつないだ、GASのWebアプリ（doGet + index.html）
+- 見た目はスマホのチャットアプリ風（吹き出し・自分は右・他の人は左・下に入力欄とスタンプボタン）
+- 学校のChromebookやタブレットのブラウザで使う。対象は[小学4年生]の[30]人学級
+
+# しくみの条件（安全のためのきまり。ここは変えない）
+1. シートは2枚。「名簿」（A:メールアドレス B:表示名 C:役割 child/teacher）と「ログ」（A:日時 B:メールアドレス C:表示名 D:本文 E:種別 msg/stamp/system）
+2. Session.getActiveUser().getEmail() を名簿と照合し、名簿にない人には「参加できません」画面を出す
+3. 表示名は名簿から自動で表示する。子どもが自分では変えられないようにする（なりすまし防止）
+4. 発言・スタンプはすべて「ログ」シートに追記する。削除機能は作らない（授業のふりかえりに使うため）
+5. 子どもの画面：メッセージ送信／スタンプ（絵文字5種）／5秒ごとの自動更新（google.script.runで取得）
+6. 役割teacherだけの機能：①表示名を自由に変えて投稿できる（「？？？」など、授業シナリオの登場人物を演じるため）②画面の表示を「授業開始前」に切り替えるスイッチ（ログは消さない）
+7. 外部ライブラリ・外部への通信は使わない。Workspaceの中だけで完結させる
+
+# 出力形式
+- Code.gs と index.html を分けて、コピーできるコードブロックで出す
+- 続けて「設置手順」を、GASを初めて使う先生向けに番号つきで（シート作成→Apps Script→デプロイ→「次のユーザーとして実行：自分」「アクセスできるユーザー：[学校のドメイン]内の全員」の設定まで）
+- 最後に「授業前チェックリスト」を5項目で</pre>
+  </div>
+
+  <div class="pbox">
+    <div class="pbar">プロンプト②　授業シナリオをつくる<button onclick="cp(this)">コピー</button></div>
+    <pre>あなたは小学校の授業づくりを手伝う、デジタル・シティズンシップにくわしい先生役です。
+教室の中だけで動くチャット教材を使って、[小学4年生]に「知らない人がグループに入ってきたとき、どうするか」を考えさせる授業を作ります。
+
+# 手伝ってほしいこと
+1. 45分の授業の流れ（導入→チャット体験→話し合い→ふりかえり）
+2. 私（先生）が「？？？」という知らない人を演じるときのセリフ案を、段階つきで
+   - 最初はあいさつ → 少しずつ「学校名」「習いごと」「写真」を聞き出そうとする流れ
+   - 子どもがつい答えてしまいそうな、自然な聞き方にする
+3. 体験のあとに子どもに出す「ふりかえりの問い」を3つ
+4. 「教えていいこと・いけないこと」を子どもの言葉でまとめる板書案
+
+# 条件
+- 怖がらせて終わらせない。「断り方」と「相談のしかた」の練習まで入れる
+- 学級の実態：[おだやかだが、ノリで反応しがち]</pre>
+  </div>
+
+  <div class="pbox">
+    <div class="pbar">プロンプト③　ログでふりかえる（名前の列は消してから）<button onclick="cp(this)">コピー</button></div>
+    <pre>これは、授業で使った教室内チャットの記録です。名前とメールアドレスの列は消してあります。
+このやりとりを読んで、次の3つを行番号つきで指摘してください。
+①言葉が強くなった場面　②誤解が生まれた場面　③よい断り方・よい声かけができた場面
+最後に、子どもに見せる用の「今日のやりとりから学べること」を3つ、やさしい言葉で作ってください。
+
+[ここに、名前列を消したログを貼る]</pre>
+  </div>
+
+  <div class="tip"><b>コツ：</b>一度で完璧なものは出ません。動かないときは、エラー文をそのままAIに貼って「直して」と言うのがいちばん速いです。できあがったら、子どもに開く前に先生どうし（自分のもう1台の端末でも可）でテストを。動くかどうかの最終確認は、それぞれの学校の環境でお願いします。</div>
+
+  <h2>はじめる前の約束（そのまま職員室で話せる形）</h2>
+  <ul class="plain">
+    <li>管理職・情報担当の先生に相談してから始める</li>
+    <li>公開範囲は「学校のドメイン内」だけ。学校外のアカウントでは、リンクを知っていても開けない設定にする</li>
+    <li>名簿に入れるのは「表示名」だけ。住所・写真など、チャットに関係ない個人情報はシートに入れない</li>
+    <li>使う期間だけ開く。単元が終わったらデプロイを止める</li>
+    <li>記録を生徒指導や保護者への説明に使うときは、学年・管理職と扱いを決めてから</li>
+  </ul>
+
+  <h2>元になった実践のこと</h2>
+  <p>冒頭に書いたとおり、この考え方は、北九州の知り合いの先生が実践されていたことを元にしています。私のゼロからのアイデアではありません。</p>
+  <p>その先生の実践を知ったとき、いちばん心に残ったのは、道具そのものより「教室に必要な道具を、先生が自分の手でつくって、目の前の子どもに合わせて使っている」ことでした。ああ、必要な道具は自分たちでつくるんだな、と改めて感じました。いまはAIがあるので、その入り口はずいぶん低くなっています。この記事のプロンプトが、その入り口になればうれしいです。</p>
+
+  <figure class="zukai-fig">
+    <img src="class-chat-img/zukai_class_chat.png" alt="教室の中だけで動くLINEみたいなやつ：チャット画面例と、ぜんぶ先生に見えるしくみ、授業でできる3つの体験をまとめた図解">
+    <figcaption>1枚まとめの図解です。校内での紹介などに、保存してお使いください。</figcaption>
+  </figure>
+
+  <a class="back" href="../">← アイデア村で他のアイデアを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+<script>
+function cp(btn){
+  const pre = btn.closest('.pbox').querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent).then(()=>{
+    const t = btn.textContent; btn.textContent = 'コピーしました';
+    setTimeout(()=>{ btn.textContent = t; }, 1600);
+  });
+}
+</script>
+
+</body>
+</html>
