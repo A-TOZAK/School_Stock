@@ -25435,5 +25435,39 @@ const SOZAI = [
   "img": "img/ud_kenbaiki.jpg",
   "thumb": "img/ud_kenbaiki_thumb.jpg",
   "mono": "img/ud_kenbaiki_mono.jpg"
+ },
+ {
+  "id": "ud_color",
+  "title": "色に頼らない配色（カラーUD）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "中学年〜高学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "ユニバーサルデザイン・カラーユニバーサルデザイン"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示"
+  ],
+  "description": "色だけのグラフと、色＋もよう・形で見分けられるグラフを並べた比較図。色覚に配慮した配色（カラーUD）の説明に。",
+  "howto": "色だけに頼らない工夫（もよう・形を足す）のUDの説明に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "カラーユニバーサルデザイン",
+   "色覚",
+   "配色",
+   "グラフ",
+   "福祉",
+   "総合的な学習の時間",
+   "共生"
+  ],
+  "img": "img/ud_color.jpg",
+  "thumb": "img/ud_color_thumb.jpg",
+  "mono": "img/ud_color_mono.jpg"
  }
 ];
