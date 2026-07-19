@@ -25784,5 +25784,368 @@ const SOZAI = [
   "img": "img/ongaku_piano.jpg",
   "thumb": "img/ongaku_piano_thumb.jpg",
   "mono": "img/ongaku_piano_mono.jpg"
+ },
+ {
+  "id": "undoukai_suitou",
+  "title": "水筒（水分補給）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "熱中症対策",
+  "scenes": [
+   "水分補給・水筒の写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "肩ひも付きステンレス水筒のブツ撮り写真（結露つき）。",
+  "howto": "熱中症対策・水分補給のおたよりや掲示に。「水筒を持ってこよう」の呼びかけに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "熱中症",
+   "水分補給",
+   "水筒",
+   "保健",
+   "夏"
+  ],
+  "img": "img/undoukai_suitou.jpg",
+  "thumb": "img/undoukai_suitou_thumb.jpg"
+ },
+ {
+  "id": "undoukai_baton",
+  "title": "リレーのバトン",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・リレー",
+  "scenes": [
+   "リレーのバトンの写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "アルミのリレーバトンのブツ撮り写真。",
+  "howto": "運動会・リレーのおたよりや掲示、プログラムの見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "リレー",
+   "バトン",
+   "徒競走"
+  ],
+  "img": "img/undoukai_baton.jpg",
+  "thumb": "img/undoukai_baton_thumb.jpg"
+ },
+ {
+  "id": "undoukai_cone_rope",
+  "title": "カラーコーンとロープ（準備）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・準備",
+  "scenes": [
+   "運動会の準備道具の写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "カラーコーンと紅白ロープのブツ撮り写真。",
+  "howto": "運動会の準備・係活動のおたよりや掲示に。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "準備",
+   "係活動",
+   "コーン",
+   "ロープ"
+  ],
+  "img": "img/undoukai_cone_rope.jpg",
+  "thumb": "img/undoukai_cone_rope_thumb.jpg"
+ },
+ {
+  "id": "undoukai_tamaire",
+  "title": "紅白玉（玉入れ）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・玉入れ",
+  "scenes": [
+   "玉入れの紅白玉の写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "紅白の玉入れ玉のブツ撮り写真（俯瞰）。",
+  "howto": "運動会・玉入れのおたよりや掲示、プログラムの見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "玉入れ",
+   "紅白玉",
+   "低学年"
+  ],
+  "img": "img/undoukai_tamaire.jpg",
+  "thumb": "img/undoukai_tamaire_thumb.jpg"
+ },
+ {
+  "id": "undoukai_line_hiki",
+  "title": "ライン引き（朝の校庭）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・準備",
+  "scenes": [
+   "ライン引きの写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "朝の校庭で白線を引くライン引き器の写真（無人・朝もや）。",
+  "howto": "運動会の準備・係活動のおたよりや掲示に。朝の情景として。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "ライン引き",
+   "石灰",
+   "白線",
+   "準備",
+   "朝"
+  ],
+  "img": "img/undoukai_line_hiki.jpg",
+  "thumb": "img/undoukai_line_hiki_thumb.jpg"
+ },
+ {
+  "id": "undoukai_tent",
+  "title": "本部テント（朝の校庭）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・準備",
+  "scenes": [
+   "本部テントの写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "朝の校庭に設営された本部テントと長机・パイプ椅子の写真（無人）。",
+  "howto": "運動会のお知らせ・本部/放送のおたよりや掲示に。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "テント",
+   "本部",
+   "放送",
+   "準備",
+   "朝"
+  ],
+  "img": "img/undoukai_tent.jpg",
+  "thumb": "img/undoukai_tent_thumb.jpg"
+ },
+ {
+  "id": "netchusho_higasa",
+  "title": "日傘（日よけ・熱中症対策）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "熱中症対策",
+  "scenes": [
+   "日傘の写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "ベンチに立てかけた日傘の写真（朝の光・無人）。",
+  "howto": "熱中症対策・日よけのおたよりや掲示に。観覧の暑さ対策の呼びかけに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "熱中症",
+   "日傘",
+   "日よけ",
+   "保健",
+   "夏"
+  ],
+  "img": "img/netchusho_higasa.jpg",
+  "thumb": "img/netchusho_higasa_thumb.jpg"
+ },
+ {
+  "id": "undoukai_start_line",
+  "title": "スタートライン（かけっこ）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・徒競走",
+  "scenes": [
+   "トラックのスタートラインの写真"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "朝の校庭トラックのスタートライン（白線）の写真（無人・斜光）。",
+  "howto": "運動会・かけっこ・徒競走のおたよりや掲示、プログラム見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "かけっこ",
+   "徒競走",
+   "スタートライン",
+   "トラック",
+   "朝"
+  ],
+  "img": "img/undoukai_start_line.jpg",
+  "thumb": "img/undoukai_start_line_thumb.jpg"
+ },
+ {
+  "id": "undoukai_okiga_mochimono",
+  "title": "運動会の持ち物（水筒・タオル・紅白帽）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "熱中症対策・持ち物",
+  "scenes": [
+   "持ち物の置き画（情景）"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "ベンチに置かれた水筒・タオル・紅白帽の朝の情景写真（無人）。",
+  "howto": "運動会の持ち物・熱中症対策のおたよりや掲示に。「準備するもの」の見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "置き画",
+   "熱中症",
+   "水分補給",
+   "水筒",
+   "紅白帽",
+   "持ち物",
+   "保健",
+   "夏"
+  ],
+  "img": "img/undoukai_okiga_mochimono.jpg",
+  "thumb": "img/undoukai_okiga_mochimono_thumb.jpg"
+ },
+ {
+  "id": "undoukai_okiga_baton",
+  "title": "トラックに置かれたバトン（リレー）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・リレー",
+  "scenes": [
+   "バトンの置き画（情景）"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "校庭トラックの白線に置かれたリレーバトンの朝の情景写真（無人）。",
+  "howto": "運動会・リレーのおたよりや掲示、プログラム見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "置き画",
+   "リレー",
+   "バトン",
+   "徒競走",
+   "トラック",
+   "朝"
+  ],
+  "img": "img/undoukai_okiga_baton.jpg",
+  "thumb": "img/undoukai_okiga_baton_thumb.jpg"
+ },
+ {
+  "id": "undoukai_okiga_tamaire",
+  "title": "かごの紅白玉（玉入れ）",
+  "author": "himi",
+  "type": "photo",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・玉入れ",
+  "scenes": [
+   "紅白玉の置き画（情景）"
+  ],
+  "uses": [
+   "学級通信",
+   "おたより",
+   "掲示",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "校庭に置かれたかご入りの紅白玉の朝の情景写真（無人）。",
+  "howto": "運動会・玉入れのおたよりや掲示、プログラム見出しに。",
+  "tags": [
+   "運動会",
+   "行事",
+   "写真",
+   "置き画",
+   "玉入れ",
+   "紅白玉",
+   "かご",
+   "低学年",
+   "朝"
+  ],
+  "img": "img/undoukai_okiga_tamaire.jpg",
+  "thumb": "img/undoukai_okiga_tamaire_thumb.jpg"
  }
 ];
