@@ -85,9 +85,23 @@
   .use svg { width:12px; height:12px; }
   .empty { display:none; padding:30px 4px; color:var(--sub); font-size:14px; }
   .note { border:1px solid var(--line); background:var(--wash); padding:16px 18px; margin:22px 0 0; font-size:12.5px; color:var(--sub); line-height:1.9; }
-  /* サムネ（表紙）：千早リコの作風＝輪郭線なしの色面・むら色＋1段濃い面 */
+  /* サムネ（表紙）：千早リコの作風＝輪郭線なしの色面・むら色＋1段濃い面。アイデアごとに図柄がちがう */
   .card .thumb, .sc-card .thumb { border-bottom:1px solid var(--line); background:#fff; line-height:0; }
   .card .thumb svg, .sc-card .thumb svg { display:block; width:100%; height:auto; }
+  /* 村の一押し（社会科副読本） */
+  .featured { border:1px solid var(--ink); border-top:4px solid #7a4bd0; margin:26px 0 6px; display:grid; grid-template-columns:minmax(240px,42%) 1fr; background:#fff; }
+  @media (max-width:700px){ .featured { grid-template-columns:1fr; } }
+  .featured .fthumb { border-right:1px solid var(--line); line-height:0; background:#fff; }
+  @media (max-width:700px){ .featured .fthumb { border-right:none; border-bottom:1px solid var(--line); } }
+  .featured .fthumb svg { display:block; width:100%; height:100%; object-fit:cover; }
+  .featured .fb { padding:22px 24px 20px; }
+  .fkicker { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.18em; color:#fff; background:#7a4bd0; padding:3px 10px; margin-bottom:12px; }
+  .featured h2 { font-size:clamp(18px,3vw,23px); font-weight:700; line-height:1.5; margin-bottom:10px; }
+  .featured p { font-size:13.5px; line-height:1.9; color:#3d4148; }
+  .featured .fcta { display:flex; flex-wrap:wrap; gap:10px; margin-top:16px; }
+  .featured .fcta a { font-size:13px; font-weight:700; padding:9px 16px; display:inline-flex; align-items:center; gap:6px; }
+  .featured .fcta .solid { background:var(--black); color:#fff; }
+  .featured .fcta .line { border:1px solid var(--ink); color:var(--ink); }
   /* 先生の実践ショーケース（蓄積の器） */
   .showcase { margin:46px 0 0; border-top:3px solid var(--black); padding-top:30px; }
   .sc-kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:#9e3b45; padding:4px 12px; margin-bottom:14px; }
@@ -189,6 +203,19 @@
     </div>
   </div>
 
+  <section class="featured" aria-label="村の一押し">
+    <div class="fthumb"><svg viewBox="0 0 400 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice"><rect width="400" height="260" fill="#f4f1fa"/><rect x="0" y="0" width="400" height="260" fill="#7a4bd0" opacity="0.06"/><path d="M70 50h190a14 14 0 0 1 14 14v132a14 14 0 0 1-14 14H70a14 14 0 0 1-14-14V64a14 14 0 0 1 14-14z" fill="#fff"/><rect x="56" y="196" width="218" height="14" rx="7" fill="#5d37a3"/><path d="M84 74q60 18 82 52t-14 74" fill="none" stroke="#9db8e8" stroke-width="14" stroke-linecap="round"/><path d="M70 130h60M150 96v96M110 160h96" stroke="#e3ddf2" stroke-width="7" stroke-linecap="round"/><rect x="182" y="82" width="52" height="34" rx="5" fill="#c9ddc4"/><rect x="98" y="140" width="34" height="26" rx="4" fill="#eec209" opacity="0.85"/><circle cx="208" cy="150" r="13" fill="#d0454c"/><path d="M208 150l0 26" stroke="#d0454c" stroke-width="7" stroke-linecap="round"/><path d="M300 210 340 96l22 8-40 114-26 12z" fill="#5d37a3"/><path d="M340 96l22 8 8-22q-16-12-26 2z" fill="#eec209"/><path d="M236 196q34 10 58 2" fill="none" stroke="#d0454c" stroke-width="5" stroke-linecap="round" opacity="0.7"/><circle cx="44" cy="34" r="7" fill="#eec209"/></svg></div>
+    <div class="fb">
+      <span class="fkicker">村の一押し｜社会科・3年</span>
+      <h2>飯塚市 地域教材デジタル副読本<br><span style="font-size:0.78em;color:#5d37a3">電子黒板に映して、そのまま書き込める</span></h2>
+      <p>3年社会「市の様子」の地域資料を、電子黒板や端末で直接書き込めるWeb副読本にしました。全9ページ・ペンつき。散らばりがちな地域学習の資料を、問いとセットで見せて、印をつけながら確かめられます。Geminiと一緒に地域教材を作る、この村のいちばんの実例です。</p>
+      <div class="fcta">
+        <a class="solid" href="a/iizuka-fukudokuhon.html">くわしい使い方 →</a>
+        <a class="line" href="https://a-tozak.github.io/iizuka-fukudokuhon/" target="_blank" rel="noopener">副読本を開く ↗</a>
+      </div>
+    </div>
+  </section>
+
   <div class="filter">
     <div class="frow">
       <input id="q" class="search" type="search" placeholder="例: プロンプト、Gemini Notebook、Classroom、プリント">
@@ -255,39 +282,63 @@
 
 <script>
 const IDEAS = [
-  {t:'教室の中だけで動く「LINEみたいなやつ」をつくる', v:'gemini', ar:'クラス名簿を入れたスプレッドシート＋GASで、教室の中だけで動くチャット教材を先生が自作するアイデア。発言は全部シートに残り、なりすましはできず、記録は職員で共有できる。スタンプ連打や「知らない人の乱入」をシナリオで体験して、SNSの作法を安全に練習する。作るためのプロンプトつき。', pr:'SNSのすれちがいは学校の外で起きるのに、本物のSNSで練習はできない。動画を見て話し合う中心の情報モラル授業では、子どもが指を動かして失敗してみる体験まで作りにくい。', fs:'まず道具なしの15分体験版（先生が「？？？」役を演じる）から。手応えがあったら、記事のプロンプトをGeminiに貼ってツール本体を自作し、管理職・情報担当と相談して学級で開く。', to:'GAS, Google Sheets, Gemini', tg:'デジタル・シティズンシップ, 情報モラル, SNS, チャット, プロンプト集, 学級経営', url:'a/class-chat.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'見通しをもって、ゲストティーチャーと出会う', v:'gemini', ar:'地域の方は、お仕事のなかでご厚意で協力してくださる。早めのお願いがいちばんの礼儀。去年の記録をGemini Notebookに読ませて今年お世話になりたい方を思い出し、失礼のない連絡の目安・管理職への相談メモ・感謝を軸にした依頼文を整えるプロンプト集。', pr:'毎年の方ほど「大丈夫だろう」と後回しにして、直前のお願いで相手に無理をさせてしまう。正式な依頼は担任ひとりでは進めにくく、管理職の力も要る。', fs:'去年の記録をGemini Notebookに読ませ、①で今年お世話になりたい方を思い出す。②で失礼のない連絡の目安、③で管理職への相談メモと感謝ベースの依頼文を作る。', to:'Gemini, Gemini Notebook', tg:'ゲストティーチャー, 外部講師, 総合的な学習, 地域連携, 見通し, 敬意, プロンプト集', url:'a/guest-teacher-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'図工の準備は「よかったら」でいい', v:'gemini', ar:'図工の年間計画を渡すと、家庭向けの「1年間の見通し」と「題材ごとの、よかったらお願い」をGemini Canvasが作る。集める材料だけ・ゆるいトーンにそろえたコピペ用プロンプト集。', pr:'図工で家庭にお願いするのは空き箱やペットボトルなど「ためておくもの」。急に「明日持ってきて」では家庭も困るし、義務のように頼むと続かない。', fs:'年度はじめは①、その都度は②のプロンプトをコピーし、[　]を自分の学年・題材に変えてGeminiのCanvasに貼る。', to:'Gemini, Canvas, Googleサイト', tg:'図工, プロンプト集, Gemini, 年間の見通し, 保護者おたより, ゆるいお願い', url:'a/zukou-junbi-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'Workspace Studioの「フロー」で校務のくり返しを自動化', v:'workspace', ar:'やりたいことを日本語で書くと、Geminiが「きっかけ→手順」の自動化を組み立ててくれるWorkspace Studioのフロー。メール受信やスケジュールをきっかけに、Chat通知・ドキュメント作成・フォーム回答の整理などをコードなしで自動化できる。', pr:'毎週おなじ連絡・おなじ集計・おなじ準備を手作業でくり返している。GASまでは手が出ないが、自動化はしたい。', fs:'studio.workspace.google.com を開き、「いつ・何を」を日本語で書いて作成、手順を確認しテスト実行してからオンにする。', to:'Google Workspace Studio, Gemini, Google Chat, Google Docs, Google Forms', tg:'校務改善, 自動化, Gemini, Workspace, ノーコード', url:'a/workspace-studio-flow.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'AIプロンプトライブラリ', ar:'AIツール別・業務カテゴリ別・授業や教科別に探して、ワンクリックでコピーできるプロンプトライブラリ。小中高の授業向け構造化プロンプトも収録。', pr:'Claude Code、Gemini、Gemini Notebook、ChatGPTなどで使うプロンプトが散らばり、授業準備や校務で再利用しにくい。', fs:'サイトを開き、校種・教科・AIツールで絞り込み、1つコピーしてGeminiやGemini Notebookに貼って試す。', to:'Gemini, Gemini Notebook, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, Gemini Notebook, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'子どものための社会科プロンプトライブラリ', ar:'小4以上の社会科向けに、調べるヒント・考えづくり・ブラッシュアップ・まとめを支援するGemini/Gemini Notebook用プロンプト集。', pr:'社会科でAIを使うと答えを出すだけになり、資料の読み取りや根拠の確認が弱くなりやすい。', fs:'単元や学習場面に合うカードを選び、子どもの入力に合わせて変わるプロンプトをコピーして使う。', to:'Gemini, Gemini Notebook, GitHub Pages', tg:'社会科, プロンプト集, Gemini, Gemini Notebook, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物名を入力すると各プロンプトに反映され、選ぶ・調べる・確かめる・構成する・推敲するをGeminiとの対話で支える1ページサイト。', pr:'子どもが生き物を選び、調べ、構成し、リーフレットにまとめるまでを一人で進めるのは難しい。', fs:'生き物名を入力し、学習段階に合うプロンプトをコピーしてGeminiに貼り付ける。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'a/ikimono-zukan.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'小学校の学びが変わるICTと生成AIの活用 研修資料', ar:'G-Appsコミュニティで共有した研修資料、ふきだしくん共有プロンプト、AI検索おたすけ集などを含む実践共有。', pr:'生成AIやICTの話が便利ツール紹介で終わると、発達段階や授業づくりにどう落とすかが見えにくい。', fs:'共有資料を見て、校内で配れる紙資料やプロンプト例を1つ選び、自校の先生向けに紹介する。', to:'Gemini, Google Slides, Google Docs, Claude Code', tg:'生成AI, ICT研修, 小学校, Gemini, G-Apps', url:'a/kenshu-ict-ai.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'Classroom一括削除・一括作成GAS', ar:'アクティブなコース一覧、不要コースの一括削除、クラスルーム一括作成、共有ドライブから教師メール取得、一括招待までを支えるGAS。', pr:'年度末・新年度にGoogle Classroomを1つずつ削除・作成・招待する作業が情報担当に集中する。', fs:'手順を見ながら、まず現在のClassroom一覧を取得するところだけ試し、削除や招待は管理者と確認してから進める。', to:'GAS, Google Classroom, Google Sheets, Google Drive', tg:'Classroom, GAS, 情報担当, 年度末, 校務改善', url:'a/classroom-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'Googleスライド全ページ一括コピーGAS', ar:'選択した図形・テキストボックス・画像・表などを、全スライドの同じ位置に一括配置するGAS。', pr:'デジタルワークシートをスライドで作ると、児童分のスライドに同じ要素を何度も配置する必要がある。', fs:'コピーしたい要素を1つ選び、Apps Scriptにコードを貼ってメニューから一括コピーを実行する。', to:'GAS, Google Slides, Claude Code', tg:'Googleスライド, GAS, 教材作成, デジタルワークシート', url:'a/slides-copy-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'すぐ印刷して使える全学年対応ノート集', ar:'5mm方眼、低学年向け算数ノート、さんすうマス、こくご8マス、低学年作文ノートなど、印刷してすぐ使えるノート用紙集。', pr:'ノートやワークシートの形式を少しだけ使いたい時に、毎回自作したり探したりする時間がかかる。', fs:'マガジンから必要なノート形式を選び、印刷して授業や宿題、教材研究用に使う。', to:'Google Drive, Google Docs', tg:'神教材製作所, 印刷教材, ノート, ワークシート, 無料配布', url:'a/note-print.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'小学校算数プリント集とレビューツール', ar:'生成AIで作成した算数プリント集と、先生方にレビュー協力を依頼するためのレビューツール。', pr:'授業や宿題、自学で使えるプリントを作りたいが、AI生成教材はレビューと改善の仕組みが必要になる。', fs:'プリント集を1単元だけ開いて使い、気になる問題や改善点をレビューツールに残す。', to:'Antigravity, GitHub Pages, Google Sheets, Google Forms', tg:'算数, プリント, 教材レビュー, 生成AI, 神教材製作所', url:'a/sansu-print-review.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'飯塚市 地域教材デジタル副読本', ar:'3年社会「市の様子」の地域資料を、ブラウザで開いて電子黒板や端末に書き込めるデジタル副読本にした全9ページのWeb教材。ペン・蛍光ペン・レーザーポインターつき。', pr:'地域学習で使える資料が散らばっており、子どもに見せながら書き込んで確かめる教材がない。', fs:'単元に合うページを1つ開き、問いとセットで提示し、気づいたところにペンで印をつけて全体で確かめる。', to:'GitHub Pages', tg:'地域教材, 飯塚市, 社会科, 市の様子, デジタル副読本, 電子黒板', url:'a/iizuka-fukudokuhon.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'中学社会科向け資料読解ミニプリント集', ar:'中学社会科向けに、資料を読んで考えるためのミニプリント集として整理したWeb教材。', pr:'社会科の資料読解は、何を読み取るか・どんな根拠で考えるかを短時間で練習する場面が必要。', fs:'1枚だけ選び、資料から読み取れる事実と自分の考えを分けて書かせる。', to:'GitHub Pages, Google Docs, Gemini', tg:'中学社会, 資料読解, ミニプリント, 社会科', url:'a/oita-source-mini.html', sc:'中学校', ro:'外﨑顯博 / 小学校'},
-  {t:'小学校現場で使える学習ボードゲーム集', ar:'小学校現場で使えるドット絵風の学習ボードゲーム集。', pr:'授業の導入や復習で、楽しさと学習内容を両立した活動を用意するのに時間がかかる。', fs:'単元に近いゲームを1つ選び、授業の最後5分または復習場面で試す。', to:'GitHub Pages, JavaScript', tg:'学習ゲーム, ボードゲーム, 神教材製作所, 復習', url:'a/boardgame.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'あたまおしりことばゲーム', ar:'日本語かなを使った、あたまとおしりの文字から言葉を考えるゲーム。', pr:'語彙やかなへの関心を、短時間で楽しく扱える活動がほしい。', fs:'朝の活動や授業の導入で1回だけ開き、ルールを説明して全員で言葉を出してみる。', to:'GitHub Pages, JavaScript', tg:'国語, 語彙, ゲーム, かな, 学級活動', url:'a/atama-oshiri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'授業で使えるゲーム集', ar:'授業で使えるゲームを作成・シェアするためのリポジトリ。', pr:'授業で使える小さなゲーム教材が、単発で散らばると再利用しにくい。', fs:'リポジトリから授業に合いそうなゲームを1つ選び、短時間の活動として試す。', to:'GitHub Pages, JavaScript', tg:'授業ゲーム, 教材共有, 神教材製作所', url:'a/games.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'国語プリントギャラリー', ar:'国語系プリントをギャラリーとして整理するためのWeb教材リポジトリ。', pr:'国語のプリントや作文支援教材を、必要な時にすぐ見つけて印刷できる形にしたい。', fs:'単元や力をつけたい領域に合うプリントを1つ探し、授業か宿題で使う。', to:'GitHub Pages, JavaScript', tg:'国語, プリント, 作文, 神教材製作所', url:'a/kokugo-gallery.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'Gemini Notebookで校内研修の問いを作る', ar:'研修資料とアンケート結果をGemini Notebookに入れて、対話用の問いを生成する流れ。', pr:'研修資料はあるが、先生たちが自分事として話せる問いを作るのが難しい。', fs:'研修で使う資料を3つGemini Notebookに入れて「先生たちが自分事として話せる問いを10個出して」と聞く。', to:'Gemini Notebook, Google Docs', tg:'校内研修, Gemini Notebook, 問いづくり', url:'a/notebooklm-kenshu-toi.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
-  {t:'FormsとSheetsで振り返りを見える化する', ar:'Googleフォームで振り返りを集め、スプレッドシートで分類して見える化する。', pr:'子どもの振り返りを毎回読むのに時間がかかり、次の授業に生かしきれない。', fs:'フォームに「今日わかったこと」「まだわからないこと」を入れ、Geminiに分類の観点を考えてもらう。', to:'Google Forms, Google Sheets, Gemini', tg:'振り返り, 形成的評価, 校務改善', url:'a/forms-furikaeri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'}
+  {t:'飯塚市 地域教材デジタル副読本', ar:'3年社会「市の様子」の地域資料を、電子黒板や端末で直接書き込めるWeb副読本にしたもの。全9ページ・ペンつき。', pr:'地域学習の資料が散らばっていて、見せながら書き込んで確かめる教材がないとき。', fs:'単元に合うページを1つ開き、問いとセットで見せて、ペンで印をつけながら確かめる。', to:'GitHub Pages', tg:'地域教材, 飯塚市, 社会科, 市の様子, デジタル副読本, 電子黒板', url:'a/iizuka-fukudokuhon.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'教室の中だけで動く「LINEみたいなやつ」をつくる', v:'gemini', ar:'SNSでの失敗を、教室の中だけで動くチャットで安全に体験する授業アイデア。発言は全部先生のシートに残ります。ツールをAIに作らせるプロンプトつき。', pr:'本物のSNSでは練習できないので、情報モラルの授業が「動画を見て話し合う」で止まりがちなとき。', fs:'まず道具なしの15分体験版から。手応えがあったら、プロンプトでツール本体を自作します。', to:'GAS, Google Sheets, Gemini', tg:'デジタル・シティズンシップ, 情報モラル, SNS, チャット, プロンプト集, 学級経営', url:'a/class-chat.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'見通しをもって、ゲストティーチャーと出会う', v:'gemini', ar:'去年の記録をGemini Notebookに読ませて「今年お世話になりたい方」を思い出し、連絡の目安・管理職への相談メモ・依頼文まで整えるプロンプト集。', pr:'毎年来てくださる方ほど「大丈夫だろう」と後回しになり、直前のお願いになりがちなとき。', fs:'年度はじめに①で1年分を見通し、お願いする方が見えたら③で相談メモと依頼文を作ります。', to:'Gemini, Gemini Notebook', tg:'ゲストティーチャー, 外部講師, 総合的な学習, 地域連携, 見通し, 敬意, プロンプト集', url:'a/guest-teacher-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'図工の準備は「よかったら」でいい', v:'gemini', ar:'図工の年間計画を渡すと、家庭向けの「1年間の見通し」と「題材ごとの、よかったらお願い」のおたよりをGeminiが作ります。', pr:'空き箱やペットボトルは家庭も急にはそろえられないのに、お願いが授業の直前になりがちなとき。', fs:'年度はじめは①、その都度は②のプロンプトを、自分の学年・題材に書き換えて貼るだけ。', to:'Gemini, Canvas, Googleサイト', tg:'図工, プロンプト集, Gemini, 年間の見通し, 保護者おたより, ゆるいお願い', url:'a/zukou-junbi-gemini.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Workspace Studioの「フロー」で校務のくり返しを自動化', v:'workspace', ar:'やりたいことを日本語で書くと、Geminiが「きっかけ→手順」の自動化を組み立てるWorkspace Studioの「フロー」。コードは書きません。', pr:'毎週おなじ連絡・おなじ集計・おなじ準備を手作業でくり返しているとき。GASまでは手が出ないとき。', fs:'studio.workspace.google.com を開き、「いつ・何を」を日本語で書いて、テスト実行してからオンにする。', to:'Google Workspace Studio, Gemini, Google Chat, Google Docs, Google Forms', tg:'校務改善, 自動化, Gemini, Workspace, ノーコード', url:'a/workspace-studio-flow.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'AIプロンプトライブラリ', ar:'授業・校務でよく使うプロンプトを、AIツール別・教科別に探してワンクリックでコピーできる棚。小中高の授業向けも収録。', pr:'「あのとき使ったプロンプト、どこに書いたっけ」が増えてきたとき。', fs:'校種・教科・AIツールで絞り込み、1つコピーしてGeminiに貼って試す。', to:'Gemini, Gemini Notebook, Claude Code, ChatGPT, GitHub Pages', tg:'プロンプト集, Gemini, Gemini Notebook, 授業準備, 校務改善', url:'a/prompt-library.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'子どものための社会科プロンプトライブラリ', ar:'調べるヒント・考えづくり・まとめなど、学習の段階ごとに子どもがそのまま使える社会科プロンプト集。小4から。', pr:'社会科でAIを使うと、「答え」をもらって終わりになりやすいとき。', fs:'単元の場面に合うカードを選び、子どもがコピーして使う。答えを資料で確かめる活動とセットで。', to:'Gemini, Gemini Notebook, GitHub Pages', tg:'社会科, プロンプト集, Gemini, Gemini Notebook, 資料読解', url:'a/kids-shakai-prompt.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'4年国語「生き物図かん」Gemini学習サポートサイト', ar:'生き物の名前を入れると、選ぶ・調べる・構成する・推敲するの各段階のプロンプトが切り替わる1ページサイト。', pr:'「書くこと」の単元で一人ひとり題材がちがい、個別の支援が追いつかないとき。', fs:'生き物名を入力し、いまの学習段階のプロンプトをコピーしてGeminiに貼る。', to:'Gemini, Google Forms, GitHub Pages', tg:'国語, 4年生, Gemini, 書くこと, プロンプト集', url:'a/ikimono-zukan.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校の学びが変わるICTと生成AIの活用 研修資料', ar:'研修スライド・共有プロンプト・AI検索おたすけ集など、校内でそのまま配れる研修資料一式。noteで公開中。', pr:'校内研修でICT・生成AIを扱うことになったが、資料をゼロから作る時間がないとき。', fs:'資料から自校に合う物を1つ選び、紙1枚かChat投稿で校内に紹介する。', to:'Gemini, Google Slides, Google Docs, Claude Code', tg:'生成AI, ICT研修, 小学校, Gemini, G-Apps', url:'a/kenshu-ict-ai.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Classroom一括削除・一括作成GAS', ar:'Classroomの一覧取得・一括削除・一括作成・一括招待を、スプレッドシートから進めるGAS。', pr:'年度末・新年度のClassroom整理が、情報担当のクリック連打になっているとき。', fs:'まず「一覧を取得」だけ試す。削除や招待は、管理者と確認してから。', to:'GAS, Google Classroom, Google Sheets, Google Drive', tg:'Classroom, GAS, 情報担当, 年度末, 校務改善', url:'a/classroom-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Googleスライド全ページ一括コピーGAS', ar:'選んだ図形・テキストボックス・画像を、全スライドの同じ位置に一括で置くGAS。', pr:'デジタルワークシートで、同じ名前欄を30枚のスライドに手でコピペしているとき。', fs:'要素を1つ選び、コードをApps Scriptに貼って、メニューから一括コピーを実行する。', to:'GAS, Google Slides, Claude Code', tg:'Googleスライド, GAS, 教材作成, デジタルワークシート', url:'a/slides-copy-gas.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'すぐ印刷して使える全学年対応ノート集', ar:'5mm方眼・さんすうマス・こくご8マス・低学年作文ノートなど、印刷してすぐ使えるノート用紙集。', pr:'「ノート用紙がちょっとだけ足りない」のために、毎回探したり自作したりしているとき。', fs:'必要な形式を選んで印刷する。よく使う物は学年の共有フォルダへ。', to:'Google Drive, Google Docs', tg:'神教材製作所, 印刷教材, ノート, ワークシート, 無料配布', url:'a/note-print.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校算数プリント集とレビューツール', ar:'単元別・難易度別の算数プリント集。気になった問題はレビューツールから知らせてもらい、改訂に反映しています。', pr:'授業の補充・宿題・自学用のプリントがほしいとき。', fs:'1単元だけ使ってみて、気になった点をレビューツールに残す。', to:'Antigravity, GitHub Pages, Google Sheets, Google Forms', tg:'算数, プリント, 教材レビュー, 生成AI, 神教材製作所', url:'a/sansu-print-review.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'中学社会科向け資料読解ミニプリント集', ar:'資料から読み取れる「事実」と自分の「考え」を分けて書く、中学社会の資料読解ミニプリント集。', pr:'授業のはじめ5分やテスト前に、資料読解の練習を短くくり返したいとき。', fs:'1枚選び、事実→考えの順に書かせて、隣どうしで交流する。', to:'GitHub Pages, Google Docs, Gemini', tg:'中学社会, 資料読解, ミニプリント, 社会科', url:'a/oita-source-mini.html', sc:'中学校', ro:'外﨑顯博 / 小学校'},
+  {t:'小学校現場で使える学習ボードゲーム集', ar:'ブラウザで開くだけで遊べる、ドット絵風の学習ボードゲーム集。', pr:'導入や復習で、楽しさと学習内容を両立した活動を用意する時間がないとき。', fs:'単元に近いゲームを1つ、授業の最後5分か復習場面で試す。', to:'GitHub Pages, JavaScript', tg:'学習ゲーム, ボードゲーム, 神教材製作所, 復習', url:'a/boardgame.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'あたまおしりことばゲーム', ar:'最初と最後の文字を指定して言葉を考える、ブラウザですぐ遊べることばゲーム。', pr:'朝の活動や国語の導入で、語彙を短時間で楽しく扱えるネタがほしいとき。', fs:'電子黒板で開いて、最初の1問は全員で声に出して考える。', to:'GitHub Pages, JavaScript', tg:'国語, 語彙, ゲーム, かな, 学級活動', url:'a/atama-oshiri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'授業で使えるゲーム集', ar:'授業で使える小さなWebゲームを1か所に集めた置き場。新作も同じ場所に増えていきます。', pr:'「前に使ったあのゲーム」が、どこにあったか見つからなくなりがちなとき。', fs:'合いそうなゲームを1つ選び、自分で1回さわってから教室で使う。', to:'GitHub Pages, JavaScript', tg:'授業ゲーム, 教材共有, 神教材製作所', url:'a/games.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'国語プリントギャラリー', ar:'国語プリントの元データを置いている作業場。印刷して使うだけなら、検索つきの国語プリント棚（全259枚）の方が速いです。', pr:'国語プリントの制作の裏側や、元データに興味があるとき。', fs:'まず国語プリント棚で探し、目的の物がなければこちらものぞく。', to:'GitHub Pages, JavaScript', tg:'国語, プリント, 作文, 神教材製作所', url:'a/kokugo-gallery.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'Gemini Notebookで校内研修の問いを作る', ar:'研修資料とアンケート結果をGemini Notebookに入れて、先生たちが自分事として話せる「問い」を作る手順。', pr:'資料はそろっているのに、当日みんなが語り出す問いが作れないとき。', fs:'資料を3つ入れて問いを10個出させ、自分の感覚で3つにしぼる。', to:'Gemini Notebook, Google Docs', tg:'校内研修, Gemini Notebook, 問いづくり', url:'a/notebooklm-kenshu-toi.html', sc:'小学校', ro:'外﨑顯博 / 小学校'},
+  {t:'FormsとSheetsで振り返りを見える化する', ar:'フォームで振り返りを集め、Geminiに分類させて「次の一手」を1つ決める流れ。質問は2つだけ。', pr:'子どもの振り返りを毎回ぜんぶ読むのに時間がかかり、次の授業に生かしきれないとき。', fs:'「わかったこと」「まだわからないこと」の2問でフォームを作り、回答をGeminiに分類させる。', to:'Google Forms, Google Sheets, Gemini', tg:'振り返り, 形成的評価, 校務改善', url:'a/forms-furikaeri.html', sc:'小学校', ro:'外﨑顯博 / 小学校'}
 ];
 
 const VILLAGES = { gemini:'ひらめき広場', notebook:'読み解き書斎', workspace:'校務の工房', materials:'教材の畑' };
 
 // 表紙（サムネ）：作画＝千早リコの作風（レーンV/SVG）。輪郭線なしの色面・むら色＋1段濃い面・呼吸のドット。
-function coverSvg(v){
+// アイデアごとに図柄を持つ（MOTIFS）。図柄がない新規アイデアは、エリア共通の図柄で表示される。
+const MOTIFS = {
+  'class-chat': C=>`<g><rect x="248" y="62" width="86" height="52" rx="14" fill="#fff"/><path d="M266 114l-4 16 18-16z" fill="#fff"/><rect x="296" y="126" width="66" height="40" rx="12" fill="#dce6fa"/><path d="M348 166l4 12-16-12z" fill="#dce6fa"/><path d="M262 80h56M262 94h38" stroke="${C.d}" stroke-width="4" stroke-linecap="round" opacity="0.6"/><path d="M310 140h38" stroke="${C.d}" stroke-width="4" stroke-linecap="round" opacity="0.45"/></g>`,
+  'guest-teacher-gemini': C=>`<g><rect x="252" y="56" width="52" height="104" rx="6" fill="#fff"/><circle cx="294" cy="110" r="5" fill="${C.d}"/><rect x="322" y="70" width="52" height="38" rx="12" fill="#fff"/><path d="M334 108l-4 13 16-13z" fill="#fff"/><path d="M334 84h28M334 94h18" stroke="${C.d}" stroke-width="3.6" stroke-linecap="round" opacity="0.6"/><circle cx="340" cy="140" r="11" fill="#dce6fa"/><path d="M326 168q14-14 28 0" fill="#dce6fa"/></g>`,
+  'zukou-junbi-gemini': C=>`<g><rect x="246" y="92" width="58" height="52" rx="5" fill="#fff"/><path d="M246 92l14-18h30l14 18z" fill="#dce6fa"/><path d="M328 74h16v18q10 4 10 16v40a10 10 0 0 1-10 10h-16a10 10 0 0 1-10-10v-40q0-12 10-16z" fill="#fff"/><rect x="322" y="112" width="38" height="18" fill="#dce6fa"/><path d="M262 112h26M262 126h18" stroke="${C.d}" stroke-width="3.6" stroke-linecap="round" opacity="0.55"/></g>`,
+  'workspace-studio-flow': C=>`<g><circle cx="256" cy="72" r="16" fill="#fff"/><circle cx="330" cy="104" r="16" fill="#fff"/><circle cx="272" cy="146" r="16" fill="#fff"/><path d="M270 79l44 19M316 114l-30 24" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="256" cy="72" r="6" fill="${C.d}"/><circle cx="330" cy="104" r="6" fill="${C.d}"/><circle cx="272" cy="146" r="6" fill="${C.d}"/><path d="M352 96l14 8-14 8z" fill="#fff"/></g>`,
+  'prompt-library': C=>`<g><rect x="252" y="88" width="66" height="46" rx="6" fill="#dce6fa" transform="rotate(-6 285 111)"/><rect x="266" y="80" width="66" height="46" rx="6" fill="#eef3fc" transform="rotate(-2 299 103)"/><rect x="280" y="72" width="66" height="46" rx="6" fill="#fff"/><path d="M292 88h40M292 100h28" stroke="${C.d}" stroke-width="3.6" stroke-linecap="round" opacity="0.6"/><rect x="330" y="126" width="26" height="26" rx="5" fill="#fff"/><rect x="338" y="118" width="26" height="26" rx="5" fill="#dce6fa"/></g>`,
+  'kids-shakai-prompt': C=>`<g><rect x="250" y="60" width="70" height="92" rx="5" fill="#fff"/><path d="M262 76h44M262 90h44M262 104h30" stroke="${C.d}" stroke-width="3.4" stroke-linecap="round" opacity="0.5"/><circle cx="330" cy="122" r="24" fill="#dce6fa"/><circle cx="330" cy="122" r="15" fill="#fff"/><path d="M347 139l16 16" stroke="#fff" stroke-width="9" stroke-linecap="round"/></g>`,
+  'ikimono-zukan': C=>`<g><path d="M306 70l44 10v60l-44-10z" fill="#fff"/><path d="M306 70l-44 10v60l44-10z" fill="#eef3fc"/><path d="M306 70v60" stroke="${C.d}" stroke-width="3"/><path d="M338 52q14-14 22-6t-8 20q-10 6-16-2t2-12z" fill="#eec209"/><path d="M336 56q-16-10-10-20t20 2q6 10-2 16t-8 2z" fill="#f4d64f"/><circle cx="336" cy="56" r="3.4" fill="${C.d}"/></g>`,
+  'kenshu-ict-ai': C=>`<g><rect x="248" y="58" width="104" height="66" rx="6" fill="#fff"/><path d="M262 76h56M262 90h40M262 104h48" stroke="${C.d}" stroke-width="3.6" stroke-linecap="round" opacity="0.5"/><circle cx="282" cy="146" r="10" fill="#dce6fa"/><path d="M268 170q14-13 28 0" fill="#dce6fa"/><circle cx="322" cy="146" r="10" fill="#fff"/><path d="M308 170q14-13 28 0" fill="#fff"/></g>`,
+  'classroom-gas': C=>`<g><rect x="250" y="62" width="86" height="72" rx="6" fill="#fff"/><path d="M250 86h86M250 110h86M278 62v72M308 62v72" stroke="${C.d}" stroke-width="2.6" opacity="0.4"/><circle cx="344" cy="140" r="21" fill="#dce6fa"/><circle cx="344" cy="140" r="8" fill="#fff"/><g stroke="#dce6fa" stroke-width="7" stroke-linecap="round"><path d="M344 112v-7"/><path d="M344 168v7"/><path d="M372 140h7"/><path d="M316 140h-7"/></g></g>`,
+  'slides-copy-gas': C=>`<g><rect x="244" y="70" width="56" height="42" rx="5" fill="#fff"/><rect x="244" y="122" width="56" height="42" rx="5" fill="#eef3fc"/><rect x="322" y="70" width="56" height="42" rx="5" fill="#fff"/><rect x="322" y="122" width="56" height="42" rx="5" fill="#fff"/><rect x="252" y="78" width="18" height="8" rx="3" fill="${C.d}"/><rect x="330" y="78" width="18" height="8" rx="3" fill="${C.d}"/><rect x="330" y="130" width="18" height="8" rx="3" fill="${C.d}"/><path d="M304 116l14 12-14 12z" fill="#fff"/></g>`,
+  'note-print': C=>`<g><rect x="258" y="52" width="96" height="116" rx="4" fill="#fff"/><g stroke="${C.d}" stroke-width="2" opacity="0.35"><path d="M258 76h96M258 100h96M258 124h96M258 148h96"/><path d="M282 52v116M306 52v116M330 52v116"/></g><rect x="246" y="44" width="34" height="12" rx="6" fill="#eae6f5"/></g>`,
+  'sansu-print-review': C=>`<g><rect x="252" y="52" width="84" height="112" rx="4" fill="#fff"/><g stroke="${C.d}" stroke-width="4.4" stroke-linecap="round" opacity="0.7"><path d="M270 80h24M282 68v24"/><path d="M270 118h24"/><path d="M270 140h24M270 148h24"/></g><path d="M344 120l6 13 14 2-10 10 2 14-12-7-12 7 2-14-10-10 14-2z" fill="#eec209"/></g>`,
+  'iizuka-fukudokuhon': C=>`<g><rect x="248" y="56" width="98" height="104" rx="7" fill="#fff"/><path d="M258 70q34 12 44 34t-8 46" fill="none" stroke="#b7c8ec" stroke-width="9" stroke-linecap="round"/><rect x="304" y="76" width="30" height="20" rx="4" fill="#d3e3cf"/><circle cx="318" cy="122" r="8" fill="#d0454c"/><path d="M318 122v18" stroke="#d0454c" stroke-width="5" stroke-linecap="round"/><path d="M352 164l16-52 12 4-16 52-14 6z" fill="${C.d}"/><path d="M368 112l12 4 4-12q-10-6-16 8z" fill="#eec209"/></g>`,
+  'oita-source-mini': C=>`<g><rect x="252" y="56" width="82" height="108" rx="4" fill="#fff"/><path d="M266 74h54M266 86h38" stroke="${C.d}" stroke-width="3.2" stroke-linecap="round" opacity="0.55"/><rect x="266" y="118" width="10" height="30" fill="#dce6fa"/><rect x="282" y="106" width="10" height="42" fill="#b7c8ec"/><rect x="298" y="126" width="10" height="22" fill="#dce6fa"/><path d="M344 152l14-44 10 3-14 44-12 5z" fill="#eec209"/></g>`,
+  'boardgame': C=>`<g><rect x="248" y="118" width="30" height="30" rx="5" fill="#fff"/><rect x="286" y="98" width="30" height="30" rx="5" fill="#eef3fc"/><rect x="324" y="78" width="30" height="30" rx="5" fill="#fff"/><rect x="300" y="136" width="34" height="34" rx="8" fill="#fff" transform="rotate(-12 317 153)"/><circle cx="310" cy="146" r="3.6" fill="${C.d}"/><circle cx="324" cy="158" r="3.6" fill="${C.d}"/><circle cx="317" cy="152" r="3.6" fill="${C.d}"/><circle cx="263" cy="133" r="6" fill="#eec209"/></g>`,
+  'atama-oshiri': C=>`<g><rect x="246" y="72" width="52" height="52" rx="10" fill="#fff"/><rect x="316" y="72" width="52" height="52" rx="10" fill="#fff"/><text x="272" y="108" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="30" font-weight="700" fill="${C.d}">あ</text><text x="342" y="108" text-anchor="middle" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="30" font-weight="700" fill="${C.d}">り</text><path d="M300 98h12" stroke="#fff" stroke-width="5" stroke-linecap="round"/><circle cx="284" cy="146" r="5" fill="#eec209"/><circle cx="306" cy="150" r="5" fill="#fff"/><circle cx="328" cy="146" r="5" fill="#eec209"/></g>`,
+  'games': C=>`<g><g fill="#fff"><rect x="286" y="60" width="14" height="14"/><rect x="314" y="60" width="14" height="14"/><rect x="272" y="74" width="14" height="14"/><rect x="286" y="74" width="14" height="14"/><rect x="300" y="74" width="14" height="14"/><rect x="314" y="74" width="14" height="14"/><rect x="328" y="74" width="14" height="14"/><rect x="272" y="88" width="14" height="14"/><rect x="300" y="88" width="14" height="14"/><rect x="328" y="88" width="14" height="14"/></g><rect x="282" y="122" width="50" height="30" rx="12" fill="#fff"/><circle cx="296" cy="137" r="5" fill="${C.d}"/><circle cx="318" cy="137" r="5" fill="${C.d}"/></g>`,
+  'kokugo-gallery': C=>`<g><rect x="256" y="52" width="100" height="116" rx="4" fill="#fff"/><g stroke="${C.d}" stroke-width="4" stroke-linecap="round" opacity="0.6"><path d="M334 68v84"/><path d="M312 68v60"/><path d="M290 68v84"/><path d="M268 68v40"/></g><circle cx="312" cy="146" r="4" fill="#d0454c"/></g>`,
+  'notebooklm-kenshu-toi': C=>`<g><path d="M300 70l40 10v58l-40-10z" fill="#fff"/><path d="M300 70l-40 10v58l40-10z" fill="#eaf3ef"/><path d="M300 70v58" stroke="${C.d}" stroke-width="3"/><path d="M336 118q0-10 9-12t12 6q2 7-6 12-5 3-5 8" fill="none" stroke="#eec209" stroke-width="7" stroke-linecap="round"/><circle cx="346" cy="146" r="4.6" fill="#eec209"/></g>`,
+  'forms-furikaeri': C=>`<g><rect x="250" y="54" width="76" height="112" rx="6" fill="#fff"/><g><rect x="262" y="68" width="14" height="14" rx="3" fill="#dcede8"/><path d="M265 75l4 4 7-8" stroke="${C.d}" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="262" y="94" width="14" height="14" rx="3" fill="#dcede8"/><path d="M265 101l4 4 7-8" stroke="${C.d}" stroke-width="3" fill="none" stroke-linecap="round"/><rect x="262" y="120" width="14" height="14" rx="3" fill="#dcede8"/></g><path d="M284 76h30M284 102h30M284 128h20" stroke="${C.d}" stroke-width="3.2" stroke-linecap="round" opacity="0.5"/><rect x="338" y="118" width="11" height="42" fill="#dcede8"/><rect x="354" y="100" width="11" height="60" fill="#fff"/></g>`
+};
+function coverSvg(v, slug){
   const C = { gemini:{c:'#2b5fd9',d:'#1f47a3'}, notebook:{c:'#0e8a6d',d:'#0a6650'}, workspace:{c:'#c2571a',d:'#9a4413'}, materials:{c:'#7a4bd0',d:'#5d37a3'} }[v] || {c:'#38424b',d:'#20262c'};
-  const motif = {
+  const fallback = {
     gemini:`<g><circle cx="306" cy="98" r="27" fill="#fff"/><g stroke="#fff" stroke-width="6" stroke-linecap="round"><path d="M306 44v-13"/><path d="M306 165v13"/><path d="M360 98h13"/><path d="M239 98h13"/><path d="M345 59l9-9"/><path d="M267 137l-9 9"/></g><rect x="297" y="122" width="18" height="9" rx="3" fill="${C.d}"/></g>`,
     notebook:`<g><path d="M306 62l42 11v62l-42-11z" fill="#fff"/><path d="M306 62l-42 11v62l42-11z" fill="#eaf3ef"/><path d="M306 62v62" stroke="${C.d}" stroke-width="3"/><path d="M276 92l24 6M276 108l24 6" stroke="${C.d}" stroke-width="2.4" stroke-linecap="round" opacity="0.55"/></g>`,
     workspace:`<g><rect x="250" y="80" width="46" height="36" rx="8" fill="#fff"/><rect x="322" y="80" width="46" height="36" rx="8" fill="#fff"/><path d="M300 98h16" stroke="#fff" stroke-width="4" stroke-linecap="round"/><path d="M314 92l9 6-9 6z" fill="#fff"/><circle cx="273" cy="98" r="6" fill="${C.d}"/><path d="M338 91h20M338 99h20M338 107h12" stroke="${C.d}" stroke-width="2.6" stroke-linecap="round"/></g>`,
     materials:`<g><path d="M306 150v-44" stroke="#fff" stroke-width="6" stroke-linecap="round"/><path d="M306 112q-28-6-33-32 28 2 33 28z" fill="#fff"/><path d="M306 104q28-10 37-34-30 0-37 28z" fill="#eae6f5"/></g>`
   }[v] || '';
+  const motif = (slug && MOTIFS[slug]) ? MOTIFS[slug](C) : fallback;
   const name = VILLAGES[v] || '';
   return `<svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">`
     + `<rect width="400" height="200" fill="#fff"/>`
@@ -299,6 +350,7 @@ function coverSvg(v){
     + `<text x="32" y="72" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="10" fill="#a2a8ae" letter-spacing="0.16em">SCHOOL STOCK</text>`
     + `</svg>`;
 }
+const slugOf = it => String(it.url||'').replace(/^a\//,'').replace(/\.html$/,'');
 
 function classify(it){
   const s = [it.t, it.to, it.tg].join(' ');
@@ -339,7 +391,7 @@ function cardHtml(it){
         : `<a class="use" href="${esc(it.url)}" target="_blank" rel="noopener">使ってみる<svg viewBox="0 0 12 12" fill="none"><path d="M3 9L9 3M4 3h5v5" stroke="#fff" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg></a>`)
     : `<span class="author">リンクは準備中</span>`;
   return `<article class="card" data-v="${esc(it.v)}">
-    <div class="thumb">${coverSvg(it.v)}</div>
+    <div class="thumb">${coverSvg(it.v, slugOf(it))}</div>
     <div class="b">
       <div class="chips"><span class="vil">${esc(VILLAGES[it.v])}</span>${tools}<span class="chip sch">${esc(it.sc)}</span></div>
       <h3>${esc(it.t)}</h3>
@@ -409,5 +461,8 @@ document.getElementById('scGrid').innerHTML = SHOWCASE.map(scCard).join('') + sc
 })();
 </script>
 
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
 </body>
+<!-- review: sonnet校閲 重大0 / haiku読者テスト 合格 2026-07-18 -->
 </html>

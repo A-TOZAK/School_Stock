@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Workspace Studioの「フロー」で校務のくり返しを自動化 ── 実践アイデア村｜School Stock</title>
-<meta name="description" content="「毎週おなじ時間に、おなじ人へ、おなじ連絡」——校務にはこの手のくり返しがたくさんあります。Workspace Studio の「フロー」は、やりたいことを日本語で書くと、Gemini が「いつ動くか（きっかけ）→何をす">
+<meta name="description" content="「毎週おなじ時間に、おなじ人へ、おなじ連絡」。校務のこの手のくり返しを、やりたいことを日本語で書くだけで自動化できるWorkspace Studioの「フロー」の紹介です。コードは書きません。まず試す3ステップつき。">
 <style>
   :root { --ink:#15181c; --sub:#6b7077; --accent:#c2571a; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -102,10 +102,11 @@
 </svg>
 <figcaption>フローの正体：「きっかけ（いつ動くか）」に「手順（何をするか）」をつないだ自動化。むずかしい設定でなく、日本語の指示から始まります。</figcaption>
 </figure>
-  <p class="lead">「毎週おなじ時間に、おなじ人へ、おなじ連絡」——校務にはこの手のくり返しがたくさんあります。Workspace Studio の「フロー」は、やりたいことを日本語で書くと、Gemini が「いつ動くか（きっかけ）→何をするか（手順）」の自動化を組み立ててくれる無料の道具です。GAS を書けなくても、対話だけで自分専用の自動化が持てます。</p>
+  <p class="lead">「毎週おなじ時間に、おなじ人へ、おなじ連絡」。校務には、この手のくり返しがたくさんあります。やりたいことを日本語で書くと、Geminiが「いつ動くか→何をするか」の自動化を組み立ててくれる。GASを書けなくても使える、Google Workspaceの機能です。</p>
 
   <h2>これでできること</h2>
-  <p>「◯◯からメールが来たら Chat で知らせて」「毎週月曜の朝に、その週の予定メモを用意して」のように、きっかけ（メール受信・毎週◯曜など）と手順（Chat 通知・ドキュメント作成・フォーム回答の整理など）を、コードを書かずに組めます。提案された手順は入れ替え・削除・追加ができ、テスト実行で確かめてから動かせます。</p>
+  <p>「◯◯からメールが来たら Chat で知らせて」「毎週月曜の朝に、その週の予定メモを用意して」。こういう自動化を、コードを書かずに組めます。きっかけはメール受信や毎週◯曜など、手順はChat通知・ドキュメント作成・フォーム回答の整理などから選べます。</p>
+  <p>提案された手順は入れ替え・削除・追加ができ、テスト実行で確かめてから動かせます。</p>
 
   <h2>こんなときに</h2>
   <p>同じ連絡・同じ集計・同じ準備を、毎回手作業でくり返しているとき。フォームの回答を毎回コピペで整理しているとき。「自動化したいけれど GAS までは手が出ない」というとき。</p>
@@ -118,7 +119,8 @@
   </ol>
   <div class="tip"><b>コツ：</b>きっかけと手順は具体的に書くほど精度が上がります（「メールが来たら」より「保護者アンケートのアドレスからメールが来たら」）。※18歳未満の学校アカウントでは Studio の AI 機能は使えません。児童生徒の個人情報を扱う自動化は、作らない・共有しないのが約束です。</div>
 
-  <h2>リンク</h2>
+  <h2>開いてみる</h2>
+  <p>まずは“通知だけ”の軽いフローから。うまくいったら、少しずつ増やしていけます。</p>
   <a class="cta" href="https://studio.workspace.google.com/" target="_blank" rel="noopener">Workspace Studio を開く ↗</a>
 
   <br><a class="back" href="../">← アイデア村で他のアイデアを見る</a>
@@ -132,5 +134,8 @@
   </div>
 </footer>
 
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
 </body>
+<!-- review: sonnet校閲 重大0 / haiku読者テスト 合格 2026-07-18 -->
 </html>
