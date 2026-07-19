@@ -25469,5 +25469,320 @@ const SOZAI = [
   "img": "img/ud_color.jpg",
   "thumb": "img/ud_color_thumb.jpg",
   "mono": "img/ud_color_mono.jpg"
+ },
+ {
+  "id": "ongaku_recorder",
+  "title": "リコーダーをふく子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・リコーダー",
+  "scenes": [
+   "リコーダーの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "ソプラノリコーダーをふく子どものフラットイラスト。",
+  "howto": "器楽（リコーダー）の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "リコーダー",
+   "たて笛",
+   "器楽"
+  ],
+  "img": "img/ongaku_recorder.jpg",
+  "thumb": "img/ongaku_recorder_thumb.jpg",
+  "mono": "img/ongaku_recorder_mono.jpg"
+ },
+ {
+  "id": "ongaku_kenban",
+  "title": "けんばんハーモニカをふく子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・鍵盤ハーモニカ",
+  "scenes": [
+   "鍵盤ハーモニカの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "けんばんハーモニカ（ピアニカ）をふく子どものフラットイラスト。",
+  "howto": "器楽（鍵盤ハーモニカ）の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "けんばんハーモニカ",
+   "ピアニカ",
+   "器楽"
+  ],
+  "img": "img/ongaku_kenban.jpg",
+  "thumb": "img/ongaku_kenban_thumb.jpg",
+  "mono": "img/ongaku_kenban_mono.jpg"
+ },
+ {
+  "id": "ongaku_mokkin",
+  "title": "木きんを演奏する子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・打楽器",
+  "scenes": [
+   "木琴の演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "マレットで木きんを演奏する子どものフラットイラスト。",
+  "howto": "器楽（木琴・鉄琴）の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "木琴",
+   "もっきん",
+   "マレット",
+   "打楽器"
+  ],
+  "img": "img/ongaku_mokkin.jpg",
+  "thumb": "img/ongaku_mokkin_thumb.jpg",
+  "mono": "img/ongaku_mokkin_mono.jpg"
+ },
+ {
+  "id": "ongaku_taiko",
+  "title": "和だいこをたたく子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・和楽器",
+  "scenes": [
+   "和太鼓の演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "バチで和だいこをたたく子どものフラットイラスト。",
+  "howto": "和楽器・音楽づくり・行事の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "和太鼓",
+   "たいこ",
+   "和楽器",
+   "バチ"
+  ],
+  "img": "img/ongaku_taiko.jpg",
+  "thumb": "img/ongaku_taiko_thumb.jpg",
+  "mono": "img/ongaku_taiko_mono.jpg"
+ },
+ {
+  "id": "ongaku_castanets",
+  "title": "カスタネット",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・打楽器",
+  "scenes": [
+   "カスタネットの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "赤青の教育用カスタネットを鳴らす子どものフラットイラスト。",
+  "howto": "リズム・打楽器の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "カスタネット",
+   "リズム",
+   "打楽器"
+  ],
+  "img": "img/ongaku_castanets.jpg",
+  "thumb": "img/ongaku_castanets_thumb.jpg",
+  "mono": "img/ongaku_castanets_mono.jpg"
+ },
+ {
+  "id": "ongaku_tambourine",
+  "title": "タンバリン",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・打楽器",
+  "scenes": [
+   "タンバリンの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "タンバリンを鳴らす子どものフラットイラスト。",
+  "howto": "リズム・打楽器の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "タンバリン",
+   "リズム",
+   "打楽器"
+  ],
+  "img": "img/ongaku_tambourine.jpg",
+  "thumb": "img/ongaku_tambourine_thumb.jpg",
+  "mono": "img/ongaku_tambourine_mono.jpg"
+ },
+ {
+  "id": "ongaku_triangle",
+  "title": "トライアングル",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・打楽器",
+  "scenes": [
+   "トライアングルの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "ビーターでトライアングルを鳴らす子どものフラットイラスト。",
+  "howto": "リズム・打楽器の学習の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "トライアングル",
+   "リズム",
+   "打楽器"
+  ],
+  "img": "img/ongaku_triangle.jpg",
+  "thumb": "img/ongaku_triangle_thumb.jpg",
+  "mono": "img/ongaku_triangle_mono.jpg"
+ },
+ {
+  "id": "ongaku_gassho",
+  "title": "合唱する子どもたち",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "歌唱・合唱",
+  "scenes": [
+   "歌唱・合唱"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "楽譜を持って合唱する3人の子どものフラットイラスト。",
+  "howto": "歌唱・合唱・音楽会の説明や掲示、学級通信に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "合唱",
+   "歌唱",
+   "うた",
+   "音楽会"
+  ],
+  "img": "img/ongaku_gassho.jpg",
+  "thumb": "img/ongaku_gassho_thumb.jpg",
+  "mono": "img/ongaku_gassho_mono.jpg"
+ },
+ {
+  "id": "ongaku_shiki",
+  "title": "しきをする子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "歌唱・合唱",
+  "scenes": [
+   "指揮"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "手をあげて指揮をする子どものフラットイラスト（後ろ姿）。",
+  "howto": "合唱・音楽会・指揮の説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "指揮",
+   "しき",
+   "合唱",
+   "音楽会"
+  ],
+  "img": "img/ongaku_shiki.jpg",
+  "thumb": "img/ongaku_shiki_thumb.jpg",
+  "mono": "img/ongaku_shiki_mono.jpg"
+ },
+ {
+  "id": "ongaku_piano",
+  "title": "ピアノをひく子ども",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽",
+  "grade": "全学年",
+  "unit": "器楽・鍵盤",
+  "scenes": [
+   "ピアノの演奏"
+  ],
+  "uses": [
+   "説明スライド",
+   "学習のまとめ",
+   "ワークシートの見出し",
+   "掲示",
+   "学級通信"
+  ],
+  "description": "アップライトピアノをひく子どものフラットイラスト。",
+  "howto": "器楽・伴奏・音楽づくりの説明や掲示に。",
+  "tags": [
+   "音楽",
+   "楽器",
+   "ピアノ",
+   "鍵盤",
+   "器楽",
+   "伴奏"
+  ],
+  "img": "img/ongaku_piano.jpg",
+  "thumb": "img/ongaku_piano_thumb.jpg",
+  "mono": "img/ongaku_piano_mono.jpg"
  }
 ];
