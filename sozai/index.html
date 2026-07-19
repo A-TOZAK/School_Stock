@@ -77,6 +77,24 @@
   .dl.line { background:var(--paper); color:var(--ink); border:1px solid var(--ink); }
   .dl svg { width:11px; height:11px; }
   .empty { display:none; font-size:14px; color:var(--sub); padding:8px 0; }
+
+  /* ホーム（未絞り込み時）の3レーン */
+  .sec { margin:4px 0 30px; }
+  .sec-k { font-size:10.5px; font-weight:700; letter-spacing:0.22em; color:var(--sub); display:block; }
+  .sec-h { display:flex; align-items:baseline; justify-content:space-between; gap:12px; margin:2px 0 12px; }
+  .sec-h h2 { font-size:18px; font-weight:700; line-height:1.4; }
+  .sec-note { font-size:11.5px; color:var(--sub); white-space:nowrap; }
+  .shelf-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:12px; }
+  .shelf { border:1px solid var(--line); cursor:pointer; background:var(--paper); transition:border-color .15s; }
+  .shelf:hover { border-color:var(--ink); }
+  .shelf img { width:100%; aspect-ratio:4/3; object-fit:cover; display:block; border-bottom:1px solid var(--line); }
+  .shelf .sb { padding:8px 10px 10px; }
+  .shelf .sn { font-size:13px; font-weight:700; line-height:1.4; }
+  .shelf .sc { font-size:11px; color:var(--sub); }
+  @media (max-width:600px){
+    .shelf-grid { grid-template-columns:repeat(2,1fr); gap:8px; }
+    .sec-note { display:none; }
+  }
   /* スマホは3カラムの一覧性を優先。タグ・保存ボタン・クレジットはタップ先のモーダルに任せる */
   @media (max-width:600px){
     .grid { grid-template-columns:repeat(3,1fr); gap:10px 8px; }
@@ -217,9 +235,12 @@
       </div>
     </aside>
     <main class="main">
-      <p class="count"><b id="shown">0</b> 点を表示中</p>
-      <div id="grid" class="grid"></div>
-      <p id="empty" class="empty">条件に合う素材はまだありません。ことばを変えて探してみてください。</p>
+      <div id="home"></div>
+      <div id="results">
+        <p class="count"><b id="shown">0</b> 点を表示中</p>
+        <div id="grid" class="grid"></div>
+        <p id="empty" class="empty">条件に合う素材はまだありません。ことばを変えて探してみてください。</p>
+      </div>
     </main>
   </div>
 
@@ -278,6 +299,9 @@ const esc = s => String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replac
 const ICON = '<svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>';
 const credit = id => '作成：' + ((typeof AUTHORS!=='undefined' && AUTHORS[id] && AUTHORS[id].romaji) ? AUTHORS[id].romaji : id);
 
+const syncFns=[];
+const syncAll=()=>syncFns.forEach(f=>f());
+
 function chipBar(rowId, values, key, label){
   const row=document.getElementById(rowId);
   const mk=(val,lab,on)=>{ const b=document.createElement('button'); b.className='fbtn'+(on?' on':''); b.dataset.val=val; b.textContent=lab; return b; };
@@ -299,6 +323,7 @@ function chipBar(rowId, values, key, label){
     sel.value=state[key];
     wrap.classList.toggle('active', state[key]!=='all');
   };
+  syncFns.push(sync);
   row.addEventListener('click',e=>{
     const b=e.target.closest('.fbtn'); if(!b) return;
     state[key]=b.dataset.val; sync(); render();
@@ -329,7 +354,60 @@ function match(it){
     && (state.use==='all'||(it.uses||[]).indexOf(state.use)>=0)
     && (!q||hay.indexOf(q)>=0);
 }
+/* ── ホーム（未絞り込み時）＝3レーン。日付シードで毎日入れかわる ── */
+const isHome=()=>!state.q && state.subject==='all' && state.grade==='all' && state.use==='all';
+function mulberry32(a){ return function(){ a|=0; a=a+0x6D2B79F5|0; let t=Math.imul(a^a>>>15,1|a); t=t+Math.imul(t^t>>>7,61|t)^t; return ((t^t>>>14)>>>0)/4294967296; }; }
+const today=new Date();
+const daySeed=today.getFullYear()*372+(today.getMonth()+1)*31+today.getDate();
+
+function pickDaily(pool,n){
+  const rng=mulberry32(daySeed);
+  const arr=pool.slice();
+  for(let i=arr.length-1;i>0;i--){ const j=Math.floor(rng()*(i+1)); [arr[i],arr[j]]=[arr[j],arr[i]]; }
+  const out=[],perSub={};
+  for(const it of arr){
+    const c=perSub[it.subject]||0;
+    if(c>=2) continue;
+    perSub[it.subject]=c+1; out.push(it);
+    if(out.length>=n) break;
+  }
+  for(const it of arr){ if(out.length>=n) break; if(out.indexOf(it)<0) out.push(it); }
+  return out;
+}
+
+function shelves(){
+  const by={};
+  SOZAI.forEach(it=>{ (by[it.subject]=by[it.subject]||[]).push(it); });
+  const rng=mulberry32(daySeed+7);
+  return Object.keys(by).sort((a,b)=>by[b].length-by[a].length).map(sub=>{
+    const list=by[sub];
+    return { sub, count:list.length, cover:list[Math.floor(rng()*list.length)] };
+  });
+}
+
+function renderHome(){
+  const fresh=SOZAI.slice(-8).reverse();
+  const freshIds=new Set(fresh.map(x=>x.id));
+  const picks=pickDaily(SOZAI.filter(x=>!freshIds.has(x.id)),8);
+  const sec=(k,title,note,inner)=>'<section class="sec"><span class="sec-k">'+k+'</span>'
+    +'<div class="sec-h"><h2>'+title+'</h2>'+(note?'<span class="sec-note">'+note+'</span>':'')+'</div>'+inner+'</section>';
+  const shelfHtml='<div class="shelf-grid">'+shelves().map(s=>
+    '<div class="shelf" data-sub="'+esc(s.sub)+'"><img loading="lazy" src="'+esc(s.cover.thumb)+'" alt="'+esc(s.sub)+'">'
+    +'<div class="sb"><div class="sn">'+esc(s.sub)+'</div><div class="sc">'+s.count+'点</div></div></div>').join('')+'</div>';
+  document.getElementById('home').innerHTML =
+     sec('TODAY','きょうのピックアップ','毎日入れかわります','<div class="grid">'+picks.map(card).join('')+'</div>')
+    +sec('NEW','あたらしく入った素材','','<div class="grid">'+fresh.map(card).join('')+'</div>')
+    +sec('SHELVES','テーマの棚','クリックでしぼりこみ',shelfHtml);
+}
+
 function render(){
+  const home=document.getElementById('home'), res=document.getElementById('results');
+  if(isHome()){
+    home.style.display='block'; res.style.display='none';
+    if(!home.dataset.built){ renderHome(); home.dataset.built='1'; }
+    return;
+  }
+  home.style.display='none'; res.style.display='block';
   const items=SOZAI.filter(match);
   document.getElementById('grid').innerHTML=items.map(card).join('');
   document.getElementById('shown').textContent=items.length;
@@ -376,6 +454,13 @@ document.getElementById('miInfo').addEventListener('click',e=>{
 function closeModal(){ document.getElementById('modal').classList.remove('show'); }
 
 document.getElementById('grid').addEventListener('click',e=>{
+  const c=e.target.closest('.card'); if(!c) return;
+  if(e.target.closest('.dl')) return;
+  openModal(c.dataset.id);
+});
+document.getElementById('home').addEventListener('click',e=>{
+  const sh=e.target.closest('.shelf');
+  if(sh){ state.subject=sh.dataset.sub; syncAll(); render(); window.scrollTo({top:0,behavior:'smooth'}); return; }
   const c=e.target.closest('.card'); if(!c) return;
   if(e.target.closest('.dl')) return;
   openModal(c.dataset.id);
