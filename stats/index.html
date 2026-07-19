@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>アクセス集計（内部用）｜School Stock</title>
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink); line-height:1.8; padding:0 0 60px; }
+  .topbar { background:var(--black); color:#fff; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; }
+  .wordmark small { font-weight:400; letter-spacing:0.1em; color:#b9bcc2; margin-left:10px; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px; }
+  .head { padding:26px 0 10px; }
+  .kicker { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h1 { font-size:26px; font-weight:700; margin:6px 0 6px; }
+  .lead { font-size:13.5px; color:var(--sub); }
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:18px 0 8px; }
+  .kpi { border:1px solid var(--line); padding:16px 18px; }
+  .kpi .n { font-size:30px; font-weight:700; line-height:1.2; }
+  .kpi .l { font-size:12px; color:var(--sub); }
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:24px; }
+  @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
+  h2 { font-size:15px; font-weight:700; margin:0 0 10px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
+  .row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--wash); }
+  .row .rank { font-size:12px; color:var(--sub); width:22px; font-weight:700; }
+  .row .thumb { width:44px; height:33px; object-fit:cover; background:var(--wash); border:1px solid var(--line); flex:none; }
+  .row .nm { font-size:13px; font-weight:700; flex:1; line-height:1.4; overflow:hidden; text-overflow:ellipsis; }
+  .row .nm small { display:block; font-size:10.5px; font-weight:400; color:var(--sub); }
+  .row .ct { font-size:14px; font-weight:700; white-space:nowrap; }
+  .note { font-size:12px; color:var(--sub); margin-top:12px; }
+  .setup { border:1px solid var(--line); background:var(--wash); padding:18px 20px; margin:22px 0; font-size:13.5px; }
+  .setup b { color:var(--ink); }
+  .setup code { background:#fff; border:1px solid var(--line); padding:1px 5px; font-size:12px; }
+  .muted { color:var(--sub); }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in"><span class="wordmark">SCHOOL STOCK<small>アクセス集計（内部用）</small></span><a href="/School_Stock/" style="color:#b9bcc2;font-size:11.5px;text-decoration:none;">← 棚トップ</a></div></div>
+<div class="container">
+  <div class="head">
+    <div class="kicker">STATS</div>
+    <h1>どれだけ使われているか</h1>
+    <p class="lead">公開サイトのページ表示と、素材のダウンロード回数を集計しています（Cookie不使用・個人情報なし）。</p>
+  </div>
+
+  <div id="app"></div>
+</div>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/sozai/items.js"></script>
+<script>
+(function(){
+  var app=document.getElementById('app');
+  var CFG=window.SS_COUNTER||{};
+  var esc=function(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
+
+  if(!CFG.url || CFG.url.indexOf('__SUPABASE')===0){
+    app.innerHTML='<div class="setup"><b>まだ集計は始まっていません。</b><br>'
+      +'計測を始めるには、<code>assets/counter-config.js</code> に Supabase の2つの値（URL と anon key）を貼って push してください。'
+      +'手順は <code>_setup/counter-setup.md</code> にあります。値を貼ると、このページに数字が出ます。</div>';
+    return;
+  }
+
+  // 素材の src 末尾 → タイトル/サムネ の対応表
+  // items.js は「const SOZAI」で宣言されるため window には乗らない。字句スコープで直接参照する。
+  var LIST = (typeof SOZAI !== 'undefined' && Array.isArray(SOZAI)) ? SOZAI : [];
+  var bySrc={};
+  try{
+    LIST.forEach(function(it){
+      var base=(it.img||'').split('/').pop();
+      if(base) bySrc[base]={title:it.title, subject:it.subject, thumb:it.thumb};
+    });
+  }catch(e){}
+
+  var PAGE_NAMES={
+    '/School_Stock/':'棚トップ',
+    '/School_Stock/sozai/':'授業素材ライブラリ',
+    '/School_Stock/stats/':'（この集計ページ）'
+  };
+
+  fetch(CFG.url+'/rest/v1/counts?select=key,n&order=n.desc&limit=2000',{
+    headers:{apikey:CFG.key, Authorization:'Bearer '+CFG.key}
+  }).then(function(r){return r.json();}).then(function(rows){
+    if(!Array.isArray(rows)){ app.innerHTML='<div class="setup">読み込みに失敗しました。キーやSQL設定を確認してください。</div>'; return; }
+    var pv=[], dl=[], totalPV=0, totalDL=0;
+    rows.forEach(function(x){
+      if(x.key.indexOf('pv:')===0){ pv.push([x.key.slice(3),x.n]); totalPV+=x.n; }
+      else if(x.key.indexOf('dl:')===0){ dl.push([x.key.slice(3),x.n]); totalDL+=x.n; }
+    });
+    pv.sort(function(a,b){return b[1]-a[1];});
+    dl.sort(function(a,b){return b[1]-a[1];});
+
+    var kpi='<div class="cards">'
+      +'<div class="kpi"><div class="n">'+totalPV.toLocaleString()+'</div><div class="l">ページ表示（のべ）</div></div>'
+      +'<div class="kpi"><div class="n">'+totalDL.toLocaleString()+'</div><div class="l">ダウンロード（のべ）</div></div>'
+      +'<div class="kpi"><div class="n">'+dl.length.toLocaleString()+'</div><div class="l">1回以上DLされた素材</div></div>'
+      +'</div>';
+
+    var dlRows=dl.slice(0,40).map(function(p,i){
+      var base=p[0].split('/').pop();
+      var m=bySrc[base];
+      var nm=m?esc(m.title):esc(base);
+      var sub=m?('<small>'+esc(m.subject)+'</small>'):'<small class="muted">'+esc(p[0])+'</small>';
+      var th=m&&m.thumb?'<img class="thumb" src="'+esc(m.thumb)+'" alt="">':'<span class="thumb"></span>';
+      return '<div class="row"><span class="rank">'+(i+1)+'</span>'+th+'<span class="nm">'+nm+sub+'</span><span class="ct">'+p[1]+'</span></div>';
+    }).join('') || '<p class="note">まだダウンロードがありません。</p>';
+
+    var pvRows=pv.slice(0,30).map(function(p,i){
+      var nm=PAGE_NAMES[p[0]]||p[0];
+      return '<div class="row"><span class="rank">'+(i+1)+'</span><span class="nm">'+esc(nm)+'<small class="muted">'+esc(p[0])+'</small></span><span class="ct">'+p[1]+'</span></div>';
+    }).join('') || '<p class="note">まだ表示がありません。</p>';
+
+    app.innerHTML=kpi
+      +'<div class="cols">'
+      +'<div><h2>よくダウンロードされた素材</h2>'+dlRows+'</div>'
+      +'<div><h2>よく見られたページ</h2>'+pvRows+'</div>'
+      +'</div>'
+      +'<p class="note">※ 集計は計測を始めてからの累計です。同じ人が同じページを何度も見た再読込は、同一セッション内では二重に数えません。</p>';
+  }).catch(function(){
+    app.innerHTML='<div class="setup">読み込みに失敗しました。ネットワークか、Supabaseの設定（SQL・RLS・キー）を確認してください。</div>';
+  });
+})();
+</script>
+</body>
+</html>
