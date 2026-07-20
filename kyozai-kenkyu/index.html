@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教材研究ノート ── こう考えたら、授業が面白いかも ｜ School Stock</title>
+<meta name="description" content="全国の理科研究会・教育センター・大学附属の先行事例を歩いて、単元ごとに「面白い導入・手立て」を並べた授業づくりのヒント集。これが正解ではなく『こう考えたら面白いかも』を、出典リンクとリスペクトつきで。指導案・ワークシートもつきます。">
+<link rel="icon" href="../favicon.ico" sizes="32x32">
+<link rel="icon" href="../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="教材研究ノート ── こう考えたら、授業が面白いかも">
+<meta property="og:description" content="全国の先行事例を歩いて、単元ごとに面白い導入・手立てを並べた授業づくりのヒント集。出典・指導案・ワークシートつき。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/kyozai-kenkyu/">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --rust:#b4532a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.wrap { max-width:1040px; margin:0 auto; padding:0 24px 76px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 30px; margin-bottom:8px; }
+.crumbs { font-size:12px; color:var(--sub); margin-bottom:16px; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); } .crumbs a:hover { color:var(--ink); }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+h1 { font-size:clamp(25px,4.6vw,36px); font-weight:700; line-height:1.45; }
+.head .lead { margin-top:16px; font-size:15.5px; color:#3d4148; line-height:2; max-width:720px; }
+.stance { display:grid; grid-template-columns:repeat(3,1fr); gap:14px; margin:30px 0 10px; }
+@media (max-width:680px){ .stance { grid-template-columns:1fr; } }
+.stance .s { border:1px solid var(--line); padding:16px 18px; }
+.stance .s b { font-size:14px; display:block; margin-bottom:5px; }
+.stance .s span { font-size:12.5px; color:var(--sub); line-height:1.85; }
+.stance .s .no { font-family:Georgia,serif; font-style:italic; color:var(--accent); font-size:15px; margin-right:8px; }
+.shelf-head { display:flex; align-items:baseline; gap:13px; margin:48px 0 8px; }
+.shelf-head .sl { font-size:11.5px; font-weight:700; letter-spacing:.22em; color:var(--sub); }
+.shelf-lede { font-size:13.5px; color:#3d4148; margin:0 0 22px; max-width:720px; }
+.shelf { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
+.item { display:flex; flex-direction:column; border:1px solid var(--ink); color:inherit; transition:box-shadow .15s; }
+.item:hover { box-shadow:4px 4px 0 var(--ink); }
+.item .thumb { aspect-ratio:16/9; border-bottom:1px solid var(--ink); overflow:hidden; }
+.item .thumb svg { display:block; width:100%; height:100%; }
+.item .b { padding:18px 20px 16px; display:flex; flex-direction:column; gap:8px; flex:1; }
+.item .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:var(--black); padding:3px 10px; }
+.item h2 { font-size:18px; font-weight:700; margin:2px 0 0; line-height:1.5; }
+.item p { font-size:13.5px; line-height:1.85; color:#3d4148; flex:1; }
+.item .meta { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-top:1px solid var(--line); padding-top:11px; margin-top:auto; font-size:12px; color:var(--sub); }
+.item .meta .go { font-size:12.5px; font-weight:700; color:var(--accent); white-space:nowrap; }
+.soon { display:flex; flex-direction:column; justify-content:center; border:1px dashed #c9ccd1; color:var(--sub); padding:24px; }
+.soon .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:.14em; color:var(--sub); border:1px solid var(--line); padding:3px 10px; margin-bottom:10px; }
+.soon b { font-size:15.5px; font-weight:700; color:var(--ink); }
+.soon span { font-size:12.5px; margin-top:4px; line-height:1.8; }
+.howto { background:var(--wash); border:1px solid var(--line); border-left:3px solid var(--rust); padding:20px 24px; margin:40px 0 0; }
+.howto b { font-size:13px; letter-spacing:.08em; }
+.howto p { font-size:13px; color:#3d4148; line-height:1.95; margin-top:8px; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:64px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../#prints">プリント</a>
+    <a href="../#support">支援</a>
+    <a href="../#toolbox">道具</a>
+    <a href="../#reading">読みもの</a>
+    <a href="../about/">このサイトについて</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<div class="wrap">
+  <div class="head">
+    <div class="crumbs"><a href="../">School Stock</a> ／ 教材研究ノート</div>
+    <span class="kicker">教材研究ノート</span>
+    <h1>こう考えたら、授業が面白いかも。</h1>
+    <p class="lead">全国の理科研究会・教育センター・大学附属校の先行事例を歩いて、単元ごとに「面白い導入」と「手立て」を並べた、授業づくりのヒント集です。参考にした実践には、必ず出典リンクとリスペクトを残しています。刷って使える指導案とワークシートもつけました。</p>
+
+    <div class="stance">
+      <div class="s"><b><span class="no">01</span>正解ではなく、ヒント</b><span>「この単元はこう教える」ではなく、「こう考えたら面白いかも」。授業を考える材料として、気になったものだけつまんでください。</span></div>
+      <div class="s"><b><span class="no">02</span>先行事例にリスペクト</b><span>並べた導入や手立ては、全国の先生・研究会・研究者の実践から学んだもの。出典と元サイトのリンクを必ず添えています。</span></div>
+      <div class="s"><b><span class="no">03</span>刷って、使える</b><span>読むだけで終わらないように、自作の指導案とワークシートをセットに。A4でそのまま印刷できます。</span></div>
+    </div>
+  </div>
+
+  <div class="shelf-head"><span class="sl">NOTES｜これまでのノート</span></div>
+  <p class="shelf-lede">まずは1本から。反応を見ながら、単元をゆっくり増やしていきます。</p>
+  <div class="shelf">
+
+    <a class="item" href="mono-no-ondo-to-taiseki/">
+      <div class="thumb">
+        <svg viewBox="0 0 400 225" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="400" height="225" fill="#eef1f6"/>
+          <!-- rails with gap -->
+          <rect x="30" y="150" width="150" height="60" fill="#e2e4e2"/>
+          <rect x="220" y="150" width="150" height="60" fill="#e2e4e2"/>
+          <rect x="55" y="120" width="20" height="90" rx="3" fill="#9c7b56"/>
+          <rect x="325" y="120" width="20" height="90" rx="3" fill="#9c7b56"/>
+          <rect x="40" y="132" width="140" height="12" rx="3" fill="#6b7077"/>
+          <rect x="220" y="132" width="140" height="12" rx="3" fill="#6b7077"/>
+          <rect x="40" y="158" width="140" height="12" rx="3" fill="#6b7077"/>
+          <rect x="220" y="158" width="140" height="12" rx="3" fill="#6b7077"/>
+          <rect x="180" y="126" width="40" height="50" fill="none" stroke="#b4532a" stroke-width="2" stroke-dasharray="4 3"/>
+          <!-- ring + ball + flame -->
+          <circle cx="130" cy="70" r="30" fill="none" stroke="#8a6a3a" stroke-width="10"/>
+          <circle cx="250" cy="66" r="22" fill="#c0724a"/>
+          <path d="M250 104 q-9 -13 0 -24 q9 11 0 24" fill="#eec209"/>
+          <line x1="236" y1="120" x2="264" y2="120" stroke="#6b7077" stroke-width="4"/>
+          <text x="20" y="212" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="10" fill="#a2a8ae" letter-spacing="0.16em">SCHOOL STOCK</text>
+        </svg>
+      </div>
+      <div class="b">
+        <span class="tag">小4・理科</span>
+        <h2>物の温度と体積<br>（金属を熱すると、なぜ体積が増える？）</h2>
+        <p>「線路のつなぎ目」で入り、「湯→炎」で驚かせ、「B輪に通すには？」で使う。全国40件超の先行事例から、面白い導入と"見えない膨張"の見せ方を集めました。指導案・ワークシートつき。</p>
+        <span class="meta"><span>先行事例40件超・出典リンクつき</span><span class="go">読んでみる →</span></span>
+      </div>
+    </a>
+
+    <div class="soon">
+      <span class="tag">じゅんび中</span>
+      <b>次の単元</b>
+      <span>反応を見ながら、理科・社会などの単元を少しずつ増やしていきます。「この単元も」というリクエストは <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note</a> へどうぞ。</span>
+    </div>
+
+  </div>
+
+  <div class="howto">
+    <b>この棚の使い方</b>
+    <p>気になった導入や手立てを、そのまま真似してもいいし、「自分の学級ならこうするな」と組み替えてもらってもいいです。授業は、先生の数だけ正解があります。このノートは、その最初のとっかかりです。校内研究や学び合いのたたき台にも、どうぞ。</p>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。<br>
+    <a href="../">棚トップ</a>　/　<a href="../#prints">プリント</a>　/　<a href="../#reading">読みもの</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+  </div>
+</footer>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>

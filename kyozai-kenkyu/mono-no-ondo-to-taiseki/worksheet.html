@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ワークシート ── 金ぞくの温度と体積（小4理科）｜ 教材研究ノート ｜ School Stock</title>
+<meta name="description" content="小4理科「物の温度と体積」金ぞくの時間のワークシート。よそう→じっけん→わかったこと→使ってみよう（B輪に通すには？）。自作・A4印刷用・無料。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root { --ink:#15181c; --sub:#5c6167; --accent:#2b5fd9; --line:#b9bcb7; --wash:#f4f5f2; --black:#0e0f11; --rust:#b4532a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic Medium",sans-serif; background:#e9eae6; color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); }
+.bar { background:var(--black); color:#fff; padding:11px 20px; display:flex; justify-content:space-between; align-items:center; gap:14px; position:sticky; top:0; z-index:10; }
+.bar .wm { font-size:11.5px; font-weight:700; letter-spacing:.24em; }
+.bar .r { display:flex; gap:14px; align-items:center; }
+.bar a { color:#c9ccd1; font-size:11.5px; text-decoration:none; }
+.bar a:hover { color:#fff; }
+.bar button { font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--black); background:#fff; border:none; padding:7px 15px; border-radius:3px; cursor:pointer; }
+.sheet { background:#fff; max-width:820px; margin:22px auto; padding:34px 44px 44px; box-shadow:0 2px 14px rgba(0,0,0,.1); }
+.wh { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid var(--ink); padding-bottom:10px; margin-bottom:6px; gap:16px; }
+.wh h1 { font-size:20px; font-weight:700; line-height:1.4; }
+.wh h1 .sm { display:block; font-size:12px; color:var(--sub); font-weight:700; margin-top:3px; }
+.wh .nm { font-size:12px; white-space:nowrap; }
+.wh .nm .box { display:inline-block; border:1px solid var(--ink); width:150px; height:26px; margin-left:6px; vertical-align:middle; }
+.qbig { background:#f2f6ff; border:2px solid var(--accent); border-radius:6px; padding:10px 15px; margin:14px 0; font-size:15px; font-weight:700; text-align:center; }
+.step { margin:16px 0; }
+.step .st { display:flex; align-items:center; gap:9px; margin-bottom:6px; }
+.step .st .no { background:var(--ink); color:#fff; font-weight:700; font-size:12.5px; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 24px; }
+.step .st b { font-size:14px; }
+.step .st .hint { font-size:11px; color:var(--sub); }
+.lines { border:1px solid var(--line); border-radius:4px; padding:8px 12px; background:repeating-linear-gradient(transparent, transparent 30px, var(--line) 30px, var(--line) 31px); }
+.lines.h2r { height:70px; } .lines.h3r { height:100px; }
+.yosou { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:8px; }
+.yosou .op { border:1.5px solid var(--line); border-radius:20px; padding:5px 16px; font-size:13px; }
+.yosou .op .c { display:inline-block; width:13px; height:13px; border:1.5px solid var(--sub); border-radius:50%; margin-right:6px; vertical-align:middle; }
+table.exp { width:100%; border-collapse:collapse; margin:4px 0; font-size:13px; }
+table.exp th { background:var(--ink); color:#fff; padding:7px 8px; border:1px solid var(--ink); font-weight:700; }
+table.exp td { border:1px solid var(--line); padding:12px 8px; text-align:center; vertical-align:middle; }
+table.exp .lab { background:var(--wash); font-weight:700; text-align:left; width:130px; }
+table.exp .ring { font-size:12px; color:var(--sub); }
+.exp-fig { display:flex; justify-content:center; gap:26px; align-items:flex-end; margin:6px 0 2px; }
+.use { border:2px dashed var(--rust); border-radius:6px; padding:12px 15px; background:#fdf6f2; }
+.use .ut { font-size:13.5px; font-weight:700; color:var(--rust); margin-bottom:8px; }
+.use .two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.use .two .m { border:1px solid var(--line); border-radius:4px; padding:8px 10px; background:#fff; }
+.use .two .m b { font-size:12.5px; display:block; margin-bottom:4px; }
+.use .two .m .w { border-bottom:1px solid var(--line); height:22px; margin:6px 0; }
+.foot-note { margin-top:20px; border-top:1px dashed var(--line); padding-top:12px; font-size:10.5px; color:var(--sub); line-height:1.8; }
+.foot-note b { color:var(--ink); }
+@media (max-width:680px){ .sheet { padding:22px 16px 30px; margin:12px; } .use .two { grid-template-columns:1fr; } .wh { flex-direction:column; align-items:flex-start; } }
+@media print {
+  body { background:#fff; }
+  .bar { display:none; }
+  .sheet { box-shadow:none; margin:0; max-width:none; padding:10mm 12mm; }
+  @page { size:A4; margin:10mm; }
+  .step, table.exp, .use { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="wm">SCHOOL STOCK ｜ 教材研究ノート</span>
+  <div class="r">
+    <a href="./">← 記事にもどる</a>
+    <button onclick="window.print()">印刷 / PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="wh">
+    <h1>金ぞくの温度と体積<span class="sm">理科　「物の温度と体積」　ワークシート</span></h1>
+    <div class="nm">名前<span class="box"></span></div>
+  </div>
+
+  <p style="font-size:12.5px;color:var(--sub);margin:8px 0 2px;">電車の「ガタンゴトン」は、線路のつなぎ目のすき間の音。すき間があると、乗り心地が悪いのに、なぜあけているのかな？</p>
+
+  <div class="qbig">温めると、金ぞくの体積はどうなるのだろうか。</div>
+
+  <div class="step">
+    <div class="st"><span class="no">1</span><b>よそう</b><span class="hint">どれだと思う？ ○をつけよう</span></div>
+    <div class="yosou">
+      <span class="op"><span class="c"></span>体積は増える</span>
+      <span class="op"><span class="c"></span>変わらない</span>
+      <span class="op"><span class="c"></span>体積は減る</span>
+    </div>
+    <div style="font-size:12px;margin:4px 0 4px;">わけ（どうしてそう思ったの？）</div>
+    <div class="lines h2r"></div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">2</span><b>じっけん</b><span class="hint">球ぼうちょう実験器で、輪を通るかどうか調べよう</span></div>
+    <table class="exp">
+      <tr><th>金ぞくの玉を…</th><th>輪を通った？（○か×）</th><th>気づいたこと</th></tr>
+      <tr><td class="lab">① ゆ（60℃くらい）で温めた</td><td></td><td></td></tr>
+      <tr><td class="lab">② ほのおで60秒 熱した</td><td></td><td></td></tr>
+      <tr><td class="lab">③ 水で冷やした</td><td></td><td></td></tr>
+    </table>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">3</span><b>わかったこと</b><span class="hint">けっかから、いえることを書こう</span></div>
+    <div class="lines h2r"></div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">4</span><b>使ってみよう</b><span class="hint">今、通らない「B輪」がある。玉を通すには？</span></div>
+    <div class="use">
+      <div class="ut">通らないB輪に、金ぞくの玉を通す方ほうを2つ考えよう。</div>
+      <div class="two">
+        <div class="m"><b>方ほう①</b><div class="w"></div><div class="w"></div><span style="font-size:11px;color:var(--sub);">わけ：</span><div class="w"></div></div>
+        <div class="m"><b>方ほう②</b><div class="w"></div><div class="w"></div><span style="font-size:11px;color:var(--sub);">わけ：</span><div class="w"></div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">5</span><b>ふりかえり</b><span class="hint">生活の中で、この学しゅうが使われている所は？</span></div>
+    <p style="font-size:11.5px;color:var(--sub);margin:2px 0 6px;">ヒント：夏の線路のつなぎ目 ／ 電線 ／ 金ぞくのふた が開かないとき　など</p>
+    <div class="lines h3r"></div>
+  </div>
+
+  <div class="foot-note">
+    <b>先生方へ。</b>このワークシートは、School Stock（現役の小学校教員）が自作した無料教材です。導入の「線路のつなぎ目」は大阪府教育センターの授業展開例、実験の「湯→炎」の2段階は瑞穂南小学校の実践に学びました。敬意を込めて。先行事例と出典は <a href="./">教材研究ノートの記事</a> に。学級に合わせて自由に組み替えてお使いください。<br>
+    © School Stock（外﨑顯博 / 小学校）／ 無料・改変可
+  </div>
+</div>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
