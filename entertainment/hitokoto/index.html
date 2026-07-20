@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>写真で一言、大喜利｜School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="写真で一言、大喜利（School Stock エンタメ枠）">
+<meta property="og:description" content="Geminiが「使い所のよくわからない写真」を1枚出します。あなたと仲間で、いちばんおもしろいひとことを競う遊びです。">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/entertainment/hitokoto/card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/entertainment/hitokoto/card.jpg">
+<style>
+  :root {
+    --ink: #15181c; --sub: #6b7077; --accent: #2b5fd9;
+    --paper: #ffffff; --wash: #f6f6f4; --line: #e6e6e3; --black: #0e0f11;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16.5px; line-height: 1.95; letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  /* ── 上部バー ── */
+  .topbar { background: var(--black); color: #fff; }
+  .topbar-in { max-width: 680px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.32em; }
+  .topbar .cat { font-size: 11px; letter-spacing: 0.18em; color: #b9bcc2; }
+  .topbar a { color: #fff; text-decoration: none; }
+  .topbar a:hover { opacity: .8; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px 72px; }
+
+  /* ── ヒーロー ── */
+  .hero { padding: 48px 0 32px; border-bottom: 1px solid var(--ink); }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--black); padding: 4px 12px; margin-bottom: 20px; }
+  h1 { font-size: clamp(26px, 6.4vw, 38px); font-weight: 700; line-height: 1.45; letter-spacing: 0.01em; margin-bottom: 18px; }
+  .lead { font-size: 16px; color: #3d4148; margin-bottom: 22px; }
+  .meta { font-size: 12.5px; color: var(--sub); letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  /* ── 見本写真 ── */
+  .sample { margin: 30px 0 6px; border: 1px solid var(--ink); }
+  .sample img { display: block; width: 100%; height: auto; }
+  .sample .cap { font-size: 12.5px; color: var(--sub); padding: 9px 14px; border-top: 1px solid var(--line); letter-spacing: 0.04em; }
+  .sample .cap b { color: var(--ink); font-weight: 600; }
+
+  /* ── Gemボタン ── */
+  .cta-wrap { margin: 30px 0 8px; }
+  .gem-cta {
+    display: block; text-align: center; text-decoration: none;
+    background: var(--black); color: #fff; font-weight: 700; font-size: 18px;
+    letter-spacing: 0.04em; padding: 20px 24px; border: 1px solid var(--ink);
+  }
+  .gem-cta:hover { background: #23262b; }
+  .gem-cta .arw { font-weight: 400; margin-left: 6px; }
+  .gem-cta .sub { display: block; font-size: 12px; font-weight: 500; color: #b9bcc2; letter-spacing: 0.1em; margin-top: 6px; }
+  .cta-note { font-size: 12.5px; color: var(--sub); margin-top: 10px; text-align: center; }
+
+  /* ── 遊び方3ステップ ── */
+  .howto { margin: 40px 0 8px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line); padding: 18px 4px 16px; }
+  .howto .dt { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 10px; }
+  .howto ol { list-style: none; }
+  .howto li { display: flex; gap: 14px; padding: 7px 0; font-size: 15.5px; font-weight: 500; line-height: 1.75; }
+  .howto li + li { border-top: 1px solid var(--line); }
+  .howto .n { font-family: Georgia, serif; font-style: italic; color: var(--accent); font-weight: 700; flex: none; }
+
+  /* ── ルール ── */
+  section { padding: 44px 0 4px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-no { font-family: Georgia, serif; font-style: italic; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); }
+  h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 700; line-height: 1.5; margin: 6px 0 10px; }
+  .rule { border-top: 1px solid var(--line); padding: 14px 0 4px; font-size: 15px; line-height: 1.85; }
+  .rule b { color: var(--ink); }
+
+  /* ── 注意書き ── */
+  .caution-box { background: var(--wash); border-top: 1px solid var(--ink); padding: 16px 20px 14px; margin: 30px 0 4px; font-size: 13.5px; line-height: 2.0; }
+  .caution-box .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); display: block; margin-bottom: 4px; }
+
+  /* ── フッター ── */
+  .foot { border-top: 3px solid var(--ink); margin-top: 52px; padding: 24px 2px 8px; }
+  .foot .fs { font-size: 13.5px; color: #3d4148; line-height: 2.0; margin-bottom: 14px; }
+  .foot-map { font-size: 13px; line-height: 2.2; margin-bottom: 18px; }
+  .foot-map b { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); margin-top: 12px; }
+  .foot-map a { color: var(--ink); }
+  .credit { font-size: 12px; color: var(--sub); letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <a class="cat" href="../../">← 棚にもどる</a>
+  </div>
+</div>
+
+<div class="container">
+
+<header class="hero">
+  <span class="kicker">エンタメ枠 ── 写真で一言 大喜利</span>
+  <h1>写真で一言、大喜利</h1>
+  <p class="lead">Geminiが「使い所のよくわからない写真」を1枚出します。それを見て、いちばんおもしろいひとことをつける遊びです。仲間で回して、いいねが多かった人が優勝。授業でも校務でもありません。息抜きに、どうぞ。</p>
+  <div class="meta">
+    <span>あそぶAI：<b>Gemini（Gem）</b></span>
+    <span>人数：<b>1人でも、みんなでも</b></span>
+    <span>1回：<b>お題は毎回ちがう</b></span>
+  </div>
+</header>
+
+<div class="sample">
+  <img src="card.jpg" alt="会議室で、一匹の猫だけが椅子に座っている写真">
+  <div class="cap"><b>たとえば、こんな写真が出ます。</b>さて、あなたなら何と言いますか。</div>
+</div>
+
+<div class="cta-wrap">
+  <a class="gem-cta" href="https://gemini.google.com/gem/81332672c53a?usp=sharing" target="_blank" rel="noopener">
+    Geminiでお題を出してもらう<span class="arw">↗</span>
+    <span class="sub">タップして「お題ちょうだい」と送るだけ</span>
+  </a>
+  <p class="cta-note">Googleアカウントでログインすると使えます。無料です。</p>
+</div>
+
+<div class="howto">
+  <div class="dt">あそび方は3ステップ</div>
+  <ol>
+    <li><span class="n">1.</span><span>上のボタンからGemを開いて、「お題ちょうだい」と送る</span></li>
+    <li><span class="n">2.</span><span>出てきた写真に、ひとことつける（仲間がいれば、みんなで出し合う）</span></li>
+    <li><span class="n">3.</span><span>いちばん笑ったひとことに1票。いいねが多かった人が優勝</span></li>
+  </ol>
+</div>
+
+<section>
+  <div class="sec-head"><span class="sec-no">◆</span><span class="sec-label">TIPS｜おもしろくするコツ</span></div>
+  <h2>写真の「2番目」を見る</h2>
+  <div class="rule"><b>いちばん目立つもの</b>より、すみっこの小さな違和感を拾うと、ひとことが効きます。</div>
+  <div class="rule"><b>短く言い切る。</b>説明しないほうが笑えます。長いと、オチが遠くなります。</div>
+  <div class="rule"><b>その写真じゃないと成り立たない</b>ひとことが、いちばん強い一票を取ります。</div>
+</section>
+
+<div class="caution-box">
+  <span class="lb">ひとつだけ、お約束</span>
+  だれかを傷つけるひとことは、なしにしましょう。見た目をいじる、身近な人をネタにする、こういうのは笑いが続きません。写真の中の「へんな状況」で笑う。人では笑わない。これだけ守れば、ずっと楽しく遊べます。
+</div>
+
+<footer class="foot">
+  <p class="fs">クラスのお楽しみ会でも、職員室のちょっとした空き時間でも。1枚の写真があれば、その場がやわらかくなります。よい寄り道を。</p>
+  <div class="foot-map">
+    <b>棚の中</b>
+    <a href="../prompt-book/">先生の寄り道プロンプト帳</a>　／　<a href="../../">棚トップ</a>　／　<a href="../../tools/pdf-toolbox/">先生のPDF道具箱</a>　／　<a href="../../sozai/">授業イラスト素材集</a>　／　<a href="../../ideas/">実践アイデア村</a>　／　<a href="../../about/">このサイトについて</a>
+    <b>お知らせ</b>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>（新しい棚が増えたら、こちらで）
+  </div>
+  <div style="display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin:4px 0 18px;padding-top:16px">
+    <img src="../../about/author.jpg" alt="外﨑顯博の写真" style="flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover">
+    <div style="font-size:13px;line-height:1.9;color:#3d4148">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--sub)">AUTHOR｜つくっている人</div>
+      <div style="color:var(--ink);font-weight:700;font-size:14px">外﨑顯博<span style="font-weight:500;font-size:11px;color:var(--sub);margin-left:8px">とざき あきひろ</span></div>
+      <div>福岡県の公立小学校教員／GEG Chikuho 共同リーダー。教室で使う物を自分でつくって、この棚に並べています。<a href="../../about/">くわしく →</a></div>
+    </div>
+  </div>
+  <p class="credit">© School Stock　　写真：Gemini（生成AI）で作成</p>
+</footer>
+
+</div>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
