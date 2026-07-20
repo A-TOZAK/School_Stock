@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>観察カード ── 月と星の見え方（小4理科）｜ 教材研究ノート ｜ School Stock</title>
+<meta name="description" content="小4理科「月と星」の家庭観察カード。方位・時刻・高さ（こぶし）・目印・スケッチを、午後6時と8時の2回分。位置の変化に気づく。自作・A4印刷用・無料。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root { --ink:#15181c; --sub:#5c6167; --accent:#2b5fd9; --line:#b9bcb7; --wash:#f4f5f2; --black:#0e0f11; --rust:#b4532a; --night:#1b2233; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic Medium",sans-serif; background:#e9eae6; color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); }
+.bar { background:var(--black); color:#fff; padding:11px 20px; display:flex; justify-content:space-between; align-items:center; gap:14px; position:sticky; top:0; z-index:10; }
+.bar .wm { font-size:11.5px; font-weight:700; letter-spacing:.24em; }
+.bar .r { display:flex; gap:14px; align-items:center; }
+.bar a { color:#c9ccd1; font-size:11.5px; text-decoration:none; }
+.bar a:hover { color:#fff; }
+.bar button { font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--black); background:#fff; border:none; padding:7px 15px; border-radius:3px; cursor:pointer; }
+.sheet { background:#fff; max-width:820px; margin:22px auto; padding:34px 44px 44px; box-shadow:0 2px 14px rgba(0,0,0,.1); }
+.wh { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid var(--ink); padding-bottom:10px; margin-bottom:6px; gap:16px; }
+.wh h1 { font-size:20px; font-weight:700; line-height:1.4; }
+.wh h1 .sm { display:block; font-size:12px; color:var(--sub); font-weight:700; margin-top:3px; }
+.wh .nm { font-size:12px; white-space:nowrap; }
+.wh .nm .box { display:inline-block; border:1px solid var(--ink); width:120px; height:26px; margin-left:6px; vertical-align:middle; }
+.meta { display:flex; gap:8px; flex-wrap:wrap; margin:12px 0 2px; font-size:12.5px; }
+.meta .f { border:1px solid var(--line); border-radius:5px; padding:5px 10px; }
+.meta .f b { color:var(--sub); font-size:11px; margin-right:4px; }
+.meta .f .u { display:inline-block; border-bottom:1px solid var(--ink); min-width:60px; }
+.lead-s { font-size:12.5px; color:var(--sub); margin:10px 0 2px; }
+.tip { background:var(--wash); border:1px solid var(--line); border-left:3px solid var(--accent); border-radius:5px; padding:8px 12px; font-size:11.5px; color:#3d4148; line-height:1.7; margin:8px 0 14px; }
+.tip b { color:var(--ink); }
+.recs { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.rec { border:1.5px solid var(--line); border-radius:8px; overflow:hidden; }
+.rec .rh { background:var(--night); color:#fff; font-weight:700; font-size:13px; padding:6px 12px; text-align:center; }
+.rec .sky { position:relative; height:150px; background:linear-gradient(#20293e, #2b3550); }
+.rec .sky .horizon { position:absolute; left:0; right:0; bottom:34px; border-top:2px solid #4a577a; }
+.rec .sky .ground { position:absolute; left:0; right:0; bottom:0; height:34px; background:#242c42; }
+.rec .sky .dir { position:absolute; bottom:10px; font-size:11px; color:#aeb6c6; font-weight:700; }
+.rec .sky .e { left:12px; } .rec .sky .s { left:50%; transform:translateX(-50%); } .rec .sky .w { right:12px; }
+.rec .sky .hint { position:absolute; top:8px; left:12px; font-size:10.5px; color:#8a93aa; }
+.rec .fields { padding:9px 11px; font-size:11.5px; }
+.rec .fields .row { display:flex; align-items:baseline; gap:6px; margin:5px 0; }
+.rec .fields .row b { color:var(--sub); font-size:11px; flex:0 0 auto; }
+.rec .fields .u { flex:1; border-bottom:1px solid var(--line); min-height:18px; }
+.reflect { border:2px dashed var(--rust); border-radius:6px; padding:12px 15px; background:#fdf6f2; margin-top:14px; }
+.reflect .rt { font-size:13px; font-weight:700; color:var(--rust); margin-bottom:6px; }
+.lines { border:1px solid var(--line); border-radius:4px; padding:8px 12px; background:repeating-linear-gradient(transparent, transparent 27px, var(--line) 27px, var(--line) 28px); height:62px; }
+.foot-note { margin-top:20px; border-top:1px dashed var(--line); padding-top:12px; font-size:10.5px; color:var(--sub); line-height:1.8; }
+.foot-note b { color:var(--ink); }
+@media (max-width:680px){ .sheet { padding:22px 16px 30px; margin:12px; } .recs { grid-template-columns:1fr; } .wh { flex-direction:column; align-items:flex-start; } }
+@media print {
+  body { background:#fff; }
+  .bar { display:none; }
+  .sheet { box-shadow:none; margin:0; max-width:none; padding:10mm 12mm; }
+  @page { size:A4; margin:10mm; }
+  .rec, .reflect { break-inside:avoid; }
+  .rec .sky { -webkit-print-color-adjust:exact; print-color-adjust:exact; }
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="wm">SCHOOL STOCK ｜ 教材研究ノート</span>
+  <div class="r">
+    <a href="./">← 記事にもどる</a>
+    <button onclick="window.print()">印刷 / PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="wh">
+    <h1>月と星の 観察カード<span class="sm">理科　「月と星」　おうちで観察しよう</span></h1>
+    <div class="nm">名前<span class="box"></span></div>
+  </div>
+
+  <div class="meta">
+    <span class="f"><b>観察した日</b><span class="u"></span> 月 <span class="u"></span> 日</span>
+    <span class="f"><b>天気</b><span class="u"></span></span>
+    <span class="f"><b>観察した場所</b><span class="u"></span></span>
+    <span class="f"><b>調べたもの</b>（　月　・　星の集まり　）</span>
+  </div>
+
+  <p class="lead-s">同じ場所・同じ向きで、時刻をかえて2回見よう。動かない目印（建物や木）といっしょにかくのがコツ。</p>
+  <div class="tip"><b>高さのはかり方：</b>うでをまっすぐのばして、にぎりこぶし1個分が だいたい 10ど。こぶし何個分の高さか数えよう。　<b>方位：</b>方位じしんで 東・南・西を たしかめよう。</div>
+
+  <div class="recs">
+    <div class="rec">
+      <div class="rh">① 午後 <span style="border-bottom:1px solid #fff;padding:0 8px;">　　</span> 時ごろ</div>
+      <div class="sky">
+        <span class="hint">見えた月（星）を、目印といっしょにかこう</span>
+        <div class="horizon"></div><div class="ground"></div>
+        <span class="dir e">東</span><span class="dir s">南</span><span class="dir w">西</span>
+      </div>
+      <div class="fields">
+        <div class="row"><b>方位</b><span class="u"></span></div>
+        <div class="row"><b>高さ（こぶし）</b><span class="u"></span>こぶしくらい</div>
+        <div class="row"><b>目印</b><span class="u"></span></div>
+      </div>
+    </div>
+
+    <div class="rec">
+      <div class="rh">② 午後 <span style="border-bottom:1px solid #fff;padding:0 8px;">　　</span> 時ごろ</div>
+      <div class="sky">
+        <span class="hint">同じ場所・同じ向きで、もう一度</span>
+        <div class="horizon"></div><div class="ground"></div>
+        <span class="dir e">東</span><span class="dir s">南</span><span class="dir w">西</span>
+      </div>
+      <div class="fields">
+        <div class="row"><b>方位</b><span class="u"></span></div>
+        <div class="row"><b>高さ（こぶし）</b><span class="u"></span>こぶしくらい</div>
+        <div class="row"><b>目印</b><span class="u"></span></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="reflect">
+    <div class="rt">2回くらべて、気づいたこと（どちらへ、どのくらい動いた？ 形や並び方は？）</div>
+    <div class="lines"></div>
+  </div>
+
+  <div class="foot-note">
+    <b>先生方へ。</b>この観察カードは、School Stock（現役の小学校教員）が自作した無料教材です。授業の前に、教室で「こぶしでの高さのはかり方」「目印の決め方」を練習しておくと、家庭観察の成功率が上がります。上弦の月の日に合わせて配ると、夕方から観察できます。星の集まり（オリオン座・夏の大三角など）を調べる回にも同じカードが使えます。先行事例と出典は <a href="./">教材研究ノートの記事</a> に。<br>
+    © School Stock（外﨑顯博 / 小学校）／ 無料・改変可
+  </div>
+</div>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>

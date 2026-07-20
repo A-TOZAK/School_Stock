@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>本時 指導案 ── 小4理科「月と星」位置の変化を整理する ｜ 教材研究ノート ｜ School Stock</title>
+<meta name="description" content="小4理科「月と星」本時の指導案。家庭で観察した記録カードを持ち寄り、月や星が『東→南→西』へ動くことを整理してとらえる。ねらい・展開・板書・評価つき。自作・A4印刷用・無料。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root { --ink:#15181c; --sub:#585d63; --accent:#2b5fd9; --line:#c8cbc7; --wash:#f3f4f1; --black:#0e0f11; --rust:#b4532a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:#e9eae6; color:var(--ink); line-height:1.7; letter-spacing:.01em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); }
+.bar { background:var(--black); color:#fff; padding:11px 20px; display:flex; justify-content:space-between; align-items:center; gap:14px; position:sticky; top:0; z-index:10; }
+.bar .wm { font-size:11.5px; font-weight:700; letter-spacing:.24em; }
+.bar .r { display:flex; gap:14px; align-items:center; }
+.bar a { color:#c9ccd1; font-size:11.5px; text-decoration:none; }
+.bar a:hover { color:#fff; }
+.bar button { font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--black); background:#fff; border:none; padding:7px 15px; border-radius:3px; cursor:pointer; }
+.sheet { background:#fff; max-width:820px; margin:22px auto; padding:40px 46px 52px; box-shadow:0 2px 14px rgba(0,0,0,.1); }
+.doc-h { display:flex; justify-content:space-between; align-items:flex-start; border-bottom:2.5px solid var(--ink); padding-bottom:12px; margin-bottom:20px; gap:16px; }
+.doc-h .t .lbl { font-size:11px; font-weight:700; letter-spacing:.18em; color:var(--accent); }
+.doc-h .t h1 { font-size:22px; font-weight:700; line-height:1.4; margin-top:5px; }
+.doc-h .t .sub { font-size:12.5px; color:var(--sub); margin-top:5px; }
+.doc-h .cr { font-size:10.5px; color:var(--sub); text-align:right; line-height:1.7; white-space:nowrap; }
+.meta-row { display:grid; grid-template-columns:repeat(3,1fr); gap:0; border:1px solid var(--line); margin-bottom:20px; font-size:12.5px; }
+.meta-row div { padding:8px 12px; border-right:1px solid var(--line); }
+.meta-row div:last-child { border-right:none; }
+.meta-row b { color:var(--ink); font-weight:700; display:block; font-size:10.5px; letter-spacing:.08em; color:var(--sub); margin-bottom:2px; }
+h2 { font-size:14.5px; font-weight:700; margin:24px 0 8px; padding-left:11px; border-left:5px solid var(--ink); line-height:1.4; }
+p { font-size:13px; line-height:1.85; margin:8px 0; }
+.goal { background:var(--wash); border:1px solid var(--line); padding:13px 16px; font-size:13px; line-height:1.9; }
+.goal .g { margin:3px 0; padding-left:18px; position:relative; }
+.goal .g::before { content:"◆"; position:absolute; left:0; color:var(--accent); font-size:11px; top:3px; }
+.goal .g b { font-weight:700; }
+ul.mat { list-style:none; display:flex; flex-wrap:wrap; gap:6px 18px; font-size:12.5px; margin:6px 0; }
+ul.mat li { padding-left:15px; position:relative; }
+ul.mat li::before { content:"□"; position:absolute; left:0; color:var(--sub); }
+table.plan { width:100%; border-collapse:collapse; margin:10px 0; font-size:11.7px; line-height:1.65; }
+table.plan th { background:var(--ink); color:#fff; font-weight:700; padding:7px 9px; text-align:left; border:1px solid var(--ink); }
+table.plan td { border:1px solid var(--line); padding:8px 10px; vertical-align:top; }
+table.plan .ph { width:60px; text-align:center; font-weight:700; background:var(--wash); white-space:nowrap; }
+table.plan .min { display:block; font-size:10px; color:var(--sub); font-weight:400; }
+table.plan .q { color:var(--accent); font-weight:700; }
+table.plan .c { color:var(--rust); }
+.problem { border:2px solid var(--accent); border-radius:5px; padding:9px 14px; margin:9px 0; font-size:13px; font-weight:700; text-align:center; background:#f2f6ff; }
+.board { border:1.5px solid var(--ink); padding:0; margin:10px 0; }
+.board .bt { background:var(--ink); color:#fff; font-size:11.5px; font-weight:700; letter-spacing:.1em; padding:6px 12px; }
+.board .bg { display:grid; grid-template-columns:1.1fr 1fr; }
+.board .bcell { padding:11px 14px; font-size:12px; line-height:1.75; border-top:1px solid var(--line); }
+.board .bcell:nth-child(odd){ border-right:1px solid var(--line); }
+.board .bcell b { display:block; font-size:11px; color:var(--accent); font-weight:700; margin-bottom:3px; letter-spacing:.06em; }
+.board .full { grid-column:1 / -1; }
+.evalbox { border:1px solid var(--line); font-size:12px; }
+.evalbox .er { display:flex; border-top:1px solid var(--line); }
+.evalbox .er:first-child { border-top:none; }
+.evalbox .er .k { flex:0 0 130px; background:var(--wash); font-weight:700; padding:8px 11px; border-right:1px solid var(--line); font-size:11.5px; }
+.evalbox .er .v { padding:8px 12px; line-height:1.7; }
+.credit { margin-top:22px; border-top:1px dashed var(--line); padding-top:14px; font-size:11px; color:var(--sub); line-height:1.85; }
+.credit b { color:var(--ink); }
+.credit a { font-weight:700; }
+@media (max-width:680px){ .sheet { padding:24px 18px 34px; margin:12px; } .meta-row, .board .bg { grid-template-columns:1fr; } .doc-h { flex-direction:column; } .doc-h .cr { text-align:left; white-space:normal; } }
+@media print {
+  body { background:#fff; }
+  .bar { display:none; }
+  .sheet { box-shadow:none; margin:0; max-width:none; padding:12mm 14mm; }
+  @page { size:A4; margin:10mm; }
+  h2 { break-after:avoid; } table.plan, .board { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="wm">SCHOOL STOCK ｜ 教材研究ノート</span>
+  <div class="r">
+    <a href="./">← 記事にもどる</a>
+    <button onclick="window.print()">印刷 / PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="doc-h">
+    <div class="t">
+      <span class="lbl">第4学年 理科 学習指導案（本時）</span>
+      <h1>月と星 ── どっちへ動いた？</h1>
+      <div class="sub">単元「月と星（月や星の見え方）」 ／ 本時：観察記録を持ち寄り、位置の変化を整理する</div>
+    </div>
+    <div class="cr">© School Stock<br>自作・無料<br>2026</div>
+  </div>
+
+  <div class="meta-row">
+    <div><b>教科・学年</b>理科・第4学年</div>
+    <div><b>本時のねらい</b>時刻と位置を関係づけ、月・星の動きをとらえる</div>
+    <div><b>時間</b>45分（本時）</div>
+  </div>
+
+  <h2>1　本時の目標</h2>
+  <div class="goal">
+    <div class="g"><b>知識・技能</b>：月や星の集まりは、時刻がたつと位置が変わり、東の方から南を通って西の方へ動くことをとらえている。星の集まりは並び方が変わらないことに気づいている。</div>
+    <div class="g"><b>思考・判断・表現</b>：観察した記録をもとに、時刻と位置を関係づけて考え、月や星の動きを図や言葉で表現している。</div>
+    <div class="g"><b>主体的に学習に取り組む態度</b>：観察の結果を進んで持ち寄り、友だちの記録と重ねて考えようとしている。</div>
+  </div>
+
+  <h2>2　準備物</h2>
+  <ul class="mat">
+    <li>児童の家庭観察カード（午後6時・8時の2回）</li>
+    <li>方位（東・南・西）の帯を貼る掲示台紙</li>
+    <li>月・星のカード（記録を貼る用）</li>
+    <li>既習「太陽の動き」の掲示</li>
+    <li>（曇りだった子用）NHK for School等の観察映像</li>
+  </ul>
+
+  <h2>3　本時の展開</h2>
+  <div class="problem">月や星は、時刻がたつと、どちらへ動くのだろうか。</div>
+  <table class="plan">
+    <tr><th class="ph">過程</th><th>学習活動</th><th>主な発問（<span class="q">T</span>）と予想される反応（<span class="c">C</span>）</th><th>指導上の留意点・評価</th></tr>
+    <tr>
+      <td class="ph">出し合う<span class="min">8分</span></td>
+      <td>家庭観察の記録を出し合い、問いをつかむ。</td>
+      <td><span class="q">T</span> 昨夜の月、午後6時と8時でどうだった？<br><span class="c">C</span> 動いてた気がする。<br><span class="c">C</span> 少し右のほう（西）にいってた。</td>
+      <td>観察できなかった子は映像で補う。記録の"食い違い"も生かす。</td>
+    </tr>
+    <tr>
+      <td class="ph">整理する<span class="min">15分</span></td>
+      <td>クラスの記録を方位の帯に貼り、傾向をつかむ。</td>
+      <td><span class="q">T</span> みんなの記録を、東・南・西の帯にはってみよう。<br><span class="c">C</span> 6時は東より、8時は西よりだ。<br><span class="c">C</span> 月は、東から西へ動いてる！</td>
+      <td>1人の記録は不確かでも、<b>クラス分を重ねると傾向が見える</b>ことを価値づける。<br><b>【思・判・表】</b>時刻と位置を関係づけているか（発言・図）。</td>
+    </tr>
+    <tr>
+      <td class="ph">くらべる<span class="min">12分</span></td>
+      <td>星の記録も整理し、月とくらべる。</td>
+      <td><span class="q">T</span> 星の集まりはどうだった？<br><span class="c">C</span> 位置は動いたけど、形（並び方）は変わってない。<br><span class="q">T</span> 月とにているところ、ちがうところは？</td>
+      <td>星は<b>並び方が変わらず位置が変わる</b>ことを、月の動きと区別して押さえる。<br><b>【知・技】</b>星の集まりの特徴をとらえているか（記述）。</td>
+    </tr>
+    <tr>
+      <td class="ph">つなぐ<span class="min">5分</span></td>
+      <td>既習の太陽の動きと重ねる。</td>
+      <td><span class="q">T</span> この動き、前に習ったものとにていない？<br><span class="c">C</span> 太陽も、東→南→西だった！</td>
+      <td>太陽・月・星が同じ向きに動くことでつなぐ。</td>
+    </tr>
+    <tr>
+      <td class="ph">まとめ<span class="min">5分</span></td>
+      <td>分かったことを書き、次の観察の見通しをもつ。</td>
+      <td><span class="q">T</span> 今日分かったことをまとめよう。<br><span class="c">C</span> 月も星も、時刻がたつと東から西へ動く。星は並び方は変わらない。</td>
+      <td>自分の言葉でまとめさせる。<br><b>【態度】</b>進んで記録を持ち寄り、重ねて考えているか（行動・記述）。</td>
+    </tr>
+  </table>
+
+  <h2>4　板書計画</h2>
+  <div class="board">
+    <div class="bt">板書計画</div>
+    <div class="bg">
+      <div class="bcell full"><b>問題</b>月や星は、時刻がたつと、どちらへ動くのだろうか。　【方位の帯：東 — 南 — 西】</div>
+      <div class="bcell"><b>月の記録</b>午後6時＝東より／午後8時＝西より → 東から西へ</div>
+      <div class="bcell"><b>星の記録</b>位置は動く／並び方（形）は変わらない</div>
+      <div class="bcell"><b>太陽とくらべて</b>太陽も 東→南→西。月・星も同じ向き。</div>
+      <div class="bcell"><b>気づき</b>1人の記録より、みんなの記録を重ねると分かる</div>
+      <div class="bcell full"><b>まとめ</b>月も星の集まりも、時刻がたつと、東の方から南を通って西の方へ動く。星の集まりは、並び方は変わらない。</div>
+    </div>
+  </div>
+
+  <h2>5　本時の評価</h2>
+  <div class="evalbox">
+    <div class="er"><div class="k">知識・技能</div><div class="v">月・星が東→南→西へ動き、星の並び方は変わらないことをとらえている。（記述・図）</div></div>
+    <div class="er"><div class="k">思考・判断・表現</div><div class="v">観察記録をもとに、時刻と位置を関係づけて考え、表現している。（発言・記述）</div></div>
+    <div class="er"><div class="k">主体的に取り組む態度</div><div class="v">進んで記録を持ち寄り、友だちの記録と重ねて考えようとしている。（行動・記述）</div></div>
+  </div>
+
+  <div class="credit">
+    <b>この指導案について。</b> この案は、School Stock（現役の小学校教員）が自作したものです。「授業中にできない観察を成立させる」考え方や、記録を持ち寄って傾向をつかむ流れは、EDUPEDIAの実践やみんなの教育技術の指導アイデア、各校の指導計画に学びました。敬意を込めて。先行事例と出典は <a href="./">教材研究ノートの記事</a> にまとめています。<br>
+    これは「正解」ではなく、たたき台です。本時の前に、観察の練習と、月齢に合わせた観察日の設定をしておく前提です。学級に合わせて組み替えてお使いください。<br>
+    © School Stock（外﨑顯博 / 小学校）／ 無料・改変可・出典明記のうえでの利用歓迎
+  </div>
+</div>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>

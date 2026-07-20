@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ワークシート ── 倍の見方「よくのびたのはどっち？」（小4算数）｜ 教材研究ノート ｜ School Stock</title>
+<meta name="description" content="小4算数「倍の見方（かんたんな割合）」のワークシート。2本のゴムを差でくらべる／倍でくらべる→どっちが公平？→テープ図で1とみる。自作・A4印刷用・無料。">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<style>
+:root { --ink:#15181c; --sub:#5c6167; --accent:#2b5fd9; --line:#b9bcb7; --wash:#f4f5f2; --black:#0e0f11; --rust:#b4532a; --a:#2b5fd9; --b:#b4532a; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Maru Gothic ProN","Hiragino Sans","Noto Sans JP","Yu Gothic Medium",sans-serif; background:#e9eae6; color:var(--ink); line-height:1.7; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); }
+.bar { background:var(--black); color:#fff; padding:11px 20px; display:flex; justify-content:space-between; align-items:center; gap:14px; position:sticky; top:0; z-index:10; }
+.bar .wm { font-size:11.5px; font-weight:700; letter-spacing:.24em; }
+.bar .r { display:flex; gap:14px; align-items:center; }
+.bar a { color:#c9ccd1; font-size:11.5px; text-decoration:none; }
+.bar a:hover { color:#fff; }
+.bar button { font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.1em; color:var(--black); background:#fff; border:none; padding:7px 15px; border-radius:3px; cursor:pointer; }
+.sheet { background:#fff; max-width:820px; margin:22px auto; padding:34px 44px 44px; box-shadow:0 2px 14px rgba(0,0,0,.1); }
+.wh { display:flex; justify-content:space-between; align-items:flex-end; border-bottom:3px solid var(--ink); padding-bottom:10px; margin-bottom:6px; gap:16px; }
+.wh h1 { font-size:20px; font-weight:700; line-height:1.4; }
+.wh h1 .sm { display:block; font-size:12px; color:var(--sub); font-weight:700; margin-top:3px; }
+.wh .nm { font-size:12px; white-space:nowrap; }
+.wh .nm .box { display:inline-block; border:1px solid var(--ink); width:150px; height:26px; margin-left:6px; vertical-align:middle; }
+.qbig { background:#f2f6ff; border:2px solid var(--accent); border-radius:6px; padding:10px 15px; margin:14px 0; font-size:15px; font-weight:700; text-align:center; }
+.lead-s { font-size:12.5px; color:var(--sub); margin:8px 0 2px; }
+.gomu { border:1.5px solid var(--line); border-radius:8px; padding:12px 14px; background:var(--wash); margin:4px 0 6px; }
+.step { margin:15px 0; }
+.step .st { display:flex; align-items:center; gap:9px; margin-bottom:6px; }
+.step .st .no { background:var(--ink); color:#fff; font-weight:700; font-size:12.5px; width:24px; height:24px; border-radius:50%; display:flex; align-items:center; justify-content:center; flex:0 0 24px; }
+.step .st b { font-size:14px; }
+.step .st .hint { font-size:11px; color:var(--sub); }
+.two { display:grid; grid-template-columns:1fr 1fr; gap:10px; }
+.m { border:1.5px solid var(--line); border-radius:8px; padding:10px 12px; }
+.m .mt { font-size:12.5px; font-weight:700; color:var(--accent); margin-bottom:6px; }
+.m .lbl { font-size:11px; color:var(--sub); }
+.m .w { border-bottom:1px solid var(--line); height:21px; margin:5px 0; }
+.m .a { margin-top:6px; font-size:12px; }
+.ans { display:inline-block; border-bottom:2px solid var(--ink); min-width:60px; height:19px; margin:0 4px; }
+.opinion { display:flex; gap:10px; flex-wrap:wrap; margin:4px 0 6px; }
+.opinion .op { border:1.5px solid var(--line); border-radius:20px; padding:5px 16px; font-size:13px; font-weight:700; }
+.opinion .op .c { display:inline-block; width:13px; height:13px; border:1.5px solid var(--sub); border-radius:50%; margin-right:6px; vertical-align:middle; }
+.opinion .op.j { color:var(--a); } .opinion .op.o { color:var(--b); }
+.lines { border:1px solid var(--line); border-radius:4px; padding:8px 12px; background:repeating-linear-gradient(transparent, transparent 27px, var(--line) 27px, var(--line) 28px); height:60px; }
+.tape { border:1.5px dashed var(--line); border-radius:6px; padding:10px 12px; }
+.reflect { border:2px dashed var(--rust); border-radius:6px; padding:12px 15px; background:#fdf6f2; }
+.reflect .rt { font-size:13px; font-weight:700; color:var(--rust); margin-bottom:6px; }
+.foot-note { margin-top:20px; border-top:1px dashed var(--line); padding-top:12px; font-size:10.5px; color:var(--sub); line-height:1.8; }
+.foot-note b { color:var(--ink); }
+@media (max-width:680px){ .sheet { padding:22px 16px 30px; margin:12px; } .two { grid-template-columns:1fr; } .wh { flex-direction:column; align-items:flex-start; } }
+@media print {
+  body { background:#fff; }
+  .bar { display:none; }
+  .sheet { box-shadow:none; margin:0; max-width:none; padding:10mm 12mm; }
+  @page { size:A4; margin:10mm; }
+  .step, .gomu, .reflect, .two { break-inside:avoid; }
+}
+</style>
+</head>
+<body>
+<div class="bar">
+  <span class="wm">SCHOOL STOCK ｜ 教材研究ノート</span>
+  <div class="r">
+    <a href="./">← 記事にもどる</a>
+    <button onclick="window.print()">印刷 / PDF</button>
+  </div>
+</div>
+
+<div class="sheet">
+  <div class="wh">
+    <h1>よくのびたのは、どっち？<span class="sm">算数　「倍の見方（かんたんな割合）」　ワークシート</span></h1>
+    <div class="nm">名前<span class="box"></span></div>
+  </div>
+
+  <p class="lead-s">もとの長さがちがう、2本のゴム。同じだけ引っぱったら、こうのびたよ。</p>
+
+  <div class="gomu">
+    <svg width="100%" viewBox="0 0 560 120" role="img" aria-label="ゴムAは10cmから30cm、ゴムBは40cmから80cmにのびた図">
+      <text x="8" y="34" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" fill="#2b5fd9" font-weight="700">ゴムＡ</text>
+      <rect x="70" y="22" width="45" height="14" rx="7" fill="#9fc0f0"/><text x="92" y="52" font-size="10" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">もと10cm</text>
+      <text x="128" y="34" font-size="12" fill="#6b7077">→</text>
+      <rect x="150" y="22" width="135" height="14" rx="7" fill="#2b5fd9"/><text x="217" y="52" font-size="10" fill="#2b5fd9" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-weight="700">のびて30cm</text>
+      <text x="8" y="94" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="14" fill="#b4532a" font-weight="700">ゴムＢ</text>
+      <rect x="70" y="82" width="135" height="14" rx="7" fill="#e6bda8"/><text x="137" y="112" font-size="10" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">もと40cm</text>
+      <text x="212" y="94" font-size="12" fill="#6b7077">→</text>
+      <rect x="235" y="82" width="270" height="14" rx="7" fill="#b4532a"/><text x="370" y="112" font-size="10" fill="#b4532a" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-weight="700">のびて80cm</text>
+    </svg>
+  </div>
+
+  <div class="qbig">よくのびたのは、ゴムＡ？ ゴムＢ？</div>
+
+  <div class="step">
+    <div class="st"><span class="no">1</span><b>差でくらべよう</b><span class="hint">のびた分を、ひき算で</span></div>
+    <div class="two">
+      <div class="m"><div class="mt">ゴムＡ</div><span class="lbl">式</span><div class="w"></div><div class="a">のびた分　<span class="ans"></span>cm</div></div>
+      <div class="m"><div class="mt">ゴムＢ</div><span class="lbl">式</span><div class="w"></div><div class="a">のびた分　<span class="ans"></span>cm</div></div>
+    </div>
+    <div style="font-size:12.5px;margin-top:6px;">差でくらべると、よくのびたのは（　　　　）</div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">2</span><b>倍でくらべよう</b><span class="hint">もとの何倍にのびた？ わり算で</span></div>
+    <div class="two">
+      <div class="m"><div class="mt">ゴムＡ</div><span class="lbl">式（のびた長さ ÷ もと）</span><div class="w"></div><div class="a">もとの　<span class="ans"></span>倍</div></div>
+      <div class="m"><div class="mt">ゴムＢ</div><span class="lbl">式（のびた長さ ÷ もと）</span><div class="w"></div><div class="a">もとの　<span class="ans"></span>倍</div></div>
+    </div>
+    <div style="font-size:12.5px;margin-top:6px;">倍でくらべると、よくのびたのは（　　　　）</div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">3</span><b>どっちが公平？</b><span class="hint">差だとＢ、倍だとＡ。あれ？</span></div>
+    <div class="opinion">
+      <span class="op j"><span class="c"></span>倍でくらべるほうが公平</span>
+      <span class="op o"><span class="c"></span>差でくらべるほうが公平</span>
+    </div>
+    <div style="font-size:12px;margin:2px 0 4px;">わけ（もとの長さに注目して）</div>
+    <div class="lines"></div>
+  </div>
+
+  <div class="step">
+    <div class="st"><span class="no">4</span><b>テープ図で「1とみる」</b><span class="hint">もとを1とみると、のびた長さは何倍？</span></div>
+    <div class="tape">
+      <div style="font-size:11.5px;color:var(--sub);margin-bottom:6px;">ゴムＡ：もと（1）を　　のところにかいて、のびた長さが何倍かを図であらわそう。</div>
+      <svg width="100%" viewBox="0 0 520 70">
+        <line x1="10" y1="50" x2="510" y2="50" stroke="#b9bcb7" stroke-width="1"/>
+        <g stroke="#c8cbc7" stroke-width="1"><line x1="10" y1="45" x2="10" y2="55"/><line x1="130" y1="45" x2="130" y2="55"/><line x1="250" y1="45" x2="250" y2="55"/><line x1="370" y1="45" x2="370" y2="55"/></g>
+        <rect x="10" y="30" width="120" height="16" fill="none" stroke="#2b5fd9" stroke-width="1.5"/>
+        <text x="70" y="24" font-size="10" fill="#2b5fd9" text-anchor="middle" font-family="'Hiragino Sans',sans-serif" font-weight="700">もと（1）</text>
+        <text x="70" y="68" font-size="9" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">0</text>
+        <text x="130" y="68" font-size="9" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">1</text>
+        <text x="250" y="68" font-size="9" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">2</text>
+        <text x="370" y="68" font-size="9" fill="#6b7077" text-anchor="middle" font-family="'Hiragino Sans',sans-serif">3（倍）</text>
+      </svg>
+      <div style="font-size:12px;margin-top:4px;">もとにする量を1とみると、くらべる量は　<span class="ans"></span>　にあたる。</div>
+    </div>
+  </div>
+
+  <div class="reflect">
+    <div class="rt">わかったこと：もとの大きさがちがうものは、どうやってくらべるといい？</div>
+    <div class="lines" style="height:44px;"></div>
+  </div>
+
+  <div class="foot-note">
+    <b>先生方へ。</b>このワークシートは、School Stock（現役の小学校教員）が自作した無料教材です。数値は、差でくらべると（Ｂ＝40cm）／倍でくらべると（Ａ＝3倍）と<b>結論が変わる</b>ように作っています（Ａ 10→30・3倍／Ｂ 40→80・2倍）。差の考えを一度出してから倍へ、の流れで使えます。先行事例と出典は <a href="./">教材研究ノートの記事</a> に。<br>
+    © School Stock（外﨑顯博 / 小学校）／ 無料・改変可
+  </div>
+</div>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
