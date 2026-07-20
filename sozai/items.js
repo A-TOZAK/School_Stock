@@ -26147,5 +26147,2691 @@ const SOZAI = [
   ],
   "img": "img/undoukai_okiga_tamaire.jpg",
   "thumb": "img/undoukai_okiga_tamaire_thumb.jpg"
+ },
+ {
+  "id": "kokugo_g1_no01_asagao",
+  "title": "あさがおの つる",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "せつめい文・あさがおの つる",
+  "scenes": [
+   "『あさがおの つる』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『あさがおの つる』（1年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "あさがおの つる"
+  ],
+  "img": "img/kokugo_g1_no01_asagao.jpg",
+  "thumb": "img/kokugo_g1_no01_asagao_thumb.jpg",
+  "mono": "img/kokugo_g1_no01_asagao_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no02_tentoumushi",
+  "title": "てんとうむしの てんてん",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "せつめい文・てんとうむしの てんてん",
+  "scenes": [
+   "『てんとうむしの てんてん』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『てんとうむしの てんてん』（1年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "てんとうむしの てんてん"
+  ],
+  "img": "img/kokugo_g1_no02_tentoumushi.jpg",
+  "thumb": "img/kokugo_g1_no02_tentoumushi_thumb.jpg",
+  "mono": "img/kokugo_g1_no02_tentoumushi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no03_ha_nukeru",
+  "title": "はが ぬける わけ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "せつめい文・はが ぬける わけ",
+  "scenes": [
+   "『はが ぬける わけ』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『はが ぬける わけ』（1年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "はが ぬける わけ"
+  ],
+  "img": "img/kokugo_g1_no03_ha_nukeru.jpg",
+  "thumb": "img/kokugo_g1_no03_ha_nukeru_thumb.jpg",
+  "mono": "img/kokugo_g1_no03_ha_nukeru_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no04_neko_hige",
+  "title": "ねこの ひげ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "せつめい文・ねこの ひげ",
+  "scenes": [
+   "『ねこの ひげ』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ねこの ひげ』（1年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ねこの ひげ"
+  ],
+  "img": "img/kokugo_g1_no04_neko_hige.jpg",
+  "thumb": "img/kokugo_g1_no04_neko_hige_thumb.jpg",
+  "mono": "img/kokugo_g1_no04_neko_hige_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no05_tsubame",
+  "title": "つばめの す",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "せつめい文・つばめの す",
+  "scenes": [
+   "『つばめの す』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『つばめの す』（1年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "つばめの す"
+  ],
+  "img": "img/kokugo_g1_no05_tsubame.jpg",
+  "thumb": "img/kokugo_g1_no05_tsubame_thumb.jpg",
+  "mono": "img/kokugo_g1_no05_tsubame_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no06_buranko",
+  "title": "ぶらんこの じゅんばん",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "ものがたり文・ぶらんこの じゅんばん",
+  "scenes": [
+   "『ぶらんこの じゅんばん』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ぶらんこの じゅんばん』（1年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ぶらんこの じゅんばん"
+  ],
+  "img": "img/kokugo_g1_no06_buranko.jpg",
+  "thumb": "img/kokugo_g1_no06_buranko_thumb.jpg",
+  "mono": "img/kokugo_g1_no06_buranko_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no07_ame_kasa",
+  "title": "あめの 日の かさ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "ものがたり文・あめの 日の かさ",
+  "scenes": [
+   "『あめの 日の かさ』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『あめの 日の かさ』（1年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "あめの 日の かさ"
+  ],
+  "img": "img/kokugo_g1_no07_ame_kasa.jpg",
+  "thumb": "img/kokugo_g1_no07_ame_kasa_thumb.jpg",
+  "mono": "img/kokugo_g1_no07_ame_kasa_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no08_donguri",
+  "title": "どんぐりひろい",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "ものがたり文・どんぐりひろい",
+  "scenes": [
+   "『どんぐりひろい』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『どんぐりひろい』（1年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "どんぐりひろい"
+  ],
+  "img": "img/kokugo_g1_no08_donguri.jpg",
+  "thumb": "img/kokugo_g1_no08_donguri_thumb.jpg",
+  "mono": "img/kokugo_g1_no08_donguri_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no09_otouto_kutsu",
+  "title": "おとうとの くつ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "ものがたり文・おとうとの くつ",
+  "scenes": [
+   "『おとうとの くつ』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『おとうとの くつ』（1年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "おとうとの くつ"
+  ],
+  "img": "img/kokugo_g1_no09_otouto_kutsu.jpg",
+  "thumb": "img/kokugo_g1_no09_otouto_kutsu_thumb.jpg",
+  "mono": "img/kokugo_g1_no09_otouto_kutsu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g1_no10_tanabata",
+  "title": "たなばたの ねがいごと",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "1年",
+  "unit": "ものがたり文・たなばたの ねがいごと",
+  "scenes": [
+   "『たなばたの ねがいごと』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『たなばたの ねがいごと』（1年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "1年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "1年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "たなばたの ねがいごと"
+  ],
+  "img": "img/kokugo_g1_no10_tanabata.jpg",
+  "thumb": "img/kokugo_g1_no10_tanabata_thumb.jpg",
+  "mono": "img/kokugo_g1_no10_tanabata_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no01_himawari",
+  "title": "ひまわりの たね",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "せつめい文・ひまわりの たね",
+  "scenes": [
+   "『ひまわりの たね』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ひまわりの たね』（2年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ひまわりの たね"
+  ],
+  "img": "img/kokugo_g2_no01_himawari.jpg",
+  "thumb": "img/kokugo_g2_no01_himawari_thumb.jpg",
+  "mono": "img/kokugo_g2_no01_himawari_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no02_kaeru",
+  "title": "かえるの ふゆごし",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "せつめい文・かえるの ふゆごし",
+  "scenes": [
+   "『かえるの ふゆごし』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『かえるの ふゆごし』（2年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "かえるの ふゆごし"
+  ],
+  "img": "img/kokugo_g2_no02_kaeru.jpg",
+  "thumb": "img/kokugo_g2_no02_kaeru_thumb.jpg",
+  "mono": "img/kokugo_g2_no02_kaeru_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no03_chou",
+  "title": "ちょうに なるまで",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "せつめい文・ちょうに なるまで",
+  "scenes": [
+   "『ちょうに なるまで』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ちょうに なるまで』（2年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ちょうに なるまで"
+  ],
+  "img": "img/kokugo_g2_no03_chou.jpg",
+  "thumb": "img/kokugo_g2_no03_chou_thumb.jpg",
+  "mono": "img/kokugo_g2_no03_chou_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no04_semi",
+  "title": "せみの なきごえ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "せつめい文・せみの なきごえ",
+  "scenes": [
+   "『せみの なきごえ』の場面（せつめい文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『せみの なきごえ』（2年・せつめい文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "せつめい文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "せみの なきごえ"
+  ],
+  "img": "img/kokugo_g2_no04_semi.jpg",
+  "thumb": "img/kokugo_g2_no04_semi_thumb.jpg",
+  "mono": "img/kokugo_g2_no04_semi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no05_kakekko",
+  "title": "かけっこで ころんでも",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ものがたり文・かけっこで ころんでも",
+  "scenes": [
+   "『かけっこで ころんでも』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『かけっこで ころんでも』（2年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "かけっこで ころんでも"
+  ],
+  "img": "img/kokugo_g2_no05_kakekko.jpg",
+  "thumb": "img/kokugo_g2_no05_kakekko_thumb.jpg",
+  "mono": "img/kokugo_g2_no05_kakekko_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no06_obento",
+  "title": "お母さんの おべんとう",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ものがたり文・お母さんの おべんとう",
+  "scenes": [
+   "『お母さんの おべんとう』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『お母さんの おべんとう』（2年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "お母さんの おべんとう"
+  ],
+  "img": "img/kokugo_g2_no06_obento.jpg",
+  "thumb": "img/kokugo_g2_no06_obento_thumb.jpg",
+  "mono": "img/kokugo_g2_no06_obento_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no07_sunayama",
+  "title": "こうえんの すなやま",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ものがたり文・こうえんの すなやま",
+  "scenes": [
+   "『こうえんの すなやま』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『こうえんの すなやま』（2年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "こうえんの すなやま"
+  ],
+  "img": "img/kokugo_g2_no07_sunayama.jpg",
+  "thumb": "img/kokugo_g2_no07_sunayama_thumb.jpg",
+  "mono": "img/kokugo_g2_no07_sunayama_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no08_otsukai",
+  "title": "ひとりで おつかい",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ものがたり文・ひとりで おつかい",
+  "scenes": [
+   "『ひとりで おつかい』の場面（ものがたり文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ひとりで おつかい』（2年・ものがたり文）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ものがたり文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ひとりで おつかい"
+  ],
+  "img": "img/kokugo_g2_no08_otsukai.jpg",
+  "thumb": "img/kokugo_g2_no08_otsukai_thumb.jpg",
+  "mono": "img/kokugo_g2_no08_otsukai_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no09_hantai",
+  "title": "はんたいの ことば",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ごく・はんたいの ことば",
+  "scenes": [
+   "『はんたいの ことば』の場面（ごく）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『はんたいの ことば』（2年・ごく）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ごく",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "はんたいの ことば"
+  ],
+  "img": "img/kokugo_g2_no09_hantai.jpg",
+  "thumb": "img/kokugo_g2_no09_hantai_thumb.jpg",
+  "mono": "img/kokugo_g2_no09_hantai_mono.jpg"
+ },
+ {
+  "id": "kokugo_g2_no10_kazoeru",
+  "title": "かぞえる ことば",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "2年",
+  "unit": "ごく・かぞえる ことば",
+  "scenes": [
+   "『かぞえる ことば』の場面（ごく）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『かぞえる ことば』（2年・ごく）に合わせた水彩サムネイル。",
+  "howto": "2年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "2年",
+   "ごく",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "かぞえる ことば"
+  ],
+  "img": "img/kokugo_g2_no10_kazoeru.jpg",
+  "thumb": "img/kokugo_g2_no10_kazoeru_thumb.jpg",
+  "mono": "img/kokugo_g2_no10_kazoeru_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no01_dangomushi",
+  "title": "ダンゴムシのひみつ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・ダンゴムシのひみつ",
+  "scenes": [
+   "『ダンゴムシのひみつ』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ダンゴムシのひみつ』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ダンゴムシのひみつ"
+  ],
+  "img": "img/kokugo_g3_no01_dangomushi.jpg",
+  "thumb": "img/kokugo_g3_no01_dangomushi_thumb.jpg",
+  "mono": "img/kokugo_g3_no01_dangomushi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no02_niji",
+  "title": "にじはどうしてできるの",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・にじはどうしてできるの",
+  "scenes": [
+   "『にじはどうしてできるの』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『にじはどうしてできるの』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "にじはどうしてできるの"
+  ],
+  "img": "img/kokugo_g3_no02_niji.jpg",
+  "thumb": "img/kokugo_g3_no02_niji_thumb.jpg",
+  "mono": "img/kokugo_g3_no02_niji_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no03_tanpopo",
+  "title": "たんぽぽのわた毛のたび",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・たんぽぽのわた毛のたび",
+  "scenes": [
+   "『たんぽぽのわた毛のたび』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『たんぽぽのわた毛のたび』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "たんぽぽのわた毛のたび"
+  ],
+  "img": "img/kokugo_g3_no03_tanpopo.jpg",
+  "thumb": "img/kokugo_g3_no03_tanpopo_thumb.jpg",
+  "mono": "img/kokugo_g3_no03_tanpopo_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no04_koori",
+  "title": "こおりはどうしてとける",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・こおりはどうしてとける",
+  "scenes": [
+   "『こおりはどうしてとける』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『こおりはどうしてとける』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "こおりはどうしてとける"
+  ],
+  "img": "img/kokugo_g3_no04_koori.jpg",
+  "thumb": "img/kokugo_g3_no04_koori_thumb.jpg",
+  "mono": "img/kokugo_g3_no04_koori_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no05_kage",
+  "title": "かげのふしぎ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・かげのふしぎ",
+  "scenes": [
+   "『かげのふしぎ』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『かげのふしぎ』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "かげのふしぎ"
+  ],
+  "img": "img/kokugo_g3_no05_kage.jpg",
+  "thumb": "img/kokugo_g3_no05_kage_thumb.jpg",
+  "mono": "img/kokugo_g3_no05_kage_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no06_katatsumuri",
+  "title": "カタツムリのくらし",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・カタツムリのくらし",
+  "scenes": [
+   "『カタツムリのくらし』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『カタツムリのくらし』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "カタツムリのくらし"
+  ],
+  "img": "img/kokugo_g3_no06_katatsumuri.jpg",
+  "thumb": "img/kokugo_g3_no06_katatsumuri_thumb.jpg",
+  "mono": "img/kokugo_g3_no06_katatsumuri_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no07_oto",
+  "title": "音はどうつたわるの",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・音はどうつたわるの",
+  "scenes": [
+   "『音はどうつたわるの』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『音はどうつたわるの』（3年・説明文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "音はどうつたわるの"
+  ],
+  "img": "img/kokugo_g3_no07_oto.jpg",
+  "thumb": "img/kokugo_g3_no07_oto_thumb.jpg",
+  "mono": "img/kokugo_g3_no07_oto_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no08_obaachan",
+  "title": "おばあちゃんの手",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "物語文・おばあちゃんの手",
+  "scenes": [
+   "『おばあちゃんの手』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『おばあちゃんの手』（3年・物語文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "おばあちゃんの手"
+  ],
+  "img": "img/kokugo_g3_no08_obaachan.jpg",
+  "thumb": "img/kokugo_g3_no08_obaachan_thumb.jpg",
+  "mono": "img/kokugo_g3_no08_obaachan_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no09_maigo_koinu",
+  "title": "まいごの子犬",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "物語文・まいごの子犬",
+  "scenes": [
+   "『まいごの子犬』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『まいごの子犬』（3年・物語文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "まいごの子犬"
+  ],
+  "img": "img/kokugo_g3_no09_maigo_koinu.jpg",
+  "thumb": "img/kokugo_g3_no09_maigo_koinu_thumb.jpg",
+  "mono": "img/kokugo_g3_no09_maigo_koinu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no10_orusuban",
+  "title": "はじめてのおるすばん",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "物語文・はじめてのおるすばん",
+  "scenes": [
+   "『はじめてのおるすばん』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『はじめてのおるすばん』（3年・物語文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "はじめてのおるすばん"
+  ],
+  "img": "img/kokugo_g3_no10_orusuban.jpg",
+  "thumb": "img/kokugo_g3_no10_orusuban_thumb.jpg",
+  "mono": "img/kokugo_g3_no10_orusuban_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no11_koronda",
+  "title": "ころんだ子と、さしのべた手",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "物語文・ころんだ子と、さしのべた手",
+  "scenes": [
+   "『ころんだ子と、さしのべた手』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ころんだ子と、さしのべた手』（3年・物語文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ころんだ子と、さしのべた手"
+  ],
+  "img": "img/kokugo_g3_no11_koronda.jpg",
+  "thumb": "img/kokugo_g3_no11_koronda_thumb.jpg",
+  "mono": "img/kokugo_g3_no11_koronda_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no12_hikkosu",
+  "title": "引っこす友だちへの手紙",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "物語文・引っこす友だちへの手紙",
+  "scenes": [
+   "『引っこす友だちへの手紙』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『引っこす友だちへの手紙』（3年・物語文）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "引っこす友だちへの手紙"
+  ],
+  "img": "img/kokugo_g3_no12_hikkosu.jpg",
+  "thumb": "img/kokugo_g3_no12_hikkosu_thumb.jpg",
+  "mono": "img/kokugo_g3_no12_hikkosu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no13_mimizu",
+  "title": "ミミズは土の名医",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・要約・ミミズは土の名医",
+  "scenes": [
+   "『ミミズは土の名医』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ミミズは土の名医』（3年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ミミズは土の名医"
+  ],
+  "img": "img/kokugo_g3_no13_mimizu.jpg",
+  "thumb": "img/kokugo_g3_no13_mimizu_thumb.jpg",
+  "mono": "img/kokugo_g3_no13_mimizu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no14_kumonosu",
+  "title": "くもの巣のふしぎ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・要約・くもの巣のふしぎ",
+  "scenes": [
+   "『くもの巣のふしぎ』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『くもの巣のふしぎ』（3年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "くもの巣のふしぎ"
+  ],
+  "img": "img/kokugo_g3_no14_kumonosu.jpg",
+  "thumb": "img/kokugo_g3_no14_kumonosu_thumb.jpg",
+  "mono": "img/kokugo_g3_no14_kumonosu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no15_hashi",
+  "title": "はしの正しい持ち方",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "説明文・要約・はしの正しい持ち方",
+  "scenes": [
+   "『はしの正しい持ち方』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『はしの正しい持ち方』（3年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "はしの正しい持ち方"
+  ],
+  "img": "img/kokugo_g3_no15_hashi.jpg",
+  "thumb": "img/kokugo_g3_no15_hashi_thumb.jpg",
+  "mono": "img/kokugo_g3_no15_hashi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no16_kanyouku",
+  "title": "体の言葉のかんようく",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "語句・体の言葉のかんようく",
+  "scenes": [
+   "『体の言葉のかんようく』の場面（語句）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『体の言葉のかんようく』（3年・語句）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "語句",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "体の言葉のかんようく"
+  ],
+  "img": "img/kokugo_g3_no16_kanyouku.jpg",
+  "thumb": "img/kokugo_g3_no16_kanyouku_thumb.jpg",
+  "mono": "img/kokugo_g3_no16_kanyouku_mono.jpg"
+ },
+ {
+  "id": "kokugo_g3_no17_kimochi",
+  "title": "気持ちを表す言葉",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "3年",
+  "unit": "語句・気持ちを表す言葉",
+  "scenes": [
+   "『気持ちを表す言葉』の場面（語句）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『気持ちを表す言葉』（3年・語句）に合わせた水彩サムネイル。",
+  "howto": "3年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "3年",
+   "語句",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "気持ちを表す言葉"
+  ],
+  "img": "img/kokugo_g3_no17_kimochi.jpg",
+  "thumb": "img/kokugo_g3_no17_kimochi_thumb.jpg",
+  "mono": "img/kokugo_g3_no17_kimochi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no01_ari",
+  "title": "アリの力",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・アリの力",
+  "scenes": [
+   "『アリの力』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『アリの力』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "アリの力"
+  ],
+  "img": "img/kokugo_g4_no01_ari.jpg",
+  "thumb": "img/kokugo_g4_no01_ari_thumb.jpg",
+  "mono": "img/kokugo_g4_no01_ari_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no02_kabutomushi",
+  "title": "カブトムシの一生",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・カブトムシの一生",
+  "scenes": [
+   "『カブトムシの一生』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『カブトムシの一生』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "カブトムシの一生"
+  ],
+  "img": "img/kokugo_g4_no02_kabutomushi.jpg",
+  "thumb": "img/kokugo_g4_no02_kabutomushi_thumb.jpg",
+  "mono": "img/kokugo_g4_no02_kabutomushi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no03_kazaguruma",
+  "title": "風の力とかざぐるま",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・風の力とかざぐるま",
+  "scenes": [
+   "『風の力とかざぐるま』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『風の力とかざぐるま』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "風の力とかざぐるま"
+  ],
+  "img": "img/kokugo_g4_no03_kazaguruma.jpg",
+  "thumb": "img/kokugo_g4_no03_kazaguruma_thumb.jpg",
+  "mono": "img/kokugo_g4_no03_kazaguruma_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no04_shio",
+  "title": "塩のけっしょう",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・塩のけっしょう",
+  "scenes": [
+   "『塩のけっしょう』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『塩のけっしょう』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "塩のけっしょう"
+  ],
+  "img": "img/kokugo_g4_no04_shio.jpg",
+  "thumb": "img/kokugo_g4_no04_shio_thumb.jpg",
+  "mono": "img/kokugo_g4_no04_shio_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no05_ochiba",
+  "title": "落ち葉が土になるまで",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・落ち葉が土になるまで",
+  "scenes": [
+   "『落ち葉が土になるまで』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『落ち葉が土になるまで』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "落ち葉が土になるまで"
+  ],
+  "img": "img/kokugo_g4_no05_ochiba.jpg",
+  "thumb": "img/kokugo_g4_no05_ochiba_thumb.jpg",
+  "mono": "img/kokugo_g4_no05_ochiba_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no06_wataridori",
+  "title": "わたり鳥のふしぎ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・わたり鳥のふしぎ",
+  "scenes": [
+   "『わたり鳥のふしぎ』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『わたり鳥のふしぎ』（4年・説明文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "わたり鳥のふしぎ"
+  ],
+  "img": "img/kokugo_g4_no06_wataridori.jpg",
+  "thumb": "img/kokugo_g4_no06_wataridori_thumb.jpg",
+  "mono": "img/kokugo_g4_no06_wataridori_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no07_enogu",
+  "title": "絵の具とみなと",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "物語文・絵の具とみなと",
+  "scenes": [
+   "『絵の具とみなと』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『絵の具とみなと』（4年・物語文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "絵の具とみなと"
+  ],
+  "img": "img/kokugo_g4_no07_enogu.jpg",
+  "thumb": "img/kokugo_g4_no07_enogu_thumb.jpg",
+  "mono": "img/kokugo_g4_no07_enogu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no08_wasuremono",
+  "title": "わすれ物と友だち",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "物語文・わすれ物と友だち",
+  "scenes": [
+   "『わすれ物と友だち』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『わすれ物と友だち』（4年・物語文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "わすれ物と友だち"
+  ],
+  "img": "img/kokugo_g4_no08_wasuremono.jpg",
+  "thumb": "img/kokugo_g4_no08_wasuremono_thumb.jpg",
+  "mono": "img/kokugo_g4_no08_wasuremono_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no09_undoukai",
+  "title": "弟の運動会",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "物語文・弟の運動会",
+  "scenes": [
+   "『弟の運動会』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『弟の運動会』（4年・物語文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "弟の運動会"
+  ],
+  "img": "img/kokugo_g4_no09_undoukai.jpg",
+  "thumb": "img/kokugo_g4_no09_undoukai_thumb.jpg",
+  "mono": "img/kokugo_g4_no09_undoukai_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no10_himitsu_kichi",
+  "title": "ひみつ基地の約束",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "物語文・ひみつ基地の約束",
+  "scenes": [
+   "『ひみつ基地の約束』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ひみつ基地の約束』（4年・物語文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ひみつ基地の約束"
+  ],
+  "img": "img/kokugo_g4_no10_himitsu_kichi.jpg",
+  "thumb": "img/kokugo_g4_no10_himitsu_kichi_thumb.jpg",
+  "mono": "img/kokugo_g4_no10_himitsu_kichi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no11_nijuutobi",
+  "title": "二重とびがとべた日",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "物語文・二重とびがとべた日",
+  "scenes": [
+   "『二重とびがとべた日』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『二重とびがとべた日』（4年・物語文）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "二重とびがとべた日"
+  ],
+  "img": "img/kokugo_g4_no11_nijuutobi.jpg",
+  "thumb": "img/kokugo_g4_no11_nijuutobi_thumb.jpg",
+  "mono": "img/kokugo_g4_no11_nijuutobi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no12_mori",
+  "title": "森のはたらき",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・要約・森のはたらき",
+  "scenes": [
+   "『森のはたらき』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『森のはたらき』（4年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "森のはたらき"
+  ],
+  "img": "img/kokugo_g4_no12_mori.jpg",
+  "thumb": "img/kokugo_g4_no12_mori_thumb.jpg",
+  "mono": "img/kokugo_g4_no12_mori_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no13_washi",
+  "title": "和紙のよさ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・要約・和紙のよさ",
+  "scenes": [
+   "『和紙のよさ』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『和紙のよさ』（4年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "和紙のよさ"
+  ],
+  "img": "img/kokugo_g4_no13_washi.jpg",
+  "thumb": "img/kokugo_g4_no13_washi_thumb.jpg",
+  "mono": "img/kokugo_g4_no13_washi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no14_shingou",
+  "title": "信号きの色の意味",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "説明文・要約・信号きの色の意味",
+  "scenes": [
+   "『信号きの色の意味』の場面（説明文・要約）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『信号きの色の意味』（4年・説明文・要約）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "説明文・要約",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "信号きの色の意味"
+  ],
+  "img": "img/kokugo_g4_no14_shingou.jpg",
+  "thumb": "img/kokugo_g4_no14_shingou_thumb.jpg",
+  "mono": "img/kokugo_g4_no14_shingou_mono.jpg"
+ },
+ {
+  "id": "kokugo_g4_no15_tsunagi",
+  "title": "つなぎ言葉のはたらき",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "語句・つなぎ言葉のはたらき",
+  "scenes": [
+   "『つなぎ言葉のはたらき』の場面（語句）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『つなぎ言葉のはたらき』（4年・語句）に合わせた水彩サムネイル。",
+  "howto": "4年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "4年",
+   "語句",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "つなぎ言葉のはたらき"
+  ],
+  "img": "img/kokugo_g4_no15_tsunagi.jpg",
+  "thumb": "img/kokugo_g4_no15_tsunagi_thumb.jpg",
+  "mono": "img/kokugo_g4_no15_tsunagi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no01_shokuhin",
+  "title": "食品ロスを考える",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・食品ロスを考える",
+  "scenes": [
+   "『食品ロスを考える』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『食品ロスを考える』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "食品ロスを考える"
+  ],
+  "img": "img/kokugo_g5_no01_shokuhin.jpg",
+  "thumb": "img/kokugo_g5_no01_shokuhin_thumb.jpg",
+  "mono": "img/kokugo_g5_no01_shokuhin_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no02_ai",
+  "title": "AIと私たちのくらし",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・AIと私たちのくらし",
+  "scenes": [
+   "『AIと私たちのくらし』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『AIと私たちのくらし』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "AIと私たちのくらし"
+  ],
+  "img": "img/kokugo_g5_no02_ai.jpg",
+  "thumb": "img/kokugo_g5_no02_ai_thumb.jpg",
+  "mono": "img/kokugo_g5_no02_ai_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no03_chisan",
+  "title": "地産地消のよさ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・地産地消のよさ",
+  "scenes": [
+   "『地産地消のよさ』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『地産地消のよさ』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "地産地消のよさ"
+  ],
+  "img": "img/kokugo_g5_no03_chisan.jpg",
+  "thumb": "img/kokugo_g5_no03_chisan_thumb.jpg",
+  "mono": "img/kokugo_g5_no03_chisan_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no04_shinrin",
+  "title": "森林と二酸化炭素",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・森林と二酸化炭素",
+  "scenes": [
+   "『森林と二酸化炭素』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『森林と二酸化炭素』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "森林と二酸化炭素"
+  ],
+  "img": "img/kokugo_g5_no04_shinrin.jpg",
+  "thumb": "img/kokugo_g5_no04_shinrin_thumb.jpg",
+  "mono": "img/kokugo_g5_no04_shinrin_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no05_seibutsu",
+  "title": "生物多様性を守る",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・生物多様性を守る",
+  "scenes": [
+   "『生物多様性を守る』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『生物多様性を守る』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "生物多様性を守る"
+  ],
+  "img": "img/kokugo_g5_no05_seibutsu.jpg",
+  "thumb": "img/kokugo_g5_no05_seibutsu_thumb.jpg",
+  "mono": "img/kokugo_g5_no05_seibutsu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no06_sessui",
+  "title": "節水と水の循環",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "説明文・節水と水の循環",
+  "scenes": [
+   "『節水と水の循環』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『節水と水の循環』（5年・説明文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "節水と水の循環"
+  ],
+  "img": "img/kokugo_g5_no06_sessui.jpg",
+  "thumb": "img/kokugo_g5_no06_sessui_thumb.jpg",
+  "mono": "img/kokugo_g5_no06_sessui_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no07_tenkousei",
+  "title": "転校生とわたし",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "物語文・転校生とわたし",
+  "scenes": [
+   "『転校生とわたし』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『転校生とわたし』（5年・物語文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "転校生とわたし"
+  ],
+  "img": "img/kokugo_g5_no07_tenkousei.jpg",
+  "thumb": "img/kokugo_g5_no07_tenkousei_thumb.jpg",
+  "mono": "img/kokugo_g5_no07_tenkousei_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no08_sofu_hatake",
+  "title": "祖父の畑をつぐ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "物語文・祖父の畑をつぐ",
+  "scenes": [
+   "『祖父の畑をつぐ』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『祖父の畑をつぐ』（5年・物語文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "祖父の畑をつぐ"
+  ],
+  "img": "img/kokugo_g5_no08_sofu_hatake.jpg",
+  "thumb": "img/kokugo_g5_no08_sofu_hatake_thumb.jpg",
+  "mono": "img/kokugo_g5_no08_sofu_hatake_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no09_gasshou",
+  "title": "合唱コンクールの一票",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "物語文・合唱コンクールの一票",
+  "scenes": [
+   "『合唱コンクールの一票』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『合唱コンクールの一票』（5年・物語文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "合唱コンクールの一票"
+  ],
+  "img": "img/kokugo_g5_no09_gasshou.jpg",
+  "thumb": "img/kokugo_g5_no09_gasshou_thumb.jpg",
+  "mono": "img/kokugo_g5_no09_gasshou_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no10_kenka",
+  "title": "けんかした親友",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "物語文・けんかした親友",
+  "scenes": [
+   "『けんかした親友』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『けんかした親友』（5年・物語文）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "けんかした親友"
+  ],
+  "img": "img/kokugo_g5_no10_kenka.jpg",
+  "thumb": "img/kokugo_g5_no10_kenka_thumb.jpg",
+  "mono": "img/kokugo_g5_no10_kenka_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no11_tane",
+  "title": "たね",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "詩・たね",
+  "scenes": [
+   "『たね』の場面（詩）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『たね』（5年・詩）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "詩",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "たね"
+  ],
+  "img": "img/kokugo_g5_no11_tane.jpg",
+  "thumb": "img/kokugo_g5_no11_tane_thumb.jpg",
+  "mono": "img/kokugo_g5_no11_tane_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no12_asa",
+  "title": "朝",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "詩・朝",
+  "scenes": [
+   "『朝』の場面（詩）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『朝』（5年・詩）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "詩",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "朝"
+  ],
+  "img": "img/kokugo_g5_no12_asa.jpg",
+  "thumb": "img/kokugo_g5_no12_asa_thumb.jpg",
+  "mono": "img/kokugo_g5_no12_asa_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no13_kaze",
+  "title": "風",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "詩・風",
+  "scenes": [
+   "『風』の場面（詩）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『風』（5年・詩）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "詩",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "風"
+  ],
+  "img": "img/kokugo_g5_no13_kaze.jpg",
+  "thumb": "img/kokugo_g5_no13_kaze_thumb.jpg",
+  "mono": "img/kokugo_g5_no13_kaze_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no14_jikokuhyou",
+  "title": "時刻表を読む",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "情報の読み取り・時刻表を読む",
+  "scenes": [
+   "『時刻表を読む』の場面（情報の読み取り）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『時刻表を読む』（5年・情報の読み取り）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "情報の読み取り",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "時刻表を読む"
+  ],
+  "img": "img/kokugo_g5_no14_jikokuhyou.jpg",
+  "thumb": "img/kokugo_g5_no14_jikokuhyou_thumb.jpg",
+  "mono": "img/kokugo_g5_no14_jikokuhyou_mono.jpg"
+ },
+ {
+  "id": "kokugo_g5_no15_ichinichi",
+  "title": "円グラフで見る一日の時間",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "5年",
+  "unit": "情報の読み取り・円グラフで見る一日の時間",
+  "scenes": [
+   "『円グラフで見る一日の時間』の場面（情報の読み取り）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『円グラフで見る一日の時間』（5年・情報の読み取り）に合わせた水彩サムネイル。",
+  "howto": "5年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "5年",
+   "情報の読み取り",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "円グラフで見る一日の時間"
+  ],
+  "img": "img/kokugo_g5_no15_ichinichi.jpg",
+  "thumb": "img/kokugo_g5_no15_ichinichi_thumb.jpg",
+  "mono": "img/kokugo_g5_no15_ichinichi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no01_umi_pla",
+  "title": "海のプラスチックごみ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "説明文・海のプラスチックごみ",
+  "scenes": [
+   "『海のプラスチックごみ』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『海のプラスチックごみ』（6年・説明文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "海のプラスチックごみ"
+  ],
+  "img": "img/kokugo_g6_no01_umi_pla.jpg",
+  "thumb": "img/kokugo_g6_no01_umi_pla_thumb.jpg",
+  "mono": "img/kokugo_g6_no01_umi_pla_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no02_saisei",
+  "title": "再生可能エネルギー",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "説明文・再生可能エネルギー",
+  "scenes": [
+   "『再生可能エネルギー』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『再生可能エネルギー』（6年・説明文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "再生可能エネルギー"
+  ],
+  "img": "img/kokugo_g6_no02_saisei.jpg",
+  "thumb": "img/kokugo_g6_no02_saisei_thumb.jpg",
+  "mono": "img/kokugo_g6_no02_saisei_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no03_fairtrade",
+  "title": "フェアトレード",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "説明文・フェアトレード",
+  "scenes": [
+   "『フェアトレード』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『フェアトレード』（6年・説明文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "フェアトレード"
+  ],
+  "img": "img/kokugo_g6_no03_fairtrade.jpg",
+  "thumb": "img/kokugo_g6_no03_fairtrade_thumb.jpg",
+  "mono": "img/kokugo_g6_no03_fairtrade_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no04_ud",
+  "title": "ユニバーサルデザイン",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "説明文・ユニバーサルデザイン",
+  "scenes": [
+   "『ユニバーサルデザイン』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『ユニバーサルデザイン』（6年・説明文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "ユニバーサルデザイン"
+  ],
+  "img": "img/kokugo_g6_no04_ud.jpg",
+  "thumb": "img/kokugo_g6_no04_ud_thumb.jpg",
+  "mono": "img/kokugo_g6_no04_ud_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no05_gairaishu",
+  "title": "外来種の問題",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "説明文・外来種の問題",
+  "scenes": [
+   "『外来種の問題』の場面（説明文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『外来種の問題』（6年・説明文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "説明文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "外来種の問題"
+  ],
+  "img": "img/kokugo_g6_no05_gairaishu.jpg",
+  "thumb": "img/kokugo_g6_no05_gairaishu_thumb.jpg",
+  "mono": "img/kokugo_g6_no05_gairaishu_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no06_baton",
+  "title": "バトンをつなぐ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "物語文・バトンをつなぐ",
+  "scenes": [
+   "『バトンをつなぐ』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『バトンをつなぐ』（6年・物語文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "バトンをつなぐ"
+  ],
+  "img": "img/kokugo_g6_no06_baton.jpg",
+  "thumb": "img/kokugo_g6_no06_baton_thumb.jpg",
+  "mono": "img/kokugo_g6_no06_baton_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no07_hitoritabi",
+  "title": "初めての一人旅",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "物語文・初めての一人旅",
+  "scenes": [
+   "『初めての一人旅』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『初めての一人旅』（6年・物語文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "初めての一人旅"
+  ],
+  "img": "img/kokugo_g6_no07_hitoritabi.jpg",
+  "thumb": "img/kokugo_g6_no07_hitoritabi_thumb.jpg",
+  "mono": "img/kokugo_g6_no07_hitoritabi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no08_saigo_shiai",
+  "title": "最後の試合",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "物語文・最後の試合",
+  "scenes": [
+   "『最後の試合』の場面（物語文）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『最後の試合』（6年・物語文）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "物語文",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "最後の試合"
+  ],
+  "img": "img/kokugo_g6_no08_saigo_shiai.jpg",
+  "thumb": "img/kokugo_g6_no08_saigo_shiai_thumb.jpg",
+  "mono": "img/kokugo_g6_no08_saigo_shiai_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no09_nami",
+  "title": "なみ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "詩・なみ",
+  "scenes": [
+   "『なみ』の場面（詩）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『なみ』（6年・詩）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "詩",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "なみ"
+  ],
+  "img": "img/kokugo_g6_no09_nami.jpg",
+  "thumb": "img/kokugo_g6_no09_nami_thumb.jpg",
+  "mono": "img/kokugo_g6_no09_nami_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no10_tabidachi",
+  "title": "たびだち",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "詩・たびだち",
+  "scenes": [
+   "『たびだち』の場面（詩）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『たびだち』（6年・詩）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "詩",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "たびだち"
+  ],
+  "img": "img/kokugo_g6_no10_tabidachi.jpg",
+  "thumb": "img/kokugo_g6_no10_tabidachi_thumb.jpg",
+  "mono": "img/kokugo_g6_no10_tabidachi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no11_gomi",
+  "title": "グラフで見るごみの量",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "情報の読み取り・グラフで見るごみの量",
+  "scenes": [
+   "『グラフで見るごみの量』の場面（情報の読み取り）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『グラフで見るごみの量』（6年・情報の読み取り）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "情報の読み取り",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "グラフで見るごみの量"
+  ],
+  "img": "img/kokugo_g6_no11_gomi.jpg",
+  "thumb": "img/kokugo_g6_no11_gomi_thumb.jpg",
+  "mono": "img/kokugo_g6_no11_gomi_mono.jpg"
+ },
+ {
+  "id": "kokugo_g6_no12_tenki",
+  "title": "天気予報の言葉を読み取る",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "6年",
+  "unit": "情報の読み取り・天気予報の言葉を読み取る",
+  "scenes": [
+   "『天気予報の言葉を読み取る』の場面（情報の読み取り）"
+  ],
+  "uses": [
+   "読解プリント表紙",
+   "教材サムネ",
+   "棚カード",
+   "スライド",
+   "たより見出し"
+  ],
+  "description": "国語読解プリント『天気予報の言葉を読み取る』（6年・情報の読み取り）に合わせた水彩サムネイル。",
+  "howto": "6年の国語読解プリントの表紙・棚カード・配布時のサムネに。",
+  "tags": [
+   "国語",
+   "読解",
+   "6年",
+   "情報の読み取り",
+   "サムネ",
+   "水彩",
+   "すみれ",
+   "天気予報の言葉を読み取る"
+  ],
+  "img": "img/kokugo_g6_no12_tenki.jpg",
+  "thumb": "img/kokugo_g6_no12_tenki_thumb.jpg",
+  "mono": "img/kokugo_g6_no12_tenki_mono.jpg"
  }
 ];
