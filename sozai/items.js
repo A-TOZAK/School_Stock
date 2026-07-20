@@ -28833,5 +28833,637 @@ const SOZAI = [
   "img": "img/kokugo_g6_no12_tenki.jpg",
   "thumb": "img/kokugo_g6_no12_tenki_thumb.jpg",
   "mono": "img/kokugo_g6_no12_tenki_mono.jpg"
+ },
+ {
+  "id": "sansu_ohajiki_matomeru",
+  "title": "算数・おはじきを10のまとまりで数える",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "低学年",
+  "unit": "数と計算・10のまとまり",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "おはじきを10ずつのまとまりに並べて数える手元のフラットイラスト（俯瞰）。",
+  "howto": "くり上がり・十進位取りの導入、算数プリントの扉や掲示に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "おはじき",
+   "数える",
+   "かぞえる",
+   "10のまとまり",
+   "位取り",
+   "たしざん",
+   "低学年",
+   "1年",
+   "具体物"
+  ],
+  "img": "img/sansu_ohajiki_matomeru.jpg",
+  "thumb": "img/sansu_ohajiki_matomeru_thumb.jpg",
+  "mono": "img/sansu_ohajiki_matomeru_mono.jpg"
+ },
+ {
+  "id": "sansu_monosashi_hakaru",
+  "title": "算数・ものさしで長さをはかる",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "中学年",
+  "unit": "長さ・測定",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ものさしを机の縁に当てて長さをはかる子どものフラットイラスト。目盛りの数字は無し。",
+  "howto": "長さ・測定の単元の挿絵、プリントの扉に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "ものさし",
+   "定規",
+   "長さ",
+   "はかる",
+   "測定",
+   "cm",
+   "中学年",
+   "3年"
+  ],
+  "img": "img/sansu_monosashi_hakaru.jpg",
+  "thumb": "img/sansu_monosashi_hakaru_thumb.jpg",
+  "mono": "img/sansu_monosashi_hakaru_mono.jpg"
+ },
+ {
+  "id": "sansu_hyakudama_soroban",
+  "title": "算数・100玉そろばんで数える",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "低学年",
+  "unit": "数と計算",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "100玉そろばんの玉を動かして数える子どものフラットイラスト。",
+  "howto": "数の合成分解・くり上がりの導入、算数の挿絵に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "そろばん",
+   "100玉そろばん",
+   "数える",
+   "計算",
+   "くり上がり",
+   "低学年",
+   "1年",
+   "2年",
+   "具体物"
+  ],
+  "img": "img/sansu_hyakudama_soroban.jpg",
+  "thumb": "img/sansu_hyakudama_soroban_thumb.jpg",
+  "mono": "img/sansu_hyakudama_soroban_mono.jpg"
+ },
+ {
+  "id": "sansu_iro_ita_wakeru",
+  "title": "算数・形の色板を仲間分けする",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "低学年",
+  "unit": "図形・かたち",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "三角・四角・丸の色板を仲間ごとに分ける手元のフラットイラスト（俯瞰）。",
+  "howto": "図形・かたちの分類、仲間分けの導入や掲示に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "かたち",
+   "図形",
+   "三角",
+   "四角",
+   "丸",
+   "仲間分け",
+   "分類",
+   "低学年",
+   "1年",
+   "色板"
+  ],
+  "img": "img/sansu_iro_ita_wakeru.jpg",
+  "thumb": "img/sansu_iro_ita_wakeru_thumb.jpg",
+  "mono": "img/sansu_iro_ita_wakeru_mono.jpg"
+ },
+ {
+  "id": "sansu_tenbin_kuraberu",
+  "title": "算数・てんびんで重さをくらべる",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "中学年",
+  "unit": "重さ・測定",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "上皿の簡単なてんびんで積み木の重さをくらべる子ども二人のフラットイラスト。",
+  "howto": "重さ・測定の単元、比較の導入や挿絵に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "てんびん",
+   "天びん",
+   "重さ",
+   "くらべる",
+   "比較",
+   "測定",
+   "中学年",
+   "3年"
+  ],
+  "img": "img/sansu_tenbin_kuraberu.jpg",
+  "thumb": "img/sansu_tenbin_kuraberu_thumb.jpg",
+  "mono": "img/sansu_tenbin_kuraberu_mono.jpg"
+ },
+ {
+  "id": "sansu_tsumiki_rittai",
+  "title": "算数・積み木で立体をつくる",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "中学年",
+  "unit": "立体・図形",
+  "scenes": [
+   "授業・算数"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "立方体の積み木でタワーやL字を組み立てて考える子どものフラットイラスト。",
+  "howto": "立体・かさ・図形の単元、積み木を使う活動の挿絵に。",
+  "tags": [
+   "算数",
+   "さんすう",
+   "積み木",
+   "つみき",
+   "立体",
+   "立方体",
+   "図形",
+   "かさ",
+   "中学年",
+   "4年",
+   "具体物"
+  ],
+  "img": "img/sansu_tsumiki_rittai.jpg",
+  "thumb": "img/sansu_tsumiki_rittai_thumb.jpg",
+  "mono": "img/sansu_tsumiki_rittai_mono.jpg"
+ },
+ {
+  "id": "gaikoku_alt_kaiwa",
+  "title": "外国語・ALTと会話する（空の吹き出し）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "やり取り・あいさつ",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ALT（外国語指導助手）としゃがんで会話する子どもたちと空の吹き出しのフラットイラスト。吹き出しに言葉を後入れできる。",
+  "howto": "外国語のやり取り・あいさつの掲示やスライドに。吹き出しへ英語を書き込める。",
+  "tags": [
+   "外国語",
+   "がいこくご",
+   "英語",
+   "ALT",
+   "会話",
+   "やり取り",
+   "あいさつ",
+   "ふきだし",
+   "吹き出し",
+   "外国語活動",
+   "コミュニケーション"
+  ],
+  "img": "img/gaikoku_alt_kaiwa.jpg",
+  "thumb": "img/gaikoku_alt_kaiwa_thumb.jpg",
+  "mono": "img/gaikoku_alt_kaiwa_mono.jpg"
+ },
+ {
+  "id": "gaikoku_ekaado_pair",
+  "title": "外国語・絵カードで言い合うペア",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "語彙・絵カード",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "りんご・ねこなど文字なしの絵カードを見せ合って名前を言うペアのフラットイラスト。",
+  "howto": "単語・語彙の練習、ペア活動の挿絵や掲示に。",
+  "tags": [
+   "外国語",
+   "英語",
+   "絵カード",
+   "フラッシュカード",
+   "単語",
+   "語彙",
+   "ペア",
+   "apple",
+   "cat",
+   "外国語活動"
+  ],
+  "img": "img/gaikoku_ekaado_pair.jpg",
+  "thumb": "img/gaikoku_ekaado_pair_thumb.jpg",
+  "mono": "img/gaikoku_ekaado_pair_mono.jpg"
+ },
+ {
+  "id": "gaikoku_sekaichizu_yubisasu",
+  "title": "外国語・世界地図で国を指さす",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "世界・国さがし",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ラベルなしの世界地図の前で国や大陸を指さす子どもたちのフラットイラスト。",
+  "howto": "世界の国・文化の導入、外国語のスライドや掲示に。",
+  "tags": [
+   "外国語",
+   "英語",
+   "世界地図",
+   "地図",
+   "国",
+   "世界",
+   "文化",
+   "外国語活動",
+   "グローバル"
+  ],
+  "img": "img/gaikoku_sekaichizu_yubisasu.jpg",
+  "thumb": "img/gaikoku_sekaichizu_yubisasu_thumb.jpg",
+  "mono": "img/gaikoku_sekaichizu_yubisasu_mono.jpg"
+ },
+ {
+  "id": "gaikoku_jesuchaa_geemu",
+  "title": "外国語・ジェスチャーゲーム",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "ゲーム・活動",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "体を使って伝えるジェスチャーゲームを楽しむ子どもたちのフラットイラスト。",
+  "howto": "外国語のゲーム・活動場面の挿絵、学級だよりに。",
+  "tags": [
+   "外国語",
+   "英語",
+   "ジェスチャー",
+   "ゲーム",
+   "活動",
+   "身ぶり",
+   "外国語活動",
+   "楽しい"
+  ],
+  "img": "img/gaikoku_jesuchaa_geemu.jpg",
+  "thumb": "img/gaikoku_jesuchaa_geemu_thumb.jpg",
+  "mono": "img/gaikoku_jesuchaa_geemu_mono.jpg"
+ },
+ {
+  "id": "gaikoku_uta_tebyoushi",
+  "title": "外国語・歌に合わせて手拍子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "歌・チャンツ",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "英語の歌に合わせて手拍子する子どもたちの輪のフラットイラスト。音符つき。",
+  "howto": "歌・チャンツの場面、外国語の掲示やスライドに。",
+  "tags": [
+   "外国語",
+   "英語",
+   "歌",
+   "チャンツ",
+   "手拍子",
+   "音符",
+   "リズム",
+   "外国語活動",
+   "うた"
+  ],
+  "img": "img/gaikoku_uta_tebyoushi.jpg",
+  "thumb": "img/gaikoku_uta_tebyoushi_thumb.jpg",
+  "mono": "img/gaikoku_uta_tebyoushi_mono.jpg"
+ },
+ {
+  "id": "gaikoku_tablet_hatsuon",
+  "title": "外国語・タブレットで発音を聞く",
+  "author": "riko",
+  "type": "illust",
+  "subject": "外国語",
+  "grade": "全学年",
+  "unit": "ICT・発音",
+  "scenes": [
+   "授業・外国語活動"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント",
+   "掲示",
+   "スライド"
+  ],
+  "description": "ヘッドホンをつけてタブレットで発音を聞く子どものフラットイラスト。画面は文字なし。",
+  "howto": "ICTを使った外国語学習、個別練習の挿絵に。",
+  "tags": [
+   "外国語",
+   "英語",
+   "タブレット",
+   "ヘッドホン",
+   "発音",
+   "リスニング",
+   "ICT",
+   "GIGA",
+   "外国語活動",
+   "個別"
+  ],
+  "img": "img/gaikoku_tablet_hatsuon.jpg",
+  "thumb": "img/gaikoku_tablet_hatsuon_thumb.jpg",
+  "mono": "img/gaikoku_tablet_hatsuon_mono.jpg"
+ },
+ {
+  "id": "koumu_denshikokuban_junbi",
+  "title": "校務・電子黒板で授業準備をする先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "ICT活用・授業準備",
+  "scenes": [
+   "校務・働き方",
+   "ICT活用"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "LP",
+   "スライド"
+  ],
+  "description": "大型ディスプレイ（電子黒板）で授業を準備する先生のフラットイラスト。画面は文字なしの色面。",
+  "howto": "ICT活用・授業準備の記事や研修資料、LPの挿絵に。",
+  "tags": [
+   "校務",
+   "ICT",
+   "電子黒板",
+   "大型ディスプレイ",
+   "授業準備",
+   "先生",
+   "研修",
+   "GIGA",
+   "働き方"
+  ],
+  "img": "img/koumu_denshikokuban_junbi.jpg",
+  "thumb": "img/koumu_denshikokuban_junbi_thumb.jpg",
+  "mono": "img/koumu_denshikokuban_junbi_mono.jpg"
+ },
+ {
+  "id": "koumu_tablet_nyuuryoku",
+  "title": "校務・タブレットで入力する先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "校務・デジタル化",
+  "scenes": [
+   "校務・働き方",
+   "ICT活用",
+   "業務改善"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "LP",
+   "note見出し"
+  ],
+  "description": "職員室の机でタブレットに入力する先生のフラットイラスト。画面は文字なし。",
+  "howto": "出欠・記録のデジタル化、校務の効率化の記事や研修に。",
+  "tags": [
+   "校務",
+   "ICT",
+   "タブレット",
+   "入力",
+   "デジタル化",
+   "職員室",
+   "先生",
+   "働き方",
+   "業務改善"
+  ],
+  "img": "img/koumu_tablet_nyuuryoku.jpg",
+  "thumb": "img/koumu_tablet_nyuuryoku_thumb.jpg",
+  "mono": "img/koumu_tablet_nyuuryoku_mono.jpg"
+ },
+ {
+  "id": "koumu_online_kaigi",
+  "title": "校務・オンライン会議をする先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "校務・オンライン",
+  "scenes": [
+   "校務・働き方",
+   "ICT活用"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "LP",
+   "note見出し"
+  ],
+  "description": "ヘッドセットをつけてノートPCでオンライン会議をする先生のフラットイラスト。画面は文字なしの色面。",
+  "howto": "オンライン研修・遠隔の打ち合わせ、働き方の記事に。",
+  "tags": [
+   "校務",
+   "ICT",
+   "オンライン",
+   "会議",
+   "研修",
+   "ヘッドセット",
+   "ノートPC",
+   "リモート",
+   "先生",
+   "働き方"
+  ],
+  "img": "img/koumu_online_kaigi.jpg",
+  "thumb": "img/koumu_online_kaigi_thumb.jpg",
+  "mono": "img/koumu_online_kaigi_mono.jpg"
+ },
+ {
+  "id": "koumu_shorui_seiri",
+  "title": "校務・書類やファイルを整理する先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "校務・整理",
+  "scenes": [
+   "校務・働き方",
+   "業務改善"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "before/after"
+  ],
+  "description": "棚でバインダーやファイルを整理する先生のフラットイラスト。背表紙は文字なし。",
+  "howto": "書類整理・ペーパーレス化・働き方の記事や研修に。",
+  "tags": [
+   "校務",
+   "ファイル",
+   "バインダー",
+   "書類",
+   "整理",
+   "ペーパーレス",
+   "棚",
+   "先生",
+   "働き方",
+   "業務改善"
+  ],
+  "img": "img/koumu_shorui_seiri.jpg",
+  "thumb": "img/koumu_shorui_seiri_thumb.jpg",
+  "mono": "img/koumu_shorui_seiri_mono.jpg"
+ },
+ {
+  "id": "koumu_futari_uchiawase",
+  "title": "校務・二人でタブレットを見て打ち合わせ",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "校務・打ち合わせ",
+  "scenes": [
+   "校務・働き方",
+   "ICT活用",
+   "協働"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "LP"
+  ],
+  "description": "タブレットを一緒に見ながら打ち合わせる先生二人のフラットイラスト。画面は文字なし。",
+  "howto": "学年会・打ち合わせ・協働の場面、研修やLPの挿絵に。",
+  "tags": [
+   "校務",
+   "ICT",
+   "打ち合わせ",
+   "学年会",
+   "協働",
+   "タブレット",
+   "先生",
+   "相談",
+   "働き方"
+  ],
+  "img": "img/koumu_futari_uchiawase.jpg",
+  "thumb": "img/koumu_futari_uchiawase_thumb.jpg",
+  "mono": "img/koumu_futari_uchiawase_mono.jpg"
+ },
+ {
+  "id": "koumu_insatsu_copier",
+  "title": "校務・印刷機でプリントを刷る先生",
+  "author": "riko",
+  "type": "illust",
+  "subject": "校務・ICT",
+  "grade": "全学年",
+  "unit": "校務・印刷",
+  "scenes": [
+   "校務・働き方"
+  ],
+  "uses": [
+   "記事挿絵",
+   "研修資料",
+   "before/after"
+  ],
+  "description": "複合機（コピー機）で刷り上がった紙を取る先生のフラットイラスト。操作面は文字なし。",
+  "howto": "印刷・準備の負担、働き方や業務改善の記事に。",
+  "tags": [
+   "校務",
+   "印刷",
+   "コピー機",
+   "複合機",
+   "プリント",
+   "準備",
+   "先生",
+   "働き方",
+   "業務改善"
+  ],
+  "img": "img/koumu_insatsu_copier.jpg",
+  "thumb": "img/koumu_insatsu_copier_thumb.jpg",
+  "mono": "img/koumu_insatsu_copier_mono.jpg"
  }
 ];
