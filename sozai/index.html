@@ -159,6 +159,15 @@
   .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
   .foot-map a:hover { color:#fff; text-decoration:underline; }
   .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+  .photolane { display:flex; align-items:center; gap:16px; border:2px solid #9e3b45; background:#fdf7f7; padding:16px 20px; margin:6px 0 18px; color:var(--ink); }
+  .photolane:hover { background:#fbf1f1; }
+  .pl-badge { flex:none; font-size:10.5px; font-weight:700; letter-spacing:0.12em; color:#fff; background:#9e3b45; padding:4px 9px; }
+  .pl-body { flex:1; }
+  .pl-body b { display:block; font-size:16px; margin-bottom:4px; }
+  .pl-body small { display:block; font-size:12.5px; color:#3d4148; line-height:1.8; }
+  .pl-body em { font-style:normal; color:#9e3b45; font-weight:700; }
+  .pl-go { flex:none; font-size:13px; font-weight:700; color:#9e3b45; white-space:nowrap; }
+  @media (max-width:600px){ .photolane { flex-wrap:wrap; } }
 </style>
 </head>
 <body>
@@ -220,6 +229,15 @@
     <p class="lead">スライド・プリント・学級通信にそのまま使える、授業のイラストと写真。カラーと白黒（イラスト）を選べて、すべて無料です。</p>
     <div class="meta"><b id="mcount">0</b>点／全教科・行事へ順次追加</div>
   </div>
+
+  <a class="photolane" href="photo/">
+    <span class="pl-badge">NEW</span>
+    <span class="pl-body">
+      <b>AIでつくった写真素材（99枚）</b>
+      <small>無人の教室・理科の観察対象・社会の産業や地域の風景。使ったプロンプトも全部のせています。<br><em>※すべてAdobe Fireflyで作った画像です。本物の写真ではありません。</em></small>
+    </span>
+    <span class="pl-go">見る →</span>
+  </a>
 
   <div class="layout">
     <aside class="side">

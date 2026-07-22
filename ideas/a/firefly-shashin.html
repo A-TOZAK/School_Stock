@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIに写真をたのむときの、たった4つの言い方 ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="Adobe Fireflyで作った19枚の作例と、そのプロンプト全文。「何が・どこで・どんな光で・どう撮ったか」の4つをそろえるだけで、AIの画像は急に写真らしくなります。うまくいかなかった1枚も、そのまま載せています。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:760px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.6vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  .ill { margin:24px 0 6px; }
+  .ill img { width:100%; height:auto; display:block; border:1px solid var(--line); border-radius:8px; background:#fbfbf9; }
+  .ill figcaption { font-size:12.5px; color:var(--sub); margin-top:9px; line-height:1.8; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:40px 0 14px; }
+  h3 { font-size:15px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.plain { list-style:none; margin:8px 0 16px; }
+  ul.plain li { position:relative; padding:2px 0 10px 20px; font-size:14.5px; color:#24272c; }
+  ul.plain li::before { content:""; position:absolute; left:2px; top:15px; width:6px; height:6px; background:var(--accent); border-radius:50%; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:1.9; }
+  .tip b { color:var(--accent); }
+  .warn { background:#fbf6f6; border:1px solid #e3cfd1; border-left:4px solid #9e3b45; padding:14px 18px; margin:16px 0; font-size:13.5px; line-height:1.9; }
+  .warn b { color:#9e3b45; }
+  .prompt { border:1px solid var(--ink); margin:16px 0 26px; background:#fff; }
+  .prompt-head { display:flex; justify-content:space-between; align-items:center; gap:12px; background:var(--wash); border-bottom:1px solid var(--ink); padding:10px 14px; }
+  .pnum { font-size:13.5px; font-weight:700; }
+  .copy { font-family:inherit; font-size:12px; font-weight:700; color:#fff; background:var(--black); border:none; padding:7px 15px; cursor:pointer; white-space:nowrap; transition:background .15s; }
+  .copy:hover, .copy.done { background:var(--accent); }
+  .prompt pre { margin:0; padding:16px; font-family:"SFMono-Regular",Menlo,Consolas,"Hiragino Sans","Noto Sans JP",monospace; font-size:12.5px; line-height:1.9; white-space:pre-wrap; word-break:break-word; color:#1a1d21; }
+  .prompt .note { font-size:12px; color:var(--sub); padding:0 16px 14px; line-height:1.8; }
+  table.four { width:100%; border-collapse:collapse; margin:16px 0 24px; font-size:14px; }
+  table.four th, table.four td { border:1px solid var(--line); padding:10px 12px; text-align:left; vertical-align:top; line-height:1.8; }
+  table.four th { background:var(--wash); font-weight:700; white-space:nowrap; }
+  /* 作例 */
+  .work { border:1px solid var(--line); margin:26px 0; background:#fff; }
+  .work.miss { border-color:#e3cfd1; }
+  .work img { width:100%; height:auto; display:block; border-bottom:1px solid var(--line); }
+  .work-b { padding:16px 18px 6px; }
+  .wn { display:inline-block; font-size:11px; font-weight:700; color:#fff; background:var(--black); padding:2px 10px; margin-bottom:10px; }
+  .work.miss .wn { background:#9e3b45; }
+  .work h3 { font-size:16px; margin:0 0 8px; }
+  .work p { font-size:13.5px; color:#3d4148; margin-bottom:12px; }
+  .work .prompt { margin:0 0 16px; border-left:none; border-right:none; border-bottom:none; }
+  .work .prompt-head { border-top:1px solid var(--line); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .back:hover { background:var(--wash); }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+  @media (max-width:520px){ .prompt pre { font-size:12px; } }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア村</a> ／ ひらめき広場</div>
+
+  <span class="kicker">実践アイデア｜画像生成 × Adobe Firefly</span>
+  <h1>AIに写真をたのむときの、<br>たった4つの言い方</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 使うもの：Adobe Firefly（Image 5）／ 作例19枚・プロンプト全文つき</p>
+
+  <p class="lead">AIで画像を作ってみたけれど、なんだかチープなものしか出てこない。そんな話をよく聞きます。だいたいの場合、原因はAIの性能ではなく、たのみ方のほうにあります。</p>
+
+  <p>ある日、Adobe Fireflyで思いつくままに19枚を作ってみました。結果は18枚が「これは使える」、1枚が失敗。あとから並べてみると、当たった18枚のたのみ方は、驚くほど同じ形をしていました。</p>
+
+  <p>ここでは、その形を4つの言い方として置いておきます。作例は19枚とも、実際に投げた言葉をそのまま載せました。失敗した1枚も隠さず載せています。うまくいかなかった理由のほうが、たぶん役に立つからです。</p>
+
+  <figure class="ill">
+    <img src="firefly-shashin-img/11-yukizaru-kotatsu.jpg" alt="雪の中、露天風呂のそばに置かれたこたつを囲むニホンザルたち。天板にはみかん。">
+    <figcaption>「雪ザルがこたつでみかん」。1回目でこれが出ます。特別なことは何もしていません。</figcaption>
+  </figure>
+
+  <h2>4つの言い方</h2>
+  <p>言うのはこれだけです。順番もこのままで大丈夫です。</p>
+
+  <table class="four">
+    <tr><th>① 何が</th><td>主役と、その主役が<b>今している動き</b>。「カピバラ」ではなく「丸メガネをかけて実験をしているカピバラ」。</td></tr>
+    <tr><th>② どこで</th><td>場所を具体的に。「学校」ではなく「古い理科室」。日本の場所なら日本と書く。</td></tr>
+    <tr><th>③ どんな光で</th><td>時間帯と光。「午後のやわらかい日ざし」「夜の蛍光灯」「朝もや」。ここが写真らしさをいちばん左右します。</td></tr>
+    <tr><th>④ どう撮ったか</th><td>写真の種類。「ドキュメンタリー写真」「スポーツ写真」「望遠で」「料理の接写で」。カメラマンへの指示だと思えば当たります。</td></tr>
+  </table>
+
+  <div class="tip"><b>ここが効きます：</b>いちばん差が出るのは③と④です。①と②だけだと、よくある「AIっぽい絵」で止まります。③と④を足したとたん、写真の顔になります。</div>
+
+  <h2>コピペするテンプレート</h2>
+  <p>[　] のところを自分の思いつきに入れかえて、Fireflyのプロンプト欄に貼ってください。日本語でも通じますが、英語のほうが指示どおりに出やすいので、英語版も置いておきます。</p>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum">① 日本語版（そのまま貼れます）</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>[主役]が[している動き]、場所は[具体的な場所]、[時間帯と光のようす]、[写真の種類]で撮った写真</pre>
+    <p class="note">例：ハリネズミが寿司をにぎっている、場所は小さな木のカウンター、あたたかい提灯の光、料理の接写で撮った写真</p>
+  </div>
+
+  <div class="prompt">
+    <div class="prompt-head">
+      <span class="pnum">② 英語版（当たりやすい）</span>
+      <button class="copy" onclick="copyPrompt(this)">コピー</button>
+    </div>
+    <pre>[主役 and what it is doing], [where, be specific], [time of day and light], photorealistic [type of photography]</pre>
+    <p class="note">英語が不安なら、日本語で書いた文をそのままAIに「英語の画像生成プロンプトにして」と頼めば十分です。</p>
+  </div>
+
+  <h2>作例19枚</h2>
+  <p>すべてAdobe FireflyのImage 5で、1枚につき1回だけ。描き直しはしていません。プロンプトはコピーして、そのまま試せます。</p>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/01-rikashitsu-capybara.jpg" alt="古い理科室で、丸メガネをかけたカピバラがフラスコをのぞきこんでいる写真">
+    <div class="work-b">
+      <span class="wn">01</span>
+      <h3>理科室のカピバラ</h3>
+      <p>「ほこりの舞う窓からの午後の光」を足したところで、いっきに写真になりました。動物ものの入口としていちばん確実です。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A capybara wearing tiny round glasses conducting a chemistry experiment with bubbling beakers in an old Japanese school science lab, photorealistic documentary photo, warm afternoon sunlight through dusty windows</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/02-manindensha-penguin.jpg" alt="満員の通勤電車で、スーツを着たペンギンたちが吊り革につかまっている写真">
+    <div class="work-b">
+      <span class="wn">02</span>
+      <h3>満員電車のペンギン</h3>
+      <p>「1羽だけ新聞を読んでいる」と足しています。全員に同じ動きをさせず、ひとりだけ違うことをさせると、とたんに物語が出ます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A crowded Tokyo commuter train at rush hour, packed with emperor penguins in business suits holding hanging straps, one reading a newspaper, photorealistic street photography, harsh fluorescent light</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/03-sento-uchuhikoushi.jpg" alt="銭湯の湯船につかる宇宙飛行士。ヘルメットが湯気で曇り、背景に富士山のタイル絵がある写真">
+    <div class="work-b">
+      <span class="wn">03</span>
+      <h3>銭湯の宇宙飛行士</h3>
+      <p>「ヘルメットが湯気で曇っている」の一言が効いています。細かい状態をひとつ指定すると、絵ににおいが出ます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>An astronaut in a full space suit relaxing chest-deep in a traditional Japanese sento bath, helmet fogged up, steam rising, tiled mural of Mount Fuji behind, photorealistic, cinematic warm light</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/04-shinkai-ramen.jpg" alt="深海の熱水噴出孔のそばで、青く光る提灯をさげたラーメン屋台に魚が集まっている写真">
+    <div class="work-b">
+      <span class="wn">04</span>
+      <h3>深海のラーメン屋台</h3>
+      <p>光源を「生き物の光」に指定すると、色が全部そこに引っぱられます。暗い場所ほど、光の出どころを決めるのが大事です。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A tiny ramen stall glowing on the deep sea floor next to a hydrothermal vent, anglerfish customers sitting on stools, bioluminescent lanterns, photorealistic underwater cinematography</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/05-dagashiya-shiba.jpg" alt="昭和の駄菓子屋の帳場で、前掛けをした柴犬が店番をしている写真">
+    <div class="work-b">
+      <span class="wn">05</span>
+      <h3>駄菓子屋の柴犬</h3>
+      <p>「昭和の」と時代を入れると、棚も瓶も照明も一式そろいます。時代の指定は、小物をまとめて呼ぶ合図になります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A shiba inu minding the counter of an old Showa era Japanese penny candy shop, wearing a shop apron, surrounded by glass jars and colorful sweets, evening light, photorealistic documentary photo</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/06-tsunahiki-namakemono.jpg" alt="運動会の校庭で、ハチマキをしたナマケモノたちが綱引きをしている写真">
+    <div class="work-b">
+      <span class="wn">06</span>
+      <h3>綱引きのナマケモノ</h3>
+      <p>「スポーツ写真」と「砂ぼこり」を入れています。撮り方の言葉は、構図と空気の両方を連れてきます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A team of sloths in headbands playing tug of war on a dusty school sports day field, cheering crowd blurred behind, photorealistic sports photography, dust in the air, golden hour</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/07-toshokan-tako.jpg" alt="古い図書館で、8本の腕にそれぞれ本を持ったタコが眼鏡をかけている写真">
+    <div class="work-b">
+      <span class="wn">07</span>
+      <h3>図書館のタコ</h3>
+      <p>数を8と決めて、腕の役割まで書いています。数が意味を持つときは、数字で言い切ったほうが通ります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>An octopus working as a librarian, holding eight different open books with its arms at once, wearing small reading glasses, in a dim old library full of wooden shelves, photorealistic, soft window light</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/08-shotengai-mikeneko.jpg" alt="商店街の屋根の上で巨大な三毛猫が眠り、その下を人が普通に歩いている写真">
+    <div class="work-b">
+      <span class="wn">08</span>
+      <h3>商店街の巨大三毛猫</h3>
+      <p>「まわりの人は気づかずに通り過ぎている」と書くと、絵の中の世界では当たり前のこと、という顔になります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A gigantic calico cat curled up asleep across a quiet Japanese shopping street, ordinary commuters walking past without noticing, cables and shop signs, overcast morning, photorealistic wide shot</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/09-karasu-chorei.jpg" alt="夜明けの電線にカラスが整列し、一羽が小さな演台に立っている写真">
+    <div class="work-b">
+      <span class="wn">09</span>
+      <h3>カラスの朝礼</h3>
+      <p>「望遠で」を入れると、遠くの山も家も、いい具合につぶれてくれます。背景をぼかしたいときは撮り方で言います。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A morning assembly of crows lined up neatly on power lines at dawn, one older crow standing on a small wooden podium addressing them, misty Japanese suburb below, photorealistic telephoto shot</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/10-laundry-shirokuma.jpg" alt="深夜のコインランドリーで、洗濯機を見つめて座るシロクマの写真">
+    <div class="work-b">
+      <span class="wn">10</span>
+      <h3>深夜のコインランドリーのシロクマ</h3>
+      <p>青い蛍光灯と自販機の光だけを指定しています。光を2つに絞ると、写真の色が決まります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A polar bear sitting alone in a late night Japanese laundromat, watching the washing machine spin, vending machine glow, empty plastic chairs, photorealistic cinematic night photography</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/11-yukizaru-kotatsu.jpg" alt="雪の中、露天風呂のそばのこたつを囲むニホンザルたち。天板にみかんがのっている写真">
+    <div class="work-b">
+      <span class="wn">11</span>
+      <h3>雪ザルのこたつ</h3>
+      <p>「天板にみかん」まで書いています。日本の人ならみんな知っている小物をひとつ足すと、絵が急に自分ごとになります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>Japanese snow monkeys sitting around a kotatsu table set up in the snow beside a steaming hot spring, blankets over their laps, mandarin oranges on top, heavy snowfall, photorealistic</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/12-harinezumi-sushi.jpg" alt="白いハチマキをしたハリネズミが、木のカウンターで握り寿司を並べている写真">
+    <div class="work-b">
+      <span class="wn">12</span>
+      <h3>ハリネズミの寿司職人</h3>
+      <p>「料理の接写で」と言うと、寿司のほうにピントと照明が寄ります。見せたいものが小さいときに使えます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A hedgehog working as a sushi chef behind a tiny wooden counter, wearing a white headband, tiny nigiri lined up on a lacquer tray, warm lantern light, photorealistic macro food photography</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/13-tanbo-jihanki.jpg" alt="夜の田んぼの真ん中で、自動販売機だけが光り、水面に映っている写真">
+    <div class="work-b">
+      <span class="wn">13</span>
+      <h3>田んぼの自販機</h3>
+      <p>動物も人も出てきません。「ひとつだけ光っている」という状況だけで1枚になります。引き算でも作れます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A single vending machine glowing alone in the middle of a vast dark rice paddy at night, its light reflecting in the water, distant mountains, stars above, photorealistic long exposure</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/14-kaeru-gassho.jpg" alt="朝もやの池で、ハスの葉に並んだカエルたちが口を開け、石の上の一匹が枝を振っている写真">
+    <div class="work-b">
+      <span class="wn">14</span>
+      <h3>カエルの合唱団</h3>
+      <p>指揮者を1匹だけ別の場所に立たせています。役割の違う1匹をつくると、集団の絵に中心ができます。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A choir of green tree frogs standing in neat rows on lily pads, mouths open singing, a conductor frog with a twig baton on a stone, morning mist over the pond, photorealistic wildlife photography</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/15-rouka-penguin.jpg" alt="放課後の学校の廊下を、ペンギンたちが腹ばいで滑っている写真">
+    <div class="work-b">
+      <span class="wn">15</span>
+      <h3>廊下を滑るペンギン</h3>
+      <p>「低い位置から」と「まわりが流れて写る」を指定しています。動きを出したいときは、カメラの高さとぶれで言います。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>Penguins belly sliding down a polished empty Japanese school corridor after hours, lockers and windows blurred with motion, low angle action shot, photorealistic, late afternoon light</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/16-sora-kingyo.jpg" alt="夕暮れの路地の上を、巨大な金魚が空中を泳いでいる写真">
+    <div class="work-b">
+      <span class="wn">16</span>
+      <h3>空を泳ぐ金魚</h3>
+      <p>ありえない絵ですが、下に洗濯物と提灯という現実を置いています。ふしぎな絵ほど、地面のほうを現実にします。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>Giant goldfish swimming slowly through the air above a narrow old Japanese alley at dusk, their fins rippling, laundry hanging below, warm lanterns, photorealistic magical realism</pre>
+    </div>
+  </div>
+
+  <div class="work miss">
+    <img loading="lazy" src="firefly-shashin-img/17-uku-kyoshitsu.jpg" alt="日ざしの入る誰もいない教室。机と椅子は床に置かれたままで、浮いてはいない写真">
+    <div class="work-b">
+      <span class="wn">17　うまくいかなかった1枚</span>
+      <h3>浮かぶ教室</h3>
+      <p>「机と椅子が全部1メートル浮いている」と書きましたが、机は床に置かれたままでした。無人の教室としてはきれいなので、失敗と気づかず使ってしまいそうな1枚です。</p>
+      <p>ここから分かることがひとつあります。<b>ありえない状態は、たくさん並べると素直に描いてくれません。</b>やるなら、浮かせるのは椅子1脚だけ、のように的をひとつに絞ります。指示が通ったかどうかは、必ず自分の目で確かめたほうがいいという話でもあります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト（通らなかったもの）</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>An empty Japanese classroom where every desk and chair floats silently one meter above the floor, chalk dust suspended in the sunbeams, nobody there, photorealistic, quiet uncanny atmosphere</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/18-unkai-piano.jpg" alt="朝焼けの雲海の上、岩の山頂に置かれたグランドピアノと風に散る楽譜の写真">
+    <div class="work-b">
+      <span class="wn">18</span>
+      <h3>雲海のピアノ</h3>
+      <p>「人は写さない」と書いています。人を出さないと決めるだけで、風景写真の顔になります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A lone grand piano standing on a rocky mountain summit above a sea of clouds at sunrise, sheet music scattered by wind, no people, photorealistic wide landscape photography</pre>
+    </div>
+  </div>
+
+  <div class="work">
+    <img loading="lazy" src="firefly-shashin-img/19-rokuro-gorilla.jpg" alt="日の差す工房で、前掛けをしたゴリラがろくろで小さな壺を作っている写真">
+    <div class="work-b">
+      <span class="wn">19</span>
+      <h3>ろくろを回すゴリラ</h3>
+      <p>「大きな手なのに、さわり方はていねい」と書きました。ちぐはぐな2つを並べると、表情のある1枚になります。</p>
+    </div>
+    <div class="prompt">
+      <div class="prompt-head"><span class="pnum">プロンプト</span><button class="copy" onclick="copyPrompt(this)">コピー</button></div>
+      <pre>A gorilla in a clay stained apron carefully throwing a small pot on a potter's wheel, huge hands and delicate touch, dusty sunlit workshop, photorealistic documentary portrait</pre>
+    </div>
+  </div>
+
+  <h2>19枚でわかったこと</h2>
+  <ul class="plain">
+    <li><b>動物と、日本の見なれた場所の組み合わせは、ほとんど外しません。</b>電車、銭湯、駄菓子屋、廊下、田んぼ。見なれた場所ほど、ずれがおもしろくなります。</li>
+    <li><b>光の言葉をけちらない。</b>午後の日ざし、夜の蛍光灯、朝もや、逆光。ここを書かないと、のっぺりした絵になります。</li>
+    <li><b>撮り方をひとつ足す。</b>ドキュメンタリー、スポーツ、望遠、接写、長時間露光。カメラマンにたのむつもりで書きます。</li>
+    <li><b>集団を描くなら、1匹だけ違うことをさせる。</b>新聞を読むペンギン、演台に立つカラス、タクトを振るカエル。それだけで物語が立ちます。</li>
+    <li><b>ありえない状態は、ひとつまで。</b>17番の失敗がそれです。</li>
+  </ul>
+
+  <div class="warn">
+    <b>気をつけたいこと：</b>実在の人の顔や、勤務先の学校が分かるものを作らせない。子どもの写真をもとにしない。学校の中の話をプロンプトに書かない。作った画像をどこかに出すときは、AIで作ったものだと分かるようにしておくと安全です。Fireflyで作った画像の使いみちについては、Adobeの公式の説明を確認してください。
+  </div>
+
+  <a class="back" href="../">← 実践アイデア村にもどる</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ 画像生成 × Adobe Firefly
+  </div>
+</footer>
+
+<script>
+function copyPrompt(btn){
+  var pre = btn.closest('.prompt').querySelector('pre');
+  var text = pre.innerText;
+  var flash = function(){
+    if(btn.classList.contains('done')) return;
+    var old = btn.textContent;
+    btn.textContent = 'コピーしました ✓';
+    btn.classList.add('done');
+    setTimeout(function(){ btn.textContent = old; btn.classList.remove('done'); }, 1600);
+  };
+  if(navigator.clipboard && navigator.clipboard.writeText){
+    navigator.clipboard.writeText(text).then(flash, function(){ legacyCopy(text); flash(); });
+  } else { legacyCopy(text); flash(); }
+}
+function legacyCopy(text){
+  var ta = document.createElement('textarea');
+  ta.value = text; ta.setAttribute('readonly','');
+  ta.style.position = 'absolute'; ta.style.left = '-9999px';
+  document.body.appendChild(ta); ta.select();
+  try { document.execCommand('copy'); } catch(e){}
+  document.body.removeChild(ta);
+}
+</script>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>

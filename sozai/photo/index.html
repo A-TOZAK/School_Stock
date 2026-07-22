@@ -1,0 +1,1580 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AIでつくった写真素材 ── 授業素材ライブラリ｜School Stock</title>
+<meta name="description" content="Adobe Fireflyで作った、授業やおたよりに使える写真素材。無人の教室、理科の観察対象、社会の産業や地域の風景など。使ったプロンプトも全部載せています。AIが作った画像なので、事実の記録としては使えません。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --warn:#9e3b45; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:1080px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .nav a:hover { color:#fff; }
+  .container { max-width:1080px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .head { padding:22px 0 6px; }
+  .kicker { display:block; font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); margin-bottom:8px; }
+  h1 { font-size:clamp(24px,4.4vw,34px); font-weight:700; line-height:1.35; margin-bottom:10px; }
+  .lead { font-size:14.5px; color:#3d4148; max-width:660px; }
+
+  /* ▼ 大きく出す注意書き */
+  .alert { border:3px solid var(--warn); background:#fdf7f7; margin:26px 0 30px; }
+  .alert-h { background:var(--warn); color:#fff; padding:14px 22px; display:flex; align-items:center; gap:12px; }
+  .alert-h svg { width:26px; height:26px; flex:none; }
+  .alert-h b { font-size:clamp(17px,3vw,22px); font-weight:700; letter-spacing:0.03em; line-height:1.4; }
+  .alert-b { padding:22px 24px 24px; }
+  .alert-b .big { font-size:clamp(16px,2.6vw,19px); font-weight:700; line-height:1.75; margin-bottom:14px; }
+  .alert-b p { font-size:14.5px; color:#2c3035; margin-bottom:14px; }
+  .alert-b ol { list-style:none; counter-reset:w; margin:8px 0 16px; }
+  .alert-b ol li { counter-increment:w; position:relative; padding:10px 0 10px 44px; font-size:14.5px; line-height:1.85; border-top:1px solid #e8d7d9; }
+  .alert-b ol li::before { content:counter(w); position:absolute; left:0; top:12px; width:28px; height:28px; background:var(--warn); color:#fff; border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:14px; font-weight:700; }
+  .alert-b ol li b { color:var(--warn); }
+  .alert-b .fit { background:#fff; border:1px solid #e8d7d9; padding:14px 18px; font-size:14px; line-height:1.85; }
+
+  .bar { display:flex; flex-wrap:wrap; gap:8px; align-items:center; padding:8px 0 4px; position:sticky; top:47px; background:rgba(255,255,255,0.96); backdrop-filter:blur(6px); z-index:5; }
+  .search { flex:1; min-width:200px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .fb { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 13px; cursor:pointer; }
+  .fb small { font-weight:400; color:var(--sub); margin-left:6px; }
+  .fb.on { background:var(--black); color:#fff; } .fb.on small { color:#b9bcc2; }
+  .count { font-size:13px; color:var(--sub); margin:10px 0 16px; }
+  .count b { color:var(--ink); }
+
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; background:#fff; }
+  .card:hover { border-color:var(--ink); }
+  .thumb { display:block; line-height:0; border-bottom:1px solid var(--line); }
+  .thumb img { width:100%; height:auto; display:block; }
+  .cb { padding:14px 16px 6px; flex:1; }
+  .cat { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.1em; color:#fff; background:var(--black); padding:3px 9px; margin-bottom:9px; }
+  .card h3 { font-size:15.5px; font-weight:700; line-height:1.5; margin-bottom:4px; }
+  .use { font-size:12.5px; color:var(--sub); margin-bottom:10px; }
+  .pr summary { font-size:12.5px; font-weight:700; color:var(--accent); cursor:pointer; padding:6px 0; list-style:none; }
+  .pr summary::-webkit-details-marker { display:none; }
+  .pr summary::before { content:"＋ "; }
+  .pr[open] summary::before { content:"− "; }
+  .pr pre { margin:6px 0 8px; padding:11px 12px; background:var(--wash); border:1px solid var(--line); font-family:"SFMono-Regular",Menlo,Consolas,monospace; font-size:11.5px; line-height:1.8; white-space:pre-wrap; word-break:break-word; color:#1a1d21; }
+  .copy { font-family:inherit; font-size:11.5px; font-weight:700; color:#fff; background:var(--black); border:none; padding:6px 12px; cursor:pointer; margin-bottom:8px; }
+  .copy:hover, .copy.done { background:var(--accent); }
+  .cf { display:flex; align-items:center; justify-content:space-between; gap:10px; border-top:1px solid var(--line); padding:10px 16px; }
+  .ai { font-size:10.5px; color:var(--warn); font-weight:700; line-height:1.5; }
+  .dl { font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 12px; white-space:nowrap; }
+  .empty { display:none; padding:30px 4px; color:var(--sub); }
+
+  .howto { border:1px solid var(--line); background:var(--wash); padding:20px 22px; margin:40px 0 0; }
+  .howto h2 { font-size:17px; font-weight:700; margin-bottom:10px; }
+  .howto p { font-size:14px; color:#3d4148; margin-bottom:10px; }
+  .howto table { width:100%; border-collapse:collapse; font-size:13.5px; margin:12px 0 4px; background:#fff; }
+  .howto th, .howto td { border:1px solid var(--line); padding:9px 11px; text-align:left; vertical-align:top; line-height:1.75; }
+  .howto th { background:var(--wash); white-space:nowrap; font-weight:700; }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:1080px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← 素材ライブラリにもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">授業素材ライブラリ</a> ／ AIでつくった写真素材</div>
+
+  <div class="head">
+    <span class="kicker">PHOTO / ADOBE FIREFLY</span>
+    <h1>AIでつくった写真素材</h1>
+    <p class="lead">無人の教室や廊下、理科の観察対象、社会の産業や地域の風景など、あわせて99枚。授業スライド・プリント・学級通信・掲示にそのまま使えます。使ったプロンプトも全部載せているので、自分で作り直すこともできます。</p>
+  </div>
+
+  <div class="alert">
+    <div class="alert-h">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 9v4"/><path d="M12 17h.01"/><path d="M10.3 3.9 1.8 18a2 2 0 0 0 1.7 3h17a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0z"/></svg>
+      <b>本物の写真ではありません。AIが作った画像です。</b>
+    </div>
+    <div class="alert-b">
+      <p class="big">見た目は写真そのものですが、実在の場所・建物・人・ものではありません。AIが「それらしく」描いたものです。</p>
+      <p>そのまま出すと、本物だと思われます。使うときは、次の3つだけ気をつけてください。</p>
+      <ol>
+        <li><b>事実の記録としては使わない。</b>「これが◯◯です」と、資料や証拠のように示す場面には向きません。</li>
+        <li><b>細かいところが実物とちがうことがあります。</b>器具の形、植物の姿、地域の風景など、正確さが要るところは、実物か公的な資料で確かめてください。</li>
+        <li><b>子どもに見せるときは、AIが作った画像だと伝える。</b>そのひとことが、そのまま情報の学習になります。</li>
+      </ol>
+      <p class="fit"><b>向いているのは</b>、導入のつかみ、掲示、プリントの雰囲気づくりです。<b>観察や見学の代わりにはなりません。</b>利用できる範囲については、Adobeの案内をご確認ください。</p>
+    </div>
+  </div>
+
+  <div class="bar">
+    <input class="search" id="q" type="search" placeholder="キーワードで探す（例：教室、水田、実験）">
+    <button class="fb on" data-c="">すべて<small>99</small></button>
+<button class="fb" data-c="理科">理科<small>32</small></button>
+<button class="fb" data-c="社会">社会<small>25</small></button>
+<button class="fb" data-c="学校">学校<small>24</small></button>
+<button class="fb" data-c="季節・行事">季節・行事<small>7</small></button>
+<button class="fb" data-c="情景">情景<small>3</small></button>
+<button class="fb" data-c="図工">図工<small>2</small></button>
+<button class="fb" data-c="算数">算数<small>2</small></button>
+<button class="fb" data-c="研修・LP">研修・LP<small>4</small></button>
+  </div>
+  <p class="count"><b id="n">99</b> 枚を表示中</p>
+
+  <div class="grid" id="g">
+<article class="card" data-c="理科" data-k="モンシロチョウの幼虫 3年 こん虫のかんさつ 理科">
+  <a class="thumb" href="img/rika_monshiro-yochu.jpg" download><img loading="lazy" src="img/rika_monshiro-yochu.jpg" alt="モンシロチョウの幼虫"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>モンシロチョウの幼虫</h3>
+    <p class="use">3年 こん虫のかんさつ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A cabbage white butterfly caterpillar eating a cabbage leaf, close macro photography, soft daylight, shallow depth of field, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_monshiro-yochu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="ヒマワリの発芽 3年 植物のつくりと育ち 理科">
+  <a class="thumb" href="img/rika_himawari-hatsuga.jpg" download><img loading="lazy" src="img/rika_himawari-hatsuga.jpg" alt="ヒマワリの発芽"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>ヒマワリの発芽</h3>
+    <p class="use">3年 植物のつくりと育ち</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Sunflower seedlings sprouting in dark soil, cotyledons and first true leaves, close macro photography, bright morning light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_himawari-hatsuga.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="積乱雲 5年 天気の変化 理科">
+  <a class="thumb" href="img/rika_sekiranun.jpg" download><img loading="lazy" src="img/rika_sekiranun.jpg" alt="積乱雲"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>積乱雲</h3>
+    <p class="use">5年 天気の変化</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A towering cumulonimbus cloud rising over a summer sky above a rural Japanese landscape, wide angle photography, strong midday sunlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_sekiranun.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="半月 4年 月と星 理科">
+  <a class="thumb" href="img/rika_hangetsu.jpg" download><img loading="lazy" src="img/rika_hangetsu.jpg" alt="半月"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>半月</h3>
+    <p class="use">4年 月と星</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A clear half moon in a deep blue night sky, telephoto astronomy photography, sharp craters visible, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_hangetsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="鉄棒の影（夕方） 3年 太陽とかげ 理科">
+  <a class="thumb" href="img/rika_tetsubo-kage.jpg" download><img loading="lazy" src="img/rika_tetsubo-kage.jpg" alt="鉄棒の影（夕方）"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>鉄棒の影（夕方）</h3>
+    <p class="use">3年 太陽とかげ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Long shadows of a horizontal bar cast on a bare school ground in late afternoon, low sun, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_tetsubo-kage.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="砂鉄でみる磁力線 3年 じしゃくのふしぎ 理科">
+  <a class="thumb" href="img/rika_sates-jiryokusen.jpg" download><img loading="lazy" src="img/rika_sates-jiryokusen.jpg" alt="砂鉄でみる磁力線"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>砂鉄でみる磁力線</h3>
+    <p class="use">3年 じしゃくのふしぎ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Iron sand forming magnetic field lines around a bar magnet on white paper, top down macro photography, even soft light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_sates-jiryokusen.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="豆電球の回路 3年 明かりをつけよう 理科">
+  <a class="thumb" href="img/rika_mamedenkyu-kairo.jpg" download><img loading="lazy" src="img/rika_mamedenkyu-kairo.jpg" alt="豆電球の回路"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>豆電球の回路</h3>
+    <p class="use">3年 明かりをつけよう</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A simple circuit of a dry cell battery, wires and a lit miniature light bulb on a wooden desk, close product photography, soft even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_mamedenkyu-kairo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="アゲハと花 3年 こん虫のかんさつ 理科">
+  <a class="thumb" href="img/rika_ageha.jpg" download><img loading="lazy" src="img/rika_ageha.jpg" alt="アゲハと花"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>アゲハと花</h3>
+    <p class="use">3年 こん虫のかんさつ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A swallowtail butterfly resting on a summer flower, wings open, close wildlife macro photography, soft morning light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_ageha.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="ヘチマの花とつる 4年 季節と生き物 理科">
+  <a class="thumb" href="img/rika_hechima.jpg" download><img loading="lazy" src="img/rika_hechima.jpg" alt="ヘチマの花とつる"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>ヘチマの花とつる</h3>
+    <p class="use">4年 季節と生き物</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A loofah gourd vine with yellow flowers climbing a green net, close nature photography, bright summer daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_hechima.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="雨あがりの水たまり 4年 天気と気温 理科">
+  <a class="thumb" href="img/rika_mizutamari.jpg" download><img loading="lazy" src="img/rika_mizutamari.jpg" alt="雨あがりの水たまり"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>雨あがりの水たまり</h3>
+    <p class="use">4年 天気と気温</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A puddle on asphalt after rain reflecting a blue sky with white clouds, close ground level photography, bright daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_mizutamari.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="葉脈（逆光） 4年 植物のからだ 理科">
+  <a class="thumb" href="img/rika_yomyaku.jpg" download><img loading="lazy" src="img/rika_yomyaku.jpg" alt="葉脈（逆光）"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>葉脈（逆光）</h3>
+    <p class="use">4年 植物のからだ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A close up of a green leaf held against the light showing its veins clearly, macro photography, soft backlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_yomyaku.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="水がふっとうする 4年 水のすがた 理科">
+  <a class="thumb" href="img/rika_futto.jpg" download><img loading="lazy" src="img/rika_futto.jpg" alt="水がふっとうする"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>水がふっとうする</h3>
+    <p class="use">4年 水のすがた</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A beaker of water boiling over a tripod and burner on a laboratory bench, steam and bubbles, close science photography, even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_futto.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="うろこ雲 5年 天気の変化 理科">
+  <a class="thumb" href="img/rika_urokogumo.jpg" download><img loading="lazy" src="img/rika_urokogumo.jpg" alt="うろこ雲"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>うろこ雲</h3>
+    <p class="use">5年 天気の変化</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Mackerel sky, rows of small white clouds spreading across a clear autumn sky, wide upward photography, crisp daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_urokogumo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="川の上流 5年 流れる水のはたらき 理科">
+  <a class="thumb" href="img/rika_kawa-joryu.jpg" download><img loading="lazy" src="img/rika_kawa-joryu.jpg" alt="川の上流"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>川の上流</h3>
+    <p class="use">5年 流れる水のはたらき</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A clear mountain stream in its upper course with large rounded boulders and fast water, wide nature photography, dappled sunlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kawa-joryu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="川の下流 5年 流れる水のはたらき 理科">
+  <a class="thumb" href="img/rika_kawa-karyu.jpg" download><img loading="lazy" src="img/rika_kawa-karyu.jpg" alt="川の下流"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>川の下流</h3>
+    <p class="use">5年 流れる水のはたらき</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A wide slow river in its lower course with sandbanks and gentle water, seen from above, wide nature photography, soft daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kawa-karyu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="地層 6年 大地のつくり 理科">
+  <a class="thumb" href="img/rika_chiso.jpg" download><img loading="lazy" src="img/rika_chiso.jpg" alt="地層"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>地層</h3>
+    <p class="use">6年 大地のつくり</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An exposed cliff face showing clear horizontal rock strata in different colours, wide geology photography, clear daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_chiso.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="顕微鏡 5年 実験器具 理科">
+  <a class="thumb" href="img/rika_kenbikyo.jpg" download><img loading="lazy" src="img/rika_kenbikyo.jpg" alt="顕微鏡"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>顕微鏡</h3>
+    <p class="use">5年 実験器具</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A classroom microscope on a wooden bench with a prepared slide beside it, close product photography, soft even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kenbikyo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="上皿てんびん 5年 実験器具 理科">
+  <a class="thumb" href="img/rika_tenbin.jpg" download><img loading="lazy" src="img/rika_tenbin.jpg" alt="上皿てんびん"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>上皿てんびん</h3>
+    <p class="use">5年 実験器具</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A simple beam balance with two brass pans and small weights on a table, close product photography, even soft light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_tenbin.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="試験管立て 6年 実験器具 理科">
+  <a class="thumb" href="img/rika_shikenkan.jpg" download><img loading="lazy" src="img/rika_shikenkan.jpg" alt="試験管立て"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>試験管立て</h3>
+    <p class="use">6年 実験器具</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A rack of test tubes filled with clear liquids beside a glass funnel on a laboratory bench, close science photography, even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_shikenkan.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="方位磁針 3年 太陽とかげ／じしゃく 理科">
+  <a class="thumb" href="img/rika_hoi-jishaku.jpg" download><img loading="lazy" src="img/rika_hoi-jishaku.jpg" alt="方位磁針"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>方位磁針</h3>
+    <p class="use">3年 太陽とかげ／じしゃく</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A hand held compass lying on a wooden table with its needle clearly pointing, close macro photography, soft daylight, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_hoi-jishaku.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="霜のついた落ち葉 4年 季節と生き物（冬） 理科">
+  <a class="thumb" href="img/rika_shimo.jpg" download><img loading="lazy" src="img/rika_shimo.jpg" alt="霜のついた落ち葉"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>霜のついた落ち葉</h3>
+    <p class="use">4年 季節と生き物（冬）</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Frost crystals forming on a fallen leaf on a cold morning, close macro photography, low winter sunlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_shimo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="星空と天の川 4年 月と星 理科">
+  <a class="thumb" href="img/rika_hoshizora.jpg" download><img loading="lazy" src="img/rika_hoshizora.jpg" alt="星空と天の川"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>星空と天の川</h3>
+    <p class="use">4年 月と星</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A star filled night sky above dark mountain silhouettes, the Milky Way clearly visible, long exposure astronomy photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_hoshizora.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="路面をたたく雨 4年 天気と気温 理科">
+  <a class="thumb" href="img/rika_oame.jpg" download><img loading="lazy" src="img/rika_oame.jpg" alt="路面をたたく雨"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>路面をたたく雨</h3>
+    <p class="use">4年 天気と気温</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Heavy rain falling on a road surface with splashing drops, close ground level photography, grey stormy daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_oame.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="とけていく氷 4年 水のすがた 理科">
+  <a class="thumb" href="img/rika_kori.jpg" download><img loading="lazy" src="img/rika_kori.jpg" alt="とけていく氷"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>とけていく氷</h3>
+    <p class="use">4年 水のすがた</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Ice cubes melting in a glass bowl with water droplets on the outside, close macro photography, soft daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kori.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="光電池と扇風機 4年 電気のはたらき 理科">
+  <a class="thumb" href="img/rika_kodenchi.jpg" download><img loading="lazy" src="img/rika_kodenchi.jpg" alt="光電池と扇風機"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>光電池と扇風機</h3>
+    <p class="use">4年 電気のはたらき</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A small electric fan connected to a solar panel on a wooden desk, wires visible, close product photography, bright even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kodenchi.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="ばねとおもり 6年 てこ・力 理科">
+  <a class="thumb" href="img/rika_bane.jpg" download><img loading="lazy" src="img/rika_bane.jpg" alt="ばねとおもり"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>ばねとおもり</h3>
+    <p class="use">6年 てこ・力</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A metal spring stretched by a weight hanging from a stand on a laboratory bench, close science photography, even light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_bane.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="回る風車 3年 風とゴムのはたらき 理科">
+  <a class="thumb" href="img/rika_kazaguruma.jpg" download><img loading="lazy" src="img/rika_kazaguruma.jpg" alt="回る風車"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>回る風車</h3>
+    <p class="use">3年 風とゴムのはたらき</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A pinwheel spinning in the wind held on a grassy field, close photography with motion blur on the blades, bright daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kazaguruma.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="カブトムシ 3年 こん虫のかんさつ 理科">
+  <a class="thumb" href="img/rika_kabutomushi.jpg" download><img loading="lazy" src="img/rika_kabutomushi.jpg" alt="カブトムシ"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>カブトムシ</h3>
+    <p class="use">3年 こん虫のかんさつ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A rhinoceros beetle gripping the bark of a tree trunk, close wildlife macro photography, dappled summer light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_kabutomushi.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="たんぽぽの綿毛 3年 植物のつくり 理科">
+  <a class="thumb" href="img/rika_tanpopo-watage.jpg" download><img loading="lazy" src="img/rika_tanpopo-watage.jpg" alt="たんぽぽの綿毛"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>たんぽぽの綿毛</h3>
+    <p class="use">3年 植物のつくり</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A dandelion in seed head form with its white parachutes intact against a green background, close macro photography, soft daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_tanpopo-watage.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="どんぐりと落ち葉 4年 季節と生き物（秋） 理科">
+  <a class="thumb" href="img/rika_donguri.jpg" download><img loading="lazy" src="img/rika_donguri.jpg" alt="どんぐりと落ち葉"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>どんぐりと落ち葉</h3>
+    <p class="use">4年 季節と生き物（秋）</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An acorn and a fallen brown leaf on damp soil among grass, close macro photography, soft autumn light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_donguri.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="ミニトマトの実 2年 生活科 やさいをそだてよう 理科">
+  <a class="thumb" href="img/rika_tomato.jpg" download><img loading="lazy" src="img/rika_tomato.jpg" alt="ミニトマトの実"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>ミニトマトの実</h3>
+    <p class="use">2年 生活科 やさいをそだてよう</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A tomato plant with green and ripening red fruit growing in a planter, close nature photography, bright summer daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_tomato.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="理科" data-k="朝顔の鉢 1年 生活科 あさがおのかんさつ 理科">
+  <a class="thumb" href="img/rika_asagao.jpg" download><img loading="lazy" src="img/rika_asagao.jpg" alt="朝顔の鉢"></a>
+  <div class="cb">
+    <span class="cat">理科</span>
+    <h3>朝顔の鉢</h3>
+    <p class="use">1年 生活科 あさがおのかんさつ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A row of morning glory plants in small pots with a bamboo support on a school terrace, green leaves and blue flowers, close photography, bright morning light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/rika_asagao.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="田植え直後の水田 5年 米づくり 社会">
+  <a class="thumb" href="img/shakai_taue-suiden.jpg" download><img loading="lazy" src="img/shakai_taue-suiden.jpg" alt="田植え直後の水田"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>田植え直後の水田</h3>
+    <p class="use">5年 米づくり</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A flooded rice paddy just after planting, young seedlings in neat rows reflected in still water, wide landscape photography, clear morning light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_taue-suiden.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="実った稲田 5年 米づくり 社会">
+  <a class="thumb" href="img/shakai_ogon-inada.jpg" download><img loading="lazy" src="img/shakai_ogon-inada.jpg" alt="実った稲田"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>実った稲田</h3>
+    <p class="use">5年 米づくり</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A golden rice field ready for harvest, heavy ears bending in the wind, distant mountains, wide landscape photography, autumn afternoon light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_ogon-inada.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="棚田 5年 国土と農業 社会">
+  <a class="thumb" href="img/shakai_tanada.jpg" download><img loading="lazy" src="img/shakai_tanada.jpg" alt="棚田"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>棚田</h3>
+    <p class="use">5年 国土と農業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Terraced rice fields on a mountain slope filled with water, curved stone banks, wide landscape photography, early evening light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_tanada.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="堤防のある川 4年 自然災害からくらしを守る 社会">
+  <a class="thumb" href="img/shakai_teibo-kawa.jpg" download><img loading="lazy" src="img/shakai_teibo-kawa.jpg" alt="堤防のある川"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>堤防のある川</h3>
+    <p class="use">4年 自然災害からくらしを守る</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A wide river with concrete embankments running through a Japanese town, seen from a bridge, overcast daylight, documentary landscape photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_teibo-kawa.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="ダム 4年 水はどこから 社会">
+  <a class="thumb" href="img/shakai_dam.jpg" download><img loading="lazy" src="img/shakai_dam.jpg" alt="ダム"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>ダム</h3>
+    <p class="use">4年 水はどこから</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A large concrete dam holding back a reservoir in mountains, seen from downstream, wide landscape photography, clear daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_dam.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="浄水場の沈殿池 4年 水はどこから 社会">
+  <a class="thumb" href="img/shakai_josuijo.jpg" download><img loading="lazy" src="img/shakai_josuijo.jpg" alt="浄水場の沈殿池"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>浄水場の沈殿池</h3>
+    <p class="use">4年 水はどこから</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Circular settling tanks of a water purification plant seen from above, clear water and concrete walkways, aerial photography, bright daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_josuijo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="リサイクル施設 4年 ごみのしょりと利用 社会">
+  <a class="thumb" href="img/shakai_recycle.jpg" download><img loading="lazy" src="img/shakai_recycle.jpg" alt="リサイクル施設"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>リサイクル施設</h3>
+    <p class="use">4年 ごみのしょりと利用</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A recycling sorting facility with separated piles of cans, plastic bottles and cardboard, wide industrial photography, even lighting, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_recycle.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="かやぶきの民家 3年 昔のくらし 社会">
+  <a class="thumb" href="img/shakai_kayabuki.jpg" download><img loading="lazy" src="img/shakai_kayabuki.jpg" alt="かやぶきの民家"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>かやぶきの民家</h3>
+    <p class="use">3年 昔のくらし</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A traditional Japanese thatched roof farmhouse surrounded by fields and trees, wide documentary photography, soft cloudy daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_kayabuki.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="漁港 5年 水産業 社会">
+  <a class="thumb" href="img/shakai_gyoko.jpg" download><img loading="lazy" src="img/shakai_gyoko.jpg" alt="漁港"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>漁港</h3>
+    <p class="use">5年 水産業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A small fishing harbour with wooden boats moored along the quay, ropes and floats, early morning light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_gyoko.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="港のコンテナ 5年 工業と貿易 社会">
+  <a class="thumb" href="img/shakai_container.jpg" download><img loading="lazy" src="img/shakai_container.jpg" alt="港のコンテナ"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>港のコンテナ</h3>
+    <p class="use">5年 工業と貿易</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Stacks of shipping containers at a port with a gantry crane above, wide industrial photography, clear daylight, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_container.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="工場のライン 5年 自動車工業 社会">
+  <a class="thumb" href="img/shakai_kojo-line.jpg" download><img loading="lazy" src="img/shakai_kojo-line.jpg" alt="工場のライン"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>工場のライン</h3>
+    <p class="use">5年 自動車工業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A factory assembly line with robotic arms and conveyor belts in a clean bright hall, wide industrial photography, even lighting, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_kojo-line.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="消防車の車庫 3年 火事からくらしを守る 社会">
+  <a class="thumb" href="img/shakai_shobosha.jpg" download><img loading="lazy" src="img/shakai_shobosha.jpg" alt="消防車の車庫"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>消防車の車庫</h3>
+    <p class="use">3年 火事からくらしを守る</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A red fire engine parked inside an open station garage with coiled hoses on the wall, bright daylight from outside, documentary photography, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_shobosha.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="郵便ポストのある町角 3年 わたしたちのまち 社会">
+  <a class="thumb" href="img/shakai_machikado-post.jpg" download><img loading="lazy" src="img/shakai_machikado-post.jpg" alt="郵便ポストのある町角"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>郵便ポストのある町角</h3>
+    <p class="use">3年 わたしたちのまち</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A quiet Japanese street corner with an old red post box, a utility pole and a small shop shutter, overcast afternoon, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_machikado-post.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="高速道路のジャンクション 5年 運輸 社会">
+  <a class="thumb" href="img/shakai_junction.jpg" download><img loading="lazy" src="img/shakai_junction.jpg" alt="高速道路のジャンクション"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>高速道路のジャンクション</h3>
+    <p class="use">5年 運輸</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An aerial view of a highway junction with looping ramps at dusk, long exposure light trails, no people, no text, no signage</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_junction.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="太陽光パネル 5年 これからのエネルギー 社会">
+  <a class="thumb" href="img/shakai_solar.jpg" download><img loading="lazy" src="img/shakai_solar.jpg" alt="太陽光パネル"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>太陽光パネル</h3>
+    <p class="use">5年 これからのエネルギー</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Rows of solar panels on a hillside under a clear sky, wide landscape photography, strong daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_solar.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="茶畑 5年 農業 社会">
+  <a class="thumb" href="img/shakai_chabatake.jpg" download><img loading="lazy" src="img/shakai_chabatake.jpg" alt="茶畑"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>茶畑</h3>
+    <p class="use">5年 農業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Neat rows of tea bushes on a hillside plantation with morning mist, wide landscape photography, soft early light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_chabatake.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="りんご園 5年 農業 社会">
+  <a class="thumb" href="img/shakai_ringoen.jpg" download><img loading="lazy" src="img/shakai_ringoen.jpg" alt="りんご園"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>りんご園</h3>
+    <p class="use">5年 農業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An orchard of apple trees heavy with red fruit in autumn, rows receding into the distance, wide documentary photography, clear afternoon light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_ringoen.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="畑を耕すトラクター 5年 農業 社会">
+  <a class="thumb" href="img/shakai_tractor.jpg" download><img loading="lazy" src="img/shakai_tractor.jpg" alt="畑を耕すトラクター"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>畑を耕すトラクター</h3>
+    <p class="use">5年 農業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A tractor working in a ploughed field turning dark soil, seen from the side, wide documentary photography, low afternoon sun, no people visible, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_tractor.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="スーパーの青果売り場 3年 店ではたらく人 社会">
+  <a class="thumb" href="img/shakai_seika-uriba.jpg" download><img loading="lazy" src="img/shakai_seika-uriba.jpg" alt="スーパーの青果売り場"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>スーパーの青果売り場</h3>
+    <p class="use">3年 店ではたらく人</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A supermarket vegetable aisle with crates of fresh produce neatly arranged, bright even store lighting, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_seika-uriba.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="陶芸の工房 4年 郷土の伝統工芸 社会">
+  <a class="thumb" href="img/shakai_togei-kobo.jpg" download><img loading="lazy" src="img/shakai_togei-kobo.jpg" alt="陶芸の工房"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>陶芸の工房</h3>
+    <p class="use">4年 郷土の伝統工芸</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A potter&#x27;s workshop with rows of unglazed clay bowls drying on wooden shelves, dusty sunlight through a window, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_togei-kobo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="織機 4年 郷土の伝統工芸 社会">
+  <a class="thumb" href="img/shakai_orimono.jpg" download><img loading="lazy" src="img/shakai_orimono.jpg" alt="織機"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>織機</h3>
+    <p class="use">4年 郷土の伝統工芸</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A traditional wooden weaving loom with coloured threads stretched across it in a craft workshop, soft window light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_orimono.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="非常持ち出し袋 4年 自然災害にそなえる 社会">
+  <a class="thumb" href="img/shakai_hijo-mochidashi.jpg" download><img loading="lazy" src="img/shakai_hijo-mochidashi.jpg" alt="非常持ち出し袋"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>非常持ち出し袋</h3>
+    <p class="use">4年 自然災害にそなえる</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An emergency supply backpack opened on a floor showing bottled water, canned food, a torch and a folded blanket, top down photography, even light, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_hijo-mochidashi.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="土のうと増水した川 4年 自然災害からくらしを守る 社会">
+  <a class="thumb" href="img/shakai_dono.jpg" download><img loading="lazy" src="img/shakai_dono.jpg" alt="土のうと増水した川"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>土のうと増水した川</h3>
+    <p class="use">4年 自然災害からくらしを守る</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A sandbag barrier stacked along a riverside path with muddy high water behind it, documentary photography, grey overcast light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_dono.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="点字ブロック 4年 だれもが過ごしやすい町 社会">
+  <a class="thumb" href="img/shakai_tenji-block.jpg" download><img loading="lazy" src="img/shakai_tenji-block.jpg" alt="点字ブロック"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>点字ブロック</h3>
+    <p class="use">4年 だれもが過ごしやすい町</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A yellow tactile paving strip running along a station platform floor, close low angle photography, even daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_tenji-block.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="社会" data-k="スロープ 4年 だれもが過ごしやすい町 社会">
+  <a class="thumb" href="img/shakai_slope.jpg" download><img loading="lazy" src="img/shakai_slope.jpg" alt="スロープ"></a>
+  <div class="cb">
+    <span class="cat">社会</span>
+    <h3>スロープ</h3>
+    <p class="use">4年 だれもが過ごしやすい町</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A wheelchair ramp with handrails leading to a public building entrance, documentary photography, soft daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/shakai_slope.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="朝の教室 記事・掲示・LP 学校">
+  <a class="thumb" href="img/gakko_kyoshitsu-asa.jpg" download><img loading="lazy" src="img/gakko_kyoshitsu-asa.jpg" alt="朝の教室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>朝の教室</h3>
+    <p class="use">記事・掲示・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty Japanese elementary school classroom in early morning, wooden desks in rows, blank blackboard, sunlight through windows, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kyoshitsu-asa.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="放課後の廊下 記事・掲示・LP 学校">
+  <a class="thumb" href="img/gakko_roka.jpg" download><img loading="lazy" src="img/gakko_roka.jpg" alt="放課後の廊下"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>放課後の廊下</h3>
+    <p class="use">記事・掲示・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A long empty school corridor with windows on one side, polished floor reflecting the light, late afternoon sun, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_roka.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="体育館 記事・掲示・LP 学校">
+  <a class="thumb" href="img/gakko_taiikukan.jpg" download><img loading="lazy" src="img/gakko_taiikukan.jpg" alt="体育館"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>体育館</h3>
+    <p class="use">記事・掲示・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school gymnasium with a wooden floor and folded stage curtain, light from high windows, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_taiikukan.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="図書室 記事・掲示・LP 学校">
+  <a class="thumb" href="img/gakko_toshoshitsu.jpg" download><img loading="lazy" src="img/gakko_toshoshitsu.jpg" alt="図書室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>図書室</h3>
+    <p class="use">記事・掲示・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A quiet school library with wooden shelves full of books and a low reading table, soft window light, documentary photography, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_toshoshitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="校庭と鉄棒 記事・掲示・LP 学校">
+  <a class="thumb" href="img/gakko_kotei.jpg" download><img loading="lazy" src="img/gakko_kotei.jpg" alt="校庭と鉄棒"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>校庭と鉄棒</h3>
+    <p class="use">記事・掲示・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school playground with a horizontal bar and a running track, dry sand ground, clear blue sky, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kotei.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="跳び箱とマット 体育 器械運動 学校">
+  <a class="thumb" href="img/gakko_tobibako.jpg" download><img loading="lazy" src="img/gakko_tobibako.jpg" alt="跳び箱とマット"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>跳び箱とマット</h3>
+    <p class="use">体育 器械運動</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A vaulting box and blue gym mats set up on a gymnasium floor, light from high windows, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_tobibako.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="プール 体育 水泳 学校">
+  <a class="thumb" href="img/gakko_pool.jpg" download><img loading="lazy" src="img/gakko_pool.jpg" alt="プール"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>プール</h3>
+    <p class="use">体育 水泳</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A school swimming pool on a hot summer day, still water and lane ropes, strong sunlight, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_pool.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="式典前の椅子 行事の案内・掲示 学校">
+  <a class="thumb" href="img/gakko_shikiten-isu.jpg" download><img loading="lazy" src="img/gakko_shikiten-isu.jpg" alt="式典前の椅子"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>式典前の椅子</h3>
+    <p class="use">行事の案内・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Rows of folding chairs neatly arranged in a school gymnasium before a ceremony, morning light from high windows, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_shikiten-isu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="理科室 理科の導入・掲示 学校">
+  <a class="thumb" href="img/gakko_rikashitsu.jpg" download><img loading="lazy" src="img/gakko_rikashitsu.jpg" alt="理科室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>理科室</h3>
+    <p class="use">理科の導入・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school science room with long black topped benches, sinks and stools, glassware on a shelf, soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_rikashitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="音楽室 音楽の導入・掲示 学校">
+  <a class="thumb" href="img/gakko_ongakushitsu.jpg" download><img loading="lazy" src="img/gakko_ongakushitsu.jpg" alt="音楽室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>音楽室</h3>
+    <p class="use">音楽の導入・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school music room with an upright piano, music stands and chairs in a half circle, soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_ongakushitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="図工室 図工の導入・掲示 学校">
+  <a class="thumb" href="img/gakko_zukoshitsu.jpg" download><img loading="lazy" src="img/gakko_zukoshitsu.jpg" alt="図工室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>図工室</h3>
+    <p class="use">図工の導入・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school art room with paint stained wooden tables, brushes in jars and a drying rack, soft window light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_zukoshitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="家庭科室 家庭科の導入・掲示 学校">
+  <a class="thumb" href="img/gakko_kateikashitsu.jpg" download><img loading="lazy" src="img/gakko_kateikashitsu.jpg" alt="家庭科室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>家庭科室</h3>
+    <p class="use">家庭科の導入・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school home economics room with cooking counters, gas rings and sewing machines on a side bench, soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kateikashitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="保健室 保健・記事 学校">
+  <a class="thumb" href="img/gakko_hokenshitsu.jpg" download><img loading="lazy" src="img/gakko_hokenshitsu.jpg" alt="保健室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>保健室</h3>
+    <p class="use">保健・記事</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty school nurse room with a white bed, a folding screen and a low desk, calm soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_hokenshitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="げた箱 記事・掲示 学校">
+  <a class="thumb" href="img/gakko_getabako.jpg" download><img loading="lazy" src="img/gakko_getabako.jpg" alt="げた箱"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>げた箱</h3>
+    <p class="use">記事・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Rows of wooden shoe lockers at a school entrance hall with a concrete floor, morning light from the doorway, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_getabako.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="手洗い場 保健・記事 学校">
+  <a class="thumb" href="img/gakko_tearaiba.jpg" download><img loading="lazy" src="img/gakko_tearaiba.jpg" alt="手洗い場"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>手洗い場</h3>
+    <p class="use">保健・記事</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A row of steel washbasins with taps along a school corridor wall, water drops on the metal, soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_tearaiba.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="職員室 記事・研修 学校">
+  <a class="thumb" href="img/gakko_shokuinshitsu.jpg" download><img loading="lazy" src="img/gakko_shokuinshitsu.jpg" alt="職員室"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>職員室</h3>
+    <p class="use">記事・研修</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A school staff room with rows of desks covered in paperwork and a whiteboard on the wall, late evening light, documentary photography, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_shokuinshitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="給食ワゴン 食育・記事 学校">
+  <a class="thumb" href="img/gakko_kyushoku-wagon.jpg" download><img loading="lazy" src="img/gakko_kyushoku-wagon.jpg" alt="給食ワゴン"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>給食ワゴン</h3>
+    <p class="use">食育・記事</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A stainless steel school lunch trolley with covered pots and stacked trays standing in a corridor, soft daylight, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kyushoku-wagon.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="黒板とチョーク 記事・掲示 学校">
+  <a class="thumb" href="img/gakko_kokuban.jpg" download><img loading="lazy" src="img/gakko_kokuban.jpg" alt="黒板とチョーク"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>黒板とチョーク</h3>
+    <p class="use">記事・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A clean green blackboard with a chalk tray, white chalk sticks and a duster, close straight on photography, even soft light, no writing, no text, no people</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kokuban.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="校舎の階段 記事・掲示 学校">
+  <a class="thumb" href="img/gakko_kaidan.jpg" download><img loading="lazy" src="img/gakko_kaidan.jpg" alt="校舎の階段"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>校舎の階段</h3>
+    <p class="use">記事・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A wooden staircase inside a school building with a handrail and a landing window, soft afternoon light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kaidan.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="上履き 記事・掲示 学校">
+  <a class="thumb" href="img/gakko_uwabaki.jpg" download><img loading="lazy" src="img/gakko_uwabaki.jpg" alt="上履き"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>上履き</h3>
+    <p class="use">記事・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A pair of well worn indoor school shoes placed neatly on a wooden floor, close documentary photography, soft daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_uwabaki.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="雨の日の傘立て 記事・掲示 学校">
+  <a class="thumb" href="img/gakko_kasatate.jpg" download><img loading="lazy" src="img/gakko_kasatate.jpg" alt="雨の日の傘立て"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>雨の日の傘立て</h3>
+    <p class="use">記事・掲示</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An umbrella stand full of colourful umbrellas by a school entrance on a rainy day, wet floor reflecting light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kasatate.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="給食のトレー 食育・記事 学校">
+  <a class="thumb" href="img/gakko_kyushoku-tray.jpg" download><img loading="lazy" src="img/gakko_kyushoku-tray.jpg" alt="給食のトレー"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>給食のトレー</h3>
+    <p class="use">食育・記事</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A school lunch tray with a bowl of rice, miso soup, a main dish and a small carton of milk on a desk, top down food photography, even daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_kyushoku-tray.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="体育の用具 体育 用具の準備 学校">
+  <a class="thumb" href="img/gakko_taiiku-yogu.jpg" download><img loading="lazy" src="img/gakko_taiiku-yogu.jpg" alt="体育の用具"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>体育の用具</h3>
+    <p class="use">体育 用具の準備</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Skipping ropes, rubber balls and beanbags laid out on a gymnasium floor, top down photography, even bright light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_taiiku-yogu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="学校" data-k="トラックのライン 体育 運動会 学校">
+  <a class="thumb" href="img/gakko_track-line.jpg" download><img loading="lazy" src="img/gakko_track-line.jpg" alt="トラックのライン"></a>
+  <div class="cb">
+    <span class="cat">学校</span>
+    <h3>トラックのライン</h3>
+    <p class="use">体育 運動会</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>White lane lines freshly marked on a school running track of packed earth, low angle photography, morning sunlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/gakko_track-line.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="桜と校門 入学・始業 季節・行事">
+  <a class="thumb" href="img/kisetsu_sakura-komon.jpg" download><img loading="lazy" src="img/kisetsu_sakura-komon.jpg" alt="桜と校門"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>桜と校門</h3>
+    <p class="use">入学・始業</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Cherry blossoms in full bloom over a school gate and approach path, petals on the ground, soft spring morning light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_sakura-komon.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="雨のあじさい 梅雨 季節・行事">
+  <a class="thumb" href="img/kisetsu_ajisai.jpg" download><img loading="lazy" src="img/kisetsu_ajisai.jpg" alt="雨のあじさい"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>雨のあじさい</h3>
+    <p class="use">梅雨</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Blue hydrangea flowers wet with rain beside a stone path, water drops on the petals, close macro photography, soft grey rainy light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_ajisai.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="イチョウ並木 秋 季節・行事">
+  <a class="thumb" href="img/kisetsu_icho-namiki.jpg" download><img loading="lazy" src="img/kisetsu_icho-namiki.jpg" alt="イチョウ並木"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>イチョウ並木</h3>
+    <p class="use">秋</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A ginkgo tree avenue in full autumn yellow, fallen leaves covering the path, low afternoon sun, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_icho-namiki.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="雪の通学路 冬 季節・行事">
+  <a class="thumb" href="img/kisetsu_yuki-tsugakuro.jpg" download><img loading="lazy" src="img/kisetsu_yuki-tsugakuro.jpg" alt="雪の通学路"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>雪の通学路</h3>
+    <p class="use">冬</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A quiet residential street covered in fresh snow on a winter morning, footprints on the pavement, pale blue light, documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_yuki-tsugakuro.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="万国旗 運動会 季節・行事">
+  <a class="thumb" href="img/kisetsu_bankokki.jpg" download><img loading="lazy" src="img/kisetsu_bankokki.jpg" alt="万国旗"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>万国旗</h3>
+    <p class="use">運動会</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Colourful triangular bunting flags strung across a school ground against a blue sky for a sports day, low angle photography, bright sunlight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_bankokki.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="七夕の笹 七夕 季節・行事">
+  <a class="thumb" href="img/kisetsu_tanabata.jpg" download><img loading="lazy" src="img/kisetsu_tanabata.jpg" alt="七夕の笹"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>七夕の笹</h3>
+    <p class="use">七夕</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A bamboo branch decorated with colourful paper strips and origami ornaments for Tanabata, indoor soft light, close photography, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_tanabata.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="季節・行事" data-k="鯉のぼり こどもの日 季節・行事">
+  <a class="thumb" href="img/kisetsu_koinobori.jpg" download><img loading="lazy" src="img/kisetsu_koinobori.jpg" alt="鯉のぼり"></a>
+  <div class="cb">
+    <span class="cat">季節・行事</span>
+    <h3>鯉のぼり</h3>
+    <p class="use">こどもの日</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Carp streamers flying against a clear blue spring sky over a river, wide low angle photography, bright daylight, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kisetsu_koinobori.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="情景" data-k="夕暮れの田んぼ道 国語 物語の場面 情景">
+  <a class="thumb" href="img/jokei_tanbomichi-yuhi.jpg" download><img loading="lazy" src="img/jokei_tanbomichi-yuhi.jpg" alt="夕暮れの田んぼ道"></a>
+  <div class="cb">
+    <span class="cat">情景</span>
+    <h3>夕暮れの田んぼ道</h3>
+    <p class="use">国語 物語の場面</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A narrow country path between rice fields at sunset with a line of telephone poles, wide landscape photography, warm evening light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/jokei_tanbomichi-yuhi.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="情景" data-k="落ち葉の森の道 国語 物語の場面 情景">
+  <a class="thumb" href="img/jokei_mori-no-michi.jpg" download><img loading="lazy" src="img/jokei_mori-no-michi.jpg" alt="落ち葉の森の道"></a>
+  <div class="cb">
+    <span class="cat">情景</span>
+    <h3>落ち葉の森の道</h3>
+    <p class="use">国語 物語の場面</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A quiet forest path covered with fallen leaves, tall trees on both sides, soft light filtering through the canopy, wide nature photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/jokei_mori-no-michi.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="情景" data-k="古い本棚 国語 読書・記事 情景">
+  <a class="thumb" href="img/jokei_hondana.jpg" download><img loading="lazy" src="img/jokei_hondana.jpg" alt="古い本棚"></a>
+  <div class="cb">
+    <span class="cat">情景</span>
+    <h3>古い本棚</h3>
+    <p class="use">国語 読書・記事</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A large wooden bookshelf filled with old books in a quiet room, warm lamp light, straight on documentary photography, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/jokei_hondana.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="図工" data-k="空き箱などの材料 図工 準備物のおたより 図工">
+  <a class="thumb" href="img/zuko_zairyo.jpg" download><img loading="lazy" src="img/zuko_zairyo.jpg" alt="空き箱などの材料"></a>
+  <div class="cb">
+    <span class="cat">図工</span>
+    <h3>空き箱などの材料</h3>
+    <p class="use">図工 準備物のおたより</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Cardboard boxes, plastic bottles, milk cartons and paper tubes gathered together as craft materials on a table, top down photography, even bright light, no people, no text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/zuko_zairyo.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="図工" data-k="絵の具とパレット 図工 用具 図工">
+  <a class="thumb" href="img/zuko_enogu.jpg" download><img loading="lazy" src="img/zuko_enogu.jpg" alt="絵の具とパレット"></a>
+  <div class="cb">
+    <span class="cat">図工</span>
+    <h3>絵の具とパレット</h3>
+    <p class="use">図工 用具</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>Watercolour paints, a palette with mixed colours, brushes and a water jar on a wooden table, top down photography, soft window light, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/zuko_enogu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="算数" data-k="定規とコンパス 算数 作図の用具 算数">
+  <a class="thumb" href="img/sansu_bungu-teiki.jpg" download><img loading="lazy" src="img/sansu_bungu-teiki.jpg" alt="定規とコンパス"></a>
+  <div class="cb">
+    <span class="cat">算数</span>
+    <h3>定規とコンパス</h3>
+    <p class="use">算数 作図の用具</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A wooden ruler, a triangle set square and a compass laid out on white paper, top down photography, even soft light, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/sansu_bungu-teiki.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="算数" data-k="メジャーとはかり 算数 重さ・長さ 算数">
+  <a class="thumb" href="img/sansu_hakari.jpg" download><img loading="lazy" src="img/sansu_hakari.jpg" alt="メジャーとはかり"></a>
+  <div class="cb">
+    <span class="cat">算数</span>
+    <h3>メジャーとはかり</h3>
+    <p class="use">算数 重さ・長さ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A measuring tape and a kitchen scale with a small weight on a wooden table, close product photography, even soft light, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/sansu_hakari.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="研修・LP" data-k="研修前の会議室 研修案内・LP 研修・LP">
+  <a class="thumb" href="img/kenshu_kaigishitsu.jpg" download><img loading="lazy" src="img/kenshu_kaigishitsu.jpg" alt="研修前の会議室"></a>
+  <div class="cb">
+    <span class="cat">研修・LP</span>
+    <h3>研修前の会議室</h3>
+    <p class="use">研修案内・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>An empty meeting room with a long table, chairs and a projector screen ready for a workshop, soft daylight through blinds, wide documentary photography, no people, no text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kenshu_kaigishitsu.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="研修・LP" data-k="机の上のノートPC note見出し・LP 研修・LP">
+  <a class="thumb" href="img/kenshu_desk-pc.jpg" download><img loading="lazy" src="img/kenshu_desk-pc.jpg" alt="机の上のノートPC"></a>
+  <div class="cb">
+    <span class="cat">研修・LP</span>
+    <h3>机の上のノートPC</h3>
+    <p class="use">note見出し・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A laptop, a notebook and a cup of coffee arranged on a plain wooden desk, top down photography, soft morning window light, no people, no readable text, no logos</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kenshu_desk-pc.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="研修・LP" data-k="付箋のホワイトボード 研修・ワークショップ 研修・LP">
+  <a class="thumb" href="img/kenshu_fusen.jpg" download><img loading="lazy" src="img/kenshu_fusen.jpg" alt="付箋のホワイトボード"></a>
+  <div class="cb">
+    <span class="cat">研修・LP</span>
+    <h3>付箋のホワイトボード</h3>
+    <p class="use">研修・ワークショップ</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A whiteboard covered with colourful sticky notes arranged in clusters, straight on photography, even bright light, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kenshu_fusen.jpg" download>ダウンロード</a></div>
+</article>
+<article class="card" data-c="研修・LP" data-k="配布資料とタブレット 研修案内・LP 研修・LP">
+  <a class="thumb" href="img/kenshu_shiryo.jpg" download><img loading="lazy" src="img/kenshu_shiryo.jpg" alt="配布資料とタブレット"></a>
+  <div class="cb">
+    <span class="cat">研修・LP</span>
+    <h3>配布資料とタブレット</h3>
+    <p class="use">研修案内・LP</p>
+    <details class="pr">
+      <summary>使ったプロンプトを見る</summary>
+      <pre>A stack of printed handouts and a pen on a plain desk beside a tablet, top down photography, soft even light, no people, no readable text</pre>
+      <button class="copy" onclick="cp(this)">プロンプトをコピー</button>
+    </details>
+  </div>
+  <div class="cf"><span class="ai">AI生成（Adobe Firefly）／実在のものではありません</span><a class="dl" href="img/kenshu_shiryo.jpg" download>ダウンロード</a></div>
+</article>
+  </div>
+  <p class="empty" id="e">見つかりませんでした。別のことばで探してみてください。</p>
+
+  <div class="howto">
+    <h2>自分で作りたいときは</h2>
+    <p>ここにある写真は、次の4つをそろえて頼んだだけです。順番もこのままで通ります。</p>
+    <table>
+      <tr><th>① 何が</th><td>主役と、その主役が今している動き</td></tr>
+      <tr><th>② どこで</th><td>場所を具体的に。日本の場所なら「日本の」と書く</td></tr>
+      <tr><th>③ どんな光で</th><td>時間帯と光。ここが写真らしさをいちばん左右します</td></tr>
+      <tr><th>④ どう撮ったか</th><td>写真の種類。ドキュメンタリー、接写、望遠、長時間露光など</td></tr>
+    </table>
+    <p>それに加えて、教材用には <b>no people, no text</b>（人を入れない・文字を入れない）を足しています。AIが描く日本語の文字は崩れるので、看板や黒板の字は入れさせないほうが安全です。</p>
+    <p>くわしい作り方と失敗例は、<a href="../../ideas/a/firefly-shashin.html">AIに写真をたのむときの、たった4つの言い方</a>にまとめています。</p>
+  </div>
+
+  <a class="back" href="../">← 授業素材ライブラリにもどる</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">授業素材ライブラリ</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ 画像はAdobe Fireflyで生成したものです
+  </div>
+</footer>
+
+<script>
+var cards = Array.prototype.slice.call(document.querySelectorAll('.card'));
+var cur = '';
+function apply(){
+  var q = document.getElementById('q').value.trim().toLowerCase();
+  var n = 0;
+  cards.forEach(function(c){
+    var okC = !cur || c.dataset.c === cur;
+    var okQ = !q || (c.dataset.k + ' ' + c.textContent).toLowerCase().indexOf(q) >= 0;
+    var show = okC && okQ;
+    c.style.display = show ? '' : 'none';
+    if (show) n++;
+  });
+  document.getElementById('n').textContent = n;
+  document.getElementById('e').style.display = n ? 'none' : 'block';
+}
+document.getElementById('q').addEventListener('input', apply);
+document.querySelectorAll('.fb').forEach(function(b){
+  b.addEventListener('click', function(){
+    document.querySelectorAll('.fb').forEach(function(x){ x.classList.remove('on'); });
+    b.classList.add('on'); cur = b.dataset.c; apply();
+  });
+});
+function cp(btn){
+  var t = btn.parentNode.querySelector('pre').innerText;
+  var flash = function(){ var o = btn.textContent; btn.textContent = 'コピーしました ✓'; btn.classList.add('done');
+    setTimeout(function(){ btn.textContent = o; btn.classList.remove('done'); }, 1500); };
+  if (navigator.clipboard && navigator.clipboard.writeText) { navigator.clipboard.writeText(t).then(flash, flash); }
+  else { var ta = document.createElement('textarea'); ta.value = t; document.body.appendChild(ta); ta.select();
+    try { document.execCommand('copy'); } catch(e){} document.body.removeChild(ta); flash(); }
+}
+</script>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
