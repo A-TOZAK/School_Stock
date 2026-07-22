@@ -1,619 +1,1039 @@
 [
  {
-  "id": "中学年_No01_説明文_アリの力",
+  "id": "1年_No01_説明文_あさがおのつる",
   "cat": "yomu",
   "no": 1,
   "type": "説明文",
-  "title": "アリの力",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No01_説明文_アリの力.pdf",
-  "thumb": "thumb/中学年_No01_説明文_アリの力.png"
+  "title": "あさがおのつる",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No01_説明文_あさがおのつる.pdf",
+  "thumb": "thumb/1年_No01_説明文_あさがおのつる.webp"
  },
  {
-  "id": "中学年_No02_物語文_絵の具とみなと",
+  "id": "1年_No02_説明文_てんとうむし",
   "cat": "yomu",
   "no": 2,
-  "type": "物語文",
-  "title": "絵の具とみなと",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No02_物語文_絵の具とみなと.pdf",
-  "thumb": "thumb/中学年_No02_物語文_絵の具とみなと.png"
+  "type": "説明文",
+  "title": "てんとうむし",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No02_説明文_てんとうむし.pdf",
+  "thumb": "thumb/1年_No02_説明文_てんとうむし.webp"
  },
  {
-  "id": "中学年_No03_要約_森のはたらき",
+  "id": "1年_No03_説明文_はがぬけるわけ",
   "cat": "yomu",
   "no": 3,
-  "type": "要約",
-  "title": "森のはたらき",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No03_要約_森のはたらき.pdf",
-  "thumb": "thumb/中学年_No03_要約_森のはたらき.png"
+  "type": "説明文",
+  "title": "はがぬけるわけ",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No03_説明文_はがぬけるわけ.pdf",
+  "thumb": "thumb/1年_No03_説明文_はがぬけるわけ.webp"
  },
  {
-  "id": "中学年_No04_説明文_ダンゴムシのひみつ",
+  "id": "1年_No04_説明文_ねこのひげ",
   "cat": "yomu",
   "no": 4,
   "type": "説明文",
-  "title": "ダンゴムシのひみつ",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No04_説明文_ダンゴムシのひみつ.pdf",
-  "thumb": "thumb/中学年_No04_説明文_ダンゴムシのひみつ.png"
+  "title": "ねこのひげ",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No04_説明文_ねこのひげ.pdf",
+  "thumb": "thumb/1年_No04_説明文_ねこのひげ.webp"
  },
  {
-  "id": "中学年_No05_物語文_おばあちゃんの手",
+  "id": "1年_No05_説明文_つばめのす",
   "cat": "yomu",
   "no": 5,
-  "type": "物語文",
-  "title": "おばあちゃんの手",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No05_物語文_おばあちゃんの手.pdf",
-  "thumb": "thumb/中学年_No05_物語文_おばあちゃんの手.png"
+  "type": "説明文",
+  "title": "つばめのす",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No05_説明文_つばめのす.pdf",
+  "thumb": "thumb/1年_No05_説明文_つばめのす.webp"
  },
  {
-  "id": "中学年_No06_要約_和紙のよさ",
+  "id": "1年_No06_物語文_ぶらんこのじゅんばん",
   "cat": "yomu",
   "no": 6,
-  "type": "要約",
-  "title": "和紙のよさ",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No06_要約_和紙のよさ.pdf",
-  "thumb": "thumb/中学年_No06_要約_和紙のよさ.png"
+  "type": "物語文",
+  "title": "ぶらんこのじゅんばん",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No06_物語文_ぶらんこのじゅんばん.pdf",
+  "thumb": "thumb/1年_No06_物語文_ぶらんこのじゅんばん.webp"
  },
  {
-  "id": "中学年_No07_物語文_まいごの子犬",
+  "id": "1年_No07_物語文_あめのひのかさ",
   "cat": "yomu",
   "no": 7,
   "type": "物語文",
-  "title": "まいごの子犬",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No07_物語文_まいごの子犬.pdf",
-  "thumb": "thumb/中学年_No07_物語文_まいごの子犬.png"
+  "title": "あめのひのかさ",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No07_物語文_あめのひのかさ.pdf",
+  "thumb": "thumb/1年_No07_物語文_あめのひのかさ.webp"
  },
  {
-  "id": "中学年_No08_説明文_にじはどうしてできるの",
+  "id": "1年_No08_物語文_どんぐりひろい",
   "cat": "yomu",
   "no": 8,
-  "type": "説明文",
-  "title": "にじはどうしてできるの",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No08_説明文_にじはどうしてできるの.pdf",
-  "thumb": "thumb/中学年_No08_説明文_にじはどうしてできるの.png"
+  "type": "物語文",
+  "title": "どんぐりひろい",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No08_物語文_どんぐりひろい.pdf",
+  "thumb": "thumb/1年_No08_物語文_どんぐりひろい.webp"
  },
  {
-  "id": "中学年_No09_説明文_カブトムシの一生",
+  "id": "1年_No09_物語文_おとうとのくつ",
   "cat": "yomu",
   "no": 9,
-  "type": "説明文",
-  "title": "カブトムシの一生",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No09_説明文_カブトムシの一生.pdf",
-  "thumb": "thumb/中学年_No09_説明文_カブトムシの一生.png"
+  "type": "物語文",
+  "title": "おとうとのくつ",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No09_物語文_おとうとのくつ.pdf",
+  "thumb": "thumb/1年_No09_物語文_おとうとのくつ.webp"
  },
  {
-  "id": "中学年_No10_物語文_はじめてのおるすばん",
+  "id": "1年_No10_物語文_たなばたのねがいごと",
+  "cat": "yomu",
+  "no": 10,
+  "type": "物語文",
+  "title": "たなばたのねがいごと",
+  "grade": "1年",
+  "band": "low",
+  "grades": [
+   "1年"
+  ],
+  "pdf": "yomu/1年_No10_物語文_たなばたのねがいごと.pdf",
+  "thumb": "thumb/1年_No10_物語文_たなばたのねがいごと.webp"
+ },
+ {
+  "id": "2年_No01_説明文_ひまわりのたね",
+  "cat": "yomu",
+  "no": 1,
+  "type": "説明文",
+  "title": "ひまわりのたね",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No01_説明文_ひまわりのたね.pdf",
+  "thumb": "thumb/2年_No01_説明文_ひまわりのたね.webp"
+ },
+ {
+  "id": "2年_No02_説明文_かえるのふゆごし",
+  "cat": "yomu",
+  "no": 2,
+  "type": "説明文",
+  "title": "かえるのふゆごし",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No02_説明文_かえるのふゆごし.pdf",
+  "thumb": "thumb/2年_No02_説明文_かえるのふゆごし.webp"
+ },
+ {
+  "id": "2年_No03_説明文_ちょうになるまで",
+  "cat": "yomu",
+  "no": 3,
+  "type": "説明文",
+  "title": "ちょうになるまで",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No03_説明文_ちょうになるまで.pdf",
+  "thumb": "thumb/2年_No03_説明文_ちょうになるまで.webp"
+ },
+ {
+  "id": "2年_No04_説明文_せみのなきごえ",
+  "cat": "yomu",
+  "no": 4,
+  "type": "説明文",
+  "title": "せみのなきごえ",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No04_説明文_せみのなきごえ.pdf",
+  "thumb": "thumb/2年_No04_説明文_せみのなきごえ.webp"
+ },
+ {
+  "id": "2年_No05_物語文_かけっこでころんでも",
+  "cat": "yomu",
+  "no": 5,
+  "type": "物語文",
+  "title": "かけっこでころんでも",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No05_物語文_かけっこでころんでも.pdf",
+  "thumb": "thumb/2年_No05_物語文_かけっこでころんでも.webp"
+ },
+ {
+  "id": "2年_No06_物語文_おかあさんのおべんとう",
+  "cat": "yomu",
+  "no": 6,
+  "type": "物語文",
+  "title": "おかあさんのおべんとう",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No06_物語文_おかあさんのおべんとう.pdf",
+  "thumb": "thumb/2年_No06_物語文_おかあさんのおべんとう.webp"
+ },
+ {
+  "id": "2年_No07_物語文_こうえんのすなやま",
+  "cat": "yomu",
+  "no": 7,
+  "type": "物語文",
+  "title": "こうえんのすなやま",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No07_物語文_こうえんのすなやま.pdf",
+  "thumb": "thumb/2年_No07_物語文_こうえんのすなやま.webp"
+ },
+ {
+  "id": "2年_No08_物語文_ひとりでおつかい",
+  "cat": "yomu",
+  "no": 8,
+  "type": "物語文",
+  "title": "ひとりでおつかい",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "yomu/2年_No08_物語文_ひとりでおつかい.pdf",
+  "thumb": "thumb/2年_No08_物語文_ひとりでおつかい.webp"
+ },
+ {
+  "id": "3年_No01_説明文_ダンゴムシのひみつ",
+  "cat": "yomu",
+  "no": 1,
+  "type": "説明文",
+  "title": "ダンゴムシのひみつ",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No01_説明文_ダンゴムシのひみつ.pdf",
+  "thumb": "thumb/3年_No01_説明文_ダンゴムシのひみつ.webp"
+ },
+ {
+  "id": "3年_No02_説明文_にじはどうしてできるの",
+  "cat": "yomu",
+  "no": 2,
+  "type": "説明文",
+  "title": "にじはどうしてできるの",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No02_説明文_にじはどうしてできるの.pdf",
+  "thumb": "thumb/3年_No02_説明文_にじはどうしてできるの.webp"
+ },
+ {
+  "id": "3年_No03_説明文_たんぽぽのわた毛のたび",
+  "cat": "yomu",
+  "no": 3,
+  "type": "説明文",
+  "title": "たんぽぽのわた毛のたび",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No03_説明文_たんぽぽのわた毛のたび.pdf",
+  "thumb": "thumb/3年_No03_説明文_たんぽぽのわた毛のたび.webp"
+ },
+ {
+  "id": "3年_No04_説明文_こおりはどうしてとける",
+  "cat": "yomu",
+  "no": 4,
+  "type": "説明文",
+  "title": "こおりはどうしてとける",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No04_説明文_こおりはどうしてとける.pdf",
+  "thumb": "thumb/3年_No04_説明文_こおりはどうしてとける.webp"
+ },
+ {
+  "id": "3年_No05_説明文_かげのふしぎ",
+  "cat": "yomu",
+  "no": 5,
+  "type": "説明文",
+  "title": "かげのふしぎ",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No05_説明文_かげのふしぎ.pdf",
+  "thumb": "thumb/3年_No05_説明文_かげのふしぎ.webp"
+ },
+ {
+  "id": "3年_No06_説明文_カタツムリのくらし",
+  "cat": "yomu",
+  "no": 6,
+  "type": "説明文",
+  "title": "カタツムリのくらし",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No06_説明文_カタツムリのくらし.pdf",
+  "thumb": "thumb/3年_No06_説明文_カタツムリのくらし.webp"
+ },
+ {
+  "id": "3年_No07_説明文_音はどうつたわるの",
+  "cat": "yomu",
+  "no": 7,
+  "type": "説明文",
+  "title": "音はどうつたわるの",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No07_説明文_音はどうつたわるの.pdf",
+  "thumb": "thumb/3年_No07_説明文_音はどうつたわるの.webp"
+ },
+ {
+  "id": "3年_No08_物語文_おばあちゃんの手",
+  "cat": "yomu",
+  "no": 8,
+  "type": "物語文",
+  "title": "おばあちゃんの手",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No08_物語文_おばあちゃんの手.pdf",
+  "thumb": "thumb/3年_No08_物語文_おばあちゃんの手.webp"
+ },
+ {
+  "id": "3年_No09_物語文_まいごの子犬",
+  "cat": "yomu",
+  "no": 9,
+  "type": "物語文",
+  "title": "まいごの子犬",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No09_物語文_まいごの子犬.pdf",
+  "thumb": "thumb/3年_No09_物語文_まいごの子犬.webp"
+ },
+ {
+  "id": "3年_No10_物語文_はじめてのおるすばん",
   "cat": "yomu",
   "no": 10,
   "type": "物語文",
   "title": "はじめてのおるすばん",
-  "grade": "中学年",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No10_物語文_はじめてのおるすばん.pdf",
-  "thumb": "thumb/中学年_No10_物語文_はじめてのおるすばん.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No10_物語文_はじめてのおるすばん.pdf",
+  "thumb": "thumb/3年_No10_物語文_はじめてのおるすばん.webp"
  },
  {
-  "id": "中学年_No11_説明文_たんぽぽのわた毛のたび",
+  "id": "3年_No11_物語文_ころんだ子とさしのべた手",
   "cat": "yomu",
   "no": 11,
-  "type": "説明文",
-  "title": "たんぽぽのわた毛のたび",
-  "grade": "中学年",
+  "type": "物語文",
+  "title": "ころんだ子とさしのべた手",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No11_説明文_たんぽぽのわた毛のたび.pdf",
-  "thumb": "thumb/中学年_No11_説明文_たんぽぽのわた毛のたび.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No11_物語文_ころんだ子とさしのべた手.pdf",
+  "thumb": "thumb/3年_No11_物語文_ころんだ子とさしのべた手.webp"
  },
  {
-  "id": "中学年_No12_物語文_わすれ物と友だち",
+  "id": "3年_No12_物語文_引っこす友だちへの手紙",
   "cat": "yomu",
   "no": 12,
   "type": "物語文",
-  "title": "わすれ物と友だち",
-  "grade": "中学年",
+  "title": "引っこす友だちへの手紙",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No12_物語文_わすれ物と友だち.pdf",
-  "thumb": "thumb/中学年_No12_物語文_わすれ物と友だち.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No12_物語文_引っこす友だちへの手紙.pdf",
+  "thumb": "thumb/3年_No12_物語文_引っこす友だちへの手紙.webp"
  },
  {
-  "id": "中学年_No13_要約_ミミズは土の名医",
+  "id": "3年_No13_要約_ミミズは土の名医",
   "cat": "yomu",
   "no": 13,
   "type": "要約",
   "title": "ミミズは土の名医",
-  "grade": "中学年",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No13_要約_ミミズは土の名医.pdf",
-  "thumb": "thumb/中学年_No13_要約_ミミズは土の名医.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No13_要約_ミミズは土の名医.pdf",
+  "thumb": "thumb/3年_No13_要約_ミミズは土の名医.webp"
  },
  {
-  "id": "中学年_No14_説明文_こおりはどうしてとける",
+  "id": "3年_No14_要約_くもの巣のふしぎ",
   "cat": "yomu",
   "no": 14,
-  "type": "説明文",
-  "title": "こおりはどうしてとける",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No14_説明文_こおりはどうしてとける.pdf",
-  "thumb": "thumb/中学年_No14_説明文_こおりはどうしてとける.png"
- },
- {
-  "id": "中学年_No15_物語文_弟の運動会",
-  "cat": "yomu",
-  "no": 15,
-  "type": "物語文",
-  "title": "弟の運動会",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No15_物語文_弟の運動会.pdf",
-  "thumb": "thumb/中学年_No15_物語文_弟の運動会.png"
- },
- {
-  "id": "中学年_No16_説明文_かげのふしぎ",
-  "cat": "yomu",
-  "no": 16,
-  "type": "説明文",
-  "title": "かげのふしぎ",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No16_説明文_かげのふしぎ.pdf",
-  "thumb": "thumb/中学年_No16_説明文_かげのふしぎ.png"
- },
- {
-  "id": "中学年_No17_物語文_ころんだ子とさしのべた手",
-  "cat": "yomu",
-  "no": 17,
-  "type": "物語文",
-  "title": "ころんだ子とさしのべた手",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No17_物語文_ころんだ子とさしのべた手.pdf",
-  "thumb": "thumb/中学年_No17_物語文_ころんだ子とさしのべた手.png"
- },
- {
-  "id": "中学年_No18_要約_くもの巣のふしぎ",
-  "cat": "yomu",
-  "no": 18,
   "type": "要約",
   "title": "くもの巣のふしぎ",
-  "grade": "中学年",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No18_要約_くもの巣のふしぎ.pdf",
-  "thumb": "thumb/中学年_No18_要約_くもの巣のふしぎ.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No14_要約_くもの巣のふしぎ.pdf",
+  "thumb": "thumb/3年_No14_要約_くもの巣のふしぎ.webp"
  },
  {
-  "id": "中学年_No19_説明文_カタツムリのくらし",
+  "id": "3年_No15_要約_はしの正しい持ち方",
   "cat": "yomu",
-  "no": 19,
-  "type": "説明文",
-  "title": "カタツムリのくらし",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No19_説明文_カタツムリのくらし.pdf",
-  "thumb": "thumb/中学年_No19_説明文_カタツムリのくらし.png"
- },
- {
-  "id": "中学年_No20_物語文_引っこす友だちへの手紙",
-  "cat": "yomu",
-  "no": 20,
-  "type": "物語文",
-  "title": "引っこす友だちへの手紙",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No20_物語文_引っこす友だちへの手紙.pdf",
-  "thumb": "thumb/中学年_No20_物語文_引っこす友だちへの手紙.png"
- },
- {
-  "id": "中学年_No21_説明文_風の力とかざぐるま",
-  "cat": "yomu",
-  "no": 21,
-  "type": "説明文",
-  "title": "風の力とかざぐるま",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No21_説明文_風の力とかざぐるま.pdf",
-  "thumb": "thumb/中学年_No21_説明文_風の力とかざぐるま.png"
- },
- {
-  "id": "中学年_No22_物語文_ひみつ基地の約束",
-  "cat": "yomu",
-  "no": 22,
-  "type": "物語文",
-  "title": "ひみつ基地の約束",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No22_物語文_ひみつ基地の約束.pdf",
-  "thumb": "thumb/中学年_No22_物語文_ひみつ基地の約束.png"
- },
- {
-  "id": "中学年_No23_要約_はしの正しい持ち方",
-  "cat": "yomu",
-  "no": 23,
+  "no": 15,
   "type": "要約",
   "title": "はしの正しい持ち方",
-  "grade": "中学年",
+  "grade": "3年",
   "band": "mid",
-  "pdf": "yomu/中学年_No23_要約_はしの正しい持ち方.pdf",
-  "thumb": "thumb/中学年_No23_要約_はしの正しい持ち方.png"
+  "grades": [
+   "3年"
+  ],
+  "pdf": "yomu/3年_No15_要約_はしの正しい持ち方.pdf",
+  "thumb": "thumb/3年_No15_要約_はしの正しい持ち方.webp"
  },
  {
-  "id": "中学年_No25_説明文_音はどうつたわるの",
-  "cat": "yomu",
-  "no": 25,
-  "type": "説明文",
-  "title": "音はどうつたわるの",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No25_説明文_音はどうつたわるの.pdf",
-  "thumb": "thumb/中学年_No25_説明文_音はどうつたわるの.png"
- },
- {
-  "id": "中学年_No26_要約_信号きの色の意味",
-  "cat": "yomu",
-  "no": 26,
-  "type": "要約",
-  "title": "信号きの色の意味",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No26_要約_信号きの色の意味.pdf",
-  "thumb": "thumb/中学年_No26_要約_信号きの色の意味.png"
- },
- {
-  "id": "中学年_No27_説明文_塩のけっしょう",
-  "cat": "yomu",
-  "no": 27,
-  "type": "説明文",
-  "title": "塩のけっしょう",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No27_説明文_塩のけっしょう.pdf",
-  "thumb": "thumb/中学年_No27_説明文_塩のけっしょう.png"
- },
- {
-  "id": "中学年_No28_説明文_落ち葉が土になるまで",
-  "cat": "yomu",
-  "no": 28,
-  "type": "説明文",
-  "title": "落ち葉が土になるまで",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No28_説明文_落ち葉が土になるまで.pdf",
-  "thumb": "thumb/中学年_No28_説明文_落ち葉が土になるまで.png"
- },
- {
-  "id": "中学年_No31_説明文_わたり鳥のふしぎ",
-  "cat": "yomu",
-  "no": 31,
-  "type": "説明文",
-  "title": "わたり鳥のふしぎ",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No31_説明文_わたり鳥のふしぎ.pdf",
-  "thumb": "thumb/中学年_No31_説明文_わたり鳥のふしぎ.png"
- },
- {
-  "id": "中学年_No32_物語文_二重とびがとべた日",
-  "cat": "yomu",
-  "no": 32,
-  "type": "物語文",
-  "title": "二重とびがとべた日",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "yomu/中学年_No32_物語文_二重とびがとべた日.pdf",
-  "thumb": "thumb/中学年_No32_物語文_二重とびがとべた日.png"
- },
- {
-  "id": "高学年_No01_説明文_海のプラスチックごみ",
+  "id": "4年_No01_説明文_アリの力",
   "cat": "yomu",
   "no": 1,
   "type": "説明文",
-  "title": "海のプラスチックごみ",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No01_説明文_海のプラスチックごみ.pdf",
-  "thumb": "thumb/高学年_No01_説明文_海のプラスチックごみ.png"
+  "title": "アリの力",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No01_説明文_アリの力.pdf",
+  "thumb": "thumb/4年_No01_説明文_アリの力.webp"
  },
  {
-  "id": "高学年_No02_物語文_バトンをつなぐ",
+  "id": "4年_No02_説明文_カブトムシの一生",
   "cat": "yomu",
   "no": 2,
-  "type": "物語文",
-  "title": "バトンをつなぐ",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No02_物語文_バトンをつなぐ.pdf",
-  "thumb": "thumb/高学年_No02_物語文_バトンをつなぐ.png"
+  "type": "説明文",
+  "title": "カブトムシの一生",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No02_説明文_カブトムシの一生.pdf",
+  "thumb": "thumb/4年_No02_説明文_カブトムシの一生.webp"
  },
  {
-  "id": "高学年_No03_詩_たね",
+  "id": "4年_No03_説明文_風の力とかざぐるま",
   "cat": "yomu",
   "no": 3,
-  "type": "詩",
-  "title": "たね",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No03_詩_たね.pdf",
-  "thumb": "thumb/高学年_No03_詩_たね.png"
+  "type": "説明文",
+  "title": "風の力とかざぐるま",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No03_説明文_風の力とかざぐるま.pdf",
+  "thumb": "thumb/4年_No03_説明文_風の力とかざぐるま.webp"
  },
  {
-  "id": "高学年_No04_説明文_食品ロスを考える",
+  "id": "4年_No04_説明文_塩のけっしょう",
   "cat": "yomu",
   "no": 4,
   "type": "説明文",
-  "title": "食品ロスを考える",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No04_説明文_食品ロスを考える.pdf",
-  "thumb": "thumb/高学年_No04_説明文_食品ロスを考える.png"
+  "title": "塩のけっしょう",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No04_説明文_塩のけっしょう.pdf",
+  "thumb": "thumb/4年_No04_説明文_塩のけっしょう.webp"
  },
  {
-  "id": "高学年_No05_説明文_再生可能エネルギー",
+  "id": "4年_No05_説明文_落ち葉が土になるまで",
   "cat": "yomu",
   "no": 5,
   "type": "説明文",
-  "title": "再生可能エネルギー",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No05_説明文_再生可能エネルギー.pdf",
-  "thumb": "thumb/高学年_No05_説明文_再生可能エネルギー.png"
+  "title": "落ち葉が土になるまで",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No05_説明文_落ち葉が土になるまで.pdf",
+  "thumb": "thumb/4年_No05_説明文_落ち葉が土になるまで.webp"
  },
  {
-  "id": "高学年_No06_物語文_転校生とわたし",
+  "id": "4年_No06_説明文_わたり鳥のふしぎ",
   "cat": "yomu",
   "no": 6,
-  "type": "物語文",
-  "title": "転校生とわたし",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No06_物語文_転校生とわたし.pdf",
-  "thumb": "thumb/高学年_No06_物語文_転校生とわたし.png"
+  "type": "説明文",
+  "title": "わたり鳥のふしぎ",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No06_説明文_わたり鳥のふしぎ.pdf",
+  "thumb": "thumb/4年_No06_説明文_わたり鳥のふしぎ.webp"
  },
  {
-  "id": "高学年_No07_説明文_AIと私たちのくらし",
+  "id": "4年_No07_物語文_絵の具とみなと",
   "cat": "yomu",
   "no": 7,
-  "type": "説明文",
-  "title": "AIと私たちのくらし",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No07_説明文_AIと私たちのくらし.pdf",
-  "thumb": "thumb/高学年_No07_説明文_AIと私たちのくらし.png"
+  "type": "物語文",
+  "title": "絵の具とみなと",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No07_物語文_絵の具とみなと.pdf",
+  "thumb": "thumb/4年_No07_物語文_絵の具とみなと.webp"
  },
  {
-  "id": "高学年_No08_詩_朝",
+  "id": "4年_No08_物語文_わすれ物と友だち",
   "cat": "yomu",
   "no": 8,
-  "type": "詩",
-  "title": "朝",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No08_詩_朝.pdf",
-  "thumb": "thumb/高学年_No08_詩_朝.png"
+  "type": "物語文",
+  "title": "わすれ物と友だち",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No08_物語文_わすれ物と友だち.pdf",
+  "thumb": "thumb/4年_No08_物語文_わすれ物と友だち.webp"
  },
  {
-  "id": "高学年_No09_説明文_地産地消のよさ",
+  "id": "4年_No09_物語文_弟の運動会",
   "cat": "yomu",
   "no": 9,
-  "type": "説明文",
-  "title": "地産地消のよさ",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No09_説明文_地産地消のよさ.pdf",
-  "thumb": "thumb/高学年_No09_説明文_地産地消のよさ.png"
+  "type": "物語文",
+  "title": "弟の運動会",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No09_物語文_弟の運動会.pdf",
+  "thumb": "thumb/4年_No09_物語文_弟の運動会.webp"
  },
  {
-  "id": "高学年_No10_物語文_祖父の畑をつぐ",
+  "id": "4年_No10_物語文_ひみつ基地の約束",
   "cat": "yomu",
   "no": 10,
   "type": "物語文",
-  "title": "祖父の畑をつぐ",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No10_物語文_祖父の畑をつぐ.pdf",
-  "thumb": "thumb/高学年_No10_物語文_祖父の畑をつぐ.png"
+  "title": "ひみつ基地の約束",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No10_物語文_ひみつ基地の約束.pdf",
+  "thumb": "thumb/4年_No10_物語文_ひみつ基地の約束.webp"
  },
  {
-  "id": "高学年_No11_説明文_森林と二酸化炭素",
+  "id": "4年_No11_物語文_二重とびがとべた日",
   "cat": "yomu",
   "no": 11,
-  "type": "説明文",
-  "title": "森林と二酸化炭素",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No11_説明文_森林と二酸化炭素.pdf",
-  "thumb": "thumb/高学年_No11_説明文_森林と二酸化炭素.png"
+  "type": "物語文",
+  "title": "二重とびがとべた日",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No11_物語文_二重とびがとべた日.pdf",
+  "thumb": "thumb/4年_No11_物語文_二重とびがとべた日.webp"
  },
  {
-  "id": "高学年_No12_物語文_合唱コンクールの一票",
+  "id": "4年_No12_要約_森のはたらき",
   "cat": "yomu",
   "no": 12,
-  "type": "物語文",
-  "title": "合唱コンクールの一票",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No12_物語文_合唱コンクールの一票.pdf",
-  "thumb": "thumb/高学年_No12_物語文_合唱コンクールの一票.png"
+  "type": "要約",
+  "title": "森のはたらき",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No12_要約_森のはたらき.pdf",
+  "thumb": "thumb/4年_No12_要約_森のはたらき.webp"
  },
  {
-  "id": "高学年_No13_詩_風",
+  "id": "4年_No13_要約_和紙のよさ",
+  "cat": "yomu",
+  "no": 13,
+  "type": "要約",
+  "title": "和紙のよさ",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No13_要約_和紙のよさ.pdf",
+  "thumb": "thumb/4年_No13_要約_和紙のよさ.webp"
+ },
+ {
+  "id": "4年_No14_要約_信号きの色の意味",
+  "cat": "yomu",
+  "no": 14,
+  "type": "要約",
+  "title": "信号きの色の意味",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "yomu/4年_No14_要約_信号きの色の意味.pdf",
+  "thumb": "thumb/4年_No14_要約_信号きの色の意味.webp"
+ },
+ {
+  "id": "5年_No01_説明文_食品ロスを考える",
+  "cat": "yomu",
+  "no": 1,
+  "type": "説明文",
+  "title": "食品ロスを考える",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No01_説明文_食品ロスを考える.pdf",
+  "thumb": "thumb/5年_No01_説明文_食品ロスを考える.webp"
+ },
+ {
+  "id": "5年_No02_説明文_AIと私たちのくらし",
+  "cat": "yomu",
+  "no": 2,
+  "type": "説明文",
+  "title": "AIと私たちのくらし",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No02_説明文_AIと私たちのくらし.pdf",
+  "thumb": "thumb/5年_No02_説明文_AIと私たちのくらし.webp"
+ },
+ {
+  "id": "5年_No03_説明文_地産地消のよさ",
+  "cat": "yomu",
+  "no": 3,
+  "type": "説明文",
+  "title": "地産地消のよさ",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No03_説明文_地産地消のよさ.pdf",
+  "thumb": "thumb/5年_No03_説明文_地産地消のよさ.webp"
+ },
+ {
+  "id": "5年_No04_説明文_森林と二酸化炭素",
+  "cat": "yomu",
+  "no": 4,
+  "type": "説明文",
+  "title": "森林と二酸化炭素",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No04_説明文_森林と二酸化炭素.pdf",
+  "thumb": "thumb/5年_No04_説明文_森林と二酸化炭素.webp"
+ },
+ {
+  "id": "5年_No05_説明文_生物多様性を守る",
+  "cat": "yomu",
+  "no": 5,
+  "type": "説明文",
+  "title": "生物多様性を守る",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No05_説明文_生物多様性を守る.pdf",
+  "thumb": "thumb/5年_No05_説明文_生物多様性を守る.webp"
+ },
+ {
+  "id": "5年_No06_説明文_節水と水の循環",
+  "cat": "yomu",
+  "no": 6,
+  "type": "説明文",
+  "title": "節水と水の循環",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No06_説明文_節水と水の循環.pdf",
+  "thumb": "thumb/5年_No06_説明文_節水と水の循環.webp"
+ },
+ {
+  "id": "5年_No07_物語文_転校生とわたし",
+  "cat": "yomu",
+  "no": 7,
+  "type": "物語文",
+  "title": "転校生とわたし",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No07_物語文_転校生とわたし.pdf",
+  "thumb": "thumb/5年_No07_物語文_転校生とわたし.webp"
+ },
+ {
+  "id": "5年_No08_物語文_祖父の畑をつぐ",
+  "cat": "yomu",
+  "no": 8,
+  "type": "物語文",
+  "title": "祖父の畑をつぐ",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No08_物語文_祖父の畑をつぐ.pdf",
+  "thumb": "thumb/5年_No08_物語文_祖父の畑をつぐ.webp"
+ },
+ {
+  "id": "5年_No09_物語文_合唱コンクールの一票",
+  "cat": "yomu",
+  "no": 9,
+  "type": "物語文",
+  "title": "合唱コンクールの一票",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No09_物語文_合唱コンクールの一票.pdf",
+  "thumb": "thumb/5年_No09_物語文_合唱コンクールの一票.webp"
+ },
+ {
+  "id": "5年_No10_物語文_けんかした親友",
+  "cat": "yomu",
+  "no": 10,
+  "type": "物語文",
+  "title": "けんかした親友",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No10_物語文_けんかした親友.pdf",
+  "thumb": "thumb/5年_No10_物語文_けんかした親友.webp"
+ },
+ {
+  "id": "5年_No11_詩_たね",
+  "cat": "yomu",
+  "no": 11,
+  "type": "詩",
+  "title": "たね",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No11_詩_たね.pdf",
+  "thumb": "thumb/5年_No11_詩_たね.webp"
+ },
+ {
+  "id": "5年_No12_詩_朝",
+  "cat": "yomu",
+  "no": 12,
+  "type": "詩",
+  "title": "朝",
+  "grade": "5年",
+  "band": "high",
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No12_詩_朝.pdf",
+  "thumb": "thumb/5年_No12_詩_朝.webp"
+ },
+ {
+  "id": "5年_No13_詩_風",
   "cat": "yomu",
   "no": 13,
   "type": "詩",
   "title": "風",
-  "grade": "高学年",
+  "grade": "5年",
   "band": "high",
-  "pdf": "yomu/高学年_No13_詩_風.pdf",
-  "thumb": "thumb/高学年_No13_詩_風.png"
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No13_詩_風.pdf",
+  "thumb": "thumb/5年_No13_詩_風.webp"
  },
  {
-  "id": "高学年_No14_説明文_生物多様性を守る",
+  "id": "5年_No14_情報の読み取り_時刻表を読む",
   "cat": "yomu",
   "no": 14,
-  "type": "説明文",
-  "title": "生物多様性を守る",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No14_説明文_生物多様性を守る.pdf",
-  "thumb": "thumb/高学年_No14_説明文_生物多様性を守る.png"
- },
- {
-  "id": "高学年_No15_物語文_けんかした親友",
-  "cat": "yomu",
-  "no": 15,
-  "type": "物語文",
-  "title": "けんかした親友",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No15_物語文_けんかした親友.pdf",
-  "thumb": "thumb/高学年_No15_物語文_けんかした親友.png"
- },
- {
-  "id": "高学年_No16_説明文_フェアトレード",
-  "cat": "yomu",
-  "no": 16,
-  "type": "説明文",
-  "title": "フェアトレード",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No16_説明文_フェアトレード.pdf",
-  "thumb": "thumb/高学年_No16_説明文_フェアトレード.png"
- },
- {
-  "id": "高学年_No17_物語文_初めての一人旅",
-  "cat": "yomu",
-  "no": 17,
-  "type": "物語文",
-  "title": "初めての一人旅",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No17_物語文_初めての一人旅.pdf",
-  "thumb": "thumb/高学年_No17_物語文_初めての一人旅.png"
- },
- {
-  "id": "高学年_No18_物語文_最後の試合",
-  "cat": "yomu",
-  "no": 18,
-  "type": "物語文",
-  "title": "最後の試合",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No18_物語文_最後の試合.pdf",
-  "thumb": "thumb/高学年_No18_物語文_最後の試合.png"
- },
- {
-  "id": "高学年_No19_詩_なみ",
-  "cat": "yomu",
-  "no": 19,
-  "type": "詩",
-  "title": "なみ",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No19_詩_なみ.pdf",
-  "thumb": "thumb/高学年_No19_詩_なみ.png"
- },
- {
-  "id": "高学年_No20_説明文_ユニバーサルデザイン",
-  "cat": "yomu",
-  "no": 20,
-  "type": "説明文",
-  "title": "ユニバーサルデザイン",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No20_説明文_ユニバーサルデザイン.pdf",
-  "thumb": "thumb/高学年_No20_説明文_ユニバーサルデザイン.png"
- },
- {
-  "id": "高学年_No21_説明文_節水と水の循環",
-  "cat": "yomu",
-  "no": 21,
-  "type": "説明文",
-  "title": "節水と水の循環",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No21_説明文_節水と水の循環.pdf",
-  "thumb": "thumb/高学年_No21_説明文_節水と水の循環.png"
- },
- {
-  "id": "高学年_No22_詩_たびだち",
-  "cat": "yomu",
-  "no": 22,
-  "type": "詩",
-  "title": "たびだち",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No22_詩_たびだち.pdf",
-  "thumb": "thumb/高学年_No22_詩_たびだち.png"
- },
- {
-  "id": "高学年_No23_説明文_外来種の問題",
-  "cat": "yomu",
-  "no": 23,
-  "type": "説明文",
-  "title": "外来種の問題",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No23_説明文_外来種の問題.pdf",
-  "thumb": "thumb/高学年_No23_説明文_外来種の問題.png"
- },
- {
-  "id": "高学年_No24_情報の読み取り_グラフで見るごみの量",
-  "cat": "yomu",
-  "no": 24,
-  "type": "情報の読み取り",
-  "title": "グラフで見るごみの量",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No24_情報の読み取り_グラフで見るごみの量.pdf",
-  "thumb": "thumb/高学年_No24_情報の読み取り_グラフで見るごみの量.png"
- },
- {
-  "id": "高学年_No25_情報の読み取り_天気予報の言葉",
-  "cat": "yomu",
-  "no": 25,
-  "type": "情報の読み取り",
-  "title": "天気予報の言葉",
-  "grade": "高学年",
-  "band": "high",
-  "pdf": "yomu/高学年_No25_情報の読み取り_天気予報の言葉.pdf",
-  "thumb": "thumb/高学年_No25_情報の読み取り_天気予報の言葉.png"
- },
- {
-  "id": "高学年_No26_情報の読み取り_時刻表を読む",
-  "cat": "yomu",
-  "no": 26,
   "type": "情報の読み取り",
   "title": "時刻表を読む",
-  "grade": "高学年",
+  "grade": "5年",
   "band": "high",
-  "pdf": "yomu/高学年_No26_情報の読み取り_時刻表を読む.pdf",
-  "thumb": "thumb/高学年_No26_情報の読み取り_時刻表を読む.png"
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No14_情報の読み取り_時刻表を読む.pdf",
+  "thumb": "thumb/5年_No14_情報の読み取り_時刻表を読む.webp"
  },
  {
-  "id": "高学年_No27_情報の読み取り_円グラフで見る一日の時間",
+  "id": "5年_No15_情報の読み取り_円グラフで見る一日の時間",
   "cat": "yomu",
-  "no": 27,
+  "no": 15,
   "type": "情報の読み取り",
   "title": "円グラフで見る一日の時間",
-  "grade": "高学年",
+  "grade": "5年",
   "band": "high",
-  "pdf": "yomu/高学年_No27_情報の読み取り_円グラフで見る一日の時間.pdf",
-  "thumb": "thumb/高学年_No27_情報の読み取り_円グラフで見る一日の時間.png"
+  "grades": [
+   "5年"
+  ],
+  "pdf": "yomu/5年_No15_情報の読み取り_円グラフで見る一日の時間.pdf",
+  "thumb": "thumb/5年_No15_情報の読み取り_円グラフで見る一日の時間.webp"
+ },
+ {
+  "id": "6年_No01_説明文_海のプラスチックごみ",
+  "cat": "yomu",
+  "no": 1,
+  "type": "説明文",
+  "title": "海のプラスチックごみ",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No01_説明文_海のプラスチックごみ.pdf",
+  "thumb": "thumb/6年_No01_説明文_海のプラスチックごみ.webp"
+ },
+ {
+  "id": "6年_No02_説明文_再生可能エネルギー",
+  "cat": "yomu",
+  "no": 2,
+  "type": "説明文",
+  "title": "再生可能エネルギー",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No02_説明文_再生可能エネルギー.pdf",
+  "thumb": "thumb/6年_No02_説明文_再生可能エネルギー.webp"
+ },
+ {
+  "id": "6年_No03_説明文_フェアトレード",
+  "cat": "yomu",
+  "no": 3,
+  "type": "説明文",
+  "title": "フェアトレード",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No03_説明文_フェアトレード.pdf",
+  "thumb": "thumb/6年_No03_説明文_フェアトレード.webp"
+ },
+ {
+  "id": "6年_No04_説明文_ユニバーサルデザイン",
+  "cat": "yomu",
+  "no": 4,
+  "type": "説明文",
+  "title": "ユニバーサルデザイン",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No04_説明文_ユニバーサルデザイン.pdf",
+  "thumb": "thumb/6年_No04_説明文_ユニバーサルデザイン.webp"
+ },
+ {
+  "id": "6年_No05_説明文_外来種の問題",
+  "cat": "yomu",
+  "no": 5,
+  "type": "説明文",
+  "title": "外来種の問題",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No05_説明文_外来種の問題.pdf",
+  "thumb": "thumb/6年_No05_説明文_外来種の問題.webp"
+ },
+ {
+  "id": "6年_No06_物語文_バトンをつなぐ",
+  "cat": "yomu",
+  "no": 6,
+  "type": "物語文",
+  "title": "バトンをつなぐ",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No06_物語文_バトンをつなぐ.pdf",
+  "thumb": "thumb/6年_No06_物語文_バトンをつなぐ.webp"
+ },
+ {
+  "id": "6年_No07_物語文_初めての一人旅",
+  "cat": "yomu",
+  "no": 7,
+  "type": "物語文",
+  "title": "初めての一人旅",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No07_物語文_初めての一人旅.pdf",
+  "thumb": "thumb/6年_No07_物語文_初めての一人旅.webp"
+ },
+ {
+  "id": "6年_No08_物語文_最後の試合",
+  "cat": "yomu",
+  "no": 8,
+  "type": "物語文",
+  "title": "最後の試合",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No08_物語文_最後の試合.pdf",
+  "thumb": "thumb/6年_No08_物語文_最後の試合.webp"
+ },
+ {
+  "id": "6年_No09_詩_なみ",
+  "cat": "yomu",
+  "no": 9,
+  "type": "詩",
+  "title": "なみ",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No09_詩_なみ.pdf",
+  "thumb": "thumb/6年_No09_詩_なみ.webp"
+ },
+ {
+  "id": "6年_No10_詩_たびだち",
+  "cat": "yomu",
+  "no": 10,
+  "type": "詩",
+  "title": "たびだち",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No10_詩_たびだち.pdf",
+  "thumb": "thumb/6年_No10_詩_たびだち.webp"
+ },
+ {
+  "id": "6年_No11_情報の読み取り_グラフで見るごみの量",
+  "cat": "yomu",
+  "no": 11,
+  "type": "情報の読み取り",
+  "title": "グラフで見るごみの量",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No11_情報の読み取り_グラフで見るごみの量.pdf",
+  "thumb": "thumb/6年_No11_情報の読み取り_グラフで見るごみの量.webp"
+ },
+ {
+  "id": "6年_No12_情報の読み取り_天気予報の言葉",
+  "cat": "yomu",
+  "no": 12,
+  "type": "情報の読み取り",
+  "title": "天気予報の言葉",
+  "grade": "6年",
+  "band": "high",
+  "grades": [
+   "6年"
+  ],
+  "pdf": "yomu/6年_No12_情報の読み取り_天気予報の言葉.pdf",
+  "thumb": "thumb/6年_No12_情報の読み取り_天気予報の言葉.webp"
  },
  {
   "id": "1年_No01_はをへのつかいかた",
@@ -623,8 +1043,11 @@
   "title": "はをへのつかいかた",
   "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kotoba/1年_No01_はをへのつかいかた.pdf",
-  "thumb": "thumb/1年_No01_はをへのつかいかた.png"
+  "thumb": "thumb/1年_No01_はをへのつかいかた.webp"
  },
  {
   "id": "2年_No01_かたかなで書くことば",
@@ -634,8 +1057,39 @@
   "title": "かたかなで書くことば",
   "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kotoba/2年_No01_かたかなで書くことば.pdf",
-  "thumb": "thumb/2年_No01_かたかなで書くことば.png"
+  "thumb": "thumb/2年_No01_かたかなで書くことば.webp"
+ },
+ {
+  "id": "2年_No09_語句_はんたいのことば",
+  "cat": "kotoba",
+  "no": 9,
+  "type": "語句",
+  "title": "はんたいのことば",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "kotoba/2年_No09_語句_はんたいのことば.pdf",
+  "thumb": "thumb/2年_No09_語句_はんたいのことば.webp"
+ },
+ {
+  "id": "2年_No10_語句_かぞえることば",
+  "cat": "kotoba",
+  "no": 10,
+  "type": "語句",
+  "title": "かぞえることば",
+  "grade": "2年",
+  "band": "low",
+  "grades": [
+   "2年"
+  ],
+  "pdf": "kotoba/2年_No10_語句_かぞえることば.pdf",
+  "thumb": "thumb/2年_No10_語句_かぞえることば.webp"
  },
  {
   "id": "3年_No01_気持ちを表す言葉",
@@ -645,8 +1099,11 @@
   "title": "気持ちを表す言葉",
   "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kotoba/3年_No01_気持ちを表す言葉.pdf",
-  "thumb": "thumb/3年_No01_気持ちを表す言葉.png"
+  "thumb": "thumb/3年_No01_気持ちを表す言葉.webp"
  },
  {
   "id": "3年_No02_つなぎ言葉",
@@ -656,8 +1113,39 @@
   "title": "つなぎ言葉",
   "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kotoba/3年_No02_つなぎ言葉.pdf",
-  "thumb": "thumb/3年_No02_つなぎ言葉.png"
+  "thumb": "thumb/3年_No02_つなぎ言葉.webp"
+ },
+ {
+  "id": "3年_No16_語句_体の言葉のかんようく",
+  "cat": "kotoba",
+  "no": 16,
+  "type": "語句",
+  "title": "体の言葉のかんようく",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "kotoba/3年_No16_語句_体の言葉のかんようく.pdf",
+  "thumb": "thumb/3年_No16_語句_体の言葉のかんようく.webp"
+ },
+ {
+  "id": "3年_No17_語句_気持ちを表す言葉",
+  "cat": "kotoba",
+  "no": 17,
+  "type": "語句",
+  "title": "気持ちを表す言葉",
+  "grade": "3年",
+  "band": "mid",
+  "grades": [
+   "3年"
+  ],
+  "pdf": "kotoba/3年_No17_語句_気持ちを表す言葉.pdf",
+  "thumb": "thumb/3年_No17_語句_気持ちを表す言葉.webp"
  },
  {
   "id": "4年_No01_ことわざ生きもの",
@@ -667,8 +1155,25 @@
   "title": "ことわざ生きもの",
   "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kotoba/4年_No01_ことわざ生きもの.pdf",
-  "thumb": "thumb/4年_No01_ことわざ生きもの.png"
+  "thumb": "thumb/4年_No01_ことわざ生きもの.webp"
+ },
+ {
+  "id": "4年_No15_語句_つなぎ言葉のはたらき",
+  "cat": "kotoba",
+  "no": 15,
+  "type": "語句",
+  "title": "つなぎ言葉のはたらき",
+  "grade": "4年",
+  "band": "mid",
+  "grades": [
+   "4年"
+  ],
+  "pdf": "kotoba/4年_No15_語句_つなぎ言葉のはたらき.pdf",
+  "thumb": "thumb/4年_No15_語句_つなぎ言葉のはたらき.webp"
  },
  {
   "id": "5年_No01_敬語尊敬語",
@@ -678,8 +1183,11 @@
   "title": "敬語尊敬語",
   "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kotoba/5年_No01_敬語尊敬語.pdf",
-  "thumb": "thumb/5年_No01_敬語尊敬語.png"
+  "thumb": "thumb/5年_No01_敬語尊敬語.webp"
  },
  {
   "id": "6年_No01_熟語の成り立ち",
@@ -689,41 +1197,11 @@
   "title": "熟語の成り立ち",
   "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kotoba/6年_No01_熟語の成り立ち.pdf",
-  "thumb": "thumb/6年_No01_熟語の成り立ち.png"
- },
- {
-  "id": "中学年_No24_語句_体の言葉のかんようく",
-  "cat": "kotoba",
-  "no": 24,
-  "type": "語句",
-  "title": "体の言葉のかんようく",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "kotoba/中学年_No24_語句_体の言葉のかんようく.pdf",
-  "thumb": "thumb/中学年_No24_語句_体の言葉のかんようく.png"
- },
- {
-  "id": "中学年_No29_語句_気持ちを表す言葉",
-  "cat": "kotoba",
-  "no": 29,
-  "type": "語句",
-  "title": "気持ちを表す言葉",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "kotoba/中学年_No29_語句_気持ちを表す言葉.pdf",
-  "thumb": "thumb/中学年_No29_語句_気持ちを表す言葉.png"
- },
- {
-  "id": "中学年_No30_語句_つなぎ言葉のはたらき",
-  "cat": "kotoba",
-  "no": 30,
-  "type": "語句",
-  "title": "つなぎ言葉のはたらき",
-  "grade": "中学年",
-  "band": "mid",
-  "pdf": "kotoba/中学年_No30_語句_つなぎ言葉のはたらき.pdf",
-  "thumb": "thumb/中学年_No30_語句_つなぎ言葉のはたらき.png"
+  "thumb": "thumb/6年_No01_熟語の成り立ち.webp"
  },
  {
   "id": "No16_学級文庫に学習まんが",
@@ -733,8 +1211,12 @@
   "title": "学級文庫に学習まんが",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No16_学級文庫に学習まんが.pdf",
-  "thumb": "thumb/No16_学級文庫に学習まんが.png"
+  "thumb": "thumb/No16_学級文庫に学習まんが.webp"
  },
  {
   "id": "No17_休み時間の体育館わり当て",
@@ -744,8 +1226,12 @@
   "title": "休み時間の体育館わり当て",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No17_休み時間の体育館わり当て.pdf",
-  "thumb": "thumb/No17_休み時間の体育館わり当て.png"
+  "thumb": "thumb/No17_休み時間の体育館わり当て.webp"
  },
  {
   "id": "No18_調べ学習は本かインターネットか",
@@ -755,8 +1241,12 @@
   "title": "調べ学習は本かインターネットか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No18_調べ学習は本かインターネットか.pdf",
-  "thumb": "thumb/No18_調べ学習は本かインターネットか.png"
+  "thumb": "thumb/No18_調べ学習は本かインターネットか.webp"
  },
  {
   "id": "No19_昼休みに外遊びの日を作るべきか",
@@ -766,8 +1256,12 @@
   "title": "昼休みに外遊びの日を作るべきか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No19_昼休みに外遊びの日を作るべきか.pdf",
-  "thumb": "thumb/No19_昼休みに外遊びの日を作るべきか.png"
+  "thumb": "thumb/No19_昼休みに外遊びの日を作るべきか.webp"
  },
  {
   "id": "No20_給食の量は全員同じか選ぶか",
@@ -777,8 +1271,12 @@
   "title": "給食の量は全員同じか選ぶか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No20_給食の量は全員同じか選ぶか.pdf",
-  "thumb": "thumb/No20_給食の量は全員同じか選ぶか.png"
+  "thumb": "thumb/No20_給食の量は全員同じか選ぶか.webp"
  },
  {
   "id": "No21_お知らせは紙かアプリか",
@@ -788,8 +1286,12 @@
   "title": "お知らせは紙かアプリか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No21_お知らせは紙かアプリか.pdf",
-  "thumb": "thumb/No21_お知らせは紙かアプリか.png"
+  "thumb": "thumb/No21_お知らせは紙かアプリか.webp"
  },
  {
   "id": "No22_駅前の空き地の使い方",
@@ -799,8 +1301,12 @@
   "title": "駅前の空き地の使い方",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No22_駅前の空き地の使い方.pdf",
-  "thumb": "thumb/No22_駅前の空き地の使い方.png"
+  "thumb": "thumb/No22_駅前の空き地の使い方.webp"
  },
  {
   "id": "No23_運動会の種目は全員リレーか選択制か",
@@ -810,8 +1316,12 @@
   "title": "運動会の種目は全員リレーか選択制か",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No23_運動会の種目は全員リレーか選択制か.pdf",
-  "thumb": "thumb/No23_運動会の種目は全員リレーか選択制か.png"
+  "thumb": "thumb/No23_運動会の種目は全員リレーか選択制か.webp"
  },
  {
   "id": "No24_宿題は紙かデジタルか",
@@ -821,8 +1331,12 @@
   "title": "宿題は紙かデジタルか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No24_宿題は紙かデジタルか.pdf",
-  "thumb": "thumb/No24_宿題は紙かデジタルか.png"
+  "thumb": "thumb/No24_宿題は紙かデジタルか.webp"
  },
  {
   "id": "No25_防災訓練に小学生はどう参加するか",
@@ -832,8 +1346,12 @@
   "title": "防災訓練に小学生はどう参加するか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No25_防災訓練に小学生はどう参加するか.pdf",
-  "thumb": "thumb/No25_防災訓練に小学生はどう参加するか.png"
+  "thumb": "thumb/No25_防災訓練に小学生はどう参加するか.webp"
  },
  {
   "id": "No26_そうじの分担は固定か週替わりか",
@@ -843,8 +1361,12 @@
   "title": "そうじの分担は固定か週替わりか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No26_そうじの分担は固定か週替わりか.pdf",
-  "thumb": "thumb/No26_そうじの分担は固定か週替わりか.png"
+  "thumb": "thumb/No26_そうじの分担は固定か週替わりか.webp"
  },
  {
   "id": "No27_地域の魅力は動画かパンフか",
@@ -854,8 +1376,12 @@
   "title": "地域の魅力は動画かパンフか",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No27_地域の魅力は動画かパンフか.pdf",
-  "thumb": "thumb/No27_地域の魅力は動画かパンフか.png"
+  "thumb": "thumb/No27_地域の魅力は動画かパンフか.webp"
  },
  {
   "id": "No28_朝読書は紙の本か電子書籍か",
@@ -865,8 +1391,12 @@
   "title": "朝読書は紙の本か電子書籍か",
   "grade": "高学年",
   "band": "high",
+  "grades": [
+   "5年",
+   "6年"
+  ],
   "pdf": "sakubun/No28_朝読書は紙の本か電子書籍か.pdf",
-  "thumb": "thumb/No28_朝読書は紙の本か電子書籍か.png"
+  "thumb": "thumb/No28_朝読書は紙の本か電子書籍か.webp"
  },
  {
   "id": "小1_No01_先生の話_せんせいのあさのおはなし",
@@ -874,10 +1404,13 @@
   "no": 1,
   "type": "先生の話",
   "title": "せんせいのあさのおはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No01_先生の話_せんせいのあさのおはなし.pdf",
-  "thumb": "thumb/小1_No01_先生の話_せんせいのあさのおはなし.png"
+  "thumb": "thumb/小1_No01_先生の話_せんせいのあさのおはなし.webp"
  },
  {
   "id": "小1_No02_おしらせ_きゅうしょくのおしらせ",
@@ -885,10 +1418,13 @@
   "no": 2,
   "type": "おしらせ",
   "title": "きゅうしょくのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No02_おしらせ_きゅうしょくのおしらせ.pdf",
-  "thumb": "thumb/小1_No02_おしらせ_きゅうしょくのおしらせ.png"
+  "thumb": "thumb/小1_No02_おしらせ_きゅうしょくのおしらせ.webp"
  },
  {
   "id": "小1_No03_おしらせ_えんそくのおしらせ",
@@ -896,10 +1432,13 @@
   "no": 3,
   "type": "おしらせ",
   "title": "えんそくのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No03_おしらせ_えんそくのおしらせ.pdf",
-  "thumb": "thumb/小1_No03_おしらせ_えんそくのおしらせ.png"
+  "thumb": "thumb/小1_No03_おしらせ_えんそくのおしらせ.webp"
  },
  {
   "id": "小1_No04_でんごん_おかあさんのでんごん",
@@ -907,10 +1446,13 @@
   "no": 4,
   "type": "でんごん",
   "title": "おかあさんのでんごん",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No04_でんごん_おかあさんのでんごん.pdf",
-  "thumb": "thumb/小1_No04_でんごん_おかあさんのでんごん.png"
+  "thumb": "thumb/小1_No04_でんごん_おかあさんのでんごん.webp"
  },
  {
   "id": "小1_No05_せつめい_どうぶつえんのぞうのはなし",
@@ -918,10 +1460,13 @@
   "no": 5,
   "type": "せつめい",
   "title": "どうぶつえんのぞうのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No05_せつめい_どうぶつえんのぞうのはなし.pdf",
-  "thumb": "thumb/小1_No05_せつめい_どうぶつえんのぞうのはなし.png"
+  "thumb": "thumb/小1_No05_せつめい_どうぶつえんのぞうのはなし.webp"
  },
  {
   "id": "小1_No06_せつめい_あさがおのそだてかた",
@@ -929,10 +1474,13 @@
   "no": 6,
   "type": "せつめい",
   "title": "あさがおのそだてかた",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No06_せつめい_あさがおのそだてかた.pdf",
-  "thumb": "thumb/小1_No06_せつめい_あさがおのそだてかた.png"
+  "thumb": "thumb/小1_No06_せつめい_あさがおのそだてかた.webp"
  },
  {
   "id": "小1_No07_先生の話_てあらいのはなし",
@@ -940,10 +1488,13 @@
   "no": 7,
   "type": "先生の話",
   "title": "てあらいのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No07_先生の話_てあらいのはなし.pdf",
-  "thumb": "thumb/小1_No07_先生の話_てあらいのはなし.png"
+  "thumb": "thumb/小1_No07_先生の話_てあらいのはなし.webp"
  },
  {
   "id": "小1_No08_せつめい_としょかんのつかいかた",
@@ -951,10 +1502,13 @@
   "no": 8,
   "type": "せつめい",
   "title": "としょかんのつかいかた",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No08_せつめい_としょかんのつかいかた.pdf",
-  "thumb": "thumb/小1_No08_せつめい_としょかんのつかいかた.png"
+  "thumb": "thumb/小1_No08_せつめい_としょかんのつかいかた.webp"
  },
  {
   "id": "小1_No09_おしらせ_プールのきまり",
@@ -962,10 +1516,13 @@
   "no": 9,
   "type": "おしらせ",
   "title": "プールのきまり",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No09_おしらせ_プールのきまり.pdf",
-  "thumb": "thumb/小1_No09_おしらせ_プールのきまり.png"
+  "thumb": "thumb/小1_No09_おしらせ_プールのきまり.webp"
  },
  {
   "id": "小1_No10_おはなし_いぬのポチのはなし",
@@ -973,10 +1530,13 @@
   "no": 10,
   "type": "おはなし",
   "title": "いぬのポチのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No10_おはなし_いぬのポチのはなし.pdf",
-  "thumb": "thumb/小1_No10_おはなし_いぬのポチのはなし.png"
+  "thumb": "thumb/小1_No10_おはなし_いぬのポチのはなし.webp"
  },
  {
   "id": "小1_No11_おしらせ_たなばたかいのおしらせ",
@@ -984,10 +1544,13 @@
   "no": 11,
   "type": "おしらせ",
   "title": "たなばたかいのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No11_おしらせ_たなばたかいのおしらせ.pdf",
-  "thumb": "thumb/小1_No11_おしらせ_たなばたかいのおしらせ.png"
+  "thumb": "thumb/小1_No11_おしらせ_たなばたかいのおしらせ.webp"
  },
  {
   "id": "小1_No12_でんごん_おじいちゃんのでんわ",
@@ -995,10 +1558,13 @@
   "no": 12,
   "type": "でんごん",
   "title": "おじいちゃんのでんわ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No12_でんごん_おじいちゃんのでんわ.pdf",
-  "thumb": "thumb/小1_No12_でんごん_おじいちゃんのでんわ.png"
+  "thumb": "thumb/小1_No12_でんごん_おじいちゃんのでんわ.webp"
  },
  {
   "id": "小1_No13_せつめい_きんぎょのえさやり",
@@ -1006,10 +1572,13 @@
   "no": 13,
   "type": "せつめい",
   "title": "きんぎょのえさやり",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No13_せつめい_きんぎょのえさやり.pdf",
-  "thumb": "thumb/小1_No13_せつめい_きんぎょのえさやり.png"
+  "thumb": "thumb/小1_No13_せつめい_きんぎょのえさやり.webp"
  },
  {
   "id": "小1_No14_先生の話_あめのひのあそびかた",
@@ -1017,10 +1586,13 @@
   "no": 14,
   "type": "先生の話",
   "title": "あめのひのあそびかた",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No14_先生の話_あめのひのあそびかた.pdf",
-  "thumb": "thumb/小1_No14_先生の話_あめのひのあそびかた.png"
+  "thumb": "thumb/小1_No14_先生の話_あめのひのあそびかた.webp"
  },
  {
   "id": "小1_No15_おしらせ_バスえんそくのもちもの",
@@ -1028,10 +1600,13 @@
   "no": 15,
   "type": "おしらせ",
   "title": "バスえんそくのもちもの",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No15_おしらせ_バスえんそくのもちもの.pdf",
-  "thumb": "thumb/小1_No15_おしらせ_バスえんそくのもちもの.png"
+  "thumb": "thumb/小1_No15_おしらせ_バスえんそくのもちもの.webp"
  },
  {
   "id": "小1_No16_せつめい_カブトムシのはなし",
@@ -1039,10 +1614,13 @@
   "no": 16,
   "type": "せつめい",
   "title": "カブトムシのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No16_せつめい_カブトムシのはなし.pdf",
-  "thumb": "thumb/小1_No16_せつめい_カブトムシのはなし.png"
+  "thumb": "thumb/小1_No16_せつめい_カブトムシのはなし.webp"
  },
  {
   "id": "小1_No17_先生の話_こうえんのやくそく",
@@ -1050,10 +1628,13 @@
   "no": 17,
   "type": "先生の話",
   "title": "こうえんのやくそく",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No17_先生の話_こうえんのやくそく.pdf",
-  "thumb": "thumb/小1_No17_先生の話_こうえんのやくそく.png"
+  "thumb": "thumb/小1_No17_先生の話_こうえんのやくそく.webp"
  },
  {
   "id": "小1_No18_おしらせ_うんどうかいのおしらせ",
@@ -1061,10 +1642,13 @@
   "no": 18,
   "type": "おしらせ",
   "title": "うんどうかいのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No18_おしらせ_うんどうかいのおしらせ.pdf",
-  "thumb": "thumb/小1_No18_おしらせ_うんどうかいのおしらせ.png"
+  "thumb": "thumb/小1_No18_おしらせ_うんどうかいのおしらせ.webp"
  },
  {
   "id": "小1_No19_せつめい_うさぎごやのとうばん",
@@ -1072,10 +1656,13 @@
   "no": 19,
   "type": "せつめい",
   "title": "うさぎごやのとうばん",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No19_せつめい_うさぎごやのとうばん.pdf",
-  "thumb": "thumb/小1_No19_せつめい_うさぎごやのとうばん.png"
+  "thumb": "thumb/小1_No19_せつめい_うさぎごやのとうばん.webp"
  },
  {
   "id": "小1_No20_でんごん_おとうさんのでんごん",
@@ -1083,10 +1670,13 @@
   "no": 20,
   "type": "でんごん",
   "title": "おとうさんのでんごん",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No20_でんごん_おとうさんのでんごん.pdf",
-  "thumb": "thumb/小1_No20_でんごん_おとうさんのでんごん.png"
+  "thumb": "thumb/小1_No20_でんごん_おとうさんのでんごん.webp"
  },
  {
   "id": "小1_No21_おしらせ_あきまつりのおしらせ",
@@ -1094,10 +1684,13 @@
   "no": 21,
   "type": "おしらせ",
   "title": "あきまつりのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No21_おしらせ_あきまつりのおしらせ.pdf",
-  "thumb": "thumb/小1_No21_おしらせ_あきまつりのおしらせ.png"
+  "thumb": "thumb/小1_No21_おしらせ_あきまつりのおしらせ.webp"
  },
  {
   "id": "小1_No22_先生の話_サツマイモほりのはなし",
@@ -1105,10 +1698,13 @@
   "no": 22,
   "type": "先生の話",
   "title": "サツマイモほりのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No22_先生の話_サツマイモほりのはなし.pdf",
-  "thumb": "thumb/小1_No22_先生の話_サツマイモほりのはなし.png"
+  "thumb": "thumb/小1_No22_先生の話_サツマイモほりのはなし.webp"
  },
  {
   "id": "小1_No23_先生の話_おちばひろいのおてつだい",
@@ -1116,10 +1712,13 @@
   "no": 23,
   "type": "先生の話",
   "title": "おちばひろいのおてつだい",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No23_先生の話_おちばひろいのおてつだい.pdf",
-  "thumb": "thumb/小1_No23_先生の話_おちばひろいのおてつだい.png"
+  "thumb": "thumb/小1_No23_先生の話_おちばひろいのおてつだい.webp"
  },
  {
   "id": "小1_No24_せつめい_ゆきだるまのつくりかた",
@@ -1127,10 +1726,13 @@
   "no": 24,
   "type": "せつめい",
   "title": "ゆきだるまのつくりかた",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No24_せつめい_ゆきだるまのつくりかた.pdf",
-  "thumb": "thumb/小1_No24_せつめい_ゆきだるまのつくりかた.png"
+  "thumb": "thumb/小1_No24_せつめい_ゆきだるまのつくりかた.webp"
  },
  {
   "id": "小1_No25_先生の話_おみせやさんごっこのじゅんび",
@@ -1138,10 +1740,13 @@
   "no": 25,
   "type": "先生の話",
   "title": "おみせやさんごっこのじゅんび",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No25_先生の話_おみせやさんごっこのじゅんび.pdf",
-  "thumb": "thumb/小1_No25_先生の話_おみせやさんごっこのじゅんび.png"
+  "thumb": "thumb/小1_No25_先生の話_おみせやさんごっこのじゅんび.webp"
  },
  {
   "id": "小1_No26_おしらせ_マラソンたいかいのおしらせ",
@@ -1149,10 +1754,13 @@
   "no": 26,
   "type": "おしらせ",
   "title": "マラソンたいかいのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No26_おしらせ_マラソンたいかいのおしらせ.pdf",
-  "thumb": "thumb/小1_No26_おしらせ_マラソンたいかいのおしらせ.png"
+  "thumb": "thumb/小1_No26_おしらせ_マラソンたいかいのおしらせ.webp"
  },
  {
   "id": "小1_No27_おしらせ_せつぶんかいのおしらせ",
@@ -1160,10 +1768,13 @@
   "no": 27,
   "type": "おしらせ",
   "title": "せつぶんかいのおしらせ",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No27_おしらせ_せつぶんかいのおしらせ.pdf",
-  "thumb": "thumb/小1_No27_おしらせ_せつぶんかいのおしらせ.png"
+  "thumb": "thumb/小1_No27_おしらせ_せつぶんかいのおしらせ.webp"
  },
  {
   "id": "小1_No28_先生の話_あたらしい1ねんせいをむかえるかい",
@@ -1171,10 +1782,13 @@
   "no": 28,
   "type": "先生の話",
   "title": "あたらしい1ねんせいをむかえるかい",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No28_先生の話_あたらしい1ねんせいをむかえるかい.pdf",
-  "thumb": "thumb/小1_No28_先生の話_あたらしい1ねんせいをむかえるかい.png"
+  "thumb": "thumb/小1_No28_先生の話_あたらしい1ねんせいをむかえるかい.webp"
  },
  {
   "id": "小1_No29_先生の話_6ねんせいへのおてがみのはなし",
@@ -1182,10 +1796,13 @@
   "no": 29,
   "type": "先生の話",
   "title": "6ねんせいへのおてがみのはなし",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No29_先生の話_6ねんせいへのおてがみのはなし.pdf",
-  "thumb": "thumb/小1_No29_先生の話_6ねんせいへのおてがみのはなし.png"
+  "thumb": "thumb/小1_No29_先生の話_6ねんせいへのおてがみのはなし.webp"
  },
  {
   "id": "小1_No30_先生の話_はるやすみのやくそく",
@@ -1193,10 +1810,13 @@
   "no": 30,
   "type": "先生の話",
   "title": "はるやすみのやくそく",
-  "grade": "小1",
+  "grade": "1年",
   "band": "low",
+  "grades": [
+   "1年"
+  ],
   "pdf": "kikitori/小1_No30_先生の話_はるやすみのやくそく.pdf",
-  "thumb": "thumb/小1_No30_先生の話_はるやすみのやくそく.png"
+  "thumb": "thumb/小1_No30_先生の話_はるやすみのやくそく.webp"
  },
  {
   "id": "小2_No01_先生の話_たんにんのじこしょうかい",
@@ -1204,10 +1824,13 @@
   "no": 1,
   "type": "先生の話",
   "title": "たんにんのじこしょうかい",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No01_先生の話_たんにんのじこしょうかい.pdf",
-  "thumb": "thumb/小2_No01_先生の話_たんにんのじこしょうかい.png"
+  "thumb": "thumb/小2_No01_先生の話_たんにんのじこしょうかい.webp"
  },
  {
   "id": "小2_No02_おしらせ_がっこうたんけんのあんない",
@@ -1215,10 +1838,13 @@
   "no": 2,
   "type": "おしらせ",
   "title": "がっこうたんけんのあんない",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No02_おしらせ_がっこうたんけんのあんない.pdf",
-  "thumb": "thumb/小2_No02_おしらせ_がっこうたんけんのあんない.png"
+  "thumb": "thumb/小2_No02_おしらせ_がっこうたんけんのあんない.webp"
  },
  {
   "id": "小2_No03_せつめい_やさいのなえのうえかた",
@@ -1226,10 +1852,13 @@
   "no": 3,
   "type": "せつめい",
   "title": "やさいのなえのうえかた",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No03_せつめい_やさいのなえのうえかた.pdf",
-  "thumb": "thumb/小2_No03_せつめい_やさいのなえのうえかた.png"
+  "thumb": "thumb/小2_No03_せつめい_やさいのなえのうえかた.webp"
  },
  {
   "id": "小2_No04_はたらく人_パンやさんのはなし",
@@ -1237,10 +1866,13 @@
   "no": 4,
   "type": "はたらく人",
   "title": "パンやさんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No04_はたらく人_パンやさんのはなし.pdf",
-  "thumb": "thumb/小2_No04_はたらく人_パンやさんのはなし.png"
+  "thumb": "thumb/小2_No04_はたらく人_パンやさんのはなし.webp"
  },
  {
   "id": "小2_No05_はたらく人_としょかんしさんのはなし",
@@ -1248,10 +1880,13 @@
   "no": 5,
   "type": "はたらく人",
   "title": "としょかんしさんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No05_はたらく人_としょかんしさんのはなし.pdf",
-  "thumb": "thumb/小2_No05_はたらく人_としょかんしさんのはなし.png"
+  "thumb": "thumb/小2_No05_はたらく人_としょかんしさんのはなし.webp"
  },
  {
   "id": "小2_No06_おしらせ_プールびらきのおしらせ",
@@ -1259,10 +1894,13 @@
   "no": 6,
   "type": "おしらせ",
   "title": "プールびらきのおしらせ",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No06_おしらせ_プールびらきのおしらせ.pdf",
-  "thumb": "thumb/小2_No06_おしらせ_プールびらきのおしらせ.png"
+  "thumb": "thumb/小2_No06_おしらせ_プールびらきのおしらせ.webp"
  },
  {
   "id": "小2_No07_せつめい_ミニトマトのみずやり",
@@ -1270,10 +1908,13 @@
   "no": 7,
   "type": "せつめい",
   "title": "ミニトマトのみずやり",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No07_せつめい_ミニトマトのみずやり.pdf",
-  "thumb": "thumb/小2_No07_せつめい_ミニトマトのみずやり.png"
+  "thumb": "thumb/小2_No07_せつめい_ミニトマトのみずやり.webp"
  },
  {
   "id": "小2_No08_はたらく人_バスのうんてんしゅさんのはなし",
@@ -1281,10 +1922,13 @@
   "no": 8,
   "type": "はたらく人",
   "title": "バスのうんてんしゅさんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No08_はたらく人_バスのうんてんしゅさんのはなし.pdf",
-  "thumb": "thumb/小2_No08_はたらく人_バスのうんてんしゅさんのはなし.png"
+  "thumb": "thumb/小2_No08_はたらく人_バスのうんてんしゅさんのはなし.webp"
  },
  {
   "id": "小2_No09_おしらせ_なつまつりのぼんおどり",
@@ -1292,10 +1936,13 @@
   "no": 9,
   "type": "おしらせ",
   "title": "なつまつりのぼんおどり",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No09_おしらせ_なつまつりのぼんおどり.pdf",
-  "thumb": "thumb/小2_No09_おしらせ_なつまつりのぼんおどり.png"
+  "thumb": "thumb/小2_No09_おしらせ_なつまつりのぼんおどり.webp"
  },
  {
   "id": "小2_No10_先生の話_なつやすみのくらし",
@@ -1303,10 +1950,13 @@
   "no": 10,
   "type": "先生の話",
   "title": "なつやすみのくらし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No10_先生の話_なつやすみのくらし.pdf",
-  "thumb": "thumb/小2_No10_先生の話_なつやすみのくらし.png"
+  "thumb": "thumb/小2_No10_先生の話_なつやすみのくらし.webp"
  },
  {
   "id": "小2_No11_せつめい_ざりがにのかいかた",
@@ -1314,10 +1964,13 @@
   "no": 11,
   "type": "せつめい",
   "title": "ざりがにのかいかた",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No11_せつめい_ざりがにのかいかた.pdf",
-  "thumb": "thumb/小2_No11_せつめい_ざりがにのかいかた.png"
+  "thumb": "thumb/小2_No11_せつめい_ざりがにのかいかた.webp"
  },
  {
   "id": "小2_No12_はたらく人_けいさつかんのはなし",
@@ -1325,10 +1978,13 @@
   "no": 12,
   "type": "はたらく人",
   "title": "けいさつかんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No12_はたらく人_けいさつかんのはなし.pdf",
-  "thumb": "thumb/小2_No12_はたらく人_けいさつかんのはなし.png"
+  "thumb": "thumb/小2_No12_はたらく人_けいさつかんのはなし.webp"
  },
  {
   "id": "小2_No13_おしらせ_うんどうかいのプログラム",
@@ -1336,10 +1992,13 @@
   "no": 13,
   "type": "おしらせ",
   "title": "うんどうかいのプログラム",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No13_おしらせ_うんどうかいのプログラム.pdf",
-  "thumb": "thumb/小2_No13_おしらせ_うんどうかいのプログラム.png"
+  "thumb": "thumb/小2_No13_おしらせ_うんどうかいのプログラム.webp"
  },
  {
   "id": "小2_No14_おしらせ_いもほりえんそくのおしらせ",
@@ -1347,10 +2006,13 @@
   "no": 14,
   "type": "おしらせ",
   "title": "いもほりえんそくのおしらせ",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No14_おしらせ_いもほりえんそくのおしらせ.pdf",
-  "thumb": "thumb/小2_No14_おしらせ_いもほりえんそくのおしらせ.png"
+  "thumb": "thumb/小2_No14_おしらせ_いもほりえんそくのおしらせ.webp"
  },
  {
   "id": "小2_No15_はたらく人_ゆうびんきょくのひみつ",
@@ -1358,10 +2020,13 @@
   "no": 15,
   "type": "はたらく人",
   "title": "ゆうびんきょくのひみつ",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No15_はたらく人_ゆうびんきょくのひみつ.pdf",
-  "thumb": "thumb/小2_No15_はたらく人_ゆうびんきょくのひみつ.png"
+  "thumb": "thumb/小2_No15_はたらく人_ゆうびんきょくのひみつ.webp"
  },
  {
   "id": "小2_No16_先生の話_おもちゃランドのじゅんび",
@@ -1369,10 +2034,13 @@
   "no": 16,
   "type": "先生の話",
   "title": "おもちゃランドのじゅんび",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No16_先生の話_おもちゃランドのじゅんび.pdf",
-  "thumb": "thumb/小2_No16_先生の話_おもちゃランドのじゅんび.png"
+  "thumb": "thumb/小2_No16_先生の話_おもちゃランドのじゅんび.webp"
  },
  {
   "id": "小2_No17_先生の話_かけざん九九がんばりカード",
@@ -1380,10 +2048,13 @@
   "no": 17,
   "type": "先生の話",
   "title": "かけざん九九がんばりカード",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No17_先生の話_かけざん九九がんばりカード.pdf",
-  "thumb": "thumb/小2_No17_先生の話_かけざん九九がんばりカード.png"
+  "thumb": "thumb/小2_No17_先生の話_かけざん九九がんばりカード.webp"
  },
  {
   "id": "小2_No18_はたらく人_しょうぼうしさんのはなし",
@@ -1391,10 +2062,13 @@
   "no": 18,
   "type": "はたらく人",
   "title": "しょうぼうしさんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No18_はたらく人_しょうぼうしさんのはなし.pdf",
-  "thumb": "thumb/小2_No18_はたらく人_しょうぼうしさんのはなし.png"
+  "thumb": "thumb/小2_No18_はたらく人_しょうぼうしさんのはなし.webp"
  },
  {
   "id": "小2_No19_おしらせ_まちたんけんのコース",
@@ -1402,10 +2076,13 @@
   "no": 19,
   "type": "おしらせ",
   "title": "まちたんけんのコース",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No19_おしらせ_まちたんけんのコース.pdf",
-  "thumb": "thumb/小2_No19_おしらせ_まちたんけんのコース.png"
+  "thumb": "thumb/小2_No19_おしらせ_まちたんけんのコース.webp"
  },
  {
   "id": "小2_No20_はたらく人_スーパーのてんいんさんのはなし",
@@ -1413,10 +2090,13 @@
   "no": 20,
   "type": "はたらく人",
   "title": "スーパーのてんいんさんのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No20_はたらく人_スーパーのてんいんさんのはなし.pdf",
-  "thumb": "thumb/小2_No20_はたらく人_スーパーのてんいんさんのはなし.png"
+  "thumb": "thumb/小2_No20_はたらく人_スーパーのてんいんさんのはなし.webp"
  },
  {
   "id": "小2_No21_せつめい_サケのたまごのはなし",
@@ -1424,10 +2104,13 @@
   "no": 21,
   "type": "せつめい",
   "title": "サケのたまごのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No21_せつめい_サケのたまごのはなし.pdf",
-  "thumb": "thumb/小2_No21_せつめい_サケのたまごのはなし.png"
+  "thumb": "thumb/小2_No21_せつめい_サケのたまごのはなし.webp"
  },
  {
   "id": "小2_No22_先生の話_クリスマスかいのやくわり",
@@ -1435,10 +2118,13 @@
   "no": 22,
   "type": "先生の話",
   "title": "クリスマスかいのやくわり",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No22_先生の話_クリスマスかいのやくわり.pdf",
-  "thumb": "thumb/小2_No22_先生の話_クリスマスかいのやくわり.png"
+  "thumb": "thumb/小2_No22_先生の話_クリスマスかいのやくわり.webp"
  },
  {
   "id": "小2_No23_せつめい_おしょうがつのあそび",
@@ -1446,10 +2132,13 @@
   "no": 23,
   "type": "せつめい",
   "title": "おしょうがつのあそび",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No23_せつめい_おしょうがつのあそび.pdf",
-  "thumb": "thumb/小2_No23_せつめい_おしょうがつのあそび.png"
+  "thumb": "thumb/小2_No23_せつめい_おしょうがつのあそび.webp"
  },
  {
   "id": "小2_No24_先生の話_はみがきのはなし",
@@ -1457,10 +2146,13 @@
   "no": 24,
   "type": "先生の話",
   "title": "はみがきのはなし",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No24_先生の話_はみがきのはなし.pdf",
-  "thumb": "thumb/小2_No24_先生の話_はみがきのはなし.png"
+  "thumb": "thumb/小2_No24_先生の話_はみがきのはなし.webp"
  },
  {
   "id": "小2_No25_おしらせ_ゆきのひのとうこう",
@@ -1468,10 +2160,13 @@
   "no": 25,
   "type": "おしらせ",
   "title": "ゆきのひのとうこう",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No25_おしらせ_ゆきのひのとうこう.pdf",
-  "thumb": "thumb/小2_No25_おしらせ_ゆきのひのとうこう.png"
+  "thumb": "thumb/小2_No25_おしらせ_ゆきのひのとうこう.webp"
  },
  {
   "id": "小2_No26_せつめい_おにごっこのあたらしいルール",
@@ -1479,10 +2174,13 @@
   "no": 26,
   "type": "せつめい",
   "title": "おにごっこのあたらしいルール",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No26_せつめい_おにごっこのあたらしいルール.pdf",
-  "thumb": "thumb/小2_No26_せつめい_おにごっこのあたらしいルール.png"
+  "thumb": "thumb/小2_No26_せつめい_おにごっこのあたらしいルール.webp"
  },
  {
   "id": "小2_No27_先生の話_6年生をおくるかいのれんしゅう",
@@ -1490,10 +2188,13 @@
   "no": 27,
   "type": "先生の話",
   "title": "6年生をおくるかいのれんしゅう",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No27_先生の話_6年生をおくるかいのれんしゅう.pdf",
-  "thumb": "thumb/小2_No27_先生の話_6年生をおくるかいのれんしゅう.png"
+  "thumb": "thumb/小2_No27_先生の話_6年生をおくるかいのれんしゅう.webp"
  },
  {
   "id": "小2_No28_おはなし_はるのまちのようす",
@@ -1501,10 +2202,13 @@
   "no": 28,
   "type": "おはなし",
   "title": "はるのまちのようす",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No28_おはなし_はるのまちのようす.pdf",
-  "thumb": "thumb/小2_No28_おはなし_はるのまちのようす.png"
+  "thumb": "thumb/小2_No28_おはなし_はるのまちのようす.webp"
  },
  {
   "id": "小2_No29_先生の話_1年間のおもいではっぴょうかい",
@@ -1512,10 +2216,13 @@
   "no": 29,
   "type": "先生の話",
   "title": "1年間のおもいではっぴょうかい",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No29_先生の話_1年間のおもいではっぴょうかい.pdf",
-  "thumb": "thumb/小2_No29_先生の話_1年間のおもいではっぴょうかい.png"
+  "thumb": "thumb/小2_No29_先生の話_1年間のおもいではっぴょうかい.webp"
  },
  {
   "id": "小2_No30_先生の話_3年生になったら",
@@ -1523,10 +2230,13 @@
   "no": 30,
   "type": "先生の話",
   "title": "3年生になったら",
-  "grade": "小2",
+  "grade": "2年",
   "band": "low",
+  "grades": [
+   "2年"
+  ],
   "pdf": "kikitori/小2_No30_先生の話_3年生になったら.pdf",
-  "thumb": "thumb/小2_No30_先生の話_3年生になったら.png"
+  "thumb": "thumb/小2_No30_先生の話_3年生になったら.webp"
  },
  {
   "id": "小3_No01_校内放送_そうじばしょがかわります",
@@ -1534,10 +2244,13 @@
   "no": 1,
   "type": "校内放送",
   "title": "そうじばしょがかわります",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No01_校内放送_そうじばしょがかわります.pdf",
-  "thumb": "thumb/小3_No01_校内放送_そうじばしょがかわります.png"
+  "thumb": "thumb/小3_No01_校内放送_そうじばしょがかわります.webp"
  },
  {
   "id": "小3_No02_説明_リコーダーのれんしゅう",
@@ -1545,10 +2258,13 @@
   "no": 2,
   "type": "説明",
   "title": "リコーダーのれんしゅう",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No02_説明_リコーダーのれんしゅう.pdf",
-  "thumb": "thumb/小3_No02_説明_リコーダーのれんしゅう.png"
+  "thumb": "thumb/小3_No02_説明_リコーダーのれんしゅう.webp"
  },
  {
   "id": "小3_No03_講話_自転車の安全な乗り方",
@@ -1556,10 +2272,13 @@
   "no": 3,
   "type": "講話",
   "title": "自転車の安全な乗り方",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No03_講話_自転車の安全な乗り方.pdf",
-  "thumb": "thumb/小3_No03_講話_自転車の安全な乗り方.png"
+  "thumb": "thumb/小3_No03_講話_自転車の安全な乗り方.webp"
  },
  {
   "id": "小3_No04_説明_モンシロチョウの育ち方",
@@ -1567,10 +2286,13 @@
   "no": 4,
   "type": "説明",
   "title": "モンシロチョウの育ち方",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No04_説明_モンシロチョウの育ち方.pdf",
-  "thumb": "thumb/小3_No04_説明_モンシロチョウの育ち方.png"
+  "thumb": "thumb/小3_No04_説明_モンシロチョウの育ち方.webp"
  },
  {
   "id": "小3_No05_おしらせ_社会科見学の持ち物と集合時こく",
@@ -1578,10 +2300,13 @@
   "no": 5,
   "type": "おしらせ",
   "title": "社会科見学の持ち物と集合時こく",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No05_おしらせ_社会科見学の持ち物と集合時こく.pdf",
-  "thumb": "thumb/小3_No05_おしらせ_社会科見学の持ち物と集合時こく.png"
+  "thumb": "thumb/小3_No05_おしらせ_社会科見学の持ち物と集合時こく.webp"
  },
  {
   "id": "小3_No06_はたらく人_スーパーの店長さんの話",
@@ -1589,10 +2314,13 @@
   "no": 6,
   "type": "はたらく人",
   "title": "スーパーの店長さんの話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No06_はたらく人_スーパーの店長さんの話.pdf",
-  "thumb": "thumb/小3_No06_はたらく人_スーパーの店長さんの話.png"
+  "thumb": "thumb/小3_No06_はたらく人_スーパーの店長さんの話.webp"
  },
  {
   "id": "小3_No07_説明_ひまわりの観察のしかた",
@@ -1600,10 +2328,13 @@
   "no": 7,
   "type": "説明",
   "title": "ひまわりの観察のしかた",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No07_説明_ひまわりの観察のしかた.pdf",
-  "thumb": "thumb/小3_No07_説明_ひまわりの観察のしかた.png"
+  "thumb": "thumb/小3_No07_説明_ひまわりの観察のしかた.webp"
  },
  {
   "id": "小3_No08_おしらせ_図書室の新しいきまり",
@@ -1611,10 +2342,13 @@
   "no": 8,
   "type": "おしらせ",
   "title": "図書室の新しいきまり",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No08_おしらせ_図書室の新しいきまり.pdf",
-  "thumb": "thumb/小3_No08_おしらせ_図書室の新しいきまり.png"
+  "thumb": "thumb/小3_No08_おしらせ_図書室の新しいきまり.webp"
  },
  {
   "id": "小3_No09_講話_プールの安全のきまり",
@@ -1622,10 +2356,13 @@
   "no": 9,
   "type": "講話",
   "title": "プールの安全のきまり",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No09_講話_プールの安全のきまり.pdf",
-  "thumb": "thumb/小3_No09_講話_プールの安全のきまり.png"
+  "thumb": "thumb/小3_No09_講話_プールの安全のきまり.webp"
  },
  {
   "id": "小3_No10_説明_ホウセンカの水やり当番",
@@ -1633,10 +2370,13 @@
   "no": 10,
   "type": "説明",
   "title": "ホウセンカの水やり当番",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No10_説明_ホウセンカの水やり当番.pdf",
-  "thumb": "thumb/小3_No10_説明_ホウセンカの水やり当番.png"
+  "thumb": "thumb/小3_No10_説明_ホウセンカの水やり当番.webp"
  },
  {
   "id": "小3_No11_おしらせ_消防署見学の注意",
@@ -1644,10 +2384,13 @@
   "no": 11,
   "type": "おしらせ",
   "title": "消防署見学の注意",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No11_おしらせ_消防署見学の注意.pdf",
-  "thumb": "thumb/小3_No11_おしらせ_消防署見学の注意.png"
+  "thumb": "thumb/小3_No11_おしらせ_消防署見学の注意.webp"
  },
  {
   "id": "小3_No12_はたらく人_農家の人の話",
@@ -1655,10 +2398,13 @@
   "no": 12,
   "type": "はたらく人",
   "title": "農家の人の話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No12_はたらく人_農家の人の話.pdf",
-  "thumb": "thumb/小3_No12_はたらく人_農家の人の話.png"
+  "thumb": "thumb/小3_No12_はたらく人_農家の人の話.webp"
  },
  {
   "id": "小3_No13_校内放送_落とし物のお知らせ",
@@ -1666,10 +2412,13 @@
   "no": 13,
   "type": "校内放送",
   "title": "落とし物のお知らせ",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No13_校内放送_落とし物のお知らせ.pdf",
-  "thumb": "thumb/小3_No13_校内放送_落とし物のお知らせ.png"
+  "thumb": "thumb/小3_No13_校内放送_落とし物のお知らせ.webp"
  },
  {
   "id": "小3_No14_おしらせ_運動会のダンスのれんしゅう計画",
@@ -1677,10 +2426,13 @@
   "no": 14,
   "type": "おしらせ",
   "title": "運動会のダンスのれんしゅう計画",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No14_おしらせ_運動会のダンスのれんしゅう計画.pdf",
-  "thumb": "thumb/小3_No14_おしらせ_運動会のダンスのれんしゅう計画.png"
+  "thumb": "thumb/小3_No14_おしらせ_運動会のダンスのれんしゅう計画.webp"
  },
  {
   "id": "小3_No15_説明_昔の道具の話",
@@ -1688,10 +2440,13 @@
   "no": 15,
   "type": "説明",
   "title": "昔の道具の話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No15_説明_昔の道具の話.pdf",
-  "thumb": "thumb/小3_No15_説明_昔の道具の話.png"
+  "thumb": "thumb/小3_No15_説明_昔の道具の話.webp"
  },
  {
   "id": "小3_No16_おしらせ_学級会の議題のお知らせ",
@@ -1699,10 +2454,13 @@
   "no": 16,
   "type": "おしらせ",
   "title": "学級会の議題のお知らせ",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No16_おしらせ_学級会の議題のお知らせ.pdf",
-  "thumb": "thumb/小3_No16_おしらせ_学級会の議題のお知らせ.png"
+  "thumb": "thumb/小3_No16_おしらせ_学級会の議題のお知らせ.webp"
  },
  {
   "id": "小3_No17_講話_かぜのよぼう",
@@ -1710,10 +2468,13 @@
   "no": 17,
   "type": "講話",
   "title": "かぜのよぼう",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No17_講話_かぜのよぼう.pdf",
-  "thumb": "thumb/小3_No17_講話_かぜのよぼう.png"
+  "thumb": "thumb/小3_No17_講話_かぜのよぼう.webp"
  },
  {
   "id": "小3_No18_おしらせ_地いきの祭りの案内",
@@ -1721,10 +2482,13 @@
   "no": 18,
   "type": "おしらせ",
   "title": "地いきの祭りの案内",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No18_おしらせ_地いきの祭りの案内.pdf",
-  "thumb": "thumb/小3_No18_おしらせ_地いきの祭りの案内.png"
+  "thumb": "thumb/小3_No18_おしらせ_地いきの祭りの案内.webp"
  },
  {
   "id": "小3_No19_はたらく人_パン工場ではたらく人の話",
@@ -1732,10 +2496,13 @@
   "no": 19,
   "type": "はたらく人",
   "title": "パン工場ではたらく人の話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No19_はたらく人_パン工場ではたらく人の話.pdf",
-  "thumb": "thumb/小3_No19_はたらく人_パン工場ではたらく人の話.png"
+  "thumb": "thumb/小3_No19_はたらく人_パン工場ではたらく人の話.webp"
  },
  {
   "id": "小3_No20_説明_理科の実験の準備",
@@ -1743,10 +2510,13 @@
   "no": 20,
   "type": "説明",
   "title": "理科の実験の準備",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No20_説明_理科の実験の準備.pdf",
-  "thumb": "thumb/小3_No20_説明_理科の実験の準備.png"
+  "thumb": "thumb/小3_No20_説明_理科の実験の準備.webp"
  },
  {
   "id": "小3_No21_紹介_転校生のしょうかい",
@@ -1754,10 +2524,13 @@
   "no": 21,
   "type": "紹介",
   "title": "転校生のしょうかい",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No21_紹介_転校生のしょうかい.pdf",
-  "thumb": "thumb/小3_No21_紹介_転校生のしょうかい.png"
+  "thumb": "thumb/小3_No21_紹介_転校生のしょうかい.webp"
  },
  {
   "id": "小3_No22_説明_マラソン大会のコース説明",
@@ -1765,10 +2538,13 @@
   "no": 22,
   "type": "説明",
   "title": "マラソン大会のコース説明",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No22_説明_マラソン大会のコース説明.pdf",
-  "thumb": "thumb/小3_No22_説明_マラソン大会のコース説明.png"
+  "thumb": "thumb/小3_No22_説明_マラソン大会のコース説明.webp"
  },
  {
   "id": "小3_No23_ゲスト_昔遊び名人のおじいさんの話",
@@ -1776,10 +2552,13 @@
   "no": 23,
   "type": "ゲスト",
   "title": "昔遊び名人のおじいさんの話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No23_ゲスト_昔遊び名人のおじいさんの話.pdf",
-  "thumb": "thumb/小3_No23_ゲスト_昔遊び名人のおじいさんの話.png"
+  "thumb": "thumb/小3_No23_ゲスト_昔遊び名人のおじいさんの話.webp"
  },
  {
   "id": "小3_No24_はたらく人_給食センターの栄養士さんの話",
@@ -1787,10 +2566,13 @@
   "no": 24,
   "type": "はたらく人",
   "title": "給食センターの栄養士さんの話",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No24_はたらく人_給食センターの栄養士さんの話.pdf",
-  "thumb": "thumb/小3_No24_はたらく人_給食センターの栄養士さんの話.png"
+  "thumb": "thumb/小3_No24_はたらく人_給食センターの栄養士さんの話.webp"
  },
  {
   "id": "小3_No25_おしらせ_書き初め会の持ち物",
@@ -1798,10 +2580,13 @@
   "no": 25,
   "type": "おしらせ",
   "title": "書き初め会の持ち物",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No25_おしらせ_書き初め会の持ち物.pdf",
-  "thumb": "thumb/小3_No25_おしらせ_書き初め会の持ち物.png"
+  "thumb": "thumb/小3_No25_おしらせ_書き初め会の持ち物.webp"
  },
  {
   "id": "小3_No26_おしらせ_豆まき集会の進め方",
@@ -1809,10 +2594,13 @@
   "no": 26,
   "type": "おしらせ",
   "title": "豆まき集会の進め方",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No26_おしらせ_豆まき集会の進め方.pdf",
-  "thumb": "thumb/小3_No26_おしらせ_豆まき集会の進め方.png"
+  "thumb": "thumb/小3_No26_おしらせ_豆まき集会の進め方.webp"
  },
  {
   "id": "小3_No27_説明_市の図書館の利用案内",
@@ -1820,10 +2608,13 @@
   "no": 27,
   "type": "説明",
   "title": "市の図書館の利用案内",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No27_説明_市の図書館の利用案内.pdf",
-  "thumb": "thumb/小3_No27_説明_市の図書館の利用案内.png"
+  "thumb": "thumb/小3_No27_説明_市の図書館の利用案内.webp"
  },
  {
   "id": "小3_No28_おしらせ_6年生を送る会の分たん",
@@ -1831,10 +2622,13 @@
   "no": 28,
   "type": "おしらせ",
   "title": "6年生を送る会の分たん",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No28_おしらせ_6年生を送る会の分たん.pdf",
-  "thumb": "thumb/小3_No28_おしらせ_6年生を送る会の分たん.png"
+  "thumb": "thumb/小3_No28_おしらせ_6年生を送る会の分たん.webp"
  },
  {
   "id": "小3_No29_おしらせ_学年末の大そうじの分たん",
@@ -1842,10 +2636,13 @@
   "no": 29,
   "type": "おしらせ",
   "title": "学年末の大そうじの分たん",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No29_おしらせ_学年末の大そうじの分たん.pdf",
-  "thumb": "thumb/小3_No29_おしらせ_学年末の大そうじの分たん.png"
+  "thumb": "thumb/小3_No29_おしらせ_学年末の大そうじの分たん.webp"
  },
  {
   "id": "小3_No30_講話_春休みの生活について",
@@ -1853,10 +2650,13 @@
   "no": 30,
   "type": "講話",
   "title": "春休みの生活について",
-  "grade": "小3",
+  "grade": "3年",
   "band": "mid",
+  "grades": [
+   "3年"
+  ],
   "pdf": "kikitori/小3_No30_講話_春休みの生活について.pdf",
-  "thumb": "thumb/小3_No30_講話_春休みの生活について.png"
+  "thumb": "thumb/小3_No30_講話_春休みの生活について.webp"
  },
  {
   "id": "小4_No01_校内放送_委員会活動の紹介",
@@ -1864,10 +2664,13 @@
   "no": 1,
   "type": "校内放送",
   "title": "委員会活動の紹介",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No01_校内放送_委員会活動の紹介.pdf",
-  "thumb": "thumb/小4_No01_校内放送_委員会活動の紹介.png"
+  "thumb": "thumb/小4_No01_校内放送_委員会活動の紹介.webp"
  },
  {
   "id": "小4_No02_説明_クリーンセンターの見学",
@@ -1875,10 +2678,13 @@
   "no": 2,
   "type": "説明",
   "title": "クリーンセンターの見学",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No02_説明_クリーンセンターの見学.pdf",
-  "thumb": "thumb/小4_No02_説明_クリーンセンターの見学.png"
+  "thumb": "thumb/小4_No02_説明_クリーンセンターの見学.webp"
  },
  {
   "id": "小4_No03_説明_じょう水場のしくみ",
@@ -1886,10 +2692,13 @@
   "no": 3,
   "type": "説明",
   "title": "じょう水場のしくみ",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No03_説明_じょう水場のしくみ.pdf",
-  "thumb": "thumb/小4_No03_説明_じょう水場のしくみ.png"
+  "thumb": "thumb/小4_No03_説明_じょう水場のしくみ.webp"
  },
  {
   "id": "小4_No04_説明_ヘチマの育て方と観察",
@@ -1897,10 +2706,13 @@
   "no": 4,
   "type": "説明",
   "title": "ヘチマの育て方と観察",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No04_説明_ヘチマの育て方と観察.pdf",
-  "thumb": "thumb/小4_No04_説明_ヘチマの育て方と観察.png"
+  "thumb": "thumb/小4_No04_説明_ヘチマの育て方と観察.webp"
  },
  {
   "id": "小4_No05_説明_都道府県クイズ大会のルール",
@@ -1908,10 +2720,13 @@
   "no": 5,
   "type": "説明",
   "title": "都道府県クイズ大会のルール",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No05_説明_都道府県クイズ大会のルール.pdf",
-  "thumb": "thumb/小4_No05_説明_都道府県クイズ大会のルール.png"
+  "thumb": "thumb/小4_No05_説明_都道府県クイズ大会のルール.webp"
  },
  {
   "id": "小4_No06_ゲスト_消防団の人の話",
@@ -1919,10 +2734,13 @@
   "no": 6,
   "type": "ゲスト",
   "title": "消防団の人の話",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No06_ゲスト_消防団の人の話.pdf",
-  "thumb": "thumb/小4_No06_ゲスト_消防団の人の話.png"
+  "thumb": "thumb/小4_No06_ゲスト_消防団の人の話.webp"
  },
  {
   "id": "小4_No07_ゲスト_110番のしくみ",
@@ -1930,10 +2748,13 @@
   "no": 7,
   "type": "ゲスト",
   "title": "110番のしくみ",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No07_ゲスト_110番のしくみ.pdf",
-  "thumb": "thumb/小4_No07_ゲスト_110番のしくみ.png"
+  "thumb": "thumb/小4_No07_ゲスト_110番のしくみ.webp"
  },
  {
   "id": "小4_No08_お知らせ_手話を学ぶ会のお知らせ",
@@ -1941,10 +2762,13 @@
   "no": 8,
   "type": "お知らせ",
   "title": "手話を学ぶ会のお知らせ",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No08_お知らせ_手話を学ぶ会のお知らせ.pdf",
-  "thumb": "thumb/小4_No08_お知らせ_手話を学ぶ会のお知らせ.png"
+  "thumb": "thumb/小4_No08_お知らせ_手話を学ぶ会のお知らせ.webp"
  },
  {
   "id": "小4_No09_説明_夏のせいざの観察",
@@ -1952,10 +2776,13 @@
   "no": 9,
   "type": "説明",
   "title": "夏のせいざの観察",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No09_説明_夏のせいざの観察.pdf",
-  "thumb": "thumb/小4_No09_説明_夏のせいざの観察.png"
+  "thumb": "thumb/小4_No09_説明_夏のせいざの観察.webp"
  },
  {
   "id": "小4_No10_説明_自然教室のオリエンテーション",
@@ -1963,10 +2790,13 @@
   "no": 10,
   "type": "説明",
   "title": "自然教室のオリエンテーション",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No10_説明_自然教室のオリエンテーション.pdf",
-  "thumb": "thumb/小4_No10_説明_自然教室のオリエンテーション.png"
+  "thumb": "thumb/小4_No10_説明_自然教室のオリエンテーション.webp"
  },
  {
   "id": "小4_No11_説明_防災倉庫の見学",
@@ -1974,10 +2804,13 @@
   "no": 11,
   "type": "説明",
   "title": "防災倉庫の見学",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No11_説明_防災倉庫の見学.pdf",
-  "thumb": "thumb/小4_No11_説明_防災倉庫の見学.png"
+  "thumb": "thumb/小4_No11_説明_防災倉庫の見学.webp"
  },
  {
   "id": "小4_No12_ゲスト_伝統工芸士の人の話",
@@ -1985,10 +2818,13 @@
   "no": 12,
   "type": "ゲスト",
   "title": "伝統工芸士の人の話",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No12_ゲスト_伝統工芸士の人の話.pdf",
-  "thumb": "thumb/小4_No12_ゲスト_伝統工芸士の人の話.png"
+  "thumb": "thumb/小4_No12_ゲスト_伝統工芸士の人の話.webp"
  },
  {
   "id": "小4_No13_講話_点字ブロックの話",
@@ -1996,10 +2832,13 @@
   "no": 13,
   "type": "講話",
   "title": "点字ブロックの話",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No13_講話_点字ブロックの話.pdf",
-  "thumb": "thumb/小4_No13_講話_点字ブロックの話.png"
+  "thumb": "thumb/小4_No13_講話_点字ブロックの話.webp"
  },
  {
   "id": "小4_No14_お知らせ_校内音楽会の進行",
@@ -2007,10 +2846,13 @@
   "no": 14,
   "type": "お知らせ",
   "title": "校内音楽会の進行",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No14_お知らせ_校内音楽会の進行.pdf",
-  "thumb": "thumb/小4_No14_お知らせ_校内音楽会の進行.png"
+  "thumb": "thumb/小4_No14_お知らせ_校内音楽会の進行.webp"
  },
  {
   "id": "小4_No15_講話_郷土の偉人の話",
@@ -2018,10 +2860,13 @@
   "no": 15,
   "type": "講話",
   "title": "郷土の偉人の話",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No15_講話_郷土の偉人の話.pdf",
-  "thumb": "thumb/小4_No15_講話_郷土の偉人の話.png"
+  "thumb": "thumb/小4_No15_講話_郷土の偉人の話.webp"
  },
  {
   "id": "小4_No16_説明_雨水のゆくえの実験",
@@ -2029,10 +2874,13 @@
   "no": 16,
   "type": "説明",
   "title": "雨水のゆくえの実験",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No16_説明_雨水のゆくえの実験.pdf",
-  "thumb": "thumb/小4_No16_説明_雨水のゆくえの実験.png"
+  "thumb": "thumb/小4_No16_説明_雨水のゆくえの実験.webp"
  },
  {
   "id": "小4_No17_校内放送_クラブ活動の紹介放送",
@@ -2040,10 +2888,13 @@
   "no": 17,
   "type": "校内放送",
   "title": "クラブ活動の紹介放送",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No17_校内放送_クラブ活動の紹介放送.pdf",
-  "thumb": "thumb/小4_No17_校内放送_クラブ活動の紹介放送.png"
+  "thumb": "thumb/小4_No17_校内放送_クラブ活動の紹介放送.webp"
  },
  {
   "id": "小4_No18_説明_ダムの働きの説明",
@@ -2051,10 +2902,13 @@
   "no": 18,
   "type": "説明",
   "title": "ダムの働きの説明",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No18_説明_ダムの働きの説明.pdf",
-  "thumb": "thumb/小4_No18_説明_ダムの働きの説明.png"
+  "thumb": "thumb/小4_No18_説明_ダムの働きの説明.webp"
  },
  {
   "id": "小4_No19_発表_図書委員のおすすめ本の紹介",
@@ -2062,10 +2916,13 @@
   "no": 19,
   "type": "発表",
   "title": "図書委員のおすすめ本の紹介",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No19_発表_図書委員のおすすめ本の紹介.pdf",
-  "thumb": "thumb/小4_No19_発表_図書委員のおすすめ本の紹介.png"
+  "thumb": "thumb/小4_No19_発表_図書委員のおすすめ本の紹介.webp"
  },
  {
   "id": "小4_No20_お知らせ_地域の防災訓練の案内",
@@ -2073,10 +2930,13 @@
   "no": 20,
   "type": "お知らせ",
   "title": "地域の防災訓練の案内",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No20_お知らせ_地域の防災訓練の案内.pdf",
-  "thumb": "thumb/小4_No20_お知らせ_地域の防災訓練の案内.png"
+  "thumb": "thumb/小4_No20_お知らせ_地域の防災訓練の案内.webp"
  },
  {
   "id": "小4_No21_ゲスト_新聞記者の人の話",
@@ -2084,10 +2944,13 @@
   "no": 21,
   "type": "ゲスト",
   "title": "新聞記者の人の話",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No21_ゲスト_新聞記者の人の話.pdf",
-  "thumb": "thumb/小4_No21_ゲスト_新聞記者の人の話.png"
+  "thumb": "thumb/小4_No21_ゲスト_新聞記者の人の話.webp"
  },
  {
   "id": "小4_No22_説明_アイマスク体験の注意",
@@ -2095,10 +2958,13 @@
   "no": 22,
   "type": "説明",
   "title": "アイマスク体験の注意",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No22_説明_アイマスク体験の注意.pdf",
-  "thumb": "thumb/小4_No22_説明_アイマスク体験の注意.png"
+  "thumb": "thumb/小4_No22_説明_アイマスク体験の注意.webp"
  },
  {
   "id": "小4_No23_講話_冬の健康な過ごし方",
@@ -2106,10 +2972,13 @@
   "no": 23,
   "type": "講話",
   "title": "冬の健康な過ごし方",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No23_講話_冬の健康な過ごし方.pdf",
-  "thumb": "thumb/小4_No23_講話_冬の健康な過ごし方.png"
+  "thumb": "thumb/小4_No23_講話_冬の健康な過ごし方.webp"
  },
  {
   "id": "小4_No24_お知らせ_学習発表会のリハーサル連絡",
@@ -2117,10 +2986,13 @@
   "no": 24,
   "type": "お知らせ",
   "title": "学習発表会のリハーサル連絡",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No24_お知らせ_学習発表会のリハーサル連絡.pdf",
-  "thumb": "thumb/小4_No24_お知らせ_学習発表会のリハーサル連絡.png"
+  "thumb": "thumb/小4_No24_お知らせ_学習発表会のリハーサル連絡.webp"
  },
  {
   "id": "小4_No25_お知らせ_郷土かるた大会の案内",
@@ -2128,10 +3000,13 @@
   "no": 25,
   "type": "お知らせ",
   "title": "郷土かるた大会の案内",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No25_お知らせ_郷土かるた大会の案内.pdf",
-  "thumb": "thumb/小4_No25_お知らせ_郷土かるた大会の案内.png"
+  "thumb": "thumb/小4_No25_お知らせ_郷土かるた大会の案内.webp"
  },
  {
   "id": "小4_No26_説明_10才記念文集の書き方",
@@ -2139,10 +3014,13 @@
   "no": 26,
   "type": "説明",
   "title": "10才記念文集の書き方",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No26_説明_10才記念文集の書き方.pdf",
-  "thumb": "thumb/小4_No26_説明_10才記念文集の書き方.png"
+  "thumb": "thumb/小4_No26_説明_10才記念文集の書き方.webp"
  },
  {
   "id": "小4_No27_説明_姉妹校とのオンライン交流会",
@@ -2150,10 +3028,13 @@
   "no": 27,
   "type": "説明",
   "title": "姉妹校とのオンライン交流会",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No27_説明_姉妹校とのオンライン交流会.pdf",
-  "thumb": "thumb/小4_No27_説明_姉妹校とのオンライン交流会.png"
+  "thumb": "thumb/小4_No27_説明_姉妹校とのオンライン交流会.webp"
  },
  {
   "id": "小4_No28_発表_5年生の宿泊学習の話を聞く会",
@@ -2161,10 +3042,13 @@
   "no": 28,
   "type": "発表",
   "title": "5年生の宿泊学習の話を聞く会",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No28_発表_5年生の宿泊学習の話を聞く会.pdf",
-  "thumb": "thumb/小4_No28_発表_5年生の宿泊学習の話を聞く会.png"
+  "thumb": "thumb/小4_No28_発表_5年生の宿泊学習の話を聞く会.webp"
  },
  {
   "id": "小4_No29_お知らせ_二分の一成人式の計画",
@@ -2172,10 +3056,13 @@
   "no": 29,
   "type": "お知らせ",
   "title": "二分の一成人式の計画",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No29_お知らせ_二分の一成人式の計画.pdf",
-  "thumb": "thumb/小4_No29_お知らせ_二分の一成人式の計画.png"
+  "thumb": "thumb/小4_No29_お知らせ_二分の一成人式の計画.webp"
  },
  {
   "id": "小4_No30_講話_高学年になる前に",
@@ -2183,10 +3070,13 @@
   "no": 30,
   "type": "講話",
   "title": "高学年になる前に",
-  "grade": "小4",
+  "grade": "4年",
   "band": "mid",
+  "grades": [
+   "4年"
+  ],
   "pdf": "kikitori/小4_No30_講話_高学年になる前に.pdf",
-  "thumb": "thumb/小4_No30_講話_高学年になる前に.png"
+  "thumb": "thumb/小4_No30_講話_高学年になる前に.webp"
  },
  {
   "id": "小5_No01_スピーチ_委員長の所信表明",
@@ -2194,10 +3084,13 @@
   "no": 1,
   "type": "スピーチ",
   "title": "委員長の所信表明",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No01_スピーチ_委員長の所信表明.pdf",
-  "thumb": "thumb/小5_No01_スピーチ_委員長の所信表明.png"
+  "thumb": "thumb/小5_No01_スピーチ_委員長の所信表明.webp"
  },
  {
   "id": "小5_No02_インタビュー_米作り農家へのインタビュー",
@@ -2205,10 +3098,13 @@
   "no": 2,
   "type": "インタビュー",
   "title": "米作り農家へのインタビュー",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No02_インタビュー_米作り農家へのインタビュー.pdf",
-  "thumb": "thumb/小5_No02_インタビュー_米作り農家へのインタビュー.png"
+  "thumb": "thumb/小5_No02_インタビュー_米作り農家へのインタビュー.webp"
  },
  {
   "id": "小5_No03_説明_自動車工場の見学ガイダンス",
@@ -2216,10 +3112,13 @@
   "no": 3,
   "type": "説明",
   "title": "自動車工場の見学ガイダンス",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No03_説明_自動車工場の見学ガイダンス.pdf",
-  "thumb": "thumb/小5_No03_説明_自動車工場の見学ガイダンス.png"
+  "thumb": "thumb/小5_No03_説明_自動車工場の見学ガイダンス.webp"
  },
  {
   "id": "小5_No04_ニュース_天気と災害への備え",
@@ -2227,10 +3126,13 @@
   "no": 4,
   "type": "ニュース",
   "title": "天気と災害への備え",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No04_ニュース_天気と災害への備え.pdf",
-  "thumb": "thumb/小5_No04_ニュース_天気と災害への備え.png"
+  "thumb": "thumb/小5_No04_ニュース_天気と災害への備え.webp"
  },
  {
   "id": "小5_No05_説明_林間学校のオリエンテーション",
@@ -2238,10 +3140,13 @@
   "no": 5,
   "type": "説明",
   "title": "林間学校のオリエンテーション",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No05_説明_林間学校のオリエンテーション.pdf",
-  "thumb": "thumb/小5_No05_説明_林間学校のオリエンテーション.png"
+  "thumb": "thumb/小5_No05_説明_林間学校のオリエンテーション.webp"
  },
  {
   "id": "小5_No06_インタビュー_水産業の人へのインタビュー",
@@ -2249,10 +3154,13 @@
   "no": 6,
   "type": "インタビュー",
   "title": "水産業の人へのインタビュー",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No06_インタビュー_水産業の人へのインタビュー.pdf",
-  "thumb": "thumb/小5_No06_インタビュー_水産業の人へのインタビュー.png"
+  "thumb": "thumb/小5_No06_インタビュー_水産業の人へのインタビュー.webp"
  },
  {
   "id": "小5_No07_説明_放送委員会の番組づくりの説明",
@@ -2260,10 +3168,13 @@
   "no": 7,
   "type": "説明",
   "title": "放送委員会の番組づくりの説明",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No07_説明_放送委員会の番組づくりの説明.pdf",
-  "thumb": "thumb/小5_No07_説明_放送委員会の番組づくりの説明.png"
+  "thumb": "thumb/小5_No07_説明_放送委員会の番組づくりの説明.webp"
  },
  {
   "id": "小5_No08_講話_講演_プラスチックごみ問題",
@@ -2271,10 +3182,13 @@
   "no": 8,
   "type": "講話",
   "title": "講演_プラスチックごみ問題",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No08_講話_講演_プラスチックごみ問題.pdf",
-  "thumb": "thumb/小5_No08_講話_講演_プラスチックごみ問題.png"
+  "thumb": "thumb/小5_No08_講話_講演_プラスチックごみ問題.webp"
  },
  {
   "id": "小5_No09_説明_稲かり体験の手順",
@@ -2282,10 +3196,13 @@
   "no": 9,
   "type": "説明",
   "title": "稲かり体験の手順",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No09_説明_稲かり体験の手順.pdf",
-  "thumb": "thumb/小5_No09_説明_稲かり体験の手順.png"
+  "thumb": "thumb/小5_No09_説明_稲かり体験の手順.webp"
  },
  {
   "id": "小5_No10_発表_運動会の応援団の計画",
@@ -2293,10 +3210,13 @@
   "no": 10,
   "type": "発表",
   "title": "運動会の応援団の計画",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No10_発表_運動会の応援団の計画.pdf",
-  "thumb": "thumb/小5_No10_発表_運動会の応援団の計画.png"
+  "thumb": "thumb/小5_No10_発表_運動会の応援団の計画.webp"
  },
  {
   "id": "小5_No11_ニュース_食品ロスの取組",
@@ -2304,10 +3224,13 @@
   "no": 11,
   "type": "ニュース",
   "title": "食品ロスの取組",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No11_ニュース_食品ロスの取組.pdf",
-  "thumb": "thumb/小5_No11_ニュース_食品ロスの取組.png"
+  "thumb": "thumb/小5_No11_ニュース_食品ロスの取組.webp"
  },
  {
   "id": "小5_No12_講話_情報モラル講習会",
@@ -2315,10 +3238,13 @@
   "no": 12,
   "type": "講話",
   "title": "情報モラル講習会",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No12_講話_情報モラル講習会.pdf",
-  "thumb": "thumb/小5_No12_講話_情報モラル講習会.png"
+  "thumb": "thumb/小5_No12_講話_情報モラル講習会.webp"
  },
  {
   "id": "小5_No13_講話_命の授業_助産師さんの話",
@@ -2326,10 +3252,13 @@
   "no": 13,
   "type": "講話",
   "title": "命の授業_助産師さんの話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No13_講話_命の授業_助産師さんの話.pdf",
-  "thumb": "thumb/小5_No13_講話_命の授業_助産師さんの話.png"
+  "thumb": "thumb/小5_No13_講話_命の授業_助産師さんの話.webp"
  },
  {
   "id": "小5_No14_インタビュー_職業インタビュー_看護師",
@@ -2337,10 +3266,13 @@
   "no": 14,
   "type": "インタビュー",
   "title": "職業インタビュー_看護師",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No14_インタビュー_職業インタビュー_看護師.pdf",
-  "thumb": "thumb/小5_No14_インタビュー_職業インタビュー_看護師.png"
+  "thumb": "thumb/小5_No14_インタビュー_職業インタビュー_看護師.webp"
  },
  {
   "id": "小5_No15_インタビュー_職業インタビュー_プログラマー",
@@ -2348,10 +3280,13 @@
   "no": 15,
   "type": "インタビュー",
   "title": "職業インタビュー_プログラマー",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No15_インタビュー_職業インタビュー_プログラマー.pdf",
-  "thumb": "thumb/小5_No15_インタビュー_職業インタビュー_プログラマー.png"
+  "thumb": "thumb/小5_No15_インタビュー_職業インタビュー_プログラマー.webp"
  },
  {
   "id": "小5_No16_講話_学校保健委員会_睡眠の話",
@@ -2359,10 +3294,13 @@
   "no": 16,
   "type": "講話",
   "title": "学校保健委員会_睡眠の話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No16_講話_学校保健委員会_睡眠の話.pdf",
-  "thumb": "thumb/小5_No16_講話_学校保健委員会_睡眠の話.png"
+  "thumb": "thumb/小5_No16_講話_学校保健委員会_睡眠の話.webp"
  },
  {
   "id": "小5_No17_ニュース_地域の伝統行事復活",
@@ -2370,10 +3308,13 @@
   "no": 17,
   "type": "ニュース",
   "title": "地域の伝統行事復活",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No17_ニュース_地域の伝統行事復活.pdf",
-  "thumb": "thumb/小5_No17_ニュース_地域の伝統行事復活.png"
+  "thumb": "thumb/小5_No17_ニュース_地域の伝統行事復活.webp"
  },
  {
   "id": "小5_No18_発表_音楽会の楽曲紹介",
@@ -2381,10 +3322,13 @@
   "no": 18,
   "type": "発表",
   "title": "音楽会の楽曲紹介",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No18_発表_音楽会の楽曲紹介.pdf",
-  "thumb": "thumb/小5_No18_発表_音楽会の楽曲紹介.png"
+  "thumb": "thumb/小5_No18_発表_音楽会の楽曲紹介.webp"
  },
  {
   "id": "小5_No19_ゲスト_車いすバスケット選手の話",
@@ -2392,10 +3336,13 @@
   "no": 19,
   "type": "ゲスト",
   "title": "車いすバスケット選手の話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No19_ゲスト_車いすバスケット選手の話.pdf",
-  "thumb": "thumb/小5_No19_ゲスト_車いすバスケット選手の話.png"
+  "thumb": "thumb/小5_No19_ゲスト_車いすバスケット選手の話.webp"
  },
  {
   "id": "小5_No20_講話_防犯教室_SNSの使い方",
@@ -2403,10 +3350,13 @@
   "no": 20,
   "type": "講話",
   "title": "防犯教室_SNSの使い方",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No20_講話_防犯教室_SNSの使い方.pdf",
-  "thumb": "thumb/小5_No20_講話_防犯教室_SNSの使い方.png"
+  "thumb": "thumb/小5_No20_講話_防犯教室_SNSの使い方.webp"
  },
  {
   "id": "小5_No21_スピーチ_ユニセフ募金の呼びかけ",
@@ -2414,10 +3364,13 @@
   "no": 21,
   "type": "スピーチ",
   "title": "ユニセフ募金の呼びかけ",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No21_スピーチ_ユニセフ募金の呼びかけ.pdf",
-  "thumb": "thumb/小5_No21_スピーチ_ユニセフ募金の呼びかけ.png"
+  "thumb": "thumb/小5_No21_スピーチ_ユニセフ募金の呼びかけ.webp"
  },
  {
   "id": "小5_No22_ゲスト_気象予報士の話",
@@ -2425,10 +3378,13 @@
   "no": 22,
   "type": "ゲスト",
   "title": "気象予報士の話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No22_ゲスト_気象予報士の話.pdf",
-  "thumb": "thumb/小5_No22_ゲスト_気象予報士の話.png"
+  "thumb": "thumb/小5_No22_ゲスト_気象予報士の話.webp"
  },
  {
   "id": "小5_No23_お知らせ_書きそんじはがき回収の案内",
@@ -2436,10 +3392,13 @@
   "no": 23,
   "type": "お知らせ",
   "title": "書きそんじはがき回収の案内",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No23_お知らせ_書きそんじはがき回収の案内.pdf",
-  "thumb": "thumb/小5_No23_お知らせ_書きそんじはがき回収の案内.png"
+  "thumb": "thumb/小5_No23_お知らせ_書きそんじはがき回収の案内.webp"
  },
  {
   "id": "小5_No24_説明_委員会の引きつぎ説明",
@@ -2447,10 +3406,13 @@
   "no": 24,
   "type": "説明",
   "title": "委員会の引きつぎ説明",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No24_説明_委員会の引きつぎ説明.pdf",
-  "thumb": "thumb/小5_No24_説明_委員会の引きつぎ説明.png"
+  "thumb": "thumb/小5_No24_説明_委員会の引きつぎ説明.webp"
  },
  {
   "id": "小5_No25_ニュース_電気自動車の広がり",
@@ -2458,10 +3420,13 @@
   "no": 25,
   "type": "ニュース",
   "title": "電気自動車の広がり",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No25_ニュース_電気自動車の広がり.pdf",
-  "thumb": "thumb/小5_No25_ニュース_電気自動車の広がり.png"
+  "thumb": "thumb/小5_No25_ニュース_電気自動車の広がり.webp"
  },
  {
   "id": "小5_No26_ゲスト_留学生の話_外国の学校生活",
@@ -2469,10 +3434,13 @@
   "no": 26,
   "type": "ゲスト",
   "title": "留学生の話_外国の学校生活",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No26_ゲスト_留学生の話_外国の学校生活.pdf",
-  "thumb": "thumb/小5_No26_ゲスト_留学生の話_外国の学校生活.png"
+  "thumb": "thumb/小5_No26_ゲスト_留学生の話_外国の学校生活.webp"
  },
  {
   "id": "小5_No27_会議_卒業生を送る会の企画会議",
@@ -2480,10 +3448,13 @@
   "no": 27,
   "type": "会議",
   "title": "卒業生を送る会の企画会議",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No27_会議_卒業生を送る会の企画会議.pdf",
-  "thumb": "thumb/小5_No27_会議_卒業生を送る会の企画会議.png"
+  "thumb": "thumb/小5_No27_会議_卒業生を送る会の企画会議.webp"
  },
  {
   "id": "小5_No28_講話_震災の語り部の話",
@@ -2491,10 +3462,13 @@
   "no": 28,
   "type": "講話",
   "title": "震災の語り部の話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No28_講話_震災の語り部の話.pdf",
-  "thumb": "thumb/小5_No28_講話_震災の語り部の話.png"
+  "thumb": "thumb/小5_No28_講話_震災の語り部の話.webp"
  },
  {
   "id": "小5_No29_説明_新聞づくり講座",
@@ -2502,10 +3476,13 @@
   "no": 29,
   "type": "説明",
   "title": "新聞づくり講座",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No29_説明_新聞づくり講座.pdf",
-  "thumb": "thumb/小5_No29_説明_新聞づくり講座.png"
+  "thumb": "thumb/小5_No29_説明_新聞づくり講座.webp"
  },
  {
   "id": "小5_No30_講話_最高学年に向けての校長講話",
@@ -2513,10 +3490,13 @@
   "no": 30,
   "type": "講話",
   "title": "最高学年に向けての校長講話",
-  "grade": "小5",
+  "grade": "5年",
   "band": "high",
+  "grades": [
+   "5年"
+  ],
   "pdf": "kikitori/小5_No30_講話_最高学年に向けての校長講話.pdf",
-  "thumb": "thumb/小5_No30_講話_最高学年に向けての校長講話.png"
+  "thumb": "thumb/小5_No30_講話_最高学年に向けての校長講話.webp"
  },
  {
   "id": "小6_No01_講話_校長先生の始業式の話",
@@ -2524,10 +3504,13 @@
   "no": 1,
   "type": "講話",
   "title": "校長先生の始業式の話",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No01_講話_校長先生の始業式の話.pdf",
-  "thumb": "thumb/小6_No01_講話_校長先生の始業式の話.png"
+  "thumb": "thumb/小6_No01_講話_校長先生の始業式の話.webp"
  },
  {
   "id": "小6_No02_意見_討論・宿題は必要か",
@@ -2535,10 +3518,13 @@
   "no": 2,
   "type": "意見",
   "title": "討論・宿題は必要か",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No02_意見_討論・宿題は必要か.pdf",
-  "thumb": "thumb/小6_No02_意見_討論・宿題は必要か.png"
+  "thumb": "thumb/小6_No02_意見_討論・宿題は必要か.webp"
  },
  {
   "id": "小6_No03_説明_修学旅行のオリエンテーション",
@@ -2546,10 +3532,13 @@
   "no": 3,
   "type": "説明",
   "title": "修学旅行のオリエンテーション",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No03_説明_修学旅行のオリエンテーション.pdf",
-  "thumb": "thumb/小6_No03_説明_修学旅行のオリエンテーション.png"
+  "thumb": "thumb/小6_No03_説明_修学旅行のオリエンテーション.webp"
  },
  {
   "id": "小6_No04_ニュース_選挙の仕組み",
@@ -2557,10 +3546,13 @@
   "no": 4,
   "type": "ニュース",
   "title": "選挙の仕組み",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No04_ニュース_選挙の仕組み.pdf",
-  "thumb": "thumb/小6_No04_ニュース_選挙の仕組み.png"
+  "thumb": "thumb/小6_No04_ニュース_選挙の仕組み.webp"
  },
  {
   "id": "小6_No05_意見_討論・給食と弁当どちらがよいか",
@@ -2568,10 +3560,13 @@
   "no": 5,
   "type": "意見",
   "title": "討論・給食と弁当どちらがよいか",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No05_意見_討論・給食と弁当どちらがよいか.pdf",
-  "thumb": "thumb/小6_No05_意見_討論・給食と弁当どちらがよいか.png"
+  "thumb": "thumb/小6_No05_意見_討論・給食と弁当どちらがよいか.webp"
  },
  {
   "id": "小6_No06_講話_平和学習の講話",
@@ -2579,10 +3574,13 @@
   "no": 6,
   "type": "講話",
   "title": "平和学習の講話",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No06_講話_平和学習の講話.pdf",
-  "thumb": "thumb/小6_No06_講話_平和学習の講話.png"
+  "thumb": "thumb/小6_No06_講話_平和学習の講話.webp"
  },
  {
   "id": "小6_No07_説明_たてわり班活動のリーダー説明",
@@ -2590,10 +3588,13 @@
   "no": 7,
   "type": "説明",
   "title": "たてわり班活動のリーダー説明",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No07_説明_たてわり班活動のリーダー説明.pdf",
-  "thumb": "thumb/小6_No07_説明_たてわり班活動のリーダー説明.png"
+  "thumb": "thumb/小6_No07_説明_たてわり班活動のリーダー説明.webp"
  },
  {
   "id": "小6_No08_ニュース_AIと仕事の未来",
@@ -2601,10 +3602,13 @@
   "no": 8,
   "type": "ニュース",
   "title": "AIと仕事の未来",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No08_ニュース_AIと仕事の未来.pdf",
-  "thumb": "thumb/小6_No08_ニュース_AIと仕事の未来.png"
+  "thumb": "thumb/小6_No08_ニュース_AIと仕事の未来.webp"
  },
  {
   "id": "小6_No09_意見_討論・学校にスマホは必要か",
@@ -2612,10 +3616,13 @@
   "no": 9,
   "type": "意見",
   "title": "討論・学校にスマホは必要か",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No09_意見_討論・学校にスマホは必要か.pdf",
-  "thumb": "thumb/小6_No09_意見_討論・学校にスマホは必要か.png"
+  "thumb": "thumb/小6_No09_意見_討論・学校にスマホは必要か.webp"
  },
  {
   "id": "小6_No10_ゲスト_歴史ガイドの話・古墳の謎",
@@ -2623,10 +3630,13 @@
   "no": 10,
   "type": "ゲスト",
   "title": "歴史ガイドの話・古墳の謎",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No10_ゲスト_歴史ガイドの話・古墳の謎.pdf",
-  "thumb": "thumb/小6_No10_ゲスト_歴史ガイドの話・古墳の謎.png"
+  "thumb": "thumb/小6_No10_ゲスト_歴史ガイドの話・古墳の謎.webp"
  },
  {
   "id": "小6_No11_講話_薬物乱用防止教室",
@@ -2634,10 +3644,13 @@
   "no": 11,
   "type": "講話",
   "title": "薬物乱用防止教室",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No11_講話_薬物乱用防止教室.pdf",
-  "thumb": "thumb/小6_No11_講話_薬物乱用防止教室.png"
+  "thumb": "thumb/小6_No11_講話_薬物乱用防止教室.webp"
  },
  {
   "id": "小6_No12_意見_討論・図書室にまんがを置くべきか",
@@ -2645,10 +3658,13 @@
   "no": 12,
   "type": "意見",
   "title": "討論・図書室にまんがを置くべきか",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No12_意見_討論・図書室にまんがを置くべきか.pdf",
-  "thumb": "thumb/小6_No12_意見_討論・図書室にまんがを置くべきか.png"
+  "thumb": "thumb/小6_No12_意見_討論・図書室にまんがを置くべきか.webp"
  },
  {
   "id": "小6_No13_会議_運動会の係打ち合わせ",
@@ -2656,10 +3672,13 @@
   "no": 13,
   "type": "会議",
   "title": "運動会の係打ち合わせ",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No13_会議_運動会の係打ち合わせ.pdf",
-  "thumb": "thumb/小6_No13_会議_運動会の係打ち合わせ.png"
+  "thumb": "thumb/小6_No13_会議_運動会の係打ち合わせ.webp"
  },
  {
   "id": "小6_No14_ゲスト_起業家の話・地元で会社をつくる",
@@ -2667,10 +3686,13 @@
   "no": 14,
   "type": "ゲスト",
   "title": "起業家の話・地元で会社をつくる",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No14_ゲスト_起業家の話・地元で会社をつくる.pdf",
-  "thumb": "thumb/小6_No14_ゲスト_起業家の話・地元で会社をつくる.png"
+  "thumb": "thumb/小6_No14_ゲスト_起業家の話・地元で会社をつくる.webp"
  },
  {
   "id": "小6_No15_ニュース_再生可能エネルギー",
@@ -2678,10 +3700,13 @@
   "no": 15,
   "type": "ニュース",
   "title": "再生可能エネルギー",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No15_ニュース_再生可能エネルギー.pdf",
-  "thumb": "thumb/小6_No15_ニュース_再生可能エネルギー.png"
+  "thumb": "thumb/小6_No15_ニュース_再生可能エネルギー.webp"
  },
  {
   "id": "小6_No16_意見_討論・制服と私服どちらがよいか",
@@ -2689,10 +3714,13 @@
   "no": 16,
   "type": "意見",
   "title": "討論・制服と私服どちらがよいか",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No16_意見_討論・制服と私服どちらがよいか.pdf",
-  "thumb": "thumb/小6_No16_意見_討論・制服と私服どちらがよいか.png"
+  "thumb": "thumb/小6_No16_意見_討論・制服と私服どちらがよいか.webp"
  },
  {
   "id": "小6_No17_ゲスト_青年海外協力隊の話",
@@ -2700,10 +3728,13 @@
   "no": 17,
   "type": "ゲスト",
   "title": "青年海外協力隊の話",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No17_ゲスト_青年海外協力隊の話.pdf",
-  "thumb": "thumb/小6_No17_ゲスト_青年海外協力隊の話.png"
+  "thumb": "thumb/小6_No17_ゲスト_青年海外協力隊の話.webp"
  },
  {
   "id": "小6_No18_演説_児童会役員選挙・2人の演説",
@@ -2711,10 +3742,13 @@
   "no": 18,
   "type": "演説",
   "title": "児童会役員選挙・2人の演説",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No18_演説_児童会役員選挙・2人の演説.pdf",
-  "thumb": "thumb/小6_No18_演説_児童会役員選挙・2人の演説.png"
+  "thumb": "thumb/小6_No18_演説_児童会役員選挙・2人の演説.webp"
  },
  {
   "id": "小6_No19_ゲスト_落語家の話・伝統芸能の世界",
@@ -2722,10 +3756,13 @@
   "no": 19,
   "type": "ゲスト",
   "title": "落語家の話・伝統芸能の世界",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No19_ゲスト_落語家の話・伝統芸能の世界.pdf",
-  "thumb": "thumb/小6_No19_ゲスト_落語家の話・伝統芸能の世界.png"
+  "thumb": "thumb/小6_No19_ゲスト_落語家の話・伝統芸能の世界.webp"
  },
  {
   "id": "小6_No20_ニュース_宇宙開発の今",
@@ -2733,10 +3770,13 @@
   "no": 20,
   "type": "ニュース",
   "title": "宇宙開発の今",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No20_ニュース_宇宙開発の今.pdf",
-  "thumb": "thumb/小6_No20_ニュース_宇宙開発の今.png"
+  "thumb": "thumb/小6_No20_ニュース_宇宙開発の今.webp"
  },
  {
   "id": "小6_No21_意見_討論・教室の換気と寒さ対策",
@@ -2744,10 +3784,13 @@
   "no": 21,
   "type": "意見",
   "title": "討論・教室の換気と寒さ対策",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No21_意見_討論・教室の換気と寒さ対策.pdf",
-  "thumb": "thumb/小6_No21_意見_討論・教室の換気と寒さ対策.png"
+  "thumb": "thumb/小6_No21_意見_討論・教室の換気と寒さ対策.webp"
  },
  {
   "id": "小6_No22_ゲスト_職業講話・獣医師",
@@ -2755,10 +3798,13 @@
   "no": 22,
   "type": "ゲスト",
   "title": "職業講話・獣医師",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No22_ゲスト_職業講話・獣医師.pdf",
-  "thumb": "thumb/小6_No22_ゲスト_職業講話・獣医師.png"
+  "thumb": "thumb/小6_No22_ゲスト_職業講話・獣医師.webp"
  },
  {
   "id": "小6_No23_会議_卒業文集の編集会議",
@@ -2766,10 +3812,13 @@
   "no": 23,
   "type": "会議",
   "title": "卒業文集の編集会議",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No23_会議_卒業文集の編集会議.pdf",
-  "thumb": "thumb/小6_No23_会議_卒業文集の編集会議.png"
+  "thumb": "thumb/小6_No23_会議_卒業文集の編集会議.webp"
  },
  {
   "id": "小6_No24_講話_認知症サポーター講座",
@@ -2777,10 +3826,13 @@
   "no": 24,
   "type": "講話",
   "title": "認知症サポーター講座",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No24_講話_認知症サポーター講座.pdf",
-  "thumb": "thumb/小6_No24_講話_認知症サポーター講座.png"
+  "thumb": "thumb/小6_No24_講話_認知症サポーター講座.webp"
  },
  {
   "id": "小6_No25_ニュース_キャッシュレス化",
@@ -2788,10 +3840,13 @@
   "no": 25,
   "type": "ニュース",
   "title": "キャッシュレス化",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No25_ニュース_キャッシュレス化.pdf",
-  "thumb": "thumb/小6_No25_ニュース_キャッシュレス化.png"
+  "thumb": "thumb/小6_No25_ニュース_キャッシュレス化.webp"
  },
  {
   "id": "小6_No26_意見_討論・卒業式の呼びかけは必要か",
@@ -2799,10 +3854,13 @@
   "no": 26,
   "type": "意見",
   "title": "討論・卒業式の呼びかけは必要か",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No26_意見_討論・卒業式の呼びかけは必要か.pdf",
-  "thumb": "thumb/小6_No26_意見_討論・卒業式の呼びかけは必要か.png"
+  "thumb": "thumb/小6_No26_意見_討論・卒業式の呼びかけは必要か.webp"
  },
  {
   "id": "小6_No27_ゲスト_中学校の先輩の話・部活と勉強",
@@ -2810,10 +3868,13 @@
   "no": 27,
   "type": "ゲスト",
   "title": "中学校の先輩の話・部活と勉強",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No27_ゲスト_中学校の先輩の話・部活と勉強.pdf",
-  "thumb": "thumb/小6_No27_ゲスト_中学校の先輩の話・部活と勉強.png"
+  "thumb": "thumb/小6_No27_ゲスト_中学校の先輩の話・部活と勉強.webp"
  },
  {
   "id": "小6_No28_会議_感謝の会の進行確認",
@@ -2821,10 +3882,13 @@
   "no": 28,
   "type": "会議",
   "title": "感謝の会の進行確認",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No28_会議_感謝の会の進行確認.pdf",
-  "thumb": "thumb/小6_No28_会議_感謝の会の進行確認.png"
+  "thumb": "thumb/小6_No28_会議_感謝の会の進行確認.webp"
  },
  {
   "id": "小6_No29_講話_校長先生の卒業前講話",
@@ -2832,10 +3896,13 @@
   "no": 29,
   "type": "講話",
   "title": "校長先生の卒業前講話",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No29_講話_校長先生の卒業前講話.pdf",
-  "thumb": "thumb/小6_No29_講話_校長先生の卒業前講話.png"
+  "thumb": "thumb/小6_No29_講話_校長先生の卒業前講話.webp"
  },
  {
   "id": "小6_No30_説明_中学校説明会",
@@ -2843,9 +3910,12 @@
   "no": 30,
   "type": "説明",
   "title": "中学校説明会",
-  "grade": "小6",
+  "grade": "6年",
   "band": "high",
+  "grades": [
+   "6年"
+  ],
   "pdf": "kikitori/小6_No30_説明_中学校説明会.pdf",
-  "thumb": "thumb/小6_No30_説明_中学校説明会.png"
+  "thumb": "thumb/小6_No30_説明_中学校説明会.webp"
  }
 ]

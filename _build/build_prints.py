@@ -42,6 +42,23 @@ BAND = {"1年":"low","2年":"low","3年":"mid","4年":"mid","中学年":"mid","5
         "小1":"low","小2":"low","小3":"mid","小4":"mid","小5":"high","小6":"high"}
 BAND_LABEL = {"low":"低学年","mid":"中学年","high":"高学年"}
 
+GRADE_LIST = ["1年","2年","3年","4年","5年","6年"]
+# 学年が1つに決まらない表記を、該当学年のリストへ展開する
+GRADES_OF = {"低学年":["1年","2年"], "中学年":["3年","4年"], "高学年":["5年","6年"]}
+
+# 読解プリントの「読みものの種類」（カテゴリ絞り込みに出す順）
+YOMU_TYPES = ["説明文","物語文","要約","詩","情報の読み取り"]
+
+# 読みものの種類ごとの色（サムネの色帯と一致させる）
+TYPE_SLUG = {"説明文":"setsu","物語文":"mono","要約":"yoyaku","詩":"shi","情報の読み取り":"joho"}
+TYPE_CSS = """
+  .tag.t-setsu {{ color:#2b5fd9; border-color:#cdd9f4; background:#f2f6fd; }}
+  .tag.t-mono {{ color:#3f6b53; border-color:#cbdcd2; background:#f2f7f4; }}
+  .tag.t-yoyaku {{ color:#b26a2b; border-color:#ecd7bd; background:#fdf7f0; }}
+  .tag.t-shi {{ color:#6b5aa6; border-color:#d6cfe8; background:#f6f4fb; }}
+  .tag.t-joho {{ color:#2f4858; border-color:#c9d3d9; background:#f3f6f8; }}
+"""
+
 # ---- 型ごとの解説素材（事実ベース：仕様と使い方だけを書く） ----
 TYPE_INFO = {
     "説明文": dict(
@@ -114,9 +131,9 @@ def scan():
             stem = f.stem
             if cat == "kikitori":
                 m = re.match(r"小(\d)_No(\d+)_([^_]+)_(.+)", stem)
-                grade, no, typ, title = f"小{m.group(1)}", m.group(2), m.group(3), m.group(4)
+                grade, no, typ, title = f"{m.group(1)}年", m.group(2), m.group(3), m.group(4)
             elif cat == "yomu":
-                m = re.match(r"(中学年|高学年)_No(\d+)_([^_]+)_(.+)", stem)
+                m = re.match(r"(\d年|中学年|高学年)_No(\d+)_([^_]+)_(.+)", stem)
                 grade, no, typ, title = m.group(1), m.group(2), m.group(3), m.group(4)
             elif cat == "kotoba":
                 m = re.match(r"([^_]+)_No(\d+)_語句_(.+)", stem)
@@ -131,12 +148,14 @@ def scan():
                 no, title = m.group(1), m.group(2)
                 grade, typ = "高学年", "条件作文"
             band = BAND.get(grade, "high")
-            thumb = KOKUGO / "thumb" / (stem + ".png")
+            # 学年フィルタ用：学年が特定できないもの（帯だけ）は該当学年すべてに出す
+            grades = GRADES_OF.get(grade, [grade])
+            thumb = KOKUGO / "thumb" / (stem + ".webp")
             items.append(dict(
                 id=stem, cat=cat, no=int(no), type=typ, title=title,
-                grade=grade, band=band,
+                grade=grade, band=band, grades=grades,
                 pdf=f"{cat}/{f.name}",
-                thumb=f"thumb/{stem}.png" if thumb.exists() else None,
+                thumb=f"thumb/{stem}.webp" if thumb.exists() else None,
             ))
     return items
 
@@ -207,7 +226,7 @@ def topbar(rel):
     <div class="dr-sec">TOOL</div>
     <a href="{rel}/tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
     <div class="dr-sec">PRINTS</div>
-    <a href="{rel}/prints/kokugo/">国語プリント<small>全259枚・無料</small></a>
+    <a href="{rel}/prints/kokugo/">国語プリント<small>全279枚・無料</small></a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="{rel}/prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
@@ -302,11 +321,14 @@ def build_packs(items):
                 zf.write(KOKUGO / i["pdf"], f"{label}/{catlabel[i['cat']]}/{Path(i['pdf']).name}")
         packs.append(dict(label=label, short=short, file=f"packs/{name}", count=len(sel),
                           mb=zp.stat().st_size / 1048576))
-    _zip("国語プリント_中学年まとめパック.zip", "国語まとめパック（中学年）", "中学年パック",
-         [i for i in items if i["band"] == "mid"])
-    _zip("国語プリント_高学年まとめパック.zip", "国語まとめパック（高学年）", "高学年パック",
-         [i for i in items if i["band"] == "high"])
-    _zip("国語プリント_全部まとめパック.zip", "国語まとめパック（全学年）", "全部入り（低学年ふくむ）", items)
+    for g in GRADE_LIST:
+        sel = [i for i in items if g in i["grades"]]
+        if sel:
+            _zip(f"国語プリント_{g}まとめパック.zip", f"国語まとめパック（{g}）", f"{g}パック", sel)
+    _zip("国語プリント_全部まとめパック.zip", "国語まとめパック（全学年）", "全学年ぶん", items)
+    # 旧・学年帯パックが残っていれば片づける
+    for old in ["国語プリント_中学年まとめパック.zip", "国語プリント_高学年まとめパック.zip"]:
+        (PACKDIR / old).unlink(missing_ok=True)
     return packs
 
 # ---------- 一覧ページ ----------
@@ -318,13 +340,15 @@ def build_index(items, packs):
     for cat, meta in CATS.items():
         cards = []
         for it in (i for i in items if i["cat"] == cat):
-            tags = f'<span class="tag type">{esc(it["type"])}</span><span class="tag">{esc(it["grade"])}</span>'
+            slug = TYPE_SLUG.get(it["type"], "")
+            tcls = f"tag type t-{slug}" if slug else "tag type"
+            tags = f'<span class="{tcls}">{esc(it["type"])}</span><span class="tag">{esc(it["grade"])}</span>'
             img = f'<img loading="lazy" src="{esc(it["thumb"])}" alt="{esc(it["type"])} {esc(it["title"])}">' if it["thumb"] else ""
             hay = f'{it["title"]} {it["type"]} {it["grade"]} {meta["label"]}'
             if cat == "kikitori":
                 # 聞き取りは個別ページを持たず、カードからPDFへ直リンク
                 cards.append(
-f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
+f'''<div class="card" data-band="{it["band"]}" data-grade="{esc(" ".join(it["grades"]))}" data-type="{esc(it["type"])}" data-hay="{esc(hay)}">
   <a class="th" href="{esc(it["pdf"])}"><div class="thumb">{img}</div></a>
   <div class="b">
     <div class="tags">{tags}</div>
@@ -337,7 +361,7 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
 </div>''')
             else:
                 cards.append(
-f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
+f'''<div class="card" data-band="{it["band"]}" data-grade="{esc(" ".join(it["grades"]))}" data-type="{esc(it["type"])}" data-hay="{esc(hay)}">
   <a class="th" href="p/{esc(it["id"])}.html"><div class="thumb">{img}</div></a>
   <div class="b">
     <div class="tags">{tags}</div>
@@ -376,7 +400,11 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
   .meta b {{ color:var(--ink); font-weight:700; }}
   .filter {{ position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }}
   .frow {{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; }}
-  .fl {{ font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }}
+  .fl {{ font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; min-width:34px; line-height:1.4; }}
+  .fnote {{ font-size:11.5px; color:var(--sub); margin-left:4px; }}
+  /* 3段になったので、画面が狭いときは追従をやめる（絞り込みで画面が埋まらないように） */
+  @media (max-width:760px) {{ .filter {{ position:static; }} .fbtn {{ font-size:12.5px; padding:6px 11px; }} }}
+  @media (max-width:560px) {{ .fnote {{ display:none; }} }}
   .search {{ flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }}
   .search:focus {{ box-shadow:0 0 0 3px rgba(43,95,217,0.12); }}
   .fbtn {{ font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }}
@@ -393,12 +421,13 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
   .grid {{ display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px 18px; }}
   .card {{ border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }}
   .card:hover {{ border-color:var(--ink); }}
-  .card .thumb {{ aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }}
-  .card .thumb img {{ max-width:100%; max-height:100%; object-fit:contain; }}
+  .card .thumb {{ aspect-ratio:5/4; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }}
+  .card .thumb img {{ width:100%; height:100%; object-fit:cover; background:#fff; }}
   .card .b {{ padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }}
   .tags {{ display:flex; gap:6px; flex-wrap:wrap; }}
   .tag {{ font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }}
   .tag.type {{ color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }}
+{TYPE_CSS}
   .tt {{ font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); }}
   .tt:hover {{ color:var(--accent); }}
   .acts {{ display:flex; align-items:center; justify-content:space-between; gap:8px; }}
@@ -449,16 +478,22 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
     </div>
     <div class="frow">
       <span class="fl">学年</span>
-      <button class="fbtn on" data-band="all">すべて</button>
-      <button class="fbtn" data-band="low">低学年</button>
-      <button class="fbtn" data-band="mid">中学年</button>
-      <button class="fbtn" data-band="high">高学年</button>
-      <span class="fl" style="margin-left:14px">分野</span>
+      <button class="fbtn on" data-grade="all">すべて</button>
+{chr(10).join(f'      <button class="fbtn" data-grade="{g}">{g}</button>' for g in GRADE_LIST)}
+    </div>
+    <div class="frow">
+      <span class="fl">分野</span>
       <button class="fbtn on" data-cat="all">すべて</button>
       <button class="fbtn" data-cat="sec-yomu">読解</button>
       <button class="fbtn" data-cat="sec-kotoba">言葉・語句</button>
       <button class="fbtn" data-cat="sec-sakubun">作文</button>
       <button class="fbtn" data-cat="sec-kikitori">聞き取り</button>
+    </div>
+    <div class="frow">
+      <span class="fl">読みもの<br>の種類</span>
+      <button class="fbtn on" data-type="all">すべて</button>
+{chr(10).join(f'      <button class="fbtn" data-type="{t}">{t}</button>' for t in YOMU_TYPES)}
+      <span class="fnote">読解のプリントだけをしぼりこみます</span>
     </div>
     <p class="count"><b id="shown">{total}</b> 枚を表示中</p>
   </div>
@@ -467,15 +502,21 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
 {footer("../..")}
 <script>
 (function(){{
-  var state = {{ q:'', band:'all', cat:'all' }};
+  var state = {{ q:'', grade:'all', cat:'all', type:'all' }};
+  function mark(sel, val, key){{
+    document.querySelectorAll(sel).forEach(function(x){{ x.classList.toggle('on', x.dataset[key]===val); }});
+  }}
   function apply(){{
     var shown = 0;
+    // 種類でしぼりこんだときは、読解のセクションだけを見る
+    var cat = (state.type!=='all') ? 'sec-yomu' : state.cat;
     document.querySelectorAll('section[data-sec]').forEach(function(sec){{
       var vis = 0;
-      var catOk = state.cat==='all' || sec.id===state.cat;
+      var catOk = cat==='all' || sec.id===cat;
       sec.querySelectorAll('.card').forEach(function(c){{
         var ok = catOk
-          && (state.band==='all' || c.dataset.band===state.band)
+          && (state.grade==='all' || c.dataset.grade.split(' ').indexOf(state.grade)>=0)
+          && (state.type==='all' || c.dataset.type===state.type)
           && (!state.q || c.dataset.hay.toLowerCase().indexOf(state.q)>=0);
         c.style.display = ok ? '' : 'none';
         if (ok) vis++;
@@ -487,18 +528,25 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
     document.getElementById('shown').textContent = shown;
   }}
   document.getElementById('q').addEventListener('input', function(e){{ state.q = e.target.value.trim().toLowerCase(); apply(); }});
-  document.querySelectorAll('.fbtn[data-band]').forEach(function(b){{
+  document.querySelectorAll('.fbtn[data-grade]').forEach(function(b){{
     b.addEventListener('click', function(){{
-      state.band = b.dataset.band;
-      document.querySelectorAll('.fbtn[data-band]').forEach(function(x){{ x.classList.toggle('on', x===b); }});
-      apply();
+      state.grade = b.dataset.grade; mark('.fbtn[data-grade]', state.grade, 'grade'); apply();
     }});
   }});
   document.querySelectorAll('.fbtn[data-cat]').forEach(function(b){{
     b.addEventListener('click', function(){{
       state.cat = b.dataset.cat;
-      document.querySelectorAll('.fbtn[data-cat]').forEach(function(x){{ x.classList.toggle('on', x===b); }});
-      apply();
+      // 分野を選び直したら「読みものの種類」はすべてに戻す
+      if (state.cat!=='sec-yomu') {{ state.type = 'all'; mark('.fbtn[data-type]','all','type'); }}
+      mark('.fbtn[data-cat]', state.cat, 'cat'); apply();
+    }});
+  }});
+  document.querySelectorAll('.fbtn[data-type]').forEach(function(b){{
+    b.addEventListener('click', function(){{
+      state.type = b.dataset.type;
+      // 種類を選んだら分野は読解に合わせる
+      if (state.type!=='all') {{ state.cat = 'sec-yomu'; mark('.fbtn[data-cat]','sec-yomu','cat'); }}
+      mark('.fbtn[data-type]', state.type, 'type'); apply();
     }});
   }});
 }})();
@@ -510,9 +558,9 @@ f'''<div class="card" data-band="{it["band"]}" data-hay="{esc(hay)}">
 
 # ---------- 個別ページ ----------
 def related(items, it, n=6):
-    same_type = [x for x in items if x["cat"]==it["cat"] and x["type"]==it["type"] and x["id"]!=it["id"] and x["band"]==it["band"]]
-    same_type += [x for x in items if x["cat"]==it["cat"] and x["type"]==it["type"] and x["id"]!=it["id"] and x["band"]!=it["band"]]
-    other = [x for x in items if x["cat"]==it["cat"] and x["type"]!=it["type"] and x["band"]==it["band"]]
+    same_type = [x for x in items if x["cat"]==it["cat"] and x["type"]==it["type"] and x["id"]!=it["id"] and x["grade"]==it["grade"]]
+    same_type += [x for x in items if x["cat"]==it["cat"] and x["type"]==it["type"] and x["id"]!=it["id"] and x["grade"]!=it["grade"]]
+    other = [x for x in items if x["cat"]==it["cat"] and x["type"]!=it["type"] and x["grade"]==it["grade"]]
     out, seen = [], set()
     for x in same_type + other:
         if x["id"] in seen: continue
@@ -552,8 +600,10 @@ def build_pages(items):
   .tags {{ display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }}
   .tag {{ font-size:11px; font-weight:700; padding:3px 9px; border:1px solid var(--line); color:var(--sub); }}
   .tag.type {{ color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }}
-  .hero-thumb {{ border:1px solid var(--ink); background:var(--wash); margin-bottom:18px; }}
-  .hero-thumb img {{ display:block; width:100%; height:auto; }}
+{TYPE_CSS}
+  /* 見出しのすぐ下なので、サムネの題名部分は隠して紙面だけを見せる */
+  .hero-thumb {{ border:1px solid var(--ink); background:var(--wash); margin-bottom:18px; overflow:hidden; }}
+  .hero-thumb img {{ display:block; width:100%; height:auto; margin:-20.4% 0 -2.6%; }}
   .dlrow {{ display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px; }}
   .dl {{ display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; }}
   .dl svg {{ width:14px; height:14px; }}

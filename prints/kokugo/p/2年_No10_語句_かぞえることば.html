@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>かぞえることば（語句・2年）── 国語プリント｜School Stock</title>
+<meta name="description" content="「かぞえることば」の10分ミニプリントです。100点満点の小テスト形式で、語句の知識をくり返し確かめられます。 無料でそのまま印刷して使えます。">
+<style>
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .wrap { display:grid; grid-template-columns:minmax(0,1fr) 260px; gap:40px; padding-top:26px; }
+  @media (max-width:860px){ .wrap { grid-template-columns:1fr; } .side { display:none; } }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:3px 11px; margin-bottom:14px; }
+  h1 { font-size:clamp(24px,4vw,32px); font-weight:700; line-height:1.4; margin-bottom:10px; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
+  .tag { font-size:11px; font-weight:700; padding:3px 9px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
+
+  .tag.t-setsu {{ color:#2b5fd9; border-color:#cdd9f4; background:#f2f6fd; }}
+  .tag.t-mono {{ color:#3f6b53; border-color:#cbdcd2; background:#f2f7f4; }}
+  .tag.t-yoyaku {{ color:#b26a2b; border-color:#ecd7bd; background:#fdf7f0; }}
+  .tag.t-shi {{ color:#6b5aa6; border-color:#d6cfe8; background:#f6f4fb; }}
+  .tag.t-joho {{ color:#2f4858; border-color:#c9d3d9; background:#f3f6f8; }}
+
+  /* 見出しのすぐ下なので、サムネの題名部分は隠して紙面だけを見せる */
+  .hero-thumb { border:1px solid var(--ink); background:var(--wash); margin-bottom:18px; overflow:hidden; }
+  .hero-thumb img { display:block; width:100%; height:auto; margin:-20.4% 0 -2.6%; }
+  .dlrow { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px; }
+  .dl { display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; }
+  .dl svg { width:14px; height:14px; }
+  .dl.line { background:var(--paper); color:var(--ink); border:1px solid var(--ink); }
+  .about { font-size:15px; color:#3d4148; margin-bottom:26px; max-width:620px; }
+  h2 { font-size:17px; font-weight:700; border-left:4px solid var(--black); padding-left:11px; margin:26px 0 10px; }
+  ul.plain { list-style:none; }
+  ul.plain li { font-size:14px; color:#3d4148; padding:4px 0 4px 18px; position:relative; }
+  ul.plain li::before { content:""; position:absolute; left:2px; top:14px; width:7px; height:7px; background:var(--accent); }
+  .rel { margin-top:34px; border-top:1px solid var(--ink); padding-top:22px; }
+  .rgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(150px,1fr)); gap:14px; }
+  .rcard { border:1px solid var(--line); display:flex; flex-direction:column; color:var(--ink); transition:border-color .15s; }
+  .rcard:hover { border-color:var(--ink); }
+  .rthumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); overflow:hidden; display:flex; align-items:center; justify-content:center; }
+  .rthumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .rb { padding:9px 10px 11px; display:flex; flex-direction:column; gap:3px; }
+  .rtag { font-size:10px; font-weight:700; color:var(--sub); letter-spacing:0.04em; }
+  .rtt { font-size:12.5px; font-weight:700; line-height:1.5; }
+  .side { border-left:1px solid var(--line); padding-left:22px; }
+  .side h3 { font-size:11px; font-weight:700; letter-spacing:0.2em; color:var(--sub); margin:6px 0 10px; }
+  .side a { display:block; font-size:13.5px; font-weight:700; color:var(--ink); padding:7px 0; border-bottom:1px solid var(--wash); }
+  .side a:hover { color:var(--accent); }
+  .side a.ex { font-weight:400; color:var(--sub); font-size:12.5px; }
+  .side .now { color:var(--accent); }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../../prints/kokugo/">プリント</a>
+      <a href="../../../shien/">支援カード</a>
+      <a href="../../../tankyu/">探究サポート</a>
+      <a href="../../../sozai/">素材</a>
+      <a href="../../../ideas/">アイデア村</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">TOOL</div>
+    <a href="../../../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../../prints/kokugo/">国語プリント<small>全279枚・無料</small></a>
+    <a class="sub2" href="../../../prints/kokugo/#sec-yomu">読解（読むこと）</a>
+    <a class="sub2" href="../../../prints/kokugo/#sec-kotoba">言葉・語句</a>
+    <a class="sub2" href="../../../prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
+    <a class="sub2" href="../../../prints/kokugo/#sec-kikitori">聞き取り（聞くこと）</a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">INQUIRY</div>
+    <a href="../../../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">IDEAS</div>
+    <a href="../../../ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ENTERTAINMENT</div>
+    <a href="../../../entertainment/prompt-book/">先生の寄り道プロンプト帳<small>出張・おみやげ・すきま時間のGeminiプロンプト</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗<small>先生のための最新情報（毎週）</small></a>
+    <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
+    <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗<small>コピペで使えるプロンプト集</small></a>
+    <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗<small>GEG Fukuoka City のGem集</small></a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+
+<div class="container">
+  <div class="crumb"><a href="../../../">棚</a> ／ <a href="../">国語プリント</a> ／ 言葉・語句 ／ かぞえることば</div>
+  <div class="wrap">
+    <main>
+      <span class="kicker">PRINTS｜言葉・語句</span>
+      <h1>かぞえることば</h1>
+      <div class="tags"><span class="tag type">語句</span><span class="tag">2年</span><span class="tag">無料・自作</span></div>
+      <div class="hero-thumb"><img src="../thumb/2年_No10_語句_かぞえることば.webp" alt="かぞえることば のプリント見本"></div>
+      <div class="dlrow">
+        <a class="dl" href="../kotoba/2年_No10_語句_かぞえることば.pdf"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをダウンロード</a>
+        <a class="dl line" href="../">ほかのプリントをさがす</a>
+      </div>
+      <p class="about">「かぞえることば」の10分ミニプリントです。100点満点の小テスト形式で、語句の知識をくり返し確かめられます。</p>
+      <h2>このプリントでつく力</h2>
+      <ul class="plain"><li>語彙を増やし、使い分ける力</li><li>短時間で集中して取り組む習慣</li></ul>
+      <h2>教室での使いどころ</h2>
+      <ul class="plain"><li>週1回の国語小テストに</li><li>すきま時間の10分学習に</li><li>赤字解答で自己採点の練習に</li></ul>
+      <h2>仕様（印刷まわり）</h2>
+      <ul class="plain"><li>A4縦に同じプリントを上下2面付け（切って2人分）</li><li>100点満点の小テスト形式</li><li>2ページ目に赤字解答つき・全漢字ルビ</li></ul>
+      <div class="rel">
+        <h2>関連プリント（タップで移動）</h2>
+        <div class="rgrid">
+<a class="rcard" href="2年_No09_語句_はんたいのことば.html"><div class="rthumb"><img loading="lazy" src="../thumb/2年_No09_語句_はんたいのことば.webp" alt=""></div><div class="rb"><span class="rtag">語句・2年</span><span class="rtt">はんたいのことば</span></div></a>
+<a class="rcard" href="3年_No01_気持ちを表す言葉.html"><div class="rthumb"><img loading="lazy" src="../thumb/3年_No01_気持ちを表す言葉.webp" alt=""></div><div class="rb"><span class="rtag">語句・3年</span><span class="rtt">気持ちを表す言葉</span></div></a>
+<a class="rcard" href="3年_No16_語句_体の言葉のかんようく.html"><div class="rthumb"><img loading="lazy" src="../thumb/3年_No16_語句_体の言葉のかんようく.webp" alt=""></div><div class="rb"><span class="rtag">語句・3年</span><span class="rtt">体の言葉のかんようく</span></div></a>
+<a class="rcard" href="3年_No17_語句_気持ちを表す言葉.html"><div class="rthumb"><img loading="lazy" src="../thumb/3年_No17_語句_気持ちを表す言葉.webp" alt=""></div><div class="rb"><span class="rtag">語句・3年</span><span class="rtt">気持ちを表す言葉</span></div></a>
+<a class="rcard" href="4年_No15_語句_つなぎ言葉のはたらき.html"><div class="rthumb"><img loading="lazy" src="../thumb/4年_No15_語句_つなぎ言葉のはたらき.webp" alt=""></div><div class="rb"><span class="rtag">語句・4年</span><span class="rtt">つなぎ言葉のはたらき</span></div></a>
+<a class="rcard" href="2年_No01_かたかなで書くことば.html"><div class="rthumb"><img loading="lazy" src="../thumb/2年_No01_かたかなで書くことば.webp" alt=""></div><div class="rb"><span class="rtag">かたかな・2年</span><span class="rtt">かたかなで書くことば</span></div></a>
+
+        </div>
+      </div>
+    </main>
+    <aside class="side">
+      <h3>SITE MAP</h3>
+      <a href="../../../">棚トップ</a>
+      <a href="../../../tools/pdf-toolbox/">先生のPDF道具箱</a>
+      <a class="now" href="../">国語プリント</a>
+      <a href="../#sec-yomu">　読解（読むこと）</a>
+      <a href="../#sec-kotoba">　言葉・語句</a>
+      <a href="../#sec-sakubun">　作文（時事・意見文）</a>
+      <a href="../../../sozai/">授業イラスト素材集</a>
+      <a href="../../../ideas/">実践アイデア村</a>
+      <h3 style="margin-top:20px">つながる</h3>
+      <a class="ex" href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
+      <a class="ex" href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+      <a class="ex" href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
+      <a class="ex" href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗</a>
+      <a class="ex" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </aside>
+  </div>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../../">棚トップ</a>
+        <a href="../../../tools/pdf-toolbox/">先生のPDF道具箱</a>
+        <a href="../../../prints/kokugo/">国語プリント</a>
+        <a href="../../../shien/">支援カード</a>
+        <a href="../../../tankyu/">探究・問題解決サポート</a>
+        <a href="../../../sozai/">授業イラスト素材集</a>
+        <a href="../../../ideas/">実践アイデア村</a>
+        <a href="../../../entertainment/prompt-book/">先生の寄り道プロンプト帳</a>
+        <a href="../../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
+        <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div style="display:flex;gap:14px;align-items:center;border-top:1px solid #33363c;margin-top:16px;padding-top:16px">
+      <img src="../../../about/author.jpg" alt="外﨑顯博の写真" style="flex:none;width:52px;height:52px;border-radius:50%;object-fit:cover">
+      <div style="font-size:12px;line-height:1.9">
+        <div style="font-size:10px;font-weight:700;letter-spacing:.24em;color:#8a8f97">AUTHOR｜つくっている人</div>
+        <div style="color:#fff;font-weight:700;font-size:13.5px">外﨑顯博<span style="font-weight:500;font-size:11px;color:#b9bcc2;margin-left:8px">とざき あきひろ</span></div>
+        <div>福岡県の公立小学校教員／GEG Chikuho 共同リーダー。教室で使う物を自分でつくって、この棚に並べています。<a href="../../../about/">くわしく →</a></div>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+
+</body>
+</html>

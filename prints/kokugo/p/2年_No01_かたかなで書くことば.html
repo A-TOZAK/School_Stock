@@ -52,8 +52,16 @@
   .tags { display:flex; gap:6px; flex-wrap:wrap; margin-bottom:18px; }
   .tag { font-size:11px; font-weight:700; padding:3px 9px; border:1px solid var(--line); color:var(--sub); }
   .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
-  .hero-thumb { border:1px solid var(--ink); background:var(--wash); margin-bottom:18px; }
-  .hero-thumb img { display:block; width:100%; height:auto; }
+
+  .tag.t-setsu {{ color:#2b5fd9; border-color:#cdd9f4; background:#f2f6fd; }}
+  .tag.t-mono {{ color:#3f6b53; border-color:#cbdcd2; background:#f2f7f4; }}
+  .tag.t-yoyaku {{ color:#b26a2b; border-color:#ecd7bd; background:#fdf7f0; }}
+  .tag.t-shi {{ color:#6b5aa6; border-color:#d6cfe8; background:#f6f4fb; }}
+  .tag.t-joho {{ color:#2f4858; border-color:#c9d3d9; background:#f3f6f8; }}
+
+  /* 見出しのすぐ下なので、サムネの題名部分は隠して紙面だけを見せる */
+  .hero-thumb { border:1px solid var(--ink); background:var(--wash); margin-bottom:18px; overflow:hidden; }
+  .hero-thumb img { display:block; width:100%; height:auto; margin:-20.4% 0 -2.6%; }
   .dlrow { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:26px; }
   .dl { display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; }
   .dl svg { width:14px; height:14px; }
@@ -105,7 +113,7 @@
     <div class="dr-sec">TOOL</div>
     <a href="../../../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
     <div class="dr-sec">PRINTS</div>
-    <a href="../../../prints/kokugo/">国語プリント<small>全259枚・無料</small></a>
+    <a href="../../../prints/kokugo/">国語プリント<small>全279枚・無料</small></a>
     <a class="sub2" href="../../../prints/kokugo/#sec-yomu">読解（読むこと）</a>
     <a class="sub2" href="../../../prints/kokugo/#sec-kotoba">言葉・語句</a>
     <a class="sub2" href="../../../prints/kokugo/#sec-sakubun">作文（時事・意見文）</a>
@@ -138,7 +146,7 @@
       <span class="kicker">PRINTS｜言葉・語句</span>
       <h1>かたかなで書くことば</h1>
       <div class="tags"><span class="tag type">かたかな</span><span class="tag">2年</span><span class="tag">無料・自作</span></div>
-      <div class="hero-thumb"><img src="../thumb/2年_No01_かたかなで書くことば.png" alt="かたかなで書くことば のプリント見本"></div>
+      <div class="hero-thumb"><img src="../thumb/2年_No01_かたかなで書くことば.webp" alt="かたかなで書くことば のプリント見本"></div>
       <div class="dlrow">
         <a class="dl" href="../kotoba/2年_No01_かたかなで書くことば.pdf"><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDFをダウンロード</a>
         <a class="dl line" href="../">ほかのプリントをさがす</a>
@@ -153,7 +161,8 @@
       <div class="rel">
         <h2>関連プリント（タップで移動）</h2>
         <div class="rgrid">
-<a class="rcard" href="1年_No01_はをへのつかいかた.html"><div class="rthumb"><img loading="lazy" src="../thumb/1年_No01_はをへのつかいかた.png" alt=""></div><div class="rb"><span class="rtag">かなづかい・1年</span><span class="rtt">はをへのつかいかた</span></div></a>
+<a class="rcard" href="2年_No09_語句_はんたいのことば.html"><div class="rthumb"><img loading="lazy" src="../thumb/2年_No09_語句_はんたいのことば.webp" alt=""></div><div class="rb"><span class="rtag">語句・2年</span><span class="rtt">はんたいのことば</span></div></a>
+<a class="rcard" href="2年_No10_語句_かぞえることば.html"><div class="rthumb"><img loading="lazy" src="../thumb/2年_No10_語句_かぞえることば.webp" alt=""></div><div class="rb"><span class="rtag">語句・2年</span><span class="rtt">かぞえることば</span></div></a>
 
         </div>
       </div>
@@ -225,7 +234,5 @@
 })();
 </script>
 
-<script src="/School_Stock/assets/counter-config.js"></script>
-<script src="/School_Stock/assets/counter.js" defer></script>
 </body>
 </html>
