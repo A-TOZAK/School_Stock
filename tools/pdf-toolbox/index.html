@@ -44,6 +44,16 @@
   .meta b { color: var(--ink); font-weight: 700; }
   .meta .dot { color: var(--accent); }
 
+  /* ── 更新情報 ── */
+  .release-note { margin: 34px 0 8px; border: 1px solid var(--ink); background: var(--wash); }
+  .release-note .rh { display: flex; justify-content: space-between; gap: 12px; align-items: center; background: var(--black); color: #fff; padding: 10px 16px; }
+  .release-note .rl { font-size: 11px; font-weight: 700; letter-spacing: 0.22em; }
+  .release-note time { font-size: 11.5px; color: #b9bcc2; letter-spacing: 0.08em; }
+  .release-note .rb { padding: 18px 20px 16px; }
+  .release-note h2 { font-size: 19px; margin: 0 0 10px; }
+  .release-note ul { margin: 0; padding-left: 1.3em; font-size: 14px; line-height: 1.9; color: #3d4148; }
+  .release-note li + li { margin-top: 3px; }
+
   /* ── ヒーロー図版 ── */
   figure { margin: 30px 0 4px; }
   .shot { display: block; width: 100%; border: 1px solid var(--ink); }
@@ -120,6 +130,7 @@
   .cta { display: inline-flex; align-items: center; gap: 9px; background: var(--black); color: #fff; text-decoration: none; font-weight: 700; font-size: 15.5px; padding: 14px 30px; letter-spacing: 0.05em; }
   .cta:hover { opacity: .85; }
   .caution { font-size: 12.5px; color: var(--sub); margin-top: 16px; line-height: 1.85; }
+  .download-version { display: inline-block; margin-bottom: 14px; color: var(--accent); font-size: 12.5px; font-weight: 700; letter-spacing: 0.04em; }
 
   /* ── FAQ ── */
   details { border-top: 1px solid var(--line); padding: 15px 2px; }
@@ -176,12 +187,29 @@
       <span><span class="dot">●</span><b>インストール不要</b></span>
       <span><span class="dot">●</span><b>登録・広告なし</b></span>
       <span><span class="dot">●</span>Windowsのブラウザで動作</span>
+      <span><span class="dot">●</span><b>最新版 v1.1.0</b>（2026年7月24日）</span>
     </div>
     <figure>
       <img class="shot" src="img/tool-screen.png" alt="『先生のPDF道具箱』の操作画面。複数のPDFを1つにまとめているところ">
       <figcaption>実際の操作画面。ダウンロードしたHTMLファイルを開くだけで、この編集画面が立ち上がります。</figcaption>
     </figure>
   </div>
+
+  <!-- 更新情報 -->
+  <aside class="release-note" aria-labelledby="update-title">
+    <div class="rh">
+      <span class="rl">UPDATE / v1.1.0</span>
+      <time datetime="2026-07-24">2026.07.24</time>
+    </div>
+    <div class="rb">
+      <h2 id="update-title">PDF道具箱をアップデートしました</h2>
+      <ul>
+        <li>PDF保存を安定化し、連続クリックによる保存エラーを防止しました。</li>
+        <li>修正テープが反映されない問題と、テキストボックスの位置ずれを改善しました。</li>
+        <li>フォントの日本語表示・検索・お気に入り登録・次回用キャッシュに対応しました。</li>
+      </ul>
+    </div>
+  </aside>
 
   <!-- 3行でわかる -->
   <div class="digest">
@@ -269,6 +297,7 @@
         <div class="tn">先生のPDF道具箱（無料・HTMLファイル1つ）</div>
       </div>
       <div class="tool-body">
+        <span class="download-version">最新版 v1.1.0 ／ 2026年7月24日更新</span>
         <p>ダウンロードしたファイルをダブルクリックで開けば、すぐに使えます。まずは職員室の1台で試してみてください。</p>
         <a class="cta" href="https://github.com/A-TOZAK/School_Stock/releases/latest/download/pdf-toolbox.html">
           <svg width="16" height="16" viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
