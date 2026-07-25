@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>つかえる算数 ── きそ→よみとる→かんがえる→あらわす（4まい＋解答）｜School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="つかえる算数｜School Stock">
+<meta property="og:description" content="1単元＝きそ→よみとる→かんがえる→あらわすの4まい＋解答。学力テスト型の読み取り・思考・記述まで、1枚目の基礎から段差なく登れます。すべて自作・無料。">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/prints/sansu/tsukaeru/thumb/tsukaeru_s4_warizan.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/prints/sansu/tsukaeru/thumb/tsukaeru_s4_warizan.png">
+<meta name="description" content="現役の小学校教員がつくった算数プリント「つかえる算数」。1単元＝きそ（知識・技能）→よみとる（読み取り・判断）→かんがえる（思考・筋道）→あらわす（表現・記述）の4まい＋解答つき。すべて自作・無料。">
+<style>
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .steps { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0 4px; }
+  .step { font-size:12px; border:1px solid var(--line); padding:8px 12px; color:var(--sub); }
+  .step b { color:var(--ink); }
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .acts { display:flex; align-items:center; justify-content:space-between; gap:8px; }
+  .more { font-size:12.5px; font-weight:700; color:var(--accent); }
+  .dl { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; }
+  .dl svg { width:12px; height:12px; }
+</style>
+</head><body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../../#prints">プリント</a>
+      <a href="../../../#support">支援</a>
+      <a href="../../../#toolbox">道具</a>
+      <a href="../../../#reading">読みもの</a>
+      <a href="../../../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS｜教科のプリント</div>
+    <a href="../../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り 全279枚</small></a>
+    <a href="../../../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>ふだんの演習・宿題に。全88単元</small></a>
+    <a href="../../../prints/sansu/">算数プリント（式と言葉）<small>実態差のある教室に。4レベルから選ぶ</small></a>
+    <a href="../../../prints/sansu/tsukaeru/">つかえる算数<small>きそ→活用の4まい＋解答</small></a>
+    <a href="../../../prints/rika/">理科プリント<small>基礎知識・技能／答えつき</small></a>
+    <a href="../../../prints/shakai/">社会プリント<small>資料の読み取り／答えつき</small></a>
+    <a href="../../../prints/taiiku/">体育 学習カード<small>たんげんカード・ふりかえりカード</small></a>
+    <a href="../../../prints/atama/">あたまのじゅんび運動<small>すきま5分の認知機能トレーニング</small></a>
+    <div class="dr-sec">SUPPORT｜気になる子の支援</div>
+    <a href="../../../shien/">支援カード<small>自分を助ける合言葉 全35枚</small></a>
+    <a href="../../../lab/">教室の中の特別支援<small>連載・全35回（限定・パスワード）</small></a>
+    <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
+    <a href="../../../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <a href="../../../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラストと写真</small></a>
+    <a href="../../../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <div class="dr-sec">READING｜読みもの・アイデア</div>
+    <a href="../../../ideas/">実践アイデア村<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+  <div class="crumb"><a href="../../../">棚</a> ／ <a href="../../">算数プリント</a> ／ つかえる算数</div>
+  <div class="head">
+    <span class="kicker">PRINTS｜算数</span>
+    <h1>つかえる算数</h1>
+    <p class="lead">1単元＝<b>きそ→よみとる→かんがえる→あらわす</b>の4まい＋解答。1まい目で全員の足場をつくってから、学力テスト型の読み取り・思考・記述に段差なく登っていきます。式・図・文章はすべて自作、© School Stock。</p>
+    <div class="steps">
+      <span class="step"><b>1</b> きそ（知識・技能）</span>
+      <span class="step"><b>2</b> よみとる（読み取り・判断）</span>
+      <span class="step"><b>3</b> かんがえる（思考・筋道）</span>
+      <span class="step"><b>4</b> あらわす（表現・記述）</span>
+    </div>
+    <div class="meta">
+      <span><b>全7単元</b>（各4まい＋解答4枚・計8枚）</span>
+      <span>4年 6／5年 1</span>
+      <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="filter">
+    <div class="frow">
+      <span class="fl">学年</span>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button>
+    </div>
+    <p class="count"><b id="shown">7</b> 単元を表示中</p>
+  </div>
+
+  <section data-sec id="sec-g4">
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">MATH</span></div>
+    <h2>4年</h2>
+    <p class="sec-note"><span class="cnt">全6単元</span></p>
+    <div class="grid">
+<div class="card" data-band="g4" data-hay="2けたでわるわり算の筆算 わり算 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_warizan.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_warizan.png" alt="2けたでわるわり算の筆算"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">わり算の筆算</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_warizan.pdf">2けたでわるわり算の筆算</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_warizan.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="式と計算の順じょ 計算のきまり 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_shiki.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_shiki.png" alt="式と計算の順じょ"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">計算の順じょ</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_shiki.pdf">式と計算の順じょ</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_shiki.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="割合 倍の見方 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_wariai.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_wariai.png" alt="割合（倍の見方）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">割合</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_wariai.pdf">割合（倍の見方）</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_wariai.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="面積 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_menseki.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_menseki.png" alt="面積"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">面積</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_menseki.pdf">面積</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_menseki.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="がい数とその計算 見積もり 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_gaisu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_gaisu.png" alt="がい数とその計算"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">がい数</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_gaisu.pdf">がい数とその計算</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_gaisu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="g4" data-hay="小数のかけ算とわり算 4年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s4_shousuu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s4_shousuu.png" alt="小数のかけ算とわり算"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">4年</span><span class="tag">小数のかけ算・わり算</span></div>
+    <a class="tt" href="pdf/tsukaeru_s4_shousuu.pdf">小数のかけ算とわり算</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s4_shousuu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-g5">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">MATH</span></div>
+    <h2>5年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span></p>
+    <div class="grid">
+<div class="card" data-band="g5" data-hay="偶数と奇数 倍数と約数 5年 つかえる算数">
+  <a class="th" href="pdf/tsukaeru_s5_seisu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s5_seisu.png" alt="偶数と奇数、倍数と約数"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">5年</span><span class="tag">倍数・約数</span></div>
+    <a class="tt" href="pdf/tsukaeru_s5_seisu.pdf">偶数と奇数、倍数と約数</a>
+    <div class="acts">
+      <span class="more">きそ〜あらわす＋解答（8枚）</span>
+      <a class="dl" href="pdf/tsukaeru_s5_seisu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../../">棚トップ</a>
+        <a href="../../../prints/kokugo/">国語プリント</a>
+        <a href="../../../prints/rika/">理科プリント</a>
+        <a href="../../../prints/sansu/">算数プリント</a>
+        <a href="../../../prints/sansu/tsukaeru/">つかえる算数</a>
+        <a href="../../../prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="../../../prints/shakai/">社会プリント</a>
+        <a href="../../../prints/taiiku/">体育 学習カード</a>
+        <a href="../../../prints/atama/">あたまのじゅんび運動</a>
+        <a href="../../../shien/">支援カード</a>
+        <a href="../../../sozai/">授業イラスト素材集</a>
+        <a href="../../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+(function(){var state={band:'all'};
+function apply(){var shown=0;
+document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
+sec.querySelectorAll('.card').forEach(function(c){
+var ok=(state.band==='all'||c.dataset.band===state.band);
+c.style.display=ok?'':'none';if(ok)vis++;});
+sec.style.display=vis===0?'none':'';shown+=vis;});
+document.getElementById('shown').textContent=shown;}
+document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
+state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
