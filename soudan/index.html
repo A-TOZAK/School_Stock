@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>先生の相談窓口｜School Stock</title>
+<meta name="description" content="教材の使い方、教材のリクエスト、校内研修やICT推進の相談。現役の教員が無料で答える窓口です。売り込みはしません。">
+<style>
+  :root{ --ink:#15181c; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --sub:#6b7077; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+        color:var(--ink); background:var(--wash); line-height:1.9; }
+  a{ color:inherit; }
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 60px; }
+  .back{ font-size:13px; color:var(--sub); text-decoration:none; }
+  .back:hover{ text-decoration:underline; }
+  h1{ font-size:26px; margin:18px 0 6px; letter-spacing:.02em; }
+  .lead{ color:var(--sub); font-size:14.5px; margin-bottom:8px; }
+  .yakusoku{ background:var(--paper); border:1px solid var(--line); border-radius:12px;
+             padding:14px 18px; margin:18px 0 26px; font-size:13.5px; }
+  .yakusoku b{ display:block; margin-bottom:4px; font-size:13px; color:var(--sub); letter-spacing:.08em; }
+  .yakusoku ul{ list-style:none; }
+  .yakusoku li{ padding-left:1.2em; text-indent:-1.2em; }
+  .yakusoku li::before{ content:"・"; }
+  .card{ background:var(--paper); border:1px solid var(--line); border-radius:14px;
+         padding:22px 22px 20px; margin-bottom:18px; }
+  .card h2{ font-size:17px; margin-bottom:2px; }
+  .who{ font-size:12.5px; color:var(--sub); margin-bottom:12px; }
+  .card p{ font-size:14px; }
+  .btn{ display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+        border-radius:999px; padding:11px 26px; font-size:14px; margin-top:12px; }
+  .btn:hover{ opacity:.85; }
+  .btn.ghost{ background:var(--paper); color:var(--ink); border:1.5px solid var(--ink); }
+  .qr-row{ display:flex; align-items:center; gap:18px; margin-top:12px; flex-wrap:wrap; }
+  .qr-row img{ width:132px; height:132px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  .qr-note{ font-size:12.5px; color:var(--sub); }
+  .rei{ margin-top:6px; }
+  .rei span{ display:inline-block; background:var(--wash); border:1px solid var(--line);
+             border-radius:999px; padding:3px 12px; font-size:12.5px; margin:3px 4px 0 0; color:#3d4148; }
+  .mail{ font-size:15px; font-weight:600; letter-spacing:.02em; }
+  footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:36px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/School_Stock/">← School Stock トップへ</a>
+  <h1>先生の相談窓口</h1>
+  <p class="lead">教材のこと、使い方のこと、教室や学校のICTのこと。現役の小学校教員が答える窓口です。</p>
+
+  <div class="yakusoku">
+    <b>この窓口のお約束</b>
+    <ul>
+      <li>相談は無料です。売り込みはしません</li>
+      <li>返信は3日以内をめやすにしています（勤務の都合で、夜や週末になることがあります）</li>
+      <li>お子さんの名前など、児童の個人情報は書かないでください</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h2>LINEで相談する</h2>
+    <div class="who">先生個人の方に。ひとことで大丈夫です</div>
+    <p>「このプリントの使い方を知りたい」「この単元の教材はありますか」など、思いついたときにどうぞ。パソコンで見ている方は、スマホでQRコードを読み取ってください。</p>
+    <div class="qr-row">
+      <img src="/School_Stock/assets/line_qr.png" alt="公式LINEのQRコード" width="132" height="132">
+      <div>
+        <a class="btn" href="https://lin.ee/Tay8XPQ" target="_blank" rel="noopener">スマホの方はこちら（公式LINE）</a>
+        <div class="qr-note" style="margin-top:8px;">登録しても通知はほとんど飛ばしません。<br>ブロックもいつでもどうぞ。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>フォームで相談する</h2>
+    <div class="who">学校・教育委員会・企業の方、やり取りを記録に残したい方に</div>
+    <p>ご所属と内容を書いていただく形です。校内研修のご相談などは、こちらが確実です。</p>
+    <div id="form-area"></div>
+  </div>
+
+  <div class="card">
+    <h2>メールで相談する</h2>
+    <div class="who">フォームやLINEが使いにくい環境の方に</div>
+    <p class="mail">EdtechChikuho@gmail.com</p>
+    <a class="btn ghost" href="mailto:EdtechChikuho@gmail.com?subject=%E3%80%90School%20Stock%E3%80%91%E7%9B%B8%E8%AB%87">メールを書く</a>
+  </div>
+
+  <div class="card" style="background:var(--wash);">
+    <h2 style="font-size:15px;">たとえば、こんな相談を受けつけています</h2>
+    <div class="rei">
+      <span>プリントの使い方を知りたい</span><span>この単元の教材を作ってほしい</span><span>校内研修の講師をさがしている</span><span>ICT推進を何から始めるか</span><span>急な休みの日の自習の用意</span>
+    </div>
+  </div>
+
+  <footer>© School Stock</footer>
+</div>
+
+<script>
+  // Googleフォームができたら、ここにURLを貼るだけで切り替わります
+  var FORM_URL = "https://docs.google.com/forms/d/e/1FAIpQLScEdkLsIdUBFBYfS5OnASiuqajebKf-mr9XxvHlXcPc8YYPRQ/viewform";
+  (function(){
+    var area = document.getElementById("form-area");
+    if (FORM_URL) {
+      area.innerHTML = '<a class="btn" href="' + FORM_URL + '" target="_blank" rel="noopener">相談フォームを開く</a>';
+    } else {
+      area.innerHTML = '<p style="font-size:13px;color:var(--sub);">フォームはただいま準備中です。それまでは、下のメールでお送りください。</p>' +
+        '<a class="btn ghost" href="mailto:EdtechChikuho@gmail.com?subject=%E3%80%90School%20Stock%E3%80%91%E7%9B%B8%E8%AB%87">メールで相談する</a>';
+    }
+  })();
+</script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
