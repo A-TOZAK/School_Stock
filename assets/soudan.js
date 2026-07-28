@@ -13,22 +13,32 @@
   var KEY = "ss-soudan-min";
 
   var css = [
-    "#ss-soudan-btn{position:fixed;right:16px;bottom:16px;z-index:9990;display:flex;align-items:center;gap:9px;",
+    /* 位置：下端から離す。iOSはセーフエリア（ホームバー・Safari下部バー）ぶんを足す */
+    ":root{--ss-b: calc(28px + env(safe-area-inset-bottom, 0px));}",
+    "#ss-soudan-btn{position:fixed;right:20px;bottom:var(--ss-b);z-index:9990;display:flex;align-items:center;gap:9px;",
     "background:#15181c;color:#fff;border-radius:999px;padding:7px 18px 7px 8px;",
     "font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;",
     "font-size:13px;line-height:1;text-decoration:none;box-shadow:0 4px 16px rgba(0,0,0,.22);",
     "transition:transform .15s ease, box-shadow .15s ease;}",
     "#ss-soudan-btn:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(0,0,0,.28);}",
-    "#ss-soudan-btn .ss-av{width:34px;height:34px;border-radius:50%;background:#fff;",
-    "object-fit:cover;object-position:60% 22%;display:block;}",
+    "#ss-soudan-btn:active{transform:scale(.97);}",
+    "#ss-soudan-btn .ss-av{width:34px;height:34px;border-radius:50%;background:#fff;display:block;}",
     "#ss-soudan-close{position:fixed;z-index:9991;cursor:pointer;border:none;",
-    "right:8px;bottom:56px;width:20px;height:20px;border-radius:50%;",
+    "right:12px;bottom:calc(var(--ss-b) + 42px);width:20px;height:20px;border-radius:50%;",
     "background:#e6e6e3;color:#6b7077;font-size:11px;line-height:20px;text-align:center;padding:0;}",
-    "#ss-soudan-mini{position:fixed;right:16px;bottom:16px;z-index:9990;display:none;",
+    "#ss-soudan-mini{position:fixed;right:20px;bottom:var(--ss-b);z-index:9990;display:none;",
     "width:48px;height:48px;border-radius:50%;background:#fff;border:2px solid #15181c;",
     "box-shadow:0 4px 14px rgba(0,0,0,.22);overflow:hidden;}",
-    "#ss-soudan-mini img{width:100%;height:100%;object-fit:cover;object-position:60% 22%;display:block;}",
-    "@media (max-width:600px){#ss-soudan-btn{padding:6px 14px 6px 7px;font-size:12px;right:12px;bottom:12px;}#ss-soudan-btn .ss-av{width:30px;height:30px;}}",
+    "#ss-soudan-mini img{width:100%;height:100%;display:block;}",
+    "@media (max-width:600px){:root{--ss-b: calc(34px + env(safe-area-inset-bottom, 0px));}",
+    "#ss-soudan-btn{padding:6px 14px 6px 7px;font-size:12px;right:14px;}",
+    "#ss-soudan-btn .ss-av{width:30px;height:30px;}#ss-soudan-mini{right:14px;}}",
+    /* 動き：既定は動かさない（reduced-motion優先）。動かせる環境だけ、登場フェード＋1回だけの会釈 */
+    "@media (prefers-reduced-motion: no-preference){",
+    "#ss-soudan-btn.ss-enter{opacity:0;transform:translateY(10px) scale(.96);}",
+    "#ss-soudan-btn.ss-in{opacity:1;transform:none;transition:opacity .32s ease-out,transform .32s ease-out,box-shadow .15s ease;}",
+    "@keyframes ss-nod{0%,100%{transform:rotate(0)}30%{transform:rotate(-7deg)}60%{transform:rotate(5deg)}}",
+    "#ss-soudan-btn .ss-av.ss-nod{animation:ss-nod .5s ease-in-out 1;}}",
     "@media print{#ss-soudan-btn,#ss-soudan-close,#ss-soudan-mini{display:none !important;}}"
   ].join("");
 
@@ -70,6 +80,17 @@
     var saved = "0";
     try { saved = sessionStorage.getItem(KEY) || "0"; } catch (e) {}
     if (saved === "1") setMin(true);
+
+    // 登場（フェード）と、3.5秒後に1回だけの会釈。reduced-motion環境ではCSS側で無効
+    if (saved !== "1") {
+      a.classList.add("ss-enter");
+      setTimeout(function () { a.classList.add("ss-in"); }, 400);
+      setTimeout(function () { a.classList.remove("ss-enter", "ss-in"); }, 1400);
+      setTimeout(function () {
+        var av = a.querySelector(".ss-av");
+        if (av) av.classList.add("ss-nod");
+      }, 3500);
+    }
   }
 
   if (document.readyState === "loading") {
