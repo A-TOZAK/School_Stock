@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>大学生のための Geminiプロンプト集 ── School Stock</title>
+<meta name="description" content="講義・レポート・文献・研究・就職活動。場面を選んで、そのまま貼って使える指示文を取り出せます。">
+<style>
+:root{
+  --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9;
+  --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11;
+  --fj:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium","Meiryo",sans-serif;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{font-family:var(--fj);background:var(--paper);color:var(--ink);line-height:1.9;letter-spacing:.02em;-webkit-font-smoothing:antialiased;font-size:15px}
+button{font-family:inherit;font-size:inherit;color:inherit;background:none;border:none;cursor:pointer;line-height:inherit}
+a{color:var(--accent);text-decoration:none}
+
+.topbar{background:var(--black);color:#fff;position:sticky;top:0;z-index:40}
+.topbar-in{max-width:1140px;margin:0 auto;padding:9px 22px;display:flex;align-items:center;gap:16px;flex-wrap:wrap}
+.wordmark{font-size:12px;font-weight:700;letter-spacing:.28em;white-space:nowrap;flex:none}
+#topnav{display:flex;align-items:center;gap:3px;flex-wrap:wrap;row-gap:4px}
+#topnav button{font-size:12.5px;color:#b9bcc2;padding:4px 11px;white-space:nowrap;border:1px solid transparent}
+#topnav button:hover{color:#fff;border-color:#4a4e55}
+#topnav button.on{color:var(--black);background:#fff;font-weight:700;border-color:#fff}
+#topnav .sep{width:1px;height:15px;background:#4a4e55;margin:0 7px;flex:none}
+.back{margin-left:auto;font-size:11.5px;color:#b9bcc2;white-space:nowrap;border-bottom:1px solid #4a4e55;padding-bottom:1px}
+.back:hover{color:#fff;border-bottom-color:#fff}
+.foot a{color:#d7dade;text-decoration:underline;text-underline-offset:3px}
+.foot-c{border-top:1px solid #33363c;padding-top:12px;margin-top:10px;font-size:11.5px}
+@media (max-width:900px){ .back{margin-left:0} }
+
+.intro{border-bottom:1px solid var(--ink);background:#fdfdfb}
+.intro-in{max-width:1140px;margin:0 auto;padding:24px 22px 22px}
+.kicker{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.2em;color:#fff;background:var(--black);padding:3px 11px;margin-bottom:12px}
+h1{font-size:clamp(19px,2.6vw,25px);font-weight:700;line-height:1.5;margin-bottom:9px}
+.lead{font-size:13.5px;color:#3d4148;line-height:1.85;max-width:48em}
+.note{margin-top:10px;font-size:12.5px;color:var(--sub);border-left:2px solid var(--line);padding-left:11px}
+.note b{color:var(--ink);font-weight:700}
+.note .mark{display:inline-block;color:var(--accent);border-bottom:2px solid var(--accent);font-weight:700;padding:0 3px}
+
+.wrap{max-width:1140px;margin:0 auto;padding:0 22px 10px;display:grid;grid-template-columns:236px 1fr;gap:32px}
+.side{height:100%}
+.side-in{position:sticky;top:var(--topH,52px);max-height:calc(100vh - var(--topH,52px));overflow-y:auto;
+         padding:22px 8px 24px 0;background:var(--paper)}
+.side-lbl{font-size:10.5px;font-weight:700;letter-spacing:.2em;color:var(--sub);padding-bottom:6px;border-bottom:1px solid var(--ink);margin-bottom:5px}
+.side nav button{display:block;width:100%;text-align:left;padding:6px 9px;font-size:13.5px;border-bottom:1px solid var(--wash)}
+.side nav button:hover{background:var(--wash)}
+.side nav button .n{float:right;font-size:11px;color:var(--sub);font-family:Georgia,serif;padding-top:2px}
+.subjects .sub{font-weight:700;font-size:13px;border-bottom:1px solid var(--line)}
+.subjects .sub .ac{color:var(--sub);font-size:10px;margin-right:6px}
+.subjects .sub.open{background:var(--wash)}
+.subjects .sub.on{background:var(--wash);box-shadow:inset 3px 0 0 var(--ink)}
+.subjects .ar{padding-left:26px;font-size:12.5px;color:#3d4148;background:#fbfbfa}
+.subjects .ar.on{background:var(--wash);font-weight:700;color:var(--ink);box-shadow:inset 3px 0 0 var(--accent)}
+.subjects .all-btn{font-weight:700;font-size:13px;border-bottom:1px solid var(--line)}
+.subjects .all-btn.on{background:var(--wash);box-shadow:inset 3px 0 0 var(--ink)}
+
+.main{padding:24px 0 30px;min-width:0}
+.crumb{display:flex;align-items:baseline;gap:12px;border-bottom:1px solid var(--ink);padding-bottom:9px;margin-bottom:4px;flex-wrap:wrap;scroll-margin-top:calc(var(--topH,52px) + 8px)}
+.crumb h2{font-size:17px;font-weight:700}
+.crumb .cnt{font-size:11.5px;letter-spacing:.14em;color:var(--sub)}
+.mikata{font-size:12.5px;color:var(--sub);border-left:2px solid var(--line);padding-left:11px;margin:14px 0 2px}
+.mikata b{color:var(--ink)}
+
+.card{border-bottom:1px solid var(--line);padding:20px 0 22px}
+.card-head{display:flex;gap:12px;align-items:baseline}
+.card .no{font-family:Georgia,serif;font-style:italic;font-weight:700;font-size:15px;color:var(--accent);flex:none;min-width:22px}
+.card h3{font-size:16.5px;font-weight:700;line-height:1.6}
+.chips{padding-left:34px;margin:2px 0 0;display:flex;gap:6px;flex-wrap:wrap}
+.chip{font-size:10.5px;font-weight:700;letter-spacing:.12em;color:var(--sub);border:1px solid var(--line);padding:1px 7px}
+.chip.k{color:#fff;background:var(--black);border-color:var(--black)}
+.card .desc{font-size:13px;color:#3d4148;line-height:1.8;margin:6px 0 11px;padding-left:34px}
+.box{border:1px solid var(--line);background:var(--wash);margin-left:34px}
+.box pre{font-family:var(--fj);font-size:13.5px;line-height:1.95;white-space:pre-wrap;word-break:break-word;padding:16px 17px 17px;margin:0;outline:none}
+.box pre:focus{background:#fff}
+.box-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;border-top:1px solid var(--line);padding:8px 10px 8px 17px;flex-wrap:wrap}
+.elm{font-size:11.5px;color:var(--sub);letter-spacing:.04em}
+.btns{display:flex;align-items:center;gap:10px;margin-left:auto}
+.copy{border:1px solid var(--ink);background:var(--paper);font-size:11.5px;font-weight:700;letter-spacing:.12em;padding:5px 15px;white-space:nowrap}
+.copy:hover,.copy.done{background:var(--ink);color:#fff}
+.reset{font-size:11.5px;color:var(--sub);border-bottom:1px solid var(--line);padding:0 1px 1px;white-space:nowrap}
+.reset:hover{color:var(--ink);border-bottom-color:var(--ink)}
+
+.slot{display:inline-block;min-width:1.1em;text-align:center;padding:0 3px;color:var(--accent);font-weight:700;background:#fff;
+      border-bottom:2px solid var(--accent);outline:none;cursor:text}
+.slot:hover,.slot:focus{background:#eef2fd}
+.slot:focus{border-bottom-color:var(--ink)}
+.slot.edited{color:var(--ink);font-weight:400;background:#fff;border-bottom:1px solid var(--sub)}
+
+.lgroup{margin:24px 0 0}
+.lgroup h3{font-size:11px;font-weight:700;letter-spacing:.2em;color:var(--sub);border-bottom:1px solid var(--ink);padding-bottom:7px;margin-bottom:2px}
+.lrow{display:block;border-bottom:1px solid var(--line);padding:13px 0 14px;color:inherit}
+.lrow:hover{background:var(--wash)}
+.lrow b{display:block;font-size:15px;font-weight:700;color:var(--accent);line-height:1.6}
+.lrow span{display:block;font-size:12.5px;color:var(--sub);line-height:1.8;margin-top:2px}
+.lnote{font-size:12.5px;color:var(--sub);border-left:2px solid var(--line);padding-left:11px;margin-top:4px}
+
+.foot{background:var(--black);color:#b9bcc2;margin-top:24px}
+.foot-in{max-width:1140px;margin:0 auto;padding:22px 22px 26px;font-size:12px;line-height:1.95}
+.foot .fw{color:#fff;font-weight:700;letter-spacing:.26em;font-size:11px;margin-bottom:7px}
+
+@media (max-width:900px){
+  .topbar-in{padding:8px 16px;gap:10px}
+  .wordmark{font-size:11px;letter-spacing:.2em}
+  #topnav button{font-size:12px;padding:3px 9px}
+  .wrap{grid-template-columns:1fr;gap:0;padding-bottom:0}
+  .side-in{position:static;max-height:none;overflow:visible;padding:18px 0 4px}
+  .side nav{display:flex;flex-wrap:wrap;gap:6px;padding-top:4px}
+  .side nav button{width:auto;border:1px solid var(--line);padding:5px 11px;font-size:12.5px}
+  .side nav button .n{float:none;margin-left:6px}
+  .subjects .sub{background:var(--wash)}
+  .subjects .ar{padding-left:11px;background:#fff}
+  .subjects .sub.on,.subjects .ar.on,.subjects .all-btn.on{box-shadow:none;border-color:var(--ink)}
+  .main{padding-top:18px}
+  .chips,.card .desc{padding-left:0}
+  .box{margin-left:0}
+  .box pre{padding:14px 14px 15px}
+}
+@media (max-width:480px){
+  .box pre{font-size:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <span class="wordmark">SCHOOL STOCK</span>
+    <nav id="topnav"></nav>
+    <a class="back" href="../#ai">← AI活用の棚へもどる</a>
+  </div>
+</div>
+
+<div class="intro">
+  <div class="intro-in">
+    <span class="kicker">GEMINI ／ 大学生版</span>
+    <h1>大学生のための Geminiプロンプト集</h1>
+    <p class="lead">左のメニューから場面を選んでください。出てきた指示文をGeminiに貼ると、そのまま動きます。ノートブック（NotebookLM）に読みこんだ論文や資料を使うものもあります。使い方の決まりは、所属する大学の規程とシラバスの指示が優先です。</p>
+    <p class="note"><b>灰色の枠は、この画面の上でそのまま書きかえられます。</b>とくに<span class="mark">青い下線</span>のところは、クリックすると全部選ばれるので、学年や単元名をそのまま打てます。書きかえてから「コピー」を押すと、書きかえた形でコピーされます。元に戻すときは「リセット」。<br>児童生徒の名前や、学校の中だけの情報は打ちこまないでください。返ってきた内容は、必ず自分の目で確かめてから使ってください。</p>
+  </div>
+</div>
+
+<div class="wrap">
+  <aside class="side">
+    <div class="side-in" id="side"></div>
+  </aside>
+  <main class="main">
+    <div class="crumb" id="crumb"></div>
+    <div id="list"></div>
+  </main>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    <div>大学生のための Geminiプロンプト集</div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）　/　<a href="../about/terms.html">利用規約</a>　/　<a href="../">棚トップへ</a></div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var NAV   = [{"g":"つかう人","items":[{"k":"univ","l":"大学生","sl":"場面","subs":[{"n":"使う前に","a":[]},{"n":"講義・ノート","a":[]},{"n":"レポート・論文","a":[]},{"n":"文献を読む","a":[]},{"n":"研究・ゼミ","a":[]},{"n":"就職活動","a":[]},{"n":"資格・語学","a":[]},{"n":"学生生活","a":[]}]}]},{"g":"たしかめる","items":[{"k":"links","l":"一次情報へのリンク集","s":"リンク集"}]}];
+  var DATA  = [{"s":"univ","j":"使う前に","t":"大学の決まりを先に確かめる","d":"科目ごとに扱いが違う前提で、確認すべき点を洗い出します。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n生成AIを学習に使うにあたり、事前に確かめるべきことを整理してください。\n\n# おねがい\n・大学や学部の方針、シラバス、担当教員の指示のうち、どこを見ればよいかを挙げてください\n・レポート、演習課題、卒業論文、試験のそれぞれで扱いが違いうることに触れてください\n・不正とみなされうる使い方の例を具体的に書いてください\n・最終的には所属大学の規程が優先であることを明記してください"},{"s":"univ","j":"使う前に","t":"出典を確かめる手順を決める","d":"生成された記述をそのまま引用しないための手順です。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\nあなたが述べた〔内容〕を、わたしが一次資料で確認する手順を教えてください。\n\n# おねがい\n・当たるべき資料の種類（学術論文、統計、法令、公的報告書など）を挙げてください\n・検索に使うキーワードと、絞りこみの順番を書いてください\n・存在しない文献名やURLを推測で書かないでください。探し方だけ示してください"},{"s":"univ","j":"使う前に","t":"入力してよい情報か判断する","d":"研究データや個人情報を守るための線引きです。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n次の内容を入力してよいか判断してください。\n\n# 入力しようとしている内容\n〔内容〕\n\n# おねがい\n・入力可、要書きかえ、入力不可のいずれかで答えてください\n・未公開の研究データ、調査協力者の情報、実習先の情報について特に注意点を書いてください\n・書きかえるなら、その例を示してください"},{"s":"univ","j":"講義・ノート","t":"講義の予習で問いを立てる","d":"受け身で聞かず、聞く観点を持って講義に出ます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n次回の講義テーマは〔テーマ〕です。\n\n# おねがい\n・講義前に押さえておくべき前提知識を挙げてください\n・講義中に確かめたい問いを5つ立ててください\n・そのうち、教員に質問する価値があるものに印をつけてください\n・内容の要約は書かないでください。予習の観点だけでよいです"},{"s":"univ","j":"講義・ノート","t":"自分のノートの穴を見つける","d":"取ったノートが後で使えるかを点検します。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n講義ノートを貼ります。読んで、あとで使えるノートになっているか点検してください。\n\n# ノート\n〔貼る〕\n\n# おねがい\n・論理がつながっていない箇所を指摘してください\n・用語の定義が抜けている箇所を挙げてください\n・書き足すべき問いを3つ示してください\n・書き直したノートは作らないでください"},{"s":"univ","j":"講義・ノート","t":"理解できたか、説明で確かめる","d":"分かったつもりを、口頭説明で検証します。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔概念・理論名〕を理解できたか確かめます。\n\n# 進め方\n・あなたは、この分野をまったく知らない人の役をしてください\n・わたしが説明します。分からない点は率直に質問してください\n・わたしの説明が誤っていても正解は言わず、「そこをもう一度」とだけ言ってください\n・5往復したら、わたしの理解の穴を指摘してください"},{"s":"univ","j":"レポート・論文","t":"問いを研究可能な形にする","d":"漠然としたテーマを、論証できる問いに変えます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔テーマ〕でレポートを書きます。\n\n# おねがい\n・このままでは論証できない理由を指摘してください\n・研究可能な問いに絞る案を3つ出してください\n・案ごとに、必要な資料と方法を書いてください\n・本文や結論は書かないでください"},{"s":"univ","j":"レポート・論文","t":"構成案の弱点を突いてもらう","d":"書き始める前に、論の飛躍を見つけます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\nレポートの構成案を点検してください。\n\n# 構成案\n〔問い・主張・章立て・使う資料を貼る〕\n\n# おねがい\n・主張と根拠がつながっていない箇所を指摘してください\n・反論されうる点を3つ挙げてください\n・扱う範囲が広すぎる章があれば指摘してください\n・構成を書き直さないでください。指摘だけしてください"},{"s":"univ","j":"レポート・論文","t":"自分の文章を批判的に読んでもらう","d":"代筆ではなく、査読の役をしてもらいます。","e":["人物","内容","制約"],"p":"あなたは〔分野〕の査読者です。わたしの文章を厳しく読んでください。\n\n# 文章\n〔貼る〕\n\n# おねがい\n・論証上の問題を、重要な順に5つまで指摘してください\n・根拠が示されていない主張を具体的に引用して指摘してください\n・書きなおした文は示さないでください\n・褒め言葉は不要です"},{"s":"univ","j":"レポート・論文","t":"引用と参考文献の作法を確かめる","d":"形式のミスで評価を落とさないようにします。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔分野・指定された形式：例／APA〕での引用と参考文献の作法を教えてください。\n\n# おねがい\n・本文中の引用の書き方を、直接引用と要約引用に分けて示してください\n・参考文献リストの書式を、書籍・論文・報告書・ウェブページごとに示してください\n・架空の文献を例に使わないでください。書式の型だけ示してください\n・最終的には所属大学や学会の指定が優先であると書いてください"},{"s":"univ","j":"文献を読む","t":"論文の骨格を先につかむ","d":"NotebookLMに入れた論文を、読む前に見取り図にします。","e":["内容","形式や語調","制約"],"p":"わたしは大学〔2〕年生です。\nNotebookLMに入れた論文について、読む前の見取り図を作ってください。\n\n# おねがい\n・研究の問い／方法／結果／限界を、それぞれ2行以内で\n・先行研究に対して何を新しく示したのかを1行で\n・論文に書かれている範囲だけで書いてください\n・書かれていない項目は「記載なし」としてください"},{"s":"univ","j":"文献を読む","t":"複数の論文を比較する","d":"入れた文献群の立場のちがいを整理します。","e":["内容","制約"],"p":"わたしは大学〔2〕年生です。\n入れた文献を比較して、〔論点〕についての立場を整理してください。\n\n# おねがい\n・文献ごとの主張、根拠、方法を表の形で並べてください\n・一致している点と対立している点を分けてください\n・どれが正しいかの判断はしないでください\n・引用元を必ず示してください"},{"s":"univ","j":"文献を読む","t":"分からない箇所を特定する","d":"読めない原因が語彙か論理かを切り分けます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n入れた文献の次の箇所が理解できません。\n\n# 分からない箇所\n〔引用する〕\n\n# おねがい\n・つまずきの原因が、用語なのか、前提知識なのか、論理の飛躍なのかを切り分けてください\n・原因ごとに、何を先に押さえればよいかを示してください\n・平易な言いかえは、文献の記述から離れない範囲でお願いします"},{"s":"univ","j":"文献を読む","t":"文献の探し方を組み立てる","d":"闇雲に検索せず、探索の道筋を先に決めます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔研究テーマ〕の先行研究を探します。\n\n# おねがい\n・検索に使うキーワードを、広い順に段階をつけて挙げてください\n・日本語と英語の両方の語を出してください\n・当たるべきデータベースや資料の種類を挙げてください\n・具体的な文献名は、実在が確認できないかぎり挙げないでください"},{"s":"univ","j":"研究・ゼミ","t":"研究計画の穴を洗い出す","d":"指導教員に見せる前に、自分で潰しておきます。","e":["人物","内容","制約"],"p":"あなたは〔分野〕の指導教員です。わたしの研究計画を厳しく見てください。\n\n# 計画\n・問い：〔　〕\n・方法：〔　〕\n・対象と規模：〔　〕\n・期間：〔　〕\n\n# おねがい\n・この方法で問いに答えられるかを判断してください\n・実行可能性の面で無理がある点を指摘してください\n・倫理的な配慮が必要な点を挙げてください\n・計画を書き直さないでください。指摘だけしてください"},{"s":"univ","j":"研究・ゼミ","t":"ゼミ発表の想定質問を作る","d":"当日詰まらないよう、聞かれる点を先に洗います。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\nゼミで〔発表内容〕を発表します。\n\n# 発表の要旨\n〔貼る〕\n\n# おねがい\n・出そうな質問を10個、厳しい順に挙げてください\n・答えに詰まりそうな質問に印をつけてください\n・答えは書かないでください。考えるのはわたしです"},{"s":"univ","j":"研究・ゼミ","t":"調査の倫理面を点検する","d":"人を対象にする調査で、配慮すべき点を確かめます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔調査の概要〕という調査を行います。\n\n# おねがい\n・同意の取り方、匿名化、データの保管と破棄について、確認すべき点を挙げてください\n・協力者に説明すべき事項を箇条書きにしてください\n・所属大学の倫理審査の要否は大学の規程で確認するよう明記してください"},{"s":"univ","j":"研究・ゼミ","t":"データの見方を相談する","d":"分析の前に、何を比べるかを決めます。","e":["内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔調査で得たデータの概要〕があります。\n\n# おねがい\n・このデータで言えること、言えないことを分けてください\n・比較する意味のある組み合わせを挙げてください\n・使える整理の仕方を提案し、それぞれの前提条件を書いてください\n・統計手法を挙げる場合は、適用条件も必ず添えてください"},{"s":"univ","j":"就職活動","t":"自己分析の質問をしてもらう","d":"テンプレートを埋めず、自分の言葉を引き出します。","e":["人物","内容","制約"],"p":"わたしは大学〔3〕年生です。\n就職活動に向けて自己分析をします。\n\n# おねがい\n・わたしに質問を1つずつしてください。全部で10問\n・答えるたびに、深掘りの質問を1つ返してください\n・まとめや診断はしないでください\n・10問終わったら、わたしが使った言葉の中で繰り返し出てきたものを挙げてください"},{"s":"univ","j":"就職活動","t":"エントリーシートの材料を集める","d":"代筆させず、書くための素材を揃えます。","e":["人物","内容","制約"],"p":"わたしは大学〔3〕年生です。\n〔設問：例／学生時代に力を入れたこと〕について書きます。\n\n# おねがい\n・状況、課題、行動、結果の順に、わたしに質問してください\n・1つずつ聞いてください\n・文章は絶対に書かないでください。書くのはわたしです\n・最後に、わたしの答えの中で具体性が足りない箇所を指摘してください"},{"s":"univ","j":"就職活動","t":"面接の練習相手になってもらう","d":"何度でも繰り返し練習します。","e":["人物","内容","制約"],"p":"あなたは〔業界〕の企業の採用担当者です。わたしの面接をしてください。\n\n# 進め方\n・質問は1つずつ。答えてから次に進んでください\n・抽象的な答えには、具体的な場面を聞き返してください\n・8問終えたら、よかった点と改善点をそれぞれ3つ挙げてください\n\n# わたしについて\n・専攻：〔　〕／志望職種：〔　〕／力を入れたこと：〔　〕\n\nでは1問目からお願いします。"},{"s":"univ","j":"就職活動","t":"業界の調べ方を組み立てる","d":"評判ではなく、一次情報から業界を見ます。","e":["人物","内容","制約"],"p":"わたしは大学〔3〕年生です。\n〔業界名〕について調べます。\n\n# おねがい\n・当たるべき一次情報の種類を挙げてください（業界団体の統計、有価証券報告書、官公庁の白書など）\n・調べる順番を示してください\n・企業ごとの評判や口コミに頼らない調べ方にしてください\n・具体的な企業名やURLは、実在が確認できないかぎり挙げないでください"},{"s":"univ","j":"資格・語学","t":"試験までの学習計画を逆算する","d":"授業と両立できる分量に落とし込みます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔試験名・試験日〕に向けて計画を立てます。\n\n# 状況\n・現在の到達度：〔　〕\n・使える時間：週〔　〕分\n・授業や実習の繁忙期：〔　〕\n\n# おねがい\n・月ごと、週ごとの計画を作ってください\n・繁忙期は分量を落としてください\n・出題範囲は公式の受験案内で確認するよう明記してください"},{"s":"univ","j":"資格・語学","t":"語学の話す練習に付き合ってもらう","d":"間違いを恐れずに話す量を増やします。","e":["人物","内容","制約"],"p":"あなたは〔言語〕の会話練習の相手です。\n\n# 進め方\n・話題は〔テーマ〕。〔英語〕だけで話してください\n・わたしの発言に誤りがあっても、その場では止めないでください\n・10往復したあとに、誤りをまとめて指摘してください\n・レベルは〔初級／中級〕に合わせてください\n\nでは始めてください。"},{"s":"univ","j":"資格・語学","t":"間違えた問題から弱点を割り出す","d":"やみくもな演習をやめ、原因に絞ります。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔試験名〕の演習で間違えた問題を挙げます。\n\n# 間違えた問題\n〔問題と自分の解答を貼る〕\n\n# おねがい\n・原因を、知識、読解、時間配分、思いこみに分けてください\n・最も多い原因に対する対策を1つだけ挙げてください\n・次にどこで効果を確かめるかも書いてください"},{"s":"univ","j":"学生生活","t":"予定の詰まりすぎを点検する","d":"授業・バイト・課題の総量を見て、無理を減らします。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n一週間の予定を貼ります。無理がないか見てください。\n\n# 予定\n〔授業・課題・アルバイト・サークル・通学時間を書く〕\n\n# おねがい\n・睡眠と移動を含めた総時間を計算してください\n・どこに無理があるかを指摘してください\n・削る候補を、影響の小さい順に挙げてください\n・精神論での励ましは書かないでください"},{"s":"univ","j":"学生生活","t":"相談先を整理する","d":"一人で抱えないために、学内外の窓口を確かめます。","e":["人物","内容","制約"],"p":"わたしは大学〔2〕年生です。\n〔困っていること：学業／経済面／体調／人間関係〕で相談先を知りたいです。\n\n# おねがい\n・大学の中にある窓口の種類を挙げてください（学生相談室、修学支援、保健センターなど）\n・大学の外にある公的な窓口の種類も挙げてください\n・どこから相談するとよいか順番をつけてください\n・具体的な連絡先は、所属大学のサイトで確認するよう書いてください"}];
+  var LINKS = [{"group":"生成AIを学習に使うとき","items":[{"t":"生成AIの利用について（文部科学省）","u":"https://www.mext.go.jp/a_menu/other/mext_02412.html","n":"国としての考え方や通知がまとまっています。ただし実際に従うのは、所属大学の規程とシラバスの指示です。"}]},{"group":"一次情報にたどりつく（学術）","items":[{"t":"CiNii Research","u":"https://cir.nii.ac.jp/","n":"国内の論文・図書・博士論文・研究データを横断して探せます。まずここ。"},{"t":"J-STAGE","u":"https://www.jstage.jst.go.jp/browse/-char/ja","n":"国内の学協会が出す論文誌。本文がそのまま読めるものが多いです。"},{"t":"国立国会図書館サーチ","u":"https://ndlsearch.ndl.go.jp/","n":"国内で出版されたものを幅広く探せます。手元にない資料の所在を確かめるときに。"},{"t":"e-Stat（政府統計の総合窓口）","u":"https://www.e-stat.go.jp/","n":"官公庁の統計の原本。孫引きせずに数字を確かめるならここ。"}]},{"group":"制度を確かめる","items":[{"t":"大学・大学院、専門教育（文部科学省）","u":"https://www.mext.go.jp/a_menu/koutou/daigaku/index.htm","n":"大学制度に関する一次情報。"},{"t":"独立行政法人 国立高等専門学校機構","u":"https://www.kosen-k.go.jp/","n":"高専の制度や、編入学などの進み方について。"}]}];
+  var MIKATA= {};
+
+  var elSide=document.getElementById('side'), elCrumb=document.getElementById('crumb'), elList=document.getElementById('list');
+  var elTop=document.getElementById('topnav'), elBar=document.querySelector('.topbar');
+  var top1=NAV[0].items[0].k, sel='all';
+
+  /* 黒帯の高さぶん、左メニューを下げて貼り付ける */
+  function fitBar(){
+    document.documentElement.style.setProperty('--topH', elBar.offsetHeight + 'px');
+  }
+  window.addEventListener('resize', fitBar);
+  /* 学年を変えても、見ていた教科・領域はできるだけ引き継ぐ */
+  function keepSel(k, prev){
+    if (k==='links') return 'all';
+    if (prev && prev!=='all' && count(k, prev)) return prev;
+    if (prev && prev!=='all' && count(k, prev.split('/')[0])) return prev.split('/')[0];
+    var nd=nodeOf(k);
+    if (nd.subs) for (var i=0;i<nd.subs.length;i++) if (count(k, nd.subs[i].n)) return nd.subs[i].n;
+    return 'all';
+  }
+
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+  function nodeOf(k){
+    for (var i=0;i<NAV.length;i++) for (var m=0;m<NAV[i].items.length;m++) if (NAV[i].items[m].k===k) return NAV[i].items[m];
+    return NAV[0].items[0];
+  }
+  function match(d,k,sl){
+    if (d.s!==k) return false;
+    if (sl==='all') return true;
+    var p=sl.split('/');
+    if (d.j!==p[0]) return false;
+    return p.length<2 || d.a===p[1];
+  }
+  function count(k,sl){ var n=0; for(var i=0;i<DATA.length;i++) if(match(DATA[i],k,sl)) n++; return n; }
+
+  /* 上の黒帯＝いちばん大きな切り替え（学年・教科・学科）。常に見えて、押せば切り替わる */
+  function drawTop(){
+    var h='';
+    for (var i=0;i<NAV.length;i++){
+      if (i) h+='<span class="sep"></span>';
+      for (var m=0;m<NAV[i].items.length;m++){
+        var it=NAV[i].items[m];
+        h+='<button type="button" data-k="'+esc(it.k)+'"'+(it.k===top1?' class="on"':'')+' title="'+esc(it.l)+'">'+esc(it.s||it.l)+'</button>';
+      }
+    }
+    elTop.innerHTML=h;
+    fitBar();
+  }
+
+  /* 左メニュー＝選んだ教科の中だけ領域を開く。長くなりすぎず、常に画面に収まる */
+  function drawSide(){
+    var nd=nodeOf(top1), h='';
+    if (!nd.subs || !nd.subs.length){ elSide.innerHTML=''; return; }
+    var open = sel==='all' ? '' : sel.split('/')[0];
+    h+='<p class="side-lbl">'+esc(nd.sl||'教科と領域')+'</p><nav class="subjects">';
+    h+='<button type="button" class="all-btn'+(sel==='all'?' on':'')+'" data-s="all">すべて<span class="n">'+count(top1,'all')+'</span></button>';
+    for (var s=0;s<nd.subs.length;s++){
+      var sb=nd.subs[s], cs=count(top1,sb.n);
+      if (!cs) continue;
+      var isOpen = sb.n===open, cls='sub'+(sel===sb.n?' on':'')+(isOpen?' open':'');
+      var mark = sb.a.length ? '<span class="ac">'+(isOpen?'▼':'▶')+'</span>' : '';
+      h+='<button type="button" class="'+cls+'" data-s="'+esc(sb.n)+'">'+mark+esc(sb.n)+'<span class="n">'+cs+'</span></button>';
+      if (!isOpen) continue;
+      for (var r=0;r<sb.a.length;r++){
+        var key=sb.n+'/'+sb.a[r], ca=count(top1,key);
+        if (!ca) continue;
+        h+='<button type="button" class="ar'+(sel===key?' on':'')+'" data-s="'+esc(key)+'">'+esc(sb.a[r])+'<span class="n">'+ca+'</span></button>';
+      }
+    }
+    h+='</nav>';
+    elSide.innerHTML=h;
+  }
+
+  function slots(text){
+    return esc(text).split(/(〔[^〕]*〕)/).map(function(seg){
+      if (seg.charAt(0)!=='〔') return seg;
+      var inner=seg.slice(1,-1);
+      return '<span class="slot" contenteditable="true" spellcheck="false" data-o="'+inner+'">'+inner+'</span>';
+    }).join('');
+  }
+
+  var rows=[];
+  function drawList(){
+    if (top1==='links'){ drawLinks(); return; }
+    var nd=nodeOf(top1);
+    rows=[];
+    for (var i=0;i<DATA.length;i++) if (match(DATA[i],top1,sel)) rows.push(DATA[i]);
+
+    var label = sel==='all' ? '' : '　'+sel.replace('/','　');
+    elCrumb.innerHTML='<h2>'+esc(nd.l)+esc(label)+'</h2><span class="cnt">'+rows.length+'件</span>';
+
+    var h='';
+    if (sel!=='all'){
+      var sj=sel.split('/')[0], mk=MIKATA[sj];
+      if (mk) h+='<p class="mikata"><b>'+esc(sj)+'の見方・考え方</b>　'+esc(mk)+'</p>';
+    }
+    for (var r=0;r<rows.length;r++){
+      var d=rows[r], no=('0'+(r+1)).slice(-2);
+      var chips='<span class="chip">'+esc(d.j)+(d.a?'　'+esc(d.a):'')+'</span>'+(d.k?'<span class="chip k">'+esc(d.k)+'</span>':'');
+      var elm=(d.e&&d.e.length)?'要素：'+esc(d.e.join('・')):'';
+      h+='<article class="card">'
+       + '<div class="card-head"><span class="no">'+no+'</span><h3>'+esc(d.t)+'</h3></div>'
+       + '<div class="chips">'+chips+'</div>'
+       + '<p class="desc">'+esc(d.d)+'</p>'
+       + '<div class="box" data-i="'+r+'"><pre>'+slots(d.p)+'</pre>'
+       + '<div class="box-foot"><span class="elm">'+elm+'</span>'
+       + '<span class="btns"><button type="button" class="reset">リセット</button>'
+       + '<button type="button" class="copy">コピー</button></span></div>'
+       + '</div></article>';
+    }
+    elList.innerHTML=h;
+    var pres=elList.querySelectorAll('.box pre');
+    for (var q=0;q<pres.length;q++) editable(pres[q]);
+  }
+
+  function editable(pre){
+    try { pre.contentEditable='plaintext-only'; } catch(err) {}
+    if (pre.contentEditable!=='plaintext-only') pre.contentEditable='true';
+    pre.setAttribute('spellcheck','false');
+  }
+
+  function drawLinks(){
+    elCrumb.innerHTML='<h2>'+esc(nodeOf('links').l)+'</h2><span class="cnt">一次情報</span>';
+    var h='<p class="lnote">人から聞いた話や、AIが答えたことをそのまま使わずに、まずここで元の資料を確かめてください。リンクは新しいタブで開きます。</p>';
+    for (var i=0;i<LINKS.length;i++){
+      h+='<div class="lgroup"><h3>'+esc(LINKS[i].group)+'</h3>';
+      for (var m=0;m<LINKS[i].items.length;m++){
+        var it=LINKS[i].items[m];
+        h+='<a class="lrow" href="'+esc(it.u)+'" target="_blank" rel="noopener"><b>'+esc(it.t)+'</b><span>'+esc(it.n)+'</span></a>';
+      }
+      h+='</div>';
+    }
+    elList.innerHTML=h;
+  }
+
+  function draw(){ drawTop(); drawSide(); drawList(); }
+
+  function toTop(){
+    if (window.scrollY > 0) window.scrollTo({ top:0 });
+  }
+  elTop.addEventListener('click', function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var nk=b.getAttribute('data-k');
+    if (nk===top1){ toTop(); return; }
+    sel=keepSel(nk, sel); top1=nk;
+    draw(); toTop();
+  });
+  elSide.addEventListener('click', function(e){
+    var b=e.target.closest('button'); if(!b) return;
+    var s=b.getAttribute('data-s'); if (s===null) return;
+    /* 開いている教科の見出しをもう一度押したら閉じる */
+    if (s!=='all' && s.indexOf('/')<0 && sel.split('/')[0]===s && sel!==s) sel=s;
+    else if (s!=='all' && s.indexOf('/')<0 && sel===s) sel='all';
+    else sel=s;
+    drawSide(); drawList();
+    if (window.innerWidth<=900) elCrumb.scrollIntoView({block:'start'});
+    else if (window.scrollY > elCrumb.offsetTop) elCrumb.scrollIntoView({block:'start'});
+  });
+
+  elList.addEventListener('click', function(e){
+    var s=e.target.closest && e.target.closest('.slot');
+    if (s && !s.dataset.ed){
+      var r=document.createRange(); r.selectNodeContents(s);
+      var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(r);
+    }
+    var rb=e.target.closest('.reset');
+    if (rb){
+      var box=rb.closest('.box'), d=rows[+box.getAttribute('data-i')];
+      if (d){ var pre=box.querySelector('pre'); pre.innerHTML=slots(d.p); editable(pre);
+        rb.textContent='戻しました'; setTimeout(function(){ rb.textContent='リセット'; },1400); }
+    }
+  });
+  elList.addEventListener('input', function(e){
+    var pre=e.target.closest && e.target.closest('.box pre'); if(!pre) return;
+    var ss=pre.querySelectorAll('.slot');
+    for (var i=0;i<ss.length;i++){
+      var t=ss[i].textContent;
+      if (t.trim() && t!==ss[i].dataset.o){ ss[i].dataset.ed='1'; ss[i].classList.add('edited'); }
+      else { delete ss[i].dataset.ed; ss[i].classList.remove('edited'); }
+    }
+  });
+  elList.addEventListener('paste', function(e){
+    var pre=e.target.closest && e.target.closest('.box pre'); if(!pre) return;
+    if (pre.contentEditable==='plaintext-only') return;
+    e.preventDefault();
+    var t=((e.clipboardData||window.clipboardData).getData('text')||'');
+    try { document.execCommand('insertText', false, t); } catch(err) {}
+  });
+
+  function textOf(pre){
+    var out='';
+    (function walk(n){
+      for (var i=0;i<n.childNodes.length;i++){
+        var c=n.childNodes[i];
+        if (c.nodeType===3) out+=c.nodeValue;
+        else if (c.classList && c.classList.contains('slot')) out += c.dataset.ed ? c.textContent : '〔'+c.dataset.o+'〕';
+        else if (c.tagName==='BR') out+='\n';
+        else walk(c);
+      }
+    })(pre);
+    return out;
+  }
+  elList.addEventListener('click', function(e){
+    var btn=e.target.closest('.copy'); if(!btn) return;
+    var pre=btn.closest('.box').querySelector('pre'), text=textOf(pre);
+    function ok(){ btn.textContent='コピーしました'; btn.classList.add('done');
+      setTimeout(function(){ btn.textContent='コピー'; btn.classList.remove('done'); },1800); }
+    function legacy(){
+      var ta=document.createElement('textarea');
+      ta.value=text; ta.setAttribute('readonly','');
+      ta.style.cssText='position:fixed;top:0;left:0;width:1px;height:1px;opacity:0';
+      document.body.appendChild(ta); ta.select(); ta.setSelectionRange(0,ta.value.length);
+      var done=false; try { done=document.execCommand('copy'); } catch(err){}
+      document.body.removeChild(ta);
+      if (done){ ok(); return; }
+      var rg=document.createRange(); rg.selectNodeContents(pre);
+      var sl=window.getSelection(); sl.removeAllRanges(); sl.addRange(rg);
+      btn.textContent='選択しました。⌘C / Ctrl+C';
+      setTimeout(function(){ btn.textContent='コピー'; },3000);
+    }
+    if (navigator.clipboard && window.isSecureContext) navigator.clipboard.writeText(text).then(ok, legacy);
+    else legacy();
+  });
+
+  sel=keepSel(top1, null);
+  draw();
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
