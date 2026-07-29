@@ -14,6 +14,6 @@
  * 貼るまでは "__SUPABASE...__" のままにしておけば、計測は動きません（安全）。
  */
 window.SS_COUNTER = {
-  url: "__SUPABASE_URL__",       // 例: https://abcdefgh.supabase.co
-  key: "__SUPABASE_ANON_KEY__"   // anon public キー（eyJ... で始まる長い文字列）
+  url: "https://equzinaquugfrgqoykzi.supabase.co",       // school-stock プロジェクト（Tokyo）
+  key: "sb_publishable_k0tPADECLubmnfvgoij26A_84Bzqy5H"  // publishable キー（公開OK。RLSで守っている）
 };
