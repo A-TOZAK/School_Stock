@@ -38,7 +38,12 @@
   // ページの住所（/.../index.html → /.../ に正規化）
   function pagePath() {
     var p = location.pathname.replace(/index\.html$/, "");
-    return p || "/";
+    return decode(p) || "/";
+  }
+
+  // 日本語のファイル名が %E5%B9%B4… のまま貯まると集計で読めないので戻す
+  function decode(s) {
+    try { return decodeURIComponent(s); } catch (e) { return s; }
   }
 
   // ── ページビュー（セッション内の再読込は数えない） ──
@@ -61,7 +66,7 @@
     var isDownload = a.hasAttribute("download") || /\.(pdf|zip)(\?|#|$)/i.test(href);
     if (!isDownload) return;
     var key = href;
-    try { key = new URL(href, location.href).pathname; } catch (e) {}
+    try { key = decode(new URL(href, location.href).pathname); } catch (e) {}
     bump("dl:" + key);
   }, true);
 })();
