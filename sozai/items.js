@@ -29465,5 +29465,177 @@ const SOZAI = [
   "img": "img/koumu_insatsu_copier.jpg",
   "thumb": "img/koumu_insatsu_copier_thumb.jpg",
   "mono": "img/koumu_insatsu_copier_mono.jpg"
+ },
+ {
+  "id": "sensei_tedate_kangaeru",
+  "title": "子どものそばでしゃがんで手立てを考える先生",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "授業・見取り",
+  "scenes": [
+   "授業・見取り",
+   "伴走・相談"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "研修資料"
+  ],
+  "description": "子どもの机の横で片膝をついてノートを見つめ、どう支えるかを考えている先生の水彩。16:9・白背景で、上38%は題字用に空けてある。",
+  "howto": "個への支援・見取り・つまずきの話題のスライドに。上に大きく見出しを重ねられる。",
+  "tags": [
+   "先生",
+   "子ども",
+   "見取り",
+   "支援",
+   "つまずき",
+   "考える",
+   "水彩",
+   "スライド",
+   "16:9"
+  ],
+  "img": "img/sensei_tedate_kangaeru.jpg",
+  "thumb": "img/sensei_tedate_kangaeru_thumb.jpg",
+  "mono": "img/sensei_tedate_kangaeru_mono.jpg"
+ },
+ {
+  "id": "sensei_kikanjunshi",
+  "title": "机の間を歩いて見て回る先生（机間巡視）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "授業・机間巡視",
+  "scenes": [
+   "授業・見取り"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "研修資料"
+  ],
+  "description": "書いている子どもたちの間をゆっくり歩き、手元を見て回る先生の水彩。児童椅子・新JIS机。16:9・白背景で上38%は題字用に空けてある。",
+  "howto": "授業中の見取り・個別の支援・評価の話題に。",
+  "tags": [
+   "先生",
+   "机間巡視",
+   "授業",
+   "見取り",
+   "子ども",
+   "水彩",
+   "スライド",
+   "16:9"
+  ],
+  "img": "img/sensei_kikanjunshi.jpg",
+  "thumb": "img/sensei_kikanjunshi_thumb.jpg",
+  "mono": "img/sensei_kikanjunshi_mono.jpg"
+ },
+ {
+  "id": "sensei_kokuban_jugyou",
+  "title": "黒板の前で授業をする先生と子どもたち（1人挙手・2人はPC）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "授業・一斉",
+  "scenes": [
+   "授業・一斉",
+   "ICT活用"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "研修資料"
+  ],
+  "description": "黒板にチョークを当てる先生と、後ろ姿の子ども5人。1人が挙手、2人はノートPCを開いている水彩。黒板・画面は無地で文字なし。16:9・白背景で上38%は題字用に空けてある。",
+  "howto": "一斉指導とICTが混ざる今の教室の話題に。1人1台端末の研修スライドにも。",
+  "tags": [
+   "先生",
+   "黒板",
+   "授業",
+   "一斉指導",
+   "挙手",
+   "ノートPC",
+   "端末",
+   "ICT",
+   "水彩",
+   "スライド",
+   "16:9"
+  ],
+  "img": "img/sensei_kokuban_jugyou.jpg",
+  "thumb": "img/sensei_kokuban_jugyou_thumb.jpg",
+  "mono": "img/sensei_kokuban_jugyou_mono.jpg"
+ },
+ {
+  "id": "sensei_shokuinshitsu_taiwa",
+  "title": "職員室で机をはさんで相談する2人の先生",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "校務・対話",
+  "scenes": [
+   "校務・働き方",
+   "伴走・相談"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "研修資料"
+  ],
+  "description": "向かい合った机で、片方が手のひらを開いて「こうしたらいいんじゃないか」と話し、もう片方が聞いている水彩。書類は無地。16:9・白背景で上38%は題字用に空けてある。",
+  "howto": "同僚性・相談・校内での学び合いの話題に。研修の導入スライドにも。",
+  "tags": [
+   "先生",
+   "職員室",
+   "相談",
+   "対話",
+   "同僚",
+   "校務",
+   "働き方",
+   "水彩",
+   "スライド",
+   "16:9"
+  ],
+  "img": "img/sensei_shokuinshitsu_taiwa.jpg",
+  "thumb": "img/sensei_shokuinshitsu_taiwa_thumb.jpg",
+  "mono": "img/sensei_shokuinshitsu_taiwa_mono.jpg"
+ },
+ {
+  "id": "kasenjiki_sanpo",
+  "title": "夕方の河川敷をひとりで散歩する",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・研修",
+  "grade": "全学年",
+  "unit": "情景・ゆとり",
+  "scenes": [
+   "情景・季節"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "note見出し"
+  ],
+  "description": "夕方の低い光の中、草土手の小道を歩く後ろ姿。川・ススキ・柳・遠くの橋。16:9・白背景で上38%は題字用に空けてある。",
+  "howto": "ゆとり・ひと息・ふりかえりの話題に。研修の締めのスライドやnote見出しに。",
+  "tags": [
+   "河川敷",
+   "散歩",
+   "川",
+   "ススキ",
+   "柳",
+   "夕方",
+   "ゆとり",
+   "ふりかえり",
+   "水彩",
+   "スライド",
+   "16:9"
+  ],
+  "img": "img/kasenjiki_sanpo.jpg",
+  "thumb": "img/kasenjiki_sanpo_thumb.jpg",
+  "mono": "img/kasenjiki_sanpo_mono.jpg"
  }
 ];
