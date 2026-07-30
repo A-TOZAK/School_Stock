@@ -22,7 +22,7 @@
     --paper:  #ffffff;
     --wash:   #f6f6f4;
     --line:   #e6e6e3;
-    --sub:    #767b83;
+    --sub:    #6b7077;
     --accent: #2b5fd9;
     --font-ja: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
     --font-en: Georgia, serif;
@@ -41,18 +41,24 @@
   a { color: inherit; }
   .wrap { max-width: 1060px; margin: 0 auto; padding: 0 24px; }
 
-  /* ヘッダ */
-  header { border-bottom: 1px solid var(--black); }
-  .head-in {
-    display: flex; align-items: baseline; justify-content: space-between;
-    padding: 20px 0 14px; gap: 16px; flex-wrap: wrap;
+  /* ヘッダ（他のSchool Stock記事と共通の黒帯） */
+  .topbar { background: var(--black); color: #fff; position: sticky; top: 0; z-index: 40; }
+  .topbar-in {
+    max-width: 1040px; margin: 0 auto; padding: 13px 24px;
+    display: flex; justify-content: space-between; align-items: center; gap: 14px;
   }
-  .logo { font-family: var(--font-en); font-size: 22px; letter-spacing: .18em; color: var(--black); text-decoration: none; }
-  .logo span { font-family: var(--font-ja); font-size: 13px; letter-spacing: .3em; margin-left: 14px; color: var(--ink); }
-  .head-note { font-size: 12px; color: var(--sub); letter-spacing: .06em; }
+  .wordmark { font-size: 12.5px; font-weight: 700; letter-spacing: .28em; color: #fff; white-space: nowrap; text-decoration: none; }
+  .nav { display: flex; gap: 18px; align-items: center; }
+  .nav a { color: #b9bcc2; font-size: 11.5px; letter-spacing: .1em; white-space: nowrap; text-decoration: none; }
+  .nav a:hover { color: #fff; }
+  @media (max-width: 760px) { .nav { display: none; } }
+
+  .crumbs { font-size: 12px; color: var(--sub); padding: 22px 0 0; letter-spacing: .04em; }
+  .crumbs a { color: var(--sub); text-decoration: none; }
+  .crumbs a:hover { color: var(--ink); }
 
   /* ヒーロー */
-  .hero { padding: 72px 0 56px; }
+  .hero { padding: 34px 0 56px; }
   .hero-label {
     font-family: var(--font-en); font-size: 13px; letter-spacing: .28em;
     color: var(--sub); text-transform: uppercase; margin-bottom: 22px;
@@ -159,12 +165,12 @@
   .faq dt::before { content: "Q. "; font-family: var(--font-num); color: var(--accent); }
   .faq dd { font-size: 15px; max-width: 760px; }
 
-  /* フッター */
-  footer { border-top: 1px solid var(--black); padding: 44px 0 60px; }
-  .foot-in { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 16px; }
-  .foot-logo { font-family: var(--font-en); letter-spacing: .18em; color: var(--black); }
-  footer p, footer a { font-size: 13px; color: var(--sub); }
-  .foot-nav a { margin-right: 14px; text-decoration: underline; text-underline-offset: 3px; }
+  /* フッター（他のSchool Stock記事と共通の黒帯） */
+  .foot { background: var(--black); color: #b9bcc2; margin-top: 70px; }
+  .foot-in { max-width: 1040px; margin: 0 auto; padding: 34px 24px 38px; font-size: 12.5px; line-height: 2; }
+  .foot .fw { color: #fff; font-weight: 700; letter-spacing: .26em; font-size: 12px; margin-bottom: 10px; }
+  .foot a { color: #d7dade; text-decoration: underline; text-underline-offset: 3px; }
+  .foot-c { border-top: 1px solid #33363c; padding-top: 14px; margin-top: 14px; font-size: 11.5px; }
 
   @media (max-width: 760px) {
     .hero-grid, .facts-grid { grid-template-columns: repeat(2, 1fr); }
@@ -179,14 +185,22 @@
 </head>
 <body>
 
-<header>
-  <div class="wrap head-in">
-    <a class="logo" href="../../">SCHOOL STOCK<span>素材ライブラリ</span></a>
-    <div class="head-note">学校・教育委員会向けのご案内</div>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../">素材ライブラリ</a>
+    <a href="../../#prints">プリント</a>
+    <a href="../../#reading">読みもの</a>
+    <a href="../../about/">このサイトについて</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
   </div>
-</header>
+</div></div>
 
 <main>
+
+  <div class="wrap">
+    <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../">素材ライブラリ</a> ／ 学校・教育委員会の方へ</div>
+  </div>
 
   <div class="wrap hero">
     <p class="hero-label">Materials for School Newsletters</p>
@@ -391,11 +405,12 @@
 
 </main>
 
-<footer>
-  <div class="wrap foot-in">
-    <div class="foot-logo">SCHOOL STOCK</div>
-    <p class="foot-nav"><a href="../../">棚トップ</a><a href="../">素材ライブラリ</a><a href="../../about/terms.html">利用規約</a><a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></p>
-    <p>お問い合わせ: EdtechChikuho@gmail.com　© School Stock</p>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。<br>
+    <a href="../../">棚トップ</a>　/　<a href="../">素材ライブラリ</a>　/　<a href="../../about/terms.html">利用規約</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <div class="foot-c">お問い合わせ: EdtechChikuho@gmail.com　／　© School Stock（外﨑顯博 / 小学校）</div>
   </div>
 </footer>
 
