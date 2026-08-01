@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>間違い探しを、AIに作らせる｜School Stock</title>
+<meta name="description" content="朝の会・すきま時間・雨の日に。AIの画像生成で「間違い探し」を作るプロンプト集。実際に生成して確かめた型だけを載せています。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="間違い探しを、AIに作らせる（プロンプト集）｜School Stock">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/entertainment/machigai-sagashi/sample-koen.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/entertainment/machigai-sagashi/sample-koen.jpg">
+<style>
+  :root {
+    --ink: #15181c; --sub: #6b7077; --accent: #2b5fd9;
+    --paper: #ffffff; --wash: #f6f6f4; --line: #e6e6e3; --black: #0e0f11;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16.5px; line-height: 1.95; letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  .topbar { background: var(--black); color: #fff; }
+  .topbar-in { max-width: 680px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; }
+  .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.32em; }
+  .topbar .cat { font-size: 11px; letter-spacing: 0.18em; color: #b9bcc2; }
+  .topbar a { color: #fff; text-decoration: none; }
+  .topbar a:hover { opacity: .8; }
+
+  .container { max-width: 680px; margin: 0 auto; padding: 0 24px 72px; }
+
+  .hero { padding: 48px 0 36px; border-bottom: 1px solid var(--ink); }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--black); padding: 4px 12px; margin-bottom: 20px; }
+  h1 { font-size: clamp(26px, 6.4vw, 38px); font-weight: 700; line-height: 1.45; letter-spacing: 0.01em; margin-bottom: 18px; }
+  .lead { font-size: 16px; color: #3d4148; margin-bottom: 22px; }
+  .meta { font-size: 12.5px; color: var(--sub); letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  figure { margin: 26px 0 6px; }
+  figure img { width: 100%; height: auto; border: 1px solid var(--line); display: block; }
+  figcaption { font-size: 12.5px; color: var(--sub); line-height: 1.85; margin-top: 8px; }
+
+  .howto { margin: 36px 0 8px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line); padding: 18px 4px 16px; }
+  .howto .dt { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; color: var(--ink); margin-bottom: 10px; }
+  .howto ol { list-style: none; }
+  .howto li { display: flex; gap: 14px; padding: 7px 0; font-size: 15.5px; font-weight: 500; line-height: 1.75; }
+  .howto li + li { border-top: 1px solid var(--line); }
+  .howto .n { font-family: Georgia, serif; font-style: italic; color: var(--accent); font-weight: 700; flex: none; }
+  .howto .ph { font-family: "SF Mono", Menlo, monospace; font-size: 13px; background: var(--wash); border: 1px solid var(--line); padding: 1px 7px; }
+
+  .caution-box { background: var(--wash); border-top: 1px solid var(--ink); padding: 16px 20px 14px; margin: 26px 0 4px; font-size: 13.5px; line-height: 2.0; }
+  .caution-box .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); display: block; margin-bottom: 4px; }
+
+  section { padding: 46px 0 4px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-no { font-family: Georgia, serif; font-style: italic; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); }
+  h2 { font-size: clamp(20px, 5vw, 25px); font-weight: 700; line-height: 1.5; margin: 6px 0 6px; }
+  .sec-lead { font-size: 14.5px; color: #3d4148; margin-bottom: 10px; }
+  h3 { font-size: 16.5px; font-weight: 700; margin: 26px 0 4px; }
+  p + p { margin-top: 12px; }
+  ul.plain { list-style: none; margin: 8px 0 4px; }
+  ul.plain li { font-size: 15px; line-height: 1.9; padding: 4px 0 4px 18px; text-indent: -18px; }
+  ul.plain li::before { content: "・"; color: var(--sub); }
+
+  .pr { border-top: 1px solid var(--line); margin-top: 26px; padding-top: 22px; }
+  .pr-head { display: flex; align-items: baseline; gap: 12px; }
+  .pr-no { font-family: Georgia, serif; font-style: italic; font-size: 19px; font-weight: 700; color: var(--accent); flex: none; }
+  .pr-title { font-size: 18px; font-weight: 700; line-height: 1.6; }
+  .pr-scene { font-size: 14px; color: var(--sub); line-height: 1.85; margin: 6px 0 12px; }
+  .prompt-wrap { position: relative; }
+  .copy-btn { position: absolute; top: 10px; right: 10px; z-index: 2;
+    background: #fff; color: var(--ink); border: 1px solid var(--ink); padding: 7px 18px;
+    font-size: 13px; font-weight: 700; font-family: inherit; cursor: pointer; }
+  .copy-btn:active { transform: scale(.97); }
+  .copy-btn.done { background: var(--black); color: #fff; }
+  .prompt-box { background: var(--wash); border: 1px solid var(--line); padding: 18px 16px; }
+  .prompt-box pre { white-space: pre-wrap; word-break: break-word; font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; line-height: 1.85; color: #33373d; }
+  .followup { font-size: 13.5px; color: #3d4148; margin-top: 10px; }
+  .followup b { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--accent); margin-right: 8px; }
+  .answer { font-size: 13.5px; color: #3d4148; margin-top: 10px; background: #fff; border-left: 3px solid var(--ink); padding: 6px 0 6px 14px; line-height: 1.95; }
+  .answer b { font-size: 11px; font-weight: 700; letter-spacing: 0.18em; color: var(--sub); display: block; }
+
+  .foot { border-top: 3px solid var(--ink); margin-top: 56px; padding: 24px 2px 8px; }
+  .foot .fs { font-size: 13.5px; color: #3d4148; line-height: 2.0; margin-bottom: 14px; }
+  .foot-map { font-size: 13px; line-height: 2.2; margin-bottom: 18px; }
+  .foot-map b { display: block; font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); margin-top: 12px; }
+  .foot-map a { color: var(--ink); }
+  .credit { font-size: 12px; color: var(--sub); letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <a class="cat" href="../../">← 棚にもどる</a>
+  </div>
+</div>
+
+<div class="container">
+
+<header class="hero">
+  <span class="kicker">エンタメ枠 ── 画像生成プロンプト集</span>
+  <h1>間違い探しを、AIに作らせる</h1>
+  <p class="lead">朝の会の3分、雨の日の休み時間、課題が早く終わった子の待ち時間。「間違い探し」は使いどころが多いのに、探しに行くと意外と見つかりません。AIの画像生成でその場で作れます。コピペで使えるプロンプトを5本、実際に生成して確かめたものだけ載せました。</p>
+  <div class="meta">
+    <span>対象：<b>小学校の先生</b></span>
+    <span>使うAI：<b>ChatGPT の画像生成</b>（Geminiでも動きます）</span>
+    <span>所要：<b>コピペ＋1〜2分</b></span>
+  </div>
+</header>
+
+<figure>
+  <img src="sample-koen.jpg" alt="公園の絵が左右に2つ並んだ間違い探しの見本。雲の数、ボールの色、すべり台の段数がちがう">
+  <figcaption>下の「№1 公園」のプロンプトを、そのまま貼って出てきた1枚。ちがいは3か所（雲の数・ボール・すべり台の段数）。</figcaption>
+</figure>
+
+<div class="howto">
+  <div class="dt">使い方は3ステップ</div>
+  <ol>
+    <li><span class="n">1.</span><span>使いたいプロンプトの「コピー」ボタンを押して、AIに貼る</span></li>
+    <li><span class="n">2.</span><span>出てきた絵を見て、<b>ちがいが本当にそこにあるか自分で確かめる</b></span></li>
+    <li><span class="n">3.</span><span>A4横で印刷する（<span class="ph">白黒でOK</span>）</span></li>
+  </ol>
+</div>
+
+<div class="caution-box">
+  <span class="lb">先に、大事なこと3つ</span>
+  ① <b>色だけのちがいは作らない。</b>学校のコピー機は白黒です。「青いバケツ→赤いバケツ」は白黒にすると消えます。ちがいは「数・有無・向き・形」から作ります。<br>
+  ② <b>答えはAIを信じない。</b>頼んだちがいはだいたい出ますが、頼んでいない小さなずれ（木の枝ぶり、草の位置）も混ざります。配る前にひととおり見比べてください。<br>
+  ③ <b>絵の中に文字を入れさせない。</b>AIの描く日本語は崩れます。時計の文字ばんの数字も、掲示物の字も無しで注文します。
+</div>
+
+<!-- ═══════════ 01 そのまま使える ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">COPY &amp; PASTE</span></div>
+  <h2>そのまま使える3本</h2>
+  <p class="sec-lead">全部、実際に生成して確かめたものです。学年に合わせて、ちがいの数だけ書きかえてください（低学年3か所／中学年5か所／高学年7か所）。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№1</span><span class="pr-title">公園（3か所・低〜中学年）</span></div>
+    <p class="pr-scene">はじめの1本にどうぞ。上の見本がこのプロンプトの出力です。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>小学生向けの「間違い探し」用の絵を1枚作ってください。
+1枚の画像を左右に分け、左が「絵A」、右が「絵B」です。
+左右はまったく同じ構図・同じ色・同じ線で描き、次の3か所だけを変えてください。
+
+場面：晴れた日の公園。人は描かない。
+　　　まん中に木が1本、その下にベンチ、ベンチのそばにゴミばこ、
+　　　左にすべり台、右に水のみ場、空に雲が2つ、地面にボールが1つ。
+　　　やわらかい色えんぴつ風のイラスト、線ははっきり。
+
+変える3か所（ここだけ）：
+1. 空の雲の数（左は2つ、右は3つ）
+2. ボール（左は白と黒のサッカーボール、右はもようの無い一色のボール）
+3. すべり台の階段の段数（左は4段、右は3段）
+
+守ること：
+- 画像の中に文字・数字・記号を一切入れない
+- 左右の絵の位置・大きさ・角度をそろえる
+- 指定した3か所以外は1ミリも変えない
+- 実在のキャラクター・ロゴ・商品名を描かない
+- 横長（3:2）</pre></div>
+    </div>
+    <p class="answer"><b>答え（そのまま板書できます）</b>①空の雲の数（2つ／3つ）　②ボールのもよう（ある／ない）　③すべり台の階段の段数（4段／3段）</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№2</span><span class="pr-title">朝の教室（3か所・低〜中学年）</span></div>
+    <p class="pr-scene">自分の教室に似ていると、子どもの食いつきが変わります。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>小学生向けの「間違い探し」用の絵を1枚作ってください。
+1枚の画像を左右に分け、左が「絵A」、右が「絵B」です。
+左右はまったく同じ構図・同じ色・同じ線で描き、次の3か所だけを変えてください。
+
+場面：日本の小学校の教室。朝の会の前。子どもは描かない。正面から見た構図。
+　　　黒板、その上に丸い時計、教卓、教卓の上に本と花びん、
+　　　子どもの机が3つ、右のかべに四角い掲示物が1枚、
+　　　左のすみにほうきとちりとり。
+　　　やわらかい色えんぴつ風のイラスト、線ははっきり、背景は白っぽく。
+
+変える3か所（ここだけ）：
+1. 時計のはりの向き（左は右向き、右は下向き）
+2. 花びんの花の本数（左は3本、右は2本）
+3. 右のかべの掲示物の形（左は四角、右は丸）
+
+守ること：
+- 画像の中に文字・数字・記号を一切入れない
+- 左右の絵の位置・大きさ・角度をそろえる
+- 指定した3か所以外は1ミリも変えない
+- 列挙した物だけを描き、それ以外の物（いす・かばん・人・植木ばち等）を足さない
+- 横長（3:2）</pre></div>
+    </div>
+    <p class="answer"><b>答え</b>①時計のはりの向き　②花の本数（3本／2本）　③かべの掲示物の形（四角／丸）</p>
+    <p class="followup"><b>実際に出たずれ</b>右の絵が少し寄り（拡大気味）になり、黒板と机の位置がずれました。気になるときは「もう一度、同じ注文で作って」と言うだけで直ることが多いです。</p>
+  </div>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№3</span><span class="pr-title">給食のおぼん（5か所・中学年）</span></div>
+    <p class="pr-scene">まうえから見た絵は、左右がそろいやすい題材です。給食の時間の話にもつながります。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>小学生向けの「間違い探し」用の絵を1枚作ってください。
+1枚の画像を左右に分け、左が「絵A」、右が「絵B」です。
+左右はまったく同じ構図・同じ色・同じ線で描き、次の5か所だけを変えてください。
+
+場面：給食のおぼんをまうえから見た絵。人は描かない。
+　　　おぼんの上に、ごはんの茶わん、みそしるのおわん、
+　　　おかずの皿（からあげが3つ）、小さな皿にミニトマトが2つ、
+　　　牛乳パック、はしが1ぜん、スプーンが1本。
+　　　やわらかい色えんぴつ風のイラスト、線ははっきり、背景は白っぽく。
+
+変える5か所（ここだけ）：
+1. からあげの数（左は3つ、右は2つ）
+2. ミニトマトの数（左は2つ、右は3つ）
+3. スプーンの向き（左は柄が左、右は柄が右）
+4. 牛乳パックの位置（左はおぼんの右おく、右はおぼんの左おく）
+5. みそしるのおわんのふた（左はふたが無い、右はふたがのっている）
+
+守ること：
+- 画像の中に文字・数字・記号を一切入れない（牛乳パックにも字を書かない）
+- 左右の絵の位置・大きさ・角度をそろえる
+- 指定した5か所以外は1ミリも変えない
+- 列挙した物だけを描き、それ以外の物を足さない
+- 横長（3:2）</pre></div>
+    </div>
+    <p class="answer"><b>答え</b>①からあげの数　②ミニトマトの数　③スプーンの向き　④牛乳パックの位置　⑤みそしるのおわんのふた</p>
+  </div>
+
+  <figure>
+    <img src="sample-kyushoku.jpg" alt="給食のおぼんを真上から見た絵が左右に2つ並んだ間違い探しの見本">
+    <figcaption>№3の出力。5か所とも注文どおり出ましたが、おわんの色まで変わり、牛乳パックにつられてミニトマトの皿も動きました。<b>ちがいを5つ以上にすると、頼んでいないちがいも増えます</b>。見つけたら答えに足すか、作り直してください。</figcaption>
+  </figure>
+</section>
+
+<!-- ═══════════ 02 自分の題材で ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">TEMPLATE</span></div>
+  <h2>自分の題材で作る</h2>
+  <p class="sec-lead">運動会、いもほり、水そうの金魚、自分の学級文庫。［　］を埋めるだけです。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№4</span><span class="pr-title">空欄式のひな型</span></div>
+    <p class="pr-scene">埋めるところは4か所だけ。ちがいは「数」と「有無」から選ぶといちばん確実に出ます。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>小学生向けの「間違い探し」用の絵を1枚作ってください。
+1枚の画像を左右に分け、左が「絵A」、右が「絵B」です。
+左右はまったく同じ構図・同じ色・同じ線で描き、次の［3］か所だけを変えてください。
+
+場面：［場面を1行で。人は描かない］
+　　　［画面に置く物を8〜12個、名前で並べる］
+　　　やわらかい色えんぴつ風のイラスト、線ははっきり、背景は白っぽく。
+
+変える［3］か所（ここだけ）：
+1. ［物の名前］の数（左は［　］、右は［　］）
+2. ［物の名前］が（左はある、右はない）
+3. ［物の名前］の向き（左は［　］、右は［　］）
+
+守ること：
+- 画像の中に文字・数字・記号を一切入れない
+- 左右の絵の位置・大きさ・角度をそろえる
+- 指定した所以外は1ミリも変えない
+- 列挙した物だけを描き、それ以外の物を足さない
+- 実在のキャラクター・ロゴ・商品名を描かない
+- 横長（3:2）</pre></div>
+    </div>
+    <p class="followup"><b>ちがいの作り方</b>「数」（花が3本→2本）→「有無」（ちりとりがある→ない）→「向き」（時計のはり）→「形」（まどが四角→丸）の順に確実です。<b>位置を動かす指定は、まわりの物も連れて動く</b>ので、使うなら1か所だけに。</p>
+  </div>
+</section>
+
+<!-- ═══════════ 03 そっくりにしたい ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">TWO STEPS</span></div>
+  <h2>もっとそっくりにしたいとき</h2>
+  <p class="sec-lead">左右のずれがどうしても気になるなら、2段構えにします。手間はかかりますが、いちばんそっくりになります。</p>
+
+  <div class="pr">
+    <div class="pr-head"><span class="pr-no">№5</span><span class="pr-title">絵を1枚作って、そこだけ直す</span></div>
+    <p class="pr-scene">先に絵を1枚作り、出てきた絵をそのまま渡して「ここだけ直して」と頼みます。絵が2枚になるので、印刷のときに上下に並べてください。</p>
+    <div class="prompt-wrap">
+      <button class="copy-btn" onclick="copyPrompt(this)">コピー</button>
+      <div class="prompt-box"><pre>【1回目：絵Aを作る】
+
+小学生向けのイラストを1枚描いてください。
+
+場面：日本の小学校の教室。朝の会の前。子どもは描かない。正面から見た構図。
+　　　黒板、その上に丸い時計、教卓、教卓の上に本と花びん（花3本）、
+　　　子どもの机が3つ、右のかべに四角い掲示物が1枚、
+　　　左のすみにほうきと青いちりとり、窓から日が入っている。
+　　　やわらかい色えんぴつ風のイラスト、線ははっきり、背景は白っぽく、影はうすく。
+
+守ること：
+- 画像の中に文字・数字・記号を一切入れない
+- 列挙した物だけを描き、それ以外の物を足さない
+- 横長（3:2）
+
+
+【2回目：出てきた絵をそのまま渡して、こう頼む】
+
+この画像をもとに、次の3か所だけを変えた絵を作ってください。
+それ以外は、線・色・位置・大きさ・角度まで完全に同じにしてください。
+
+1. 時計の長針の向きを変える（下向きにする）
+2. 花びんの花を3本から2本にする
+3. ほうきの横のちりとりを無くす
+
+守ること：
+- 変更するのはこの3点だけ。ほかの部分は1ミリも動かさない
+- 画像の中に文字・数字・記号を入れない
+- 画角・トリミングを変えない</pre></div>
+    </div>
+    <p class="followup"><b>やってみた結果</b>3か所とも成功し、それ以外の位置や大きさはほぼ完全に一致しました（試したときの3つ目は「ちりとりの色を変える」でしたが、白黒で消えるので、上のプロンプトでは「無くす」に変えています）。ただし絵全体がうっすら描き直されるので、紙のざらつきの質感が変わります。子どもには「ちがい」に見えないので実害はありません。</p>
+  </div>
+</section>
+
+<!-- ═══════════ 04 教室での使い方 ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">IN THE CLASSROOM</span></div>
+  <h2>配ってからの3分</h2>
+
+  <ul class="plain">
+    <li><b>見つけたら指でおさえる。</b>声に出させないだけで、全員が最後まで参加できます</li>
+    <li><b>見つけた数だけ手を上げる。</b>「3つ見つけた人」で、進み具合が一目で分かります</li>
+    <li><b>早く終わった子には「絵Aと絵B、どっちが好き？なぜ？」。</b>そのまま話す活動になります</li>
+    <li><b>1枚を2回使う。</b>1回目は自由に、2回目は「左上のはんぶんだけ」と場所を区切ると、見方が変わります</li>
+    <li><b>ちがいを言葉で説明させる。</b>「右の絵は、花が1本少ない」まで言えたら、それは説明の練習です</li>
+  </ul>
+
+  <figure>
+    <img src="sample-kyoshitsu.jpg" alt="朝の教室の絵が左右に2つ並んだ間違い探しの見本">
+    <figcaption>№2の出力。左右で少し寄りがちがいます。こういうときは作り直すか、そのまま配って「絵の大きさのちがいは答えに入れません」と先に言ってしまうのも手です。</figcaption>
+  </figure>
+</section>
+
+<!-- ═══════════ 05 うまくいかないとき ═══════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">TROUBLE</span></div>
+  <h2>うまくいかないとき</h2>
+
+  <h3>左右が別の絵になってしまう</h3>
+  <p>置く物が多すぎます。8〜12個まで減らしてください。人が入っているならまず人を消します。顔と手はそっくりに描けず、ちがいが勝手に増える原因になります。</p>
+
+  <h3>頼んでいないちがいがたくさんある</h3>
+  <p>ちがいの数を減らすか、「数」と「有無」だけで組み直してください。物の位置を動かす指定と、物の形を大きく変える指定は、まわりまで描き直されます。</p>
+
+  <h3>絵に文字が出てしまった</h3>
+  <p>「文字・数字・記号を一切入れない」を、注文の最後ではなく<b>先頭近く</b>に書いて、もう一度出してもらいます。時計・掲示物・看板・パッケージがある場面で起きやすいです。</p>
+
+  <h3>ちがいが見つけにくすぎる／かんたんすぎる</h3>
+  <p>「もっとやさしく（ちがいを大きく、数を減らして）」「もっとむずかしく（ちがいを小さく、すみに置いて）」と、そのまま言えば直ります。</p>
+</section>
+
+<footer class="foot">
+  <p class="fs">このページのプロンプトは、2026年8月にChatGPTの画像生成で実際に出力を確かめたものです。AIは日々変わるので、同じ注文でも出方は変わります。うまくいかない日は、数を3つに減らして、まうえから見た絵（おぼん・机の上・水そう）にすると、たいてい戻ってきます。</p>
+  <div class="foot-map">
+    <b>棚の中</b>
+    <a href="../../">棚トップ</a>　／　<a href="../prompt-book/">先生の寄り道プロンプト帳</a>　／　<a href="../../tools/pdf-toolbox/">先生のPDF道具箱</a>　／　<a href="../../prints/kokugo/">国語プリント</a>　／　<a href="../../shien/">支援カード</a>　／　<a href="../../sozai/">授業イラスト素材集</a>　／　<a href="../../ideas/">実践アイデア村</a>　／　<a href="../../about/">このサイトについて</a>
+    <b>もっとプロンプト</b>
+    <a href="https://a-tozak.github.io/ai-prompt-library/" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+  <div style="display:flex;gap:14px;align-items:center;border-top:1px solid var(--line);margin:4px 0 18px;padding-top:16px">
+    <img src="../../about/author.jpg" alt="外﨑顯博の写真" style="flex:none;width:56px;height:56px;border-radius:50%;object-fit:cover">
+    <div style="font-size:13px;line-height:1.9;color:#3d4148">
+      <div style="font-size:10px;font-weight:700;letter-spacing:.24em;color:var(--sub)">AUTHOR｜つくっている人</div>
+      <div style="color:var(--ink);font-weight:700;font-size:14px">外﨑顯博<span style="font-weight:500;font-size:11px;color:var(--sub);margin-left:8px">とざき あきひろ</span></div>
+      <div>福岡県の公立小学校教員／GEG Chikuho 共同リーダー。教室で使う物を自分でつくって、この棚に並べています。<a href="../../about/">くわしく →</a></div>
+    </div>
+  </div>
+  <p class="credit">© School Stock</p>
+</footer>
+
+</div>
+
+<script>
+function copyPrompt(btn) {
+  const pre = btn.parentElement.querySelector('pre');
+  navigator.clipboard.writeText(pre.textContent).then(() => {
+    btn.textContent = 'コピーしました';
+    btn.classList.add('done');
+    setTimeout(() => { btn.textContent = 'コピー'; btn.classList.remove('done'); }, 1800);
+  });
+}
+</script>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
