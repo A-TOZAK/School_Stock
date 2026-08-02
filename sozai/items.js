@@ -29951,5 +29951,49 @@ const SOZAI = [
   "alt": "img/sansu4_menseki_L_01_alt.txt",
   "seconds": 9,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_gaisu_01",
+  "title": "四捨五入は 近いほうに寄せること（がい数）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "がい数とその計算",
+  "scenes": [
+   "四捨五入の意味を数直線でたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "2300〜2400の数直線にまん中2350を引き、2380は右だから2400へ、2340は左だから2300へ寄ります。「4以下は下げ、5以上は上げ」を丸暗記している子に、位置として見せられます。",
+  "howto": "決まりを教えたあと、なぜそうなるかを見せるときに。「どうして5から上げるの？」と聞かれたときにも。",
+  "tags": [
+   "がい数",
+   "概数",
+   "四捨五入",
+   "切り上げ",
+   "切り捨て",
+   "数直線",
+   "見積もり",
+   "約",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_gaisu_01.gif",
+  "thumb": "img/sansu4_gaisu_01_thumb.jpg",
+  "gifMobile": "img/sansu4_gaisu_01_mobile.gif",
+  "mp4": "img/sansu4_gaisu_01.mp4",
+  "poster": "img/sansu4_gaisu_01_poster.png",
+  "alt": "img/sansu4_gaisu_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
  }
 ];
