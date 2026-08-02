@@ -26,7 +26,7 @@ const AUTHORS = {
  },
  "studio": {
   "romaji": "Studio",
-  "count": 2
+  "count": 3
  },
  "innami": {
   "romaji": "Innami",

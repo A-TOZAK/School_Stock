@@ -29862,5 +29862,50 @@ const SOZAI = [
   "alt": "img/rika6_teko_01_alt.txt",
   "seconds": 9,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu6_en_menseki_01",
+  "title": "円をばらして 並べかえると（円の面積）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "6年",
+  "unit": "円の面積",
+  "scenes": [
+   "円の面積の公式の意味をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "円が16等分されてばらばらになり、上下交互に並べかえられて長方形に近い形になります。たて＝半径、横＝円周の半分（半径×円周率）から、円の面積＝半径×半径×円周率が出ます。",
+  "howto": "公式を教えたあと、なぜそうなるかを見せるときに。「横は円周ぜんぶ？」と聞いてから見せる流れも。",
+  "tags": [
+   "円の面積",
+   "円",
+   "扇形",
+   "等積変形",
+   "並べかえ",
+   "公式",
+   "半径",
+   "円周率",
+   "6年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション",
+   "バラバラ"
+  ],
+  "img": "img/sansu6_en_menseki_01.gif",
+  "thumb": "img/sansu6_en_menseki_01_thumb.jpg",
+  "gifMobile": "img/sansu6_en_menseki_01_mobile.gif",
+  "mp4": "img/sansu6_en_menseki_01.mp4",
+  "poster": "img/sansu6_en_menseki_01_poster.png",
+  "alt": "img/sansu6_en_menseki_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
  }
 ];
