@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>授業素材ライブラリ ── 授業で使える無料イラスト・写真｜School Stock</title>
-<meta name="description" content="小学校の授業スライドやプリント・学級通信にそのまま使える、無料のイラスト・写真素材ライブラリ。単元・行事ごとに、カラーと白黒を選んでダウンロードできます。">
+<title>授業素材ライブラリ ── 授業で使える無料イラスト・写真・うごく解説｜School Stock</title>
+<meta name="description" content="小学校の授業スライドやプリント・学級通信にそのまま使える、無料のイラスト・写真・うごく解説GIFの素材ライブラリ。単元・行事ごとに、カラーと白黒、GIFとMP4を選んでダウンロードできます。">
 <style>
   :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -65,6 +65,13 @@
   .thumb-wrap { position:relative; }
   .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); overflow:hidden; display:flex; align-items:center; justify-content:center; }
   .thumb img { width:100%; height:100%; object-fit:cover; }
+  .type-pill.motion { background:#2b5fd9; }
+  .mi-motion { margin:0 0 12px; }
+  .mi-motion img, .mi-motion video { width:100%; border:1px solid var(--line); background:#fff; display:block; }
+  .mi-motion .cap { font-size:12px; color:var(--sub); margin-top:6px; }
+  .mi-alt { margin:10px 0 0; font-size:13px; }
+  .mi-alt textarea { width:100%; min-height:74px; font:inherit; font-size:12px; color:var(--ink);
+    border:1px solid var(--line); border-radius:4px; padding:8px; background:var(--wash); }
   .type-pill { position:absolute; top:8px; left:8px; font-size:10px; font-weight:700; letter-spacing:0.06em; color:#fff; background:rgba(14,15,17,0.72); padding:2px 7px; }
   .b { padding:11px 13px 13px; display:flex; flex-direction:column; gap:7px; flex:1; }
   .tt { font-size:14px; font-weight:700; line-height:1.5; flex:1; }
@@ -133,11 +140,11 @@
   .modal-scrim { position:absolute; inset:0; background:rgba(14,15,17,0.55); }
   .modal-box { position:relative; max-width:900px; margin:4vh auto; background:var(--paper); border:1px solid var(--ink); max-height:92vh; overflow-y:auto; display:grid; grid-template-columns:1.1fr 1fr; }
   @media (max-width:720px){ .modal-box { grid-template-columns:1fr; margin:0; max-height:100vh; min-height:100vh; } }
-  .modal-img { background:var(--wash); display:flex; align-items:center; justify-content:center; border-right:1px solid var(--line); padding:18px; }
-  .modal-img img { max-width:100%; max-height:70vh; object-fit:contain; }
+  .modal-img { background:var(--wash); display:flex; align-items:flex-start; justify-content:center; border-right:1px solid var(--line); padding:18px; }
+  .modal-img img { max-width:100%; max-height:70vh; object-fit:contain; position:sticky; top:18px; }
   .modal-info { padding:26px 26px 28px; }
   .modal-close { position:absolute; top:10px; right:12px; font-family:inherit; background:var(--paper); border:1px solid var(--ink); font-size:18px; line-height:1; width:34px; height:34px; cursor:pointer; z-index:2; }
-  .modal-info h2 { font-size:19px; font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .modal-info h2 { font-size:19px; font-weight:700; line-height:1.45; margin-bottom:12px; padding-right:42px; }
   .mi-tags { display:flex; flex-wrap:wrap; gap:6px; margin-bottom:16px; }
   .mi-desc { font-size:13.5px; color:#3d4148; margin-bottom:16px; }
   .mi-howto { border:1px solid var(--line); background:var(--wash); padding:13px 15px; margin-bottom:18px; }
@@ -204,7 +211,7 @@
     <a href="../lab/">教室の中の特別支援<small>連載・全35回（限定・パスワード）</small></a>
     <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
     <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
-    <a href="../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラストと写真</small></a>
+    <a href="../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラスト・写真・うごく解説</small></a>
     <a href="../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
     <a href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">子どものためのプロンプトライブラリ ↗<small>社会科・小4から</small></a>
     <div class="dr-sec">READING｜読みもの・アイデア</div>
@@ -226,7 +233,7 @@
   <div class="head">
     <span class="kicker">MATERIALS</span>
     <h1>授業素材ライブラリ</h1>
-    <p class="lead">スライド・プリント・学級通信にそのまま使える、授業のイラストと写真。カラーと白黒（イラスト）を選べて、すべて無料です。</p>
+    <p class="lead">スライド・プリント・学級通信にそのまま使える、授業のイラストと写真。うごきで見せたい場面には「うごく」解説（GIF・MP4）もあります。すべて無料です。</p>
     <div class="meta"><b id="mcount">0</b>点／全教科・行事へ順次追加</div>
   </div>
 
@@ -358,16 +365,21 @@ function chipBar(rowId, values, key, label){
   sel.addEventListener('change',()=>{ state[key]=sel.value; sync(); render(); });
 }
 const uniq = arr => [...new Set(arr)];
+const typeLabel = it => it.type==='photo'?'写真':(it.type==='motion'?'うごく':'イラスト');
 
 function card(it){
   return '<div class="card" data-id="'+esc(it.id)+'">'
     +'<div class="thumb-wrap"><div class="thumb"><img loading="lazy" src="'+esc(it.thumb)+'" alt="'+esc(it.title)+'"></div>'
-    +'<span class="type-pill">'+(it.type==='photo'?'写真':'イラスト')+'</span></div>'
+    +'<span class="type-pill'+(it.type==='motion'?' motion':'')+'">'+typeLabel(it)+'</span></div>'
     +'<div class="b">'
     +'<div class="tt">'+esc(it.title)+'</div>'
     +'<div class="tags"><span class="tag sub">'+esc(it.subject)+'</span><span class="tag">'+esc(it.grade)+'</span><span class="tag">'+esc(it.unit)+'</span></div>'
-    +'<div class="acts"><a class="dl" href="'+esc(it.img)+'" download onclick="event.stopPropagation()">'+ICON+'カラー</a>'
-    + (it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download onclick="event.stopPropagation()">'+ICON+'白黒</a>':'')
+    +'<div class="acts">'
+    + (it.type==='motion'
+        ? '<a class="dl" href="'+esc(it.img)+'" download onclick="event.stopPropagation()">'+ICON+'GIF</a>'
+          +'<a class="dl line" href="'+esc(it.mp4)+'" download onclick="event.stopPropagation()">'+ICON+'MP4</a>'
+        : '<a class="dl" href="'+esc(it.img)+'" download onclick="event.stopPropagation()">'+ICON+'カラー</a>'
+          + (it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download onclick="event.stopPropagation()">'+ICON+'白黒</a>':''))
     +'</div>'
     +'<div class="credit">'+esc(credit(it.author))+'</div>'
     +'</div></div>';
@@ -454,8 +466,10 @@ function related(it){
 
 function openModal(id){
   const it=SOZAI.find(x=>x.id===id); if(!it) return;
-  document.getElementById('miImg').src=it.img;
-  document.getElementById('miImg').alt=it.title;
+  const isMotion = it.type==='motion';
+  const miImg=document.getElementById('miImg');
+  miImg.src = isMotion ? (it.img+'?'+Date.now()) : it.img;   // うごく素材は大枠でそのまま再生
+  miImg.alt = it.title;
   const uses=(it.uses||[]).map(u=>'<span class="tag">'+esc(u)+'</span>').join('');
   const scenes=(it.scenes||[]).map(u=>'<span class="tag sub">'+esc(u)+'</span>').join('');
   const rel=related(it);
@@ -464,14 +478,30 @@ function openModal(id){
     +'</div></div>':'';
   document.getElementById('miInfo').innerHTML =
      '<h2>'+esc(it.title)+'</h2>'
-    +'<div class="mi-tags"><span class="tag sub">'+esc(it.subject)+'</span><span class="tag">'+esc(it.grade)+'</span><span class="tag">'+esc(it.unit)+'</span><span class="tag">'+(it.type==='photo'?'写真':'イラスト')+'</span></div>'
+    +'<div class="mi-tags"><span class="tag sub">'+esc(it.subject)+'</span><span class="tag">'+esc(it.grade)+'</span><span class="tag">'+esc(it.unit)+'</span><span class="tag">'+typeLabel(it)+'</span></div>'
     +'<div class="mi-desc">'+esc(it.description)+'</div>'
     +(it.howto?'<div class="mi-howto"><b>つかいどころ</b><p>'+esc(it.howto)+'</p></div>':'')
     +(scenes||uses?'<div class="mi-uses">'+scenes+uses+'</div>':'')
-    +'<div class="mi-dl"><a class="dl" href="'+esc(it.img)+'" download>'+ICON+'カラーを保存</a>'
-    +(it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download>'+ICON+'白黒を保存</a>':'')+'</div>'
+    +(isMotion ? '<div class="mi-motion"><div class="cap">'+(it.seconds?it.seconds+'秒・':'')
+        +'2回で止まってしまいます。くり返し見せたいときはMP4を使ってください。</div></div>' : '')
+    +'<div class="mi-dl">'
+    +(isMotion
+        ? '<a class="dl" href="'+esc(it.img)+'" download>'+ICON+'GIF（スライド用）</a>'
+          +'<a class="dl line" href="'+esc(it.gifMobile)+'" download>'+ICON+'軽いGIF</a>'
+          +'<a class="dl line" href="'+esc(it.mp4)+'" download>'+ICON+'MP4（一時停止できる）</a>'
+          +'<a class="dl line" href="'+esc(it.poster)+'" download>'+ICON+'静止画PNG</a>'
+        : '<a class="dl" href="'+esc(it.img)+'" download>'+ICON+'カラーを保存</a>'
+          +(it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download>'+ICON+'白黒を保存</a>':''))
+    +'</div>'
+    +(isMotion?'<div class="mi-alt"><b>ウェブやLMSに載せるときの説明文</b>'
+        +'<textarea readonly onclick="this.select()" id="miAlt">読み込み中…</textarea></div>':'')
     +'<div class="mi-credit">'+esc(credit(it.author))+'</div>'
     +relHtml;
+  if(isMotion && it.alt){
+    fetch(it.alt).then(r=>r.text())
+      .then(t=>{const a=document.getElementById('miAlt'); if(a) a.value=t.trim();})
+      .catch(()=>{const a=document.getElementById('miAlt'); if(a) a.value=it.description||'';});
+  }
   const box=document.querySelector('.modal-box'); if(box) box.scrollTop=0;
   document.getElementById('modal').classList.add('show');
 }

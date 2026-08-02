@@ -29637,5 +29637,143 @@ const SOZAI = [
   "img": "img/kasenjiki_sanpo.jpg",
   "thumb": "img/kasenjiki_sanpo_thumb.jpg",
   "mono": "img/kasenjiki_sanpo_mono.jpg"
+ },
+ {
+  "id": "rika4_taiseki_ondo_01_air",
+  "title": "試験管を手でにぎると…（導入）",
+  "author": "makabe",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "物の体積と温度",
+  "scenes": [
+   "空気の体積と温度の問題を見いだす"
+  ],
+  "uses": [
+   "うごく",
+   "導入",
+   "問いづくり",
+   "説明"
+  ],
+  "description": "子どもの手が試験管をにぎると、口にはった平らなせっけん水のまくが上にふくらみ、はじめの高さの点線をこえます。答えは出さず「どうして ふくらんだのかな」で止まります。",
+  "howto": "授業の頭に。教科書の導入場面そのままなので、見せてから「どうしてだろう」を子どもに言わせる流れに。",
+  "tags": [
+   "空気",
+   "体積",
+   "温度",
+   "せっけん水",
+   "まく",
+   "膜",
+   "試験管",
+   "あたためる",
+   "ふくらむ",
+   "4年",
+   "理科",
+   "物の体積と温度",
+   "導入",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_taiseki_ondo_01_air.gif",
+  "thumb": "img/rika4_taiseki_ondo_01_air_thumb.jpg",
+  "gifMobile": "img/rika4_taiseki_ondo_01_air_mobile.gif",
+  "mp4": "img/rika4_taiseki_ondo_01_air.mp4",
+  "poster": "img/rika4_taiseki_ondo_01_air_poster.png",
+  "alt": "img/rika4_taiseki_ondo_01_air_alt.txt",
+  "seconds": 7,
+  "phase": "導入"
+ },
+ {
+  "id": "rika4_taiseki_ondo_02_air_matome",
+  "title": "あたためると？ 冷やすと？（まとめ）",
+  "author": "makabe",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "物の体積と温度",
+  "scenes": [
+   "お湯と氷水で体積の変化を比べる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "比較",
+   "説明"
+  ],
+  "description": "お湯（60〜70℃）と氷水に立てた2本の試験管。左のまくはふくらみ、右のまくはへこみます。最後に「空気は あたためると体積がふえ、冷やすと体積がへる」と出て止まります。",
+  "howto": "実験のあとのまとめに。左右を見比べさせてから結論の文を読ませる流れに。",
+  "tags": [
+   "空気",
+   "体積",
+   "温度",
+   "お湯",
+   "氷水",
+   "ビーカー",
+   "試験管",
+   "ふくらむ",
+   "へこむ",
+   "まとめ",
+   "4年",
+   "理科",
+   "物の体積と温度",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_taiseki_ondo_02_air_matome.gif",
+  "thumb": "img/rika4_taiseki_ondo_02_air_matome_thumb.jpg",
+  "gifMobile": "img/rika4_taiseki_ondo_02_air_matome_mobile.gif",
+  "mp4": "img/rika4_taiseki_ondo_02_air_matome.mp4",
+  "poster": "img/rika4_taiseki_ondo_02_air_matome_poster.png",
+  "alt": "img/rika4_taiseki_ondo_02_air_matome_alt.txt",
+  "seconds": 7,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_warizan_hissan_01",
+  "title": "わり算の筆算 たてる・かける・ひく・おろす",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "1けたでわるわり算の筆算",
+  "scenes": [
+   "筆算の手順をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "手順の確認",
+   "説明",
+   "復習"
+  ],
+  "description": "72÷3の筆算が、たてる→かける→ひく→おろすの順に1つずつ書き進みます。右の4つの札が今どの段階かを示し、おろした数は矢印とともに下りてきます。同じ順をもう一度くり返して24になります。",
+  "howto": "手順を教えたあとの確認に。つまずいた子と一緒に見て、今どの段階かを指させる使い方も。",
+  "tags": [
+   "わり算",
+   "筆算",
+   "たてる",
+   "かける",
+   "ひく",
+   "おろす",
+   "72÷3",
+   "商",
+   "手順",
+   "4年",
+   "算数",
+   "1けたでわるわり算の筆算",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_warizan_hissan_01.gif",
+  "thumb": "img/sansu4_warizan_hissan_01_thumb.jpg",
+  "gifMobile": "img/sansu4_warizan_hissan_01_mobile.gif",
+  "mp4": "img/sansu4_warizan_hissan_01.mp4",
+  "poster": "img/sansu4_warizan_hissan_01_poster.png",
+  "alt": "img/sansu4_warizan_hissan_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
  }
 ];
