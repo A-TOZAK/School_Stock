@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英単語フラッシュカード ── 校種・学年べつのランダム出題｜School Stock</title>
+<meta name="description" content="校種と学年をえらぶと、その学年の英単語をランダムに1枚ずつ出すフラッシュカード。英語→日本語・日本語→英語・まぜる。まちがえた語だけもう一周。通信を使わず、この1ページだけで動きます。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="英単語フラッシュカード（校種・学年べつ）｜School Stock">
+<meta property="og:description" content="小学校高学年から中1〜3・高1〜3・社会人・ALTとの会話まで。ランダム出題、まちがえた語だけもう一周。">
+<style>
+
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2F5D9E; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .usebox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; }
+  .usebox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .usebox b.ub-t { display:block; font-size:17px; margin-bottom:6px; }
+  .use-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:8px 18px; font-size:13.5px; }
+  .use-grid b { color:var(--accent); }
+  .note-line { font-size:13px; color:var(--sub); margin:16px 0 0; }
+
+  .monthbox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; background:#faf9fc; }
+  .monthbox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .monthbox b.ub-t { display:block; font-size:17px; margin-bottom:4px; }
+  .monthbox p.mb-note { font-size:13px; color:var(--sub); margin-bottom:14px; }
+  .mgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; }
+  .mbtn { display:flex; flex-direction:column; align-items:center; border:1px solid var(--ink); background:#fff; padding:10px 6px 9px; text-align:center; color:var(--ink); transition:background .15s; }
+  .mbtn:hover { background:var(--accent); color:#fff; }
+  .mbtn b { font-size:17px; }
+  .mbtn span { font-size:10.5px; color:inherit; opacity:0.75; }
+
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .search { flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .search:focus { box-shadow:0 0 0 3px rgba(123,94,167,0.14); }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .sec-note a { font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#d8cfe8; background:#f5f1fa; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .more { font-size:12px; color:var(--sub); flex:1; line-height:1.7; }
+  .more small { font-size:11px; }
+  .lvrow { display:flex; align-items:center; gap:6px; }
+  .lvlabel { font-size:11px; font-weight:700; color:var(--sub); }
+  .lvbtn { flex:1; text-align:center; font-size:12px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:5px 0; }
+  .lvbtn:hover { background:var(--wash); }
+  .acts { display:flex; align-items:center; gap:8px; }
+  .dl { display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; flex:1; }
+  .dl svg { width:12px; height:12px; }
+  .refbox { background:var(--wash); border-radius:4px; padding:22px 24px; margin-top:44px; font-size:13.5px; }
+  .refbox h3 { font-size:16px; margin-bottom:8px; }
+  .refbox ul { margin:10px 0 12px 1.4em; }
+  .refbox li { margin-bottom:4px; }
+  .refbox .small { font-size:12px; color:var(--sub); line-height:1.9; }
+
+
+  .app { max-width:720px; margin:0 auto; }
+  .pick { border:1px solid var(--ink); padding:16px 18px; margin:20px 0 10px; }
+  .pick h3 { font-size:13px; letter-spacing:0.16em; color:var(--sub); margin-bottom:10px; }
+  .row { display:flex; flex-wrap:wrap; gap:8px; margin-bottom:14px; }
+  .chip { font-family:inherit; font-size:14px; font-weight:700; padding:9px 14px; cursor:pointer;
+          border:1px solid var(--ink); background:#fff; color:var(--ink); }
+  .chip.on { background:var(--black); color:#fff; }
+  .chip small { display:block; font-size:10.5px; font-weight:400; opacity:.75; letter-spacing:.04em; }
+  .start { width:100%; font-family:inherit; font-size:17px; font-weight:700; padding:15px;
+           background:var(--accent); color:#fff; border:none; cursor:pointer; letter-spacing:.06em; }
+  .start:disabled { background:#c9ccd1; cursor:default; }
+  .hint { font-size:12.5px; color:var(--sub); margin-top:10px; line-height:1.8; }
+
+  .stage { display:none; }
+  .stage.on { display:block; }
+  .bar { display:flex; align-items:center; gap:12px; font-size:12.5px; color:var(--sub); margin:18px 0 10px; }
+  .bar b { color:var(--ink); }
+  .bar .sp { margin-left:auto; }
+  .track { height:4px; background:var(--line); margin-bottom:16px; }
+  .track i { display:block; height:100%; background:var(--accent); transition:width .2s; }
+
+  .card { border:1px solid var(--ink); min-height:250px; display:flex; flex-direction:column;
+          align-items:center; justify-content:center; padding:28px 20px; text-align:center;
+          cursor:pointer; user-select:none; background:#fff; }
+  .card .q { font-size:clamp(30px,8vw,46px); font-weight:700; line-height:1.25; word-break:break-word; }
+  .card .q.ja { font-size:clamp(24px,6vw,34px); }
+  .card .sub { font-size:13px; color:var(--sub); margin-top:14px; letter-spacing:.06em; }
+  .card .ans { display:none; }
+  .card.flip .ans { display:block; }
+  .card.flip .tap { display:none; }
+  .card .ans .a { font-size:clamp(26px,7vw,40px); font-weight:700; color:var(--accent); line-height:1.3; word-break:break-word; }
+  .card .ans .clue { font-size:14px; color:#3d4148; margin-top:14px; line-height:1.7; max-width:34em; }
+  .acts2 { display:flex; gap:10px; margin-top:14px; }
+  .acts2 button { flex:1; font-family:inherit; font-size:15px; font-weight:700; padding:14px 6px;
+                  border:1px solid var(--ink); background:#fff; cursor:pointer; }
+  .acts2 .ok { background:var(--black); color:#fff; border-color:var(--black); }
+  .acts2 button:disabled { opacity:.35; cursor:default; }
+  .keys { font-size:11.5px; color:var(--sub); margin-top:10px; text-align:center; letter-spacing:.04em; }
+  @media (max-width:700px){ .keys { display:none; } }
+
+  .result { text-align:center; padding:26px 0; }
+  .result .big { font-size:44px; font-weight:700; }
+  .result p { color:var(--sub); font-size:14px; margin:8px 0 20px; }
+  .wrongs { text-align:left; border:1px solid var(--line); padding:14px 16px; margin-bottom:18px; }
+  .wrongs h4 { font-size:12px; letter-spacing:.16em; color:var(--sub); margin-bottom:8px; }
+  .wrongs div { font-size:14.5px; padding:3px 0; }
+  .wrongs .en { font-weight:700; }
+
+</style>
+</head><body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../prints/kokugo/">国語</a>
+      <a href="../../prints/rika/">理科</a>
+      <a href="../../prints/sansu-ensyu/">算数・演習</a>
+      <a href="../../prints/atama/">あたまの準備</a>
+      <a href="../../prints/english-puzzles/">英語パズル</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">素材</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能</small></a>
+    <a href="../../prints/sansu/">算数プリント（式と言葉）<small>実態別・レベル1〜4</small></a>
+    <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>基礎〜まとめの5枚</small></a>
+    <a href="../../prints/shakai/">社会プリント<small>資料の読み取り</small></a>
+    <a href="../../prints/taiiku/">体育 学習カード<small>単元カード・ふりかえりカード</small></a>
+    <a href="../../prints/atama/">あたまのじゅんび運動<small>すきま5分の認知機能トレーニング</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+
+<div class="app">
+  <div class="crumb"><a href="../../">棚</a> ／ 英単語フラッシュカード</div>
+  <div class="head">
+    <span class="kicker">TOOL｜ENGLISH</span>
+    <h1>英単語フラッシュカード</h1>
+    <p class="lead">「英語のことばパズル」と<b>同じ単語</b>を、ランダムに1枚ずつ出します。校種と学年をえらんで、めくって、わかった・もう一度 をおすだけ。まちがえた語は最後にもう一周します。<b>通信は使いません</b>（このページだけで動きます）。</p>
+  </div>
+
+  <div class="stage on" id="stage-pick">
+    <div class="pick">
+      <h3>1　校種と学年</h3>
+      <div class="row" id="lv"></div>
+      <h3>2　出しかた</h3>
+      <div class="row" id="dir"></div>
+      <h3>3　枚数</h3>
+      <div class="row" id="num"></div>
+      <button class="start" id="go">はじめる</button>
+      <p class="hint">えらんだ設定はこの端末に記録されます。<br>
+        パソコンは キーボードでも：<b>スペース</b>＝めくる／<b>→</b>＝わかった／<b>←</b>＝もう一度</p>
+    </div>
+  </div>
+
+  <div class="stage" id="stage-play">
+    <div class="bar"><b id="pos">1 / 10</b><span id="lvname"></span>
+      <span class="sp">わかった <b id="okn">0</b>　もう一度 <b id="ngn">0</b></span></div>
+    <div class="track"><i id="prog" style="width:0"></i></div>
+    <div class="card" id="card">
+      <div class="q" id="q"></div>
+      <div class="sub tap">タップで こたえ</div>
+      <div class="ans"><div class="a" id="a"></div><div class="clue" id="clue"></div></div>
+    </div>
+    <div class="acts2">
+      <button id="ng" disabled>もう一度</button>
+      <button class="ok" id="ok" disabled>わかった</button>
+    </div>
+    <p class="keys">スペース＝めくる　／　→＝わかった　／　←＝もう一度　／　Esc＝やめる</p>
+  </div>
+
+  <div class="stage" id="stage-done">
+    <div class="result">
+      <div class="big" id="score"></div>
+      <p id="scoresub"></p>
+    </div>
+    <div class="wrongs" id="wrongbox" style="display:none">
+      <h4>もう一度 の語</h4><div id="wronglist"></div>
+    </div>
+    <div class="acts2">
+      <button id="again">まちがえた語だけ</button>
+      <button class="ok" id="back">えらび直す</button>
+    </div>
+  </div>
+</div>
+
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../">棚トップ</a>
+        <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../prints/rika/">理科プリント</a>
+        <a href="../../prints/sansu/">算数プリント（式と言葉）</a>
+        <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="../../prints/shakai/">社会プリント</a>
+        <a href="../../prints/taiiku/">体育 学習カード</a>
+        <a href="../../prints/atama/">あたまのじゅんび運動</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../sozai/">授業イラスト素材集</a>
+        <a href="../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+
+(function(){
+  var DATA = [{"id": "elementary", "school": "小学校", "grade": "高学年", "label": "小学校 高学年", "en": "Elementary (Grades 5–6)", "basis": "", "words": [{"w": "apple", "ja": "りんご", "clue": "赤くて まるい くだもの"}, {"w": "rabbit", "ja": "うさぎ", "clue": "耳が長くて とびはねる 動物"}, {"w": "teacher", "ja": "先生", "clue": "学校で 教えてくれる 人"}, {"w": "school", "ja": "学校", "clue": "みんなが 勉強する ところ"}, {"w": "soccer", "ja": "サッカー", "clue": "ボールを 足でける スポーツ"}, {"w": "music", "ja": "音楽", "clue": "歌を うたう 教科"}, {"w": "summer", "ja": "夏", "clue": "いちばん あつい 季節"}, {"w": "winter", "ja": "冬", "clue": "いちばん さむい 季節"}, {"w": "friend", "ja": "友だち", "clue": "いっしょに あそぶ 人"}, {"w": "pencil", "ja": "えんぴつ", "clue": "字を 書く どうぐ"}, {"w": "orange", "ja": "オレンジ", "clue": "オレンジ色の くだもの"}, {"w": "kitchen", "ja": "台所", "clue": "料理を する へや"}, {"w": "station", "ja": "駅", "clue": "電車に のる ところ"}, {"w": "doctor", "ja": "医者", "clue": "病気を みてくれる 人"}, {"w": "library", "ja": "図書館", "clue": "本が たくさん ある ところ"}, {"w": "dinner", "ja": "夕食", "clue": "夜に 食べる ごはん"}, {"w": "brother", "ja": "兄・弟", "clue": "男の きょうだい"}, {"w": "morning", "ja": "朝", "clue": "朝の 時間"}, {"w": "animal", "ja": "動物", "clue": "犬や ねこなどの なかま"}, {"w": "garden", "ja": "庭", "clue": "花や 野菜を そだてる ところ"}, {"w": "baseball", "ja": "野球", "clue": "バットで ボールを うつ スポーツ"}, {"w": "science", "ja": "理科", "clue": "じっけんを する 教科"}, {"w": "english", "ja": "英語", "clue": "えいごの 教科"}, {"w": "lunch", "ja": "昼食", "clue": "昼に 食べる ごはん"}, {"w": "bread", "ja": "パン", "clue": "こむぎで つくる やわらかい 食べもの"}, {"w": "water", "ja": "水", "clue": "のんだり あらったり する もの"}, {"w": "flower", "ja": "花", "clue": "はるに さく きれいな もの"}, {"w": "bird", "ja": "鳥", "clue": "そらを とぶ 生きもの"}, {"w": "river", "ja": "川", "clue": "水が ながれている ところ"}, {"w": "mountain", "ja": "山", "clue": "とても 高い ところ"}, {"w": "family", "ja": "家族", "clue": "おとうさん・おかあさん・きょうだい"}, {"w": "sister", "ja": "姉・妹", "clue": "女の きょうだい"}, {"w": "homework", "ja": "宿題", "clue": "家で する べんきょう"}, {"w": "bicycle", "ja": "自転車", "clue": "ペダルを こいで すすむ のりもの"}, {"w": "hospital", "ja": "病院", "clue": "びょうきの人が 行く ところ"}, {"w": "park", "ja": "公園", "clue": "あそんだり さんぽしたり する ところ"}, {"w": "desk", "ja": "つくえ", "clue": "べんきょうする ときに つかう もの"}, {"w": "window", "ja": "窓", "clue": "そとが 見える ところ"}, {"w": "umbrella", "ja": "かさ", "clue": "雨の日に さす もの"}, {"w": "basket", "ja": "かご", "clue": "ものを 入れて はこぶ もの"}, {"w": "season", "ja": "季節", "clue": "春・夏・秋・冬の ひとつ"}, {"w": "holiday", "ja": "休日", "clue": "学校が やすみの 日"}, {"w": "present", "ja": "プレゼント", "clue": "たんじょう日に わたす もの"}, {"w": "letter", "ja": "手紙", "clue": "紙に 書いて おくる もの"}]}, {"id": "jhs1", "school": "中学校", "grade": "1年", "label": "中学1年", "en": "Junior High 1 (A1)", "basis": "福岡県公立高入試（R6〜R8）に3年とも出た語のうち、NGSL上位500の基本語。手がかりは日本語です。", "words": [{"w": "make", "ja": "作る", "clue": "何かを つくる"}, {"w": "want", "ja": "ほしい", "clue": "〜が ほしいと 思う"}, {"w": "talk", "ja": "話す", "clue": "だれかと 話す"}, {"w": "school", "ja": "学校", "clue": "みんなが 勉強する ところ"}, {"w": "visit", "ja": "訪れる", "clue": "だれかの 家や 場所へ 行く"}, {"w": "people", "ja": "人々", "clue": "たくさんの 人"}, {"w": "question", "ja": "質問", "clue": "わからないことを たずねる ことば"}, {"w": "learn", "ja": "学ぶ", "clue": "新しいことを 身につける"}, {"w": "enjoy", "ja": "楽しむ", "clue": "楽しい 時間を すごす"}, {"w": "think", "ja": "考える", "clue": "頭の中で 考える"}, {"w": "tell", "ja": "伝える", "clue": "だれかに 話して 伝える"}, {"w": "find", "ja": "見つける", "clue": "さがして 見つける"}, {"w": "show", "ja": "見せる", "clue": "だれかに 見せる"}, {"w": "feel", "ja": "感じる", "clue": "心や 体で 感じる"}, {"w": "study", "ja": "勉強する", "clue": "テストや 授業のために べんきょうする"}, {"w": "today", "ja": "今日", "clue": "きょうの こと"}, {"w": "need", "ja": "必要とする", "clue": "どうしても いる"}, {"w": "great", "ja": "すばらしい", "clue": "とても すばらしい"}, {"w": "together", "ja": "一緒に", "clue": "みんなで いっしょに"}, {"w": "write", "ja": "書く", "clue": "紙に 字を かく"}, {"w": "understand", "ja": "理解する", "clue": "話の 意味が わかる"}, {"w": "friend", "ja": "友達", "clue": "なかの よい 相手"}, {"w": "student", "ja": "生徒", "clue": "学校で 学ぶ 人"}, {"w": "become", "ja": "なる", "clue": "だんだん 〜に なる"}, {"w": "good", "ja": "よい", "clue": "よい・すぐれている"}, {"w": "know", "ja": "知っている", "clue": "そのことを 知っている"}, {"w": "take", "ja": "取る", "clue": "手に 取る・持っていく"}, {"w": "look", "ja": "見る", "clue": "そちらを 見る"}, {"w": "year", "ja": "年", "clue": "1月から 12月までの ながさ"}, {"w": "time", "ja": "時間", "clue": "時計が しめす もの"}, {"w": "thing", "ja": "もの", "clue": "もの・こと"}, {"w": "come", "ja": "来る", "clue": "こちらへ 来る"}, {"w": "kind", "ja": "親切な", "clue": "人に やさしい"}, {"w": "live", "ja": "住む", "clue": "その町に すんでいる"}, {"w": "start", "ja": "始める", "clue": "始める・出発する"}, {"w": "high", "ja": "高い", "clue": "高いところに ある"}, {"w": "week", "ja": "週", "clue": "月曜日から 日曜日までの ながさ"}, {"w": "important", "ja": "大切な", "clue": "とても 大切な"}, {"w": "thank", "ja": "感謝する", "clue": "ありがとうと 言う"}, {"w": "month", "ja": "月", "clue": "1年に 12ある ながさ"}, {"w": "world", "ja": "世界", "clue": "地球ぜんたい"}, {"w": "member", "ja": "一員", "clue": "そのチームに 入っている人"}, {"w": "decide", "ja": "決める", "clue": "どちらにするか 決める"}, {"w": "help", "ja": "助ける", "clue": "こまっている人を たすける"}, {"w": "idea", "ja": "考え", "clue": "こうしたら という 考え"}, {"w": "experience", "ja": "経験", "clue": "じっさいに やってみたこと"}, {"w": "stay", "ja": "とまる", "clue": "そこに とまる"}, {"w": "play", "ja": "遊ぶ", "clue": "あそぶ・競技をする"}, {"w": "believe", "ja": "信じる", "clue": "本当だと 思う"}, {"w": "watch", "ja": "見る", "clue": "じっと 見る"}, {"w": "class", "ja": "クラス", "clue": "同じ教室で 学ぶ なかま"}, {"w": "agree", "ja": "賛成する", "clue": "同じ考えだと 言う"}, {"w": "example", "ja": "例", "clue": "たとえば、として 出す もの"}, {"w": "different", "ja": "ちがう", "clue": "おなじでは ない"}, {"w": "event", "ja": "行事", "clue": "行事・できごと"}, {"w": "country", "ja": "国", "clue": "日本や アメリカなどの まとまり"}, {"w": "grow", "ja": "育つ", "clue": "そだつ・大きくなる"}, {"w": "join", "ja": "参加する", "clue": "なかまに 入る"}, {"w": "special", "ja": "特別な", "clue": "ふつうとは ちがう"}, {"w": "remember", "ja": "覚えている", "clue": "わすれずに おぼえている"}]}, {"id": "jhs2", "school": "中学校", "grade": "2年", "label": "中学2年", "en": "Junior High 2 (A1+)", "basis": "福岡県公立高入試に出た語のうち、NGSL 501〜1200位の語。手がかりはやさしい英語1文です。", "words": [{"w": "happy", "ja": "幸せな", "clue": "You feel this when something good happens."}, {"w": "difficult", "ja": "難しい", "clue": "Not easy."}, {"w": "culture", "ja": "文化", "clue": "The way people live in a country."}, {"w": "memory", "ja": "記憶・思い出", "clue": "Something you remember."}, {"w": "practice", "ja": "練習する", "clue": "To do something again and again to get better."}, {"w": "tomorrow", "ja": "明日", "clue": "The day after today."}, {"w": "restaurant", "ja": "レストラン", "clue": "A place where you eat and pay for your food."}, {"w": "improve", "ja": "改善する", "clue": "To make something better."}, {"w": "finish", "ja": "終える", "clue": "To come to the end of something."}, {"w": "goal", "ja": "目標", "clue": "The thing you want to reach."}, {"w": "wonderful", "ja": "すばらしい", "clue": "Very good."}, {"w": "dinner", "ja": "夕食", "clue": "The food you eat at night."}, {"w": "photo", "ja": "写真", "clue": "A picture you take and keep."}, {"w": "wish", "ja": "願う", "clue": "To hope for something."}, {"w": "movie", "ja": "映画", "clue": "A long story you watch, not read."}, {"w": "speech", "ja": "スピーチ", "clue": "A talk you give in front of people."}, {"w": "check", "ja": "確認する", "clue": "To look at something to see if it is right."}, {"w": "everyone", "ja": "みんな", "clue": "All the people."}, {"w": "trip", "ja": "旅行", "clue": "You go to another place and come back."}, {"w": "dream", "ja": "夢", "clue": "The pictures you see when you sleep."}, {"w": "listen", "ja": "聞く", "clue": "To try to hear something."}, {"w": "opinion", "ja": "意見", "clue": "What you think about something."}, {"w": "forget", "ja": "忘れる", "clue": "To not remember."}, {"w": "surprise", "ja": "驚き", "clue": "Something you did not expect."}, {"w": "true", "ja": "本当の", "clue": "Not wrong."}, {"w": "field", "ja": "野原・分野", "clue": "A wide open place in the country."}, {"w": "teacher", "ja": "先生", "clue": "A person who teaches at school."}, {"w": "finally", "ja": "ついに", "clue": "At the end, after a long time."}, {"w": "realize", "ja": "気づく", "clue": "To understand something suddenly."}, {"w": "summer", "ja": "夏", "clue": "The hottest season."}, {"w": "smile", "ja": "ほほえむ", "clue": "To make a happy face."}, {"w": "travel", "ja": "旅行する", "clue": "To go to a far place."}, {"w": "teach", "ja": "教える", "clue": "To help someone learn."}, {"w": "nature", "ja": "自然", "clue": "Trees, animals and the sea."}, {"w": "alone", "ja": "ひとりで", "clue": "With no other person."}, {"w": "tree", "ja": "木", "clue": "A big plant with green leaves."}, {"w": "useful", "ja": "役に立つ", "clue": "It helps you do something."}, {"w": "famous", "ja": "有名な", "clue": "Known by many people."}, {"w": "skill", "ja": "技能", "clue": "Something you can do well."}, {"w": "technology", "ja": "科学技術", "clue": "New machines and computers."}, {"w": "front", "ja": "前", "clue": "The side that faces you."}, {"w": "foreign", "ja": "外国の", "clue": "From another country."}, {"w": "enter", "ja": "入る", "clue": "To go into a place."}, {"w": "station", "ja": "駅", "clue": "A place where trains stop."}, {"w": "interview", "ja": "面接・取材", "clue": "To ask someone questions."}, {"w": "amount", "ja": "量", "clue": "How much there is."}, {"w": "national", "ja": "国の", "clue": "Of the whole country."}, {"w": "animal", "ja": "動物", "clue": "A dog or a horse, for example."}, {"w": "similar", "ja": "似ている", "clue": "Almost the same."}, {"w": "address", "ja": "住所", "clue": "Where you live, in words."}, {"w": "street", "ja": "通り", "clue": "A road in a town."}, {"w": "prepare", "ja": "準備する", "clue": "To get ready."}, {"w": "worry", "ja": "心配する", "clue": "To think that something bad may happen."}, {"w": "introduce", "ja": "紹介する", "clue": "To tell people your name."}, {"w": "imagine", "ja": "想像する", "clue": "To make a picture in your mind."}, {"w": "university", "ja": "大学", "clue": "A school after high school."}, {"w": "weather", "ja": "天気", "clue": "Is it hot or cold today?"}, {"w": "health", "ja": "健康", "clue": "Being well in body and mind."}, {"w": "chance", "ja": "機会", "clue": "A time when you can do something."}, {"w": "effort", "ja": "努力", "clue": "Hard work you put in."}]}, {"id": "jhs3", "school": "中学校", "grade": "3年", "label": "中学3年", "en": "Junior High 3 (A2)", "basis": "福岡県公立高入試に出た語のうち、NGSL 1201位以下の語。入試本番で差がつく語です。", "words": [{"w": "lunch", "ja": "昼食", "clue": "The meal you eat in the middle of the day."}, {"w": "delicious", "ja": "とてもおいしい", "clue": "Very good to eat."}, {"w": "museum", "ja": "博物館", "clue": "A building where you can see old or famous things."}, {"w": "friendship", "ja": "友情", "clue": "The feeling between good friends."}, {"w": "rice", "ja": "米", "clue": "The white food people eat every day in Japan."}, {"w": "classmate", "ja": "同級生", "clue": "A student in the same class as you."}, {"w": "cook", "ja": "料理する", "clue": "To make food with heat."}, {"w": "website", "ja": "ウェブサイト", "clue": "A place on the internet you can visit."}, {"w": "glad", "ja": "うれしい", "clue": "Happy about something."}, {"w": "nervous", "ja": "緊張して", "clue": "Worried before something important."}, {"w": "topic", "ja": "話題", "clue": "The subject you talk or write about."}, {"w": "afraid", "ja": "こわい", "clue": "Feeling fear."}, {"w": "active", "ja": "活発な", "clue": "Moving and doing a lot."}, {"w": "friendly", "ja": "友好的な", "clue": "Kind to other people."}, {"w": "instrument", "ja": "楽器", "clue": "A thing you play music with."}, {"w": "unique", "ja": "独特の", "clue": "The only one of its kind."}, {"w": "contest", "ja": "コンテスト", "clue": "An event where people try to win."}, {"w": "internet", "ja": "インターネット", "clue": "The system that joins computers around the world."}, {"w": "baseball", "ja": "野球", "clue": "A sport in which you hit a ball and run."}, {"w": "festival", "ja": "祭り", "clue": "A special day with music and food."}, {"w": "lesson", "ja": "授業", "clue": "A time when you learn something."}, {"w": "volunteer", "ja": "ボランティア", "clue": "A person who helps without being paid."}, {"w": "meal", "ja": "食事", "clue": "Breakfast, lunch or dinner."}, {"w": "flight", "ja": "空の便", "clue": "A trip by plane."}, {"w": "online", "ja": "オンラインの", "clue": "Using the internet."}, {"w": "sweet", "ja": "あまい", "clue": "Tasting like sugar."}, {"w": "statue", "ja": "像", "clue": "A stone or metal figure of a person."}, {"w": "calendar", "ja": "カレンダー", "clue": "It shows the days of the month."}, {"w": "locate", "ja": "位置を見つける", "clue": "To find where something is."}, {"w": "metal", "ja": "金属", "clue": "Iron, gold or silver."}, {"w": "proud", "ja": "誇りに思う", "clue": "Happy about something you did."}, {"w": "smartphone", "ja": "スマートフォン", "clue": "A phone you can use to search."}, {"w": "device", "ja": "装置", "clue": "A small machine made for one job."}, {"w": "plastic", "ja": "プラスチック", "clue": "A light material made in a factory."}, {"w": "solve", "ja": "解決する", "clue": "To find the answer to a problem."}, {"w": "connect", "ja": "つなぐ", "clue": "To join two things."}, {"w": "healthy", "ja": "健康的な", "clue": "Good for your body."}, {"w": "visitor", "ja": "訪問者", "clue": "A person who comes to see a place."}, {"w": "twice", "ja": "2回", "clue": "Two times."}, {"w": "theater", "ja": "劇場", "clue": "A place where you watch a play."}, {"w": "entrance", "ja": "入口", "clue": "The way into a building."}, {"w": "cousin", "ja": "いとこ", "clue": "The child of your father's brother."}, {"w": "tournament", "ja": "トーナメント", "clue": "A series of games to find the winner."}, {"w": "airport", "ja": "空港", "clue": "A place where planes take off."}, {"w": "stadium", "ja": "競技場", "clue": "A big place where you watch sports."}, {"w": "textbook", "ja": "教科書", "clue": "The book you use in class."}, {"w": "colorful", "ja": "色あざやかな", "clue": "Having many colors."}, {"w": "vacation", "ja": "休暇", "clue": "A long holiday."}, {"w": "bean", "ja": "豆", "clue": "A small seed you can eat."}, {"w": "driver", "ja": "運転手", "clue": "A person who drives a car."}, {"w": "shock", "ja": "衝撃", "clue": "A sudden strong surprise."}, {"w": "adjust", "ja": "調整する", "clue": "To change something a little to make it fit."}, {"w": "pray", "ja": "祈る", "clue": "To speak to a god in your mind."}, {"w": "bell", "ja": "ベル", "clue": "It rings at the start of class."}, {"w": "lucky", "ja": "幸運な", "clue": "Having good luck."}, {"w": "spring", "ja": "春", "clue": "The season after winter."}, {"w": "winter", "ja": "冬", "clue": "The coldest season."}, {"w": "bottle", "ja": "びん", "clue": "You keep a drink in it."}, {"w": "excuse", "ja": "すみません", "clue": "'___ me' — you say this before you ask a question."}, {"w": "hike", "ja": "ハイキングする", "clue": "To walk a long way in nature."}]}, {"id": "hs1", "school": "高校", "grade": "1年", "label": "高校1年", "en": "High School 1 (B1)", "basis": "共通テスト英語リーディング（R6〜R8）に3年とも出た語のうち、NGSL上位1800の基本語。", "words": [{"w": "option", "ja": "選択肢", "clue": "One of the things you can choose."}, {"w": "comment", "ja": "コメント", "clue": "Something you say about a thing."}, {"w": "follow", "ja": "後に続く", "clue": "To go after someone or something."}, {"w": "mind", "ja": "心・精神", "clue": "The part of you that thinks."}, {"w": "business", "ja": "商売・事業", "clue": "The work of buying and selling."}, {"w": "order", "ja": "注文する", "clue": "To ask for something in a shop or a restaurant."}, {"w": "create", "ja": "創り出す", "clue": "To make something new."}, {"w": "likely", "ja": "ありそうな", "clue": "Probably going to happen."}, {"w": "focus", "ja": "集中する", "clue": "To give all your attention to one thing."}, {"w": "cost", "ja": "費用", "clue": "The amount of money you must pay."}, {"w": "include", "ja": "含む", "clue": "To have something as a part."}, {"w": "happen", "ja": "起こる", "clue": "To take place."}, {"w": "task", "ja": "課題・仕事", "clue": "A piece of work you must do."}, {"w": "provide", "ja": "提供する", "clue": "To give what is needed."}, {"w": "effect", "ja": "影響", "clue": "The change that something causes."}, {"w": "benefit", "ja": "利益", "clue": "A good result you get from something."}, {"w": "mention", "ja": "言及する", "clue": "To say something briefly."}, {"w": "consider", "ja": "熟考する", "clue": "To think about something carefully."}, {"w": "notice", "ja": "気づく", "clue": "To see or become aware of something."}, {"w": "develop", "ja": "発展させる", "clue": "To grow or make better over time."}, {"w": "require", "ja": "必要とする", "clue": "To need something."}, {"w": "reduce", "ja": "減らす", "clue": "To make smaller in amount."}, {"w": "various", "ja": "さまざまな", "clue": "Of many different kinds."}, {"w": "physical", "ja": "身体の", "clue": "About the body, not the mind."}, {"w": "story", "ja": "話・物語", "clue": "Something that is told or written."}, {"w": "team", "ja": "チーム", "clue": "A group that plays or works together."}, {"w": "close", "ja": "閉じる", "clue": "To shut something."}, {"w": "child", "ja": "子ども", "clue": "A young person."}, {"w": "move", "ja": "動く", "clue": "To go from one place to another."}, {"w": "state", "ja": "述べる", "clue": "To say something clearly."}, {"w": "cover", "ja": "おおう", "clue": "To put something over a thing."}, {"w": "level", "ja": "水準", "clue": "How high or how good something is."}, {"w": "matter", "ja": "事柄", "clue": "Something you must think about."}, {"w": "explain", "ja": "説明する", "clue": "To make something clear to others."}, {"w": "item", "ja": "品目", "clue": "One thing in a list."}, {"w": "service", "ja": "サービス", "clue": "Work done for other people."}, {"w": "although", "ja": "〜だけれども", "clue": "Even if it is true that."}, {"w": "rate", "ja": "割合", "clue": "How fast or how often something happens."}, {"w": "appear", "ja": "現れる", "clue": "To come into sight."}, {"w": "available", "ja": "利用できる", "clue": "Ready to be used or bought."}, {"w": "describe", "ja": "描写する", "clue": "To say what something is like."}, {"w": "complete", "ja": "完成させる", "clue": "To finish all of it."}, {"w": "tend", "ja": "〜しがちだ", "clue": "To do something often or usually."}, {"w": "program", "ja": "計画・番組", "clue": "A plan of events or a set of steps."}, {"w": "control", "ja": "支配する", "clue": "To make something do what you want."}, {"w": "range", "ja": "範囲", "clue": "The area between two limits."}, {"w": "stage", "ja": "段階", "clue": "One step in a long process."}, {"w": "instead", "ja": "代わりに", "clue": "In place of something else."}, {"w": "accept", "ja": "受け入れる", "clue": "To say yes to something."}, {"w": "ability", "ja": "能力", "clue": "The power to do something."}, {"w": "energy", "ja": "エネルギー", "clue": "The power to work or move."}, {"w": "avoid", "ja": "避ける", "clue": "To keep away from something."}, {"w": "promote", "ja": "促進する", "clue": "To help something grow or spread."}, {"w": "attention", "ja": "注意", "clue": "Thinking hard about one thing."}, {"w": "popular", "ja": "人気のある", "clue": "Liked by many people."}, {"w": "natural", "ja": "自然の", "clue": "Made by nature, not by people."}, {"w": "satisfy", "ja": "満足させる", "clue": "To make someone pleased."}, {"w": "increase", "ja": "増える", "clue": "To become larger in number."}, {"w": "suggest", "ja": "提案する", "clue": "To offer an idea for others to think about."}, {"w": "compare", "ja": "比較する", "clue": "To look at how two things are the same or different."}]}, {"id": "hs2", "school": "高校", "grade": "2年", "label": "高校2年", "en": "High School 2 (B1+)", "basis": "共通テストに出た語のうち、NGSL 1801〜2800位の語。読解で足を止められやすい語です。", "words": [{"w": "outline", "ja": "概要", "clue": "A short plan that shows the main points."}, {"w": "wander", "ja": "さまよう", "clue": "To walk around with no clear goal."}, {"w": "creature", "ja": "生き物", "clue": "Any living animal."}, {"w": "phrase", "ja": "語句", "clue": "A small group of words."}, {"w": "fascinate", "ja": "魅了する", "clue": "To interest someone very much."}, {"w": "essay", "ja": "小論文", "clue": "A short piece of writing on one subject."}, {"w": "slide", "ja": "スライド", "clue": "One page of a presentation."}, {"w": "draft", "ja": "下書き", "clue": "A first version of a piece of writing."}, {"w": "assistance", "ja": "援助", "clue": "Help."}, {"w": "passage", "ja": "一節", "clue": "A short part of a text."}, {"w": "emergency", "ja": "緊急事態", "clue": "A sudden dangerous situation."}, {"w": "routine", "ja": "日課", "clue": "Things you do regularly in the same way."}, {"w": "emotion", "ja": "感情", "clue": "A strong feeling."}, {"w": "injury", "ja": "けが", "clue": "Damage to your body."}, {"w": "encounter", "ja": "遭遇する", "clue": "To meet something by chance."}, {"w": "alter", "ja": "変更する", "clue": "To change something a little."}, {"w": "recruit", "ja": "募集する", "clue": "To find new people to join a group."}, {"w": "quantity", "ja": "量", "clue": "How much there is of something."}, {"w": "rescue", "ja": "救助する", "clue": "To save someone from danger."}, {"w": "priority", "ja": "優先事項", "clue": "The thing that must be done first."}, {"w": "habit", "ja": "習慣", "clue": "Something you do often without thinking."}, {"w": "incident", "ja": "出来事", "clue": "An event, usually a bad one."}, {"w": "sufficient", "ja": "十分な", "clue": "As much as is needed."}, {"w": "valuable", "ja": "貴重な", "clue": "Worth a lot."}, {"w": "consume", "ja": "消費する", "clue": "To use up or eat something."}, {"w": "nearby", "ja": "近くの", "clue": "Close to this place."}, {"w": "journalist", "ja": "記者", "clue": "A person who writes the news."}, {"w": "rapidly", "ja": "急速に", "clue": "Very quickly."}, {"w": "consult", "ja": "相談する", "clue": "To ask an expert for advice."}, {"w": "paragraph", "ja": "段落", "clue": "A group of sentences on one idea."}, {"w": "regularly", "ja": "定期的に", "clue": "At the same times, again and again."}, {"w": "discovery", "ja": "発見", "clue": "Finding something for the first time."}, {"w": "regret", "ja": "後悔する", "clue": "To feel sorry about what you did."}, {"w": "awareness", "ja": "認識", "clue": "Knowing that something exists."}, {"w": "motivate", "ja": "動機づける", "clue": "To make someone want to act."}, {"w": "boost", "ja": "押し上げる", "clue": "To make something stronger."}, {"w": "anxious", "ja": "不安な", "clue": "Worried about what may happen."}, {"w": "athlete", "ja": "運動選手", "clue": "A person trained in sport."}, {"w": "framework", "ja": "枠組み", "clue": "The basic structure of an idea."}, {"w": "perception", "ja": "認識・見方", "clue": "The way you see or understand."}, {"w": "creative", "ja": "創造的な", "clue": "Able to make new things."}, {"w": "burden", "ja": "負担", "clue": "A heavy load or duty."}, {"w": "species", "ja": "種", "clue": "One kind of living thing."}, {"w": "salary", "ja": "給料", "clue": "The money you are paid for work."}, {"w": "expose", "ja": "さらす", "clue": "To let something be seen."}, {"w": "remark", "ja": "発言", "clue": "A short thing you say."}, {"w": "enhance", "ja": "高める", "clue": "To make something better."}, {"w": "install", "ja": "設置する", "clue": "To put a machine or program in place."}, {"w": "climate", "ja": "気候", "clue": "The usual weather of a place."}, {"w": "exhibit", "ja": "展示する", "clue": "To show something in public."}, {"w": "comfort", "ja": "快適さ", "clue": "A feeling of being at ease."}, {"w": "proof", "ja": "証拠", "clue": "Facts that show something is true."}, {"w": "submit", "ja": "提出する", "clue": "To send in a paper or a plan."}, {"w": "innovation", "ja": "革新", "clue": "A new way of doing something."}, {"w": "inspire", "ja": "奮い立たせる", "clue": "To make someone want to do great things."}, {"w": "perceive", "ja": "知覚する", "clue": "To become aware of something."}, {"w": "solid", "ja": "固体の", "clue": "Hard and firm, not liquid."}, {"w": "exposure", "ja": "さらされること", "clue": "Being open to something."}, {"w": "mature", "ja": "成熟した", "clue": "Fully grown or developed."}, {"w": "update", "ja": "更新する", "clue": "To make something the newest."}]}, {"id": "hs3", "school": "高校", "grade": "3年", "label": "高校3年", "en": "High School 3 (B2)", "basis": "共通テストに出た語のうち、NGSL外またはNAWL（学術語）の語。難関入試レベルです。", "words": [{"w": "aspect", "ja": "側面", "clue": "One part or side of a situation."}, {"w": "harmful", "ja": "有害な", "clue": "Causing damage or hurt."}, {"w": "lifestyle", "ja": "生活様式", "clue": "The way a person lives."}, {"w": "artificial", "ja": "人工の", "clue": "Made by people, not by nature."}, {"w": "sculpture", "ja": "彫刻", "clue": "A work of art made of stone or metal."}, {"w": "insect", "ja": "昆虫", "clue": "A small animal with six legs."}, {"w": "graduation", "ja": "卒業", "clue": "The ceremony when you finish school."}, {"w": "ceiling", "ja": "天井", "clue": "The surface above you in a room."}, {"w": "activate", "ja": "起動させる", "clue": "To make something start working."}, {"w": "rehearsal", "ja": "リハーサル", "clue": "A practice before a real performance."}, {"w": "absorb", "ja": "吸収する", "clue": "To take in a liquid or new information."}, {"w": "tolerate", "ja": "我慢する", "clue": "To accept something you do not like."}, {"w": "popularity", "ja": "人気", "clue": "The state of being liked by many people."}, {"w": "recipe", "ja": "レシピ", "clue": "Instructions for cooking a dish."}, {"w": "reconsider", "ja": "再考する", "clue": "To think about a decision again."}, {"w": "conference", "ja": "会議", "clue": "A large formal meeting."}, {"w": "instructor", "ja": "指導者", "clue": "A person who teaches a skill."}, {"w": "tolerance", "ja": "寛容", "clue": "Being ready to accept people who are different."}, {"w": "respondent", "ja": "回答者", "clue": "A person who answers a survey."}, {"w": "campus", "ja": "キャンパス", "clue": "The land and buildings of a university."}, {"w": "workshop", "ja": "講習会", "clue": "A meeting where people learn by doing."}, {"w": "ongoing", "ja": "進行中の", "clue": "Still happening now."}, {"w": "beginner", "ja": "初心者", "clue": "A person who has just started."}, {"w": "decoration", "ja": "装飾", "clue": "Something added to make a place look nice."}, {"w": "integrity", "ja": "誠実さ", "clue": "Being honest and having strong beliefs."}, {"w": "virtual", "ja": "仮想の", "clue": "Made by a computer, not real."}, {"w": "emission", "ja": "排出", "clue": "Gas that is sent out into the air."}, {"w": "passive", "ja": "受動的な", "clue": "Not acting, only being acted on."}, {"w": "medication", "ja": "薬物治療", "clue": "Medicine given to treat illness."}, {"w": "metabolism", "ja": "代謝", "clue": "How the body changes food into energy."}, {"w": "receptor", "ja": "受容体", "clue": "A cell part that receives a signal."}, {"w": "neuron", "ja": "神経細胞", "clue": "A cell that carries signals in the brain."}, {"w": "accelerate", "ja": "加速する", "clue": "To make something go faster."}, {"w": "emit", "ja": "放出する", "clue": "To send out light, heat or gas."}, {"w": "partially", "ja": "部分的に", "clue": "Only in part, not fully."}, {"w": "sensation", "ja": "感覚", "clue": "A feeling in the body or a great success."}, {"w": "invention", "ja": "発明", "clue": "A new thing that someone has made."}, {"w": "forum", "ja": "討論の場", "clue": "A place for public discussion."}, {"w": "premium", "ja": "高級な・割増金", "clue": "Of high quality, or an extra payment."}, {"w": "alert", "ja": "警戒した", "clue": "Watching carefully for danger."}, {"w": "discourage", "ja": "思いとどまらせる", "clue": "To make someone lose the will to act."}, {"w": "memorize", "ja": "暗記する", "clue": "To learn something by heart."}, {"w": "poison", "ja": "毒", "clue": "A substance that harms or kills."}, {"w": "relaxation", "ja": "くつろぎ", "clue": "Rest after work or effort."}, {"w": "afterward", "ja": "その後", "clue": "At a later time."}, {"w": "garbage", "ja": "ごみ", "clue": "Things you throw away."}, {"w": "hunger", "ja": "飢え", "clue": "The feeling of needing food."}, {"w": "outer", "ja": "外側の", "clue": "On the outside."}, {"w": "asleep", "ja": "眠って", "clue": "Sleeping."}, {"w": "drain", "ja": "排出する", "clue": "To make liquid flow away."}, {"w": "costume", "ja": "衣装", "clue": "Special clothes for a play or event."}, {"w": "reunion", "ja": "再会", "clue": "A meeting of people after a long time."}, {"w": "flavor", "ja": "風味", "clue": "The taste of food or drink."}, {"w": "venue", "ja": "開催地", "clue": "The place where an event is held."}, {"w": "diagram", "ja": "図表", "clue": "A drawing that explains something."}, {"w": "junior", "ja": "下級の", "clue": "Lower in rank or younger."}, {"w": "minor", "ja": "小さな・副次的な", "clue": "Small and not important."}, {"w": "feedback", "ja": "意見・反応", "clue": "Comments on how well you did."}, {"w": "cosmetic", "ja": "外見上の", "clue": "About how something looks."}, {"w": "presenter", "ja": "発表者", "clue": "A person who gives a talk."}, {"w": "handout", "ja": "配布資料", "clue": "A paper given to everyone."}]}, {"id": "business", "school": "おとな", "grade": "社会人", "label": "社会人", "en": "Business English (B2)", "basis": "", "words": [{"w": "agenda", "ja": "議題", "clue": "The list of items for a meeting."}, {"w": "budget", "ja": "予算", "clue": "The money planned for a purpose."}, {"w": "client", "ja": "顧客", "clue": "A person who pays for your service."}, {"w": "deadline", "ja": "締め切り", "clue": "The time by which work must be done."}, {"w": "invoice", "ja": "請求書", "clue": "A paper asking for payment."}, {"w": "negotiate", "ja": "交渉する", "clue": "To talk in order to reach an agreement."}, {"w": "proposal", "ja": "提案書", "clue": "A plan you offer for others to accept."}, {"w": "revenue", "ja": "収益", "clue": "The money a company takes in."}, {"w": "schedule", "ja": "予定表", "clue": "A plan of times for things to happen."}, {"w": "colleague", "ja": "同僚", "clue": "A person you work with."}, {"w": "forecast", "ja": "予測", "clue": "A statement about what will happen."}, {"w": "stakeholder", "ja": "利害関係者", "clue": "Anyone affected by a project."}, {"w": "quarterly", "ja": "四半期ごとの", "clue": "Happening four times a year."}, {"w": "delegate", "ja": "委任する", "clue": "To give a task to someone else."}, {"w": "feedback", "ja": "フィードバック", "clue": "Comments about how well you did."}, {"w": "outsource", "ja": "外部委託する", "clue": "To have work done by another company."}, {"w": "procedure", "ja": "手順", "clue": "The official way of doing something."}, {"w": "efficiency", "ja": "効率", "clue": "Doing something well without waste."}, {"w": "compliance", "ja": "法令遵守", "clue": "Following rules and laws."}, {"w": "milestone", "ja": "節目", "clue": "An important point in a project."}, {"w": "contract", "ja": "契約", "clue": "A written legal agreement."}, {"w": "supplier", "ja": "仕入先", "clue": "A company that provides goods."}, {"w": "warranty", "ja": "保証", "clue": "A promise to repair a product."}, {"w": "inventory", "ja": "在庫", "clue": "The goods a company keeps in store."}, {"w": "departure", "ja": "出発", "clue": "The act of leaving."}, {"w": "bargain", "ja": "お買い得品", "clue": "Something bought at a low price."}, {"w": "advisor", "ja": "助言者", "clue": "A person who gives expert advice."}, {"w": "turnover", "ja": "売上高", "clue": "The total sales in a period."}, {"w": "patent", "ja": "特許", "clue": "The legal right to use a new idea."}, {"w": "physician", "ja": "医師", "clue": "A medical doctor."}, {"w": "postage", "ja": "郵便料金", "clue": "The money you pay to send mail."}, {"w": "repay", "ja": "返済する", "clue": "To pay money back."}, {"w": "relocation", "ja": "移転", "clue": "Moving an office to a new place."}, {"w": "proofread", "ja": "校正する", "clue": "To check writing for mistakes."}, {"w": "convey", "ja": "伝える", "clue": "To make an idea known to others."}, {"w": "intensity", "ja": "強度", "clue": "How strong something is."}, {"w": "appetizer", "ja": "前菜", "clue": "A small dish before the main meal."}, {"w": "spokesman", "ja": "広報担当", "clue": "A person who speaks for a group."}, {"w": "allowance", "ja": "手当", "clue": "Money given for a purpose."}, {"w": "attendance", "ja": "出席", "clue": "Being present at a meeting."}, {"w": "candidate", "ja": "候補者", "clue": "A person who applies for a job."}, {"w": "expense", "ja": "経費", "clue": "Money spent for business."}, {"w": "promotion", "ja": "昇進", "clue": "A move to a higher position."}, {"w": "receipt", "ja": "領収書", "clue": "A paper that shows you paid."}, {"w": "refund", "ja": "払い戻し", "clue": "Money given back to a customer."}, {"w": "shipment", "ja": "出荷", "clue": "Goods sent to a customer."}, {"w": "supervisor", "ja": "監督者", "clue": "A person who leads a team."}, {"w": "vendor", "ja": "販売業者", "clue": "A company that sells to you."}, {"w": "estimate", "ja": "見積もり", "clue": "A guess at the cost."}, {"w": "renewal", "ja": "更新", "clue": "Making an agreement last longer."}, {"w": "shareholder", "ja": "株主", "clue": "A person who owns part of a company."}, {"w": "headquarters", "ja": "本社", "clue": "The main office of a company."}, {"w": "workforce", "ja": "労働力", "clue": "All the people who work for a company."}, {"w": "appointment", "ja": "約束・予約", "clue": "A time set to meet someone."}, {"w": "branch", "ja": "支店", "clue": "A local office of a company."}, {"w": "policy", "ja": "方針", "clue": "An official rule of a company."}, {"w": "procurement", "ja": "調達", "clue": "Buying what a company needs."}, {"w": "liability", "ja": "負債・責任", "clue": "A legal duty to pay."}, {"w": "merger", "ja": "合併", "clue": "Two companies joining into one."}, {"w": "audit", "ja": "監査", "clue": "An official check of the accounts."}]}, {"id": "alt", "school": "おとな", "grade": "ALTと話す", "label": "ALTとの会話練習", "en": "Talking with your ALT", "basis": "", "words": [{"w": "hometown", "ja": "故郷", "clue": "'Where is your ___?' — the town you come from."}, {"w": "hobby", "ja": "趣味", "clue": "'What is your ___?' — what you enjoy doing."}, {"w": "weekend", "ja": "週末", "clue": "'How was your ___?' — Saturday and Sunday."}, {"w": "favorite", "ja": "お気に入りの", "clue": "'What is your ___ food?' — the one you like best."}, {"w": "delicious", "ja": "とてもおいしい", "clue": "Say this when the food tastes very good."}, {"w": "festival", "ja": "祭り", "clue": "A big local event with food and dancing."}, {"w": "introduce", "ja": "紹介する", "clue": "To tell someone your name for the first time."}, {"w": "welcome", "ja": "ようこそ", "clue": "The word you say to a new teacher."}, {"w": "together", "ja": "一緒に", "clue": "'Let's eat lunch ___.' — with each other."}, {"w": "question", "ja": "質問", "clue": "Something you ask."}, {"w": "repeat", "ja": "繰り返す", "clue": "'Could you ___ that, please?'"}, {"w": "slowly", "ja": "ゆっくりと", "clue": "'Could you speak more ___, please?'"}, {"w": "difference", "ja": "違い", "clue": "What is not the same between two countries."}, {"w": "custom", "ja": "習慣", "clue": "A thing people usually do in a country."}, {"w": "holiday", "ja": "休日", "clue": "A day when you do not work or study."}, {"w": "weather", "ja": "天気", "clue": "'How is the ___ in your country?'"}, {"w": "interested", "ja": "興味がある", "clue": "'I am ___ in music.' — you want to know more."}, {"w": "recommend", "ja": "すすめる", "clue": "To tell someone that something is good."}, {"w": "thank", "ja": "感謝する", "clue": "'___ you very much.'"}, {"w": "again", "ja": "また", "clue": "'See you ___!' — one more time."}, {"w": "important", "ja": "大切な", "clue": "'That is ___ to me.' — it matters a lot."}, {"w": "friend", "ja": "友達", "clue": "A person you like and spend time with."}, {"w": "money", "ja": "お金", "clue": "You use this to buy things."}, {"w": "bring", "ja": "持ってくる", "clue": "'Please ___ your book.'"}, {"w": "early", "ja": "早く", "clue": "'I get up ___.' — before the usual time."}, {"w": "young", "ja": "若い", "clue": "Not old."}, {"w": "night", "ja": "夜", "clue": "The dark part of the day."}, {"w": "hour", "ja": "時間", "clue": "60 minutes."}, {"w": "spend", "ja": "費やす", "clue": "To use time or money."}, {"w": "reason", "ja": "理由", "clue": "Why you did something."}, {"w": "learn", "ja": "学ぶ", "clue": "To get new knowledge."}, {"w": "person", "ja": "人", "clue": "One human being."}, {"w": "support", "ja": "支える", "clue": "To help someone."}, {"w": "plan", "ja": "計画", "clue": "'What is your ___ for Sunday?'"}, {"w": "hope", "ja": "望む", "clue": "'I ___ to see you again.'"}, {"w": "understand", "ja": "理解する", "clue": "'I don't ___. Could you say it again?'"}, {"w": "actually", "ja": "実は", "clue": "'___, I have never tried it.'"}, {"w": "present", "ja": "贈り物", "clue": "'Here is a small ___ for you.'"}, {"w": "nervous", "ja": "緊張して", "clue": "'I feel ___ when I speak English.'"}, {"w": "practice", "ja": "練習する", "clue": "'I want to ___ speaking with you.'"}, {"w": "kind", "ja": "親切な", "clue": "'You are so ___.' — friendly and warm."}, {"w": "busy", "ja": "忙しい", "clue": "'Are you ___ this afternoon?'"}, {"w": "meet", "ja": "会う", "clue": "'Nice to ___ you.'"}, {"w": "live", "ja": "住む", "clue": "'Where do you ___ now?'"}, {"w": "season", "ja": "季節", "clue": "'Which ___ do you like best?'"}, {"w": "travel", "ja": "旅行する", "clue": "'Do you like to ___?'"}, {"w": "cook", "ja": "料理する", "clue": "'Can you ___ Japanese food?'"}, {"w": "movie", "ja": "映画", "clue": "'What ___ did you watch?'"}, {"w": "music", "ja": "音楽", "clue": "'What kind of ___ do you like?'"}, {"w": "sport", "ja": "スポーツ", "clue": "'Do you play any ___?'"}, {"w": "family", "ja": "家族", "clue": "'Tell me about your ___.'"}, {"w": "school", "ja": "学校", "clue": "'How is ___ in your country?'"}, {"w": "visit", "ja": "訪ねる", "clue": "'Please ___ my class again.'"}, {"w": "enjoy", "ja": "楽しむ", "clue": "'I hope you ___ your stay.'"}, {"w": "remember", "ja": "覚えている", "clue": "'Do you ___ my name?'"}, {"w": "word", "ja": "語", "clue": "'What is this ___ in English?'"}, {"w": "wonderful", "ja": "すばらしい", "clue": "'That sounds ___!'"}, {"w": "healthy", "ja": "健康的な", "clue": "'Is Japanese food ___?'"}, {"w": "study", "ja": "勉強する", "clue": "'I ___ English every day.'"}]}];
+  var S = { lv:null, dir:'en2ja', num:10 };
+  try { S = Object.assign(S, JSON.parse(localStorage.getItem('ssFlash')||'{}')); } catch(e){}
+  var $ = function(id){ return document.getElementById(id); };
+
+  // ── えらぶ画面
+  var schools = [];
+  DATA.forEach(function(d){ if(schools.indexOf(d.school)<0) schools.push(d.school); });
+  var lvRow = $('lv');
+  DATA.forEach(function(d){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.dataset.id = d.id;
+    b.innerHTML = d.school + ' ' + d.grade + '<small>' + d.words.length + '語</small>';
+    b.onclick = function(){ S.lv = d.id; paint(); };
+    lvRow.appendChild(b);
+  });
+  [['中学校ぜんぶ','jhs*'],['高校ぜんぶ','hs*'],['ぜんぶ','*']].forEach(function(x){
+    var b = document.createElement('button');
+    b.className = 'chip'; b.dataset.id = x[1];
+    b.innerHTML = x[0] + '<small>まとめて</small>';
+    b.onclick = function(){ S.lv = x[1]; paint(); };
+    lvRow.appendChild(b);
+  });
+  [['en2ja','英語 → 日本語'],['ja2en','日本語 → 英語'],['mix','まぜる']].forEach(function(x){
+    var b = document.createElement('button'); b.className='chip'; b.dataset.dir=x[0];
+    b.textContent = x[1]; b.onclick = function(){ S.dir = x[0]; paint(); };
+    $('dir').appendChild(b);
+  });
+  [10,20,0].forEach(function(n){
+    var b = document.createElement('button'); b.className='chip'; b.dataset.num=n;
+    b.textContent = n ? n+'枚' : 'ぜんぶ'; b.onclick = function(){ S.num=n; paint(); };
+    $('num').appendChild(b);
+  });
+
+  function pool(){
+    return DATA.filter(function(d){
+      if(!S.lv) return false;
+      if(S.lv === '*') return true;
+      if(S.lv.slice(-1) === '*') return d.id.indexOf(S.lv.slice(0,-1)) === 0;
+      return d.id === S.lv;
+    });
+  }
+  function paint(){
+    [].forEach.call(lvRow.children, function(b){ b.classList.toggle('on', b.dataset.id===S.lv); });
+    [].forEach.call($('dir').children, function(b){ b.classList.toggle('on', b.dataset.dir===S.dir); });
+    [].forEach.call($('num').children, function(b){ b.classList.toggle('on', +b.dataset.num===S.num); });
+    $('go').disabled = !S.lv;
+    localStorage.setItem('ssFlash', JSON.stringify(S));
+  }
+  paint();
+
+  // ── 出題
+  var deck = [], i = 0, ok = 0, wrong = [], flipped = false, title = '';
+  function shuffle(a){ for(var j=a.length-1;j>0;j--){ var k=Math.floor(Math.random()*(j+1)); var t=a[j]; a[j]=a[k]; a[k]=t; } return a; }
+  function stage(id){
+    ['pick','play','done'].forEach(function(s){ $('stage-'+s).classList.toggle('on', s===id); });
+    // 出題中は説明を隠して、カードを画面の上のほうに置く
+    var hide = (id !== 'pick');
+    document.querySelector('.head').style.display = hide ? 'none' : '';
+    document.querySelector('.crumb').style.display = hide ? 'none' : '';
+    window.scrollTo(0, 0);
+  }
+
+  function start(cards, name){
+    deck = cards; i = 0; ok = 0; wrong = []; title = name;
+    $('lvname').textContent = name;
+    stage('play'); show();
+  }
+  $('go').onclick = function(){
+    var ls = pool(), cards = [];
+    ls.forEach(function(d){ d.words.forEach(function(w){ cards.push({w:w, lv:d.label}); }); });
+    shuffle(cards);
+    if(S.num) cards = cards.slice(0, S.num);
+    var name = ls.length===1 ? ls[0].school+' '+ls[0].grade : ls.length+'レベル まとめて';
+    start(cards, name);
+  };
+  $('again').onclick = function(){ start(shuffle(wrong.slice()), title + '（もう一度）'); };
+  $('back').onclick = function(){ stage('pick'); };
+
+  function show(){
+    var c = deck[i], dir = S.dir === 'mix' ? (Math.random()<0.5?'en2ja':'ja2en') : S.dir;
+    c.dir = dir;
+    $('card').classList.remove('flip'); flipped = false;
+    $('ok').disabled = true; $('ng').disabled = true;
+    $('q').className = 'q' + (dir==='ja2en' ? ' ja' : '');
+    $('q').textContent = dir==='en2ja' ? c.w.w.toUpperCase() : c.w.ja;
+    $('a').textContent = dir==='en2ja' ? c.w.ja : c.w.w.toUpperCase();
+    $('clue').textContent = c.w.clue;
+    $('pos').textContent = (i+1) + ' / ' + deck.length;
+    $('okn').textContent = ok; $('ngn').textContent = wrong.length;
+    $('prog').style.width = (i/deck.length*100) + '%';
+  }
+  function flip(){
+    if(flipped) return;
+    flipped = true; $('card').classList.add('flip');
+    $('ok').disabled = false; $('ng').disabled = false;
+  }
+  function next(good){
+    if(!flipped) return;
+    if(good) ok++; else wrong.push(deck[i]);
+    i++;
+    if(i >= deck.length) return done();
+    show();
+  }
+  function done(){
+    stage('done');
+    var n = deck.length;
+    $('score').textContent = ok + ' / ' + n;
+    $('scoresub').textContent = title + '　わかった ' + Math.round(ok/n*100) + '％';
+    $('wrongbox').style.display = wrong.length ? '' : 'none';
+    $('again').disabled = !wrong.length;
+    $('wronglist').innerHTML = wrong.map(function(c){
+      return '<div><span class="en">' + c.w.w.toUpperCase() + '</span>　' + c.w.ja + '</div>';
+    }).join('');
+  }
+  $('card').onclick = flip;
+  $('ok').onclick = function(){ next(true); };
+  $('ng').onclick = function(){ next(false); };
+  document.addEventListener('keydown', function(e){
+    if(!$('stage-play').classList.contains('on')) return;
+    if(e.key === ' '){ e.preventDefault(); flip(); }
+    if(e.key === 'ArrowRight') next(true);
+    if(e.key === 'ArrowLeft') next(false);
+    if(e.key === 'Escape') stage('pick');
+  });
+})();
+
+</script>
+</body>
+</html>
