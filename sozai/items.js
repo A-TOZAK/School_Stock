@@ -29907,5 +29907,49 @@ const SOZAI = [
   "alt": "img/sansu6_en_menseki_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_menseki_L_01",
+  "title": "L字の面積 — 分け方は ひとつじゃない",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "面積の求め方のくふう",
+  "scenes": [
+   "L字型の面積のいろいろな求め方をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "比較",
+   "説明",
+   "復習"
+  ],
+  "description": "同じL字を2つ並べ、左は長方形2つに分けて 16＋40＝56、右は大きい長方形から欠けを引いて 80−24＝56。どちらでも同じ答えになることが見えます。",
+  "howto": "子どもから出た2つの求め方を、板書のあとに並べて確かめるときに。",
+  "tags": [
+   "面積",
+   "L字",
+   "長方形",
+   "分ける",
+   "くふう",
+   "求め方",
+   "平方センチメートル",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_menseki_L_01.gif",
+  "thumb": "img/sansu4_menseki_L_01_thumb.jpg",
+  "gifMobile": "img/sansu4_menseki_L_01_mobile.gif",
+  "mp4": "img/sansu4_menseki_L_01.mp4",
+  "poster": "img/sansu4_menseki_L_01_poster.png",
+  "alt": "img/sansu4_menseki_L_01_alt.txt",
+  "seconds": 9,
+  "phase": "まとめ"
  }
 ];
