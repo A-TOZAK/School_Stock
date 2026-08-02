@@ -30039,5 +30039,50 @@ const SOZAI = [
   "alt": "img/sansu4_kurai_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
+ },
+ {
+  "id": "rika4_kenryukei_01",
+  "title": "検流計は 針の向きと ふれで読む（道具の使い方）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電流のはたらき",
+  "scenes": [
+   "検流計の針の読み方をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "道具の使い方",
+   "説明",
+   "まとめ"
+  ],
+  "description": "かん電池・豆電球・検流計の回路で、電池の向きを反対にすると針が逆にふれ、電池を2こにすると大きくふれます。針のふれる向き＝電流の向き、ふれの大きさ＝電流の大きさ。",
+  "howto": "実験の前に、検流計の読み方を全体で確認するときに。「どっちにふれた？」と聞きながら。",
+  "tags": [
+   "検流計",
+   "簡易検流計",
+   "電流",
+   "向き",
+   "大きさ",
+   "かん電池",
+   "豆電球",
+   "回路",
+   "道具の使い方",
+   "4年",
+   "理科",
+   "電流のはたらき",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_kenryukei_01.gif",
+  "thumb": "img/rika4_kenryukei_01_thumb.jpg",
+  "gifMobile": "img/rika4_kenryukei_01_mobile.gif",
+  "mp4": "img/rika4_kenryukei_01.mp4",
+  "poster": "img/rika4_kenryukei_01_poster.png",
+  "alt": "img/rika4_kenryukei_01_alt.txt",
+  "seconds": 11,
+  "phase": "まとめ"
  }
 ];
