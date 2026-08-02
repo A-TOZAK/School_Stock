@@ -30039,49 +30039,5 @@ const SOZAI = [
   "alt": "img/sansu4_kurai_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
- },
- {
-  "id": "rika4_kenryukei_01",
-  "title": "検流計で 電流の向きが 分かる（道具の使い方）",
-  "author": "studio",
-  "type": "motion",
-  "subject": "理科",
-  "grade": "4年",
-  "unit": "電流のはたらき",
-  "scenes": [
-   "検流計で電流の向きを読む"
-  ],
-  "uses": [
-   "うごく",
-   "道具の使い方",
-   "説明",
-   "まとめ"
-  ],
-  "description": "かん電池・豆電球・検流計の回路に、電流の向きを示す矢印が流れます。電池を入れかえると、矢印の向きと針のふれる向きが同時に反対になります。",
-  "howto": "実験の前に、針の左右と電流の向きが結びつくことを全体で確認するときに。",
-  "tags": [
-   "検流計",
-   "簡易検流計",
-   "電流",
-   "電流の向き",
-   "かん電池",
-   "豆電球",
-   "回路",
-   "道具の使い方",
-   "4年",
-   "理科",
-   "電流のはたらき",
-   "うごく",
-   "GIF",
-   "アニメーション"
-  ],
-  "img": "img/rika4_kenryukei_01.gif",
-  "thumb": "img/rika4_kenryukei_01_thumb.jpg",
-  "gifMobile": "img/rika4_kenryukei_01_mobile.gif",
-  "mp4": "img/rika4_kenryukei_01.mp4",
-  "poster": "img/rika4_kenryukei_01_poster.png",
-  "alt": "img/rika4_kenryukei_01_alt.txt",
-  "seconds": 9,
-  "phase": "まとめ"
  }
 ];
