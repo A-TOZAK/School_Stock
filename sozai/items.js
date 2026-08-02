@@ -30087,5 +30087,52 @@ const SOZAI = [
   "alt": "img/rika4_kenryukei_01_alt.txt",
   "seconds": 11,
   "phase": "道具の使い方"
+ },
+ {
+  "id": "rika6_tsuki_01",
+  "title": "月の光っている側には いつも太陽がある",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "6年",
+  "unit": "月と太陽",
+  "scenes": [
+   "月の形の見え方と太陽の位置関係をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "暗い部屋のモデル実験。中央にわたし（地球）、右に太陽（電灯）。ボール（月）はどの位置でも太陽側の半分だけが光っています。1周するあいだに、通った位置へ「わたしから見た形」が新月→三日月→上弦→満月→下弦と残っていきます。",
+  "howto": "モデル実験のあとのまとめに。「光っている側はどっち？」と毎回聞きながら見せる流れに。",
+  "tags": [
+   "月",
+   "太陽",
+   "月と太陽",
+   "満ち欠け",
+   "新月",
+   "三日月",
+   "上弦の月",
+   "満月",
+   "下弦の月",
+   "位置関係",
+   "モデル実験",
+   "6年",
+   "理科",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika6_tsuki_01.gif",
+  "thumb": "img/rika6_tsuki_01_thumb.jpg",
+  "gifMobile": "img/rika6_tsuki_01_mobile.gif",
+  "mp4": "img/rika6_tsuki_01.mp4",
+  "poster": "img/rika6_tsuki_01_poster.png",
+  "alt": "img/rika6_tsuki_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
  }
 ];
