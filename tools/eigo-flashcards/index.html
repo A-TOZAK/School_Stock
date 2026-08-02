@@ -142,6 +142,9 @@
   .card .q { font-size:clamp(30px,8vw,46px); font-weight:700; line-height:1.25; word-break:break-word; }
   .card .q.ja { font-size:clamp(24px,6vw,34px); }
   .card .q.def { font-size:clamp(19px,4.6vw,26px); font-weight:400; line-height:1.5; max-width:26em; }
+  .card .qdef { font-size:clamp(14px,3.4vw,17px); color:#3d4148; line-height:1.6;
+                margin-top:14px; max-width:30em; }
+  .card .qdef:empty { display:none; }
   .card .sub { font-size:13px; color:var(--sub); margin-top:14px; letter-spacing:.06em; }
   .card .ans { display:none; }
   .card.flip .ans { display:block; }
@@ -213,7 +216,7 @@
   <div class="head">
     <span class="kicker">TOOL｜ENGLISH</span>
     <h1>英単語フラッシュカード</h1>
-    <p class="lead">校種と学年をえらぶと、その学年の英単語をランダムに1枚ずつ出します。めくって、わかった・もう一度 をおすだけ。まちがえた語は最後にもう一周。<b>英語の説明（英英）でも出せます</b>。プリントと同じ語だけの「基本」と、入試に出た語まで広げた「ぜんぶ」を切りかえられます。<b>通信は使いません</b>（このページだけで動きます）。</p>
+    <p class="lead">校種と学年をえらぶと、その学年の英単語をランダムに1枚ずつ出します。めくって、わかった・もう一度 をおすだけ。<b>問題には英語の説明がついてきます</b>（英語だけで意味をつかめます）。まちがえた語は最後にもう一周。<b>英語の説明（英英）でも出せます</b>。プリントと同じ語だけの「基本」と、入試に出た語まで広げた「ぜんぶ」を切りかえられます。<b>通信は使いません</b>（このページだけで動きます）。</p>
   </div>
 
   <div class="stage on" id="stage-pick">
@@ -238,6 +241,7 @@
     <div class="track"><i id="prog" style="width:0"></i></div>
     <div class="card" id="card">
       <div class="q" id="q"></div>
+      <div class="qdef" id="qdef"></div>
       <div class="sub tap">タップで こたえ</div>
       <div class="ans"><div class="a" id="a"></div><div class="clue" id="clue"></div></div>
     </div>
@@ -409,8 +413,10 @@ s.addEventListener('click',close);document.addEventListener('keydown',function(e
     $('ok').disabled = true; $('ng').disabled = true;
     $('q').className = 'q' + (dir==='ja2en' ? ' ja' : (dir==='en2en' ? ' def' : ''));
     $('q').textContent = dir==='en2ja' ? w.w : (dir==='ja2en' ? w.ja : w.en);
+    // 問題が出た時点で、英語の説明もいっしょに見せる（単語が表にあるときだけ）
+    $('qdef').textContent = dir==='en2ja' ? (w.en || '') : '';
     $('a').textContent = dir==='ja2en' ? w.w : (dir==='en2ja' ? (w.ja || w.en) : w.w);
-    $('clue').textContent = dir==='en2en' ? (w.ja || '') : (w.en || '');
+    $('clue').textContent = dir==='en2en' ? (w.ja || '') : (dir==='ja2en' ? (w.en || '') : '');
     $('pos').textContent = (i+1) + ' / ' + deck.length;
     $('okn').textContent = ok; $('ngn').textContent = wrong.length;
     $('prog').style.width = (i/deck.length*100) + '%';
