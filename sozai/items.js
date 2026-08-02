@@ -29818,5 +29818,49 @@ const SOZAI = [
   "alt": "img/sansu5_tanniryo_01_alt.txt",
   "seconds": 8,
   "phase": "まとめ"
+ },
+ {
+  "id": "rika6_teko_01",
+  "title": "てこがつり合うのは どんなとき？",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "6年",
+  "unit": "てこの規則性",
+  "scenes": [
+   "てこのつり合いの規則をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "てこ実験器の左うで（支点から4）におもりを3個かけると左が下がり、右うで（支点から6）に2個かけると水平にもどってつり合います。4×3=12、6×2=12の式が出ます。",
+  "howto": "「重いほうが下がる」と言う子と一緒に見て、距離にも目を向けさせる流れに。",
+  "tags": [
+   "てこ",
+   "つり合い",
+   "支点",
+   "力点",
+   "作用点",
+   "てこ実験器",
+   "おもり",
+   "規則性",
+   "6年",
+   "理科",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika6_teko_01.gif",
+  "thumb": "img/rika6_teko_01_thumb.jpg",
+  "gifMobile": "img/rika6_teko_01_mobile.gif",
+  "mp4": "img/rika6_teko_01.mp4",
+  "poster": "img/rika6_teko_01_poster.png",
+  "alt": "img/rika6_teko_01_alt.txt",
+  "seconds": 9,
+  "phase": "まとめ"
  }
 ];
