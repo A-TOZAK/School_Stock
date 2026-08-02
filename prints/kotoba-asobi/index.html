@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ことばあそびプリント ── ことばさがしとひらがなクロスワード｜School Stock</title>
+<meta name="description" content="現役の小学校教員がつくった、ひらがなの「ことばあそび」プリント。ますの中からテーマのことばをさがす『かくれた ことば さがし』と、ふとい ますを集めてさいごのことばをつくる『ひらがな クロスワード』。7テーマ×★1〜3の全21枚。すべて自作・無料。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="ことばあそびプリント（ことばさがし・ひらがなクロスワード）｜School Stock">
+<meta property="og:description" content="ますの中からことばをさがす／カギを読んでますをうめる。ひらがなだけのことばあそびプリント、7テーマ×★1〜3の全21枚。すべて自作・無料。">
+<style>
+
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#B0537A; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .usebox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; }
+  .usebox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .usebox b.ub-t { display:block; font-size:17px; margin-bottom:6px; }
+  .use-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:8px 18px; font-size:13.5px; }
+  .use-grid b { color:var(--accent); }
+  .note-line { font-size:13px; color:var(--sub); margin:16px 0 0; }
+
+  .monthbox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; background:#fdf7fa; }
+  .monthbox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .monthbox b.ub-t { display:block; font-size:17px; margin-bottom:4px; }
+  .monthbox p.mb-note { font-size:13px; color:var(--sub); margin-bottom:14px; }
+  .mgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; }
+  .mbtn { display:flex; flex-direction:column; align-items:center; border:1px solid var(--ink); background:#fff; padding:10px 6px 9px; text-align:center; color:var(--ink); transition:background .15s; }
+  .mbtn:hover { background:var(--accent); color:#fff; }
+  .mbtn b { font-size:17px; }
+  .mbtn span { font-size:10.5px; color:inherit; opacity:0.75; }
+
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .search { flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .search:focus { box-shadow:0 0 0 3px rgba(176,83,122,0.14); }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .sec-note a { font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#e6ccd7; background:#faf2f6; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .more { font-size:12px; color:var(--sub); flex:1; line-height:1.7; }
+  .more small { font-size:11px; }
+  .lvrow { display:flex; align-items:center; gap:6px; }
+  .lvlabel { font-size:11px; font-weight:700; color:var(--sub); }
+  .lvbtn { flex:1; text-align:center; font-size:12px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:5px 0; }
+  .lvbtn:hover { background:var(--wash); }
+  .acts { display:flex; align-items:center; gap:8px; }
+  .dl { display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; flex:1; }
+  .dl svg { width:12px; height:12px; }
+  .refbox { background:var(--wash); border-radius:4px; padding:22px 24px; margin-top:44px; font-size:13.5px; }
+  .refbox h3 { font-size:16px; margin-bottom:8px; }
+  .refbox ul { margin:10px 0 12px 1.4em; }
+  .refbox li { margin-bottom:4px; }
+  .refbox .small { font-size:12px; color:var(--sub); line-height:1.9; }
+
+</style>
+</head><body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../prints/kokugo/">国語</a>
+      <a href="../../prints/rika/">理科</a>
+      <a href="../../prints/sansu-ensyu/">算数・演習</a>
+      <a href="../../prints/atama/">あたまの準備</a>
+      <a href="../../prints/kotoba-asobi/">ことばあそび</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">素材</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能</small></a>
+    <a href="../../prints/sansu/">算数プリント（式と言葉）<small>実態別・レベル1〜4</small></a>
+    <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>基礎〜まとめの5枚</small></a>
+    <a href="../../prints/shakai/">社会プリント<small>資料の読み取り</small></a>
+    <a href="../../prints/taiiku/">体育 学習カード<small>単元カード・ふりかえりカード</small></a>
+    <a href="../../prints/atama/">あたまのじゅんび運動<small>すきま5分の認知機能トレーニング</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../prints/kotoba-asobi/">ことばあそびプリント<small>ことばさがし・クロスワード</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ ことばあそびプリント</div>
+  <div class="head">
+    <span class="kicker">PRINTS｜ことばあそび</span>
+    <h1>ことばあそびプリント</h1>
+    <p class="lead">ひらがなだけで遊べる、ことばのプリントです。ますの中にかくれた ことばをさがす<b>「かくれた ことば さがし」</b>と、カギを読んでますをうめる<b>「ひらがな クロスワード」</b>の2種類。どちらも1枚5〜8分、★1〜★3から子どもが自分で選べます。あたまのじゅんび運動と同じつくりで、<b>得点はつけません</b>。</p>
+    <div class="meta">
+      <span><b>全21枚</b>（7テーマ×★1〜3）</span>
+      <span>1枚＝問題＋赤字のこたえ（2ページ）</span>
+      <span>A4縦・モノクロ印刷OK</span>
+      <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="usebox">
+    <span class="ub-kick">使いどころ</span>
+    <b class="ub-t">すきま時間・朝の会・早く終わった子に</b>
+    <div class="use-grid">
+      <span><b>朝の会・帯タイム</b>：1日1枚のことばのウォーミングアップに</span>
+      <span><b>早く終わった子</b>：次の1枚として（答えが1つに決まるので自分で丸つけできます）</span>
+      <span><b>特別支援学級・通級</b>：書く量が少ないので、書字が苦手でも取り組めます</span>
+      <span><b>家庭学習</b>：宿題の前の頭ならしに</span>
+    </div>
+  </div>
+  <div class="usebox">
+    <span class="ub-kick">つくりのポイント</span>
+    <b class="ub-t">「見つけたのに、答えにない」を出さない設計</b>
+    <div class="use-grid">
+      <span><b>よけいな ことばが出ない</b>：ことばさがしの盤は、ねらいの語以外の言葉ができていないか、たて・よこ・ななめ・逆よみのすべてを検査して組んでいます</span>
+      <span><b>もじ数のヒント</b>：答えを書くますの数＝もじの数。書き出しでつまずきません</span>
+      <span><b>さいごの ことば</b>：クロスワードは、ふとい ます（二重マス）の字を集めるおまけつき。全部解けなくても最後まで楽しめます</span>
+      <span><b>ぜんぶ ひらがな</b>：漢字が読めなくても取り組めます。小さい「ゃゅょっ」も1ますです</span>
+    </div>
+  </div>
+  <p class="note-line">このプリントは学習効果を保証するものではなく、ことばに親しむきっかけをつくるための教材です。問題・カギの文・ますの中身はすべて School Stock が自作したものです。誤りに気づかれたら <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note</a> から知らせてもらえると助かります。</p>
+
+  <div class="filter">
+    <div class="frow">
+      <input id="q" class="search" type="search" placeholder="さがす（例: のりもの、がっこう、クロスワード）">
+    </div>
+    <div class="frow">
+      <span class="fl">しゅるい</span>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="sagashi">ことばさがし</button><button class="fbtn" data-band="crossword">クロスワード</button>
+    </div>
+    <p class="count"><b id="shown">7</b> セットを表示中（カードの見本は★1・1セット＝★1〜3の3枚）</p>
+  </div>
+
+  <section data-sec id="sec-sagashi">
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">KOTOBA</span></div>
+    <h2>かくれた ことば さがし</h2>
+    <p class="sec-note">ひらがなの ますの中から、テーマの ことばを さがします。目で追う力（走査）と、知っている ことばを 思い出す力の両方を使います。　<span class="cnt">3テーマ×★1〜3＝9枚</span>　<a href="pdf/ことばプリント_かくれたことばさがし_ぜんぶ9まい.pdf" download>この9枚をまとめて印刷（PDF 18ページ）</a></p>
+    <p class="sec-note" style="margin-top:-12px">ねらいの ことば以外の 言葉が ぬすみ聞きのように 出てこないよう、たて・よこ・ななめ・逆よみの すべてを 機械で 検査して 組んでいます。</p>
+    <div class="grid">
+<div class="card" data-band="sagashi" data-hay="かくれた ことば さがし いきもの ますの 中から ことばを 見つける（いきもの）">
+  <a class="th" href="pdf/kotoba_sagashi_いきもの_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_sagashi_いきもの_lv1.png" alt="かくれた ことば さがし（いきもの・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">いきもの</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_sagashi_いきもの_lv1.pdf">かくれた ことば さがし<br><small style="font-weight:400">いきもの</small></a>
+    <span class="more">うさぎ・きりん・かたつむり など<br><small>1枚＝問題＋こたえ（2ページ）・めやす6分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_sagashi_いきもの_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_sagashi_いきもの_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_sagashi_いきもの_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_かくれたことばさがし_いきもの_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="sagashi" data-hay="かくれた ことば さがし たべもの ますの 中から ことばを 見つける（たべもの）">
+  <a class="th" href="pdf/kotoba_sagashi_たべもの_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_sagashi_たべもの_lv1.png" alt="かくれた ことば さがし（たべもの・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">たべもの</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_sagashi_たべもの_lv1.pdf">かくれた ことば さがし<br><small style="font-weight:400">たべもの</small></a>
+    <span class="more">ばなな・おにぎり・だいこん など<br><small>1枚＝問題＋こたえ（2ページ）・めやす6分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_sagashi_たべもの_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_sagashi_たべもの_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_sagashi_たべもの_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_かくれたことばさがし_たべもの_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="sagashi" data-hay="かくれた ことば さがし のりもの ますの 中から ことばを 見つける（のりもの）">
+  <a class="th" href="pdf/kotoba_sagashi_のりもの_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_sagashi_のりもの_lv1.png" alt="かくれた ことば さがし（のりもの・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">のりもの</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_sagashi_のりもの_lv1.pdf">かくれた ことば さがし<br><small style="font-weight:400">のりもの</small></a>
+    <span class="more">でんしゃ・ひこうき・しょうぼうしゃ など<br><small>1枚＝問題＋こたえ（2ページ）・めやす6分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_sagashi_のりもの_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_sagashi_のりもの_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_sagashi_のりもの_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_かくれたことばさがし_のりもの_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+<section data-sec id="sec-crossword">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">KOTOBA</span></div>
+    <h2>ひらがな クロスワード</h2>
+    <p class="sec-note">カギの文を よんで、ますを うめます。うまったら、ふとい ます（二重マス）の字を あつめて「さいごの ことば」をつくります。　<span class="cnt">4テーマ×★1〜3＝12枚</span>　<a href="pdf/ことばプリント_ひらがなクロスワード_ぜんぶ12まい.pdf" download>この12枚をまとめて印刷（PDF 24ページ）</a></p>
+    <p class="sec-note" style="margin-top:-12px">カギは すべて ひらがなの短文。もじ数も 書いてあるので、むずかしい言い回しでつまずくことがありません。</p>
+    <div class="grid">
+<div class="card" data-band="crossword" data-hay="ひらがな クロスワード いきものとしぜん ことばを 思い出して つなぐ（いきものとしぜん）">
+  <a class="th" href="pdf/kotoba_crossword_いきものとしぜん_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_crossword_いきものとしぜん_lv1.png" alt="ひらがな クロスワード（いきものとしぜん・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">いきものとしぜん</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_crossword_いきものとしぜん_lv1.pdf">ひらがな クロスワード<br><small style="font-weight:400">いきものとしぜん</small></a>
+    <span class="more">ねこ・つばめ・にじ・たんぽぽ など<br><small>1枚＝問題＋こたえ（2ページ）・めやす8分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_crossword_いきものとしぜん_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_crossword_いきものとしぜん_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_crossword_いきものとしぜん_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_ひらがなクロスワード_いきものとしぜん_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="crossword" data-hay="ひらがな クロスワード がっこう ことばを 思い出して つなぐ（がっこう）">
+  <a class="th" href="pdf/kotoba_crossword_がっこう_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_crossword_がっこう_lv1.png" alt="ひらがな クロスワード（がっこう・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">がっこう</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_crossword_がっこう_lv1.pdf">ひらがな クロスワード<br><small style="font-weight:400">がっこう</small></a>
+    <span class="more">こくご・きゅうしょく・うんどうかい など<br><small>1枚＝問題＋こたえ（2ページ）・めやす8分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_crossword_がっこう_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_crossword_がっこう_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_crossword_がっこう_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_ひらがなクロスワード_がっこう_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="crossword" data-hay="ひらがな クロスワード たべもの ことばを 思い出して つなぐ（たべもの）">
+  <a class="th" href="pdf/kotoba_crossword_たべもの_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_crossword_たべもの_lv1.png" alt="ひらがな クロスワード（たべもの・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">たべもの</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_crossword_たべもの_lv1.pdf">ひらがな クロスワード<br><small style="font-weight:400">たべもの</small></a>
+    <span class="more">ばなな・おにぎり・だいこん など<br><small>1枚＝問題＋こたえ（2ページ）・めやす8分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_crossword_たべもの_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_crossword_たべもの_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_crossword_たべもの_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_ひらがなクロスワード_たべもの_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="crossword" data-hay="ひらがな クロスワード みのまわり ことばを 思い出して つなぐ（みのまわり）">
+  <a class="th" href="pdf/kotoba_crossword_みのまわり_lv1.pdf"><div class="thumb"><img loading="lazy" src="thumb/kotoba_crossword_みのまわり_lv1.png" alt="ひらがな クロスワード（みのまわり・★1の問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">みのまわり</span><span class="tag">★1〜★3</span></div>
+    <a class="tt" href="pdf/kotoba_crossword_みのまわり_lv1.pdf">ひらがな クロスワード<br><small style="font-weight:400">みのまわり</small></a>
+    <span class="more">とけい・はさみ・れいぞうこ など<br><small>1枚＝問題＋こたえ（2ページ）・めやす8分</small></span>
+    <div class="lvrow"><span class="lvlabel">レベル</span><a class="lvbtn" href="pdf/kotoba_crossword_みのまわり_lv1.pdf" download>★1</a><a class="lvbtn" href="pdf/kotoba_crossword_みのまわり_lv2.pdf" download>★2</a><a class="lvbtn" href="pdf/kotoba_crossword_みのまわり_lv3.pdf" download>★3</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/ことばプリント_ひらがなクロスワード_みのまわり_★1-3.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>★1〜3をまとめて（3枚）</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <div class="refbox">
+    <h3>この棚について</h3>
+    <p>ことばさがし（ワードサーチ）とクロスワードは、世界中で古くから遊ばれている ことばあそびの形式です。この棚のプリントは、その形式にもとづいて School Stock が問題・語彙・カギの文・紙面のすべてを独自に作成したものです。市販のパズル誌・教材の複製や改変ではありません。</p>
+    <p class="small">つくりは「あたまのじゅんび運動」と共通です（1枚1課題・書く量は最小・得点欄なし・★は子どもが選ぶ）。学校・家庭で自由に印刷して使えます。</p>
+  </div>
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../">棚トップ</a>
+        <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../prints/rika/">理科プリント</a>
+        <a href="../../prints/sansu/">算数プリント（式と言葉）</a>
+        <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="../../prints/shakai/">社会プリント</a>
+        <a href="../../prints/taiiku/">体育 学習カード</a>
+        <a href="../../prints/atama/">あたまのじゅんび運動</a>
+        <a href="../../prints/kotoba-asobi/">ことばあそびプリント</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../sozai/">授業イラスト素材集</a>
+        <a href="../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+(function(){var state={q:'',band:'all'};
+function apply(){var shown=0;
+document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
+sec.querySelectorAll('.card').forEach(function(c){
+var ok=(state.band==='all'||c.dataset.band===state.band)&&(!state.q||c.dataset.hay.toLowerCase().indexOf(state.q)>=0);
+c.style.display=ok?'':'none';if(ok)vis++;});
+sec.style.display=vis===0?'none':'';shown+=vis;});
+document.getElementById('shown').textContent=shown;}
+document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.trim().toLowerCase();apply();});
+document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
+state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+})();
+</script>
+</body>
+</html>

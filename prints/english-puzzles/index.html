@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>英語のことばパズル ── Word Search と Crossword（9レベル）｜School Stock</title>
+<meta name="description" content="現役の小学校教員がつくった、英語のことばパズル。ますから単語をさがす Word Search と、手がかりを読んでうめる Crossword を、小学校高学年・中1〜3・高1〜3・社会人・ALTとの会話練習の9レベルで。全18枚、すべて自作・無料。">
+<meta property="og:type" content="website">
+<meta property="og:title" content="英語のことばパズル（Word Search / Crossword・9レベル）｜School Stock">
+<meta property="og:description" content="小学校高学年から社会人・ALTとの会話練習まで9レベル。Word Search と Crossword の全18枚。すべて自作・無料。">
+<style>
+
+
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2F5D9E; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; white-space:nowrap; }
+  .nav { display:flex; gap:18px; align-items:center; }
+  .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; white-space:nowrap; }
+  .nav a:hover { color:#fff; }
+  @media (max-width:760px){ .nav { display:none; } }
+  .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+  .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+  .drawer.open { transform:none; }
+  .drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+  .drawer-head b { font-size:12px; letter-spacing:0.22em; }
+  .drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+  .drawer nav { padding:10px 0 30px; }
+  .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
+  .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+  .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a:hover { background:var(--wash); }
+  .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+  .scrim.show { opacity:1; pointer-events:auto; }
+  .container { max-width:960px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); letter-spacing:0.06em; padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+  .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
+  .foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+  .foot-map { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:8px 24px; margin:14px 0 18px; }
+  .foot-map b { display:block; color:#fff; font-size:11px; letter-spacing:0.18em; margin-bottom:4px; }
+  .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
+  .foot-map a:hover { color:#fff; text-decoration:underline; }
+  .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
+
+  .head { padding:30px 0; border-bottom:1px solid var(--ink); }
+  .kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:18px; }
+  h1 { font-size:clamp(28px,5vw,40px); font-weight:700; line-height:1.35; margin-bottom:14px; }
+  .lead { font-size:15.5px; color:#3d4148; margin-bottom:18px; max-width:640px; }
+  .meta { font-size:12.5px; color:var(--sub); letter-spacing:0.05em; display:flex; flex-wrap:wrap; gap:6px 16px; }
+  .meta b { color:var(--ink); font-weight:700; }
+  .usebox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; }
+  .usebox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .usebox b.ub-t { display:block; font-size:17px; margin-bottom:6px; }
+  .use-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:8px 18px; font-size:13.5px; }
+  .use-grid b { color:var(--accent); }
+  .note-line { font-size:13px; color:var(--sub); margin:16px 0 0; }
+
+  .monthbox { border:1px solid var(--ink); margin:26px 0 2px; padding:20px 22px; background:#f7f9fd; }
+  .monthbox .ub-kick { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 10px; margin-bottom:10px; }
+  .monthbox b.ub-t { display:block; font-size:17px; margin-bottom:4px; }
+  .monthbox p.mb-note { font-size:13px; color:var(--sub); margin-bottom:14px; }
+  .mgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(140px,1fr)); gap:10px; }
+  .mbtn { display:flex; flex-direction:column; align-items:center; border:1px solid var(--ink); background:#fff; padding:10px 6px 9px; text-align:center; color:var(--ink); transition:background .15s; }
+  .mbtn:hover { background:var(--accent); color:#fff; }
+  .mbtn b { font-size:17px; }
+  .mbtn span { font-size:10.5px; color:inherit; opacity:0.75; }
+
+  .filter { position:sticky; top:49px; background:rgba(255,255,255,0.95); backdrop-filter:blur(6px); border-bottom:1px solid var(--line); padding:13px 0; margin-bottom:8px; z-index:5; display:flex; flex-direction:column; gap:10px; }
+  .frow { display:flex; flex-wrap:wrap; align-items:center; gap:8px; }
+  .fl { font-size:12px; font-weight:700; letter-spacing:0.12em; color:var(--sub); margin-right:2px; }
+  .search { flex:1; min-width:210px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); font:inherit; font-size:14px; padding:9px 12px; outline:none; }
+  .search:focus { box-shadow:0 0 0 3px rgba(47,93,158,0.14); }
+  .fbtn { font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:var(--paper); border:1px solid var(--ink); padding:7px 14px; cursor:pointer; letter-spacing:0.04em; }
+  .fbtn.on { background:var(--black); color:#fff; }
+  .count { font-size:13px; color:var(--sub); margin:8px 0 0; }
+  .count b { color:var(--ink); font-weight:700; }
+  section { padding:34px 0 4px; }
+  .sec-head { display:flex; align-items:baseline; gap:13px; margin-bottom:4px; }
+  .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
+  .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
+  h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note .cnt { color:var(--ink); font-weight:700; }
+  .sec-note a { font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(215px,1fr)); gap:20px 18px; }
+  .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
+  .card:hover { border-color:var(--ink); }
+  .card .thumb { aspect-ratio:4/3; background:var(--wash); border-bottom:1px solid var(--line); display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .card .thumb img { max-width:100%; max-height:100%; object-fit:contain; }
+  .card .b { padding:13px 14px 15px; display:flex; flex-direction:column; gap:9px; flex:1; }
+  .tags { display:flex; gap:6px; flex-wrap:wrap; }
+  .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
+  .tag.type { color:var(--accent); border-color:#cddaea; background:#f0f4fa; }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; color:var(--ink); }
+  .tt:hover { color:var(--accent); }
+  .more { font-size:12px; color:var(--sub); flex:1; line-height:1.7; }
+  .more small { font-size:11px; }
+  .lvrow { display:flex; align-items:center; gap:6px; }
+  .lvlabel { font-size:11px; font-weight:700; color:var(--sub); }
+  .lvbtn { flex:1; text-align:center; font-size:12px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:5px 0; }
+  .lvbtn:hover { background:var(--wash); }
+  .acts { display:flex; align-items:center; gap:8px; }
+  .dl { display:inline-flex; align-items:center; justify-content:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; flex:1; }
+  .dl svg { width:12px; height:12px; }
+  .refbox { background:var(--wash); border-radius:4px; padding:22px 24px; margin-top:44px; font-size:13.5px; }
+  .refbox h3 { font-size:16px; margin-bottom:8px; }
+  .refbox ul { margin:10px 0 12px 1.4em; }
+  .refbox li { margin-bottom:4px; }
+  .refbox .small { font-size:12px; color:var(--sub); line-height:1.9; }
+
+</style>
+</head><body>
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav">
+      <a href="../../tools/pdf-toolbox/">ツール</a>
+      <a href="../../prints/kokugo/">国語</a>
+      <a href="../../prints/rika/">理科</a>
+      <a href="../../prints/sansu-ensyu/">算数・演習</a>
+      <a href="../../prints/atama/">あたまの準備</a>
+      <a href="../../prints/english-puzzles/">英語パズル</a>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">素材</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+    <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+  </div>
+</div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能</small></a>
+    <a href="../../prints/sansu/">算数プリント（式と言葉）<small>実態別・レベル1〜4</small></a>
+    <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>基礎〜まとめの5枚</small></a>
+    <a href="../../prints/shakai/">社会プリント<small>資料の読み取り</small></a>
+    <a href="../../prints/taiiku/">体育 学習カード<small>単元カード・ふりかえりカード</small></a>
+    <a href="../../prints/atama/">あたまのじゅんび運動<small>すきま5分の認知機能トレーニング</small></a>
+    <a href="../../prints/kotoba-asobi/">ことばあそびプリント<small>ことばさがし・クロスワード</small></a>
+    <a href="../../prints/english-puzzles/">英語のことばパズル<small>Word Search・Crossword（9レベル）</small></a>
+    <div class="dr-sec">SUPPORT CARDS</div>
+    <a href="../../shien/">支援カード<small>声に出す合言葉カード・無料</small></a>
+    <div class="dr-sec">MATERIALS</div>
+    <a href="../../sozai/">授業イラスト素材集<small>スライド・プリントに使える画像</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+    <div class="dr-sec">つながる</div>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
+  </nav>
+</aside>
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ 英語のことばパズル</div>
+  <div class="head">
+    <span class="kicker">PRINTS｜ENGLISH</span>
+    <h1>英語のことばパズル</h1>
+    <p class="lead">日本語版の「ことばあそびプリント」を、そのまま英語にした棚です。ますの中から単語をさがす<b>Word Search</b>と、手がかりを読んでますをうめる<b>Crossword</b>の2種類。<b>小学校高学年から社会人・ALTとの会話練習まで9レベル</b>あるので、同じ形式のまま学年をまたいで使えます。Crosswordには、太いわくの文字を集めてつくる<b>BONUS WORD</b>がついています。</p>
+    <div class="meta">
+      <span><b>全18枚</b>（9レベル×2種類）</span>
+      <span>1枚＝問題＋赤字のこたえ（2ページ）</span>
+      <span>A4縦・モノクロ印刷OK</span>
+      <span>© School Stock</span>
+    </div>
+  </div>
+
+  <div class="usebox">
+    <span class="ub-kick">使いどころ</span>
+    <b class="ub-t">授業のすきま・自習・ALTとの時間に</b>
+    <div class="use-grid">
+      <span><b>授業のはじめ5分</b>：単語の思い出しに（答えは赤字で自分で確認できます）</span>
+      <span><b>自習・課題</b>：学年より下のレベルから始めれば、やり直しの1枚になります</span>
+      <span><b>ALTとの授業</b>：「ALTとの会話練習」レベルは、そのまま話す材料になります</span>
+      <span><b>おとなの学び直し</b>：職員室・家庭で。社会人レベルは会議とメールの語です</span>
+    </div>
+  </div>
+  <div class="usebox">
+    <span class="ub-kick">つくりのポイント</span>
+    <b class="ub-t">レベルは学年、形式は共通</b>
+    <div class="use-grid">
+      <span><b>手がかりの言語が変わります</b>：小学校高学年・中1は日本語、中2からは英語の短い1文</span>
+      <span><b>Word Searchは思い出す課題</b>：日本語の意味と文字数だけを見て単語を書き、それからますの中で探します（小学校高学年のみ英語の一覧つき）</span>
+      <span><b>並び方が段階的に</b>：→↓から始まり、上の学年では ↘↗ が加わります</span>
+      <span><b>BONUS WORD</b>：全部解けなくても最後にもう一度考えられる、おまけの1語です</span>
+    </div>
+  </div>
+  <p class="note-line">単語・手がかりの文・ますの中身はすべて School Stock が自作したものです。市販の問題集・パズル誌の複製ではありません。レベル分けは学習指導要領やCEFRを参考にした目安で、検定教科書の配当そのものではありません。誤りに気づかれたら <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note</a> から知らせてもらえると助かります。</p>
+
+  <div class="filter">
+    <div class="frow">
+      <input id="q" class="search" type="search" placeholder="さがす（例: 中2、ALT、社会人、business）">
+    </div>
+    <div class="frow">
+      <span class="fl">レベル</span>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="elementary">小学校 高学年</button><button class="fbtn" data-band="jhs1">中学1年</button><button class="fbtn" data-band="jhs2">中学2年</button><button class="fbtn" data-band="jhs3">中学3年</button><button class="fbtn" data-band="hs1">高校1年</button><button class="fbtn" data-band="hs2">高校2年</button><button class="fbtn" data-band="hs3">高校3年</button><button class="fbtn" data-band="business">社会人</button><button class="fbtn" data-band="alt">ALTとの会話練習</button>
+    </div>
+    <p class="count"><b id="shown">9</b> レベルを表示中（1レベル＝Word Search と Crossword の2枚）</p>
+  </div>
+
+  <section data-sec id="sec-school">
+    <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">ENGLISH</span></div>
+    <h2>小学校・中学校</h2>
+    <p class="sec-note">教科書で出会う語からスタート。小学校高学年と中1は手がかりが日本語、中2からは英語の短い1文になります。　<span class="cnt">4レベル×2種類</span></p>
+    <div class="grid">
+<div class="card" data-band="elementary" data-hay="小学校 高学年 Elementary (Grades 5–6) 小学校で出会う身のまわりの単語。手がかりは日本語です。 SOCCER RABBIT SUMMER WINTER">
+  <a class="th" href="pdf/english_search_elementary.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_elementary.png" alt="小学校 高学年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">小学校 高学年</span><span class="tag">Grades 5–6</span></div>
+    <a class="tt" href="pdf/english_search_elementary.pdf">小学校 高学年<br><small style="font-weight:400">Elementary (Grades 5–6)</small></a>
+    <span class="more">小学校で出会う身のまわりの単語。手がかりは日本語です。<br><small>例：SOCCER・RABBIT・SUMMER</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_elementary.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_elementary.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_elementary_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="jhs1" data-hay="中学1年 Junior High 1 (A1) 中学1年で身につけたい基本の語。手がかりは日本語です。 WANT FEEL MAKE SHOW">
+  <a class="th" href="pdf/english_search_jhs1.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_jhs1.png" alt="中学1年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">中学1年</span><span class="tag">A1</span></div>
+    <a class="tt" href="pdf/english_search_jhs1.pdf">中学1年<br><small style="font-weight:400">Junior High 1 (A1)</small></a>
+    <span class="more">中学1年で身につけたい基本の語。手がかりは日本語です。<br><small>例：WANT・FEEL・MAKE</small><br><small style="color:#8a9099">語の選び方：福岡県公立高入試（R6〜R8）に3年とも出た語のうち、NGSL上位500の基本語。手がかりは日本語です。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_jhs1.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_jhs1.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_jhs1_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="jhs2" data-hay="中学2年 Junior High 2 (A1+) 中学2年レベルの語。手がかりはやさしい英語1文です。 MOVIE DREAM SPEECH DINNER">
+  <a class="th" href="pdf/english_search_jhs2.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_jhs2.png" alt="中学2年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">中学2年</span><span class="tag">A1+</span></div>
+    <a class="tt" href="pdf/english_search_jhs2.pdf">中学2年<br><small style="font-weight:400">Junior High 2 (A1+)</small></a>
+    <span class="more">中学2年レベルの語。手がかりはやさしい英語1文です。<br><small>例：MOVIE・DREAM・SPEECH</small><br><small style="color:#8a9099">語の選び方：福岡県公立高入試に出た語のうち、NGSL 501〜1200位の語。手がかりはやさしい英語1文です。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_jhs2.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_jhs2.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_jhs2_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="jhs3" data-hay="中学3年 Junior High 3 (A2) 入試で差がつく語。手がかりは英語1文です。 MEAL LUNCH TOPIC AFRAID">
+  <a class="th" href="pdf/english_search_jhs3.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_jhs3.png" alt="中学3年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">中学3年</span><span class="tag">A2</span></div>
+    <a class="tt" href="pdf/english_search_jhs3.pdf">中学3年<br><small style="font-weight:400">Junior High 3 (A2)</small></a>
+    <span class="more">入試で差がつく語。手がかりは英語1文です。<br><small>例：MEAL・LUNCH・TOPIC</small><br><small style="color:#8a9099">語の選び方：福岡県公立高入試に出た語のうち、NGSL 1201位以下の語。入試本番で差がつく語です。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_jhs3.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_jhs3.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_jhs3_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+<section data-sec id="sec-high">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">ENGLISH</span></div>
+    <h2>高校</h2>
+    <p class="sec-note">高1は基本語、高2は評論に出る抽象語、高3は難関入試レベル。手がかりは英語の定義文です。　<span class="cnt">3レベル×2種類</span></p>
+    <div class="grid">
+<div class="card" data-band="hs1" data-hay="高校1年 High School 1 (B1) 高校で最初に固めたい基本語。手がかりは英語の説明文です。 MIND TASK REDUCE FOLLOW">
+  <a class="th" href="pdf/english_search_hs1.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_hs1.png" alt="高校1年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">高校1年</span><span class="tag">B1</span></div>
+    <a class="tt" href="pdf/english_search_hs1.pdf">高校1年<br><small style="font-weight:400">High School 1 (B1)</small></a>
+    <span class="more">高校で最初に固めたい基本語。手がかりは英語の説明文です。<br><small>例：MIND・TASK・REDUCE</small><br><small style="color:#8a9099">語の選び方：共通テスト英語リーディング（R6〜R8）に3年とも出た語のうち、NGSL上位1800の基本語。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_hs1.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_hs1.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_hs1_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="hs2" data-hay="高校2年 High School 2 (B1+) 読解で足を止められやすい語。手がかりは英語の説明文です。 HABIT ESSAY SLIDE WANDER">
+  <a class="th" href="pdf/english_search_hs2.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_hs2.png" alt="高校2年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">高校2年</span><span class="tag">B1+</span></div>
+    <a class="tt" href="pdf/english_search_hs2.pdf">高校2年<br><small style="font-weight:400">High School 2 (B1+)</small></a>
+    <span class="more">読解で足を止められやすい語。手がかりは英語の説明文です。<br><small>例：HABIT・ESSAY・SLIDE</small><br><small style="color:#8a9099">語の選び方：共通テストに出た語のうち、NGSL 1801〜2800位の語。読解で足を止められやすい語です。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_hs2.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_hs2.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_hs2_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="hs3" data-hay="高校3年 High School 3 (B2) 難関入試・学術的な文章に出る語。 RECIPE ASPECT CAMPUS HARMFUL">
+  <a class="th" href="pdf/english_search_hs3.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_hs3.png" alt="高校3年のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">高校3年</span><span class="tag">B2</span></div>
+    <a class="tt" href="pdf/english_search_hs3.pdf">高校3年<br><small style="font-weight:400">High School 3 (B2)</small></a>
+    <span class="more">難関入試・学術的な文章に出る語。<br><small>例：RECIPE・ASPECT・CAMPUS</small><br><small style="color:#8a9099">語の選び方：共通テストに出た語のうち、NGSL外またはNAWL（学術語）の語。難関入試レベルです。</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_hs3.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_hs3.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_hs3_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+<section data-sec id="sec-adult">
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">ENGLISH</span></div>
+    <h2>おとな</h2>
+    <p class="sec-note">社会人向けのビジネス英語と、ALTの先生と実際に話すときに使う語。職員室の英語コーナーにも。　<span class="cnt">2レベル×2種類</span></p>
+    <div class="grid">
+<div class="card" data-band="business" data-hay="社会人 Business English (B2) 会議・メール・調整でよく使う語。 BUDGET AGENDA REVENUE DEADLINE">
+  <a class="th" href="pdf/english_search_business.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_business.png" alt="社会人のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">社会人</span><span class="tag">B2</span></div>
+    <a class="tt" href="pdf/english_search_business.pdf">社会人<br><small style="font-weight:400">Business English (B2)</small></a>
+    <span class="more">会議・メール・調整でよく使う語。<br><small>例：BUDGET・AGENDA・REVENUE</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_business.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_business.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_business_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-band="alt" data-hay="ALTとの会話練習 Talking with your ALT ALTの先生と話すときに、実際に使う語。手がかりは会話の場面です。 AGAIN HOBBY THANK SLOWLY">
+  <a class="th" href="pdf/english_search_alt.pdf"><div class="thumb"><img loading="lazy" src="thumb/english_search_alt.png" alt="ALTとの会話練習のWord Search（問題面）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">ALTとの会話練習</span><span class="tag">ENGLISH</span></div>
+    <a class="tt" href="pdf/english_search_alt.pdf">ALTとの会話練習<br><small style="font-weight:400">Talking with your ALT</small></a>
+    <span class="more">ALTの先生と話すときに、実際に使う語。手がかりは会話の場面です。<br><small>例：AGAIN・HOBBY・THANK</small></span>
+    <div class="lvrow"><span class="lvlabel">1枚ずつ</span><a class="lvbtn" href="pdf/english_search_alt.pdf" download>さがす</a><a class="lvbtn" href="pdf/english_crossword_alt.pdf" download>クロス</a></div>
+    <div class="acts">
+      <a class="dl" href="pdf/English_Word_Puzzles_alt_set.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>2枚セット（4ページ）</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+
+  <div class="refbox">
+    <h3>まとめて印刷</h3>
+    <p>
+      <a href="pdf/English_Word_Search_all9.pdf" download>Word Search 9レベルぜんぶ（PDF 18ページ）</a>　／
+      <a href="pdf/English_Crossword_all9.pdf" download>Crossword 9レベルぜんぶ（PDF 18ページ）</a>　／
+      <a href="pdf/English_Word_Puzzles_all18.pdf" download>全18枚ぜんぶ（PDF 36ページ）</a>
+    </p>
+    <p class="small">つくりは日本語版の「ことばあそびプリント」「あたまのじゅんび運動」と共通です（1枚1課題・得点欄なし・自分で丸つけ）。学校・家庭で自由に印刷して使えます。</p>
+  </div>
+
+  <div class="refbox">
+    <h3>語の選び方と出典</h3>
+    <p>どの語をどのレベルに置くかは、次の2つを重ねて決めています。①<b>公立高校入試と共通テストで実際に使われた語</b>の出現（分析はすべて手元で行い、問題文は一切転載していません）。②<b>公開されている英語語彙リストの頻度順位と性格</b>。単語・手がかりの文・ますの中身そのものは、すべて School Stock が新しく書いたものです。</p>
+    <p class="small">語彙リストの出典：The New General Service List (NGSL), NGSL-Spoken, New Academic Word List (NAWL), Business Service List (BSL), TOEIC Service List (TSL) by Browne, C., Culligan, B. &amp; Phillips, J. ── <a href="https://www.newgeneralservicelist.org/" target="_blank" rel="noopener">newgeneralservicelist.org</a>（Creative Commons Attribution-ShareAlike 4.0 International）。本棚のレベル別語彙表は、これらのリストを参照して作成した二次的なリストであり、同じ <a href="https://creativecommons.org/licenses/by-sa/4.0/deed.ja" target="_blank" rel="noopener">CC BY-SA 4.0</a> のもとで利用できます。レベル分けは目安であり、検定教科書の配当そのものではありません。</p>
+  </div>
+</div>
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+    <div class="foot-map">
+      <div><b>棚の中</b>
+        <a href="../../">棚トップ</a>
+        <a href="../../prints/kokugo/">国語プリント</a>
+        <a href="../../prints/rika/">理科プリント</a>
+        <a href="../../prints/sansu/">算数プリント（式と言葉）</a>
+        <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）</a>
+        <a href="../../prints/shakai/">社会プリント</a>
+        <a href="../../prints/taiiku/">体育 学習カード</a>
+        <a href="../../prints/atama/">あたまのじゅんび運動</a>
+        <a href="../../prints/kotoba-asobi/">ことばあそびプリント</a>
+        <a href="../../prints/english-puzzles/">英語のことばパズル</a>
+        <a href="../../shien/">支援カード</a>
+        <a href="../../sozai/">授業イラスト素材集</a>
+        <a href="../../about/">このサイトについて</a>
+      </div>
+      <div><b>つながる</b>
+        <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+        <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+      </div>
+    </div>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます（再配布・販売はご遠慮ください）。</div>
+  </div>
+</footer>
+<script>
+(function(){var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+function open(){d.classList.add('open');s.classList.add('show');}function close(){d.classList.remove('open');s.classList.remove('show');}
+document.getElementById('menuBtn').addEventListener('click',open);document.getElementById('drawerClose').addEventListener('click',close);
+s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
+</script>
+<script>
+(function(){var state={q:'',band:'all'};
+function apply(){var shown=0;
+document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
+sec.querySelectorAll('.card').forEach(function(c){
+var ok=(state.band==='all'||c.dataset.band===state.band)&&(!state.q||c.dataset.hay.toLowerCase().indexOf(state.q)>=0);
+c.style.display=ok?'':'none';if(ok)vis++;});
+sec.style.display=vis===0?'none':'';shown+=vis;});
+document.getElementById('shown').textContent=shown;}
+document.getElementById('q').addEventListener('input',function(e){state.q=e.target.value.trim().toLowerCase();apply();});
+document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
+state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+})();
+</script>
+</body>
+</html>
