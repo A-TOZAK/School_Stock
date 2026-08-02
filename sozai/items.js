@@ -30039,5 +30039,53 @@ const SOZAI = [
   "alt": "img/sansu4_kurai_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
+ },
+ {
+  "id": "rika4_kenryukei_01",
+  "title": "検流計の 使い方（4つの順番）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "電流のはたらき",
+  "scenes": [
+   "検流計を正しく使う手順をたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "道具の使い方",
+   "説明",
+   "まとめ"
+  ],
+  "description": "①スイッチを5Aに ②はりを0に合わせる ③かん電池・検流計・豆電球をひと続きにつなぐ ④はりの傾いた向きを読む。電流が検流計を左から右へ通り、はりが右に傾きます。",
+  "howto": "実験の前に、全体で手順を確認するときに。「まず何をする？」と順番を言わせながら。",
+  "tags": [
+   "検流計",
+   "簡易検流計",
+   "使い方",
+   "5A",
+   "0.5A",
+   "切りかえスイッチ",
+   "みの虫クリップ",
+   "電流",
+   "電流の向き",
+   "かん電池",
+   "豆電球",
+   "道具の使い方",
+   "4年",
+   "理科",
+   "電流のはたらき",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_kenryukei_01.gif",
+  "thumb": "img/rika4_kenryukei_01_thumb.jpg",
+  "gifMobile": "img/rika4_kenryukei_01_mobile.gif",
+  "mp4": "img/rika4_kenryukei_01.mp4",
+  "poster": "img/rika4_kenryukei_01_poster.png",
+  "alt": "img/rika4_kenryukei_01_alt.txt",
+  "seconds": 11,
+  "phase": "道具の使い方"
  }
 ];
