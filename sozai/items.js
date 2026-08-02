@@ -29775,5 +29775,48 @@ const SOZAI = [
   "alt": "img/sansu4_warizan_hissan_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu5_tanniryo_01",
+  "title": "どちらが こんでいる？（1m²あたりでそろえる）",
+  "author": "innami",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "5年",
+  "unit": "単位量あたりの大きさ",
+  "scenes": [
+   "こみぐあいを1m²あたりの数で比べる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "比較",
+   "説明"
+  ],
+  "description": "あの小屋（2m²に6ひき）といの小屋（4m²に8ひき）。うさぎが1m²のマスごとに均等に動いて、あは1マスに3ひき、いは2ひきになります。6÷2=3、8÷4=2の式が出て、あのほうがこんでいると分かります。",
+  "howto": "「数が多いほうがこんでいる」と言う子と一緒に見て、そろえてから比べる流れに。",
+  "tags": [
+   "単位量あたり",
+   "こみぐあい",
+   "混みぐあい",
+   "うさぎ",
+   "小屋",
+   "1平方メートルあたり",
+   "平均",
+   "5年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu5_tanniryo_01.gif",
+  "thumb": "img/sansu5_tanniryo_01_thumb.jpg",
+  "gifMobile": "img/sansu5_tanniryo_01_mobile.gif",
+  "mp4": "img/sansu5_tanniryo_01.mp4",
+  "poster": "img/sansu5_tanniryo_01_poster.png",
+  "alt": "img/sansu5_tanniryo_01_alt.txt",
+  "seconds": 8,
+  "phase": "まとめ"
  }
 ];
