@@ -29995,5 +29995,49 @@ const SOZAI = [
   "alt": "img/sansu4_gaisu_01_alt.txt",
   "seconds": 10,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kurai_01",
+  "title": "4けたごとに 区切ると同じ（位取り）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "一億をこえる数",
+  "scenes": [
+   "大きな数の区切り方と位のくり返しをたしかめる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "13けたの数に右から4けたごとの区切りが入り、一・万・億・兆に分かれます。どのまとまりにも千・百・十・一があることが見え、3兆7205億600万と読めます。",
+  "howto": "位の名前を丸暗記している子と一緒に見て、「どこも同じならびだね」と確かめる流れに。",
+  "tags": [
+   "位取り",
+   "大きな数",
+   "億",
+   "兆",
+   "一億をこえる数",
+   "十進位取り記数法",
+   "区切り",
+   "読み方",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kurai_01.gif",
+  "thumb": "img/sansu4_kurai_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kurai_01_mobile.gif",
+  "mp4": "img/sansu4_kurai_01.mp4",
+  "poster": "img/sansu4_kurai_01_poster.png",
+  "alt": "img/sansu4_kurai_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
  }
 ];
