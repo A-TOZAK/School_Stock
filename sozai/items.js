@@ -30824,5 +30824,218 @@ const SOZAI = [
   "alt": "img/rika4_hoshi_narabi_01_alt.txt",
   "seconds": 12,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kimari_kokan_tashi_01",
+  "title": "8+5 と 5+8 は 長さが 同じ",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "式と計算の順じょ（計算のきまり）",
+  "scenes": [
+   "8マスの青い帯と5マスの赤い帯を入れかえても、全体の右はしは動かない"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "8マスの帯と5マスの帯が並び、式は8+5=13。全体の右はしに動かない点線があります。2本が上下に分かれて入れかわり、5・8の順にもどっても、右はしは動きません。式は5+8=13。",
+  "howto": "帯を入れかえる前で止めて「右はしはどうなる？」と聞けます。答えの数だけでなく、長さで同じだと確かめられます。",
+  "tags": [
+   "交換法則",
+   "たし算",
+   "順番",
+   "テープ図",
+   "計算のきまり",
+   "式と計算の順じょ",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kimari_kokan_tashi_01.gif",
+  "thumb": "img/sansu4_kimari_kokan_tashi_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kimari_kokan_tashi_01_mobile.gif",
+  "mp4": "img/sansu4_kimari_kokan_tashi_01.mp4",
+  "poster": "img/sansu4_kimari_kokan_tashi_01_poster.png",
+  "alt": "img/sansu4_kimari_kokan_tashi_01_alt.txt",
+  "seconds": 15,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kimari_ketsugo_tashi_01",
+  "title": "先に 10 の まとまりを つくる（18+7+3）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "式と計算の順じょ（計算のきまり）",
+  "scenes": [
+   "帯は動かさず、くくりだけが左の組から右の組へ動く"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "18・7・3の帯がつながっていて、式は18+7+3。左の18と7をくくると25、25+3=28。くくりが右へ動いて7と3をくくると10、18+10=28。帯は1本も動きません。",
+  "howto": "くくりが動く前で止めて「どこをくくると楽？」と聞けます。答えはどちらも28になることを先に確かめてから、楽なほうを選ばせる流れに。",
+  "tags": [
+   "結合法則",
+   "たし算",
+   "10のまとまり",
+   "計算の工夫",
+   "テープ図",
+   "計算のきまり",
+   "式と計算の順じょ",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kimari_ketsugo_tashi_01.gif",
+  "thumb": "img/sansu4_kimari_ketsugo_tashi_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kimari_ketsugo_tashi_01_mobile.gif",
+  "mp4": "img/sansu4_kimari_ketsugo_tashi_01.mp4",
+  "poster": "img/sansu4_kimari_ketsugo_tashi_01_poster.png",
+  "alt": "img/sansu4_kimari_ketsugo_tashi_01_alt.txt",
+  "seconds": 17,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kimari_kokan_kake_01",
+  "title": "4×6 も 6×4 も おはじきの数は 同じ",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "式と計算の順じょ（計算のきまり）",
+  "scenes": [
+   "おはじきは1つも動かさず、たての囲みがよこの囲みに変わる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "おはじきが6列4行に24こ並んでいます。たての囲みが6本出て4×6＝24。囲みがよこ4本に変わって6×4＝24。おはじきは1つも動きません。",
+  "howto": "囲みだけの1秒で止めて「これは何のまとまり？」と聞けます。並べ直していないことが、この教材の芯です。",
+  "tags": [
+   "交換法則",
+   "かけ算",
+   "アレイ図",
+   "おはじき",
+   "順番",
+   "計算のきまり",
+   "式と計算の順じょ",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kimari_kokan_kake_01.gif",
+  "thumb": "img/sansu4_kimari_kokan_kake_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kimari_kokan_kake_01_mobile.gif",
+  "mp4": "img/sansu4_kimari_kokan_kake_01.mp4",
+  "poster": "img/sansu4_kimari_kokan_kake_01_poster.png",
+  "alt": "img/sansu4_kimari_kokan_kake_01_alt.txt",
+  "seconds": 15,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kimari_ketsugo_kake_01",
+  "title": "先に 100 を つくる（25×4×7）",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "式と計算の順じょ（計算のきまり）",
+  "scenes": [
+   "25が4つで100になり、その100が7本にふえて700になる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "25と書いた四角が4つ。くくると「25が4つで100」となり、同じはばの100の帯になります。その帯が7本にふえて、100×7＝700。",
+  "howto": "「4×7を先にすると？」と聞いてから見せると、100をつくる楽さが伝わります。100の帯は1本のときも7本のときも同じはばにしてあります。",
+  "tags": [
+   "結合法則",
+   "かけ算",
+   "100のまとまり",
+   "計算の工夫",
+   "計算のきまり",
+   "式と計算の順じょ",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kimari_ketsugo_kake_01.gif",
+  "thumb": "img/sansu4_kimari_ketsugo_kake_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kimari_ketsugo_kake_01_mobile.gif",
+  "mp4": "img/sansu4_kimari_ketsugo_kake_01.mp4",
+  "poster": "img/sansu4_kimari_ketsugo_kake_01_poster.png",
+  "alt": "img/sansu4_kimari_ketsugo_kake_01_alt.txt",
+  "seconds": 17,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_kimari_bunpai_01",
+  "title": "(20+3)×4 は 20×4 と 3×4 に 分けられる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "式と計算の順じょ（計算のきまり）",
+  "scenes": [
+   "よこ23・たて4の長方形が、20のぶんと3のぶんに切れて離れる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "ますめの長方形（よこ23・たて4）が出て、式は23×4。よこが20と3に分かれ、切り口はたて4を通ります。右の3のぶんが離れて、20×4＝80、3×4＝12、合わせて92。",
+  "howto": "切る前で止めて「どこで切ると計算しやすい？」と聞けます。2けた×1けたの筆算の意味とそのままつながります。",
+  "tags": [
+   "分配法則",
+   "かけ算",
+   "面積の図",
+   "筆算",
+   "計算の工夫",
+   "計算のきまり",
+   "式と計算の順じょ",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_kimari_bunpai_01.gif",
+  "thumb": "img/sansu4_kimari_bunpai_01_thumb.jpg",
+  "gifMobile": "img/sansu4_kimari_bunpai_01_mobile.gif",
+  "mp4": "img/sansu4_kimari_bunpai_01.mp4",
+  "poster": "img/sansu4_kimari_bunpai_01_poster.png",
+  "alt": "img/sansu4_kimari_bunpai_01_alt.txt",
+  "seconds": 16,
+  "phase": "まとめ"
  }
 ];
