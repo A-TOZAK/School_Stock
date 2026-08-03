@@ -30306,5 +30306,134 @@ const SOZAI = [
   "alt": "img/sansu5_kaku_01_alt.txt",
   "seconds": 17,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu5_menseki_sankaku_01",
+  "title": "直角三角形は 長方形の半分",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "5年",
+  "unit": "面積（直角三角形の求め方）",
+  "scenes": [
+   "同じ直角三角形をもう1つ作り、まわして合わせると長方形になる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "よこ8cm・たて5cmの直角三角形に、同じ形がもう1つ重なって現れ、斜辺の真ん中を中心にまわって長方形になります。長方形の面積8×5＝40cm²から、直角三角形は40÷2＝20cm²。低学年でも追えるようゆっくりの速さにしてあります。",
+  "howto": "直角三角形の求め方の時間のあとに。実物を切って合わせる活動のあとで見せると、自分の手の動きと重なります。底辺・高さの用語と公式は次の時間の内容なので、この1本には出していません。",
+  "tags": [
+   "面積",
+   "直角三角形",
+   "長方形",
+   "半分",
+   "2つ合わせる",
+   "求積",
+   "5年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu5_menseki_sankaku_01.gif",
+  "thumb": "img/sansu5_menseki_sankaku_01_thumb.jpg",
+  "gifMobile": "img/sansu5_menseki_sankaku_01_mobile.gif",
+  "mp4": "img/sansu5_menseki_sankaku_01.mp4",
+  "poster": "img/sansu5_menseki_sankaku_01_poster.png",
+  "alt": "img/sansu5_menseki_sankaku_01_alt.txt",
+  "seconds": 16,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu2_tashizan_hissan_01",
+  "title": "くり上がった1を 十のくらいにたす",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "2年",
+  "unit": "たし算とひき算のひっ算",
+  "scenes": [
+   "38＋24の筆算で、12の1が十のくらいの上へ動く"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "一のくらいの8と4をたして12。12をそのまま書いたあと、12の1だけが小さくなって十のくらいの上へ動き、点線のわくに入ります。3と2で5、その5に上の1をたして6。答えは62。低学年でも追えるようゆっくりの速さにしてあります。",
+  "howto": "くり上がりのある筆算の時間のあとに。1が動くところで止めて「この1はどこから来た？」と聞けます。",
+  "tags": [
+   "たし算",
+   "ひっ算",
+   "筆算",
+   "くり上がり",
+   "くり上げる",
+   "一のくらい",
+   "十のくらい",
+   "2年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu2_tashizan_hissan_01.gif",
+  "thumb": "img/sansu2_tashizan_hissan_01_thumb.jpg",
+  "gifMobile": "img/sansu2_tashizan_hissan_01_mobile.gif",
+  "mp4": "img/sansu2_tashizan_hissan_01.mp4",
+  "poster": "img/sansu2_tashizan_hissan_01_poster.png",
+  "alt": "img/sansu2_tashizan_hissan_01_alt.txt",
+  "seconds": 15,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu2_hikizan_hissan_01",
+  "title": "ひけないときは 十のくらいから 10 をかりる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "2年",
+  "unit": "たし算とひき算のひっ算",
+  "scenes": [
+   "52−18の筆算で、十のくらいの5が4になり、10が一のくらいの上へ下りる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "「2から8は ひけない」から始まります。十のくらいの5に線を引いて消し、上に小さく4。そこから10が出てきて、一のくらいの2の上に小さく10と書かれます。10と2で12、12ひく8は4。十のくらいは4ひく1で3。答えは34。低学年でも追えるようゆっくりの速さにしてあります。",
+  "howto": "くり下がりのある筆算の時間のあとに。かりてきた10は、ノートと同じく一のくらいの上に書く形にしてあります。10が下りるところで止めて聞けます。",
+  "tags": [
+   "ひき算",
+   "ひっ算",
+   "筆算",
+   "くり下がり",
+   "くり下げる",
+   "10をかりる",
+   "一のくらい",
+   "十のくらい",
+   "2年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu2_hikizan_hissan_01.gif",
+  "thumb": "img/sansu2_hikizan_hissan_01_thumb.jpg",
+  "gifMobile": "img/sansu2_hikizan_hissan_01_mobile.gif",
+  "mp4": "img/sansu2_hikizan_hissan_01.mp4",
+  "poster": "img/sansu2_hikizan_hissan_01_poster.png",
+  "alt": "img/sansu2_hikizan_hissan_01_alt.txt",
+  "seconds": 15,
+  "phase": "まとめ"
  }
 ];
