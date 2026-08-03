@@ -30733,5 +30733,96 @@ const SOZAI = [
   "alt": "img/rika6_chiso_01_alt.txt",
   "seconds": 21,
   "phase": "まとめ"
+ },
+ {
+  "id": "rika4_tsuki_ichi_01",
+  "title": "月は 時こくがたつと 東 → 南 → 西 へ",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "月や星の見え方（月の見え方）",
+  "scenes": [
+   "半月が形を変えないまま、東の空から南を通って西の空へ動く"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "木と家のある景色の空に、右側が光った半月が出ています。午後3時ごろは東の低いところ。時間がたつと空の色が夕方の色に変わり、月は南の高いところへ。さらに時間がたって空が暗くなると、西の低いところへ動きます。3つの月はどれも同じ半月で、通った道が弧の点線で残ります。",
+  "howto": "月の位置の観察のあとに。南のところで止めて「このあとどっちへ動く？」と聞けます。形が変わるのは日がたったとき。この教材では1日のうちの動きだけを見せています。",
+  "tags": [
+   "月",
+   "月の動き",
+   "月や星の見え方",
+   "半月",
+   "方位",
+   "東",
+   "南",
+   "西",
+   "位置の変化",
+   "天体",
+   "4年",
+   "理科",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_tsuki_ichi_01.gif",
+  "thumb": "img/rika4_tsuki_ichi_01_thumb.jpg",
+  "gifMobile": "img/rika4_tsuki_ichi_01_mobile.gif",
+  "mp4": "img/rika4_tsuki_ichi_01.mp4",
+  "poster": "img/rika4_tsuki_ichi_01_poster.png",
+  "alt": "img/rika4_tsuki_ichi_01_alt.txt",
+  "seconds": 16,
+  "phase": "まとめ"
+ },
+ {
+  "id": "rika4_hoshi_narabi_01",
+  "title": "位置は 変わる。でも 並び方は 変わらない",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "月や星の見え方（星の見え方）",
+  "scenes": [
+   "夏の大三角が形を変えないまま南から西へ動き、8時の形を重ねるとぴったり合う"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "夜空に夏の大三角が出ています。午後8時ごろは南寄りの高いところ。時間がたつと、三角は形を変えないまま西寄りへ動きます。午後8時の位置には点線の記録が残り、その形をオレンジの写しにして運んで重ねると、ぴったり重なります。",
+  "howto": "2回の観察記録を見くらべたあとに。重ねる前で止めて「重なると思う？」と聞けます。星の明るさや色のちがいは、この教材には入れていません。",
+  "tags": [
+   "星",
+   "星の動き",
+   "夏の大三角",
+   "星座",
+   "月や星の見え方",
+   "並び方",
+   "方位",
+   "位置の変化",
+   "天体",
+   "4年",
+   "理科",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika4_hoshi_narabi_01.gif",
+  "thumb": "img/rika4_hoshi_narabi_01_thumb.jpg",
+  "gifMobile": "img/rika4_hoshi_narabi_01_mobile.gif",
+  "mp4": "img/rika4_hoshi_narabi_01.mp4",
+  "poster": "img/rika4_hoshi_narabi_01_poster.png",
+  "alt": "img/rika4_hoshi_narabi_01_alt.txt",
+  "seconds": 12,
+  "phase": "まとめ"
  }
 ];
