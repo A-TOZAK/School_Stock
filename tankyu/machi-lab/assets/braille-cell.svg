@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 300" role="img" aria-labelledby="bT bD">
+  <title id="bT">点字の1マス</title>
+  <desc id="bD">たて3つ、よこ2つにならんだ6つの点。左の列が上から1・2・3の点、右の列が上から4・5・6の点。出す点をえらぶと、ちがう文字になる。</desc>
+  <style>
+    .dot {fill:#15181c}
+    .hole{fill:none;stroke:#b9bec6;stroke-width:2;stroke-dasharray:4 4}
+    .cell{fill:#ffffff;stroke:#d6dae0;stroke-width:1.6}
+    .num {font-family:"Hiragino Sans","Noto Sans JP",sans-serif;font-size:17px;fill:#767b83}
+    .cap {font-family:"Hiragino Sans","Noto Sans JP",sans-serif;font-size:16px;fill:#15181c;font-weight:700}
+    .arw {fill:none;stroke:#2b5fd9;stroke-width:2}
+  </style>
+
+  <rect class="cell" x="150" y="40" width="150" height="210"/>
+  <circle class="dot" cx="195" cy="85"  r="15"/><text class="num" x="140" y="92"  text-anchor="end">①</text>
+  <circle class="dot" cx="195" cy="145" r="15"/><text class="num" x="140" y="152" text-anchor="end">②</text>
+  <circle class="dot" cx="195" cy="205" r="15"/><text class="num" x="140" y="212" text-anchor="end">③</text>
+  <circle class="dot" cx="255" cy="85"  r="15"/><text class="num" x="310" y="92">④</text>
+  <circle class="dot" cx="255" cy="145" r="15"/><text class="num" x="310" y="152">⑤</text>
+  <circle class="dot" cx="255" cy="205" r="15"/><text class="num" x="310" y="212">⑥</text>
+  <text class="cap" x="225" y="282" text-anchor="middle">これで「1マス」</text>
+
+  <path class="arw" d="M352,145 L392,145 M382,136 L392,145 L382,154"/>
+
+  <rect class="cell" x="420" y="82" width="86" height="126"/>
+  <circle class="dot"  cx="443" cy="112" r="12"/>
+  <circle class="hole" cx="483" cy="112" r="12"/>
+  <circle class="hole" cx="443" cy="145" r="12"/>
+  <circle class="hole" cx="483" cy="145" r="12"/>
+  <circle class="hole" cx="443" cy="178" r="12"/>
+  <circle class="hole" cx="483" cy="178" r="12"/>
+  <text class="cap" x="463" y="238" text-anchor="middle">①だけ</text>
+
+  <rect class="cell" x="540" y="82" width="86" height="126"/>
+  <circle class="dot"  cx="563" cy="112" r="12"/>
+  <circle class="hole" cx="603" cy="112" r="12"/>
+  <circle class="dot"  cx="563" cy="145" r="12"/>
+  <circle class="hole" cx="603" cy="145" r="12"/>
+  <circle class="hole" cx="563" cy="178" r="12"/>
+  <circle class="hole" cx="603" cy="178" r="12"/>
+  <text class="cap" x="583" y="238" text-anchor="middle">①と②</text>
+</svg>

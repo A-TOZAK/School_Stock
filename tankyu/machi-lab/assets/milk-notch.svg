@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 470" role="img"
+     aria-labelledby="ttl desc">
+  <title id="ttl">牛乳パックの切りかき</title>
+  <desc id="desc">左は種類別「牛乳」の紙パック。あけ口の反対がわの上のふちに、半円の切りかきが一つある。右は乳飲料の紙パック。同じ形だが切りかきはない。</desc>
+
+  <style>
+    .ln   { fill:none; stroke:#22262c; stroke-width:2.2; stroke-linejoin:round; stroke-linecap:round; }
+    .thin { fill:none; stroke:#22262c; stroke-width:1.4; stroke-linejoin:round; }
+    .face { fill:#ffffff; }
+    .side { fill:#e7ecf3; }
+    .roof { fill:#f4f6fa; }
+    .gab  { fill:#dde4ee; }
+    .fin  { fill:#eef1f6; }
+    .lead { fill:none; stroke:#2b5fd9; stroke-width:1.6; }
+    .mark { fill:none; stroke:#2b5fd9; stroke-width:2.4; }
+    .t    { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; fill:#15181c; }
+    .cap  { font-size:19px; font-weight:700; }
+    .lab  { font-size:16px; font-weight:700; fill:#2b5fd9; }
+    .note { font-size:14px; fill:#5c626b; }
+    .zbg  { fill:#ffffff; stroke:#2b5fd9; stroke-width:2.4; }
+  </style>
+
+  <!-- ============ 左：種類別「牛乳」 切りかきあり ============ -->
+  <g transform="translate(20,0)">
+    <!-- 胴（正面） -->
+    <path class="face ln" d="M62,152 L182,152 L182,352 L62,352 Z"/>
+    <!-- 胴（右側面） -->
+    <path class="side ln" d="M182,152 L216,130 L216,330 L182,352 Z"/>
+    <!-- 屋根（正面がわの斜面） -->
+    <path class="roof ln" d="M62,152 L182,152 L199,96 L79,96 Z"/>
+    <!-- 屋根（右のつま面＝ここがあけ口） -->
+    <path class="gab ln" d="M182,152 L216,130 L199,96 Z"/>
+    <!-- てっぺんの折り返し（フィン）。左はしに切りかきを入れる -->
+    <path class="fin ln"
+          d="M79,96 L199,96 L199,78 L120,78
+             A9,9 0 0 1 102,78
+             L79,78 Z"/>
+    <!-- あけ口の折り返し -->
+    <path class="thin" d="M186,96 L186,78"/>
+    <path class="thin" d="M199,86 L214,80 L214,92 L199,96"/>
+
+    <!-- 目じるし -->
+    <circle class="mark" cx="111" cy="82" r="27"/>
+    <path class="lead" d="M111,55 L111,34 L150,34"/>
+    <text class="t lab" x="156" y="40">切りかき</text>
+    <text class="t note" x="156" y="60">半円が ひとつ</text>
+
+    <!-- あけ口の指し示し -->
+    <path class="lead" d="M232,86 L268,86"/>
+    <text class="t lab" x="272" y="80">あけ口</text>
+    <text class="t note" x="272" y="100">切りかきの反対がわ</text>
+
+    <!-- 拡大 -->
+    <g transform="translate(272,168)">
+      <circle class="zbg" cx="60" cy="60" r="58"/>
+      <clipPath id="z1"><circle cx="60" cy="60" r="56"/></clipPath>
+      <g clip-path="url(#z1)">
+        <path class="fin ln" d="M-6,124 L-6,52 L38,52 A22,22 0 0 0 82,52 L126,52 L126,124 Z"/>
+      </g>
+      <text class="t note" x="60" y="140" text-anchor="middle">上のふちを、指でなぞると分かる</text>
+    </g>
+
+    <text class="t cap" x="62" y="398">種類別「牛乳」</text>
+    <text class="t note" x="62" y="422">生乳１００％のものにつく</text>
+  </g>
+
+  <!-- ============ 右：乳飲料など 切りかきなし ============ -->
+  <g transform="translate(470,0)">
+    <path class="face ln" d="M62,152 L182,152 L182,352 L62,352 Z"/>
+    <path class="side ln" d="M182,152 L216,130 L216,330 L182,352 Z"/>
+    <path class="roof ln" d="M62,152 L182,152 L199,96 L79,96 Z"/>
+    <path class="gab ln" d="M182,152 L216,130 L199,96 Z"/>
+    <!-- フィン：まっすぐ。切りかきなし -->
+    <path class="fin ln" d="M79,96 L199,96 L199,78 L79,78 Z"/>
+    <path class="thin" d="M186,96 L186,78"/>
+    <path class="thin" d="M199,86 L214,80 L214,92 L199,96"/>
+
+    <circle class="mark" cx="111" cy="82" r="27" stroke="#b0413e"/>
+    <path class="lead" d="M111,55 L111,34 L150,34" stroke="#b0413e"/>
+    <text class="t lab" x="156" y="40" fill="#b0413e">切りかき なし</text>
+    <text class="t note" x="156" y="60">ふちは まっすぐ</text>
+
+    <g transform="translate(272,168)">
+      <circle class="zbg" cx="60" cy="60" r="58" stroke="#b0413e"/>
+      <clipPath id="z2"><circle cx="60" cy="60" r="56"/></clipPath>
+      <g clip-path="url(#z2)">
+        <path class="fin ln" d="M-6,124 L-6,52 L126,52 L126,124 Z"/>
+      </g>
+      <text class="t note" x="60" y="140" text-anchor="middle">さわっても へこみがない</text>
+    </g>
+
+    <text class="t cap" x="62" y="398">乳飲料・ジュースなど</text>
+    <text class="t note" x="62" y="422">牛乳いがいには つかない</text>
+  </g>
+</svg>
