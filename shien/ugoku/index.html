@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>うごく解説（支援で使う） ── School Stock</title>
+<meta name="description" content="止め絵では伝わらない変化・順序・道具の使い方を、10〜20秒のGIFと動画にした教材。何度でも見られて、止められて、音がない。読むのがしんどい子・一度で聞き取れない子のための棚です。">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="うごく解説（支援で使う）｜School Stock">
+<meta property="og:description" content="何度でも見られて、止められて、音がない。10〜20秒のうごく教材の棚。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/shien/ugoku/">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:20px 0 26px; margin-bottom:10px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:15px; color:#3d4148; line-height:1.95; max-width:680px; }
+.head .lead b { color:var(--ink); }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.why { display:grid; grid-template-columns:repeat(auto-fit,minmax(210px,1fr)); gap:14px; margin:26px 0 6px; }
+.why div { border:1px solid var(--line); padding:14px 16px; }
+.why b { display:block; font-size:14px; margin-bottom:4px; }
+.why span { font-size:12.5px; color:var(--sub); line-height:1.8; }
+.note-use { margin:22px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:13px 18px; font-size:13px; line-height:1.85; color:#3d4148; }
+.sh { display:flex; align-items:center; gap:12px; margin:40px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; background:var(--accent); }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .scount { margin-left:auto; font-family:Georgia,serif; font-style:italic; font-weight:700; color:var(--sub); font-size:15px; }
+.mgrid { display:grid; grid-template-columns:repeat(auto-fill,minmax(300px,1fr)); gap:22px; }
+.mc { border:1px solid var(--ink); display:flex; flex-direction:column; background:#fff; }
+.mc-shot { position:relative; display:block; border-bottom:1px solid var(--line); background:var(--wash); }
+.mc-shot img { display:block; width:100%; height:auto; }
+.mc-sec { position:absolute; right:8px; bottom:8px; background:rgba(14,15,17,.82); color:#fff; font-size:11px; font-weight:700; letter-spacing:.06em; padding:2px 8px; }
+.mc-body { padding:14px 16px 16px; display:flex; flex-direction:column; gap:6px; }
+.mc-tag { font-size:11.5px; color:var(--sub); letter-spacing:.04em; }
+.mc h3 { font-size:15.5px; font-weight:700; line-height:1.6; }
+.mc p { font-size:12.8px; color:#3d4148; line-height:1.85; }
+.mc-links { display:flex; flex-wrap:wrap; gap:6px; margin-top:6px; }
+.mc-links a { font-size:11.5px; font-weight:700; border:1px solid var(--line); padding:4px 10px; color:var(--ink); }
+.mc-links a:hover { border-color:var(--ink); background:var(--wash); }
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+    <a href="../../#prints">プリント</a>
+    <a href="../../#support">支援</a>
+    <a href="../../#toolbox">道具</a>
+    <a href="../../sozai/">素材</a>
+    <a href="../../about/">このサイトについて</a>
+    <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+  </div>
+</div></div>
+
+<div class="container">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../">支援カード</a> ／ うごく解説</div>
+  <div class="head">
+    <span class="kicker">SUPPORT ｜ MOTION</span>
+    <h1>うごく解説（支援で使う）</h1>
+    <p class="lead">止め絵では伝わらない<b>変化・順序・道具の使い方</b>を、10〜20秒の短い動きにした教材です。
+    素材棚にある「うごく」だけをここに集めました。言葉での説明が入りにくい子、一度聞いただけでは追えない子、
+    板書を写しながら聞くのがしんどい子に、<b>同じ説明をそのままの形で何度でも</b>渡せます。</p>
+    <div class="meta"><b>全27本・無料</b>　｜　動画（止められる）・GIF・静止画・説明の文　｜　音なし　｜　© School Stock</div>
+    <div class="why">
+      <div><b>止められる</b><span>動画版は一時停止と巻きもどしができます。子どものペースで、見たいところで止められます。</span></div>
+      <div><b>何度でも同じ</b><span>先生の言い方は毎回少し変わります。この教材は何度見ても同じ順・同じ言葉です。</span></div>
+      <div><b>音がない</b><span>教室で流しても、まわりの音とけんかしません。聞き取りに負担のある子にも渡せます。</span></div>
+      <div><b>短い</b><span>10〜20秒。1本に説明はひとつだけ。最後は止まって、読む時間があります。</span></div>
+    </div>
+    <div class="note-use">個別に渡すときは、動画版（止められる版）をタブレットに入れるのが使いやすいです。
+    全体に見せるときはGIFのほうが手軽です。「説明の文」は、画面の内容を言葉にしたものです。
+    読み上げソフトを使う子や、見えにくい子に、同じ中身を文字で渡すのに使えます。</div>
+  </div>
+    <div class="sh"><div class="sbar"></div><h2>算数</h2>
+      <span class="scount">18</span></div>
+    <div class="mgrid">
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu2_hikizan_hissan_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu2_hikizan_hissan_01_thumb.jpg" alt="ひけないときは 十のくらいから 10 をかりる" loading="lazy">
+          <span class="mc-sec">15秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">2年 算数　｜　たし算とひき算のひっ算</div>
+          <h3>ひけないときは 十のくらいから 10 をかりる</h3>
+          <p>「2から8は ひけない」から始まります。十のくらいの5に線を引いて消し、上に小さく4。そこから10が出てきて、一のくらいの2の上に小さく10と書かれます。10と2で12、12ひく8は4。十のくらいは4ひく1で3。答えは34。低学年でも追えるようゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu2_hikizan_hissan_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu2_hikizan_hissan_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu2_hikizan_hissan_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu2_hikizan_hissan_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu2_hikizan_hyaku_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu2_hikizan_hyaku_01_thumb.jpg" alt="百のくらいから 10 をかりる" loading="lazy">
+          <span class="mc-sec">16秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">2年 算数　｜　たし算とひき算のひっ算(2)</div>
+          <h3>百のくらいから 10 をかりる</h3>
+          <p>一のくらいはそのままひけます。十のくらいで「3から5は ひけない」となり、百のくらいの1を消して0にし、そこから出てきた10が十のくらいの3の上へ下ります。10と3で13、13ひく5は8。答えは82。ゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu2_hikizan_hyaku_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu2_hikizan_hyaku_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu2_hikizan_hyaku_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu2_hikizan_hyaku_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu2_tashizan_3ko_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu2_tashizan_3ko_01_thumb.jpg" alt="3つの数をたすと くり上がりが2になる" loading="lazy">
+          <span class="mc-sec">17秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">2年 算数　｜　たし算とひき算のひっ算(2)</div>
+          <h3>3つの数をたすと くり上がりが2になる</h3>
+          <p>一のくらいの8と7と6をたして21。1を書いて、2が小さくなって十のくらいの上へ動きます。くり上がりが1ではなく2になるところがこの時間の新しさです。答えは81。ゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu2_tashizan_3ko_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu2_tashizan_3ko_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu2_tashizan_3ko_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu2_tashizan_3ko_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu2_tashizan_hissan_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu2_tashizan_hissan_01_thumb.jpg" alt="くり上がった1を 十のくらいにたす" loading="lazy">
+          <span class="mc-sec">15秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">2年 算数　｜　たし算とひき算のひっ算</div>
+          <h3>くり上がった1を 十のくらいにたす</h3>
+          <p>一のくらいの8と4をたして12。12をそのまま書いたあと、12の1だけが小さくなって十のくらいの上へ動き、点線のわくに入ります。3と2で5、その5に上の1をたして6。答えは62。低学年でも追えるようゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu2_tashizan_hissan_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu2_tashizan_hissan_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu2_tashizan_hissan_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu2_tashizan_hissan_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu3_kakezan_hissan_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu3_kakezan_hissan_01_thumb.jpg" alt="くり上がった1を 十の位にたす" loading="lazy">
+          <span class="mc-sec">15秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">3年 算数　｜　1けたをかけるかけ算の筆算</div>
+          <h3>くり上がった1を 十の位にたす</h3>
+          <p>一の位の4と3をかけて12。12の1だけが小さくなって十の位の上へ動き、点線のわくに入ります。次に2と3をかけて6、その6に上の1をたして7。答えは72です。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu3_kakezan_hissan_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu3_kakezan_hissan_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu3_kakezan_hissan_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu3_kakezan_hissan_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_bunsu_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_bunsu_01_thumb.jpg" alt="仮分数と帯分数は 数直線の同じ場所" loading="lazy">
+          <span class="mc-sec">16秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　分数（1より大きい分数の表し方）</div>
+          <h3>仮分数と帯分数は 数直線の同じ場所</h3>
+          <p>0から3までの数直線に4分の1のタイルが9こ並びます。上から4分の9が、下から2と4分の1が、同じ場所を指します。タイルが4こずつまとまって1になる動きで、2つの書き方が同じ大きさだと見えます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_bunsu_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_bunsu_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_bunsu_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_bunsu_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_gaisu_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_gaisu_01_thumb.jpg" alt="四捨五入は 近いほうに寄せること（がい数）" loading="lazy">
+          <span class="mc-sec">10秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　がい数とその計算</div>
+          <h3>四捨五入は 近いほうに寄せること（がい数）</h3>
+          <p>2300〜2400の数直線にまん中2350を引き、2380は右だから2400へ、2340は左だから2300へ寄ります。「4以下は下げ、5以上は上げ」を丸暗記している子に、位置として見せられます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_gaisu_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_gaisu_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_gaisu_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_gaisu_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_karisho_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_karisho_01_thumb.jpg" alt="見当をつけた商が大きすぎたら 1へらす" loading="lazy">
+          <span class="mc-sec">17秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　2けたでわるわり算の筆算</div>
+          <h3>見当をつけた商が大きすぎたら 1へらす</h3>
+          <p>24を20とみて13÷2＝6と見当をつけ、24×6＝144を書きます。144は138より大きくてひけないので、6に赤い線を引いて消し、1へらして5に書き直します。消した6は右下の小窓に「6→1へらす→5」として最後まで残ります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_karisho_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_karisho_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_karisho_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_karisho_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_kurai_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_kurai_01_thumb.jpg" alt="4けたごとに 区切ると同じ（位取り）" loading="lazy">
+          <span class="mc-sec">10秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　一億をこえる数</div>
+          <h3>4けたごとに 区切ると同じ（位取り）</h3>
+          <p>13けたの数に右から4けたごとの区切りが入り、一・万・億・兆に分かれます。どのまとまりにも千・百・十・一があることが見え、3兆7205億600万と読めます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_kurai_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_kurai_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_kurai_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_kurai_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_menseki_L_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_menseki_L_01_thumb.jpg" alt="L字の面積 — 分け方は ひとつじゃない" loading="lazy">
+          <span class="mc-sec">9秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　面積の求め方のくふう</div>
+          <h3>L字の面積 — 分け方は ひとつじゃない</h3>
+          <p>同じL字を2つ並べ、左は長方形2つに分けて 16＋40＝56、右は大きい長方形から欠けを引いて 80−24＝56。どちらでも同じ答えになることが見えます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_menseki_L_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_menseki_L_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_menseki_L_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_menseki_L_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu4_warizan_hissan_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu4_warizan_hissan_01_thumb.jpg" alt="わり算の筆算 たてる・かける・ひく・おろす" loading="lazy">
+          <span class="mc-sec">10秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 算数　｜　1けたでわるわり算の筆算</div>
+          <h3>わり算の筆算 たてる・かける・ひく・おろす</h3>
+          <p>72÷3の筆算が、たてる→かける→ひく→おろすの順に1つずつ書き進みます。右の4つの札が今どの段階かを示し、おろした数は矢印とともに下りてきます。同じ順をもう一度くり返して24になります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu4_warizan_hissan_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu4_warizan_hissan_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu4_warizan_hissan_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu4_warizan_hissan_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu5_kaku_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu5_kaku_01_thumb.jpg" alt="3つの角を あつめると 一直線" loading="lazy">
+          <span class="mc-sec">17秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 算数　｜　図形の角</div>
+          <h3>3つの角を あつめると 一直線</h3>
+          <p>直角でも二等辺でもない三角形の3つの角に、あ・い・うの名前をつけます。3つの角が1つずつ右の直線へ動いて、となりどうしつながっていき、ちょうど半円になって直線と重なります。角の大きさの数値は出していません。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu5_kaku_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu5_kaku_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu5_kaku_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu5_kaku_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu5_menseki_sankaku_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu5_menseki_sankaku_01_thumb.jpg" alt="直角三角形は 長方形の半分" loading="lazy">
+          <span class="mc-sec">16秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 算数　｜　面積（直角三角形の求め方）</div>
+          <h3>直角三角形は 長方形の半分</h3>
+          <p>よこ8cm・たて5cmの直角三角形に、同じ形がもう1つ重なって現れ、斜辺の真ん中を中心にまわって長方形になります。長方形の面積8×5＝40cm²から、直角三角形は40÷2＝20cm²。低学年でも追えるようゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu5_menseki_sankaku_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu5_menseki_sankaku_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu5_menseki_sankaku_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu5_menseki_sankaku_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu5_taiseki_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu5_taiseki_01_thumb.jpg" alt="体積は 1cm³が いくつ分" loading="lazy">
+          <span class="mc-sec">36秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 算数　｜　体積</div>
+          <h3>体積は 1cm³が いくつ分</h3>
+          <p>はじめにオレンジの1cm³が1つ出て、右上の見本に残ります。たて3cm・横4cm・高さ2cmのわくに、積み木を手前の列から1こずつ置いていき、カウンタが24こまで増えます。最初に置いたオレンジの1個は、積み上がったあとも左手前に見えています。1こずつ声に出して数えられるよう、ゆっくりの半分の速さ（36秒）にしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu5_taiseki_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu5_taiseki_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu5_taiseki_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu5_taiseki_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu5_tanniryo_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu5_tanniryo_01_thumb.jpg" alt="どちらが こんでいる？（1m²あたりでそろえる）" loading="lazy">
+          <span class="mc-sec">8秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 算数　｜　単位量あたりの大きさ</div>
+          <h3>どちらが こんでいる？（1m²あたりでそろえる）</h3>
+          <p>あの小屋（2m²に6ひき）といの小屋（4m²に8ひき）。うさぎが1m²のマスごとに均等に動いて、あは1マスに3ひき、いは2ひきになります。6÷2=3、8÷4=2の式が出て、あのほうがこんでいると分かります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu5_tanniryo_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu5_tanniryo_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu5_tanniryo_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu5_tanniryo_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu5_tsubun_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu5_tsubun_01_thumb.jpg" alt="分母をそろえてから たす" loading="lazy">
+          <span class="mc-sec">17秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 算数　｜　分数のたし算・ひき算（通分）</div>
+          <h3>分母をそろえてから たす</h3>
+          <p>同じ長さのテープ2本に、区切りの線が引き足されて6等分になります。色をぬった部分の長さは変わらないまま、2分の1が6分の3に、3分の1が6分の2に書きかわります。答えは6分の5。低学年でも追えるようゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu5_tsubun_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu5_tsubun_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu5_tsubun_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu5_tsubun_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu6_baai_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu6_baai_01_thumb.jpg" alt="樹形図で 落ちも重なりもなく数える" loading="lazy">
+          <span class="mc-sec">17秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">6年 算数　｜　場合を順序よく整理して（並べ方）</div>
+          <h3>樹形図で 落ちも重なりもなく数える</h3>
+          <p>「はじめ」から3本の枝が分かれて百の位が決まり、さらに2本ずつ分かれて十の位、最後に残った1枚で一の位が決まります。枝の先に6つの数が並んで6とおり。ゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu6_baai_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu6_baai_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu6_baai_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu6_baai_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/sansu6_en_menseki_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/sansu6_en_menseki_01_thumb.jpg" alt="円をばらして 並べかえると（円の面積）" loading="lazy">
+          <span class="mc-sec">10秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">6年 算数　｜　円の面積</div>
+          <h3>円をばらして 並べかえると（円の面積）</h3>
+          <p>円が16等分されてばらばらになり、上下交互に並べかえられて長方形に近い形になります。たて＝半径、横＝円周の半分（半径×円周率）から、円の面積＝半径×半径×円周率が出ます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/sansu6_en_menseki_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/sansu6_en_menseki_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/sansu6_en_menseki_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/sansu6_en_menseki_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="sh"><div class="sbar"></div><h2>理科</h2>
+      <span class="scount">9</span></div>
+    <div class="mgrid">
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika4_hoshi_narabi_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika4_hoshi_narabi_01_thumb.jpg" alt="位置は 変わる。でも 並び方は 変わらない" loading="lazy">
+          <span class="mc-sec">12秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 理科　｜　月や星の見え方（星の見え方）</div>
+          <h3>位置は 変わる。でも 並び方は 変わらない</h3>
+          <p>夜空に夏の大三角が出ています。午後8時ごろは南寄りの高いところ。時間がたつと、三角は形を変えないまま西寄りへ動きます。午後8時の位置には点線の記録が残り、その形をオレンジの写しにして運んで重ねると、ぴったり重なります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika4_hoshi_narabi_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika4_hoshi_narabi_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika4_hoshi_narabi_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika4_hoshi_narabi_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika4_kenryukei_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika4_kenryukei_01_thumb.jpg" alt="検流計の 使い方（4つの順番）" loading="lazy">
+          <span class="mc-sec">11秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 理科　｜　電流のはたらき</div>
+          <h3>検流計の 使い方（4つの順番）</h3>
+          <p>①スイッチを5Aに ②はりが0かたしかめる ③かん電池・検流計・豆電球をひと続きにつなぐ ④はりの傾いた向きを読む。電流が検流計を左から右へ通り、はりが右に傾きます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika4_kenryukei_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika4_kenryukei_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika4_kenryukei_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika4_kenryukei_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika4_taiseki_ondo_01_air.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika4_taiseki_ondo_01_air_thumb.jpg" alt="試験管を手でにぎると…（導入）" loading="lazy">
+          <span class="mc-sec">7秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 理科　｜　物の体積と温度</div>
+          <h3>試験管を手でにぎると…（導入）</h3>
+          <p>子どもの手が試験管をにぎると、口にはった平らなせっけん水のまくが上にふくらみ、はじめの高さの点線をこえます。答えは出さず「どうして ふくらんだのかな」で止まります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika4_taiseki_ondo_01_air.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_01_air.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_01_air_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_01_air_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika4_taiseki_ondo_02_air_matome.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika4_taiseki_ondo_02_air_matome_thumb.jpg" alt="あたためると？ 冷やすと？（まとめ）" loading="lazy">
+          <span class="mc-sec">7秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 理科　｜　物の体積と温度</div>
+          <h3>あたためると？ 冷やすと？（まとめ）</h3>
+          <p>お湯（60〜70℃）と氷水に立てた2本の試験管。左のまくはふくらみ、右のまくはへこみます。最後に「空気は あたためると体積がふえ、冷やすと体積がへる」と出て止まります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika4_taiseki_ondo_02_air_matome.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_02_air_matome.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_02_air_matome_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika4_taiseki_ondo_02_air_matome_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika4_tsuki_ichi_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika4_tsuki_ichi_01_thumb.jpg" alt="月は 時こくがたつと 東 → 南 → 西 へ" loading="lazy">
+          <span class="mc-sec">16秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">4年 理科　｜　月や星の見え方（月の見え方）</div>
+          <h3>月は 時こくがたつと 東 → 南 → 西 へ</h3>
+          <p>木と家のある景色の空に、右側が光った半月が出ています。午後3時ごろは東の低いところ。時間がたつと空の色が夕方の色に変わり、月は南の高いところへ。さらに時間がたって空が暗くなると、西の低いところへ動きます。3つの月はどれも同じ半月で、通った道が弧の点線で残ります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika4_tsuki_ichi_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika4_tsuki_ichi_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika4_tsuki_ichi_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika4_tsuki_ichi_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika5_furiko_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika5_furiko_01_thumb.jpg" alt="ふりこが長いほど 1往復する時間は長い" loading="lazy">
+          <span class="mc-sec">16秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">5年 理科　｜　ふりこのきまり</div>
+          <h3>ふりこが長いほど 1往復する時間は長い</h3>
+          <p>短いふりこと長いふりこを、同じ角度から同時にはなします。おもりの重さも角度も同じ。同じ時間で、短いほうは往復6回、長いほうは往復3回になります。糸の長さは25cmと100cmの比（1対4）に合わせてあります。低学年でも追えるようゆっくりの速さにしてあります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika5_furiko_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika5_furiko_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika5_furiko_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika5_furiko_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika6_chiso_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika6_chiso_01_thumb.jpg" alt="まぜて入れても 大きいつぶから しずむ" loading="lazy">
+          <span class="mc-sec">21秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">6年 理科　｜　大地のつくり（地層のでき方）</div>
+          <h3>まぜて入れても 大きいつぶから しずむ</h3>
+          <p>といから、れき・砂・どろのまざった土を一度に流しこみます。水がにごり、たくさんのつぶが散らばって落ちていきます。大きいつぶが先に底に着いて層になっても、水はまだにごったまま。細かいつぶが水中にうかんでいます。しばらくおくとにごりが晴れ、いちばん上にどろが積もります。もう一度流しこむと、同じ順でもう1組の層が重なります。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika6_chiso_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika6_chiso_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika6_chiso_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika6_chiso_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika6_teko_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika6_teko_01_thumb.jpg" alt="てこがつり合うのは どんなとき？" loading="lazy">
+          <span class="mc-sec">9秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">6年 理科　｜　てこの規則性</div>
+          <h3>てこがつり合うのは どんなとき？</h3>
+          <p>てこ実験器の左うで（支点から4）におもりを3個かけると左が下がり、右うで（支点から6）に2個かけると水平にもどってつり合います。4×3=12、6×2=12の式が出ます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika6_teko_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika6_teko_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika6_teko_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika6_teko_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+      <div class="mc">
+        <a class="mc-shot" href="../../sozai/img/rika6_tsuki_01.mp4" target="_blank" rel="noopener">
+          <img src="../../sozai/img/rika6_tsuki_01_thumb.jpg" alt="月の光っている側には いつも太陽がある" loading="lazy">
+          <span class="mc-sec">14秒</span>
+        </a>
+        <div class="mc-body">
+          <div class="mc-tag">6年 理科　｜　月と太陽</div>
+          <h3>月の光っている側には いつも太陽がある</h3>
+          <p>暗い部屋のモデル実験。中央にわたし（地球）、右に太陽（電灯）。ボール（月）はどの位置でも太陽側の半分だけが光っています。新月・上弦の月・満月・下弦の月の4か所でゆっくり止まりながら、「わたしから見た形」が残っていきます。</p>
+          <div class="mc-links">
+            <a href="../../sozai/img/rika6_tsuki_01.mp4" target="_blank" rel="noopener">動画（止められる）</a>
+            <a href="../../sozai/img/rika6_tsuki_01.gif" target="_blank" rel="noopener">GIF</a>
+            <a href="../../sozai/img/rika6_tsuki_01_poster.png" target="_blank" rel="noopener">静止画</a>
+            <a href="../../sozai/img/rika6_tsuki_01_alt.txt" target="_blank" rel="noopener">説明の文</a>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生の「明日の授業」を、少しだけ軽くする教材の棚。<br>
+  <a href="../">支援カード</a>　｜　<a href="../../sozai/">素材の棚</a>　｜　<a href="../../">トップ</a>
+  <div class="foot-c">© School Stock　教材は自由に使えます（授業・校内研修・配布）。</div>
+</div></div>
+</body>
+</html>
