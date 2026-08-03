@@ -30134,5 +30134,177 @@ const SOZAI = [
   "alt": "img/rika6_tsuki_01_alt.txt",
   "seconds": 14,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_karisho_01",
+  "title": "見当をつけた商が大きすぎたら 1へらす",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "2けたでわるわり算の筆算",
+  "scenes": [
+   "138÷24の筆算で、見当をつけた商をなおす手順をたどる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "24を20とみて13÷2＝6と見当をつけ、24×6＝144を書きます。144は138より大きくてひけないので、6に赤い線を引いて消し、1へらして5に書き直します。消した6は右下の小窓に「6→1へらす→5」として最後まで残ります。",
+  "howto": "「見当をつけた商のなおし方」の時間のあとに。止めて「なんで6が5になったと思う？」と聞く場面を作れます。",
+  "tags": [
+   "わり算",
+   "筆算",
+   "2けたでわる",
+   "商",
+   "見当",
+   "仮商",
+   "なおし方",
+   "修正",
+   "あまり",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_karisho_01.gif",
+  "thumb": "img/sansu4_karisho_01_thumb.jpg",
+  "gifMobile": "img/sansu4_karisho_01_mobile.gif",
+  "mp4": "img/sansu4_karisho_01.mp4",
+  "poster": "img/sansu4_karisho_01_poster.png",
+  "alt": "img/sansu4_karisho_01_alt.txt",
+  "seconds": 11,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu3_kakezan_hissan_01",
+  "title": "くり上がった1を 十の位にたす",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "1けたをかけるかけ算の筆算",
+  "scenes": [
+   "24×3の筆算で、くり上がりの1が上へ動いて、十の位にたされる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "一の位の4と3をかけて12。12の1だけが小さくなって十の位の上へ動き、点線のわくに入ります。次に2と3をかけて6、その6に上の1をたして7。答えは72です。",
+  "howto": "くり上がりのある筆算の時間のあとに。1が動くところで一度止めて「この1はどこから来た？」と聞けます。",
+  "tags": [
+   "かけ算",
+   "筆算",
+   "くり上がり",
+   "1けたをかける",
+   "十の位",
+   "一の位",
+   "3年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu3_kakezan_hissan_01.gif",
+  "thumb": "img/sansu3_kakezan_hissan_01_thumb.jpg",
+  "gifMobile": "img/sansu3_kakezan_hissan_01_mobile.gif",
+  "mp4": "img/sansu3_kakezan_hissan_01.mp4",
+  "poster": "img/sansu3_kakezan_hissan_01_poster.png",
+  "alt": "img/sansu3_kakezan_hissan_01_alt.txt",
+  "seconds": 10,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu4_bunsu_01",
+  "title": "仮分数と帯分数は 数直線の同じ場所",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "分数（1より大きい分数の表し方）",
+  "scenes": [
+   "4分の1のタイルが9こ並び、4こずつまとまって2と4分の1になる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "0から3までの数直線に4分の1のタイルが9こ並びます。上から4分の9が、下から2と4分の1が、同じ場所を指します。タイルが4こずつまとまって1になる動きで、2つの書き方が同じ大きさだと見えます。",
+  "howto": "仮分数と帯分数の直し方の時間のあとに。「どっちが大きい？」と聞いてから見せると、同じ場所だと気づけます。",
+  "tags": [
+   "分数",
+   "仮分数",
+   "帯分数",
+   "真分数",
+   "数直線",
+   "1より大きい分数",
+   "4年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu4_bunsu_01.gif",
+  "thumb": "img/sansu4_bunsu_01_thumb.jpg",
+  "gifMobile": "img/sansu4_bunsu_01_mobile.gif",
+  "mp4": "img/sansu4_bunsu_01.mp4",
+  "poster": "img/sansu4_bunsu_01_poster.png",
+  "alt": "img/sansu4_bunsu_01_alt.txt",
+  "seconds": 11,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu5_kaku_01",
+  "title": "3つの角を あつめると 一直線",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "5年",
+  "unit": "図形の角",
+  "scenes": [
+   "三角形の3つの角が1つずつ動いて、直線の上にぴったり並ぶ"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "直角でも二等辺でもない三角形の3つの角に、あ・い・うの名前をつけます。3つの角が1つずつ右の直線へ動いて、となりどうしつながっていき、ちょうど半円になって直線と重なります。角の大きさの数値は出していません。",
+  "howto": "角を切り取って並べる活動のあとの確認に。実物で並べてから見せると、自分の手の動きと重なります。",
+  "tags": [
+   "三角形",
+   "角",
+   "内角",
+   "内角の和",
+   "180度",
+   "一直線",
+   "図形の角",
+   "5年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu5_kaku_01.gif",
+  "thumb": "img/sansu5_kaku_01_thumb.jpg",
+  "gifMobile": "img/sansu5_kaku_01_mobile.gif",
+  "mp4": "img/sansu5_kaku_01.mp4",
+  "poster": "img/sansu5_kaku_01_poster.png",
+  "alt": "img/sansu5_kaku_01_alt.txt",
+  "seconds": 11,
+  "phase": "まとめ"
  }
 ];
