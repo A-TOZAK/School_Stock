@@ -274,16 +274,19 @@
 
   <section id="pickup">
     <div class="shelf-head"><span class="sn">★</span><span class="sl">PICK UP｜いま見てほしい教材</span></div>
-    <div class="feature">
-      <div class="fimg"><img src="ideas/a/iizuka-img/card.jpg" width="1280" height="800" loading="lazy" alt="デジタル副読本の画面。左に飯塚市を空からうつした写真、右に資料のページ。写真の上に赤いペンで丸が書きこまれ、右側にペン・蛍光ペンの道具が並んでいる"></div>
-      <div class="fbody">
-        <span class="ftag">社会・小3／地域教材</span>
-        <h2>飯塚市 地域教材<span class="nw">デジタル副読本</span></h2>
-        <p>3年社会「市の様子」の地域資料を、電子黒板でも一人一台端末でも、そのまま開いて<b>ペンで書きこめる</b>Web教材にしました。「ここを見て」と印をつけながら、全員で同じ資料を読み取れます。市役所への取材と提供資料、自分で撮った写真でつくった全9ページ。</p>
-        <p class="fmeta">リンクを開くだけ・インストール不要／他の市町村でも同じ型でつくれます</p>
-        <div class="fbtns">
-          <a class="solid" href="https://a-tozak.github.io/iizuka-fukudokuhon/" target="_blank" rel="noopener">副読本を開く ↗</a>
-          <a href="ideas/a/iizuka-fukudokuhon.html">授業での使い方を読む →</a>
+    <div id="pickup-slot">
+      <!-- ここは assets/pickup.js が3日ごとに入れかえます。JSが動かない環境では下の1件が出ます -->
+      <div class="feature">
+        <div class="fimg"><img src="assets/pickup/fukudokuhon.jpg" width="1000" height="625" alt="デジタル副読本の画面。左に飯塚市を空からうつした写真、右に資料のページ。写真の上に赤いペンで丸が書きこまれている"></div>
+        <div class="fbody">
+          <span class="ftag">社会・小3／地域教材</span>
+          <h2>飯塚市 地域教材<span class="nw">デジタル副読本</span></h2>
+          <p>3年社会「市の様子」の地域資料を、電子黒板でも一人一台端末でも、そのまま開いて<b>ペンで書きこめる</b>Web教材にしました。「ここを見て」と印をつけながら、全員で同じ資料を読み取れます。</p>
+          <p class="fmeta">リンクを開くだけ・インストール不要</p>
+          <div class="fbtns">
+            <a class="solid" href="https://a-tozak.github.io/iizuka-fukudokuhon/" target="_blank" rel="noopener">副読本を開く ↗</a>
+            <a href="ideas/a/iizuka-fukudokuhon.html">授業での使い方を読む →</a>
+          </div>
         </div>
       </div>
     </div>
@@ -844,6 +847,7 @@
 })();
 </script>
 
+<script src="/School_Stock/assets/pickup.js"></script>
 <script src="/School_Stock/assets/counter-config.js"></script>
 <script src="/School_Stock/assets/counter.js" defer></script>
 <script src="/School_Stock/assets/soudan.js" defer></script>
