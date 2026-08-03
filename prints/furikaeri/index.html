@@ -6,47 +6,88 @@
 <meta name="robots" content="noindex,nofollow">
 <title>ふりかえりプリント 9月ぶん｜School Stock</title>
 <style>
-:root{ --ink:#1a1a1a; --sub:#555; --line:#ddd; --bg:#fbfaf7; --accent:#166156; }
-*{ box-sizing:border-box; }
-body{ margin:0; background:var(--bg); color:var(--ink);
-  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
-  line-height:1.7; -webkit-text-size-adjust:100%; }
-.wrap{ max-width:960px; margin:0 auto; padding:32px 20px 80px; }
-h1{ font-size:1.6rem; margin:0 0 12px; letter-spacing:.02em; }
-h2{ font-size:1.15rem; margin:0 0 10px; letter-spacing:.02em; }
-.lead{ color:var(--sub); margin:0 0 14px; }
-.all{ color:var(--accent); font-weight:700; }
-a{ color:var(--accent); }
+/* School Stock のトンマナ（~/Claude/design-system/tokens.css と棚の各ページにそろえる） */
+:root{ --ink:#15181c; --black:#0e0f11; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3;
+       --sub:#767b83; --accent:#2b5fd9; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased; }
+a{ color:var(--accent); text-decoration:none; }
+
+.topbar{ background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in{ max-width:960px; margin:0 auto; padding:13px 24px; display:flex;
+  justify-content:space-between; align-items:center; gap:14px; }
+.wordmark{ font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.topbar .tag{ color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; }
+
+.container{ max-width:960px; margin:0 auto; padding:0 24px 72px; }
+.crumb{ font-size:12px; color:var(--sub); letter-spacing:.06em; padding:22px 0 0; }
+.crumb a{ color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+
+h2{ font-size:23px; letter-spacing:.04em; padding:26px 0 14px; border-bottom:1px solid var(--ink); }
+h3{ font-size:15px; letter-spacing:.06em; margin:34px 0 10px; }
+h3 .nw{ font-size:12px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
+.note{ font-size:14px; color:var(--sub); margin:16px 0 0; }
+.dl{ margin:18px 0 6px; }
+.btn{ display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em;
+  color:#fff; background:var(--ink); padding:11px 20px; }
+.btn:hover{ background:var(--accent); }
+
 /* 鍵の画面 */
-#gate{ max-width:420px; margin:14vh auto; padding:28px 24px; background:#fff;
-  border:1px solid var(--line); border-radius:12px; }
-#gate h1{ font-size:1.25rem; }
-#gate p{ color:var(--sub); font-size:.92rem; margin:0 0 18px; }
-#pw{ width:100%; padding:12px 14px; font-size:1rem; border:1px solid #bbb; border-radius:8px; }
-#go{ width:100%; margin-top:12px; padding:12px; font-size:1rem; font-weight:700; color:#fff;
-  background:var(--accent); border:0; border-radius:8px; cursor:pointer; }
-#msg{ min-height:1.4em; margin-top:10px; color:#c00; font-size:.9rem; }
-/* 中身 */
-.g{ background:#fff; border:1px solid var(--line); border-radius:12px;
-  padding:18px 18px 12px; margin:0 0 18px; }
-.th{ width:100%; max-width:520px; height:auto; display:block;
-  border:1px solid var(--line); border-radius:8px; margin:0 0 12px; }
-.wk{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:7px 0;
-  border-top:1px dashed var(--line); }
-.wl{ flex:none; width:4.2em; font-weight:700; font-size:.92rem; }
-.p{ display:inline-block; padding:5px 11px; font-size:.88rem; text-decoration:none;
-  border:1px solid var(--line); border-radius:999px; background:#fff; }
-.p:hover{ border-color:var(--accent); }
-.mk{ margin:0 0 10px; font-size:.94rem; }
-.report{ background:#fff; border:1px solid var(--line); border-left:5px solid var(--accent);
-  border-radius:8px; padding:14px 16px; margin:0 0 22px; font-size:.94rem; }
-code{ background:#f0efe9; padding:1px 6px; border-radius:4px; font-size:.9em; }
-.cr{ color:#888; font-size:.85rem; margin-top:24px; }
-@media (max-width:520px){ .wl{ width:100%; } }
+#gate{ max-width:400px; margin:12vh auto; padding:30px 26px; border:1px solid var(--ink); }
+#gate h1{ font-size:17px; letter-spacing:.06em; margin-bottom:6px; }
+#gate p{ color:var(--sub); font-size:13px; margin-bottom:18px; }
+#pw{ width:100%; padding:11px 13px; font-size:15px; font-family:inherit;
+  border:1px solid var(--line); background:var(--wash); }
+#go{ width:100%; margin-top:10px; padding:12px; font-size:13px; font-weight:700; letter-spacing:.1em;
+  color:#fff; background:var(--ink); border:0; cursor:pointer; font-family:inherit; }
+#go:hover{ background:var(--accent); }
+#msg{ min-height:1.5em; margin-top:10px; font-size:12.5px; color:#b3261e; }
+
+/* 学年カード */
+.cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; margin:26px 0 0; }
+.card{ display:block; border:1px solid var(--line); color:var(--ink); }
+.card:hover{ border-color:var(--ink); }
+.card img{ width:100%; height:auto; display:block; border-bottom:1px solid var(--line); }
+.cbody{ padding:13px 15px 15px; }
+.cbody b{ display:block; font-size:15px; letter-spacing:.06em; }
+.cbody span{ display:block; font-size:12px; color:var(--sub); }
+
+/* 単元の表 */
+.tw{ overflow-x:auto; border:1px solid var(--line); }
+table{ border-collapse:collapse; width:100%; min-width:720px; font-size:12.5px; line-height:1.7; }
+/* A・B・Cごとに①〜④をたてに並べる（13列に割ると1つ1つが細すぎて読めない） */
+.ul{ list-style:none; }
+.ul li{ padding:1px 0 1px 1.9em; text-indent:-1.9em; }
+.ul i{ display:inline-block; width:1.6em; font-style:normal; color:var(--sub); }
+th,td{ border-bottom:1px solid var(--line); padding:8px 10px; text-align:left;
+  vertical-align:top; letter-spacing:.01em; }
+thead th{ background:var(--wash); font-size:11.5px; letter-spacing:.08em; color:var(--sub);
+  white-space:nowrap; position:sticky; top:0; }
+.rh{ white-space:nowrap; background:#fcfcfb; font-weight:700; }
+.rh small{ display:block; font-weight:400; font-size:10.5px; color:var(--sub); letter-spacing:.04em; }
+.pd{ white-space:nowrap; }
+tbody tr:hover td{ background:var(--wash); }
+
+.report{ border-left:3px solid var(--ink); background:var(--wash); padding:14px 18px;
+  margin:22px 0 0; font-size:13.5px; }
+code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
+  border:1px solid var(--line); padding:1px 6px; }
+
+.foot{ background:var(--black); color:#b9bcc2; margin-top:56px; }
+.foot-in{ max-width:960px; margin:0 auto; padding:30px 24px 34px; font-size:12.5px; line-height:2; }
+.foot .fw{ color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:8px; }
 </style>
 </head>
 <body>
-<div class="wrap">
+
+<div class="topbar"><div class="topbar-in">
+  <span class="wordmark">SCHOOL STOCK</span>
+  <span class="tag">ふりかえりプリント</span>
+</div></div>
+
+<div class="container">
   <div id="gate">
     <h1>ふりかえりプリント　9月ぶん</h1>
     <p>合言葉を入れてください。</p>
@@ -56,14 +97,26 @@ code{ background:#f0efe9; padding:1px 6px; border-radius:4px; font-size:.9em; }
   </div>
   <div id="body" hidden></div>
 </div>
+
+<div class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  問題も文章も自作です。教科書の転載や、児童・学校の情報はふくみません。
+  <div>© School Stock</div>
+</div></div>
+
 <script>
 const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+function show(id) {
+  document.querySelectorAll(".pane").forEach(p => { p.hidden = (p.id !== id); });
+  window.scrollTo(0, 0);
+}
 
 async function open_() {
   const msg = document.getElementById("msg");
   const pw = document.getElementById("pw").value;
   if (!pw) { msg.textContent = "合言葉を入れてください。"; return; }
-  msg.style.color = "#555"; msg.textContent = "ひらいています…";
+  msg.style.color = "#767b83"; msg.textContent = "ひらいています…";
   try {
     const d = await (await fetch("payload.json", {cache:"no-store"})).json();
     const base = await crypto.subtle.importKey(
@@ -76,8 +129,13 @@ async function open_() {
     const body = document.getElementById("body");
     body.innerHTML = new TextDecoder().decode(plain);
     body.hidden = false;
+    body.addEventListener("click", e => {
+      const a = e.target.closest("[data-go]");
+      if (a) { e.preventDefault(); show(a.getAttribute("data-go")); }
+    });
+    show("top");
   } catch (e) {
-    msg.style.color = "#c00";
+    msg.style.color = "#b3261e";
     msg.textContent = "ひらけませんでした。合言葉をたしかめてください。";
   }
 }
