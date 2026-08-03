@@ -30644,5 +30644,48 @@ const SOZAI = [
   "alt": "img/sansu2_hikizan_hyaku_01_alt.txt",
   "seconds": 16,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu5_taiseki_01",
+  "title": "体積は 1cm³が いくつ分",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "5年",
+  "unit": "体積",
+  "scenes": [
+   "1cm³の積み木を、たて3・横4・高さ2の直方体に1こずつ積んで24こ数える"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "はじめにオレンジの1cm³が1つ出て、右上の見本に残ります。たて3cm・横4cm・高さ2cmのわくに、積み木を手前の列から1こずつ置いていき、カウンタが24こまで増えます。最初に置いたオレンジの1個は、積み上がったあとも左手前に見えています。1こずつ声に出して数えられるよう、ゆっくりの半分の速さ（36秒）にしてあります。",
+  "howto": "積み木で調べたあとのまとめに。カウンタを見ながら子どもと一緒に数えてください。オレンジの1個が「もとになる1つ分」です。回転させていないのは、手前の積み木が奥をかくして数えられなくなるためです。",
+  "tags": [
+   "体積",
+   "立方センチメートル",
+   "直方体",
+   "積み木",
+   "1cm3",
+   "たて横高さ",
+   "立体",
+   "5年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu5_taiseki_01.gif",
+  "thumb": "img/sansu5_taiseki_01_thumb.jpg",
+  "gifMobile": "img/sansu5_taiseki_01_mobile.gif",
+  "mp4": "img/sansu5_taiseki_01.mp4",
+  "poster": "img/sansu5_taiseki_01_poster.png",
+  "alt": "img/sansu5_taiseki_01_alt.txt",
+  "seconds": 36,
+  "phase": "まとめ"
  }
 ];
