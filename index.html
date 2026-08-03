@@ -104,6 +104,20 @@
   .lk b { font-size:15.5px; font-weight:700; }
   .lk span { font-size:12.5px; color:var(--sub); line-height:1.8; }
   .lk .go { font-size:12.5px; font-weight:700; color:var(--accent); margin-top:2px; }
+  .feature { display:grid; grid-template-columns:1.15fr 1fr; gap:0; border:1px solid var(--ink); margin-top:16px; }
+  .feature .fimg { border-right:1px solid var(--ink); background:var(--wash); }
+  .feature .fimg img { display:block; width:100%; height:100%; object-fit:cover; }
+  .feature .fbody { padding:24px 26px 22px; display:flex; flex-direction:column; gap:9px; }
+  .feature .ftag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:var(--black); padding:3px 10px; }
+  .feature h2 { font-size:21px; font-weight:700; margin:2px 0 0; line-height:1.5; }
+  .feature p { font-size:13.5px; line-height:1.85; color:#3d4148; }
+  .feature .fmeta { font-size:12px; color:var(--sub); }
+  .feature .fbtns { display:flex; flex-wrap:wrap; gap:10px; margin-top:6px; }
+  .feature .fbtns a { font-size:13px; font-weight:700; padding:9px 16px; border:1px solid var(--ink); color:var(--ink); }
+  .feature .fbtns a.solid { background:var(--ink); color:#fff; }
+  .feature .fbtns a:hover { box-shadow:3px 3px 0 var(--ink); }
+  .feature .fbtns a.solid:hover { box-shadow:3px 3px 0 var(--accent); }
+  @media (max-width:760px){ .feature { grid-template-columns:1fr; } .feature .fimg { border-right:none; border-bottom:1px solid var(--ink); } }
   .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
   .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
   .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
@@ -255,6 +269,23 @@
         <span>じっくり読む・プロンプト帳</span>
         <span class="go">08 読みものの棚へ ↓</span>
       </a>
+    </div>
+  </section>
+
+  <section id="pickup">
+    <div class="shelf-head"><span class="sn">★</span><span class="sl">PICK UP｜いま見てほしい教材</span></div>
+    <div class="feature">
+      <div class="fimg"><img src="ideas/a/iizuka-img/card.jpg" width="1280" height="800" loading="lazy" alt="デジタル副読本の画面。左に飯塚市を空からうつした写真、右に資料のページ。写真の上に赤いペンで丸が書きこまれ、右側にペン・蛍光ペンの道具が並んでいる"></div>
+      <div class="fbody">
+        <span class="ftag">社会・小3／地域教材</span>
+        <h2>飯塚市 地域教材<span class="nw">デジタル副読本</span></h2>
+        <p>3年社会「市の様子」の地域資料を、電子黒板でも一人一台端末でも、そのまま開いて<b>ペンで書きこめる</b>Web教材にしました。「ここを見て」と印をつけながら、全員で同じ資料を読み取れます。市役所への取材と提供資料、自分で撮った写真でつくった全9ページ。</p>
+        <p class="fmeta">リンクを開くだけ・インストール不要／他の市町村でも同じ型でつくれます</p>
+        <div class="fbtns">
+          <a class="solid" href="https://a-tozak.github.io/iizuka-fukudokuhon/" target="_blank" rel="noopener">副読本を開く ↗</a>
+          <a href="ideas/a/iizuka-fukudokuhon.html">授業での使い方を読む →</a>
+        </div>
+      </div>
     </div>
   </section>
 
@@ -581,7 +612,7 @@
     <div class="shelf">
 
       <a class="item" href="ideas/a/iizuka-fukudokuhon.html">
-        <div class="thumb"><svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:block;width:100%;height:auto"><rect width="400" height="200" fill="#f4f1fa"/><rect x="96" y="30" width="208" height="128" rx="8" fill="#fff"/><rect x="84" y="158" width="232" height="14" rx="7" fill="#5d37a3"/><path d="M112 46q52 18 66 52t-12 56" fill="none" stroke="#b7c8ec" stroke-width="12" stroke-linecap="round"/><rect x="196" y="52" width="48" height="30" rx="5" fill="#d3e3cf"/><rect x="120" y="112" width="34" height="24" rx="4" fill="#eec209" opacity="0.85"/><circle cx="220" cy="112" r="11" fill="#d0454c"/><path d="M220 112v24" stroke="#d0454c" stroke-width="6" stroke-linecap="round"/><path d="M296 160l22-72 16 5-22 72-18 8z" fill="#5d37a3"/><path d="M318 88l16 5 6-16q-13-9-22 11z" fill="#eec209"/><circle cx="52" cy="48" r="7" fill="#eec209"/><text x="30" y="186" font-family="'Hiragino Sans','Noto Sans JP',sans-serif" font-size="10" fill="#a2a8ae" letter-spacing="0.16em">SCHOOL STOCK</text></svg></div>
+        <div class="thumb"><img src="ideas/a/iizuka-img/card_thumb.jpg" loading="lazy" alt="デジタル副読本の画面。飯塚市を空からうつした写真に赤いペンで丸が書きこまれている"></div>
         <div class="b">
           <span class="tag">社会科・3年</span>
           <h2>飯塚市 地域教材デジタル副読本</h2>
