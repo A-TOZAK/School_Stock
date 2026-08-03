@@ -30435,5 +30435,89 @@ const SOZAI = [
   "alt": "img/sansu2_hikizan_hissan_01_alt.txt",
   "seconds": 15,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu5_tsubun_01",
+  "title": "分母をそろえてから たす",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "5年",
+  "unit": "分数のたし算・ひき算（通分）",
+  "scenes": [
+   "同じ長さのテープを6等分に分け直して、2分の1を6分の3に、3分の1を6分の2にする"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "同じ長さのテープ2本に、区切りの線が引き足されて6等分になります。色をぬった部分の長さは変わらないまま、2分の1が6分の3に、3分の1が6分の2に書きかわります。答えは6分の5。低学年でも追えるようゆっくりの速さにしてあります。",
+  "howto": "通分を習ったあとの確認に。線を引き足すところで止めて「テープの長さは変わった？」と聞くと、量が増えていないことに気づけます。",
+  "tags": [
+   "分数",
+   "通分",
+   "分母",
+   "たし算",
+   "異分母",
+   "テープ図",
+   "5年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu5_tsubun_01.gif",
+  "thumb": "img/sansu5_tsubun_01_thumb.jpg",
+  "gifMobile": "img/sansu5_tsubun_01_mobile.gif",
+  "mp4": "img/sansu5_tsubun_01.mp4",
+  "poster": "img/sansu5_tsubun_01_poster.png",
+  "alt": "img/sansu5_tsubun_01_alt.txt",
+  "seconds": 17,
+  "phase": "まとめ"
+ },
+ {
+  "id": "rika5_furiko_01",
+  "title": "ふりこが長いほど 1往復する時間は長い",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "ふりこのきまり",
+  "scenes": [
+   "長さのちがう2つのふりこを同時にはなし、往復の数を数える"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "短いふりこと長いふりこを、同じ角度から同時にはなします。おもりの重さも角度も同じ。同じ時間で、短いほうは往復6回、長いほうは往復3回になります。糸の長さは25cmと100cmの比（1対4）に合わせてあります。低学年でも追えるようゆっくりの速さにしてあります。",
+  "howto": "ふりこの実験のあとの確認に。往復の数を子どもと一緒に声に出して数えると、ずれていくのが体で分かります。「おもりの重さでは変わらない」は別に扱ってください。",
+  "tags": [
+   "ふりこ",
+   "振り子",
+   "1往復",
+   "周期",
+   "ふりこの長さ",
+   "条件制御",
+   "5年",
+   "理科",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/rika5_furiko_01.gif",
+  "thumb": "img/rika5_furiko_01_thumb.jpg",
+  "gifMobile": "img/rika5_furiko_01_mobile.gif",
+  "mp4": "img/rika5_furiko_01.mp4",
+  "poster": "img/rika5_furiko_01_poster.png",
+  "alt": "img/rika5_furiko_01_alt.txt",
+  "seconds": 16,
+  "phase": "まとめ"
  }
 ];
