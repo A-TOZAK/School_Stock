@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>あつい日、レールはどうなる？ ── 小4理科「物の体積と温度」提示資料</title>
+<meta name="robots" content="noindex">
+<style>
+@page { size:A4 portrait; margin:0; }
+:root{
+  --ink:#1a1a1a; --blue:#1663b0; --red:#c8362a; --gray:#6b6b6b;
+  --line:#3a3a3a; --wash:#f2f4f6; --cool:#2f7fc1; --warm:#d9542f;
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+body{
+  font-family:"UDDigiKyokashoProN-Medium","UD Digi Kyokasho NP-R","Hiragino Maru Gothic ProN",sans-serif;
+  color:var(--ink); background:#dcdcdc; -webkit-font-smoothing:antialiased;
+}
+.page{
+  width:210mm; height:297mm; background:#fff; margin:0 auto;
+  padding:11mm 12mm 8mm; display:flex; flex-direction:column;
+}
+ruby rt{ font-size:.44em; font-weight:400; }
+
+/* 見出し */
+.head{ display:flex; align-items:flex-end; justify-content:space-between; gap:4mm; border-bottom:1.4mm solid var(--ink); padding-bottom:2mm; }
+.head h1{ font-size:9.4mm; line-height:1.1; letter-spacing:-.01em; font-weight:700; white-space:nowrap; }
+.head h1 .k{ color:var(--red); }
+.head .grade{ font-size:3.2mm; color:var(--gray); white-space:nowrap; padding-bottom:1mm; text-align:right; }
+.lead{ font-size:4.1mm; line-height:1.5; margin-top:2.4mm; }
+
+/* ブロック */
+.blocks{ flex:1; display:flex; flex-direction:column; gap:2.6mm; margin-top:2.6mm; }
+.b{ border:0.45mm solid var(--line); display:flex; }
+.b .n{
+  flex:0 0 12mm; background:var(--ink); color:#fff;
+  display:flex; align-items:center; justify-content:center;
+  font-size:8mm; font-weight:700;
+}
+.b .body{ flex:1; padding:2.4mm 4mm; }
+.b h2{ font-size:5.1mm; line-height:1.25; margin-bottom:1mm; }
+.b h2 em{ font-style:normal; color:var(--red); }
+.b p{ font-size:3.8mm; line-height:1.5; }
+.row{ display:flex; align-items:center; gap:4mm; }
+
+/* 数字を見せる */
+.big{ font-size:9mm; font-weight:700; line-height:1; }
+.big.c{ color:var(--cool); } .big.w{ color:var(--warm); }
+.unit{ font-size:4.2mm; font-weight:400; }
+.note{ font-size:3.2mm; color:var(--gray); line-height:1.45; }
+
+/* 温度の帯 */
+.thermo{ width:100%; }
+/* 二枚並べ */
+.two{ display:flex; gap:4mm; }
+.two > div{ flex:1; }
+.cap{ font-size:3.4mm; text-align:center; margin-top:1mm; font-weight:700; }
+.cap.ok{ color:var(--cool); } .cap.ng{ color:var(--red); }
+
+.qbox{ border:0.6mm solid var(--red); background:#fdf4f2; padding:2.6mm 4mm; font-size:4.6mm; font-weight:700; text-align:center; }
+.src{ margin-top:3mm; border-top:0.3mm dashed #999; padding-top:2mm; font-size:2.9mm; color:var(--gray); line-height:1.5; }
+@media screen{ .page{ box-shadow:0 2px 14px rgba(0,0,0,.25); margin:8mm auto; } }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="head">
+    <h1>あつい日、<span class="k">レールはどうなる？</span></h1>
+    <div class="grade">4年 理科<br>「物の体積と温度」</div>
+  </div>
+
+  <p class="lead">電車の線路のレールは、<ruby>鉄<rt>てつ</rt></ruby>でできています。かたくて、じょうぶな鉄です。<br>
+  その鉄のレールに、夏、こんなことが起きます。</p>
+
+  <div class="blocks">
+
+    <!-- ① 温度 -->
+    <div class="b">
+      <div class="n">1</div>
+      <div class="body">
+        <h2>夏のレールは、<em>60℃ちかく</em>になる</h2>
+        <div class="row">
+          <svg class="thermo" viewBox="0 0 500 78" style="height:19mm">
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#2f7fc1"/><stop offset=".45" stop-color="#cfd8de"/><stop offset="1" stop-color="#d9542f"/>
+              </linearGradient>
+            </defs>
+            <rect x="30" y="26" width="440" height="20" fill="url(#g)" stroke="#3a3a3a" stroke-width="1.2"/>
+            <!-- 目盛 -->
+            <g font-size="12" fill="#1a1a1a" text-anchor="middle" font-family="sans-serif">
+              <line x1="30" y1="46" x2="30" y2="53" stroke="#3a3a3a" stroke-width="1.2"/>
+              <text x="30" y="66">-20℃</text>
+              <line x1="195" y1="46" x2="195" y2="53" stroke="#3a3a3a" stroke-width="1.2"/>
+              <text x="195" y="66">0℃</text>
+              <line x1="360" y1="46" x2="360" y2="53" stroke="#3a3a3a" stroke-width="1.2"/>
+              <text x="360" y="66">40℃</text>
+              <line x1="470" y1="46" x2="470" y2="53" stroke="#3a3a3a" stroke-width="1.2"/>
+              <text x="470" y="66">60℃</text>
+            </g>
+            <!-- 冬・夏（帯の中に置く） -->
+            <g font-size="13" font-weight="bold" text-anchor="middle" font-family="sans-serif" fill="#fff">
+              <text x="58" y="41">冬</text>
+              <text x="442" y="41">夏</text>
+            </g>
+            <!-- 差の両矢印 -->
+            <g stroke="#1a1a1a" stroke-width="1.2" fill="#1a1a1a">
+              <line x1="30" y1="16" x2="470" y2="16"/>
+              <polygon points="30,16 39,12 39,20"/>
+              <polygon points="470,16 461,12 461,20"/>
+              <rect x="196" y="8" width="108" height="16" fill="#fff" stroke="none"/>
+            </g>
+            <text x="250" y="21" font-size="13" text-anchor="middle" font-family="sans-serif" fill="#1a1a1a" font-weight="bold">1年で 80℃ ちがう</text>
+          </svg>
+        </div>
+        <p>夏は、<ruby>直<rt>ちょく</rt>射<rt>しゃ</rt></ruby>日光で <b>60℃ちかく</b>。冬は <b>-20℃</b> まで下がることもあります。<br>
+        同じレールが、1年のうちに <b>80℃</b> も温度をかえています。</p>
+      </div>
+    </div>
+
+    <!-- ② のびる量 -->
+    <div class="b">
+      <div class="n">2</div>
+      <div class="body">
+        <h2>あたたまると、鉄は<em>のびる</em></h2>
+        <div class="row">
+          <svg viewBox="0 0 500 96" style="height:23mm; flex:1">
+            <g font-family="sans-serif">
+              <!-- 100mの橋 -->
+              <text x="0" y="14" font-size="13" fill="#1a1a1a">長さ 100m の鉄の橋（はし）で……</text>
+              <!-- 冬 -->
+              <text x="0" y="42" font-size="13" fill="#2f7fc1" font-weight="bold">20℃</text>
+              <rect x="46" y="30" width="330" height="14" fill="#dfe6ec" stroke="#3a3a3a" stroke-width="1.2"/>
+              <line x1="376" y1="24" x2="376" y2="50" stroke="#2f7fc1" stroke-width="2"/>
+              <!-- 夏 -->
+              <text x="0" y="76" font-size="13" fill="#d9542f" font-weight="bold">60℃</text>
+              <rect x="46" y="64" width="330" height="14" fill="#f6ded6" stroke="#3a3a3a" stroke-width="1.2"/>
+              <rect x="376" y="64" width="30" height="14" fill="#d9542f" stroke="#3a3a3a" stroke-width="1.2"/>
+              <line x1="406" y1="58" x2="406" y2="84" stroke="#d9542f" stroke-width="2"/>
+              <!-- のび -->
+              <path d="M376,92 L406,92" stroke="#d9542f" stroke-width="1.6"/>
+              <polygon points="376,92 382,89 382,95" fill="#d9542f"/>
+              <polygon points="406,92 400,89 400,95" fill="#d9542f"/>
+              <text x="418" y="78" font-size="15" fill="#d9542f" font-weight="bold">4cm のびる</text>
+              <text x="418" y="42" font-size="12" fill="#6b6b6b">（1℃で 1mm）</text>
+              <text x="418" y="92" font-size="10" fill="#6b6b6b">※のびは大きくかいています</text>
+            </g>
+          </svg>
+        </div>
+        <p>鉄は、<b>1℃あたたまると</b>、100mの長さで <b>1mm</b> ほどのびます。<br>
+        だから <b>40℃</b> あたたまると、100mで <b>4cm</b>。手のひらのはばくらい、のびます。</p>
+      </div>
+    </div>
+
+    <!-- ③ 曲がる -->
+    <div class="b">
+      <div class="n">3</div>
+      <div class="body">
+        <h2>にげ場がないと、レールは<em>よこに曲がる</em></h2>
+        <div class="two">
+          <div>
+            <svg viewBox="0 0 240 66" style="width:100%">
+              <g font-family="sans-serif">
+                <!-- まくらぎ -->
+                <g fill="#cbb79a" stroke="#8a7a63" stroke-width="1">
+                  <rect x="18" y="16" width="12" height="36"/><rect x="52" y="16" width="12" height="36"/>
+                  <rect x="86" y="16" width="12" height="36"/><rect x="120" y="16" width="12" height="36"/>
+                  <rect x="154" y="16" width="12" height="36"/><rect x="188" y="16" width="12" height="36"/>
+                </g>
+                <!-- レール（まっすぐ） -->
+                <line x1="8" y1="26" x2="232" y2="26" stroke="#5a5a5a" stroke-width="4"/>
+                <line x1="8" y1="44" x2="232" y2="44" stroke="#5a5a5a" stroke-width="4"/>
+              </g>
+            </svg>
+            <div class="cap ok">すきまがある　→　まっすぐ</div>
+          </div>
+          <div>
+            <svg viewBox="0 0 240 66" style="width:100%">
+              <g font-family="sans-serif">
+                <!-- まくらぎ（レールと一緒に横へずれる） -->
+                <g fill="#cbb79a" stroke="#8a7a63" stroke-width="1">
+                  <rect x="22.5" y="17.7" width="5" height="30" transform="rotate(-8.7 25 32.7)"/>
+                  <rect x="57.5" y="12.8" width="5" height="30" transform="rotate(-6.8 60 27.8)"/>
+                  <rect x="92.5" y="9.7" width="5" height="30" transform="rotate(-3.2 95 24.7)"/>
+                  <rect x="127.5" y="9.1" width="5" height="30" transform="rotate(1.3 130 24.1)"/>
+                  <rect x="162.5" y="11.2" width="5" height="30" transform="rotate(5.4 165 26.2)"/>
+                  <rect x="197.5" y="15.5" width="5" height="30" transform="rotate(8.2 200 30.5)"/>
+                </g>
+                <!-- レール（横にふくらんで曲がっている） -->
+                <path d="M10,26 Q65,13 120,15 Q175,17 230,26" fill="none" stroke="#c8362a" stroke-width="3.4"/>
+                <path d="M10,44 Q65,31 120,33 Q175,35 230,44" fill="none" stroke="#c8362a" stroke-width="3.4"/>
+              </g>
+            </svg>
+            <div class="cap ng">にげ場がない　→　曲がる（<ruby>張<rt>は</rt></ruby>り出し）</div>
+          </div>
+        </div>
+        <p style="margin-top:1.5mm">のびたのに、のびる場所がないと、レールは <b>よこにぐにゃりと曲がって</b>しまいます。<br>
+        鉄道の会社は、これを「<ruby>張<rt>は</rt></ruby>り出し」とよんで、いちばん気をつけています。</p>
+      </div>
+    </div>
+
+    <!-- ④ すきま -->
+    <div class="b">
+      <div class="n">4</div>
+      <div class="body">
+        <h2>だから、線路には<em>わざとすきま</em>がある</h2>
+        <div class="row">
+          <svg viewBox="0 0 500 62" style="height:15mm">
+            <g font-family="sans-serif">
+              <g fill="#cbb79a" stroke="#8a7a63" stroke-width="1.2">
+                <rect x="40" y="12" width="20" height="38"/><rect x="130" y="12" width="20" height="38"/>
+                <rect x="350" y="12" width="20" height="38"/><rect x="440" y="12" width="20" height="38"/>
+              </g>
+              <rect x="10" y="24" width="225" height="12" fill="#8a8a8a" stroke="#3a3a3a" stroke-width="1.2"/>
+              <rect x="265" y="24" width="225" height="12" fill="#8a8a8a" stroke="#3a3a3a" stroke-width="1.2"/>
+              <rect x="235" y="24" width="30" height="12" fill="#fff" stroke="#c8362a" stroke-width="1.6"/>
+              <path d="M235,48 L265,48" stroke="#c8362a" stroke-width="1.6"/>
+              <polygon points="235,48 241,45 241,51" fill="#c8362a"/>
+              <polygon points="265,48 259,45 259,51" fill="#c8362a"/>
+              <text x="250" y="60" font-size="12" text-anchor="middle" fill="#c8362a" font-weight="bold">すきま</text>
+              <text x="120" y="9" font-size="12" fill="#1a1a1a" text-anchor="middle">レール</text>
+              <text x="380" y="9" font-size="12" fill="#1a1a1a" text-anchor="middle">レール</text>
+              <line x1="120" y1="12" x2="120" y2="23" stroke="#1a1a1a" stroke-width="0.8"/>
+              <line x1="380" y1="12" x2="380" y2="23" stroke="#1a1a1a" stroke-width="0.8"/>
+            </g>
+          </svg>
+        </div>
+        <p>レールとレールのつなぎ目には、<b>すきま</b>があけてあります（<ruby>遊間<rt>ゆうかん</rt></ruby>）。<br>
+        電車の「ガタンゴトン」は、このすきまを車輪が通る音です。<br>
+        <span class="note">※ 長い線路では、20℃のときにレールを固定しておいて、そこから40℃上がっても下がっても大丈夫なようにしてあります。いちばん長いものは、60kmもつながっています。</span></p>
+      </div>
+    </div>
+
+    <div class="qbox">では、金ぞくをあたためると、体積はどうなるのだろうか。</div>
+  </div>
+
+  <div class="src">
+    出典：鉄道・運輸機構『JRTT-SURF』Vol.1 創刊号（2025年4月）特集「温度変化との闘い」より、
+    「01 ロングレール」（p.3〜4）・「02 橋梁の温度変位」（p.5）の記述をもとに作成。
+    https://www.jrtt.go.jp/construction/asset/JRTT-SURF2025.pdf ／ 図はすべて自作。
+  </div>
+</div>
+</body>
+</html>
