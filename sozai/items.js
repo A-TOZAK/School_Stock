@@ -30519,5 +30519,130 @@ const SOZAI = [
   "alt": "img/rika5_furiko_01_alt.txt",
   "seconds": 16,
   "phase": "まとめ"
+ },
+ {
+  "id": "sansu6_baai_01",
+  "title": "樹形図で 落ちも重なりもなく数える",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "6年",
+  "unit": "場合を順序よく整理して（並べ方）",
+  "scenes": [
+   "1・2・3のカードで3けたの数をつくる樹形図が、左から順に枝分かれしていく"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "「はじめ」から3本の枝が分かれて百の位が決まり、さらに2本ずつ分かれて十の位、最後に残った1枚で一の位が決まります。枝の先に6つの数が並んで6とおり。ゆっくりの速さにしてあります。",
+  "howto": "樹形図を習ったあとの確認に。枝が分かれるところで止めて「次はどれが使える？」と聞けます。",
+  "tags": [
+   "場合の数",
+   "樹形図",
+   "並べ方",
+   "順序よく",
+   "落ちや重なり",
+   "6年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu6_baai_01.gif",
+  "thumb": "img/sansu6_baai_01_thumb.jpg",
+  "gifMobile": "img/sansu6_baai_01_mobile.gif",
+  "mp4": "img/sansu6_baai_01.mp4",
+  "poster": "img/sansu6_baai_01_poster.png",
+  "alt": "img/sansu6_baai_01_alt.txt",
+  "seconds": 17,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu2_tashizan_3ko_01",
+  "title": "3つの数をたすと くり上がりが2になる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "2年",
+  "unit": "たし算とひき算のひっ算(2)",
+  "scenes": [
+   "28＋37＋16の筆算で、くり上がりの2が十のくらいの上へ動く"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "一のくらいの8と7と6をたして21。1を書いて、2が小さくなって十のくらいの上へ動きます。くり上がりが1ではなく2になるところがこの時間の新しさです。答えは81。ゆっくりの速さにしてあります。",
+  "howto": "3つの数のたし算の時間のあとに。2が上がるところで止めて「いつもの1とちがうね」と確かめられます。",
+  "tags": [
+   "たし算",
+   "ひっ算",
+   "筆算",
+   "3つの数",
+   "3口",
+   "くり上がり",
+   "2年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu2_tashizan_3ko_01.gif",
+  "thumb": "img/sansu2_tashizan_3ko_01_thumb.jpg",
+  "gifMobile": "img/sansu2_tashizan_3ko_01_mobile.gif",
+  "mp4": "img/sansu2_tashizan_3ko_01.mp4",
+  "poster": "img/sansu2_tashizan_3ko_01_poster.png",
+  "alt": "img/sansu2_tashizan_3ko_01_alt.txt",
+  "seconds": 17,
+  "phase": "まとめ"
+ },
+ {
+  "id": "sansu2_hikizan_hyaku_01",
+  "title": "百のくらいから 10 をかりる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "2年",
+  "unit": "たし算とひき算のひっ算(2)",
+  "scenes": [
+   "134−52の筆算で、百のくらいの1が0になり、10が十のくらいの上へ下りる"
+  ],
+  "uses": [
+   "うごく",
+   "まとめ",
+   "説明",
+   "復習"
+  ],
+  "description": "一のくらいはそのままひけます。十のくらいで「3から5は ひけない」となり、百のくらいの1を消して0にし、そこから出てきた10が十のくらいの3の上へ下ります。10と3で13、13ひく5は8。答えは82。ゆっくりの速さにしてあります。",
+  "howto": "百のくらいから繰り下がる筆算の時間のあとに。かりてきた10は、ノートと同じく十のくらいの上に書く形にしてあります。",
+  "tags": [
+   "ひき算",
+   "ひっ算",
+   "筆算",
+   "くり下がり",
+   "百のくらい",
+   "10をかりる",
+   "2年",
+   "算数",
+   "まとめ",
+   "うごく",
+   "GIF",
+   "アニメーション"
+  ],
+  "img": "img/sansu2_hikizan_hyaku_01.gif",
+  "thumb": "img/sansu2_hikizan_hyaku_01_thumb.jpg",
+  "gifMobile": "img/sansu2_hikizan_hyaku_01_mobile.gif",
+  "mp4": "img/sansu2_hikizan_hyaku_01.mp4",
+  "poster": "img/sansu2_hikizan_hyaku_01_poster.png",
+  "alt": "img/sansu2_hikizan_hyaku_01_alt.txt",
+  "seconds": 16,
+  "phase": "まとめ"
  }
 ];
