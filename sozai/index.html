@@ -27,6 +27,7 @@
   .dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); }
   .drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
   .drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:0.04em; }
+  .drawer nav a.sub2 { padding-left:34px; font-weight:400; font-size:13px; }
   .drawer nav a:hover { background:var(--wash); }
   .scrim { position:fixed; inset:0; background:rgba(14,15,17,0.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
   .scrim.show { opacity:1; pointer-events:auto; }
@@ -166,15 +167,18 @@
   .foot-map a { display:block; text-decoration:none; color:#b9bcc2; }
   .foot-map a:hover { color:#fff; text-decoration:underline; }
   .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
-  .photolane { display:flex; align-items:center; gap:16px; border:2px solid #9e3b45; background:#fdf7f7; padding:16px 20px; margin:6px 0 18px; color:var(--ink); }
-  .photolane:hover { background:#fbf1f1; }
-  .pl-badge { flex:none; font-size:10.5px; font-weight:700; letter-spacing:0.12em; color:#fff; background:#9e3b45; padding:4px 9px; }
+  .sublane { margin:34px 0 0; }
+  .sublane-title { font-size:11px; font-weight:700; letter-spacing:0.2em; color:var(--sub); margin-bottom:10px; }
+  .sublane-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  @media (max-width:600px){ .sublane-row { grid-template-columns:1fr; } }
+  .photolane { display:flex; align-items:center; gap:12px; border:1px solid var(--line); background:var(--wash); padding:12px 14px; color:var(--ink); }
+  .photolane:hover { border-color:var(--ink); }
+  .pl-badge { flex:none; font-size:10px; font-weight:700; letter-spacing:0.12em; color:var(--sub); background:#fff; border:1px solid var(--line); padding:3px 7px; }
   .pl-body { flex:1; }
-  .pl-body b { display:block; font-size:16px; margin-bottom:4px; }
-  .pl-body small { display:block; font-size:12.5px; color:#3d4148; line-height:1.8; }
-  .pl-body em { font-style:normal; color:#9e3b45; font-weight:700; }
-  .pl-go { flex:none; font-size:13px; font-weight:700; color:#9e3b45; white-space:nowrap; }
-  @media (max-width:600px){ .photolane { flex-wrap:wrap; } }
+  .pl-body b { display:block; font-size:13.5px; margin-bottom:2px; }
+  .pl-body small { display:block; font-size:11.5px; color:var(--sub); line-height:1.7; }
+  .pl-body em { font-style:normal; }
+  .pl-go { flex:none; font-size:12px; font-weight:700; color:var(--accent); white-space:nowrap; }
 </style>
 </head>
 <body>
@@ -212,6 +216,8 @@
     <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
     <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
     <a href="../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラスト・写真・うごく解説</small></a>
+    <a class="sub2" href="../sozai/photo/">AIでつくった写真素材（99枚）</a>
+    <a class="sub2" href="../sozai/schools/">学校だよりに使うときのご案内</a>
     <a href="../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
     <a href="https://a-tozak.github.io/kids-social-studies-prompt-library/" target="_blank" rel="noopener">子どものためのプロンプトライブラリ ↗<small>社会科・小4から</small></a>
     <div class="dr-sec">READING｜読みもの・アイデア</div>
@@ -237,24 +243,6 @@
     <div class="meta"><b id="mcount">0</b>点／全教科・行事へ順次追加</div>
   </div>
 
-  <a class="photolane" href="photo/">
-    <span class="pl-badge">NEW</span>
-    <span class="pl-body">
-      <b>AIでつくった写真素材（99枚）</b>
-      <small>無人の教室・理科の観察対象・社会の産業や地域の風景。使ったプロンプトも全部のせています。<br><em>※すべてAdobe Fireflyで作った画像です。本物の写真ではありません。</em></small>
-    </span>
-    <span class="pl-go">見る →</span>
-  </a>
-
-  <a class="photolane" href="schools/">
-    <span class="pl-badge">学校・教委</span>
-    <span class="pl-body">
-      <b>学校だよりに、安心して使える絵を。</b>
-      <small>管理職・教育委員会の方へのご案内。著作権法35条とおたよりの関係、この棚の約束、教育委員会からのご相談についてまとめています。</small>
-    </span>
-    <span class="pl-go">読む →</span>
-  </a>
-
   <div class="layout">
     <aside class="side">
       <div class="filter">
@@ -276,6 +264,28 @@
         <p id="empty" class="empty">条件に合う素材はまだありません。ことばを変えて探してみてください。</p>
       </div>
     </main>
+  </div>
+
+  <div class="sublane">
+    <div class="sublane-title">この棚の中のほかのページ</div>
+    <div class="sublane-row">
+      <a class="photolane" href="photo/">
+        <span class="pl-badge">写真</span>
+        <span class="pl-body">
+          <b>AIでつくった写真素材（99枚）</b>
+          <small>無人の教室・理科の観察対象・地域の風景。<em>Adobe Fireflyで作った画像です（本物の写真ではありません）。</em></small>
+        </span>
+        <span class="pl-go">見る →</span>
+      </a>
+      <a class="photolane" href="schools/">
+        <span class="pl-badge">学校・教委</span>
+        <span class="pl-body">
+          <b>学校だよりに使うときのご案内</b>
+          <small>管理職・教育委員会の方へ。著作権法35条とおたよりの関係、この棚の約束をまとめています。</small>
+        </span>
+        <span class="pl-go">読む →</span>
+      </a>
+    </div>
   </div>
 
   <div class="rules">
