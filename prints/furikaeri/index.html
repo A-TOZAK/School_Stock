@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>ふりかえりプリント 9月ぶん｜School Stock</title>
+<style>
+:root{ --ink:#1a1a1a; --sub:#555; --line:#ddd; --bg:#fbfaf7; --accent:#166156; }
+*{ box-sizing:border-box; }
+body{ margin:0; background:var(--bg); color:var(--ink);
+  font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;
+  line-height:1.7; -webkit-text-size-adjust:100%; }
+.wrap{ max-width:960px; margin:0 auto; padding:32px 20px 80px; }
+h1{ font-size:1.6rem; margin:0 0 12px; letter-spacing:.02em; }
+h2{ font-size:1.15rem; margin:0 0 10px; letter-spacing:.02em; }
+.lead{ color:var(--sub); margin:0 0 14px; }
+.all{ color:var(--accent); font-weight:700; }
+a{ color:var(--accent); }
+/* 鍵の画面 */
+#gate{ max-width:420px; margin:14vh auto; padding:28px 24px; background:#fff;
+  border:1px solid var(--line); border-radius:12px; }
+#gate h1{ font-size:1.25rem; }
+#gate p{ color:var(--sub); font-size:.92rem; margin:0 0 18px; }
+#pw{ width:100%; padding:12px 14px; font-size:1rem; border:1px solid #bbb; border-radius:8px; }
+#go{ width:100%; margin-top:12px; padding:12px; font-size:1rem; font-weight:700; color:#fff;
+  background:var(--accent); border:0; border-radius:8px; cursor:pointer; }
+#msg{ min-height:1.4em; margin-top:10px; color:#c00; font-size:.9rem; }
+/* 中身 */
+.g{ background:#fff; border:1px solid var(--line); border-radius:12px;
+  padding:18px 18px 12px; margin:0 0 18px; }
+.th{ width:100%; max-width:520px; height:auto; display:block;
+  border:1px solid var(--line); border-radius:8px; margin:0 0 12px; }
+.wk{ display:flex; flex-wrap:wrap; align-items:center; gap:8px; padding:7px 0;
+  border-top:1px dashed var(--line); }
+.wl{ flex:none; width:4.2em; font-weight:700; font-size:.92rem; }
+.p{ display:inline-block; padding:5px 11px; font-size:.88rem; text-decoration:none;
+  border:1px solid var(--line); border-radius:999px; background:#fff; }
+.p:hover{ border-color:var(--accent); }
+.report{ background:#fff; border:1px solid var(--line); border-left:5px solid var(--accent);
+  border-radius:8px; padding:14px 16px; margin:0 0 22px; font-size:.94rem; }
+code{ background:#f0efe9; padding:1px 6px; border-radius:4px; font-size:.9em; }
+.cr{ color:#888; font-size:.85rem; margin-top:24px; }
+@media (max-width:520px){ .wl{ width:100%; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div id="gate">
+    <h1>ふりかえりプリント　9月ぶん</h1>
+    <p>合言葉を入れてください。</p>
+    <input id="pw" type="password" autocomplete="current-password" placeholder="合言葉">
+    <button id="go">ひらく</button>
+    <div id="msg"></div>
+  </div>
+  <div id="body" hidden></div>
+</div>
+<script>
+const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
+
+async function open_() {
+  const msg = document.getElementById("msg");
+  const pw = document.getElementById("pw").value;
+  if (!pw) { msg.textContent = "合言葉を入れてください。"; return; }
+  msg.style.color = "#555"; msg.textContent = "ひらいています…";
+  try {
+    const d = await (await fetch("payload.json", {cache:"no-store"})).json();
+    const base = await crypto.subtle.importKey(
+      "raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
+    const key = await crypto.subtle.deriveKey(
+      {name:"PBKDF2", salt:b64(d.s), iterations:d.n, hash:"SHA-256"},
+      base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
+    const plain = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(d.i)}, key, b64(d.c));
+    document.getElementById("gate").remove();
+    const body = document.getElementById("body");
+    body.innerHTML = new TextDecoder().decode(plain);
+    body.hidden = false;
+  } catch (e) {
+    msg.style.color = "#c00";
+    msg.textContent = "ひらけませんでした。合言葉をたしかめてください。";
+  }
+}
+document.getElementById("go").addEventListener("click", open_);
+document.getElementById("pw").addEventListener("keydown", e => { if (e.key === "Enter") open_(); });
+</script>
+</body>
+</html>
