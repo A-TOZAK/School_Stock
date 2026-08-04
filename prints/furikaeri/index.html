@@ -33,6 +33,9 @@ h3 .nw{ font-size:12px; font-weight:400; color:var(--sub); letter-spacing:.04em;
 .btn{ display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em;
   color:#fff; background:var(--ink); padding:11px 20px; }
 .btn:hover{ background:var(--accent); }
+/* こたえなし版のボタンは白抜きにして、こたえつきと見分ける */
+.btn.out{ background:#fff; color:var(--ink); border:1px solid var(--ink); }
+.btn.out:hover{ background:var(--wash); }
 
 /* 鍵の画面 */
 #gate{ max-width:400px; margin:12vh auto; padding:30px 26px; border:1px solid var(--ink); }
@@ -77,7 +80,14 @@ code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
 
 .foot{ background:var(--black); color:#b9bcc2; margin-top:56px; }
 .foot-in{ max-width:960px; margin:0 auto; padding:30px 24px 34px; font-size:12.5px; line-height:2; }
-.foot .fw{ color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:8px; }
+.foot .fw{ color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+/* 棚のほかのページへのサイトマップ（2026-08-03 要望） */
+.foot-map{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:8px 24px; margin:14px 0 18px; }
+.foot-map b{ display:block; color:#fff; font-size:11px; letter-spacing:.18em; margin-bottom:4px; }
+.foot-map a{ display:block; color:#b9bcc2; text-decoration:none; }
+.foot-map a:hover{ color:#fff; text-decoration:underline; text-underline-offset:3px; }
+.foot-c{ border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
 </style>
 </head>
 <body>
@@ -100,8 +110,35 @@ code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
 
 <div class="foot"><div class="foot-in">
   <div class="fw">SCHOOL STOCK</div>
-  問題も文章も自作です。教科書の転載や、児童・学校の情報はふくみません。
-  <div>© School Stock</div>
+  <div class="foot-map">
+    <div><b>棚の中</b>
+      <a href="../../">棚トップ</a>
+      <a href="../kokugo/">国語プリント</a>
+      <a href="../sansu/">算数プリント（式と言葉）</a>
+      <a href="../sansu-ensyu/">算数プリント（レベル別演習）</a>
+      <a href="../tsukaeru/">つかえる算数・国語</a>
+      <a href="../rika/">理科プリント</a>
+      <a href="../shakai/">社会プリント</a>
+      <a href="../taiiku/">体育 学習カード</a>
+      <a href="../atama/">あたまのじゅんび運動</a>
+      <a href="../kotoba-asobi/">ことばあそびプリント</a>
+      <a href="../english-puzzles/">英語ことばパズル</a>
+    </div>
+    <div><b>そのほか</b>
+      <a href="../../shien/">支援カード</a>
+      <a href="../../sozai/">授業イラスト素材集</a>
+      <a href="../../kyozai-kenkyu/">教材研究ノート</a>
+      <a href="../../tankyu/">探究サポート</a>
+      <a href="../../ai/">AI活用の棚</a>
+      <a href="../../tools/">道具</a>
+      <a href="../../about/">このサイトについて</a>
+    </div>
+    <div><b>つながる</b>
+      <a href="https://sites.google.com/view/geg-chikuho" target="_blank" rel="noopener">GEG Chikuho ↗</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+  </div>
+  <div class="foot-c">問題も文章も自作です。教科書の転載や、児童・学校の情報はふくみません。<br>© School Stock</div>
 </div></div>
 
 <script>
