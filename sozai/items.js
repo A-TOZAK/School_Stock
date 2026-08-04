@@ -31037,5 +31037,77 @@ const SOZAI = [
   "alt": "img/sansu4_kimari_bunpai_01_alt.txt",
   "seconds": 16,
   "phase": "まとめ"
+ },
+ {
+  "id": "kokugo1_kaku_tsukue",
+  "title": "1年生が机で国語のプリントに書きこむ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・国語",
+  "grade": "1年",
+  "unit": "情景・学習の姿",
+  "scenes": [
+   "1年生が机で国語のプリントに鉛筆で書きこむ後ろ姿"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "note見出し",
+   "おたより"
+  ],
+  "description": "斜め後ろから見た1年生。新JIS机（2号・机面520）と児童椅子（座面300）に座り、A4のプリントに鉛筆で書きこんでいる。16:9・白背景で左45%は題字用に空けてある。",
+  "howto": "1年生の学習の様子として、おたより・スライド・記事の見出しに。プリントの中身は文字が読めないので、教科を問わず使える。",
+  "tags": [
+   "1年生",
+   "国語",
+   "プリント",
+   "書く",
+   "鉛筆",
+   "机",
+   "教室",
+   "学習",
+   "水彩",
+   "16:9",
+   "情景"
+  ],
+  "img": "img/kokugo1_kaku_tsukue.jpg",
+  "thumb": "img/kokugo1_kaku_tsukue_thumb.jpg",
+  "mono": "img/kokugo1_kaku_tsukue_mono.jpg"
+ },
+ {
+  "id": "kokugo1_yomu_tsukue",
+  "title": "1年生が机で国語のプリントを読む",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・国語",
+  "grade": "1年",
+  "unit": "情景・学習の姿",
+  "scenes": [
+   "1年生が机の上のプリントを両手で押さえて読んでいる横顔"
+  ],
+  "uses": [
+   "スライド",
+   "記事挿絵",
+   "note見出し",
+   "おたより"
+  ],
+  "description": "斜め横から見た1年生。両手でプリントを押さえ、口を少し開いて行を追っている。鉛筆は机に置いたまま。16:9・白背景で左45%は題字用に空けてある。",
+  "howto": "「読むこと」の場面に。音読・読解の話題、家庭学習のおたより、研修スライドの導入に。",
+  "tags": [
+   "1年生",
+   "国語",
+   "プリント",
+   "読む",
+   "音読",
+   "読解",
+   "机",
+   "教室",
+   "水彩",
+   "16:9",
+   "情景"
+  ],
+  "img": "img/kokugo1_yomu_tsukue.jpg",
+  "thumb": "img/kokugo1_yomu_tsukue_thumb.jpg",
+  "mono": "img/kokugo1_yomu_tsukue_mono.jpg"
  }
 ];
