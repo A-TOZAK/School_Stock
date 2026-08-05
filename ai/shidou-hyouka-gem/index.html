@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>振り返りを、明日の一手に変える。｜指導と評価の一体化支援Gem 実践ガイド</title>
+<style>
+  :root {
+    --ink: #15181c; --sub: #767b83; --accent: #2b5fd9;
+    --paper: #ffffff; --wash: #f6f6f4; --line: #e6e6e3; --black: #0e0f11;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Yu Gothic Medium", sans-serif;
+    background: var(--paper); color: var(--ink);
+    font-size: 16.5px; line-height: 1.95; letter-spacing: 0.02em;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  .topbar { background: var(--black); color: #fff; }
+  .topbar-in { max-width: 760px; margin: 0 auto; padding: 14px 24px; display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+  .wordmark { font-size: 12px; font-weight: 700; letter-spacing: 0.28em; }
+  .topbar .vol { font-size: 11px; letter-spacing: 0.16em; color: #b9bcc2; }
+
+  .container { max-width: 760px; margin: 0 auto; padding: 0 24px 72px; }
+
+  .hero { padding: 48px 0 34px; border-bottom: 1px solid var(--ink); }
+  .kicker { display: inline-block; font-size: 12px; font-weight: 700; letter-spacing: 0.14em; color: #fff; background: var(--black); padding: 4px 12px; margin-bottom: 20px; }
+  h1 { font-size: clamp(26px, 6vw, 38px); font-weight: 700; line-height: 1.45; margin-bottom: 18px; }
+  .lead { font-size: 16px; color: #3d4148; margin-bottom: 22px; }
+  .meta { font-size: 12.5px; color: var(--sub); letter-spacing: 0.06em; display: flex; flex-wrap: wrap; gap: 6px 18px; }
+  .meta b { color: var(--ink); font-weight: 600; }
+
+  .digest { margin: 34px 0 8px; border-top: 3px solid var(--ink); border-bottom: 1px solid var(--line); padding: 18px 4px 16px; }
+  .digest .dt { font-size: 12px; font-weight: 700; letter-spacing: 0.22em; margin-bottom: 10px; }
+  .digest ol { list-style: none; }
+  .digest li { display: flex; gap: 14px; padding: 7px 0; font-size: 15.5px; font-weight: 500; line-height: 1.75; }
+  .digest li + li { border-top: 1px solid var(--line); }
+  .digest .n { font-family: Georgia, serif; font-style: italic; color: var(--accent); font-weight: 700; flex: none; }
+
+  section { padding: 44px 0 8px; }
+  .sec-head { display: flex; align-items: baseline; gap: 14px; margin-bottom: 6px; }
+  .sec-no { font-family: Georgia, serif; font-style: italic; font-size: 22px; font-weight: 700; color: var(--accent); }
+  .sec-label { font-size: 11.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); }
+  h2 { font-size: clamp(20px, 5vw, 26px); font-weight: 700; line-height: 1.5; margin: 6px 0 18px; }
+  h3 { font-size: 18px; font-weight: 700; line-height: 1.6; margin: 34px 0 12px; padding-left: 12px; border-left: 4px solid var(--ink); }
+  h4 { font-size: 15px; font-weight: 700; margin: 22px 0 8px; color: #2a2e34; }
+  p { margin-bottom: 16px; }
+  .em { background: linear-gradient(transparent 68%, #ffe796 68%); font-weight: 600; }
+  ul.plain { list-style: none; margin: 0 0 18px; }
+  ul.plain li { padding-left: 1.3em; text-indent: -1.3em; margin-bottom: 8px; }
+  ul.plain li::before { content: "─ "; color: var(--accent); font-weight: 700; }
+  ol.steps { list-style: none; counter-reset: st; margin: 0 0 20px; }
+  ol.steps > li { counter-increment: st; position: relative; padding-left: 42px; margin-bottom: 18px; }
+  ol.steps > li::before { content: counter(st); position: absolute; left: 0; top: 2px; width: 28px; height: 28px;
+    background: var(--black); color: #fff; font-family: Georgia, serif; font-size: 14px; font-weight: 700;
+    display: flex; align-items: center; justify-content: center; }
+  ol.steps > li > b:first-child { display: block; font-size: 16px; margin-bottom: 2px; }
+
+  .pull { border-left: 4px solid var(--ink); padding: 6px 0 6px 22px; margin: 26px 0; font-size: 19px; font-weight: 700; line-height: 1.6; }
+
+  figure { margin: 26px 0 28px; }
+  figure img { width: 100%; display: block; border: 1px solid var(--line); }
+  figcaption { font-size: 13px; color: var(--sub); line-height: 1.85; margin-top: 8px; }
+  figcaption b { color: var(--ink); }
+
+  .box { background: var(--wash); border-top: 1px solid var(--ink); padding: 18px 20px 16px; margin: 22px 0; font-size: 15px; line-height: 1.9; }
+  .box .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.24em; color: var(--sub); display: block; margin-bottom: 8px; }
+  .box p:last-child { margin-bottom: 0; }
+
+  .prompt { background: #f4f6f8; border: 1px solid var(--line); padding: 16px 18px; margin: 18px 0 22px; }
+  .prompt .lb { font-size: 10.5px; font-weight: 700; letter-spacing: 0.22em; color: var(--sub); display: block; margin-bottom: 8px; }
+  .prompt pre { white-space: pre-wrap; word-break: break-word; font-family: "SF Mono", Menlo, monospace; font-size: 12.5px; line-height: 1.85; color: #2a2e34; }
+
+  .quote { border-left: 3px solid var(--line); padding-left: 16px; margin: 14px 0 20px; font-size: 15px; color: #3d4148; }
+
+  .caseband { background: var(--black); color: #fff; padding: 16px 20px; margin: 40px 0 0; }
+  .caseband .cl { font-size: 10.5px; letter-spacing: 0.24em; color: #b9bcc2; margin-bottom: 4px; }
+  .caseband .cn { font-size: 19px; font-weight: 700; line-height: 1.5; }
+
+  .verdict { border: 1px solid var(--ink); margin: 26px 0; }
+  .verdict > div { padding: 16px 20px; }
+  .verdict .g { border-bottom: 1px solid var(--line); }
+  .verdict .lb { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; display: block; margin-bottom: 8px; }
+  .verdict .g .lb { color: #1c7a3e; }
+  .verdict .b .lb { color: #b3261e; }
+  .verdict ul { list-style: none; }
+  .verdict li { padding-left: 1.4em; text-indent: -1.4em; margin-bottom: 8px; font-size: 15px; line-height: 1.85; }
+  .verdict li:last-child { margin-bottom: 0; }
+  .verdict .g li::before { content: "○ "; font-weight: 700; color: #1c7a3e; }
+  .verdict .b li::before { content: "× "; font-weight: 700; color: #b3261e; }
+
+  .warn { border: 2px solid #b3261e; padding: 18px 20px; margin: 26px 0; }
+  .warn .lb { font-size: 11px; font-weight: 700; letter-spacing: 0.2em; color: #b3261e; display: block; margin-bottom: 8px; }
+  .warn p:last-child { margin-bottom: 0; }
+
+  .foot { background: var(--black); color: #b9bcc2; margin-top: 56px; }
+  .foot-in { max-width: 760px; margin: 0 auto; padding: 28px 24px; font-size: 12.5px; line-height: 2; }
+  .foot .fw { color: #fff; font-weight: 700; letter-spacing: 0.26em; font-size: 12px; margin-bottom: 8px; }
+
+  @media print {
+    body { font-size: 10.5pt; line-height: 1.75; }
+    .topbar, .foot { background: #fff !important; color: #000 !important; border-bottom: 1px solid #000; }
+    .topbar .vol, .foot .fw, .foot-in { color: #000 !important; }
+    .kicker, .caseband { background: #fff !important; color: #000 !important; border: 1px solid #000; }
+    .caseband .cl { color: #444 !important; }
+    ol.steps > li::before { background: #000 !important; }
+    .container { max-width: 100%; padding: 0 0 12mm; }
+    section { padding: 18px 0 4px; page-break-inside: auto; }
+    h2, h3 { page-break-after: avoid; }
+    figure, .prompt, .box, .warn, .verdict { page-break-inside: avoid; }
+    figure img { border: 1px solid #999; }
+    a { color: #000; }
+    @page { margin: 14mm; }
+  }
+</style>
+</head>
+<body>
+
+<div class="topbar"><div class="topbar-in">
+  <span class="wordmark">SCHOOL STOCK</span>
+  <span class="vol">実践ガイド／指導と評価の一体化支援 Gem</span>
+</div></div>
+
+<div class="container">
+
+<div class="hero">
+  <span class="kicker">Gemini の Gem を授業で使う</span>
+  <h1>28人分の振り返りを、<br>明日の一手に変える。</h1>
+  <p class="lead">授業の終わりに集めた振り返りは、読む時間がないまま溜まっていきます。「指導と評価の一体化支援Gem」は、その記述を貼るだけで、一人ひとりに観点と評価と根拠をつけ、支援が必要な子と次の時間に紹介したい子を仕分けた一覧を返します。小4理科・中1国語・高2数学の3つで、実際に動かした画面をそのまま載せました。</p>
+  <div class="meta"><span>2026.08.05</span><span>読了 約12分</span><span>文 <b>外﨑顯博</b></span><span>小学校 ICT教育担当・研究主任／LiFE with</span></div>
+</div>
+
+<div class="digest">
+  <div class="dt">この記事の4行</div>
+  <ol>
+    <li><span class="n">1</span><span>貼るのは名簿と振り返りだけ。めあてを書かなくても、記述からその時間のねらいを推論して返してくる。</span></li>
+    <li><span class="n">2</span><span>強いのは仕分けと根拠。「なぜAなのか」「なぜCなのか」が記述の言葉で書かれるので、後から確かめられる。</span></li>
+    <li><span class="n">3</span><span>そのまま使うと粗い。ピックアップが多すぎたり、観点が1つに寄ったりする。最後の一言を足すところが先生の仕事。</span></li>
+    <li><span class="n">4</span><span>Pro でなくていい。同じ入力で比べたら、12人中9人が同じ結果で、Flash は5倍速かった。</span></li>
+  </ol>
+</div>
+
+<!-- ══════════════ 1 ══════════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">WHAT</span></div>
+  <h2>どんな Gem なのか</h2>
+
+  <p>ひとことで言うと、<span class="em">授業の振り返りを貼ると、学級全員分の学習評価レポートを1枚のHTMLで返してくる Gem</span> です。Gemini の Gem（あらかじめ役割と手順を仕込んだ相棒）として作られていて、共有リンクから誰でも使えます。</p>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_gem_top.jpg" alt="Geminiで指導と評価の一体化支援Gemを開いた画面。使用者への設定手順が表示されている。">
+    <figcaption><b>共有リンクを開くと、この画面が出ます。</b>タイトルの下に、作った人から使う先生へのメモが載っています。「もっと見る」を押すと全文が読めます。名簿の書き換え方、評価規準表を入れておくと精度が上がること、Pro と Canvas を使うこと。ここに全部書いてあります。</figcaption>
+  </figure>
+
+  <p>返ってくる画面は、次の4つでできています。</p>
+
+  <ul class="plain">
+    <li><b>本時の主眼（推論）</b>……この時間で何をねらっていたのかを、子どもの記述から推し量って冒頭に置く</li>
+    <li><b>提出率と未提出者</b>……名簿と突き合わせて、出していない子を名指しで出す</li>
+    <li><b>3つのフィルタ</b>……「支援が必要」「次時ピックアップ」「通常」で全員を仕分ける</li>
+    <li><b>一人1枚のカード</b>……観点と評価（A／B／C）、その理由、児童の記述そのまま、分析、次時の声かけ</li>
+  </ul>
+
+  <p>作りとして効いているのは、次の4つです。どれも Gem の指示に書き込まれています。</p>
+
+  <ul class="plain">
+    <li><b>名寄せ</b>：ひらがなと漢字の違い、空白の有無を吸収して名簿に紐づける。だから未提出者が確実に出る</li>
+    <li><b>観点を選ぶ</b>：3観点すべてを無理に埋めない。その記述に最も強く表れている観点を1つ2つだけ選ぶ</li>
+    <li><b>生データを触らない</b>：子どもの記述は要約も修正もせず、そのまま載せる</li>
+    <li><b>全員を出す</b>：省略しない。人数分のカードを必ず作る</li>
+  </ul>
+
+  <p>出てくるのは画面ではなくHTMLのコードなので、Canvas で開けばその場で表示され、ダウンロードして Google サイトに貼ることもできます。作者本人が勧めているのはその使い方です。</p>
+
+  <div class="box">
+    <span class="lb">使う前の設定は2つだけ</span>
+    <p>出力は <b>Canvas</b>。これは必ず入れてください。モデルは Gem の説明文に <b>Pro</b> と書かれていますが、<b>Flash でも十分に動きます</b>。むしろ速い。この記事の最後で、同じ入力を両方に投げて比べた結果を載せました。</p>
+  </div>
+</section>
+
+<!-- ══════════════ 2 ══════════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">WHO</span></div>
+  <h2>どんな人におすすめなのか</h2>
+
+  <p>この Gem が効くのは、<span class="em">振り返りをすでに集めている先生</span>です。集める仕組みがある人ほど、読めずに溜まっている量も多いからです。</p>
+
+  <ul class="plain">
+    <li>毎時間フォームで振り返りを集めているが、目を通せないまま次の日が来る</li>
+    <li>所見や評価の根拠が印象に寄りがちで、事実の形で残しておきたい</li>
+    <li>次の授業の導入で誰の記述を紹介するか、直前に名簿を眺めて決めている</li>
+    <li>複式や少人数で、間接指導の時間に一人ひとりを見きれない</li>
+    <li>研究授業のあと、子どもの記述を分析して書く時間が取れない</li>
+  </ul>
+
+  <p>逆に、次の場合はいったん見送ったほうがいいと思います。</p>
+
+  <ul class="plain">
+    <li><b>振り返りが一言で終わる学級</b>……「楽しかった」だけの記述からは、AIも何も読み取れません。まず書かせ方のほうを変える必要があります</li>
+    <li><b>通知表の評定を決めたい</b>……これは次の一手を決めるための道具です。総括的な評定の証拠としては使えません</li>
+    <li><b>児童名をそのまま入れられない環境</b>……自治体のルールが先です。出席番号での運用に置き換える必要があります（この記事の最後で触れます）</li>
+  </ul>
+
+  <div class="pull">読めなかった記述が読めるようになる道具ではなく、読んだあとの判断を早くする道具です。</div>
+</section>
+
+<!-- ══════════════ 3 ══════════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">HOW</span></div>
+  <h2>実際の使い方</h2>
+
+  <p>操作は3手です。校種も教科も関係なく同じです。</p>
+
+  <ol class="steps">
+    <li><b>Gem を開く</b>共有リンク（<a href="https://gemini.google.com/gem/137c7d778700?usp=sharing">gemini.google.com/gem/137c7d778700</a>）から開き、＋のメニュー →「その他のツール」から <b>Canvas</b> を選ぶ。モデルは <b>Flash のままで構いません</b>（理由は最後の章に）。</li>
+    <li><b>名簿と振り返りを貼る</b>フォームの回答をコピーして、そのまま貼りつける。名簿は最初の1行にまとめて書く。</li>
+    <li><b>出てきた画面を読む</b>Canvas に一覧が出る。フィルタを押して、支援が必要な子とピックアップしたい子を確かめる。</li>
+  </ol>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_canvas_menu.jpg" alt="入力欄の＋を押し、その他のツールからCanvasを選ぼうとしている画面。">
+    <figcaption><b>手順①。</b>入力欄の左にある ＋ →「その他のツール」→ <b>Canvas</b>。これを入れ忘れると、レポートのコードが会話の中に長々と流れてくるだけになります。会話ごとの設定なので、新しい会話を始めるたびに選び直します。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_pasted.jpg" alt="名簿と振り返りを貼り終えた入力欄。左下にCanvasのチップが付いている。">
+    <figcaption><b>手順②。</b>名簿を1行、そのあとに振り返りを貼るだけです。フォームの回答をコピーしてそのまま落とせます。左下に <b>Canvas</b> のチップが付いていれば準備完了。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_generating.jpg" alt="送信直後の画面。右側のCanvasに「Rendering student cards」と出ている。">
+    <figcaption><b>手順③。</b>送ると右側に Canvas が開いて、カードが1枚ずつ組み上がっていきます。「Rendering student cards (19-23)」と出ているのは、19人目から23人目を書いているところ。ここは待つだけなので、別の仕事をしていて構いません。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_done.jpg" alt="完成した画面。右のCanvasに本時の主眼、提出率26/28、未提出者2名が表示されている。">
+    <figcaption><b>できあがり。</b>右側がそのままレポートです。提出率 26/28、未提出者は ほんだ しゅん と まつもと あいり。この2人の名前が出てくるまでが1分ほどでした。</figcaption>
+  </figure>
+
+  <p>ここからは、実際に投げて出てきた画面をそのまま載せます。児童名・生徒名と記述はすべて架空のものです。</p>
+
+  <!-- ── 事例1 ── -->
+  <div class="caseband"><div class="cl">CASE 1｜小学校</div><div class="cn">小学4年 理科「とじこめた空気と水」／28人</div></div>
+
+  <h3>めあてを書かずに投げてみる</h3>
+
+  <p>1つ目は、あえて<span class="em">めあてを書かずに</span>投げました。この Gem は、めあてが書かれていないとき、記述の中身からその時間のねらいを推し量る作りになっているからです。そこが本当に効くのかを見ます。</p>
+
+  <p>貼ったのは、名簿28人と、振り返り26件だけです。2人ぶんは、わざと抜いてあります。</p>
+
+  <div class="prompt">
+    <span class="lb">実際に貼ったもの（先頭だけ抜粋）</span>
+<pre>今日の授業の振り返りログです。分析をお願いします。
+
+【今回のマスター名簿（28名）※Gem設定の名簿より、こちらを優先してください】
+あおき ゆうと, いしい さくら, うえだ はると, えんどう みゆ, …（28名）
+
+【振り返りログ】
+1,あおき ゆうと,空気はおすとちぢんだけど、水はおしてもぜんぜんちぢまなかった。ちゅうしゃきのぼうがびくともしなかったのがびっくりした。空気にはすきまがあって、水にはすきまがないのかなと思った。
+2,いしい さくら,水はちぢまなかった。空気はちぢんだ。
+3,うえだ はると,おしたら手がいたくなった。たのしかった。
+…</pre>
+  </div>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case1_top.jpg" alt="小4理科の分析レポート冒頭。本時の主眼の推論、提出率26/28、未提出者2名、3つのフィルタボタンが並んでいる。">
+    <figcaption><b>出てきた画面の冒頭。</b>めあてを1文字も書いていないのに、「閉じ込めた空気と水を押し縮める実験を通して、手ごたえや目盛りの変化を比較し、空気の体積は小さくなるが、水の体積は変わらないことを見いだすこと」と返ってきました。第4学年という学年まで当てています。提出率は26/28、未提出の2人も名前で出ています。</figcaption>
+  </figure>
+
+  <p>ここが、この Gem のいちばん強いところです。<span class="em">めあてを打ち込む手間すら要らない</span>。振り返りを貼れば、その時間が何をねらっていたかは記述の側から立ち上がってきます。</p>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case1_cards.jpg" alt="児童カードが3列に並んだ画面。ピックアップ・通常・支援が必要のカードが色分けされ、それぞれ評価・理由・児童の記述・AI分析・次時の声かけが入っている。">
+    <figcaption><b>一人1枚のカード。</b>左の帯の色で仕分けが分かります。黄＝次時ピックアップ、緑＝通常、赤＝支援が必要。カードの中は上から、観点と評価、そう判断した理由、児童の記述そのまま、分析、次時の声かけ。</figcaption>
+  </figure>
+
+  <p>読みどころを3つだけ挙げます。</p>
+
+  <h4>「すきま」に気づいた子を拾っている</h4>
+  <div class="quote">空気にはすきまがあって、水にはすきまがないのかなと思った。（あおき ゆうと）</div>
+  <p>これに対して「空気と水の違いを『すきま』という言葉でモデル化して捉えようとする素晴らしい視点です」と価値づけ、次時の声かけとして「『すきま』があるかどうか、絵に描いてみるともっと分かりやすそうだね！」を返してきました。小学4年では粒子の考え方は扱いません。それを承知したうえで、子どもの言葉のまま次につないでいます。</p>
+
+  <h4>誤って捉えた子を、C で拾っている</h4>
+  <div class="quote">水もちょっとだけちぢんだ気がした。目もりが少し動いたと思う。（かとう ひなた）</div>
+  <p>これを知識・技能の C とし、理由に「微細な動きを『縮んだ』と誤認しており」と書いています。同じ「支援が必要」でも、うえだ はると（おしたら手がいたくなった。たのしかった。）とは、つまずきの種類がまったく違う。それが理由の文で区別できます。</p>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case1_support.jpg" alt="支援が必要でフィルタした画面。C評価や未提出の児童カードだけが並んでいる。">
+    <figcaption><b>「支援が必要」で絞った画面。</b>28人のうち10人。ここに未提出の2人も入ります。明日の朝いちばんに声をかける相手が、この1画面で決まります。</figcaption>
+  </figure>
+
+  <h4>ただし、ピックアップが多すぎる</h4>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case1_pickup.jpg" alt="次時ピックアップでフィルタした画面。9人ぶんのカードが並んでいる。">
+    <figcaption><b>「次時ピックアップ」で絞ると9人。</b>28人中9人です。導入で9人ぶん紹介する時間はありません。ここは、そのままでは使えないところです。</figcaption>
+  </figure>
+
+  <p>この Gem をそのまま回すと、良い記述をよく拾ってくれる代わりに、絞ってはくれません。対処は簡単で、そのまま続けて一言足します。</p>
+
+  <div class="prompt">
+    <span class="lb">続けて投げる一言</span>
+<pre>HTMLの作り直しは不要です。文章だけで答えてください。
+次時の導入で紹介するなら、誰を3人、どの順で紹介しますか。順番の理由も書いてください。</pre>
+  </div>
+
+  <!-- ── 事例2 ── -->
+  <div class="caseband"><div class="cl">CASE 2｜中学校</div><div class="cn">中学1年 国語 説明的な文章／16人</div></div>
+
+  <h3>めあてと評価規準を一緒に渡す</h3>
+
+  <p>2つ目は逆に、<span class="em">めあてと本時の評価規準を最初から渡しました</span>。Gem の指示には「アップロードされた資料がある場合は、それを評価の根拠として最優先する」と書かれています。手元の指導案からコピーして貼るだけで効きます。</p>
+
+  <div class="prompt">
+    <span class="lb">実際に貼ったもの（先頭だけ抜粋）</span>
+<pre>中学1年 国語の授業ログです。分析をお願いします。
+
+【本時のめあて】筆者が挙げた具体例が、主張とどうつながっているかを説明する
+
+【本時の評価規準】
+知識・技能：具体と抽象など情報と情報との関係について理解している。
+思考・判断・表現：「読むこと」において、具体例と筆者の主張との関係をとらえ、
+文章の構成や論の展開について考えている。
+主体的に学習に取り組む態度：進んで文章の構成をとらえ、学習課題に沿って
+考えを説明しようとしている。
+
+【今回のマスター名簿（16名）】…</pre>
+  </div>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case2_top.jpg" alt="中1国語の分析レポート冒頭。主眼の推論と提出率15/16、未提出者1名、フィルタボタンに人数が表示されている。">
+    <figcaption><b>規準を渡すと、返ってくる言葉が変わります。</b>主眼の欄が「具体例が、筆者の抽象的な主張とどのように結びつき、論理的に展開されているかを読み取り、文章の構成の工夫を理解すること」になりました。渡した規準の語がそのまま乗っています。フィルタに人数が付くのもこの回です。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case2_cards.jpg" alt="中1国語の生徒カードが並んだ画面。">
+    <figcaption><b>生徒カード。</b>評価の理由に「具体と抽象」「論の展開」といった規準の言葉が入るので、指導案とレポートが同じ言葉でつながります。研究授業の記録に残すなら、この形が読みやすい。</figcaption>
+  </figure>
+
+  <h4>ここは先生が見直したほうがいい</h4>
+
+  <p>16人のうち、次の記述が「通常」に置かれました。</p>
+  <div class="quote">人は無意識に一つの見方を選んでいる、という部分が心に残った。自分も友達を一面だけで決めつけていたかもしれないと思った。（鈴木 隼人）</div>
+  <p>本時のめあては「具体例と主張のつながりを説明する」なので、その物差しで見れば妥当な置き場所です。ただ、読んだことを自分の生活に引き戻している記述でもあります。<span class="em">情意の方に振れた記述は、ねらいの物差しからは外れて見える</span>。ここを拾うかどうかは、AIではなく先生が決めるところです。</p>
+
+  <p>逆に、次の記述は「支援が必要」に入りました。</p>
+  <div class="quote">絵が二通りに見えるのは知っていた。だから読むのは楽だった。（篠原 葵）</div>
+  <p>知っていたから楽だった、で止まっていて、めあてに向かっていない。これは納得のいく判断でした。</p>
+
+  <!-- ── 事例3 ── -->
+  <div class="caseband"><div class="cl">CASE 3｜高等学校</div><div class="cn">高校2年 数学II「三角関数の合成」／12人</div></div>
+
+  <h3>C 評価の中身を分けさせる</h3>
+
+  <p>3つ目は高校です。数式が入る教科でも、記述さえあれば同じように動きます。</p>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case3_top.jpg" alt="高2数学の分析レポート冒頭。主眼の推論、提出率11/12、未提出者1名。">
+    <figcaption><b>主眼の推論。</b>「公式を単に暗記するのではなく、加法定理の逆演算であることや、座標平面上の点(a, b)を用いた図形的な意味を理解し、変形の必然性を自らの言葉で説明できること」。渡しためあてを、授業の中身に沿って言い直してきました。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case3_cards.jpg" alt="高2数学の生徒カードが並んだ画面。観点が生徒ごとに違い、A・B・Cが混在している。">
+    <figcaption><b>生徒カード。</b>観点が生徒ごとに違います。式の意味を説明できた子は「思考・判断・表現」、符号のミスで止まっている子は「知識・技能」。1枚の画面の中で物差しが切り替わります。</figcaption>
+  </figure>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case3_support.jpg" alt="高2数学で支援が必要にフィルタした画面。C評価の生徒カードが並んでいる。">
+    <figcaption><b>「支援が必要」で絞った画面。</b>12人中4人。C の理由が全員ちがいます。</figcaption>
+  </figure>
+
+  <h4>C がついた子の中に、できている子がいる</h4>
+
+  <div class="quote">公式は覚えた。r=√(a²+b²) で計算はできる。なぜそうなるかは考えていない。（五十嵐 千夏）</div>
+
+  <p>これに Gem がつけた評価は<b>「思考・判断・表現（C）」</b>でした。本時のめあてが「なぜ成り立つかを説明する」だったので、その物差しでは確かに C です。けれど<span class="em">知識・技能で見れば、この子はできています</span>。観点をひとつ選ぶ設計の裏返しで、できている面が画面から消えます。</p>
+
+  <p>C を見たときに「この子は分かっていない」と受け取ってしまうと、事実を取り違えます。だからここでも、続けて一言投げます。</p>
+
+  <div class="prompt">
+    <span class="lb">続けて投げた一言（全文）</span>
+<pre>ありがとうございます。HTMLの作り直しは不要です。文章だけで答えてください。
+
+1. 次時の導入で記述を紹介するなら、誰を3人、どの順で紹介しますか。順番の理由も書いてください。
+2. その3人をどう紹介すれば、まだ分かっていない子の助けになりますか。教師の言い方の例をそれぞれ1文で。
+3. C評価をつけた生徒のうち、つまずきの種類が違う子を分けて教えてください。
+   同じ声かけでよい子と、別の声かけが要る子はどう分かれますか。</pre>
+  </div>
+
+  <p>返ってきたのが、この記事でいちばん実用的な部分でした。</p>
+
+  <div class="box">
+    <span class="lb">返ってきた答え（抜粋・原文のまま）</span>
+    <p><b>【紹介する順番】</b>① 浅井 涼介さん → ② 窪田 莉子さん → ③ 江口 美桜さん</p>
+    <p><b>【順番の理由】</b>数学的な理解を「既習事項の想起」→「式変形の理屈（代数）」→「視覚的な意味（幾何）」というステップで広げていくためです。まず、浅井さんの記述で「全く新しい公式ではなく、知っている加法定理の逆再生である」という安心感を与えます。（中略）最後に、江口さんの「座標上の点 (a,b)」という図形的な視点を紹介することで、抽象的な式を視覚化し、内海さんのような「角度 α の決め方が分からない」という生徒のつまずきを解消する流れを作れます。</p>
+  </div>
+
+  <p>紹介する順番に、授業としての筋が通っています。しかも、その順番が<span class="em">誰のつまずきを解くためのものか</span>まで書かれている。「浅井→窪田→江口の順で紹介すれば、内海のつまずきに届く」という話になっています。</p>
+
+  <p>C の分け方も同じように返ってきました。</p>
+
+  <div class="box">
+    <span class="lb">C評価の分類（抜粋・原文のまま）</span>
+    <p><b>【グループA：既習事項の定着不足・計算手順のミス】</b>近藤 奏太、小泉 悠。<br>声かけの例：「合成の計算をする前に、まずは加法定理の公式をメモして、問題の式と上下に見比べてから a と b に丸をつけてみようか。」</p>
+    <p><b>【グループB：幾何的意味への変換でのつまずき】</b>内海 洋輔。<br>声かけの例：「式だけで α を探そうとすると混乱するから、まずは横軸に a、縦軸に b を取って点をおき、直角三角形を描いてみよう。」</p>
+    <p><b>【グループC：全体的な思考停止・手が止まっている】</b>菊地 悠斗、五十嵐 千夏。<br>声かけの例：「『分からない』と言えたのは素晴らしいね。加法定理の逆再生まではピンとくる？ それとも、最初の式の意味から一緒に確認してみようか。」</p>
+  </div>
+
+  <p>同じ C でも、声のかけ方が3通りに分かれました。ここまで来ると、翌日の授業で誰の席にどの順で行くかが決まります。</p>
+
+  <!-- ── うまい／微妙 ── -->
+  <h3>うまい使い方と、微妙な使い方</h3>
+
+  <p>3回動かして分かったことを、そのまま並べます。</p>
+
+  <div class="verdict">
+    <div class="g">
+      <span class="lb">うまい使い方</span>
+      <ul>
+        <li><b>めあてと評価規準を一緒に貼る。</b>指導案からコピーするだけで、返ってくる言葉が指導案と揃います</li>
+        <li><b>1回で終わらせず、続けて一言足す。</b>「3人に絞って」「順番の理由も」「Cのつまずきを分けて」。この一言が、レポートを明日の動きに変えます</li>
+        <li><b>未提出者の欄をいちばん先に見る。</b>名寄せが効いているので、ここは正確です。出していない子に気づくのが、いちばん早い支援になります</li>
+        <li><b>放課後に投げて、置いておく。</b>人数が多いと数分かかります。待つ時間ではありません</li>
+        <li><b>ダウンロードして残す。</b>Canvas の画面は流れます。HTMLで落として単元のフォルダに置けば、研究授業の記録になります</li>
+      </ul>
+    </div>
+    <div class="b">
+      <span class="lb">微妙な使い方</span>
+      <ul>
+        <li><b>出てきた評価を、そのまま評定に使う。</b>これは次の一手を決めるための見立てで、成績の証拠ではありません</li>
+        <li><b>「次時の声かけ」をそのまま子どもに言う。</b>あれは下書きです。その子との関係の上に置き直すのは先生の仕事です</li>
+        <li><b>ピックアップを全員紹介しようとする。</b>28人で9人出ました。絞るところまでは Gem はやってくれません</li>
+        <li><b>C を「分かっていない子」と読む。</b>観点をひとつ選ぶ設計なので、できている面は画面から消えます</li>
+        <li><b>一言だけの振り返りを大量に投げる。</b>「楽しかった」からは何も出ません。もっともらしい分析が付くぶん、かえって危ない</li>
+        <li><b>数式の多い教科で、何も足さずに Flash で回す。</b>数式が <code>$\tan\alpha$</code> のような書き方のまま画面に出ます。一言足せば直ります（次の章）</li>
+        <li><b>Canvas を切ったまま投げる。</b>コードが会話の中に長々と流れるだけになります。ここは Pro／Flash に関係なく必須です</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════ 4 ══════════════ -->
+<section>
+  <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">SETUP</span></div>
+  <h2>自分の学校・学級・授業用にカスタマイズする</h2>
+
+  <p>ここまでは、共有された Gem をそのまま借りて、名簿を毎回貼る形で使ってきました。毎日使うなら、名簿は Gem 側に焼いてしまったほうが早いです。手順は6つです。</p>
+
+  <ol class="steps">
+    <li><b>Gem を自分のものにコピーする</b>共有リンクから開いた Gem は、そのままでは中身を書き換えられません（下の画面のとおり、「共有アイテム」の鉛筆マークはグレーのままです）。左のメニューから <b>Gem マネージャー</b> を開き、「共有アイテム」の中の「指導と評価の一体化支援Gem」の右端 <b>⋮</b> から <b>「コピーを作成」</b>。これで「マイ Gem」に入り、編集できるようになります。</li>
+    <li><b>名簿を書き換える</b>Gem の指示文には <code>[クラス人数]</code> と <code>[児童名1]…[児童名32]</code> という空欄があります。ここを自分の学級に置き換えます。人数の数字は3か所に出てくるので、全部そろえてください。</li>
+    <li><b>評価規準表を「知識」に入れる</b>単元の目標や評価規準表をPDFで持っているなら、Gem の「知識（Knowledge）」に入れておきます。毎回貼らなくても、評価の根拠として最優先で使われます。</li>
+    <li><b>Pro と Canvas を毎回選ぶ</b>この2つは会話ごとの設定なので、新しい会話を始めるたびに選び直します。忘れると出力が変わります。</li>
+    <li><b>置き場所を決める</b>作者が勧めているのは Google サイトです。単元ごとのページを作って、出てきたHTMLを埋め込んでいく。学年で共有するなら、この形がいちばん軽い。</li>
+    <li><b>振り返りの書かせ方を1つだけ変える</b>これが実はいちばん効きます。「分かったこと」だけでなく<b>「なぜそう言えるか」</b>を書かせる。理由が書いてある記述からしか、根拠のある評価は返ってきません。</li>
+  </ol>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_copy_gem.jpg" alt="Geminiのgemマネージャー画面。共有アイテムの右端のメニューを開き、コピーを作成が表示されている。">
+    <figcaption><b>手順①の画面。</b>「マイ Gem」と「共有アイテム」は別の棚です。人からもらった Gem は下の「共有アイテム」に入り、鉛筆マークが押せません。<b>⋮ →「コピーを作成」</b>で自分の棚に移ってから書き換えます。</figcaption>
+  </figure>
+
+  <div class="prompt">
+    <span class="lb">書き換えるのはここ（Gemの指示文の一部）</span>
+<pre>【マスター名簿（[クラス人数]名）】
+
+[児童名1], [児童名2], [児童名3], … [児童名32]
+
+※照合ルール：空白削除、ひらがな/漢字の読み替え、部分一致を用いて
+「最も近い児童」に紐付け。</pre>
+  </div>
+
+  <h3>教科によって、足しておくと効く一文</h3>
+
+  <p>Gem の指示はそのままに、会話の最初に一文足すだけで、教科の癖に寄せられます。</p>
+
+  <ul class="plain">
+    <li><b>理科</b>：「誤った捉え方をしている記述は、どこを誤解しているかを具体的に書いてください」</li>
+    <li><b>国語</b>：「本文のどの語を根拠にしているかが書かれているかどうかで、評価を分けてください」</li>
+    <li><b>算数・数学</b>：「知識・技能と思考・判断・表現の両方を、それぞれ別に評価してください」</li>
+    <li><b>どの教科でも</b>：「次時ピックアップは3人までに絞り、紹介する順番をつけてください」</li>
+  </ul>
+
+  <div class="warn">
+    <span class="lb">個人情報の線引き</span>
+    <p>この Gem は名簿を使う設計なので、<b>そのまま使えば児童生徒の実名を生成AIに入れることになります</b>。自治体や学校のルールが先です。実名を入れられない場合は、名簿を出席番号だけにして、振り返りも番号で貼る形になります。ただしこの Gem の名寄せは、ひらがなと漢字の揺れを吸収するために作られた仕組みです。番号だけの運用で同じ精度が出るかは、この記事では確かめていません。まず自分の学級の1時間ぶんで試してから、日常の運用に入れてください。</p>
+    <p>あわせて、出てきたHTMLの置き場所にも気をつけてください。子どもの記述がそのまま入っています。Google サイトに埋め込むなら、公開範囲を必ず限定にします。</p>
+  </div>
+
+  <div class="pull">道具が返してくるのは見立てまでです。誰にどう声をかけるかを決めるのは、その子を知っている人だけです。</div>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">PRO vs FLASH</span></div>
+  <h2>Pro と Flash、どちらで回すか</h2>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/ui_model.jpg" alt="入力欄のモデル選択を開いた画面。3.5 Flash-Lite、3.6 Flash、3.1 Pro、強化版思考モードが並んでいる。">
+    <figcaption><b>モデルはここで選びます。</b>入力欄の右にある名前を押すと切り替わります。既定は Flash。Gem の説明文には Pro と書かれていますが、実際に両方で試してみました。</figcaption>
+  </figure>
+
+  <p>Gem の説明文には「Pro を選び」と書かれています。ただ、Pro は無料で使える回数に限りがあります。毎時間の振り返りに使うなら、そこが一番の壁になる。そこで、<span class="em">まったく同じ入力を Pro と Flash の両方に投げて比べました</span>。高校2年 数学IIの12人分、CASE 3 と同じデータです。</p>
+
+  <h4>結果</h4>
+
+  <ul class="plain">
+    <li><b>時間</b>：Pro は5〜6分。Flash は<b>約1分</b>。人数が多い日ほど差が出ます</li>
+    <li><b>仕分けと評価</b>：12人のうち<b>9人が完全に一致</b>。ちがったのは3人</li>
+    <li><b>理由の文の量</b>：Flash のほうが<b>長い</b>（レポート全体で 13,808字 対 10,422字）。薄くはなりませんでした</li>
+    <li><b>聞いていないこと</b>：Flash は頼んでいないのに、<b>明日の導入の流れ（Step 1〜3）を自分から書いてきました</b>。Pro には、こちらから続けて聞いてやっと出てきたものです</li>
+    <li><b>小4理科でも試しました</b>：この章の前に載せた操作画面（提出率26/28）は、実は Flash で回したものです。主眼の推論も、未提出の2人も、Pro とまったく同じでした</li>
+  </ul>
+
+  <p>ちがった3人のうち、いちばん考えさせられたのが五十嵐 千夏です。CASE 3 で、Pro が「思考・判断・表現（C）」をつけた生徒です。</p>
+
+  <div class="quote">公式は覚えた。r=√(a²+b²) で計算はできる。なぜそうなるかは考えていない。（五十嵐 千夏）</div>
+
+  <p>Flash がつけたのは<b>「知識・技能（B）」</b>でした。<span class="em">できている面のほうを拾った</span>わけです。CASE 3 で「C を見て分かっていない子だと受け取ると事実を取り違える」と書きましたが、そこを Flash のほうが先に避けていました。</p>
+
+  <p>声のかけ方にも差が出ました。同じ生徒への「次時の声かけ」です。</p>
+
+  <div class="box">
+    <span class="lb">Pro</span>
+    <p>計算がばっちりなのは素晴らしい！次は図を描いて、aとbがどこに対応するか一緒に考えてみよう。</p>
+  </div>
+  <div class="box">
+    <span class="lb">Flash</span>
+    <p>計算バッチリだね！明日は浅井くんや窪田さんの『なぜこの式になるのか』の解説を聞いて、納得感を深めてみよう。</p>
+  </div>
+
+  <p>Flash は、<span class="em">ほかの生徒の名前を出して結びつけてきました</span>。学級の中でどう学び合わせるかまで入っている。ここは驚いたところです。</p>
+
+  <h4>ただし、数式はそのまま出ない</h4>
+
+  <figure>
+    <img src="https://a-tozak.github.io/School_Stock/ai/shidou-hyouka-gem/img/case3_flash_cards.jpg" alt="Flashで出力した生徒カード。声かけの文中に $\tan$ や $(a,b)$ といった書き方がそのまま表示されている。">
+    <figcaption><b>Flash の弱点はここだけでした。</b>「$\tan\alpha = b/a$ のみだと第1象限と第3象限の区別が…」のように、数式が独特の書き方のまま画面に出ます。Pro は「tanα=b/a」と普通の文字で書いていました。国語や理科の記述では起きませんが、数学では毎回起きます。</figcaption>
+  </figure>
+
+  <p>直し方は一言です。振り返りを貼るとき、最初の行に足すだけ。</p>
+
+  <div class="prompt">
+    <span class="lb">数式のある教科で足す一言</span>
+<pre>数式は $ で囲まず、tanα=b/a のようにそのままの文字で書いてください。</pre>
+  </div>
+
+  <div class="verdict">
+    <div class="g">
+      <span class="lb">結論</span>
+      <ul>
+        <li><b>まず1回試すなら Flash。</b>速いし、仕分けはほぼ同じところに落ちます</li>
+        <li><b>毎時間まわすなら Flash。</b>Pro の回数を気にせず続けられることのほうが、この道具では効きます</li>
+        <li><b>数式のある教科は、Flash に上の一言を足す。</b>それで Pro と同じ見た目になります</li>
+        <li><b>研究授業の記録など、1回を丁寧に残したいときは Pro。</b>文の運びが落ち着いています</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>Gem の説明に Pro と書かれているのは、たしかに間違いではありません。ただ<span class="em">「Pro が使えないから諦める」必要はまったくなかった</span>、というのがこの比較で分かったことです。</p>
+</section>
+
+<section>
+  <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">SOURCE</span></div>
+  <h2>この記事で使ったもの</h2>
+  <ul class="plain">
+    <li><b>Gem</b>：指導と評価の一体化支援Gem（<a href="https://gemini.google.com/gem/137c7d778700?usp=sharing">https://gemini.google.com/gem/137c7d778700?usp=sharing</a>）</li>
+    <li><b>モデル</b>：3事例はいずれも Gemini 3.1 Pro。比較のため、高2数学のみ 3.6 Flash でも同じ入力を回しました。出力はすべて Canvas</li>
+    <li><b>データ</b>：小4理科28人・中1国語16人・高2数学12人。児童名・生徒名・記述はすべて架空です。実在の児童生徒のデータは1件も使っていません</li>
+    <li><b>画面</b>：Gem が出力したHTMLを、そのまま表示して撮ったものです。文字の修正はしていません</li>
+  </ul>
+</section>
+
+</div>
+
+<div class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  文・構成 外﨑顯博（小学校 ICT教育担当・研究主任／LiFE with）<br>
+  この記事は配布・印刷して構いません。Gem の作りについては作者の公開情報に基づいています。<br>
+  © School Stock
+</div></div>
+
+</body>
+</html>
