@@ -31109,5 +31109,180 @@ const SOZAI = [
   "img": "img/kokugo1_yomu_tsukue.jpg",
   "thumb": "img/kokugo1_yomu_tsukue_thumb.jpg",
   "mono": "img/kokugo1_yomu_tsukue_mono.jpg"
+ },
+ {
+  "id": "sensei_note_pc_suisai",
+  "title": "先生がノートに書きながらパソコンで学ぶ",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "情景・先生",
+  "grade": "全学年",
+  "unit": "情景・研修/仕事の姿",
+  "scenes": [
+   "先生が机でノートに書きものをし、開いたノートパソコンと鉢植えとマグカップが並ぶ斜め後ろからの姿"
+  ],
+  "uses": [
+   "研修スライド",
+   "記事挿絵",
+   "note見出し",
+   "おたより"
+  ],
+  "description": "斜め後ろから見た先生。ノートに鉛筆で書き、奥に画面無地のノートPC、からし色のマグ、小さな鉢植え。白背景の水彩で、余白多め。研修サイトのヒーロー用に描いた1枚。",
+  "howto": "職員研修・校内研修の案内やスライドの表紙に。「手を動かして学ぶ」場面の挿絵として。",
+  "tags": [
+   "先生",
+   "研修",
+   "ノートパソコン",
+   "ノート",
+   "書く",
+   "水彩",
+   "情景",
+   "職員室",
+   "校務",
+   "白背景"
+  ],
+  "img": "img/sensei_note_pc_suisai.jpg",
+  "thumb": "img/sensei_note_pc_suisai_thumb.jpg",
+  "mono": "img/sensei_note_pc_suisai_mono.jpg"
+ },
+ {
+  "id": "workdesk_flatlay_kraft",
+  "title": "研修まえの机の上（真俯瞰）",
+  "author": "masuda",
+  "type": "illust",
+  "subject": "写真・道具",
+  "grade": "全学年",
+  "unit": "道具・仕事場",
+  "scenes": [
+   "クラフト紙の上に閉じたノートPC・開いた無地ノート・削りかけの鉛筆・からし色の付箋・お茶のマグを真俯瞰で並べた物撮り"
+  ],
+  "uses": [
+   "研修スライド",
+   "note見出し",
+   "サムネイル",
+   "おたより"
+  ],
+  "description": "真俯瞰のフラットレイ。閉じたPC、無地の開きノート、削りかけの鉛筆1本、付箋の束、お茶。上3分の1は文字用の余白。",
+  "howto": "研修・仕事術の記事見出しや資料の表紙に。上の余白に題字を載せる前提の構図。",
+  "tags": [
+   "物撮り",
+   "フラットレイ",
+   "文具",
+   "ノート",
+   "鉛筆",
+   "付箋",
+   "クラフト紙",
+   "研修",
+   "俯瞰",
+   "余白"
+  ],
+  "img": "img/workdesk_flatlay_kraft.jpg",
+  "thumb": "img/workdesk_flatlay_kraft_thumb.jpg",
+  "mono": "img/workdesk_flatlay_kraft_mono.jpg"
+ },
+ {
+  "id": "sensei_pc_flat_lp",
+  "title": "パソコンに向かう先生（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "図解・先生",
+  "grade": "全学年",
+  "unit": "情景・研修/仕事の姿",
+  "scenes": [
+   "椅子に座った先生が机のノートPCに向かい、上に無地の吹き出し雲が浮かぶ横向きのフラットイラスト"
+  ],
+  "uses": [
+   "スライド",
+   "LP",
+   "記事挿絵",
+   "図解"
+  ],
+  "description": "紺×生成り×からし色のフラットイラスト。横向きの先生がPCに向かい、無地の吹き出しが浮かぶ。吹き出しに言葉を載せて使える。",
+  "howto": "研修・AI活用の説明図に。吹き出しへSVGで文字を載せるとそのまま図解になる。",
+  "tags": [
+   "先生",
+   "パソコン",
+   "フラット",
+   "吹き出し",
+   "研修",
+   "LP",
+   "紺",
+   "からし色",
+   "図解",
+   "仕事"
+  ],
+  "img": "img/sensei_pc_flat_lp.jpg",
+  "thumb": "img/sensei_pc_flat_lp_thumb.jpg",
+  "mono": "img/sensei_pc_flat_lp_mono.jpg"
+ },
+ {
+  "id": "kokugo_book_flat",
+  "title": "本とプリントと鉛筆（国語の机上・フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "図解・国語",
+  "grade": "全学年",
+  "unit": "道具・国語",
+  "scenes": [
+   "開いた紺表紙の本・無地プリント3枚・鉛筆・湯気の立つマグを並べたフラット静物"
+  ],
+  "uses": [
+   "スライド",
+   "カード",
+   "記事挿絵",
+   "おたより"
+  ],
+  "description": "紺×生成り×からし色のフラット静物。開いた本、扇状のプリント、鉛筆、湯気のマグ。文字なしでどこにでも敷ける。",
+  "howto": "国語・読書・教材づくりの話題のカードや見出しに。",
+  "tags": [
+   "国語",
+   "本",
+   "プリント",
+   "鉛筆",
+   "マグ",
+   "フラット",
+   "静物",
+   "読書",
+   "教材",
+   "カード"
+  ],
+  "img": "img/kokugo_book_flat.jpg",
+  "thumb": "img/kokugo_book_flat_thumb.jpg",
+  "mono": "img/kokugo_book_flat_mono.jpg"
+ },
+ {
+  "id": "shakai_map_flat",
+  "title": "地図とグラフとピン（社会の机上・フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "図解・社会",
+  "grade": "3〜6年",
+  "unit": "道具・社会",
+  "scenes": [
+   "折りたたみ地図に立つからし色のピンと、棒グラフのカード、雲ひとつのフラット静物"
+  ],
+  "uses": [
+   "スライド",
+   "カード",
+   "記事挿絵",
+   "図解"
+  ],
+  "description": "紺×生成り×からし色のフラット静物。折りたたみ地図・位置ピン・数字なしの棒グラフカード・雲ひとつ。文字なし。",
+  "howto": "社会科・地域学習・データ読み取りの話題のカードや見出しに。",
+  "tags": [
+   "社会",
+   "地図",
+   "グラフ",
+   "ピン",
+   "フラット",
+   "静物",
+   "地域",
+   "資料",
+   "カード",
+   "紺"
+  ],
+  "img": "img/shakai_map_flat.jpg",
+  "thumb": "img/shakai_map_flat_thumb.jpg",
+  "mono": "img/shakai_map_flat_mono.jpg"
  }
 ];

@@ -6,7 +6,7 @@ const AUTHORS = {
  },
  "masuda": {
   "romaji": "Masuda",
-  "count": 9
+  "count": 10
  },
  "suou": {
   "romaji": "Suou",
@@ -14,11 +14,11 @@ const AUTHORS = {
  },
  "sumire": {
   "romaji": "Nonomiya",
-  "count": 205
+  "count": 206
  },
  "riko": {
   "romaji": "Chihaya",
-  "count": 511
+  "count": 514
  },
  "himi": {
   "romaji": "Himi",
