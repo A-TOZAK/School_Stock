@@ -67,6 +67,33 @@
     if (!isDownload) return;
     var key = href;
     try { key = decode(new URL(href, location.href).pathname); } catch (e) {}
+    // 配布ファイルは School_Stock_files リポジトリから配信するが（2026-08-10 容量分離）、
+    // 計測キーは従来どおり /School_Stock/… に揃えて過去データと連続させる
+    key = key.replace(/^\/School_Stock_files\//, "/School_Stock/");
     bump("dl:" + key);
   }, true);
+
+  // ── 配布ファイルのリンクを配信リポジトリへ向ける（2026-08-10 容量分離） ──
+  // 新しく作ったページが従来どおり相対パスで PDF/ZIP を指していても、
+  // 実体のある /School_Stock_files/ へ張り替える。既に張り替え済みのリンクは触らない。
+  function retargetFiles() {
+    if (location.hostname.indexOf("github.io") === -1) return; // ローカル確認では何もしない
+    var links = document.querySelectorAll("a[href]");
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      var href = a.getAttribute("href") || "";
+      if (!/\.(pdf|zip)(\?|#|$)/i.test(href)) continue;
+      try {
+        var u = new URL(href, location.href);
+        if (u.origin !== location.origin) continue;
+        if (u.pathname.indexOf("/School_Stock/") !== 0) continue;
+        a.setAttribute("href", u.pathname.replace("/School_Stock/", "/School_Stock_files/") + u.search + u.hash);
+      } catch (e) { /* 触らない */ }
+    }
+  }
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", retargetFiles);
+  } else {
+    retargetFiles();
+  }
 })();

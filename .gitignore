@@ -4,3 +4,9 @@
 
 先生の寄り道プロンプト帳｜School Stock.pdf
 __pycache__/
+
+# 配布ファイル（PDF/ZIP）は School_Stock_files リポジトリで公開する（2026-08-10 容量分離）
+*.pdf
+*.PDF
+*.zip
+*.ZIP
