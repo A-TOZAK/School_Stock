@@ -65,6 +65,17 @@
     if (!href) return;
     var isDownload = a.hasAttribute("download") || /\.(pdf|zip)(\?|#|$)/i.test(href);
     if (!isDownload) return;
+    // あとからJSで注入されたリンク（施錠ページ等）もクリック時に配信リポジトリへ向ける
+    try {
+      var ru = new URL(href, location.href);
+      if (location.hostname.indexOf("github.io") !== -1 &&
+          ru.origin === location.origin &&
+          ru.pathname.indexOf("/School_Stock/") === 0 &&
+          /\.(pdf|zip)$/i.test(ru.pathname)) {
+        href = ru.pathname.replace("/School_Stock/", "/School_Stock_files/") + ru.search + ru.hash;
+        a.setAttribute("href", href);
+      }
+    } catch (e) { /* 触らない */ }
     var key = href;
     try { key = decode(new URL(href, location.href).pathname); } catch (e) {}
     // 配布ファイルは School_Stock_files リポジトリから配信するが（2026-08-10 容量分離）、
