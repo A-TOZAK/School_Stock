@@ -74,12 +74,16 @@
    *
    * 出しかたの作法
    *   - ダウンロードのたびに毎回出す（2026-08-11 本人指示。回数の上限は設けない）
-   *   - 8秒で自動で消える／×でも消せる／押すと相談窓口へ
-   *   - ×で消しても、次にダウンロードすればまた出る
+   *   - 1枚目はフルサイズ12秒。2枚目からは小さめ・6秒・お礼だけ（CTAなし）
+   *     ＝まとめて落とす人の邪魔をしない（同日夜のレビュー盤 判断A）
+   *   - ただしレア（牛）はいつでもフルサイズ12秒
+   *   - ×で消しても、次にダウンロードすればまた出る。ただし×を同じ日に2回押したら
+   *     その日はもう出さない（「もういい」の意思表示を尊重する）
    *   - 続けて同じ絵は出さない（毎回ちがう絵が出るのが、この仕掛けの主旨）
-   *   - ボタンを×で小さくしている人には出さない（消したという意思表示を尊重する）
+   *   - ボタンを×で小さくしている人には出さない
    *   - 動きを減らす設定の環境では、動かさず静かに出す
    *   - 画像は出るときに1枚だけ読む（先読みしない。1枚6KB）
+   *   - 貯めるのは表示回数と日付だけ。個人を追う値は使わない
    */
   var OREI = [
     { id: "sensei_f",     img: "01_sensei_f.webp",     msg: "明日の授業が、また楽しみになりますように" },
@@ -94,9 +98,30 @@
   ];
   var OREI_RARE = { id: "ushi", img: "10_ushi.webp", msg: "行ってきます" };
   var OREI_RARE_RATE = 0.02;   // 50回に1回
-  var OREI_SHOW_MS = 12000;   // 見えているあいだだけ数える12秒（8秒は短いという本人指摘・2026-08-11）
+  var OREI_SHOW_MS = 12000;         // 1枚目。見えているあいだだけ数える
+  var OREI_SHOW_MS_REPEAT = 6000;   // 2枚目から
   var OREI_DIR = "/School_Stock/assets/orei/";
   var OREI_LAST_KEY = "ss-orei-last";   // 直前に出た絵。続けて同じ絵を出さないためだけに使う
+  var OREI_N_KEY = "ss-orei-n";         // このセッションで出した枚数。大きさの切替だけに使う
+  var OREI_X_KEY = "ss-orei-x";         // ×を押した日と回数（localStorage）。2回でその日は止める
+
+  function oreiToday() {
+    var d = new Date();
+    return d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate();
+  }
+  function oreiMuted() {
+    try {
+      var v = (localStorage.getItem(OREI_X_KEY) || "").split("|");
+      return v[0] === oreiToday() && (parseInt(v[1], 10) || 0) >= 2;
+    } catch (e) { return false; }
+  }
+  function oreiNoteX() {
+    try {
+      var v = (localStorage.getItem(OREI_X_KEY) || "").split("|");
+      var n = (v[0] === oreiToday()) ? (parseInt(v[1], 10) || 0) + 1 : 1;
+      localStorage.setItem(OREI_X_KEY, oreiToday() + "|" + n);
+    } catch (e) {}
+  }
 
   var oreiCss = [
     "#ss-orei-wrap{position:fixed;right:20px;bottom:calc(var(--ss-b) + 60px);z-index:9992;",
@@ -112,6 +137,8 @@
     "width:22px;height:22px;border-radius:50%;padding:0;",
     "background:#e6e6e3;color:#6b7077;font-size:12px;line-height:22px;text-align:center;",
     "box-shadow:0 2px 6px rgba(0,0,0,.18);}",
+    "#ss-orei-wrap.ss-orei-small{width:190px;}",
+    "#ss-orei-wrap.ss-orei-small .ss-orei-msg{font-size:12px;padding:9px 12px 12px;}",
     "@media (max-width:600px){#ss-orei-wrap{right:14px;}}",
     "@media (prefers-reduced-motion: no-preference){",
     "#ss-orei-wrap{opacity:0;transform:translateY(8px) scale(.98);",
@@ -184,7 +211,7 @@
     document.addEventListener("visibilitychange", function () {
       if (document.hidden) pauseTimer(); else resumeTimer();
     });
-    x.addEventListener("click", hide);
+    x.addEventListener("click", function () { hide(); oreiNoteX(); });
     card.addEventListener("click", function () {
       var id = card.getAttribute("data-orei") || "?";
       track("cta:thanks-click");
@@ -194,25 +221,34 @@
 
     window.addEventListener("ss:download", function () {
       if (isMinimized()) return;                       // 小さくしている人には出さない
+      if (oreiMuted()) return;                         // ×を今日2回押した人には出さない
 
       var o = oreiPick();
+      var n = 0;
+      try { n = parseInt(sessionStorage.getItem(OREI_N_KEY) || "0", 10) || 0; } catch (e) {}
+      var compact = n >= 1 && o.id !== OREI_RARE.id;   // 2枚目から小さく。レアはいつでもフルサイズ
+
       card.setAttribute("data-orei", o.id);
       card.innerHTML =
         '<img src="' + OREI_DIR + o.img + '" alt="" width="520" height="347">' +
         '<div class="ss-orei-msg">' + o.msg + '</div>' +
-        '<div class="ss-orei-cta">作った本人に、<b>聞けます →</b></div>';
+        (compact ? '' : '<div class="ss-orei-cta">作った本人に、<b>聞けます →</b></div>');
       card.setAttribute("aria-label", o.msg + "。先生の相談窓口を開く");
+      wrap.classList[compact ? "add" : "remove"]("ss-orei-small");
 
       wrap.style.display = "block";
       // 1フレーム置いてからクラスを付ける（付けた瞬間だと動きが出ない）
       setTimeout(function () { wrap.classList.add("ss-orei-in"); }, 20);
 
-      try { sessionStorage.setItem(OREI_LAST_KEY, o.id); } catch (e) {}
+      try {
+        sessionStorage.setItem(OREI_LAST_KEY, o.id);
+        sessionStorage.setItem(OREI_N_KEY, String(n + 1));
+      } catch (e) {}
 
       track("cta:thanks-shown");
       track("cta:thanks-shown:" + o.id);
 
-      startTimer(OREI_SHOW_MS);
+      startTimer(compact ? OREI_SHOW_MS_REPEAT : OREI_SHOW_MS);
     });
   }
 
