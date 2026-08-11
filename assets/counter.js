@@ -50,16 +50,29 @@
     try { return decodeURIComponent(s); } catch (e) { return s; }
   }
 
-  // ── ページビュー（セッション内の再読込は数えない） ──
-  var pvKey = "pv:" + pagePath();
-  try {
-    if (!sessionStorage.getItem("ss_" + pvKey)) {
-      bump(pvKey);
-      sessionStorage.setItem("ss_" + pvKey, "1");
+  // セッション内で1回だけ数える（再読込・戻るで二重に増やさない）
+  function bumpOnce(key) {
+    try {
+      if (sessionStorage.getItem("ss_" + key)) return;
+      bump(key);
+      sessionStorage.setItem("ss_" + key, "1");
+    } catch (e) {
+      bump(key);
     }
-  } catch (e) {
-    bump(pvKey);
   }
+
+  // ── ページビュー（セッション内の再読込は数えない） ──
+  bumpOnce("pv:" + pagePath());
+
+  // ── どこから来たか（?from=x / xa / note / ig …） ──
+  // 棚のリンクに付けた目印を数える。ページの住所（pv:）にはクエリを入れない決まりなので、
+  // 流入元は別のキー（src:）で持つ。1回の訪問につき1つ。
+  //   x  = Xの通常ポスト ／ xa = X Articles ／ note = note記事 ／ ig = インスタ
+  // 目印のない訪問（検索・直リンク・口づて）は数えない。src の合計は表示の合計と一致しない。
+  try {
+    var mark = /[?&]from=([A-Za-z0-9_-]{1,24})(?:&|#|$)/.exec(location.search);
+    if (mark) bumpOnce("src:" + mark[1].toLowerCase());
+  } catch (e) { /* 計測はサイトの邪魔をしない */ }
 
   // ── ダウンロード（download属性 or .pdf/.zip リンクのクリック） ──
   document.addEventListener("click", function (ev) {
