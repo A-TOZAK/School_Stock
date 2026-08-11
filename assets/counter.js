@@ -35,6 +35,10 @@
     } catch (e) { /* 計測はサイトの邪魔をしない */ }
   }
 
+  // ほかのスクリプト（soudan.js など）からも1回だけ数えられるように出しておく。
+  // 設定が入っていないときは、この行まで来ないので undefined のまま＝呼んでも何も起きない。
+  window.SS_BUMP = bump;
+
   // ページの住所（/.../index.html → /.../ に正規化）
   function pagePath() {
     var p = location.pathname.replace(/index\.html$/, "");
