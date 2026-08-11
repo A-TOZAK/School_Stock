@@ -73,8 +73,10 @@
    * 絵と文は組で固定。ランダムに組み合わせない。
    *
    * 出しかたの作法
-   *   - 1セッションに2回まで（毎回出すとじゃまになる）
+   *   - ダウンロードのたびに毎回出す（2026-08-11 本人指示。回数の上限は設けない）
    *   - 8秒で自動で消える／×でも消せる／押すと相談窓口へ
+   *   - ×で消しても、次にダウンロードすればまた出る
+   *   - 続けて同じ絵は出さない（毎回ちがう絵が出るのが、この仕掛けの主旨）
    *   - ボタンを×で小さくしている人には出さない（消したという意思表示を尊重する）
    *   - 動きを減らす設定の環境では、動かさず静かに出す
    *   - 画像は出るときに1枚だけ読む（先読みしない。1枚6KB）
@@ -92,11 +94,9 @@
   ];
   var OREI_RARE = { id: "ushi", img: "10_ushi.webp", msg: "行ってきます" };
   var OREI_RARE_RATE = 0.02;   // 50回に1回
-  var OREI_MAX_PER_SESSION = 2;
   var OREI_SHOW_MS = 8000;
   var OREI_DIR = "/School_Stock/assets/orei/";
-  var OREI_COUNT_KEY = "ss-orei-count";
-  var OREI_LAST_KEY = "ss-orei-last";
+  var OREI_LAST_KEY = "ss-orei-last";   // 直前に出た絵。続けて同じ絵を出さないためだけに使う
 
   var oreiCss = [
     "#ss-orei-wrap{position:fixed;right:20px;bottom:calc(var(--ss-b) + 60px);z-index:9992;",
@@ -130,12 +130,6 @@
       if (rest.length) pool = rest;            // 続けて同じ絵を出さない
     }
     return pool[Math.floor(Math.random() * pool.length)];
-  }
-
-  function oreiShown() {
-    var n = 0;
-    try { n = parseInt(sessionStorage.getItem(OREI_COUNT_KEY) || "0", 10) || 0; } catch (e) {}
-    return n;
   }
 
   function buildOrei(isMinimized) {
@@ -172,7 +166,6 @@
 
     window.addEventListener("ss:download", function () {
       if (isMinimized()) return;                       // 小さくしている人には出さない
-      if (oreiShown() >= OREI_MAX_PER_SESSION) return;
 
       var o = oreiPick();
       card.setAttribute("data-orei", o.id);
@@ -186,10 +179,7 @@
       // 1フレーム置いてからクラスを付ける（付けた瞬間だと動きが出ない）
       setTimeout(function () { wrap.classList.add("ss-orei-in"); }, 20);
 
-      try {
-        sessionStorage.setItem(OREI_COUNT_KEY, String(oreiShown() + 1));
-        sessionStorage.setItem(OREI_LAST_KEY, o.id);
-      } catch (e) {}
+      try { sessionStorage.setItem(OREI_LAST_KEY, o.id); } catch (e) {}
 
       track("cta:thanks-shown");
       track("cta:thanks-shown:" + o.id);
