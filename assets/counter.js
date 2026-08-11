@@ -69,6 +69,13 @@
     if (!href) return;
     var isDownload = a.hasAttribute("download") || /\.(pdf|zip)(\?|#|$)/i.test(href);
     if (!isDownload) return;
+    // 押された瞬間にも別タブ指定を入れる。あとからJSで並べ直す棚（素材ライブラリ等）は
+    // 読み込み時の一括処理に間に合わないので、ここで拾う
+    if (!a.hasAttribute("download") && !a.getAttribute("target") &&
+        /\.(pdf|zip)(\?|#|$)/i.test(href)) {
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    }
     // あとからJSで注入されたリンク（施錠ページ等）もクリック時に配信リポジトリへ向ける
     try {
       var ru = new URL(href, location.href);
@@ -97,6 +104,24 @@
   // ── 配布ファイルのリンクを配信リポジトリへ向ける（2026-08-10 容量分離） ──
   // 新しく作ったページが従来どおり相対パスで PDF/ZIP を指していても、
   // 実体のある /School_Stock_files/ へ張り替える。既に張り替え済みのリンクは触らない。
+  // ── PDF・ZIPは別タブで開く（2026-08-11）────────────────────
+  // 棚によってリンクの書き方が3通りに割れていた：ただのリンク（国語）／target=_blank（支援）／
+  // download（算数）。ただのリンクだと同じタブでPDFが開き、棚のページごと消える。
+  // 見ていたページが消えるのは棚として不便だし、お礼カードも出る間がない。
+  // download属性のあるものは触らない（あれは本当に落ちるリンクなので、ページは消えない）。
+  function openInNewTab() {
+    var links = document.querySelectorAll("a[href]");
+    for (var i = 0; i < links.length; i++) {
+      var a = links[i];
+      if (a.hasAttribute("download")) continue;
+      if (a.getAttribute("target")) continue;
+      var href = a.getAttribute("href") || "";
+      if (!/\.(pdf|zip)(\?|#|$)/i.test(href)) continue;
+      a.setAttribute("target", "_blank");
+      a.setAttribute("rel", "noopener");
+    }
+  }
+
   function retargetFiles() {
     if (location.hostname.indexOf("github.io") === -1) return; // ローカル確認では何もしない
     var links = document.querySelectorAll("a[href]");
@@ -112,9 +137,12 @@
       } catch (e) { /* 触らない */ }
     }
   }
+  function prepLinks() { retargetFiles(); openInNewTab(); }
   if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", retargetFiles);
+    document.addEventListener("DOMContentLoaded", prepLinks);
   } else {
-    retargetFiles();
+    prepLinks();
   }
+  // あとからJSで並べ直す棚（素材ライブラリ・プリント一覧）にも効かせる
+  window.addEventListener("load", prepLinks);
 })();

@@ -85,7 +85,7 @@
     { id: "sensei_f",     img: "01_sensei_f.webp",     msg: "明日の授業が、また楽しみになりますように" },
     { id: "sensei_m",     img: "02_sensei_m.webp",     msg: "今日は、少し早く帰れますように" },
     { id: "sensei_senior",img: "03_sensei_senior.webp",msg: "準備が、少し軽くなりますように" },
-    { id: "sensei_new",   img: "04_sensei_new.webp",   msg: "子どもたち、のってくれるといいですね" },
+    { id: "sensei_new",   img: "04_sensei_new.webp",   msg: "うまくいくと、いいですね" },
     { id: "neko",         img: "05_neko.webp",         msg: "またどうぞ。棚は増えていきます" },
     { id: "inu",          img: "06_inu.webp",          msg: "どうぞ、持っていってください" },
     { id: "kapibara",     img: "07_kapibara.webp",     msg: "ゆっくり休める夜になりますように" },
@@ -94,7 +94,7 @@
   ];
   var OREI_RARE = { id: "ushi", img: "10_ushi.webp", msg: "行ってきます" };
   var OREI_RARE_RATE = 0.02;   // 50回に1回
-  var OREI_SHOW_MS = 8000;
+  var OREI_SHOW_MS = 12000;   // 見えているあいだだけ数える12秒（8秒は短いという本人指摘・2026-08-11）
   var OREI_DIR = "/School_Stock/assets/orei/";
   var OREI_LAST_KEY = "ss-orei-last";   // 直前に出た絵。続けて同じ絵を出さないためだけに使う
 
@@ -150,12 +150,40 @@
     wrap.appendChild(x);
     document.body.appendChild(wrap);
 
-    var timer = null;
+    /* 消えるまでの8秒は「見えているあいだ」だけ数える（2026-08-11）
+     * PDFが別タブで開くと、このページは裏に回る。ふつうのタイマーだと、
+     * 戻ってきたときにはもう消えている（本人指摘「右下のやつが出てこない」）。
+     * 裏に回っているあいだは時計を止めて、戻ってきてから数え直す。 */
+    var timer = null, remain = 0, startedAt = 0;
+
     function hide() {
       wrap.style.display = "none";
       wrap.classList.remove("ss-orei-in");
       if (timer) { clearTimeout(timer); timer = null; }
+      remain = 0;
     }
+    function startTimer(ms) {
+      if (timer) { clearTimeout(timer); timer = null; }
+      remain = ms;
+      if (document.hidden) return;              // 裏にいるあいだは数え始めない
+      startedAt = Date.now();
+      timer = setTimeout(hide, remain);
+    }
+    function pauseTimer() {
+      if (!timer) return;
+      clearTimeout(timer); timer = null;
+      remain -= (Date.now() - startedAt);
+      if (remain < 0) remain = 0;
+    }
+    function resumeTimer() {
+      if (wrap.style.display !== "block" || timer) return;
+      if (remain <= 0) remain = OREI_SHOW_MS;   // 裏で満了していたら、戻ってきてから数え直す
+      startedAt = Date.now();
+      timer = setTimeout(hide, remain);
+    }
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) pauseTimer(); else resumeTimer();
+    });
     x.addEventListener("click", hide);
     card.addEventListener("click", function () {
       var id = card.getAttribute("data-orei") || "?";
@@ -184,8 +212,7 @@
       track("cta:thanks-shown");
       track("cta:thanks-shown:" + o.id);
 
-      if (timer) clearTimeout(timer);
-      timer = setTimeout(hide, OREI_SHOW_MS);
+      startTimer(OREI_SHOW_MS);
     });
   }
 
