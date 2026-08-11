@@ -67,6 +67,138 @@
     "@media print{#ss-soudan-btn,#ss-soudan-close,#ss-soudan-mini{display:none !important;}}"
   ].join("");
 
+  /* ── お礼カード（2026-08-11）──────────────────────────────
+   * 教材をダウンロードしたあと、相談窓口ボタンの上に小さなカードを出す。
+   * 絵は10種。ふだんは9種から1枚、50回に1回だけ牛（UFOに連れていかれる）が出る。
+   * 絵と文は組で固定。ランダムに組み合わせない。
+   *
+   * 出しかたの作法
+   *   - 1セッションに2回まで（毎回出すとじゃまになる）
+   *   - 8秒で自動で消える／×でも消せる／押すと相談窓口へ
+   *   - ボタンを×で小さくしている人には出さない（消したという意思表示を尊重する）
+   *   - 動きを減らす設定の環境では、動かさず静かに出す
+   *   - 画像は出るときに1枚だけ読む（先読みしない。1枚6KB）
+   */
+  var OREI = [
+    { id: "sensei_f",     img: "01_sensei_f.webp",     msg: "明日の授業が、また楽しみになりますように" },
+    { id: "sensei_m",     img: "02_sensei_m.webp",     msg: "今日は、少し早く帰れますように" },
+    { id: "sensei_senior",img: "03_sensei_senior.webp",msg: "準備が、少し軽くなりますように" },
+    { id: "sensei_new",   img: "04_sensei_new.webp",   msg: "子どもたち、のってくれるといいですね" },
+    { id: "neko",         img: "05_neko.webp",         msg: "またどうぞ。棚は増えていきます" },
+    { id: "inu",          img: "06_inu.webp",          msg: "どうぞ、持っていってください" },
+    { id: "kapibara",     img: "07_kapibara.webp",     msg: "ゆっくり休める夜になりますように" },
+    { id: "usagi",        img: "08_usagi.webp",        msg: "教室で、うまく回りますように" },
+    { id: "hamster",      img: "09_hamster.webp",      msg: "印刷、うまくいきますように" }
+  ];
+  var OREI_RARE = { id: "ushi", img: "10_ushi.webp", msg: "行ってきます" };
+  var OREI_RARE_RATE = 0.02;   // 50回に1回
+  var OREI_MAX_PER_SESSION = 2;
+  var OREI_SHOW_MS = 8000;
+  var OREI_DIR = "/School_Stock/assets/orei/";
+  var OREI_COUNT_KEY = "ss-orei-count";
+  var OREI_LAST_KEY = "ss-orei-last";
+
+  var oreiCss = [
+    "#ss-orei-wrap{position:fixed;right:20px;bottom:calc(var(--ss-b) + 60px);z-index:9992;",
+    "width:260px;max-width:78vw;display:none;}",
+    "#ss-orei{display:block;background:#fff;border-radius:14px;overflow:hidden;",
+    "box-shadow:0 8px 30px rgba(0,0,0,.20);text-decoration:none;color:#15181c;",
+    "font-family:'Hiragino Sans','Hiragino Kaku Gothic ProN','Noto Sans JP',sans-serif;}",
+    "#ss-orei img{width:100%;height:auto;display:block;background:#fff;}",
+    "#ss-orei .ss-orei-msg{padding:12px 14px 4px;font-size:13.5px;line-height:1.7;}",
+    "#ss-orei .ss-orei-cta{padding:6px 14px 13px;font-size:12px;color:#6b7077;}",
+    "#ss-orei .ss-orei-cta b{color:#15181c;font-weight:600;}",
+    "#ss-orei-x{position:absolute;top:-9px;right:-9px;z-index:9993;cursor:pointer;border:none;",
+    "width:22px;height:22px;border-radius:50%;padding:0;",
+    "background:#e6e6e3;color:#6b7077;font-size:12px;line-height:22px;text-align:center;",
+    "box-shadow:0 2px 6px rgba(0,0,0,.18);}",
+    "@media (max-width:600px){#ss-orei-wrap{right:14px;}}",
+    "@media (prefers-reduced-motion: no-preference){",
+    "#ss-orei-wrap{opacity:0;transform:translateY(8px) scale(.98);",
+    "transition:opacity .28s ease-out, transform .28s ease-out;}",
+    "#ss-orei-wrap.ss-orei-in{opacity:1;transform:none;}}",
+    "@media print{#ss-orei-wrap{display:none !important;}}"
+  ].join("");
+
+  function oreiPick() {
+    if (Math.random() < OREI_RARE_RATE) return OREI_RARE;
+    var last = null;
+    try { last = sessionStorage.getItem(OREI_LAST_KEY); } catch (e) {}
+    var pool = OREI;
+    if (last) {
+      var rest = OREI.filter(function (o) { return o.id !== last; });
+      if (rest.length) pool = rest;            // 続けて同じ絵を出さない
+    }
+    return pool[Math.floor(Math.random() * pool.length)];
+  }
+
+  function oreiShown() {
+    var n = 0;
+    try { n = parseInt(sessionStorage.getItem(OREI_COUNT_KEY) || "0", 10) || 0; } catch (e) {}
+    return n;
+  }
+
+  function buildOrei(isMinimized) {
+    var style = document.createElement("style");
+    style.textContent = oreiCss;
+    document.head.appendChild(style);
+
+    var wrap = document.createElement("div");
+    wrap.id = "ss-orei-wrap";
+    var card = document.createElement("a");
+    card.id = "ss-orei";
+    card.href = SOUDAN_URL;
+    var x = document.createElement("button");
+    x.id = "ss-orei-x";
+    x.textContent = "×";
+    x.title = "閉じる";
+    wrap.appendChild(card);
+    wrap.appendChild(x);
+    document.body.appendChild(wrap);
+
+    var timer = null;
+    function hide() {
+      wrap.style.display = "none";
+      wrap.classList.remove("ss-orei-in");
+      if (timer) { clearTimeout(timer); timer = null; }
+    }
+    x.addEventListener("click", hide);
+    card.addEventListener("click", function () {
+      var id = card.getAttribute("data-orei") || "?";
+      track("cta:thanks-click");
+      track("cta:thanks-click:" + id);
+      track("cta:soudan-from:" + shelf());
+    });
+
+    window.addEventListener("ss:download", function () {
+      if (isMinimized()) return;                       // 小さくしている人には出さない
+      if (oreiShown() >= OREI_MAX_PER_SESSION) return;
+
+      var o = oreiPick();
+      card.setAttribute("data-orei", o.id);
+      card.innerHTML =
+        '<img src="' + OREI_DIR + o.img + '" alt="" width="520" height="347">' +
+        '<div class="ss-orei-msg">' + o.msg + '</div>' +
+        '<div class="ss-orei-cta">作った本人に、<b>聞けます →</b></div>';
+      card.setAttribute("aria-label", o.msg + "。先生の相談窓口を開く");
+
+      wrap.style.display = "block";
+      // 1フレーム置いてからクラスを付ける（付けた瞬間だと動きが出ない）
+      setTimeout(function () { wrap.classList.add("ss-orei-in"); }, 20);
+
+      try {
+        sessionStorage.setItem(OREI_COUNT_KEY, String(oreiShown() + 1));
+        sessionStorage.setItem(OREI_LAST_KEY, o.id);
+      } catch (e) {}
+
+      track("cta:thanks-shown");
+      track("cta:thanks-shown:" + o.id);
+
+      if (timer) clearTimeout(timer);
+      timer = setTimeout(hide, OREI_SHOW_MS);
+    });
+  }
+
   function build() {
     var style = document.createElement("style");
     style.textContent = css;
@@ -127,6 +259,10 @@
         if (av) av.classList.add("ss-nod");
       }, 3500);
     }
+
+    buildOrei(function () {
+      try { return sessionStorage.getItem(KEY) === "1"; } catch (e) { return false; }
+    });
   }
 
   if (document.readyState === "loading") {

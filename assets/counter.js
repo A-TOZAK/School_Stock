@@ -86,6 +86,12 @@
     // 計測キーは従来どおり /School_Stock/… に揃えて過去データと連続させる
     key = key.replace(/^\/School_Stock_files\//, "/School_Stock/");
     bump("dl:" + key);
+
+    // ダウンロードされたことを、ほかのスクリプト（soudan.js のお礼カード）へ知らせる。
+    // 計測とは別物なので、失敗しても計測もダウンロードも止めない。
+    try {
+      window.dispatchEvent(new CustomEvent("ss:download", { detail: { key: key } }));
+    } catch (e) {}
   }, true);
 
   // ── 配布ファイルのリンクを配信リポジトリへ向ける（2026-08-10 容量分離） ──
