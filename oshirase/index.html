@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>入荷のお知らせを受け取る｜School Stock</title>
+<meta name="description" content="School Stock に新しい教材が入ったときの知らせを、LINE・note・Instagram・X のうち都合のいい場所で受け取れます。登録は無料、いつでもやめられます。">
+<style>
+  :root{ --ink:#15181c; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --sub:#6b7077; }
+  *{ margin:0; padding:0; box-sizing:border-box; }
+  body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+        color:var(--ink); background:var(--wash); line-height:1.9; }
+  a{ color:inherit; }
+  .wrap{ max-width:720px; margin:0 auto; padding:28px 20px 60px; }
+  .back{ font-size:13px; color:var(--sub); text-decoration:none; }
+  .back:hover{ text-decoration:underline; }
+  h1{ font-size:26px; margin:18px 0 6px; letter-spacing:.02em; }
+  .lead{ color:var(--sub); font-size:14.5px; margin-bottom:22px; }
+  .card{ background:var(--paper); border:1px solid var(--line); border-radius:14px;
+         padding:22px 22px 20px; margin-bottom:18px; }
+  .card h2{ font-size:17px; margin-bottom:2px; }
+  .who{ font-size:12.5px; color:var(--sub); margin-bottom:12px; }
+  .card p{ font-size:14px; }
+  .btn{ display:inline-block; background:var(--ink); color:#fff; text-decoration:none;
+        border-radius:999px; padding:11px 26px; font-size:14px; margin-top:12px; }
+  .btn:hover{ opacity:.85; }
+  .btn.ghost{ background:var(--paper); color:var(--ink); border:1.5px solid var(--ink); }
+  .qr-row{ display:flex; align-items:center; gap:18px; margin-top:12px; flex-wrap:wrap; }
+  .qr-row img{ width:132px; height:132px; border:1px solid var(--line); border-radius:8px; background:#fff; }
+  .qr-note{ font-size:12.5px; color:var(--sub); }
+  .meibo{ background:var(--paper); border:1px solid var(--line); border-radius:12px;
+          padding:14px 18px; margin-top:8px; font-size:13.5px; }
+  .meibo b{ display:block; margin-bottom:4px; font-size:13px; color:var(--sub); letter-spacing:.08em; }
+  footer{ text-align:center; color:var(--sub); font-size:12px; margin-top:36px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <a class="back" href="/School_Stock/">← School Stock トップへ</a>
+  <h1>入荷のお知らせを受け取る</h1>
+  <p class="lead">棚は増えていきます。新しい教材が入ったときの知らせを、都合のいい場所で受け取れます。どれも無料で、いつでもやめられます。</p>
+
+  <div class="card">
+    <h2>LINEで受け取る</h2>
+    <div class="who">スマホの方に。いちばん手軽です</div>
+    <p>月に1回ほど、新しく入った教材をまとめてお知らせします。そのまま「この単元の教材はありますか」と聞くこともできます。</p>
+    <div class="qr-row">
+      <img src="/School_Stock/assets/line_qr.png" alt="公式LINEのQRコード" width="132" height="132">
+      <div>
+        <a class="btn" href="https://lin.ee/Tay8XPQ" target="_blank" rel="noopener">スマホの方はこちら（公式LINE）</a>
+        <div class="qr-note" style="margin-top:8px;">通知はほとんど飛ばしません。<br>ブロックもいつでもどうぞ。</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>noteで受け取る</h2>
+    <div class="who">パソコンの方、メールで知りたい方に</div>
+    <p>noteをフォローしておくと、新しい記事が出たときに note からメールが届きます。教材の紹介だけでなく、制作の裏側も書いています。</p>
+    <a class="btn" href="https://note.com/tozaki_edu" target="_blank" rel="noopener">noteをフォローする</a>
+  </div>
+
+  <div class="card">
+    <h2>Instagramで受け取る</h2>
+    <div class="who">画像で見たい方に</div>
+    <p>新しい教材のお知らせと使い方を、画像のまとまりで載せています。</p>
+    <a class="btn ghost" href="https://www.instagram.com/schoolstock_lifewith/" target="_blank" rel="noopener">Instagramを見る</a>
+  </div>
+
+  <div class="card">
+    <h2>Xで受け取る</h2>
+    <div class="who">毎日の様子も見たい方に</div>
+    <p>教材の紹介と、現場のひとことをほぼ毎日。入荷の知らせもここに流れます。</p>
+    <a class="btn ghost" href="https://x.com/Tozaki_edu" target="_blank" rel="noopener">Xを見る</a>
+  </div>
+
+  <div class="meibo">
+    <b>メールアドレスについて</b>
+    こちらでメールアドレスを集めることはしません。名簿を持たないほうが、お互いに安心だからです。メールで受け取りたい方は、上のnoteのフォローがいちばん確実です。
+  </div>
+
+  <footer>© School Stock</footer>
+</div>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>

@@ -139,6 +139,15 @@
     "box-shadow:0 2px 6px rgba(0,0,0,.18);}",
     "#ss-orei-wrap.ss-orei-small{width:190px;}",
     "#ss-orei-wrap.ss-orei-small .ss-orei-msg{font-size:12px;padding:9px 12px 12px;}",
+    /* お礼カードの下の小さな帯（つかってみます・入荷のお知らせ） */
+    "#ss-orei-bar{margin-top:8px;background:#fff;border-radius:12px;box-shadow:0 6px 22px rgba(0,0,0,.16);",
+    "padding:9px 12px;display:flex;flex-direction:column;gap:6px;}",
+    "#ss-orei-rx{border:1.5px solid #15181c;background:#fff;color:#15181c;border-radius:999px;",
+    "padding:7px 12px;font-size:12.5px;font-family:inherit;cursor:pointer;line-height:1.4;}",
+    "#ss-orei-rx:disabled{border-color:#e6e6e3;color:#3d4148;cursor:default;background:#f6f6f4;}",
+    "#ss-orei-news{font-size:11.5px;color:#6b7077;text-decoration:none;text-align:center;}",
+    "#ss-orei-news b{color:#15181c;font-weight:600;}",
+    "#ss-orei-news:hover{text-decoration:underline;}",
     "@media (max-width:600px){#ss-orei-wrap{right:14px;}}",
     "@media (prefers-reduced-motion: no-preference){",
     "#ss-orei-wrap{opacity:0;transform:translateY(8px) scale(.98);",
@@ -175,7 +184,68 @@
     x.title = "閉じる";
     wrap.appendChild(card);
     wrap.appendChild(x);
+
+    /* カードの下の帯（2026-08-11 夜）
+     * ・「つかってみます」＝落とした教材ごとに、押された数だけを貯める（rx:＋ファイルの住所）。
+     *   文章は書けない。名前も残らない。押した人には「あなたで◯人目」と返す。
+     *   掲示板は作らない（検品なしの公開の面を持たない）——声はLINEと相談窓口で1対1のまま。
+     * ・「入荷のお知らせ」＝受け取り方をまとめたページへの入り口。名簿は持たない。 */
+    var bar = document.createElement("div");
+    bar.id = "ss-orei-bar";
+    var rx = document.createElement("button");
+    rx.id = "ss-orei-rx";
+    rx.type = "button";
+    rx.textContent = "つかってみます";
+    var news = document.createElement("a");
+    news.id = "ss-orei-news";
+    news.href = "/School_Stock/oshirase/";
+    news.innerHTML = "新しい教材が入ったら知りたい方は <b>こちら →</b>";
+    bar.appendChild(rx);
+    bar.appendChild(news);
+    wrap.appendChild(bar);
     document.body.appendChild(wrap);
+
+    var lastDlKey = "";   // 直前に落とされたファイル。リアクションの宛先になる
+
+    function rxDone(n) {
+      rx.disabled = true;
+      rx.textContent = n ? "ありがとうございます。あなたで" + n + "人目です" : "ありがとうございます";
+    }
+    function rxReset(key) {
+      lastDlKey = key || "";
+      if (!lastDlKey) { rxDone(0); return; }          // 宛先が取れないときは押せない形で出す
+      var seen = false;
+      try { seen = !!sessionStorage.getItem("ss-rx-" + lastDlKey); } catch (e) {}
+      if (seen) { rxDone(0); return; }                // 同じ教材に2回は数えない
+      rx.disabled = false;
+      rx.textContent = "つかってみます";
+    }
+    rx.addEventListener("click", function () {
+      if (!lastDlKey || rx.disabled) return;
+      var k = "rx:" + lastDlKey;
+      try { sessionStorage.setItem("ss-rx-" + lastDlKey, "1"); } catch (e) {}
+      rxDone(0);
+      startTimer(6000);   // お礼を読む時間だけ延ばして、静かに消える
+      // 先に「いま何人目か」を読み、そのあと+1を送る（先に送ると自分の分を二重に数えて見せてしまう）
+      var sent = false;
+      function send() { if (sent) return; sent = true; track(k); track("rx-total"); }
+      try {
+        var CFG = window.SS_COUNTER || {};
+        if (!CFG.url || !CFG.key) { send(); return; }
+        fetch(CFG.url + "/rest/v1/counts?select=n&key=eq." + encodeURIComponent(k), {
+          headers: { "apikey": CFG.key, "Authorization": "Bearer " + CFG.key }
+        }).then(function (r) { return r.json(); }).then(function (rows) {
+          var n = (rows && rows[0] && rows[0].n) || 0;
+          rxDone(n + 1);
+          send();
+        }).catch(send);
+        setTimeout(send, 2500);   // 読みが遅くても+1だけは必ず送る
+      } catch (e) { send(); }
+    });
+    news.addEventListener("click", function () {
+      track("cta:oshirase-click");
+      track("cta:oshirase-from:" + shelf());
+    });
 
     /* 消えるまでの8秒は「見えているあいだ」だけ数える（2026-08-11）
      * PDFが別タブで開くと、このページは裏に回る。ふつうのタイマーだと、
@@ -219,10 +289,11 @@
       track("cta:soudan-from:" + shelf());
     });
 
-    window.addEventListener("ss:download", function () {
+    window.addEventListener("ss:download", function (ev) {
       if (isMinimized()) return;                       // 小さくしている人には出さない
       if (oreiMuted()) return;                         // ×を今日2回押した人には出さない
 
+      rxReset(ev && ev.detail && ev.detail.key);       // リアクションの宛先を、いま落とした教材に
       var o = oreiPick();
       var n = 0;
       try { n = parseInt(sessionStorage.getItem(OREI_N_KEY) || "0", 10) || 0; } catch (e) {}
