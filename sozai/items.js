@@ -31284,5 +31284,74 @@ const SOZAI = [
   "img": "img/shakai_map_flat.jpg",
   "thumb": "img/shakai_map_flat_thumb.jpg",
   "mono": "img/shakai_map_flat_mono.jpg"
+ },
+ {
+  "id": "sansu_tree_elevation",
+  "title": "校庭の木（立面・かげなし）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数・数学",
+  "grade": "5〜中3",
+  "unit": "相似・縮図と拡大図・かげ",
+  "scenes": [
+   "幹と枝と葉のかたまりだけの木を、真横から見た立面。地面もかげも描いていない"
+  ],
+  "uses": [
+   "ワークシート",
+   "図版の部品",
+   "スライド",
+   "記事挿絵"
+  ],
+  "description": "線画淡彩の木を真横から。地面線・かげ・文字がないので、紙面側で地面とかげと寸法を自由に作図できる。縮図と拡大図・相似の「木の高さを求める」場面の部品。",
+  "howto": "紙面のSVGで地面線とかげ、寸法線を描き、その上にこの木を置く。かげの長さの比を正確に作図したいときに使う。",
+  "tags": [
+   "木",
+   "校庭",
+   "立面",
+   "相似",
+   "縮図",
+   "かげ",
+   "算数",
+   "数学",
+   "部品",
+   "線画淡彩"
+  ],
+  "img": "img/sansu_tree_elevation.jpg",
+  "thumb": "img/sansu_tree_elevation_thumb.jpg",
+  "mono": "img/sansu_tree_elevation_mono.jpg"
+ },
+ {
+  "id": "sansu_stick_1m",
+  "title": "1mの棒（立面・かげなし）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数・数学",
+  "grade": "5〜中3",
+  "unit": "相似・縮図と拡大図・かげ",
+  "scenes": [
+   "節がひとつある木の棒を、まっすぐ立てて真横から見た立面。目もりも文字もない"
+  ],
+  "uses": [
+   "ワークシート",
+   "図版の部品",
+   "スライド"
+  ],
+  "description": "線画淡彩の棒を真横から。目もり・数字を描いていないので、長さは紙面側の寸法線で自由に決められる。木の高さをかげから求める場面の相棒。",
+  "howto": "木の素材と同じ縮尺で並べ、かげと寸法を紙面のSVGで描く。",
+  "tags": [
+   "棒",
+   "ものさし",
+   "立面",
+   "相似",
+   "縮図",
+   "かげ",
+   "算数",
+   "数学",
+   "部品",
+   "線画淡彩"
+  ],
+  "img": "img/sansu_stick_1m.jpg",
+  "thumb": "img/sansu_stick_1m_thumb.jpg",
+  "mono": "img/sansu_stick_1m_mono.jpg"
  }
 ];
