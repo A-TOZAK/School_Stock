@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>学期分の見通しを、AIと一緒に組んでみた ── 実践アイデア村｜School Stock</title>
+<meta name="description" content="2学期の時間割と単元の割り付けを、AIエージェントと一緒に組みました。日付を選べばその日の全校時が出る、週案はA4横1枚で刷れる。作り方とサンプルを公開しています。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="学期分の見通しを、AIと一緒に組んでみた">
+<meta property="og:description" content="先が少し見通せるだけで、不安な気持ちは減ると思うんです。2学期の時間割と単元の割り付けをAIエージェントと組んだ話と、その作り方。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner.html">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner-img/shot-day.png">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2f6f52; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  h3 { font-size:15.5px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.feat { list-style:none; margin:14px 0 20px; }
+  ul.feat li { position:relative; padding:0 0 10px 20px; font-size:15px; }
+  ul.feat li::before { content:""; position:absolute; left:0; top:14px; width:7px; height:7px; background:var(--accent); border-radius:50%; }
+  ul.feat b { color:var(--ink); }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  figure { margin:22px 0 26px; }
+  figure img { width:100%; display:block; border:1px solid var(--line); }
+  figcaption { font-size:12.5px; color:var(--sub); margin-top:8px; line-height:1.8; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:560px){ .two { grid-template-columns:1fr; } }
+  .cta { display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; margin:8px 8px 4px 0; }
+  .cta.sub { background:#fff; color:var(--ink); border:1px solid var(--ink); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="crumb"><a href="../../">棚トップ</a> ／ <a href="../">実践アイデア村</a> ／ 学期分の見通しを、AIと一緒に組んでみた</div>
+
+<span class="kicker">AIエージェントの使い方</span>
+<h1>学期分の見通しを、AIと一緒に組んでみた</h1>
+<div class="meta">2026年8月14日　／　実践アイデア村</div>
+
+<p class="lead">先が少し見通せるだけで、不安な気持ちは減ると思うんです。2学期の時間割と単元の割り付けを、AIエージェントと一緒に組んでみました。サンプルと作り方を公開しています。</p>
+
+<h2>消耗しているのは、作業ではなく判断の回数かもしれない</h2>
+
+<p>2学期が始まる前に、時間割を組みます。行事をよけながら、教科書会社の年間指導計画とにらめっこして、国語は週にこのくらい、算数はこのくらい、と埋めていく。毎年やっているのに、毎年しんどい仕事です。</p>
+
+<p>しんどさの正体を考えてみると、手を動かす作業そのものではない気がしました。<b>決めなければいけないことの数</b>のほうです。</p>
+
+<ul class="feat">
+  <li>今日の3時間目、何からやろう</li>
+  <li>来週の時間割、行事をよけてどう組もう</li>
+  <li>この単元、あと何時間残っていたっけ</li>
+  <li>図工でこの題材をやるなら、何を先に集めておかないといけないか</li>
+</ul>
+
+<p>ひとつひとつは小さいものです。でも1日に何十回もあって、朝から少しずつ削られていく。とくに担任を持ちはじめたばかりの頃は、この判断そのものに時間がかかります。</p>
+
+<p>たたき台が先にあれば、判断は「決める」から「直す」に変わります。ゼロから考えるのと、目の前の案を見て「ここは違うな」と直すのとでは、必要な力がずいぶん違う。それならたたき台を先に作っておけばいいのではないか、と思ったのがはじまりでした。</p>
+
+<h2>作ったもの</h2>
+
+<p>日付を選ぶと、その日の1時間目から6時間目までが全部出ます。国語・算数・理科・社会には、本時の内容と、前の時間・次の時間、それに「今日は何を見取るか」がついています。</p>
+
+<figure>
+  <img src="jugyo-planner-img/shot-day.png" alt="日付を選ぶと、その日の全校時と各時間の内容が並ぶ画面">
+  <figcaption>「今日の授業」の画面。校時ごとにカードが並び、国算理社には本時の内容・前後の時間・見取りがつく。空きコマは点線で「授業なし」と出る。<b>画面の中身はすべて架空のサンプルです</b>（学校名も単元も実在しません）。</figcaption>
+</figure>
+
+<div class="two">
+<figure>
+  <img src="jugyo-planner-img/shot-week.png" alt="1週間分をA4横1枚にまとめた週案">
+  <figcaption>週案。1週間＝A4横1枚。そのまま刷れる。</figcaption>
+</figure>
+<figure>
+  <img src="jugyo-planner-img/shot-units.png" alt="単元ごとのゴールと流れが開く単元ガイド">
+  <figcaption>単元ガイド。単元名を押すとゴールと流れが開く。</figcaption>
+</figure>
+</div>
+
+<p>「今日の授業」の画面をそのまま印刷すると、その日だけの日案として刷れます。週案はA4横1枚。見通しを持つための紙は、この2枚があれば足りました。</p>
+
+<h3>デザインはしていません</h3>
+
+<p>見てのとおり、飾りはありません。私はデザインがそれほど得意ではないですし、これは情報を受け取るためだけのものなので、これでいいと思っています。読めればいい紙もある、という割り切りです。凝りはじめると作ることが目的になってしまうので、そこは早めにあきらめました。</p>
+
+<h3>毎時間ぶんのプロンプトを置いてあります</h3>
+
+<p>各コマに、AIに投げるための文章を4つ置いています。単元名も、全何時間の何時間目かも、前後の時間も、すでに埋まった状態です。コピーして貼るだけで、書き換えるのは「今の学級の様子」の1〜3行だけ。</p>
+
+<ol class="steps">
+  <li>今日の様子に合わせて、ブリーフィングを作り直す（発問3つ・板書の骨・手立て）</li>
+  <li>5分の確認問題をつくる（4問＋解答＋つまずきの見立て）</li>
+  <li>この1時間の見取りを決める</li>
+  <li>授業後、子どもの振り返りを読んで明日の一手を出す</li>
+</ol>
+
+<p>評価については、ひとつ決めごとをしました。<b>毎時間3観点をつける形にはしていません。</b>記録に残す回は単元で2〜4回に絞っています。教科書会社の年間指導計画にも【重点】【記録】という欄があって、記録に残す回は最初から絞られています。全部つけようとすると記録を作ることが目的になって、肝心の「次の1時間に生かす」が消えてしまうので。</p>
+
+<p>4つめの「振り返りを読む」だけは、子どもの書いたものを扱います。ここは<b>氏名を入れずにA児・B児として扱う</b>形を、あらかじめ文章の中に条件として書き込んであります。毎回思い出さなくていいように、最初から道具の側に埋めておく作りにしました。学校ごとに情報の扱いの決まりがありますので、使うときは管理職や情報担当の先生に一度確認していただくのがよいと思います。</p>
+
+<h2>どうやって作ったか</h2>
+
+<p>特別な技術は使っていません。用意したのは3つです。</p>
+
+<ul class="feat">
+  <li><b>教科書会社の年間指導計画作成資料</b>。各社が自社サイトで無料で公開しています</li>
+  <li><b>学校の年間指導計画と行事予定</b></li>
+  <li><b>AIエージェント</b>（私が使ったのは Claude Code です）</li>
+</ul>
+
+<p>あとは話しことばで伝えるだけでした。「月火水金は6時間、木は5時間。体育は月曜の4時間目と…」というふうに、行事も思い出した順に喋っています。日付と曜日が合わないところは向こうが聞き返してきますし、祝日は調べて入れてくれました。</p>
+
+<p>できあがりは、書き換える場所が3つのファイルにまとまっています。カレンダー（学校名・時間割・行事）、単元（順番と時数）、見取り（記録に残す回）。この3つを直して作り直しの命令を1回打てば、画面が全部作りかえられます。</p>
+
+<div class="tip">
+<b>研究授業の日から逆算する</b><br>
+「12月4日の5時間目に、この単元の6時間目を持ってきたい」——これを先に決められる作りにしました。設定を1行書いておくと、逆算して単元の開始を後ろにずらし、前の単元に予備の時間を入れてくれます。時間が足りなければ「あと何時間足りません」と教えてくれます。研究授業の日程が動いたときも、言い直せばやり直してくれます。
+</div>
+
+<h3>使った道具のこと</h3>
+
+<p>私が使ったのは Claude Code の Max プラン、モデルは Fable 5 を、考える時間をいちばん長い設定にして使いました。ただ、同じことは<b>月20ドルほどの個人向けプランでもできると思います</b>。ChatGPT の Codex でも、Claude Code でも、やることは変わりません。プランの中身は変わることがあるので、契約の前に各社のページで確かめてみてください。</p>
+
+<h3>あとから直せることが、いちばん大事でした</h3>
+
+<p>授業は水物です。子どもの反応で進みは変わりますし、思っていたより進んでいないこともよくあります。急に休むことも、出張が入ることもあります。</p>
+
+<p>だから「一度作って終わり」ではなく、直しやすい形で持っておくことにしました。直すときも、こう言うだけです。</p>
+
+<ul class="feat">
+  <li>「10月26日は5時間授業になった。作り直して」</li>
+  <li>「面積が1時間押した。11時間にして後ろを送って」</li>
+  <li>「11月9日の3・4時間目、出張で自習にして」</li>
+</ul>
+
+<p>本当にざっくりしたたたき台です。そのつもりで持っておくのがちょうどいいと思っています。</p>
+
+<h2>組織で取り組むと、たぶんもっといいものになります</h2>
+
+<p>ここからは、学校や自治体で情報を担当されている方に向けた話です。</p>
+
+<p>今回のものは個人で作れました。でも、これを組織として支援したらもっといいものになるはずだと思っています。理由は、<b>データとして残るから</b>です。</p>
+
+<p>たとえばこの3つのファイルを Google ドライブのような共有の場所に置いておくと、それはそのまま「その年の、その学級で、何がいつ行われたか」の記録になります。来年その学年を持つ先生が、去年の並びを見てから組みはじめられる。今は担任が個人の頭とノートに持っていて、異動と一緒に消えてしまうものです。</p>
+
+<p>これから生成AIが日常の道具になっていくと、こうした記録は「先生に聞く」のではなく「調べれば分かる」ものに変わっていくと思います。そのとき効いてくるのは、立派な様式ではなくて、<b>読み取れる形でデータが残っているかどうか</b>のほうです。様式やファイルの形は、後からどうにでも変えられます。残っていないものだけは、後から作れません。</p>
+
+<p>DXハイスクールやAIパイロット校のように、すでに環境が整っているところであれば、こういう作り方はそのまま参考にしていただけると思います。学校ごとに時間割の決まりも行事も違うので、そこを一緒に組むところからになりますが。</p>
+
+<h2>サンプルを公開しています</h2>
+
+<p>実際に動くものを、そのまま見られる形にしました。日付を押して、コマを開いて、プロンプトをコピーするところまで全部さわれます。</p>
+
+<p>公開しているサンプルは、<b>学校名も学級も行事も、すべて架空のものに作り直してあります</b>。単元名は学習指導要領の内容に沿った一般的な言い方にしていて、特定の教科書会社の資料は使っていません。自分の学級版のほうは、学校の情報も入りますし教科書会社の計画をもとに組みますので、手元だけで使うものにしています。この線引きも、そのままページに書いてあります。</p>
+
+<a class="cta" href="https://a-tozak.github.io/jugyo-planner/" target="_blank" rel="noopener">サンプルを見る ↗</a>
+<a class="cta sub" href="https://github.com/A-TOZAK/jugyo-planner" target="_blank" rel="noopener">作り方（README）↗</a>
+
+<p style="margin-top:20px">中身は自由に使っていただいて、自由に作り替えていただいて大丈夫です。全部無料で、会員登録もありません。</p>
+
+<h2>こんなのを作りたい、があれば</h2>
+
+<p>「うちの学校の時間割の組み方だとどうなるか」「学年でそろえたい」「自治体で試してみたい」といったご相談があれば、お気軽にどうぞ。うまくいったこと、詰まったところを教えていただけるのもうれしいです。</p>
+
+<a class="cta" href="../../soudan/">先生の相談窓口へ</a>
+
+<p style="margin-top:20px">見通しが立つと、少し気持ちが軽くなります。それだけのことなのですが、それが毎日続くとけっこう違うな、というのが作ってみての実感です。</p>
+
+<a class="back" href="../">← 実践アイデア村にもどる</a>
+
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
