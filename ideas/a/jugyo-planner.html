@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>学期分の見通しを、AIと一緒に組んでみた ── 実践アイデア村｜School Stock</title>
+<title>学期分の見通しを、AIと一緒に組んでみた ── 実践アイデア｜School Stock</title>
 <meta name="description" content="2学期の時間割と単元の割り付けを、AIエージェントと一緒に組みました。日付を選べばその日の全校時が出る、週案はA4横1枚で刷れる。作り方とサンプルを公開しています。">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="School Stock">
 <meta property="og:title" content="学期分の見通しを、AIと一緒に組んでみた">
 <meta property="og:description" content="先が少し見通せるだけで、不安な気持ちは減ると思うんです。2学期の時間割と単元の割り付けをAIエージェントと組んだ話と、その作り方。">
 <meta property="og:url" content="https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner.html">
-<meta property="og:image" content="https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner-img/shot-day.png">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner-img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <style>
   :root { --ink:#15181c; --sub:#6b7077; --accent:#2f6f52; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
@@ -46,6 +46,29 @@
   figcaption { font-size:12.5px; color:var(--sub); margin-top:8px; line-height:1.8; }
   .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
   @media (max-width:560px){ .two { grid-template-columns:1fr; } }
+  .hero { margin:26px 0 6px; }
+  .hero img { width:100%; display:block; border:0; }
+  .sum { background:var(--wash); border-top:2px solid var(--ink); padding:18px 22px; margin:30px 0 6px; }
+  .sum .st { font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); margin-bottom:10px; }
+  .sum ol { list-style:none; }
+  .sum li { position:relative; padding:0 0 8px 30px; font-size:14.5px; line-height:1.9; }
+  .sum li::before { content:"—"; position:absolute; left:2px; color:var(--accent); font-weight:700; }
+  .sum li:last-child { padding-bottom:0; }
+  .browser { border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(20,20,20,.06); }
+  .browser .bar { display:flex; align-items:center; gap:6px; background:#eceae5; padding:8px 12px; }
+  .browser .bar i { width:9px; height:9px; border-radius:50%; background:#d5d1c8; }
+  .browser .bar span { font-size:11px; color:#8d8779; margin-left:8px; letter-spacing:0.03em;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .browser img { border:0; }
+  .share { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:26px 0 6px;
+    padding:14px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .share .sl { font-size:11.5px; font-weight:700; letter-spacing:0.16em; color:var(--sub); margin-right:2px; }
+  .share a, .share button { display:inline-flex; align-items:center; gap:7px; cursor:pointer;
+    font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:#fff;
+    border:1px solid var(--ink); padding:8px 16px; border-radius:999px; }
+  .share a:hover, .share button:hover { background:var(--ink); color:#fff; }
+  .share svg { width:14px; height:14px; fill:currentColor; }
+  .share .ok { border-color:var(--accent); color:var(--accent); }
   .cta { display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; margin:8px 8px 4px 0; }
   .cta.sub { background:#fff; color:var(--ink); border:1px solid var(--ink); }
   .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
@@ -59,19 +82,37 @@
 <div class="topbar">
   <div class="topbar-in">
     <a class="wordmark" href="../../">SCHOOL STOCK</a>
-    <div class="nav"><a href="../">← アイデア村にもどる</a></div>
+    <div class="nav"><a href="../">← 実践アイデアにもどる</a></div>
   </div>
 </div>
 
 <div class="container">
 
-<div class="crumb"><a href="../../">棚トップ</a> ／ <a href="../">実践アイデア村</a> ／ 学期分の見通しを、AIと一緒に組んでみた</div>
+<div class="crumb"><a href="../../">棚トップ</a> ／ <a href="../">実践アイデア</a> ／ 学期分の見通しを、AIと一緒に組んでみた</div>
 
 <span class="kicker">AIエージェントの使い方</span>
 <h1>学期分の見通しを、AIと一緒に組んでみた</h1>
-<div class="meta">2026年8月14日　／　実践アイデア村</div>
+<div class="meta">2026年8月14日　／　実践アイデア</div>
+
+<figure class="hero"><img src="jugyo-planner-img/hero.jpg" alt="窓辺の机に、開いたノートとタブレットが置いてある水彩画"></figure>
 
 <p class="lead">先が少し見通せるだけで、不安な気持ちは減ると思うんです。2学期の時間割と単元の割り付けを、AIエージェントと一緒に組んでみました。サンプルと作り方を公開しています。</p>
+
+<div class="sum">
+  <div class="st">３行でいうと</div>
+  <ol>
+    <li>学期分の時間割・単元・毎時間の内容を、AIエージェントと話しことばで組んだ</li>
+    <li>日付を選ぶと1日の全部が出る。週案はA4横1枚。あとから口頭で直せる</li>
+    <li>そのまま動くサンプル（全部架空データ）と作り方を無料で公開している</li>
+  </ol>
+</div>
+
+<div class="share">
+  <span class="sl">SHARE</span>
+  <a href="https://x.com/intent/post?text=%E5%AD%A6%E6%9C%9F%E5%88%86%E3%81%AE%E8%A6%8B%E9%80%9A%E3%81%97%E3%82%92%E3%80%81AI%E3%81%A8%E4%B8%80%E7%B7%92%E3%81%AB%E7%B5%84%E3%82%93%E3%81%A7%E3%81%BF%E3%81%9F%EF%BD%9CSchool%20Stock&amp;url=https%3A%2F%2Fa-tozak.github.io%2FSchool_Stock%2Fideas%2Fa%2Fjugyo-planner.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.7-9.9L0 1.2h7.7l5.3 7 6-7zm-1.3 19.4h2L7.6 3.3H5.4l12.2 17.3z"/></svg>ポスト</a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fa-tozak.github.io%2FSchool_Stock%2Fideas%2Fa%2Fjugyo-planner.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.4 7.4 8 8.1.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.6 8.2-6.1C21.5 13.6 22 12 22 10.2 22 5.7 17.5 2 12 2z"/></svg>LINE</a>
+  <button type="button" onclick="navigator.clipboard.writeText('https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner.html').then(()=>{this.classList.add('ok');this.lastChild.textContent='コピーしました';setTimeout(()=>{this.classList.remove('ok');this.lastChild.textContent='リンクをコピー'},1800)})"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l2.8-2.8a3 3 0 0 1 4.2 4.2l-2.1 2.1a1 1 0 1 1-1.4-1.4l2.1-2.1a1 1 0 0 0-1.4-1.4l-2.8 2.8a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-2.8 2.8a3 3 0 0 1-4.2-4.2l2.1-2.1a1 1 0 0 1 1.4 1.4L7.8 12a1 1 0 0 0 1.4 1.4l2.8-2.8a1 1 0 0 1 1.4 0z" transform="rotate(45 12 12)"/></svg><span>リンクをコピー</span></button>
+</div>
 
 <h2>消耗しているのは、作業ではなく判断の回数かもしれない</h2>
 
@@ -95,17 +136,20 @@
 <p>日付を選ぶと、その日の1時間目から6時間目までが全部出ます。国語・算数・理科・社会には、本時の内容と、前の時間・次の時間、それに「今日は何を見取るか」がついています。</p>
 
 <figure>
-  <img src="jugyo-planner-img/shot-day.png" alt="日付を選ぶと、その日の全校時と各時間の内容が並ぶ画面">
+  <div class="browser"><div class="bar"><i></i><i></i><i></i><span>a-tozak.github.io/jugyo-planner ── 今日の授業</span></div>
+  <img src="jugyo-planner-img/shot-day.png" alt="日付を選ぶと、その日の全校時と各時間の内容が並ぶ画面"></div>
   <figcaption>「今日の授業」の画面。校時ごとにカードが並び、国算理社には本時の内容・前後の時間・見取りがつく。空きコマは点線で「授業なし」と出る。<b>画面の中身はすべて架空のサンプルです</b>（学校名も単元も実在しません）。</figcaption>
 </figure>
 
 <div class="two">
 <figure>
-  <img src="jugyo-planner-img/shot-week.png" alt="1週間分をA4横1枚にまとめた週案">
+  <div class="browser"><div class="bar"><i></i><i></i><i></i><span>週案</span></div>
+  <img src="jugyo-planner-img/shot-week.png" alt="1週間分をA4横1枚にまとめた週案"></div>
   <figcaption>週案。1週間＝A4横1枚。そのまま刷れる。</figcaption>
 </figure>
 <figure>
-  <img src="jugyo-planner-img/shot-units.png" alt="単元ごとのゴールと流れが開く単元ガイド">
+  <div class="browser"><div class="bar"><i></i><i></i><i></i><span>単元ガイド</span></div>
+  <img src="jugyo-planner-img/shot-units.png" alt="単元ごとのゴールと流れが開く単元ガイド"></div>
   <figcaption>単元ガイド。単元名を押すとゴールと流れが開く。</figcaption>
 </figure>
 </div>
@@ -199,14 +243,21 @@
 
 <p style="margin-top:20px">見通しが立つと、少し気持ちが軽くなります。それだけのことなのですが、それが毎日続くとけっこう違うな、というのが作ってみての実感です。</p>
 
-<a class="back" href="../">← 実践アイデア村にもどる</a>
+<div class="share">
+  <span class="sl">SHARE</span>
+  <a href="https://x.com/intent/post?text=%E5%AD%A6%E6%9C%9F%E5%88%86%E3%81%AE%E8%A6%8B%E9%80%9A%E3%81%97%E3%82%92%E3%80%81AI%E3%81%A8%E4%B8%80%E7%B7%92%E3%81%AB%E7%B5%84%E3%82%93%E3%81%A7%E3%81%BF%E3%81%9F%EF%BD%9CSchool%20Stock&amp;url=https%3A%2F%2Fa-tozak.github.io%2FSchool_Stock%2Fideas%2Fa%2Fjugyo-planner.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M18.9 1.2h3.7l-8.1 9.3L24 22.8h-7.5l-5.9-7.7-6.7 7.7H.2l8.7-9.9L0 1.2h7.7l5.3 7 6-7zm-1.3 19.4h2L7.6 3.3H5.4l12.2 17.3z"/></svg>ポスト</a>
+  <a href="https://social-plugins.line.me/lineit/share?url=https%3A%2F%2Fa-tozak.github.io%2FSchool_Stock%2Fideas%2Fa%2Fjugyo-planner.html" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2C6.5 2 2 5.7 2 10.2c0 4 3.4 7.4 8 8.1.3.1.8.2.9.5.1.3.1.7 0 1l-.1.9c0 .3-.2 1 .9.6 1.1-.5 6-3.6 8.2-6.1C21.5 13.6 22 12 22 10.2 22 5.7 17.5 2 12 2z"/></svg>LINE</a>
+  <button type="button" onclick="navigator.clipboard.writeText('https://a-tozak.github.io/School_Stock/ideas/a/jugyo-planner.html').then(()=>{this.classList.add('ok');this.lastChild.textContent='コピーしました';setTimeout(()=>{this.classList.remove('ok');this.lastChild.textContent='リンクをコピー'},1800)})"><svg viewBox="0 0 24 24"><path d="M10.6 13.4a1 1 0 0 1 0-1.4l2.8-2.8a3 3 0 0 1 4.2 4.2l-2.1 2.1a1 1 0 1 1-1.4-1.4l2.1-2.1a1 1 0 0 0-1.4-1.4l-2.8 2.8a1 1 0 0 1-1.4 0zm2.8-2.8a1 1 0 0 1 0 1.4l-2.8 2.8a3 3 0 0 1-4.2-4.2l2.1-2.1a1 1 0 0 1 1.4 1.4L7.8 12a1 1 0 0 0 1.4 1.4l2.8-2.8a1 1 0 0 1 1.4 0z" transform="rotate(45 12 12)"/></svg><span>リンクをコピー</span></button>
+</div>
+
+<a class="back" href="../">← 実践アイデアにもどる</a>
 
 </div>
 
 <footer class="foot">
   <div class="foot-in">
     <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
-    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア村</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
     © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
   </div>
 </footer>
