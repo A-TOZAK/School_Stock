@@ -3,10 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="robots" content="noindex,nofollow">
-<title>ふりかえりプリント 9月ぶん｜School Stock</title>
+<title>ふりかえりプリント 9月ぶん（1〜6年・全120枚）｜School Stock</title>
+<meta name="description" content="宿題や家庭学習にそのまま使える、毎日1枚の両面プリント。表は算数のふりかえり、裏は国語の読みとり。答えの帯を折りこんであるので、子どもが自分で丸をつけられます。1〜6年×20枚、ぜんぶ無料。">
+<meta property="og:title" content="ふりかえりプリント 9月ぶん（1〜6年・全120枚）｜School Stock">
+<meta property="og:description" content="宿題・家庭学習に。毎日1枚・両面・自分で丸つけ。ぜんぶ無料。">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/prints/furikaeri/thumb/ふりかえりプリント_4年.png">
 <style>
-/* School Stock のトンマナ（~/Claude/design-system/tokens.css と棚の各ページにそろえる） */
 :root{ --ink:#15181c; --black:#0e0f11; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3;
        --sub:#767b83; --accent:#2b5fd9; }
 *{ margin:0; padding:0; box-sizing:border-box; }
@@ -14,41 +16,29 @@ body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu
   background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em;
   -webkit-font-smoothing:antialiased; }
 a{ color:var(--accent); text-decoration:none; }
-
 .topbar{ background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
 .topbar-in{ max-width:960px; margin:0 auto; padding:13px 24px; display:flex;
   justify-content:space-between; align-items:center; gap:14px; }
 .wordmark{ font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
 .topbar .tag{ color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; }
-
 .container{ max-width:960px; margin:0 auto; padding:0 24px 72px; }
 .crumb{ font-size:12px; color:var(--sub); letter-spacing:.06em; padding:22px 0 0; }
 .crumb a{ color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
-
-h2{ font-size:23px; letter-spacing:.04em; padding:26px 0 14px; border-bottom:1px solid var(--ink); }
-h3{ font-size:15px; letter-spacing:.06em; margin:34px 0 10px; }
+h1{ font-size:26px; letter-spacing:.04em; padding:26px 0 6px; }
+h1 small{ font-size:14px; font-weight:400; color:var(--sub); letter-spacing:.06em; }
+.lede{ font-size:14.5px; margin:8px 0 0; }
+h2{ font-size:20px; letter-spacing:.04em; padding:40px 0 12px; border-bottom:1px solid var(--ink); }
+h3{ font-size:16px; letter-spacing:.06em; margin:38px 0 8px; padding-top:6px; }
 h3 .nw{ font-size:12px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
-.note{ font-size:14px; color:var(--sub); margin:16px 0 0; }
-.dl{ margin:18px 0 6px; }
+.note{ font-size:13px; color:var(--sub); margin:2px 0 0; }
+.stair{ font-size:13.5px; margin:2px 0 0; }
+.stair b{ font-size:11.5px; letter-spacing:.12em; color:var(--sub); font-weight:700; margin-right:6px; }
+.dl{ margin:14px 0 10px; display:flex; flex-wrap:wrap; gap:10px; }
 .btn{ display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em;
   color:#fff; background:var(--ink); padding:11px 20px; }
 .btn:hover{ background:var(--accent); }
-/* こたえなし版のボタンは白抜きにして、こたえつきと見分ける */
 .btn.out{ background:#fff; color:var(--ink); border:1px solid var(--ink); }
 .btn.out:hover{ background:var(--wash); }
-
-/* 鍵の画面 */
-#gate{ max-width:400px; margin:12vh auto; padding:30px 26px; border:1px solid var(--ink); }
-#gate h1{ font-size:17px; letter-spacing:.06em; margin-bottom:6px; }
-#gate p{ color:var(--sub); font-size:13px; margin-bottom:18px; }
-#pw{ width:100%; padding:11px 13px; font-size:15px; font-family:inherit;
-  border:1px solid var(--line); background:var(--wash); }
-#go{ width:100%; margin-top:10px; padding:12px; font-size:13px; font-weight:700; letter-spacing:.1em;
-  color:#fff; background:var(--ink); border:0; cursor:pointer; font-family:inherit; }
-#go:hover{ background:var(--accent); }
-#msg{ min-height:1.5em; margin-top:10px; font-size:12.5px; color:#b3261e; }
-
-/* 学年カード */
 .cards{ display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:20px; margin:26px 0 0; }
 .card{ display:block; border:1px solid var(--line); color:var(--ink); }
 .card:hover{ border-color:var(--ink); }
@@ -56,32 +46,25 @@ h3 .nw{ font-size:12px; font-weight:400; color:var(--sub); letter-spacing:.04em;
 .cbody{ padding:13px 15px 15px; }
 .cbody b{ display:block; font-size:15px; letter-spacing:.06em; }
 .cbody span{ display:block; font-size:12px; color:var(--sub); }
-
-/* 単元の表 */
-.tw{ overflow-x:auto; border:1px solid var(--line); }
-table{ border-collapse:collapse; width:100%; min-width:720px; font-size:12.5px; line-height:1.7; }
-/* A・B・Cごとに①〜④をたてに並べる（13列に割ると1つ1つが細すぎて読めない） */
-.ul{ list-style:none; }
-.ul li{ padding:1px 0 1px 1.9em; text-indent:-1.9em; }
-.ul i{ display:inline-block; width:1.6em; font-style:normal; color:var(--sub); }
+.how{ border:1px solid var(--line); padding:20px 22px; margin:22px 0 0; }
+.how b{ display:block; font-size:14px; letter-spacing:.06em; margin-bottom:4px; }
+.how p{ font-size:13.5px; margin:0 0 12px; }
+.how p:last-child{ margin-bottom:0; }
+.rule{ background:var(--wash); border-left:3px solid var(--ink); padding:12px 16px;
+  font-size:14px; margin:14px 0; }
+.tw{ overflow-x:auto; border:1px solid var(--line); margin-top:6px; }
+table{ border-collapse:collapse; width:100%; min-width:560px; font-size:12.5px; line-height:1.7; }
 th,td{ border-bottom:1px solid var(--line); padding:8px 10px; text-align:left;
   vertical-align:top; letter-spacing:.01em; }
 thead th{ background:var(--wash); font-size:11.5px; letter-spacing:.08em; color:var(--sub);
-  white-space:nowrap; position:sticky; top:0; }
+  white-space:nowrap; }
 .rh{ white-space:nowrap; background:#fcfcfb; font-weight:700; }
-.rh small{ display:block; font-weight:400; font-size:10.5px; color:var(--sub); letter-spacing:.04em; }
 .pd{ white-space:nowrap; }
+.pd a{ text-decoration:underline; text-underline-offset:3px; }
 tbody tr:hover td{ background:var(--wash); }
-
-.report{ border-left:3px solid var(--ink); background:var(--wash); padding:14px 18px;
-  margin:22px 0 0; font-size:13.5px; }
-code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
-  border:1px solid var(--line); padding:1px 6px; }
-
 .foot{ background:var(--black); color:#b9bcc2; margin-top:56px; }
 .foot-in{ max-width:960px; margin:0 auto; padding:30px 24px 34px; font-size:12.5px; line-height:2; }
 .foot .fw{ color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
-/* 棚のほかのページへのサイトマップ（2026-08-03 要望） */
 .foot-map{ display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
   gap:8px 24px; margin:14px 0 18px; }
 .foot-map b{ display:block; color:#fff; font-size:11px; letter-spacing:.18em; margin-bottom:4px; }
@@ -98,14 +81,144 @@ code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
 </div></div>
 
 <div class="container">
-  <div id="gate">
-    <h1>ふりかえりプリント　9月ぶん</h1>
-    <p>合言葉を入れてください。</p>
-    <input id="pw" type="password" autocomplete="current-password" placeholder="合言葉">
-    <button id="go">ひらく</button>
-    <div id="msg"></div>
+  <div class="crumb"><a href="../../">棚トップ</a> ＞ <a href="../../#prints">教科のプリント</a> ＞ ふりかえりプリント</div>
+
+  <h1>ふりかえりプリント　9月ぶん<br><small>宿題・家庭学習に。毎日1枚・両面・自分で丸つけ　全120枚（1〜6年×20枚）</small></h1>
+  <p class="lede">表は算数のふりかえり、裏は国語の読みとり。答えは紙の端の帯に刷ってあり、うしろに折ってかくして解き、終わったら開いて自分で丸をつけます。宿題にも、家庭学習にも、朝の学習にも。ぜんぶ無料です。</p>
+
+  <h2>学年をえらぶ</h2>
+  <div class="cards">
+<a class="card" href="#g1">
+  <img src="thumb/ふりかえりプリント_1年.png" loading="lazy" alt="ふりかえりプリント 1年の見本">
+  <div class="cbody"><b>1年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
+<a class="card" href="#g2">
+  <img src="thumb/ふりかえりプリント_2年.png" loading="lazy" alt="ふりかえりプリント 2年の見本">
+  <div class="cbody"><b>2年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
+<a class="card" href="#g3">
+  <img src="thumb/ふりかえりプリント_3年.png" loading="lazy" alt="ふりかえりプリント 3年の見本">
+  <div class="cbody"><b>3年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
+<a class="card" href="#g4">
+  <img src="thumb/ふりかえりプリント_4年.png" loading="lazy" alt="ふりかえりプリント 4年の見本">
+  <div class="cbody"><b>4年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
+<a class="card" href="#g5">
+  <img src="thumb/ふりかえりプリント_5年.png" loading="lazy" alt="ふりかえりプリント 5年の見本">
+  <div class="cbody"><b>5年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
+<a class="card" href="#g6">
+  <img src="thumb/ふりかえりプリント_6年.png" loading="lazy" alt="ふりかえりプリント 6年の見本">
+  <div class="cbody"><b>6年</b><span>20枚（4週×5枚）＋こたえなし版</span></div>
+</a>
   </div>
-  <div id="body" hidden></div>
+
+  <h2>このプリントの考え方</h2>
+  <div class="how">
+    <b>1枚の中に、前の学年からの階段を作ってあります</b>
+    <p>夏休み明けの教室には、前の学年の内容があやしくなっている子がいます。その子に今の学年の問題だけを出しても、手が止まります。かといって全員にやさしい問題を配れば、できる子は3分で終わってしまいます。だから1枚の中に前の学年からの階段を作り、どの番号でつまずいたかで「どこまでもどればよいか」が分かるようにしました。</p>
+    <b>紙面に「これは2年の問題」とは書いていません</b>
+    <p>できない子の烙印にしないためです。番号と学年の対応は、答えの帯のいちばん下に、先生向けの1行として小さく入れてあります。</p>
+    <b>評価は〇の数でなく、直した数</b>
+    <p>答えが先に見えてしまう心配には、かくす工夫でなく設計で応えています。答えの数字だけでは埋まらない欄（筆算・たしかめの式・記述）を必ず置き、記録欄は「なおした番号」。記述問題には〈〇のつけ方〉を添えてあるので、記述も子どもが自分で丸をつけられます。</p>
+  </div>
+
+  <h2>印刷のしかた</h2>
+  <div class="how">
+    <p><b>A4・両面・「短辺とじ」で印刷します。</b>短辺とじにすると、表の右端と裏の左端の「答えの帯」が同じ位置に重なって、1枚のひらひらになります。</p>
+    <div class="rule">子どもに伝えるルールは1文だけです。<b>「いまやる面の答えは、うしろに折ってかくす」</b></div>
+    <p>最初の1回だけ、刷った紙を光にかざして、表と裏の帯が重なっているか確かめてください。ずれていたら印刷設定が「長辺とじ」になっています。</p>
+    <p>教室で答えを配りたくない場合は「こたえなし版」をどうぞ（答えの帯の中身だけを消したものです）。</p>
+  </div>
+
+  <h2>ダウンロード</h2>
+  <p class="note">1枚＝表裏2ページのPDFです。「まとめてダウンロード」は20枚（40ページ）を1本にしたもの。</p>
+
+<h3 id="g1">1年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　①かず ②たしざん ③ひきざん ④その週のならったところ</p>
+<p class="note">くり上がりのある たしざんは2学期後半の内容なので入れていません。1学期にならった範囲だけで作っています。</p>
+<div class="dl">
+<a class="btn" href="pdf/1年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/1年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/1年/1年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/1年/1年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
+<h3 id="g2">2年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　①1年 ②③2年の1学期 ④その週のならったところ</p>
+<p class="note">九九は第3週から（5のだん・2のだん→3のだん・4のだん）。ならった段だけを出します。</p>
+<div class="dl">
+<a class="btn" href="pdf/2年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/2年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/2年/2年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/2年/2年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
+<h3 id="g3">3年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　A①九九（2年） B①C①1年 ②2年 ③④3年</p>
+<p class="note">グラフはぼうグラフまで（折れ線グラフは4年で習うので出しません）。</p>
+<div class="dl">
+<a class="btn" href="pdf/3年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/3年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/3年/3年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/3年/3年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
+<h3 id="g4">4年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　①2年 ②3年 ③④4年</p>
+<p class="note">九九は毎枚6問（毎回ちがう組み合わせ）。夏休み明けはここから、と考えています。</p>
+<div class="dl">
+<a class="btn" href="pdf/4年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/4年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/4年/4年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/4年/4年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
+<h3 id="g5">5年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　①3年 ②4年 ③④⑤5年</p>
+<p class="note">C列はまるごと「割合の階段」（何倍でしょう→変わり方→比例→小数倍→文章題）。5年は九九を入れないかわりに、割合を1問多くしています。</p>
+<div class="dl">
+<a class="btn" href="pdf/5年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/5年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/5年/5年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/5年/5年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
+<h3 id="g6">6年<span class="nw">　20枚（4週×5枚）</span></h3>
+<p class="stair"><b>階段のつくり</b>　①4年 ②5年 ③④6年</p>
+<p class="note">④は分数・立体の体積・データの整理・代表値をめぐります。</p>
+<div class="dl">
+<a class="btn" href="pdf/6年_ふりかえりプリント_9月まとめ.pdf">9月ぶん20枚を まとめてダウンロード（PDF）</a> 
+<a class="btn out" href="pdf/6年_ふりかえりプリント_9月まとめ_こたえなし.pdf">こたえなし版 まとめPDF</a>
+</div>
+<div class="tw"><table><thead><tr><th>週</th><th>1枚ずつ（こたえつき）</th><th>こたえなし版</th></tr></thead><tbody>
+<tr><td class="rh">第1週</td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月1週-1.pdf">1枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-2.pdf">2枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-3.pdf">3枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-4.pdf">4枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月1週-1_こたえなし.pdf">1</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-2_こたえなし.pdf">2</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-3_こたえなし.pdf">3</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-4_こたえなし.pdf">4</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月1週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第2週</td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月2週-1.pdf">1枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-2.pdf">2枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-3.pdf">3枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-4.pdf">4枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月2週-1_こたえなし.pdf">1</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-2_こたえなし.pdf">2</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-3_こたえなし.pdf">3</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-4_こたえなし.pdf">4</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月2週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第3週</td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月3週-1.pdf">1枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-2.pdf">2枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-3.pdf">3枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-4.pdf">4枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月3週-1_こたえなし.pdf">1</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-2_こたえなし.pdf">2</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-3_こたえなし.pdf">3</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-4_こたえなし.pdf">4</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月3週-5_こたえなし.pdf">5</a></td></tr>
+<tr><td class="rh">第4週</td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月4週-1.pdf">1枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-2.pdf">2枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-3.pdf">3枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-4.pdf">4枚目</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-5.pdf">5枚目</a></td><td class="pd"><a href="pdf/6年/6年_ふりかえりプリント_9月4週-1_こたえなし.pdf">1</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-2_こたえなし.pdf">2</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-3_こたえなし.pdf">3</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-4_こたえなし.pdf">4</a>　<a href="pdf/6年/6年_ふりかえりプリント_9月4週-5_こたえなし.pdf">5</a></td></tr>
+</tbody></table></div>
+
 </div>
 
 <div class="foot"><div class="foot-in">
@@ -116,7 +229,7 @@ code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
       <a href="../kokugo/">国語プリント</a>
       <a href="../sansu/">算数プリント（式と言葉）</a>
       <a href="../sansu-ensyu/">算数プリント（レベル別演習）</a>
-      <a href="../tsukaeru/">つかえる算数・国語</a>
+      <a href="../tsukaeru/">つかえるシリーズ</a>
       <a href="../rika/">理科プリント</a>
       <a href="../shakai/">社会プリント</a>
       <a href="../taiiku/">体育 学習カード</a>
@@ -141,44 +254,6 @@ code{ font-family:"SF Mono",Menlo,monospace; font-size:12px; background:#fff;
   <div class="foot-c">問題も文章も自作です。教科書の転載や、児童・学校の情報はふくみません。<br>© School Stock</div>
 </div></div>
 
-<script>
-const b64 = s => Uint8Array.from(atob(s), c => c.charCodeAt(0));
-
-function show(id) {
-  document.querySelectorAll(".pane").forEach(p => { p.hidden = (p.id !== id); });
-  window.scrollTo(0, 0);
-}
-
-async function open_() {
-  const msg = document.getElementById("msg");
-  const pw = document.getElementById("pw").value;
-  if (!pw) { msg.textContent = "合言葉を入れてください。"; return; }
-  msg.style.color = "#767b83"; msg.textContent = "ひらいています…";
-  try {
-    const d = await (await fetch("payload.json", {cache:"no-store"})).json();
-    const base = await crypto.subtle.importKey(
-      "raw", new TextEncoder().encode(pw), "PBKDF2", false, ["deriveKey"]);
-    const key = await crypto.subtle.deriveKey(
-      {name:"PBKDF2", salt:b64(d.s), iterations:d.n, hash:"SHA-256"},
-      base, {name:"AES-GCM", length:256}, false, ["decrypt"]);
-    const plain = await crypto.subtle.decrypt({name:"AES-GCM", iv:b64(d.i)}, key, b64(d.c));
-    document.getElementById("gate").remove();
-    const body = document.getElementById("body");
-    body.innerHTML = new TextDecoder().decode(plain);
-    body.hidden = false;
-    body.addEventListener("click", e => {
-      const a = e.target.closest("[data-go]");
-      if (a) { e.preventDefault(); show(a.getAttribute("data-go")); }
-    });
-    show("top");
-  } catch (e) {
-    msg.style.color = "#b3261e";
-    msg.textContent = "ひらけませんでした。合言葉をたしかめてください。";
-  }
-}
-document.getElementById("go").addEventListener("click", open_);
-document.getElementById("pw").addEventListener("keydown", e => { if (e.key === "Enter") open_(); });
-</script>
 <script src="/School_Stock/assets/counter-config.js"></script>
 <script src="/School_Stock/assets/counter.js"></script>
 </body>
