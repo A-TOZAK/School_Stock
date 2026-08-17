@@ -4,27 +4,126 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
-<title>School Stock｜ページが見つかりません</title>
+<title>ページが見つかりません｜School Stock</title>
 <script>
 // 配布ファイル（PDF/ZIP）は 2026-08-10 に School_Stock_files リポジトリへ移した。
 // 配布済みのQRコード・note・X の旧リンクをここで新しい置き場へ転送する。
 (function () {
   var p = location.pathname;
   if (/^\/School_Stock\/.+\.(pdf|zip)$/i.test(p)) {
+    document.documentElement.className = "moving";
     location.replace(p.replace("/School_Stock/", "/School_Stock_files/") + location.search);
   }
 })();
 </script>
 <style>
-  body { font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
-         max-width: 36em; margin: 4em auto; padding: 0 1.5em; color: #333; line-height: 1.9; }
-  a { color: #1a6b8a; }
+:root{ --ink:#15181c; --black:#0e0f11; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3;
+       --sub:#767b83; --accent:#2b5fd9; }
+*{ margin:0; padding:0; box-sizing:border-box; }
+body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+  background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em;
+  -webkit-font-smoothing:antialiased; min-height:100vh; display:flex; flex-direction:column; }
+a{ color:var(--accent); text-decoration:none; }
+
+.topbar{ background:var(--black); color:#fff; }
+.topbar-in{ max-width:960px; margin:0 auto; padding:13px 24px; display:flex;
+  justify-content:space-between; align-items:center; gap:14px; }
+.wordmark{ font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.wordmark a{ color:#fff; }
+.topbar .tag{ color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; }
+
+main{ flex:1; }
+.container{ max-width:960px; margin:0 auto; padding:0 24px 72px; }
+
+.code{ padding:64px 0 0; }
+.code b{ display:block; font-size:96px; font-weight:700; letter-spacing:.06em; line-height:1;
+  color:var(--ink); }
+.code span{ display:block; margin-top:10px; font-size:12px; letter-spacing:.3em; color:var(--sub); }
+h1{ font-size:24px; letter-spacing:.04em; margin:28px 0 10px; }
+.lede{ font-size:14.5px; max-width:34em; }
+.lede small{ display:block; margin-top:8px; font-size:12.5px; color:var(--sub); }
+
+/* 旧PDF/ZIPリンクの自動転送中は、404の顔を出さずに転送中の1行だけ見せる */
+.moving-note{ display:none; }
+html.moving .code, html.moving h1, html.moving .lede, html.moving .paths, html.moving .back{ display:none; }
+html.moving .moving-note{ display:block; padding:96px 0; font-size:14.5px; color:var(--sub); }
+
+.paths{ display:grid; grid-template-columns:repeat(auto-fill,minmax(260px,1fr)); gap:14px; margin:36px 0 0; }
+.path{ display:block; border:1px solid var(--line); padding:16px 18px 14px; color:var(--ink); }
+.path:hover{ border-color:var(--ink); }
+.path b{ display:block; font-size:14.5px; letter-spacing:.05em; }
+.path span{ display:block; font-size:12px; color:var(--sub); }
+.path .go{ display:block; margin-top:6px; font-size:12px; font-weight:700; color:var(--accent); letter-spacing:.06em; }
+
+.back{ margin-top:30px; }
+.back a{ display:inline-block; font-size:13px; font-weight:700; letter-spacing:.06em;
+  color:#fff; background:var(--ink); padding:11px 22px; }
+.back a:hover{ background:var(--accent); }
+
+.foot{ background:var(--black); color:#b9bcc2; }
+.foot-in{ max-width:960px; margin:0 auto; padding:22px 24px 24px; font-size:11.5px; line-height:2; }
+.foot .fw{ color:#fff; font-weight:700; letter-spacing:.26em; font-size:11px; }
 </style>
 </head>
 <body>
-<h1>ページが見つかりません</h1>
-<p>お探しのファイルが移動した場合は、自動で新しい場所へ移ります。<br>
-数秒たっても始まらないときは、棚のトップからお探しください。</p>
-<p><a href="/School_Stock/">School Stock の棚へもどる</a></p>
+
+<div class="topbar"><div class="topbar-in">
+  <span class="wordmark"><a href="/School_Stock/">SCHOOL STOCK</a></span>
+  <span class="tag">先生のための、道具と教材の棚</span>
+</div></div>
+
+<main><div class="container">
+
+  <p class="moving-note">ファイルの置き場が変わったので、新しい場所へ移っています。そのまましばらくお待ちください。</p>
+
+  <div class="code"><b>404</b><span>NOT FOUND</span></div>
+  <h1>このページは、棚に見あたりませんでした</h1>
+  <p class="lede">整理のときに場所が変わったか、リンクの文字が少しちがうのかもしれません。
+    PDFやZIPの古いリンクなら自動で新しい置き場へ移ります。動かないときは、下の棚からお探しください。
+    <small>それでも見つからないときは、<a href="/School_Stock/oshirase/">お知らせのページ</a>の窓口から気軽にどうぞ。</small></p>
+
+  <div class="paths">
+    <a class="path" href="/School_Stock/#prints">
+      <b>教科のプリント</b>
+      <span>国語・算数・理科・社会・体育・ふりかえり ほか</span>
+      <span class="go">プリントの棚へ →</span>
+    </a>
+    <a class="path" href="/School_Stock/sozai/">
+      <b>授業の素材</b>
+      <span>スライド・おたよりに使えるイラストと写真</span>
+      <span class="go">素材の棚へ →</span>
+    </a>
+    <a class="path" href="/School_Stock/shien/">
+      <b>気になる子の支援</b>
+      <span>支援カード・読みもの</span>
+      <span class="go">支援の棚へ →</span>
+    </a>
+    <a class="path" href="/School_Stock/tools/">
+      <b>授業と校務の道具</b>
+      <span>PDF道具箱・フラッシュカード ほか</span>
+      <span class="go">道具の棚へ →</span>
+    </a>
+    <a class="path" href="/School_Stock/ai/">
+      <b>AI活用（プロンプト集）</b>
+      <span>小学校から大学生まで、学年と教科で引く</span>
+      <span class="go">AI活用の棚へ →</span>
+    </a>
+    <a class="path" href="/School_Stock/kyozai-kenkyu/">
+      <b>教材研究ノート</b>
+      <span>こう考えたら面白いかも、のヒント集</span>
+      <span class="go">ノートの棚へ →</span>
+    </a>
+  </div>
+
+  <p class="back"><a href="/School_Stock/">棚のトップへもどる</a></p>
+
+</div></main>
+
+<div class="foot"><div class="foot-in">
+  <span class="fw">SCHOOL STOCK</span>　先生のための、道具と教材の棚。完成品はいつも無料です。
+</div></div>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js"></script>
 </body>
 </html>
