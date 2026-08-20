@@ -16,7 +16,7 @@ PAGES = KOKUGO / "p"
 # ---- 外部リンク（サイト共通） ----
 LINK_NEWSLETTER = "https://sites.google.com/view/geg-chikuho/news-letter/20260705"
 LINK_GEG = "https://sites.google.com/view/geg-chikuho"
-LINK_PROMPT = "https://a-tozak.github.io/ai-prompt-library/"
+# 旧AIプロンプトライブラリは2026-08-19に公開停止（404）。現役はサイト内の ai/ 棚
 LINK_NOTE = "https://note.com/tozaki_edu"
 LINK_GEM = "https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0"
 
@@ -246,7 +246,6 @@ def topbar(rel):
     <div class="dr-sec">つながる</div>
     <a href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">GEG Chikuho News Letter ↗<small>先生のための最新情報（毎週）</small></a>
     <a href="{LINK_GEG}" target="_blank" rel="noopener">GEG Chikuho ↗<small>研修・イベントのコミュニティ</small></a>
-    <a href="{LINK_PROMPT}" target="_blank" rel="noopener">AIプロンプトライブラリ ↗<small>コピペで使えるプロンプト集</small></a>
     <a href="{LINK_GEM}" target="_blank" rel="noopener">Gemひろば ↗<small>GEG Fukuoka City のGem集</small></a>
     <a href="{LINK_NOTE}" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
   </nav>
@@ -274,7 +273,6 @@ def footer(rel):
       <div><b>つながる</b>
         <a href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
         <a href="{LINK_GEG}" target="_blank" rel="noopener">GEG Chikuho ↗</a>
-        <a href="{LINK_PROMPT}" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
         <a href="{LINK_GEM}" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
         <a href="{LINK_NOTE}" target="_blank" rel="noopener">note ↗</a>
       </div>
@@ -671,7 +669,6 @@ def build_pages(items):
       <h3 style="margin-top:20px">つながる</h3>
       <a class="ex" href="{LINK_NEWSLETTER}" target="_blank" rel="noopener">GEG Chikuho News Letter ↗</a>
       <a class="ex" href="{LINK_GEG}" target="_blank" rel="noopener">GEG Chikuho ↗</a>
-      <a class="ex" href="{LINK_PROMPT}" target="_blank" rel="noopener">AIプロンプトライブラリ ↗</a>
       <a class="ex" href="{LINK_GEM}" target="_blank" rel="noopener">Gemひろば ↗</a>
       <a class="ex" href="{LINK_NOTE}" target="_blank" rel="noopener">note ↗</a>
     </aside>
