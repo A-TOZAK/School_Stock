@@ -31353,5 +31353,3029 @@ const SOZAI = [
   "img": "img/sansu_stick_1m.jpg",
   "thumb": "img/sansu_stick_1m_thumb.jpg",
   "mono": "img/sansu_stick_1m_mono.jpg"
+ },
+ {
+  "id": "chu_001_math_boy_keisan",
+  "title": "中学生・数学・ノートに計算する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数・数学",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "机で計算問題に取り組む男子中学生（横向き）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "机で計算問題に取り組む男子中学生（横向き）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "数学",
+   "授業",
+   "ノート",
+   "男子"
+  ],
+  "img": "img/chu_001_math_boy_keisan.jpg",
+  "thumb": "img/chu_001_math_boy_keisan_thumb.jpg",
+  "mono": "img/chu_001_math_boy_keisan_mono.jpg"
+ },
+ {
+  "id": "chu_002_math_girl_compass",
+  "title": "中学生・数学・コンパスで作図する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "算数・数学",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "コンパスで円をかく女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "コンパスで円をかく女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "数学",
+   "作図",
+   "コンパス",
+   "女子"
+  ],
+  "img": "img/chu_002_math_girl_compass.jpg",
+  "thumb": "img/chu_002_math_girl_compass_thumb.jpg",
+  "mono": "img/chu_002_math_girl_compass_mono.jpg"
+ },
+ {
+  "id": "chu_003_kokugo_girl_ondoku",
+  "title": "中学生・国語・音読する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "教科書を持って音読する女子中学生（立ち姿）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "教科書を持って音読する女子中学生（立ち姿）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "国語",
+   "音読",
+   "女子",
+   "立ち姿"
+  ],
+  "img": "img/chu_003_kokugo_girl_ondoku.jpg",
+  "thumb": "img/chu_003_kokugo_girl_ondoku_thumb.jpg",
+  "mono": "img/chu_003_kokugo_girl_ondoku_mono.jpg"
+ },
+ {
+  "id": "chu_004_kokugo_boy_jisho",
+  "title": "中学生・国語・辞書を引く男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "紙の辞書を引く男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "紙の辞書を引く男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "国語",
+   "辞書",
+   "男子"
+  ],
+  "img": "img/chu_004_kokugo_boy_jisho.jpg",
+  "thumb": "img/chu_004_kokugo_boy_jisho_thumb.jpg",
+  "mono": "img/chu_004_kokugo_boy_jisho_mono.jpg"
+ },
+ {
+  "id": "chu_005_eigo_girl_kyoshu",
+  "title": "中学生・挙手する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "英語",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "手を挙げて発言する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "手を挙げて発言する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "英語",
+   "挙手",
+   "発言",
+   "女子"
+  ],
+  "img": "img/chu_005_eigo_girl_kyoshu.jpg",
+  "thumb": "img/chu_005_eigo_girl_kyoshu_thumb.jpg",
+  "mono": "img/chu_005_eigo_girl_kyoshu_mono.jpg"
+ },
+ {
+  "id": "chu_006_eigo_pair_kaiwa",
+  "title": "中学生・英語・ペアで会話練習",
+  "author": "riko",
+  "type": "illust",
+  "subject": "英語",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "向かい合って会話練習する男女"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "向かい合って会話練習する男女。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "英語",
+   "会話",
+   "ペア",
+   "男女"
+  ],
+  "img": "img/chu_006_eigo_pair_kaiwa.jpg",
+  "thumb": "img/chu_006_eigo_pair_kaiwa_thumb.jpg",
+  "mono": "img/chu_006_eigo_pair_kaiwa_mono.jpg"
+ },
+ {
+  "id": "chu_007_rika_boy_kenbikyo",
+  "title": "中学生・理科・顕微鏡をのぞく男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "中1〜中3",
+  "unit": "授業・観察",
+  "scenes": [
+   "顕微鏡で観察する男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "顕微鏡で観察する男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "理科",
+   "顕微鏡",
+   "観察",
+   "男子"
+  ],
+  "img": "img/chu_007_rika_boy_kenbikyo.jpg",
+  "thumb": "img/chu_007_rika_boy_kenbikyo_thumb.jpg",
+  "mono": "img/chu_007_rika_boy_kenbikyo_mono.jpg"
+ },
+ {
+  "id": "chu_008_rika_girl_shikenkan",
+  "title": "中学生・理科・試験管を観察する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "中1〜中3",
+  "unit": "授業・実験",
+  "scenes": [
+   "試験管を持って観察する女子中学生（保護メガネ）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "試験管を持って観察する女子中学生（保護メガネ）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "理科",
+   "実験",
+   "試験管",
+   "女子"
+  ],
+  "img": "img/chu_008_rika_girl_shikenkan.jpg",
+  "thumb": "img/chu_008_rika_girl_shikenkan_thumb.jpg",
+  "mono": "img/chu_008_rika_girl_shikenkan_mono.jpg"
+ },
+ {
+  "id": "chu_009_shakai_boy_chizucho",
+  "title": "中学生・社会・地図帳を調べる男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "地図帳で調べる男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "地図帳で調べる男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "社会",
+   "地図",
+   "調べ学習",
+   "男子"
+  ],
+  "img": "img/chu_009_shakai_boy_chizucho.jpg",
+  "thumb": "img/chu_009_shakai_boy_chizucho_thumb.jpg",
+  "mono": "img/chu_009_shakai_boy_chizucho_mono.jpg"
+ },
+ {
+  "id": "chu_010_shakai_girl_shiryo",
+  "title": "中学生・社会・掲示地図を指さす女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "中1〜中3",
+  "unit": "授業・発表",
+  "scenes": [
+   "壁の地図を指さして説明する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "壁の地図を指さして説明する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "社会",
+   "地図",
+   "発表",
+   "女子"
+  ],
+  "img": "img/chu_010_shakai_girl_shiryo.jpg",
+  "thumb": "img/chu_010_shakai_girl_shiryo_thumb.jpg",
+  "mono": "img/chu_010_shakai_girl_shiryo_mono.jpg"
+ },
+ {
+  "id": "chu_011_bijutsu_girl_sketch",
+  "title": "中学生・美術・スケッチする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "美術",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "りんごをスケッチする女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "りんごをスケッチする女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "美術",
+   "スケッチ",
+   "女子"
+  ],
+  "img": "img/chu_011_bijutsu_girl_sketch.jpg",
+  "thumb": "img/chu_011_bijutsu_girl_sketch_thumb.jpg",
+  "mono": "img/chu_011_bijutsu_girl_sketch_mono.jpg"
+ },
+ {
+  "id": "chu_012_bijutsu_boy_enogu",
+  "title": "中学生・美術・絵の具で描く男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "美術",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "絵の具で絵を描く男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "絵の具で絵を描く男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "美術",
+   "絵の具",
+   "男子"
+  ],
+  "img": "img/chu_012_bijutsu_boy_enogu.jpg",
+  "thumb": "img/chu_012_bijutsu_boy_enogu_thumb.jpg",
+  "mono": "img/chu_012_bijutsu_boy_enogu_mono.jpg"
+ },
+ {
+  "id": "chu_013_gijutsu_boy_mokko",
+  "title": "中学生・技術・木工でやすりがけする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "木の箱をやすりがけする男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "木の箱をやすりがけする男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "技術",
+   "木工",
+   "男子"
+  ],
+  "img": "img/chu_013_gijutsu_boy_mokko.jpg",
+  "thumb": "img/chu_013_gijutsu_boy_mokko_thumb.jpg",
+  "mono": "img/chu_013_gijutsu_boy_mokko_mono.jpg"
+ },
+ {
+  "id": "chu_014_kateika_girl_saiho",
+  "title": "中学生・家庭科・手縫いする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "手縫いの練習をする女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "手縫いの練習をする女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "家庭科",
+   "裁縫",
+   "女子"
+  ],
+  "img": "img/chu_014_kateika_girl_saiho.jpg",
+  "thumb": "img/chu_014_kateika_girl_saiho_thumb.jpg",
+  "mono": "img/chu_014_kateika_girl_saiho_mono.jpg"
+ },
+ {
+  "id": "chu_015_kateika_boy_chori",
+  "title": "中学生・家庭科・調理実習の男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "調理実習でボウルを混ぜる男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "調理実習でボウルを混ぜる男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "家庭科",
+   "調理実習",
+   "男子"
+  ],
+  "img": "img/chu_015_kateika_boy_chori.jpg",
+  "thumb": "img/chu_015_kateika_boy_chori_thumb.jpg",
+  "mono": "img/chu_015_kateika_boy_chori_mono.jpg"
+ },
+ {
+  "id": "chu_016_tablet_boy",
+  "title": "中学生・タブレットで学ぶ男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "ICT",
+  "grade": "中1〜中3",
+  "unit": "授業・調べ学習",
+  "scenes": [
+   "タブレットで調べ学習する男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "タブレットで調べ学習する男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ICT",
+   "タブレット",
+   "男子"
+  ],
+  "img": "img/chu_016_tablet_boy.jpg",
+  "thumb": "img/chu_016_tablet_boy_thumb.jpg",
+  "mono": "img/chu_016_tablet_boy_mono.jpg"
+ },
+ {
+  "id": "chu_017_tablet_girl_stylus",
+  "title": "中学生・タブレットに書き込む女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "ICT",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "スタイラスでタブレットに書く女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "スタイラスでタブレットに書く女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ICT",
+   "タブレット",
+   "女子"
+  ],
+  "img": "img/chu_017_tablet_girl_stylus.jpg",
+  "thumb": "img/chu_017_tablet_girl_stylus_thumb.jpg",
+  "mono": "img/chu_017_tablet_girl_stylus_mono.jpg"
+ },
+ {
+  "id": "chu_018_happyo_girl",
+  "title": "中学生・前に立って発表する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "授業・発表",
+  "scenes": [
+   "みんなの前で発表する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "みんなの前で発表する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "発表",
+   "プレゼン",
+   "女子"
+  ],
+  "img": "img/chu_018_happyo_girl.jpg",
+  "thumb": "img/chu_018_happyo_girl_thumb.jpg",
+  "mono": "img/chu_018_happyo_girl_mono.jpg"
+ },
+ {
+  "id": "chu_019_kokuban_boy",
+  "title": "中学生・黒板の前で解く男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "黒板に向かって書く男子中学生（後ろ姿）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "黒板に向かって書く男子中学生（後ろ姿）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "黒板",
+   "授業",
+   "男子"
+  ],
+  "img": "img/chu_019_kokuban_boy.jpg",
+  "thumb": "img/chu_019_kokuban_boy_thumb.jpg",
+  "mono": "img/chu_019_kokuban_boy_mono.jpg"
+ },
+ {
+  "id": "chu_020_group_gakushu",
+  "title": "中学生・グループ学習（4人）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "机を合わせて話し合う4人グループ"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "机を合わせて話し合う4人グループ。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "グループ学習",
+   "話し合い",
+   "男女"
+  ],
+  "img": "img/chu_020_group_gakushu.jpg",
+  "thumb": "img/chu_020_group_gakushu_thumb.jpg",
+  "mono": "img/chu_020_group_gakushu_mono.jpg"
+ },
+ {
+  "id": "chu_021_note_girl_matome",
+  "title": "中学生・ノートまとめをする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "ノートをていねいにまとめる女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ノートをていねいにまとめる女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ノート",
+   "まとめ",
+   "女子"
+  ],
+  "img": "img/chu_021_note_girl_matome.jpg",
+  "thumb": "img/chu_021_note_girl_matome_thumb.jpg",
+  "mono": "img/chu_021_note_girl_matome_mono.jpg"
+ },
+ {
+  "id": "chu_022_drill_boy",
+  "title": "中学生・ドリルに取り組む男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "ワークに取り組む男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ワークに取り組む男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ドリル",
+   "ワーク",
+   "自習",
+   "男子"
+  ],
+  "img": "img/chu_022_drill_boy.jpg",
+  "thumb": "img/chu_022_drill_boy_thumb.jpg",
+  "mono": "img/chu_022_drill_boy_mono.jpg"
+ },
+ {
+  "id": "chu_023_drill_girl",
+  "title": "中学生・ワークを進める女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "ワークを進める女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ワークを進める女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ドリル",
+   "ワーク",
+   "自習",
+   "女子"
+  ],
+  "img": "img/chu_023_drill_girl.jpg",
+  "thumb": "img/chu_023_drill_girl_thumb.jpg",
+  "mono": "img/chu_023_drill_girl_mono.jpg"
+ },
+ {
+  "id": "chu_024_marutsuke_boy",
+  "title": "中学生・赤ペンで丸つけする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "自分で丸つけをする男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "自分で丸つけをする男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "丸つけ",
+   "赤ペン",
+   "自習",
+   "男子"
+  ],
+  "img": "img/chu_024_marutsuke_boy.jpg",
+  "thumb": "img/chu_024_marutsuke_boy_thumb.jpg",
+  "mono": "img/chu_024_marutsuke_boy_mono.jpg"
+ },
+ {
+  "id": "chu_025_tango_card_girl",
+  "title": "中学生・単語カードで覚える女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "英語",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "単語カードをめくる女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "単語カードをめくる女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "単語カード",
+   "暗記",
+   "女子"
+  ],
+  "img": "img/chu_025_tango_card_girl.jpg",
+  "thumb": "img/chu_025_tango_card_girl_thumb.jpg",
+  "mono": "img/chu_025_tango_card_girl_mono.jpg"
+ },
+ {
+  "id": "chu_026_tosho_boy_dokusho",
+  "title": "中学生・読書する男子（図書室）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "読書",
+  "scenes": [
+   "図書室で読書する男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "図書室で読書する男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "読書",
+   "図書室",
+   "男子"
+  ],
+  "img": "img/chu_026_tosho_boy_dokusho.jpg",
+  "thumb": "img/chu_026_tosho_boy_dokusho_thumb.jpg",
+  "mono": "img/chu_026_tosho_boy_dokusho_mono.jpg"
+ },
+ {
+  "id": "chu_027_tosho_girl_dokusho",
+  "title": "中学生・読書する女子（図書室）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "読書",
+  "scenes": [
+   "図書室で読書する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "図書室で読書する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "読書",
+   "図書室",
+   "女子"
+  ],
+  "img": "img/chu_027_tosho_girl_dokusho.jpg",
+  "thumb": "img/chu_027_tosho_girl_dokusho_thumb.jpg",
+  "mono": "img/chu_027_tosho_girl_dokusho_mono.jpg"
+ },
+ {
+  "id": "chu_028_hondana_girl",
+  "title": "中学生・本棚から本を選ぶ女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "読書",
+  "scenes": [
+   "本棚から本を選ぶ女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "本棚から本を選ぶ女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "図書室",
+   "本棚",
+   "女子"
+  ],
+  "img": "img/chu_028_hondana_girl.jpg",
+  "thumb": "img/chu_028_hondana_girl_thumb.jpg",
+  "mono": "img/chu_028_hondana_girl_mono.jpg"
+ },
+ {
+  "id": "chu_029_toshoiin_boy",
+  "title": "中学生・図書委員の男子（カウンター）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "委員会",
+  "scenes": [
+   "図書室カウンターで本を整える男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "図書室カウンターで本を整える男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "委員会",
+   "図書委員",
+   "男子"
+  ],
+  "img": "img/chu_029_toshoiin_boy.jpg",
+  "thumb": "img/chu_029_toshoiin_boy_thumb.jpg",
+  "mono": "img/chu_029_toshoiin_boy_mono.jpg"
+ },
+ {
+  "id": "chu_030_benkyo_pair",
+  "title": "中学生・教え合いをする男女",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "自習",
+  "scenes": [
+   "ノートを見せ合って教え合う男女"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ノートを見せ合って教え合う男女。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "教え合い",
+   "自習",
+   "ペア",
+   "男女"
+  ],
+  "img": "img/chu_030_benkyo_pair.jpg",
+  "thumb": "img/chu_030_benkyo_pair_thumb.jpg",
+  "mono": "img/chu_030_benkyo_pair_mono.jpg"
+ },
+ {
+  "id": "chu_031_print_teishutsu_girl",
+  "title": "中学生・プリントを提出する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "両手でプリントを提出する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "両手でプリントを提出する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "提出",
+   "プリント",
+   "女子"
+  ],
+  "img": "img/chu_031_print_teishutsu_girl.jpg",
+  "thumb": "img/chu_031_print_teishutsu_girl_thumb.jpg",
+  "mono": "img/chu_031_print_teishutsu_girl_mono.jpg"
+ },
+ {
+  "id": "chu_032_print_kubari_boy",
+  "title": "中学生・プリントを後ろへ回す男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "授業",
+  "scenes": [
+   "プリントを後ろの席へ回す男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "プリントを後ろの席へ回す男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "プリント",
+   "配布",
+   "男子"
+  ],
+  "img": "img/chu_032_print_kubari_boy.jpg",
+  "thumb": "img/chu_032_print_kubari_boy_thumb.jpg",
+  "mono": "img/chu_032_print_kubari_boy_mono.jpg"
+ },
+ {
+  "id": "chu_033_takusan_note_boy",
+  "title": "中学生・ノートの山を運ぶ男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "係活動",
+  "scenes": [
+   "ノートの山を運ぶ男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ノートの山を運ぶ男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "係活動",
+   "ノート",
+   "男子"
+  ],
+  "img": "img/chu_033_takusan_note_boy.jpg",
+  "thumb": "img/chu_033_takusan_note_boy_thumb.jpg",
+  "mono": "img/chu_033_takusan_note_boy_mono.jpg"
+ },
+ {
+  "id": "chu_034_toko_boy",
+  "title": "中学生・登校する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "登下校",
+  "scenes": [
+   "通学カバンで登校する男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "通学カバンで登校する男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "登校",
+   "通学",
+   "男子"
+  ],
+  "img": "img/chu_034_toko_boy.jpg",
+  "thumb": "img/chu_034_toko_boy_thumb.jpg",
+  "mono": "img/chu_034_toko_boy_mono.jpg"
+ },
+ {
+  "id": "chu_035_toko_girls",
+  "title": "中学生・登校中に話す女子ふたり",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "登下校",
+  "scenes": [
+   "楽しく話しながら登校する女子ふたり"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "楽しく話しながら登校する女子ふたり。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "登校",
+   "会話",
+   "女子"
+  ],
+  "img": "img/chu_035_toko_girls.jpg",
+  "thumb": "img/chu_035_toko_girls_thumb.jpg",
+  "mono": "img/chu_035_toko_girls_mono.jpg"
+ },
+ {
+  "id": "chu_036_aisatsu_boy",
+  "title": "中学生・あいさつ・おじぎする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "生活",
+  "scenes": [
+   "きちんとおじぎする男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "きちんとおじぎする男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "あいさつ",
+   "おじぎ",
+   "男子"
+  ],
+  "img": "img/chu_036_aisatsu_boy.jpg",
+  "thumb": "img/chu_036_aisatsu_boy_thumb.jpg",
+  "mono": "img/chu_036_aisatsu_boy_mono.jpg"
+ },
+ {
+  "id": "chu_038_danshou_trio",
+  "title": "中学生・休み時間に談笑する3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "休み時間",
+  "scenes": [
+   "楽しく談笑する3人組"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "楽しく談笑する3人組。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "休み時間",
+   "談笑",
+   "友達",
+   "男女"
+  ],
+  "img": "img/chu_038_danshou_trio.jpg",
+  "thumb": "img/chu_038_danshou_trio_thumb.jpg",
+  "mono": "img/chu_038_danshou_trio_mono.jpg"
+ },
+ {
+  "id": "chu_039_kyushoku_boy",
+  "title": "中学生・給食を食べる男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "給食",
+  "scenes": [
+   "給食を食べる男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "給食を食べる男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "給食",
+   "昼食",
+   "男子"
+  ],
+  "img": "img/chu_039_kyushoku_boy.jpg",
+  "thumb": "img/chu_039_kyushoku_boy_thumb.jpg",
+  "mono": "img/chu_039_kyushoku_boy_mono.jpg"
+ },
+ {
+  "id": "chu_040_bento_girl",
+  "title": "中学生・お弁当を食べる女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "昼食",
+  "scenes": [
+   "お弁当を食べる女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "お弁当を食べる女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "お弁当",
+   "昼食",
+   "女子"
+  ],
+  "img": "img/chu_040_bento_girl.jpg",
+  "thumb": "img/chu_040_bento_girl_thumb.jpg",
+  "mono": "img/chu_040_bento_girl_mono.jpg"
+ },
+ {
+  "id": "chu_041_soji_boy_hoki",
+  "title": "中学生・ほうきで掃除する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "掃除",
+  "scenes": [
+   "ほうきで掃く男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ほうきで掃く男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "掃除",
+   "ほうき",
+   "男子"
+  ],
+  "img": "img/chu_041_soji_boy_hoki.jpg",
+  "thumb": "img/chu_041_soji_boy_hoki_thumb.jpg",
+  "mono": "img/chu_041_soji_boy_hoki_mono.jpg"
+ },
+ {
+  "id": "chu_043_kokuban_girl_fuku",
+  "title": "中学生・黒板を消す女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "係活動",
+  "scenes": [
+   "黒板をきれいにする女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "黒板をきれいにする女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "黒板",
+   "係活動",
+   "女子"
+  ],
+  "img": "img/chu_043_kokuban_girl_fuku.jpg",
+  "thumb": "img/chu_043_kokuban_girl_fuku_thumb.jpg",
+  "mono": "img/chu_043_kokuban_girl_fuku_mono.jpg"
+ },
+ {
+  "id": "chu_044_mizuyari_boy",
+  "title": "中学生・花に水をやる男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "委員会",
+  "scenes": [
+   "プランターに水やりする男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "プランターに水やりする男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "委員会",
+   "水やり",
+   "緑化",
+   "男子"
+  ],
+  "img": "img/chu_044_mizuyari_boy.jpg",
+  "thumb": "img/chu_044_mizuyari_boy_thumb.jpg",
+  "mono": "img/chu_044_mizuyari_boy_mono.jpg"
+ },
+ {
+  "id": "chu_045_iinkai_meeting",
+  "title": "中学生・委員会で話し合う3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "委員会",
+  "scenes": [
+   "委員会で話し合う生徒たち"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "委員会で話し合う生徒たち。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "委員会",
+   "話し合い",
+   "男女"
+  ],
+  "img": "img/chu_045_iinkai_meeting.jpg",
+  "thumb": "img/chu_045_iinkai_meeting_thumb.jpg",
+  "mono": "img/chu_045_iinkai_meeting_mono.jpg"
+ },
+ {
+  "id": "chu_046_enzetsu_girl",
+  "title": "中学生・壇上で話す女子（生徒会）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "生徒会",
+  "scenes": [
+   "全校の前で話す女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "全校の前で話す女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "生徒会",
+   "スピーチ",
+   "女子"
+  ],
+  "img": "img/chu_046_enzetsu_girl.jpg",
+  "thumb": "img/chu_046_enzetsu_girl_thumb.jpg",
+  "mono": "img/chu_046_enzetsu_girl_mono.jpg"
+ },
+ {
+  "id": "chu_047_rouka_pair",
+  "title": "中学生・廊下を歩く男女（係の仕事）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "係活動",
+  "scenes": [
+   "ファイルを持って廊下を歩く男女"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ファイルを持って廊下を歩く男女。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "廊下",
+   "係活動",
+   "男女"
+  ],
+  "img": "img/chu_047_rouka_pair.jpg",
+  "thumb": "img/chu_047_rouka_pair_thumb.jpg",
+  "mono": "img/chu_047_rouka_pair_mono.jpg"
+ },
+ {
+  "id": "chu_048_kiritsu_boy",
+  "title": "中学生・号令をかける男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "朝の会",
+  "scenes": [
+   "起立の号令をかける男子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "起立の号令をかける男子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "号令",
+   "朝の会",
+   "男子"
+  ],
+  "img": "img/chu_048_kiritsu_boy.jpg",
+  "thumb": "img/chu_048_kiritsu_boy_thumb.jpg",
+  "mono": "img/chu_048_kiritsu_boy_mono.jpg"
+ },
+ {
+  "id": "chu_049_suito_girl",
+  "title": "中学生・水分補給する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "中1〜中3",
+  "unit": "休み時間",
+  "scenes": [
+   "水筒で水分補給する女子中学生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "水筒で水分補給する女子中学生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "水分補給",
+   "休み時間",
+   "女子"
+  ],
+  "img": "img/chu_049_suito_girl.jpg",
+  "thumb": "img/chu_049_suito_girl_thumb.jpg",
+  "mono": "img/chu_049_suito_girl_mono.jpg"
+ },
+ {
+  "id": "chu_050_basket_boy_shoot",
+  "title": "中学生・バスケ・シュートする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "バスケットボール",
+  "scenes": [
+   "ジャンプシュートを打つ男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ジャンプシュートを打つ男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "バスケ",
+   "部活",
+   "シュート",
+   "男子"
+  ],
+  "img": "img/chu_050_basket_boy_shoot.jpg",
+  "thumb": "img/chu_050_basket_boy_shoot_thumb.jpg",
+  "mono": "img/chu_050_basket_boy_shoot_mono.jpg"
+ },
+ {
+  "id": "chu_052_soccer_boy_dribble",
+  "title": "中学生・サッカー・ドリブルする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "サッカー",
+  "scenes": [
+   "ボールを運ぶ男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ボールを運ぶ男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "サッカー",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_052_soccer_boy_dribble.jpg",
+  "thumb": "img/chu_052_soccer_boy_dribble_thumb.jpg",
+  "mono": "img/chu_052_soccer_boy_dribble_mono.jpg"
+ },
+ {
+  "id": "chu_053_soccer_girl_kick",
+  "title": "中学生・サッカー・シュートする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "サッカー",
+  "scenes": [
+   "力強くシュートする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "力強くシュートする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "サッカー",
+   "部活",
+   "シュート",
+   "女子"
+  ],
+  "img": "img/chu_053_soccer_girl_kick.jpg",
+  "thumb": "img/chu_053_soccer_girl_kick_thumb.jpg",
+  "mono": "img/chu_053_soccer_girl_kick_mono.jpg"
+ },
+ {
+  "id": "chu_054_volley_girl_toss",
+  "title": "中学生・バレー・トスを上げる女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "バレーボール",
+  "scenes": [
+   "トスを上げる女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "トスを上げる女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "バレーボール",
+   "部活",
+   "トス",
+   "女子"
+  ],
+  "img": "img/chu_054_volley_girl_toss.jpg",
+  "thumb": "img/chu_054_volley_girl_toss_thumb.jpg",
+  "mono": "img/chu_054_volley_girl_toss_mono.jpg"
+ },
+ {
+  "id": "chu_055_volley_boy_spike",
+  "title": "中学生・バレー・スパイクする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "バレーボール",
+  "scenes": [
+   "スパイクを打つ男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "スパイクを打つ男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "バレーボール",
+   "部活",
+   "スパイク",
+   "男子"
+  ],
+  "img": "img/chu_055_volley_boy_spike.jpg",
+  "thumb": "img/chu_055_volley_boy_spike_thumb.jpg",
+  "mono": "img/chu_055_volley_boy_spike_mono.jpg"
+ },
+ {
+  "id": "chu_056_takkyu_boy",
+  "title": "中学生・卓球・フォアハンドの男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "卓球",
+  "scenes": [
+   "フォアハンドを打つ男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "フォアハンドを打つ男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "卓球",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_056_takkyu_boy.jpg",
+  "thumb": "img/chu_056_takkyu_boy_thumb.jpg",
+  "mono": "img/chu_056_takkyu_boy_mono.jpg"
+ },
+ {
+  "id": "chu_057_tennis_girl",
+  "title": "中学生・ソフトテニス・ストロークの女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "テニス",
+  "scenes": [
+   "フォアハンドを打つ女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "フォアハンドを打つ女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "テニス",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_057_tennis_girl.jpg",
+  "thumb": "img/chu_057_tennis_girl_thumb.jpg",
+  "mono": "img/chu_057_tennis_girl_mono.jpg"
+ },
+ {
+  "id": "chu_058_rikujo_start_boy",
+  "title": "中学生・陸上・クラウチングスタートの男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "陸上",
+  "scenes": [
+   "スタートの構えをする男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "スタートの構えをする男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "陸上",
+   "部活",
+   "スタート",
+   "男子"
+  ],
+  "img": "img/chu_058_rikujo_start_boy.jpg",
+  "thumb": "img/chu_058_rikujo_start_boy_thumb.jpg",
+  "mono": "img/chu_058_rikujo_start_boy_mono.jpg"
+ },
+ {
+  "id": "chu_059_rikujo_relay",
+  "title": "中学生・陸上・リレーのバトンパス",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "陸上",
+  "scenes": [
+   "バトンパスする2人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "バトンパスする2人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "陸上",
+   "リレー",
+   "バトン",
+   "男女"
+  ],
+  "img": "img/chu_059_rikujo_relay.jpg",
+  "thumb": "img/chu_059_rikujo_relay_thumb.jpg",
+  "mono": "img/chu_059_rikujo_relay_mono.jpg"
+ },
+ {
+  "id": "chu_060_yakyu_boy_batting",
+  "title": "中学生・野球・バッティングする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "野球",
+  "scenes": [
+   "フルスイングする男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "フルスイングする男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "野球",
+   "部活",
+   "バッティング",
+   "男子"
+  ],
+  "img": "img/chu_060_yakyu_boy_batting.jpg",
+  "thumb": "img/chu_060_yakyu_boy_batting_thumb.jpg",
+  "mono": "img/chu_060_yakyu_boy_batting_mono.jpg"
+ },
+ {
+  "id": "chu_061_kendo_boy",
+  "title": "中学生・剣道・面を打つ構えの男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "剣道",
+  "scenes": [
+   "竹刀を振りかぶる剣道部員"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "竹刀を振りかぶる剣道部員。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "剣道",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_061_kendo_boy.jpg",
+  "thumb": "img/chu_061_kendo_boy_thumb.jpg",
+  "mono": "img/chu_061_kendo_boy_mono.jpg"
+ },
+ {
+  "id": "chu_062_judo_girl_rei",
+  "title": "中学生・柔道・礼をする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "柔道",
+  "scenes": [
+   "礼をする柔道部の女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "礼をする柔道部の女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "柔道",
+   "部活",
+   "礼",
+   "女子"
+  ],
+  "img": "img/chu_062_judo_girl_rei.jpg",
+  "thumb": "img/chu_062_judo_girl_rei_thumb.jpg",
+  "mono": "img/chu_062_judo_girl_rei_mono.jpg"
+ },
+ {
+  "id": "chu_063_badminton_boy",
+  "title": "中学生・バドミントン・スマッシュする男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "バドミントン",
+  "scenes": [
+   "スマッシュを打つ男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "スマッシュを打つ男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "バドミントン",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_063_badminton_boy.jpg",
+  "thumb": "img/chu_063_badminton_boy_thumb.jpg",
+  "mono": "img/chu_063_badminton_boy_mono.jpg"
+ },
+ {
+  "id": "chu_064_suiei_girl",
+  "title": "中学生・水泳・ビート板を持つ女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "水泳",
+  "scenes": [
+   "プールサイドに立つ水泳部の女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "プールサイドに立つ水泳部の女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "水泳",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_064_suiei_girl.jpg",
+  "thumb": "img/chu_064_suiei_girl_thumb.jpg",
+  "mono": "img/chu_064_suiei_girl_mono.jpg"
+ },
+ {
+  "id": "chu_065_running_club",
+  "title": "中学生・外周をランニングする部員たち",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "トレーニング",
+  "scenes": [
+   "並んでランニングする部員3人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "並んでランニングする部員3人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ランニング",
+   "部活",
+   "トレーニング"
+  ],
+  "img": "img/chu_065_running_club.jpg",
+  "thumb": "img/chu_065_running_club_thumb.jpg",
+  "mono": "img/chu_065_running_club_mono.jpg"
+ },
+ {
+  "id": "chu_066_stretch_pair",
+  "title": "中学生・ペアでストレッチする2人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "体育・部活動",
+  "grade": "中1〜中3",
+  "unit": "準備運動",
+  "scenes": [
+   "ペアストレッチする2人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ペアストレッチする2人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ストレッチ",
+   "準備運動",
+   "体育"
+  ],
+  "img": "img/chu_066_stretch_pair.jpg",
+  "thumb": "img/chu_066_stretch_pair_thumb.jpg",
+  "mono": "img/chu_066_stretch_pair_mono.jpg"
+ },
+ {
+  "id": "chu_068_trumpet_girl",
+  "title": "中学生・吹奏楽・トランペットの女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽・部活動",
+  "grade": "中1〜中3",
+  "unit": "吹奏楽",
+  "scenes": [
+   "トランペットを吹く女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "トランペットを吹く女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "吹奏楽",
+   "トランペット",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_068_trumpet_girl.jpg",
+  "thumb": "img/chu_068_trumpet_girl_thumb.jpg",
+  "mono": "img/chu_068_trumpet_girl_mono.jpg"
+ },
+ {
+  "id": "chu_069_clarinet_boy",
+  "title": "中学生・吹奏楽・クラリネットの男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽・部活動",
+  "grade": "中1〜中3",
+  "unit": "吹奏楽",
+  "scenes": [
+   "クラリネットを吹く男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "クラリネットを吹く男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "吹奏楽",
+   "クラリネット",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_069_clarinet_boy.jpg",
+  "thumb": "img/chu_069_clarinet_boy_thumb.jpg",
+  "mono": "img/chu_069_clarinet_boy_mono.jpg"
+ },
+ {
+  "id": "chu_070_percussion_boy",
+  "title": "中学生・吹奏楽・打楽器の男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "音楽・部活動",
+  "grade": "中1〜中3",
+  "unit": "吹奏楽",
+  "scenes": [
+   "スネアドラムをたたく男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "スネアドラムをたたく男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "吹奏楽",
+   "打楽器",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_070_percussion_boy.jpg",
+  "thumb": "img/chu_070_percussion_boy_thumb.jpg",
+  "mono": "img/chu_070_percussion_boy_mono.jpg"
+ },
+ {
+  "id": "chu_071_bijutsubu_girl_easel",
+  "title": "中学生・美術部・イーゼルで描く女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "美術・部活動",
+  "grade": "中1〜中3",
+  "unit": "美術部",
+  "scenes": [
+   "イーゼルで制作する女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "イーゼルで制作する女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "美術部",
+   "イーゼル",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_071_bijutsubu_girl_easel.jpg",
+  "thumb": "img/chu_071_bijutsubu_girl_easel_thumb.jpg",
+  "mono": "img/chu_071_bijutsubu_girl_easel_mono.jpg"
+ },
+ {
+  "id": "chu_072_shodo_boy",
+  "title": "中学生・書道する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "国語・部活動",
+  "grade": "中1〜中3",
+  "unit": "書道",
+  "scenes": [
+   "太筆で書く男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "太筆で書く男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "書道",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_072_shodo_boy.jpg",
+  "thumb": "img/chu_072_shodo_boy_thumb.jpg",
+  "mono": "img/chu_072_shodo_boy_mono.jpg"
+ },
+ {
+  "id": "chu_073_kagakubu_pair",
+  "title": "中学生・科学部の観察（2人）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "理科・部活動",
+  "grade": "中1〜中3",
+  "unit": "科学部",
+  "scenes": [
+   "フラスコを観察する2人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "フラスコを観察する2人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "科学部",
+   "実験",
+   "部活",
+   "男女"
+  ],
+  "img": "img/chu_073_kagakubu_pair.jpg",
+  "thumb": "img/chu_073_kagakubu_pair_thumb.jpg",
+  "mono": "img/chu_073_kagakubu_pair_mono.jpg"
+ },
+ {
+  "id": "chu_074_pasokonbu_girl",
+  "title": "中学生・パソコン部の女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "ICT・部活動",
+  "grade": "中1〜中3",
+  "unit": "パソコン部",
+  "scenes": [
+   "ノートPCで作業する女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ノートPCで作業する女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "パソコン部",
+   "ICT",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_074_pasokonbu_girl.jpg",
+  "thumb": "img/chu_074_pasokonbu_girl_thumb.jpg",
+  "mono": "img/chu_074_pasokonbu_girl_mono.jpg"
+ },
+ {
+  "id": "chu_075_engeki_girl",
+  "title": "中学生・演劇部・けいこする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活・部活動",
+  "grade": "中1〜中3",
+  "unit": "演劇部",
+  "scenes": [
+   "せりふのけいこをする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "せりふのけいこをする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "演劇部",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_075_engeki_girl.jpg",
+  "thumb": "img/chu_075_engeki_girl_thumb.jpg",
+  "mono": "img/chu_075_engeki_girl_mono.jpg"
+ },
+ {
+  "id": "chu_076_shashinbu_boy",
+  "title": "中学生・写真部・撮影する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活・部活動",
+  "grade": "中1〜中3",
+  "unit": "写真部",
+  "scenes": [
+   "カメラを構える男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "カメラを構える男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "写真部",
+   "カメラ",
+   "部活",
+   "男子"
+  ],
+  "img": "img/chu_076_shashinbu_boy.jpg",
+  "thumb": "img/chu_076_shashinbu_boy_thumb.jpg",
+  "mono": "img/chu_076_shashinbu_boy_mono.jpg"
+ },
+ {
+  "id": "chu_077_sado_girl",
+  "title": "中学生・茶道部・お茶を出す女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活・部活動",
+  "grade": "中1〜中3",
+  "unit": "茶道部",
+  "scenes": [
+   "お茶を差し出す女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "お茶を差し出す女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "茶道部",
+   "部活",
+   "女子"
+  ],
+  "img": "img/chu_077_sado_girl.jpg",
+  "thumb": "img/chu_077_sado_girl_thumb.jpg",
+  "mono": "img/chu_077_sado_girl_mono.jpg"
+ },
+ {
+  "id": "chu_081_ouen_boy",
+  "title": "中学生・応援団の男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "体育祭",
+  "scenes": [
+   "メガホンで応援する男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "メガホンで応援する男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "応援",
+   "体育祭",
+   "メガホン",
+   "男子"
+  ],
+  "img": "img/chu_081_ouen_boy.jpg",
+  "thumb": "img/chu_081_ouen_boy_thumb.jpg",
+  "mono": "img/chu_081_ouen_boy_mono.jpg"
+ },
+ {
+  "id": "chu_082_ouen_girls",
+  "title": "中学生・応援する女子ふたり（ポンポン）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "体育祭",
+  "scenes": [
+   "ポンポンで応援する女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ポンポンで応援する女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "応援",
+   "体育祭",
+   "ポンポン",
+   "女子"
+  ],
+  "img": "img/chu_082_ouen_girls.jpg",
+  "thumb": "img/chu_082_ouen_girls_thumb.jpg",
+  "mono": "img/chu_082_ouen_girls_mono.jpg"
+ },
+ {
+  "id": "chu_083_shiki_girl",
+  "title": "中学生・合唱コン・指揮する女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事・音楽",
+  "grade": "中1〜中3",
+  "unit": "合唱コンクール",
+  "scenes": [
+   "指揮をする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "指揮をする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "合唱",
+   "指揮",
+   "行事",
+   "女子"
+  ],
+  "img": "img/chu_083_shiki_girl.jpg",
+  "thumb": "img/chu_083_shiki_girl_thumb.jpg",
+  "mono": "img/chu_083_shiki_girl_mono.jpg"
+ },
+ {
+  "id": "chu_084_piano_boy",
+  "title": "中学生・合唱コン・伴奏する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事・音楽",
+  "grade": "中1〜中3",
+  "unit": "合唱コンクール",
+  "scenes": [
+   "ピアノ伴奏する男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ピアノ伴奏する男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "合唱",
+   "伴奏",
+   "ピアノ",
+   "男子"
+  ],
+  "img": "img/chu_084_piano_boy.jpg",
+  "thumb": "img/chu_084_piano_boy_thumb.jpg",
+  "mono": "img/chu_084_piano_boy_mono.jpg"
+ },
+ {
+  "id": "chu_085_gassho_group",
+  "title": "中学生・合唱する生徒たち（2列）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事・音楽",
+  "grade": "中1〜中3",
+  "unit": "合唱コンクール",
+  "scenes": [
+   "2列で合唱する6人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "2列で合唱する6人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "合唱",
+   "合唱コンクール",
+   "行事"
+  ],
+  "img": "img/chu_085_gassho_group.jpg",
+  "thumb": "img/chu_085_gassho_group_thumb.jpg",
+  "mono": "img/chu_085_gassho_group_mono.jpg"
+ },
+ {
+  "id": "chu_086_bunkasai_kanban",
+  "title": "中学生・文化祭・看板づくり",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "文化祭",
+  "scenes": [
+   "看板を協力して作る3人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "看板を協力して作る3人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "文化祭",
+   "看板",
+   "準備",
+   "男女"
+  ],
+  "img": "img/chu_086_bunkasai_kanban.jpg",
+  "thumb": "img/chu_086_bunkasai_kanban_thumb.jpg",
+  "mono": "img/chu_086_bunkasai_kanban_mono.jpg"
+ },
+ {
+  "id": "chu_087_bunkasai_kazari_girl",
+  "title": "中学生・文化祭・飾りつけする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "文化祭",
+  "scenes": [
+   "教室を飾りつけする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "教室を飾りつけする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "文化祭",
+   "飾りつけ",
+   "準備",
+   "女子"
+  ],
+  "img": "img/chu_087_bunkasai_kazari_girl.jpg",
+  "thumb": "img/chu_087_bunkasai_kazari_girl_thumb.jpg",
+  "mono": "img/chu_087_bunkasai_kazari_girl_mono.jpg"
+ },
+ {
+  "id": "chu_088_ensoku_walk",
+  "title": "中学生・遠足・歩く3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "遠足・校外学習",
+  "scenes": [
+   "遠足で歩く3人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "遠足で歩く3人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "遠足",
+   "校外学習",
+   "行事"
+  ],
+  "img": "img/chu_088_ensoku_walk.jpg",
+  "thumb": "img/chu_088_ensoku_walk_thumb.jpg",
+  "mono": "img/chu_088_ensoku_walk_mono.jpg"
+ },
+ {
+  "id": "chu_089_ensoku_bento",
+  "title": "中学生・遠足・お弁当タイム",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "遠足・校外学習",
+  "scenes": [
+   "シートでお弁当を食べる3人"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "シートでお弁当を食べる3人。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "遠足",
+   "お弁当",
+   "行事"
+  ],
+  "img": "img/chu_089_ensoku_bento.jpg",
+  "thumb": "img/chu_089_ensoku_bento_thumb.jpg",
+  "mono": "img/chu_089_ensoku_bento_mono.jpg"
+ },
+ {
+  "id": "chu_090_shugakuryoko_pair",
+  "title": "中学生・修学旅行へ出発する男女",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "修学旅行",
+  "scenes": [
+   "キャリーバッグを持つ男女"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "キャリーバッグを持つ男女。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "修学旅行",
+   "行事",
+   "男女"
+  ],
+  "img": "img/chu_090_shugakuryoko_pair.jpg",
+  "thumb": "img/chu_090_shugakuryoko_pair_thumb.jpg",
+  "mono": "img/chu_090_shugakuryoko_pair_mono.jpg"
+ },
+ {
+  "id": "chu_091_nyugaku_girl",
+  "title": "中学生・入学式の女子（桜）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "入学式",
+  "scenes": [
+   "真新しい制服で立つ新入生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "真新しい制服で立つ新入生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "入学式",
+   "桜",
+   "行事",
+   "女子"
+  ],
+  "img": "img/chu_091_nyugaku_girl.jpg",
+  "thumb": "img/chu_091_nyugaku_girl_thumb.jpg",
+  "mono": "img/chu_091_nyugaku_girl_mono.jpg"
+ },
+ {
+  "id": "chu_092_sotsugyo_boy",
+  "title": "中学生・卒業式の男子（証書筒）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "卒業式",
+  "scenes": [
+   "証書筒を持つ卒業生"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "証書筒を持つ卒業生。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "卒業式",
+   "行事",
+   "男子"
+  ],
+  "img": "img/chu_092_sotsugyo_boy.jpg",
+  "thumb": "img/chu_092_sotsugyo_boy_thumb.jpg",
+  "mono": "img/chu_092_sotsugyo_boy_mono.jpg"
+ },
+ {
+  "id": "chu_093_shokuba_taiken_girl",
+  "title": "中学生・職場体験であいさつする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "中1〜中3",
+  "unit": "職場体験",
+  "scenes": [
+   "職場体験のあいさつをする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "職場体験のあいさつをする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "職場体験",
+   "キャリア教育",
+   "女子"
+  ],
+  "img": "img/chu_093_shokuba_taiken_girl.jpg",
+  "thumb": "img/chu_093_shokuba_taiken_girl_thumb.jpg",
+  "mono": "img/chu_093_shokuba_taiken_girl_mono.jpg"
+ },
+ {
+  "id": "chu_094_guts_boy",
+  "title": "中学生・ガッツポーズの男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "やったー！のガッツポーズ（男子）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "やったー！のガッツポーズ（男子）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ガッツポーズ",
+   "喜び",
+   "汎用",
+   "男子"
+  ],
+  "img": "img/chu_094_guts_boy.jpg",
+  "thumb": "img/chu_094_guts_boy_thumb.jpg",
+  "mono": "img/chu_094_guts_boy_mono.jpg"
+ },
+ {
+  "id": "chu_095_guts_girl",
+  "title": "中学生・ガッツポーズの女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "やったー！のガッツポーズ（女子）"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "やったー！のガッツポーズ（女子）。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ガッツポーズ",
+   "喜び",
+   "汎用",
+   "女子"
+  ],
+  "img": "img/chu_095_guts_girl.jpg",
+  "thumb": "img/chu_095_guts_girl_thumb.jpg",
+  "mono": "img/chu_095_guts_girl_mono.jpg"
+ },
+ {
+  "id": "chu_096_maru_girl",
+  "title": "中学生・まる（OK）サインの女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "腕で大きな○をつくる女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "腕で大きな○をつくる女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "OK",
+   "まる",
+   "正解",
+   "汎用",
+   "女子"
+  ],
+  "img": "img/chu_096_maru_girl.jpg",
+  "thumb": "img/chu_096_maru_girl_thumb.jpg",
+  "mono": "img/chu_096_maru_girl_mono.jpg"
+ },
+ {
+  "id": "chu_097_thinking_boy",
+  "title": "中学生・考え込む男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "うーんと考える男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "うーんと考える男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "考える",
+   "思考",
+   "汎用",
+   "男子"
+  ],
+  "img": "img/chu_097_thinking_boy.jpg",
+  "thumb": "img/chu_097_thinking_boy_thumb.jpg",
+  "mono": "img/chu_097_thinking_boy_mono.jpg"
+ },
+ {
+  "id": "chu_098_hirameki_girl",
+  "title": "中学生・ひらめいた女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "ひらめきポーズの女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "ひらめきポーズの女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "ひらめき",
+   "アイデア",
+   "汎用",
+   "女子"
+  ],
+  "img": "img/chu_098_hirameki_girl.jpg",
+  "thumb": "img/chu_098_hirameki_girl_thumb.jpg",
+  "mono": "img/chu_098_hirameki_girl_mono.jpg"
+ },
+ {
+  "id": "chu_099_komaru_boy",
+  "title": "中学生・困っている男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "うまくいかず困る男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "うまくいかず困る男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "困る",
+   "悩み",
+   "汎用",
+   "男子"
+  ],
+  "img": "img/chu_099_komaru_boy.jpg",
+  "thumb": "img/chu_099_komaru_boy_thumb.jpg",
+  "mono": "img/chu_099_komaru_boy_mono.jpg"
+ },
+ {
+  "id": "chu_101_ojigi_girl",
+  "title": "中学生・ていねいにおじぎする女子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "あいさつ",
+  "scenes": [
+   "深くおじぎする女子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "深くおじぎする女子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "おじぎ",
+   "あいさつ",
+   "汎用",
+   "女子"
+  ],
+  "img": "img/chu_101_ojigi_girl.jpg",
+  "thumb": "img/chu_101_ojigi_girl_thumb.jpg",
+  "mono": "img/chu_101_ojigi_girl_mono.jpg"
+ },
+ {
+  "id": "chu_102_annai_boy",
+  "title": "中学生・こちらへどうぞと案内する男子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "あいさつ",
+  "scenes": [
+   "案内のジェスチャーをする男子"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "案内のジェスチャーをする男子。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "案内",
+   "ジェスチャー",
+   "汎用",
+   "男子"
+  ],
+  "img": "img/chu_102_annai_boy.jpg",
+  "thumb": "img/chu_102_annai_boy_thumb.jpg",
+  "mono": "img/chu_102_annai_boy_mono.jpg"
+ },
+ {
+  "id": "chu_103_hakushu_pair",
+  "title": "中学生・拍手する男女",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "気持ち",
+  "scenes": [
+   "あたたかく拍手する男女"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "あたたかく拍手する男女。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "拍手",
+   "称賛",
+   "汎用",
+   "男女"
+  ],
+  "img": "img/chu_103_hakushu_pair.jpg",
+  "thumb": "img/chu_103_hakushu_pair_thumb.jpg",
+  "mono": "img/chu_103_hakushu_pair_mono.jpg"
+ },
+ {
+  "id": "chu_105_stand_pair",
+  "title": "中学生・並んで立つ男女（あいさつ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "汎用ポーズ",
+  "grade": "中1〜中3",
+  "unit": "基本",
+  "scenes": [
+   "並んで立つ男女ペア"
+  ],
+  "uses": [
+   "ワークシート",
+   "スライド",
+   "学級通信",
+   "掲示物"
+  ],
+  "description": "並んで立つ男女ペア。輪郭線なしのフラットイラスト。制服は紺ブレザー×えんじのシリーズ共通デザインなので、他の中学生素材と組み合わせても同じ学校の場面になります。",
+  "howto": "白背景のまま紙面やスライドに置けます。文字やふきだしは紙面側で重ねてください。",
+  "tags": [
+   "中学生",
+   "制服",
+   "ブレザー",
+   "立ち姿",
+   "基本",
+   "汎用",
+   "男女"
+  ],
+  "img": "img/chu_105_stand_pair.jpg",
+  "thumb": "img/chu_105_stand_pair_thumb.jpg",
+  "mono": "img/chu_105_stand_pair_mono.jpg"
  }
 ];
