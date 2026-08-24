@@ -1,0 +1,26 @@
+{
+  "name": "School Stock ── 先生のための、無料の道具と教材の棚",
+  "short_name": "School Stock",
+  "description": "現役の教員がつくる、授業のイラスト・写真素材とプリント、校務の道具のおすそ分け。完成品は、いつも無料です。",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "/School_Stock/?src=app",
+  "scope": "/School_Stock/",
+  "id": "/School_Stock/",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#ffffff",
+  "theme_color": "#0e0f11",
+  "categories": ["education"],
+  "icons": [
+    { "src": "/School_Stock/assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/School_Stock/assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/School_Stock/assets/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ],
+  "shortcuts": [
+    { "name": "教科のプリント", "short_name": "プリント", "url": "/School_Stock/prints/?src=app-shortcut" },
+    { "name": "授業の素材", "short_name": "素材", "url": "/School_Stock/sozai/?src=app-shortcut" },
+    { "name": "気になる子の支援", "short_name": "支援", "url": "/School_Stock/shien/?src=app-shortcut" },
+    { "name": "先生の相談窓口", "short_name": "相談", "url": "/School_Stock/soudan/?src=app-shortcut" }
+  ]
+}

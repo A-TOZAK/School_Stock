@@ -34,6 +34,11 @@
   .ig-btn { display:inline-flex; align-items:center; color:#b9bcc2; }
   .ig-btn:hover { color:#fff; }
   .ig-btn svg { width:19px; height:19px; display:block; }
+  .x-btn { display:inline-flex; align-items:center; color:#b9bcc2; }
+  .x-btn:hover { color:#fff; }
+  .x-btn svg { width:17px; height:17px; display:block; }
+  /* 320px級の古い端末では、トップバーが詰まって MENU が画面の外へ出るので隠す（実測：必要な幅349px）*/
+  @media (max-width:349px){ .x-btn { display:none; } }
   .menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
   .drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
   .drawer.open { transform:none; }
@@ -133,6 +138,9 @@
   .foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:6px; font-size:11.5px; }
   .ico { width:1em; height:1em; vertical-align:-0.15em; margin-right:5px; flex:none; }
 </style>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<meta name="apple-mobile-web-app-title" content="School Stock">
 </head>
 <body>
 
@@ -151,6 +159,7 @@
     </div>
     <div class="topbar-end">
     <a class="ig-btn" href="https://www.instagram.com/schoolstock_lifewith/" target="_blank" rel="noopener" aria-label="School Stock の Instagram（新しいタブで開きます）" title="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg></a>
+    <a class="x-btn" href="https://x.com/Tozaki_edu" target="_blank" rel="noopener" aria-label="外﨑顯博の X（新しいタブで開きます）" title="X"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.6l-4.39-5.74L6.74 21H3.72l7.06-8.06L2.5 3h5.74l4.1 5.4zm-1.06 16.2h1.67L7.6 4.71H5.81z"/></svg></a>
     <button class="menu-btn" id="menuBtn" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer"><span>≡</span>MENU</button>
     </div>
   </div>
@@ -221,6 +230,7 @@
     <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば ↗<small>GEG Fukuoka City のGem集</small></a>
     <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗<small>制作の裏側・実践記事</small></a>
     <a href="https://www.instagram.com/schoolstock_lifewith/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>Instagram ↗<small>新しい教材のお知らせ・使い方</small></a>
+    <a href="https://x.com/Tozaki_edu" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.6l-4.39-5.74L6.74 21H3.72l7.06-8.06L2.5 3h5.74l4.1 5.4zm-1.06 16.2h1.67L7.6 4.71H5.81z"/></svg>X ↗<small>日々の実践と気づき</small></a>
   </nav>
 </aside>
 
@@ -885,6 +895,7 @@
         <a href="https://sites.google.com/view/gegfukuokacity/library/gem%E3%81%B2%E3%82%8D%E3%81%B0" target="_blank" rel="noopener">Gemひろば（GEG Fukuoka City）↗</a>
         <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
         <a href="https://www.instagram.com/schoolstock_lifewith/" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.3" fill="currentColor" stroke="none"/></svg>Instagram ↗</a>
+        <a href="https://x.com/Tozaki_edu" target="_blank" rel="noopener"><svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.53 3h3.02l-6.6 7.54L21.75 21h-5.6l-4.39-5.74L6.74 21H3.72l7.06-8.06L2.5 3h5.74l4.1 5.4zm-1.06 16.2h1.67L7.6 4.71H5.81z"/></svg>X ↗</a>
       </div>
     </div>
     <div class="foot-c">© School Stock（外﨑顯博 / 小学校）　/　<a href="about/terms.html">利用規約</a></div>
