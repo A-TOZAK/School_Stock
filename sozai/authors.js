@@ -30,6 +30,6 @@ const AUTHORS = {
  },
  "innami": {
   "romaji": "Innami",
-  "count": 1
+  "count": 3
  }
 };

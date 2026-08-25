@@ -40351,5 +40351,65 @@ const SOZAI = [
   "img": "img/s3_084_sensei_yomikikase.jpg",
   "thumb": "img/s3_084_sensei_yomikikase_thumb.jpg",
   "mono": "img/s3_084_sensei_yomikikase_mono.jpg"
+ },
+ {
+  "id": "sashie_enpitsu_01",
+  "title": "算数の文章題挿絵・えんぴつ（1本）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "えんぴつ1本（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物"
+  ],
+  "description": "文章題用のスポット挿絵。1個だけ描く方式（レーンS）。個数を絵に描き込まず、紙面側（LaTeXの\\sashiegroup等）で必要な数だけ並べるため、問題文の数と絵の数が食い違うことが起きない。白黒コピーでも読める線画。",
+  "howto": "そのまま紙面に置き、必要な数だけ横に並べて使ってください。塗る場合は線の中だけ塗ります。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "えんぴつ",
+   "1個だけの絵",
+   "白黒対応"
+  ],
+  "img": "img/sashie_enpitsu_01.jpg",
+  "thumb": "img/sashie_enpitsu_01_thumb.jpg",
+  "mono": "img/sashie_enpitsu_01_mono.jpg"
+ },
+ {
+  "id": "sashie_ball_01",
+  "title": "算数の文章題挿絵・ボール（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "ボール1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物"
+  ],
+  "description": "文章題用のスポット挿絵。1個だけ描く方式（レーンS）。個数を絵に描き込まず、紙面側（LaTeXの\\sashiegroup等）で必要な数だけ並べるため、問題文の数と絵の数が食い違うことが起きない。白黒コピーでも読める線画。",
+  "howto": "そのまま紙面に置き、必要な数だけ横に並べて使ってください。塗る場合は線の中だけ塗ります。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "ボール",
+   "1個だけの絵",
+   "白黒対応"
+  ],
+  "img": "img/sashie_ball_01.jpg",
+  "thumb": "img/sashie_ball_01_thumb.jpg",
+  "mono": "img/sashie_ball_01_mono.jpg"
  }
 ];
