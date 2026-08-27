@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>画像生成とスライドのプロンプト集｜School Stock</title>
+<meta name="description" content="授業で使う画像の生成・学級開きや単元導入のスライド・難しい資料の説明。コピーしてそのまま使える13本。GeminiとGemini Notebook前提。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#1866b2; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:760px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:40px 0 8px; }
+  .h2note { font-size:13.5px; color:var(--sub); margin-bottom:16px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  .pr { background:var(--wash); border:1px solid var(--line); margin:0 0 18px; }
+  .pr .ph { display:flex; justify-content:space-between; align-items:center; gap:10px; padding:10px 16px; border-bottom:1px solid var(--line); }
+  .pr .ph b { font-size:13.5px; color:var(--ink); }
+  .pr pre { font-family:inherit; font-size:13.5px; line-height:1.95; padding:14px 18px; white-space:pre-wrap; word-break:break-word; }
+  .copy { font-weight:700; font-size:12px; color:var(--accent); background:#fff; border:1px solid var(--accent); border-radius:4px; padding:3px 12px; cursor:pointer; flex:none; }
+  .copy:hover { background:var(--accent); color:#fff; }
+  .copy.done { border-color:#0e8a6d; color:#0e8a6d; background:#fff; }
+  .tip { background:#eef4fb; border:1px solid #c3d8ec; padding:14px 18px; margin:20px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:#fff; background:var(--black); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+</style>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../#ai">← AI活用（プロンプト集）にもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../">棚</a> ／ <a href="../#ai">AI活用（プロンプト集）</a> ／ 画像生成とスライド</div>
+
+  <span class="kicker">AI活用｜画像生成とスライド</span>
+  <h1>画像生成とスライドのプロンプト集</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 全13本 ／ GeminiとGemini Notebook前提 ／ 費用：無料</p>
+
+  <p class="lead">授業で使う画像を作る、学級開きや単元導入のスライドを組む、難しい資料を相手に届く言葉に直す。この3つの場面のプロンプトです。【　】の中だけ自分の教室の言葉に差し替えてください。打たずに、マイクでしゃべって伝えても通じます。そもそもプロンプトとは、AIへの頼みごとの文のことです。何を頼めばいいか分からないときは、まず0番をどうぞ。</p>
+
+  <h2>まずこれ</h2>
+  <p class="h2note">やりたいことを言うと、AIがプロンプトに直してくれます。</p>
+
+  <div class="pr"><div class="ph"><b>0　プロンプトを作るプロンプト</b><button class="copy">コピー</button></div>
+  <pre>やりたいこと：【学級開きで使うスライドを作りたい】
+
+これを、AIへの頼みごとの文（プロンプト）にしてください。
+足りない情報があれば、先に私に質問してください。
+できたプロンプトは、そのままコピーして使える形で出してください。</pre></div>
+
+  <div class="tip"><b>画像を頼むときの型：</b>場面（どこで・だれが・何を）／画風（水彩・写真ふう・やさしいイラスト）／使い先（スライドの背景・プリントの挿絵）／比率（スライド=16:9・A4印刷=4:3・アイコン挿絵=1:1）／文字は入れない（文字はスライド側で乗せる）。この5つを入れると当たりが早く出ます。</div>
+
+  <h2>画像生成（Gemini）</h2>
+  <p class="h2note">AIはまだ絵が下手です。よく見るとおかしいところがある。それを逆手に取るプロンプトも入れています。</p>
+
+  <div class="pr"><div class="ph"><b>1　単元導入の1枚（場面ドン）</b><button class="copy">コピー</button></div>
+  <pre>画像を作ってください。
+
+場面：【朝の川原。増水した川が茶色くにごって流れている】
+画風：【写真のようにリアルに】
+使い先：授業のスライドの背景
+比率：16:9
+画像の中に文字は入れないでください。</pre></div>
+
+  <div class="pr"><div class="ph"><b>2　わざと突っ込みどころのある絵（おかしいところ探し）</b><button class="copy">コピー</button></div>
+  <pre>画像を作ってください。
+
+場面：【体育館に開設された避難所。人が過ごしている】
+ねらい：【4年生】が「おかしいところ」を見つける教材にしたいので、
+【通路がない・水や毛布が見当たらない・間仕切りがない】など、
+足りないようすをわざと入れてください。
+画風：やさしいイラスト
+比率：16:9
+画像の中に文字は入れないでください。</pre></div>
+
+  <div class="pr"><div class="ph"><b>3　プリントの挿絵（1:1）</b><button class="copy">コピー</button></div>
+  <pre>画像を作ってください。
+
+場面：【虫めがねで花を観察している子どもの手元】
+画風：シンプルでやさしいイラスト。背景は白
+使い先：プリントのすみに入れる小さな挿絵
+比率：1:1
+画像の中に文字や数字は入れないでください。</pre></div>
+
+  <div class="pr"><div class="ph"><b>4　A4掲示物の背景（4:3）</b><button class="copy">コピー</button></div>
+  <pre>画像を作ってください。
+
+場面：【教室の背面掲示にする、秋の野原のおだやかな風景】
+画風：水彩。色はうすく、上に文字を書けるように全体を淡く
+使い先：A4横で印刷する掲示物の背景
+比率：4:3
+画像の中に文字は入れないでください。</pre></div>
+
+  <div class="pr"><div class="ph"><b>5　写真ふうの資料画像</b><button class="copy">コピー</button></div>
+  <pre>画像を作ってください。
+
+場面：【スーパーの野菜売り場。産地の札がついた棚の前】
+画風：写真のようにリアルに。ただし実在の店名やロゴは入れない
+使い先：社会科の資料として提示するスライド
+比率：16:9
+画像の中に読める文字は入れないでください。</pre></div>
+
+  <h2>スライドづくり（Gemini・Gemini Notebook）</h2>
+  <p class="h2note">出てきた下書きは、1枚に1つ・大きく少なく・色は3つまで、で仕上げると教室に届きます。</p>
+
+  <div class="pr"><div class="ph"><b>6　学級開き「大切にしたいこと」の構成</b><button class="copy">コピー</button></div>
+  <pre>あなたは小学校の学級経営が得意な先生です。
+2学期の学級開きで使うスライドの構成を考えてください。
+
+伝えたいこと：【あいさつは自分から。教室を安心できる場所にしたい】
+学年：【4年生】
+時間：学活のはじめの【10分】
+
+条件：
+・スライドは6枚まで。1枚に伝えることは1つ
+・子どもに問いかける枚を1枚入れる
+
+出力形式：
+各スライドの「見出し」「入れる画像のイメージ」「先生がしゃべること」を分けて書く</pre></div>
+
+  <div class="pr"><div class="ph"><b>7　単元導入スライド（写真ドン＋問い）</b><button class="copy">コピー</button></div>
+  <pre>あなたは小学校【4年】【社会科】の授業づくりが得意な先生です。
+【水害からくらしを守る】の単元の導入スライドを考えてください。
+
+条件：
+・スライドは3枚まで（表紙・写真1枚と問い・見通し）
+・問いは1つだけ。子どもが「あれ？」「なんで？」と言いたくなるもの
+・見せる写真や絵のイメージも具体的に書く
+
+出力形式：
+スライドごとに「画面に出すもの」「問い・文言」「先生がしゃべること」を分けて書く</pre></div>
+
+  <div class="pr"><div class="ph"><b>8　授業の流れ・指示スライドの文言</b><button class="copy">コピー</button></div>
+  <pre>【3年生】に見せる「やることスライド」の文言を作ってください。
+
+活動：【グループで昆虫の観察カードをまとめる。20分】
+
+条件：
+・やることは3つまで。1つずつ動詞で短く（例：「しらべる」「くらべる」）
+・その学年の子が読める言葉と漢字で
+・最後に「おわったら」の指示を1行
+
+出力形式：スライドにそのまま貼れる箇条書き</pre></div>
+
+  <div class="pr"><div class="ph"><b>9　ルール説明スライド（Gemini Notebook）</b><button class="copy">コピー</button></div>
+  <pre>（年間指導計画や指導資料をソースに入れてから）
+
+渡した資料をもとに、【体育「バスケットボール型ゲーム」】の
+ルール説明スライドを作ってください。
+
+条件：
+・【4年生】に伝わる言葉で
+・ルールは3つにしぼり、1枚に1つ
+・【28】人の学級で試合をする前提で、チーム分けの目安も1枚
+
+できたらPowerPoint形式でダウンロードして、Googleスライドで仕上げます。</pre></div>
+
+  <h2>解説系（難しい資料をやさしく）</h2>
+  <p class="h2note">Gemini Notebookに資料を渡してから使うと、渡した資料の中だけから答えるので安心です。Geminiに資料を添付しても使えます。</p>
+
+  <div class="pr"><div class="ph"><b>10　保護者向けにやさしく</b><button class="copy">コピー</button></div>
+  <pre>渡した資料を、【保護者】に伝わる言葉でまとめ直してください。
+
+条件：
+・A4半分くらいの長さ
+・専門用語はふつうの言葉に言いかえる。
+　言いかえられないものは（　）で短く説明
+・「結局なにをすればいいか」を最後に3つの箇条書きで</pre></div>
+
+  <div class="pr"><div class="ph"><b>11　子ども向けにやさしく（学年指定）</b><button class="copy">コピー</button></div>
+  <pre>渡した資料の【◯◯についての部分】を、【4年生】に説明する文章に
+書き直してください。
+
+条件：
+・その学年で習っていない漢字はひらがなに
+・1文は短く。たとえ話を1つ入れる
+・最後に「たしかめクイズ」を3問（答えつき）</pre></div>
+
+  <div class="pr"><div class="ph"><b>12　自分用に要点整理（単元の見通し）</b><button class="copy">コピー</button></div>
+  <pre>渡した年間指導計画と資料をもとに教えてください。
+
+・【体育「バスケットボール型ゲーム」】の単元で、
+　いちばん大事にすることは何ですか
+・第1時で子どもに持たせたい「見通し」を、
+　子どもに話す言葉で書いてください
+・単元を通してよくあるつまずきと、手立てを2つずつ</pre></div>
+
+  <div class="tip"><b>使うときの約束：</b>出てきた内容は、必ず自分の目で確かめてから使ってください。教科書の紙面や市販教材の画像をAIに渡さないこと。児童生徒の名前や、学校の中だけの情報を打ちこまないこと。</div>
+
+  <p>授業設計そのもの（単元の計画・発問・評価・つまずき）のプロンプトは、学年と教科から引ける <a href="es.html">小学校 プロンプト集</a> にあります。</p>
+
+  <a class="back" href="../#ai">← AI活用（プロンプト集）の棚にもどる</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../">棚トップ</a>　/　<a href="es.html">小学校 プロンプト集</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+<script>
+document.querySelectorAll('.copy').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    const pre=btn.closest('.pr').querySelector('pre');
+    navigator.clipboard.writeText(pre.textContent).then(()=>{
+      btn.textContent='コピーしました'; btn.classList.add('done');
+      setTimeout(()=>{ btn.textContent='コピー'; btn.classList.remove('done'); },1800);
+    });
+  });
+});
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>教師のスライドづくり 見た目の大原則5つ ── 実践アイデア｜School Stock</title>
+<meta name="description" content="きれいなスライドではなく、子どもの頭が動き出すスライドの話。3つの問い・大原則5つ・見くらべて分かるBefore/After・直しに使う3つの動詞。">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#0e8a6d; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --ng:#c05a2b; --ok:#33513f; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  h3 { font-size:15.5px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ol.big { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.big li { position:relative; padding:0 0 16px 46px; font-size:15px; }
+  ol.big li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  ol.big li b { display:block; }
+  .cmp { display:grid; grid-template-columns:1fr 1fr; gap:14px; margin:18px 0 6px; }
+  @media(max-width:600px){ .cmp{grid-template-columns:1fr} }
+  .cmp figure { margin:0; }
+  .cmp .frame { border:1px solid var(--line); padding:6px; background:#fff; }
+  .cmp svg { display:block; width:100%; height:auto; }
+  .cmp .tag { display:inline-block; font-size:12px; font-weight:700; padding:2px 10px; border:1px solid var(--line); margin-bottom:8px; }
+  .cmp .tag.bad { color:var(--ng); border-color:var(--ng); }
+  .cmp .tag.ok { color:var(--ok); border-color:var(--ok); }
+  .cmp figcaption { font-size:13px; color:#3d4148; margin-top:8px; line-height:1.8; }
+  .tip { background:#f2faf7; border:1px solid #bfe3d6; padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:#fff; background:var(--black); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+  .d-label { font-family:inherit; font-weight:700; }
+  .d-mono { font-family:Georgia,serif; }
+</style>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← 実践アイデアにもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+  <div class="crumb"><a href="../../">棚</a> ／ <a href="../">実践アイデア</a> ／ 教材の畑</div>
+
+  <span class="kicker">授業づくり｜スライド</span>
+  <h1>教師のスライドづくり 見た目の大原則5つ</h1>
+  <p class="meta">作：外﨑顯博 / 小学校 ／ 読む時間：5分 ／ 使うもの：GoogleスライドかPowerPoint ／ 費用：無料</p>
+
+  <p class="lead">きれいなスライドを作る話ではありません。この1枚で、子どもの頭に何が起きてほしいか。それを決めてから作ると、スライドは薄く、短く、そして効くようになります。校内研修で話している内容を、読み物の形にまとめました。</p>
+
+  <h2>つくる前に3つだけ自分に聞く</h2>
+  <ol class="big">
+    <li><b>誰が見る？</b>教室のいちばん後ろの席の子です。その子に読める字の大きさが、そのクラスの最小サイズになります。</li>
+    <li><b>どの場面で使う？</b>説明・指示・発問のどれかをはっきりさせます。1枚に全部を入れると、どれも伝わらなくなります。</li>
+    <li><b>見たあと、何をしてほしい？</b>考える・話す・動く。子どもの次の動きが決まっていない1枚は、なくても授業が進みます。</li>
+  </ol>
+  <p>言いかえると、しゃべることまでスライドに全部書かない、ということです。文字を読ませながら話を聞かせると、子どもはどちらも半分しか受け取れません。見せるものは見せる、話すことは話す。役割分担が基本です。</p>
+
+  <h2>教室で効く見た目の大原則5つ</h2>
+  <ol class="big">
+    <li><b>1枚に1つ</b>1スライド1メッセージ。言いたいことが2つあるなら、2枚に分ける。</li>
+    <li><b>大きく少なく</b>目安は28pt以上・1枚6行まで。後ろの席に届かない字は、ない字と同じ。</li>
+    <li><b>そろえる</b>位置・フォント・字の大きさをそろえる。そろえるだけで「読みやすい」が生まれる。</li>
+    <li><b>色は3つまで</b>地の色・文字の色・強調の色。強調は1枚に1か所だけ効く。</li>
+    <li><b>飾らない勇気</b>内容と関係のないイラスト・アニメは、子どもの注意を持っていく。迷ったら消す。</li>
+  </ol>
+
+  <h2>くらべると一目でわかる</h2>
+  <p>学級のルールを伝える場面で見くらべてください。左が「がんばって作ったけれど微妙」な例、右が同じ場面の「効く」例です。</p>
+
+  <div class="cmp">
+    <figure>
+      <span class="tag bad">微妙な例</span>
+      <div class="frame">
+        <svg viewBox="0 0 640 360" role="img" aria-label="やくそくが8つ並んだスライドの例">
+          <rect x="0" y="0" width="640" height="360" fill="#ffffff"/>
+          <rect x="0" y="0" width="640" height="52" fill="#ff7875"/>
+          <text x="320" y="34" font-size="22" font-weight="bold" fill="#ffffff" text-anchor="middle" class="d-label">2学期の学級のやくそくについて</text>
+          <g font-size="14.5" fill="#333333" class="d-label">
+            <text x="28" y="84">① ろうかは右がわを歩きましょう</text>
+            <text x="28" y="117">② チャイムの前に席につきましょう</text>
+            <text x="28" y="150">③ あいさつは自分からしましょう</text>
+            <text x="28" y="183">④ わすれ物をしたらすぐ先生に言いましょう</text>
+            <text x="28" y="216">⑤ そうじは時間いっぱいがんばりましょう</text>
+            <text x="28" y="249">⑥ 友だちのよいところを見つけましょう</text>
+            <text x="28" y="282" fill="#cf1322" font-weight="bold">⑦ タブレットはルールを守って使いましょう！！</text>
+            <text x="28" y="315">⑧ 話している人の方を見て聞きましょう</text>
+          </g>
+          <g transform="translate(575,300)">
+            <path d="M 0 -26 L 23 14 L -23 14 Z" fill="#fff566" stroke="#d4b106" stroke-width="3"/>
+            <text x="0" y="9" font-size="20" font-weight="bold" text-anchor="middle" fill="#874d00" class="d-label">!</text>
+          </g>
+          <rect x="0" y="0" width="640" height="360" fill="none" stroke="#e6e6e3"/>
+        </svg>
+      </div>
+      <figcaption><b>8つ全部でゼロ。</b>一度に8つ見せると、子どもはどれも自分ごとにできない。⑦だけ赤くしても、もう目は疲れている。</figcaption>
+    </figure>
+    <figure>
+      <span class="tag ok">効く例</span>
+      <div class="frame">
+        <svg viewBox="0 0 640 360" role="img" aria-label="やくそくを1枚に1つだけ示したスライドの例">
+          <rect x="0" y="0" width="640" height="360" fill="#ffffff"/>
+          <text x="95" y="235" font-size="150" fill="#2b5fd9" text-anchor="middle" class="d-mono" font-weight="bold">1</text>
+          <line x1="185" y1="80" x2="185" y2="280" stroke="#e6e6e3" stroke-width="2"/>
+          <g fill="#15181c" class="d-label" font-weight="bold">
+            <text x="225" y="165" font-size="42">チャイムの前に</text>
+            <text x="225" y="225" font-size="42">すわる</text>
+          </g>
+          <text x="225" y="270" font-size="16" fill="#767b83" class="d-label">2学期も つづける やくそく（ぜんぶで3つ）</text>
+          <rect x="0" y="0" width="640" height="360" fill="none" stroke="#e6e6e3"/>
+        </svg>
+      </div>
+      <figcaption><b>1枚に1つ、3枚に分ける。</b>ルールは絞って1枚ずつ。数字を大きく置くと「あといくつ」も伝わる。読み上げず、子どもに読ませて確かめる。</figcaption>
+    </figure>
+  </div>
+
+  <p>直しに使ったのは「センス」ではありません。<strong>減らした</strong>（1枚に1つ）・<strong>大きくした</strong>（後ろの席へ）・<strong>そろえた</strong>（色と位置）。この3つの動詞だけです。</p>
+
+  <div class="tip"><b>根拠が気になる先生へ：</b>認知心理学者メイヤーの「マルチメディア学習」の研究がもとになっています。文字と音声で同じ内容を同時に流すと学習が落ちる、関係のない装飾は学習を妨げる、といった知見です。</div>
+
+  <h2>AIが下書きを作る時代の仕上げの仕事</h2>
+  <p>GeminiやGemini Notebookは、スライドの下書きをかなりの速さで作ってくれるようになりました。だからこそ、仕上げの仕事がはっきりしました。出てきた下書きに、減らす・大きくする・そろえるの3つの動詞をかけて、教室に持っていくことです。下書きはAI、仕上げの判断は先生。この分担で、スライドづくりは授業づくりの時間になります。</p>
+  <p>スライドや画像をAIに頼むときのプロンプトは、<a href="../../ai/gazo-slide.html">画像生成とスライドのプロンプト集</a>にまとめています。</p>
+
+  <a class="back" href="../">← 実践アイデアで他のレシピを見る</a>
+</div>
+
+<footer class="foot">
+  <div class="foot-in">
+    <b style="color:#fff; letter-spacing:0.26em; font-size:12px;">SCHOOL STOCK</b><br>
+    <a href="../../">棚トップ</a>　/　<a href="../">実践アイデア</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a><br>
+    © School Stock（外﨑顯博 / 小学校）／ GEG Chikuho
+  </div>
+</footer>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>

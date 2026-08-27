@@ -85,7 +85,7 @@
   .path { display:flex; flex-direction:column; gap:5px; border:1px solid var(--ink); padding:16px 18px 14px; color:inherit; transition:box-shadow .15s; }
   .path:hover { box-shadow:4px 4px 0 var(--ink); }
   .path b { font-size:15.5px; letter-spacing:0; line-height:1.5; }
-  .path span { font-size:11.5px; color:var(--sub); line-height:1.7; flex:1; word-break:keep-all; }
+  .path span { font-size:11.5px; color:var(--sub); line-height:1.7; flex:1; word-break:auto-phrase; }
   .path .go { font-size:12px; font-weight:700; color:var(--accent); margin-top:4px; }
   .shelf { display:grid; grid-template-columns:repeat(auto-fill,minmax(280px,1fr)); gap:22px; }
   .item { display:flex; flex-direction:column; border:1px solid var(--ink); color:inherit; transition:box-shadow .15s; }
@@ -97,7 +97,7 @@
   .item .tag { align-self:flex-start; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:var(--black); padding:3px 10px; }
   .item h2 { font-size:19px; font-weight:700; margin:2px 0 0; }
   .item p { font-size:13.5px; line-height:1.85; color:#3d4148; flex:1; }
-  .item .meta { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-top:1px solid var(--line); padding-top:11px; margin-top:auto; font-size:12px; color:var(--sub); word-break:keep-all; }
+  .item .meta { display:flex; justify-content:space-between; align-items:baseline; gap:10px; border-top:1px solid var(--line); padding-top:11px; margin-top:auto; font-size:12px; color:var(--sub); word-break:auto-phrase; }
   .item .meta .go { font-size:12.5px; font-weight:700; color:var(--accent); white-space:nowrap; }
   .nw { white-space:nowrap; }
   .crossnote { margin-top:16px; font-size:12.5px; color:var(--sub); }
@@ -127,6 +127,15 @@
   .feature .fbtns a:hover { box-shadow:3px 3px 0 var(--ink); }
   .feature .fbtns a.solid:hover { box-shadow:3px 3px 0 var(--accent); }
   @media (max-width:760px){ .feature { grid-template-columns:1fr; } .feature .fimg { border-right:none; border-bottom:1px solid var(--ink); } }
+  .aie { border:1px solid var(--ink); background:var(--wash); margin-top:40px; padding:24px 26px 22px; }
+  .aie .aie-tag { display:inline-block; font-size:10.5px; font-weight:700; letter-spacing:0.14em; color:#fff; background:var(--black); padding:3px 10px; }
+  .aie h2 { font-size:20px; font-weight:700; margin:10px 0 6px; }
+  .aie p { font-size:13.5px; line-height:1.85; color:#3d4148; max-width:680px; word-break:auto-phrase; }
+  .aie-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
+  .aie-btns button { font-family:inherit; font-size:13px; font-weight:700; padding:10px 18px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer; transition:box-shadow .15s; }
+  .aie-btns button:hover { box-shadow:3px 3px 0 var(--ink); }
+  .aie-note { display:none; font-size:12.5px; color:var(--ink); border-top:1px solid var(--line); padding-top:12px; margin-top:14px; }
+  .aie-note.show { display:block; }
   .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
   .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
   .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
@@ -169,6 +178,7 @@
   <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
   <nav>
     <a href="./">棚トップ<small>School Stock の入り口</small></a>
+    <a href="#ai-erabi">教材えらびをAIに相談<small>ChatGPT・Gemini・Claude が棚の中からえらぶ</small></a>
     <div class="dr-sec">SOZAI｜授業の素材</div>
     <a href="sozai/">授業素材ライブラリ<small>スライド・プリント・おたよりに使えるイラストと写真 全837点</small></a>
     <a class="sub2" href="sozai/photo/">AIでつくった写真素材（99枚）</a>
@@ -248,6 +258,20 @@
 </section>
 
 <div class="container">
+
+  <section id="ai-erabi" aria-label="教材えらびをAIに相談">
+    <div class="aie">
+      <span class="aie-tag">はじめての方へ</span>
+      <h2>どれを使えばいいか迷ったら</h2>
+      <p>ふだん使っているAIに、教材えらびを相談できます。ボタンを押すと、この棚の一覧が入った相談文がコピーされて、新しいチャットが開きます。学年と教科を伝えると、合う教材をえらんでくれます。</p>
+      <div class="aie-btns">
+        <button type="button" data-ai-erabi="chatgpt">ChatGPTで相談する</button>
+        <button type="button" data-ai-erabi="gemini">Geminiで相談する</button>
+        <button type="button" data-ai-erabi="claude">Claudeで相談する</button>
+      </div>
+      <p class="aie-note" role="status"></p>
+    </div>
+  </section>
 
   <section id="map">
     <div class="shelf-head"><span class="sn">00</span><span class="sl">MAP｜棚の地図</span></div>
@@ -649,6 +673,16 @@
         </div>
       </a>
 
+      <a class="item" href="ai/gazo-slide.html">
+        <div class="thumb" style="background:#0e0f11; display:flex; align-items:center; justify-content:center;"><span style="color:#fff; font-weight:700; letter-spacing:0.1em; font-size:19px; text-align:center; line-height:1.7;">画像とスライド<br><span style="font-size:11px; color:#b9bcc2; letter-spacing:0.22em;">IMAGE / SLIDES</span></span></div>
+        <div class="b">
+          <span class="tag">場面別</span>
+          <h2>画像生成とスライドのプロンプト集</h2>
+          <p>授業で使う画像の生成、学級開きや単元導入のスライド、難しい資料をやさしく直す。3つの場面ぶんです。</p>
+          <span class="meta"><span>全13本</span><span class="go">ひらく →</span></span>
+        </div>
+      </a>
+
       <a class="item" href="ai/univ.html">
         <div class="thumb" style="background:#0e0f11; display:flex; align-items:center; justify-content:center;"><span style="color:#fff; font-weight:700; letter-spacing:0.1em; font-size:19px; text-align:center; line-height:1.7;">大学生<br><span style="font-size:11px; color:#b9bcc2; letter-spacing:0.22em;">UNIV / STUDENTS</span></span></div>
         <div class="b">
@@ -918,5 +952,6 @@
 <script src="/School_Stock/assets/counter-config.js"></script>
 <script src="/School_Stock/assets/counter.js" defer></script>
 <script src="/School_Stock/assets/soudan.js" defer></script>
+<script src="/School_Stock/assets/ai-erabi.js" defer></script>
 </body>
 </html>
