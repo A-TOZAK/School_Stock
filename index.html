@@ -134,6 +134,12 @@
   .aie-btns { display:flex; flex-wrap:wrap; gap:10px; margin-top:14px; }
   .aie-btns button { font-family:inherit; font-size:13px; font-weight:700; padding:10px 18px; border:1px solid var(--ink); background:var(--paper); color:var(--ink); cursor:pointer; transition:box-shadow .15s; }
   .aie-btns button:hover { box-shadow:3px 3px 0 var(--ink); }
+  .aie-btns button.copied { background:var(--black); color:#fff; border-color:var(--black); box-shadow:none; animation:aie-pop .35s ease; }
+  .aie-btns .chk { width:1em; height:1em; vertical-align:-0.12em; margin-right:7px; fill:none; stroke:currentColor; stroke-width:3; stroke-linecap:round; stroke-linejoin:round; }
+  .aie-btns .chk path { stroke-dasharray:24; stroke-dashoffset:24; animation:aie-draw .32s .08s ease forwards; }
+  @keyframes aie-pop { 0%{transform:scale(1)} 40%{transform:scale(1.07)} 100%{transform:scale(1)} }
+  @keyframes aie-draw { to{stroke-dashoffset:0} }
+  @media (prefers-reduced-motion:reduce){ .aie-btns button.copied{animation:none} .aie-btns .chk path{animation:none; stroke-dashoffset:0} }
   .aie-note { display:none; font-size:12.5px; color:var(--ink); border-top:1px solid var(--line); padding-top:12px; margin-top:14px; }
   .aie-note.show { display:block; }
   .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }

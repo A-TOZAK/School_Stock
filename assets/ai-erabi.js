@@ -153,26 +153,53 @@
     }
   };
 
-  function onClick(key) {
+  var CHECK_SVG = '<svg class="chk" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12.5l5 5L20 6.5"/></svg>';
+  var OPEN_DELAY = 750;   // 「コピーしました」を見せてから開くまで（Chromeのクリック有効期間5秒に十分収まる）
+
+  function onClick(key, btn) {
     var svc = SERVICES[key];
-    if (!svc) return;
+    if (!svc || btn.dataset.busy) return;
+    btn.dataset.busy = '1';
     var full = buildPrompt(true);    // クリップボード用（説明つき）
     var short = buildPrompt(false);  // URL用（子ページと説明を省いた軽い版）
     copyText(full);
     if (window.SS_BUMP) { try { window.SS_BUMP('cta:ai-erabi:' + key); } catch (e) {} }
+
+    var original = btn.innerHTML;
+    btn.innerHTML = CHECK_SVG + 'コピーしました';
+    btn.classList.add('copied');
     var note = document.querySelector('.aie-note');
     if (note) {
       note.textContent = svc.note;
       note.classList.add('show');
     }
-    window.open(svc.open(short), '_blank', 'noopener');
+
+    setTimeout(function () {
+      // noopener指定だと開けても null が返りブロック判定できないため、ここでは付けない
+      var w = window.open(svc.open(short), '_blank');
+      if (!w && note) {
+        // ポップアップがブロックされたときの予備リンク（クリックなら必ず開く）
+        note.textContent = svc.note + ' 自動で開かなかったときは → ';
+        var a = document.createElement('a');
+        a.href = svc.open(short);
+        a.target = '_blank';
+        a.rel = 'noopener';
+        a.textContent = svc.label + 'を開く';
+        note.appendChild(a);
+      }
+      setTimeout(function () {
+        btn.classList.remove('copied');
+        btn.innerHTML = original;
+        delete btn.dataset.busy;
+      }, 1400);
+    }, OPEN_DELAY);
   }
 
   function init() {
     var btns = document.querySelectorAll('[data-ai-erabi]');
     for (var i = 0; i < btns.length; i++) {
       (function (btn) {
-        btn.addEventListener('click', function () { onClick(btn.getAttribute('data-ai-erabi')); });
+        btn.addEventListener('click', function () { onClick(btn.getAttribute('data-ai-erabi'), btn); });
       })(btns[i]);
     }
   }
