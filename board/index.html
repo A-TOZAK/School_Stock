@@ -5,10 +5,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./favicon.svg" />
     <title>思考ツールボード | School Stock</title>
-    <script type="module" crossorigin src="./assets/index-D0YDb34I.js"></script>
-    <link rel="stylesheet" crossorigin href="./assets/index-DPMvKS6_.css">
+    <script type="module" crossorigin src="./assets/index-CR6ghnvV.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/index-BDFU9B0u.css">
   </head>
   <body>
-    <div id="root"></div>
+    <!-- JSが届くまでの白紙を避ける。Reactが立ち上がったら中身ごと差し替わる -->
+    <style>
+      #boot {
+        font-family: "Hiragino Sans", "Noto Sans JP", sans-serif;
+        color: #15181c;
+        text-align: center;
+        padding: 96px 20px;
+      }
+      #boot b {
+        display: block;
+        font-size: 22px;
+        letter-spacing: 0.04em;
+      }
+      #boot span {
+        display: block;
+        margin-top: 10px;
+        font-size: 13px;
+        color: #6b7077;
+      }
+    </style>
+    <div id="root">
+      <div id="boot">
+        <b>思考ツールボード</b>
+        <span>よみこみ中…</span>
+      </div>
+    </div>
+    <noscript>
+      <p style="text-align: center; padding: 40px 20px; font-family: sans-serif">
+        このページは JavaScript を使って動きます。ブラウザの設定でオンにしてから開いてください。
+      </p>
+    </noscript>
   </body>
 </html>
