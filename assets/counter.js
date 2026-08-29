@@ -20,17 +20,32 @@
   if (!SUPABASE_ANON_KEY || SUPABASE_ANON_KEY.indexOf("__SUPABASE") === 0) return;
   if (!("fetch" in window)) return;
 
+  // 日づけ別も貯めるか（_setup/counter-daily.sql を実行してから daily:true にする）。
+  // false のあいだは、これまでどおり合計だけを数える＝設定を触らなければ何も変わらない。
+  var useDaily = CFG.daily === true;
+
+  function post(fn, key) {
+    return fetch(SUPABASE_URL + "/rest/v1/rpc/" + fn, {
+      method: "POST",
+      headers: {
+        "apikey": SUPABASE_ANON_KEY,
+        "Authorization": "Bearer " + SUPABASE_ANON_KEY,
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({ k: key }),
+      keepalive: true   // ダウンロードで画面が切り替わっても送信を守る
+    });
+  }
+
   function bump(key) {
     try {
-      fetch(SUPABASE_URL + "/rest/v1/rpc/bump", {
-        method: "POST",
-        headers: {
-          "apikey": SUPABASE_ANON_KEY,
-          "Authorization": "Bearer " + SUPABASE_ANON_KEY,
-          "Content-Type": "application/json"
-        },
-        body: JSON.stringify({ k: key }),
-        keepalive: true   // ダウンロードで画面が切り替わっても送信を守る
+      if (!useDaily) { post("bump", key).catch(function () {}); return; }
+      // daily:true なのに SQL をまだ実行していない（bump2 が無い）なら、
+      // 一度だけ合計のほうへ戻す。設定の順番をまちがえても計測が落ちないように。
+      post("bump2", key).then(function (res) {
+        if (res && res.ok) return;
+        useDaily = false;
+        post("bump", key).catch(function () {});
       }).catch(function () {});
     } catch (e) { /* 計測はサイトの邪魔をしない */ }
   }

@@ -6,36 +6,98 @@
 <meta name="robots" content="noindex, nofollow">
 <title>アクセス集計（内部用）｜School Stock</title>
 <style>
-  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  :root {
+    --ink:#15181c; --sub:#6b7077; --faint:#9aa0a6; --accent:#2b5fd9; --paper:#fff;
+    --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11;
+    /* 2色だけの決まり：青＝見られた数（PV）／橙＝ダウンロード数（DL）。
+       ページのどこでも同じ意味で使う（色が意味を持つので、途中で入れかえない） */
+    --pv:#2b5fd9; --dl:#c2410c; --pv-soft:#e7edfb; --dl-soft:#fbeae1;
+  }
   * { margin:0; padding:0; box-sizing:border-box; }
-  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink); line-height:1.8; padding:0 0 60px; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif; background:var(--paper); color:var(--ink); line-height:1.8; padding:0 0 72px; -webkit-text-size-adjust:100%; }
   .topbar { background:var(--black); color:#fff; }
-  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; }
+  .topbar-in { max-width:1000px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:12px; }
   .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; }
   .wordmark small { font-weight:400; letter-spacing:0.1em; color:#b9bcc2; margin-left:10px; }
-  .container { max-width:960px; margin:0 auto; padding:0 24px; }
-  .head { padding:26px 0 10px; }
+  .container { max-width:1000px; margin:0 auto; padding:0 24px; }
+  .head { padding:26px 0 4px; }
   .kicker { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
   h1 { font-size:26px; font-weight:700; margin:6px 0 6px; }
   .lead { font-size:13.5px; color:var(--sub); }
-  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(150px,1fr)); gap:12px; margin:18px 0 8px; }
-  .kpi { border:1px solid var(--line); padding:16px 18px; }
-  .kpi .n { font-size:30px; font-weight:700; line-height:1.2; }
-  .kpi .l { font-size:12px; color:var(--sub); }
-  .cols { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:24px; }
-  @media (max-width:720px){ .cols { grid-template-columns:1fr; } }
-  h2 { font-size:15px; font-weight:700; margin:0 0 10px; padding-bottom:8px; border-bottom:2px solid var(--ink); }
-  .row { display:flex; align-items:center; gap:10px; padding:8px 0; border-bottom:1px solid var(--wash); }
-  .row .rank { font-size:12px; color:var(--sub); width:22px; font-weight:700; }
+
+  /* ── 見出し ── */
+  .sec { margin-top:34px; }
+  h2 { font-size:15px; font-weight:700; margin:0 0 4px; padding-bottom:8px; border-bottom:2px solid var(--ink); display:flex; align-items:baseline; gap:10px; }
+  h2 .h-note { font-size:11.5px; font-weight:400; color:var(--sub); letter-spacing:0; margin-left:auto; }
+  h3 { font-size:12.5px; font-weight:700; color:var(--sub); margin:0 0 6px; }
+
+  /* ── 数字カード ── */
+  .cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(148px,1fr)); gap:12px; margin:16px 0 0; }
+  .kpi { border:1px solid var(--line); padding:14px 16px; }
+  .kpi .n { font-size:28px; font-weight:700; line-height:1.25; letter-spacing:-0.01em; }
+  .kpi .n small { font-size:14px; font-weight:700; color:var(--sub); margin-left:2px; }
+  .kpi .l { font-size:11.5px; color:var(--sub); line-height:1.5; margin-top:2px; }
+  .kpi .s { font-size:11px; color:var(--faint); line-height:1.5; }
+
+  /* ── 一覧の行 ── */
+  .row { display:flex; align-items:center; gap:10px; padding:7px 0; border-bottom:1px solid var(--wash); }
+  .row .rank { font-size:11.5px; color:var(--faint); width:22px; font-weight:700; flex:none; text-align:right; font-variant-numeric:tabular-nums; }
   .row .thumb { width:44px; height:33px; object-fit:cover; background:var(--wash); border:1px solid var(--line); flex:none; }
-  .row .nm { font-size:13px; font-weight:700; flex:1; line-height:1.4; overflow:hidden; text-overflow:ellipsis; }
-  .row .nm small { display:block; font-size:10.5px; font-weight:400; color:var(--sub); }
-  .row .ct { font-size:14px; font-weight:700; white-space:nowrap; }
-  .note { font-size:12px; color:var(--sub); margin-top:12px; }
-  .setup { border:1px solid var(--line); background:var(--wash); padding:18px 20px; margin:22px 0; font-size:13.5px; }
+  .row .nm { font-size:13px; font-weight:700; flex:1; min-width:0; line-height:1.45; }
+  .row .nm span.t { display:block; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .row .nm small { display:block; font-size:10.5px; font-weight:400; color:var(--sub); overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .row .ct { font-size:13.5px; font-weight:700; white-space:nowrap; font-variant-numeric:tabular-nums; flex:none; }
+  .row .bar { flex:none; width:84px; height:6px; background:var(--wash); position:relative; }
+  .row .bar i { position:absolute; left:0; top:0; bottom:0; border-radius:0 3px 3px 0; }
+  .chip { display:inline-block; font-size:10px; font-weight:700; color:var(--sub); border:1px solid var(--line); padding:0 5px; border-radius:2px; margin-right:5px; vertical-align:1px; }
+
+  .cols { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:14px; }
+  .cols3 { display:grid; grid-template-columns:1fr 1fr; gap:26px; margin-top:14px; }
+  .cols > *, .cols3 > * { min-width:0; }   /* 中身の長さで枠を押し広げない */
+  @media (max-width:760px){ .cols, .cols3 { grid-template-columns:1fr; } }
+
+  /* ── 表 ── */
+  .tw { overflow-x:auto; }
+  .tw-wide table.grid { min-width:560px; }
+  table.grid { width:100%; border-collapse:collapse; font-size:12.5px; margin-top:12px; }
+  table.grid th { text-align:left; font-size:11px; color:var(--sub); font-weight:700; border-bottom:1px solid var(--line); padding:6px 8px 6px 0; white-space:nowrap; }
+  table.grid td { border-bottom:1px solid var(--wash); padding:6px 8px 6px 0; vertical-align:middle; }
+  table.grid td.num { text-align:right; font-variant-numeric:tabular-nums; white-space:nowrap; font-weight:700; }
+  table.grid td.mono { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:11px; color:var(--sub); word-break:break-all; }
+  table.grid .mini { height:6px; background:var(--wash); position:relative; min-width:60px; }
+  table.grid .mini i { position:absolute; left:0; top:0; bottom:0; border-radius:0 3px 3px 0; }
+
+  /* ── 日ごとのグラフ ── */
+  .chartbox { border:1px solid var(--line); padding:14px 16px 10px; }
+  .chartbox .cap { font-size:12px; font-weight:700; margin-bottom:2px; }
+  .chartbox .cap em { font-style:normal; font-weight:400; color:var(--sub); font-size:11px; margin-left:6px; }
+  .chartbox .plot { overflow:hidden; }
+  .chartbox svg { display:block; max-width:100%; }
+  .chartbox .bar-hit { fill:transparent; cursor:default; }
+  .chartbox g.b:hover .bar-hit { fill:rgba(0,0,0,0.035); }
+  .tick { font-size:10px; fill:var(--faint); }
+  .gridline { stroke:var(--line); stroke-width:1; }
+  .baseline { stroke:var(--ink); stroke-width:1; }
+  .tip { position:fixed; z-index:50; background:var(--black); color:#fff; font-size:11.5px; line-height:1.6; padding:6px 9px; pointer-events:none; opacity:0; transition:opacity .08s; white-space:nowrap; }
+  .tip b { font-size:13px; }
+
+  /* ── そのほか ── */
+  .filters { display:flex; flex-wrap:wrap; align-items:center; gap:8px; margin-top:12px; }
+  .btn { font:inherit; font-size:11.5px; font-weight:700; color:var(--sub); background:#fff; border:1px solid var(--line); padding:4px 10px; cursor:pointer; }
+  .btn:hover { border-color:var(--sub); color:var(--ink); }
+  .btn[aria-pressed="true"] { background:var(--ink); border-color:var(--ink); color:#fff; }
+  input.search { font:inherit; font-size:12.5px; padding:5px 9px; border:1px solid var(--line); width:min(280px,100%); }
+  .note { font-size:11.5px; color:var(--sub); margin-top:10px; line-height:1.7; }
+  .setup { border:1px solid var(--line); background:var(--wash); padding:16px 18px; margin:18px 0; font-size:13px; line-height:1.8; }
   .setup b { color:var(--ink); }
-  .setup code { background:#fff; border:1px solid var(--line); padding:1px 5px; font-size:12px; }
+  .setup code { background:#fff; border:1px solid var(--line); padding:1px 5px; font-size:11.5px; }
   .muted { color:var(--sub); }
+  .empty { font-size:12.5px; color:var(--sub); padding:10px 0; }
+  .stack { display:flex; height:26px; border:1px solid var(--line); margin-top:10px; gap:2px; padding:2px; }
+  .stack i { display:block; }
+  .legend { display:flex; flex-wrap:wrap; gap:14px; font-size:11.5px; color:var(--sub); margin-top:8px; }
+  .legend span { display:inline-flex; align-items:center; }
+  .legend i { display:inline-block; width:9px; height:9px; margin-right:5px; }
 </style>
 <link rel="manifest" href="/School_Stock/manifest.webmanifest">
 <meta name="theme-color" content="#0e0f11">
@@ -48,85 +110,510 @@
   <div class="head">
     <div class="kicker">STATS</div>
     <h1>どれだけ使われているか</h1>
-    <p class="lead">公開サイトのページ表示と、素材のダウンロード回数を集計しています（Cookie不使用・個人情報なし）。</p>
+    <p class="lead">公開サイトのページ表示と、配布物のダウンロード回数を集計しています（Cookie不使用・個人情報なし）。</p>
   </div>
 
-  <div id="app"></div>
+  <div id="app"><p class="empty">読み込んでいます…</p></div>
 </div>
+<div class="tip" id="tip"></div>
 
 <script src="/School_Stock/assets/counter-config.js"></script>
 <script src="/School_Stock/sozai/items.js"></script>
 <script>
 (function(){
-  var app=document.getElementById('app');
-  var CFG=window.SS_COUNTER||{};
-  var esc=function(s){return String(s||'').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');};
+"use strict";
 
-  if(!CFG.url || CFG.url.indexOf('__SUPABASE')===0){
-    app.innerHTML='<div class="setup"><b>まだ集計は始まっていません。</b><br>'
-      +'計測を始めるには、<code>assets/counter-config.js</code> に Supabase の2つの値（URL と anon key）を貼って push してください。'
-      +'手順は <code>_setup/counter-setup.md</code> にあります。値を貼ると、このページに数字が出ます。</div>';
-    return;
-  }
+var app = document.getElementById('app');
+var CFG = window.SS_COUNTER || {};
+var BASE = '/School_Stock/';
 
-  // 素材の src 末尾 → タイトル/サムネ の対応表
-  // items.js は「const SOZAI」で宣言されるため window には乗らない。字句スコープで直接参照する。
-  var LIST = (typeof SOZAI !== 'undefined' && Array.isArray(SOZAI)) ? SOZAI : [];
-  var bySrc={};
-  try{
-    LIST.forEach(function(it){
-      var base=(it.img||'').split('/').pop();
-      if(base) bySrc[base]={title:it.title, subject:it.subject, thumb:it.thumb};
-    });
-  }catch(e){}
+function esc(s){ return String(s==null?'':s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;'); }
+function n(x){ return (x||0).toLocaleString('ja-JP'); }
+function pct(a,b){ return b>0 ? (a/b*100) : 0; }
+function pct1(a,b){ return b>0 ? (Math.round(a/b*1000)/10) : 0; }
 
-  var PAGE_NAMES={
-    '/School_Stock/':'棚トップ',
-    '/School_Stock/sozai/':'授業素材ライブラリ',
-    '/School_Stock/stats/':'（この集計ページ）'
-  };
+// 設定前は、これまでどおり手順を出して終わり
+if(!CFG.url || CFG.url.indexOf('__SUPABASE')===0){
+  app.innerHTML='<div class="setup"><b>まだ集計は始まっていません。</b><br>'
+    +'計測を始めるには、<code>assets/counter-config.js</code> に Supabase の2つの値（URL と anon key）を貼って push してください。'
+    +'手順は <code>_setup/counter-setup.md</code> にあります。値を貼ると、このページに数字が出ます。</div>';
+  return;
+}
 
-  fetch(CFG.url+'/rest/v1/counts?select=key,n&order=n.desc&limit=2000',{
-    headers:{apikey:CFG.key, Authorization:'Bearer '+CFG.key}
-  }).then(function(r){return r.json();}).then(function(rows){
-    if(!Array.isArray(rows)){ app.innerHTML='<div class="setup">読み込みに失敗しました。キーやSQL設定を確認してください。</div>'; return; }
-    var pv=[], dl=[], totalPV=0, totalDL=0;
-    rows.forEach(function(x){
-      if(x.key.indexOf('pv:')===0){ pv.push([x.key.slice(3),x.n]); totalPV+=x.n; }
-      else if(x.key.indexOf('dl:')===0){ dl.push([x.key.slice(3),x.n]); totalDL+=x.n; }
-    });
-    pv.sort(function(a,b){return b[1]-a[1];});
-    dl.sort(function(a,b){return b[1]-a[1];});
-
-    var kpi='<div class="cards">'
-      +'<div class="kpi"><div class="n">'+totalPV.toLocaleString()+'</div><div class="l">ページ表示（のべ）</div></div>'
-      +'<div class="kpi"><div class="n">'+totalDL.toLocaleString()+'</div><div class="l">ダウンロード（のべ）</div></div>'
-      +'<div class="kpi"><div class="n">'+dl.length.toLocaleString()+'</div><div class="l">1回以上DLされた素材</div></div>'
-      +'</div>';
-
-    var dlRows=dl.slice(0,40).map(function(p,i){
-      var base=p[0].split('/').pop();
-      var m=bySrc[base];
-      var nm=m?esc(m.title):esc(base);
-      var sub=m?('<small>'+esc(m.subject)+'</small>'):'<small class="muted">'+esc(p[0])+'</small>';
-      var th=m&&m.thumb?'<img class="thumb" src="'+esc(m.thumb)+'" alt="">':'<span class="thumb"></span>';
-      return '<div class="row"><span class="rank">'+(i+1)+'</span>'+th+'<span class="nm">'+nm+sub+'</span><span class="ct">'+p[1]+'</span></div>';
-    }).join('') || '<p class="note">まだダウンロードがありません。</p>';
-
-    var pvRows=pv.slice(0,30).map(function(p,i){
-      var nm=PAGE_NAMES[p[0]]||p[0];
-      return '<div class="row"><span class="rank">'+(i+1)+'</span><span class="nm">'+esc(nm)+'<small class="muted">'+esc(p[0])+'</small></span><span class="ct">'+p[1]+'</span></div>';
-    }).join('') || '<p class="note">まだ表示がありません。</p>';
-
-    app.innerHTML=kpi
-      +'<div class="cols">'
-      +'<div><h2>よくダウンロードされた素材</h2>'+dlRows+'</div>'
-      +'<div><h2>よく見られたページ</h2>'+pvRows+'</div>'
-      +'</div>'
-      +'<p class="note">※ 集計は計測を始めてからの累計です。同じ人が同じページを何度も見た再読込は、同一セッション内では二重に数えません。</p>';
-  }).catch(function(){
-    app.innerHTML='<div class="setup">読み込みに失敗しました。ネットワークか、Supabaseの設定（SQL・RLS・キー）を確認してください。</div>';
+// ───────────────────────── 素材の名前とサムネ（sozai/items.js から）
+// items.js は「const SOZAI」で宣言されるため window には乗らない。字句スコープで直接参照する。
+var LIST = (typeof SOZAI !== 'undefined' && Array.isArray(SOZAI)) ? SOZAI : [];
+var bySrc = {};
+try{
+  LIST.forEach(function(it){
+    var base = (it.img||'').split('/').pop();
+    if(base) bySrc[base] = { title:it.title, subject:it.subject, thumb:it.thumb };
   });
+}catch(e){}
+
+// ───────────────────────── 流入元の目印 → 読める名前
+var SRC_NAMES = { x:'X（ポスト）', xa:'X（Articles）', note:'note の記事', ig:'Instagram',
+                  fb:'Facebook', line:'LINE', mail:'メール', qr:'QRコード', print:'紙の配布物' };
+
+var PAGEMAP = { sections:{}, pages:{} };
+
+// ───────────────────────── 住所 → 棚（セクション）
+function sectionOf(path){
+  var p = String(path||'');
+  if(p.indexOf(BASE)!==0) return '';
+  var rest = p.slice(BASE.length);
+  var i = rest.indexOf('/');
+  return i>0 ? rest.slice(0,i) : '';
+}
+function sectionName(sec){ return PAGEMAP.sections[sec] || (sec||'棚トップ'); }
+function pageName(path){
+  var m = PAGEMAP.pages[path];
+  if(m && m.t) return m.t;
+  if(path===BASE) return '棚トップ';
+  return path;
+}
+function fileName(path){ return String(path||'').split('/').pop() || path; }
+function extOf(path){
+  var m = /\.([a-z0-9]{1,5})(?:\?|#|$)/i.exec(String(path||''));
+  return m ? m[1].toLowerCase() : '';
+}
+function kindOf(path){
+  var e = extOf(path);
+  if(e==='pdf') return 'PDF（プリント等）';
+  if(e==='zip') return 'ZIP（まとめパック）';
+  if(['png','jpg','jpeg','webp','gif','svg'].indexOf(e)>=0) return '画像（授業素材）';
+  if(['mp4','webm','mov'].indexOf(e)>=0) return '動画';
+  if(e==='html') return 'HTML（道具の配布）';
+  return e ? ('その他（.'+e+'）') : 'その他';
+}
+
+// ───────────────────────── 部品
+function bar(width, color){
+  return '<span class="bar"><i style="width:'+Math.max(width,width>0?2:0)+'%;background:'+color+'"></i></span>';
+}
+function miniBar(width, color){
+  return '<span class="mini" style="display:block"><i style="width:'+Math.max(width,width>0?2:0)+'%;background:'+color+'"></i></span>';
+}
+function kpi(num, unit, label, sub){
+  return '<div class="kpi"><div class="n">'+num+(unit?'<small>'+unit+'</small>':'')+'</div>'
+    +'<div class="l">'+label+'</div>'+(sub?'<div class="s">'+sub+'</div>':'')+'</div>';
+}
+function legend(pairs){
+  return '<div class="legend">'+pairs.map(function(p){
+    return '<span><i style="background:'+p[0]+'"></i>'+esc(p[1])+'</span>';
+  }).join('')+'</div>';
+}
+function h2(title, note){
+  return '<h2>'+title+(note?'<span class="h-note">'+note+'</span>':'')+'</h2>';
+}
+
+// ───────────────────────── 読み込み（合計・ページ名・日ごと）
+function api(path){
+  return fetch(CFG.url+'/rest/v1/'+path, { headers:{ apikey:CFG.key, Authorization:'Bearer '+CFG.key } })
+    .then(function(r){ if(!r.ok) throw new Error(r.status); return r.json(); });
+}
+function daysAgo(k){
+  var d = new Date(Date.now() - k*86400000);
+  return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0');
+}
+
+Promise.all([
+  api('counts?select=key,n&order=n.desc&limit=5000'),
+  fetch('pagemap.json', {cache:'no-cache'}).then(function(r){ return r.ok ? r.json() : null; }).catch(function(){ return null; }),
+  api('counts_daily_summary?select=d,pv,dl&d=gte.'+daysAgo(120)+'&order=d.asc').catch(function(){ return null; })
+]).then(function(res){
+  var rows = res[0];
+  if(res[1]) PAGEMAP = res[1];
+  if(!Array.isArray(rows)) throw new Error('形式ちがい');
+  render(rows, Array.isArray(res[2]) ? res[2] : null);
+}).catch(function(){
+  app.innerHTML='<div class="setup">読み込みに失敗しました。ネットワークか、Supabaseの設定（SQL・RLS・キー）を確認してください。</div>';
+});
+
+// ───────────────────────── 組み立て
+function render(rows, daily){
+  var pv=[], dl=[], dev={}, src={}, other=[], totalPV=0, totalDL=0;
+
+  rows.forEach(function(x){
+    var k = String(x.key||''), v = Number(x.n)||0;
+    if(k.indexOf('pv:')===0){ pv.push([k.slice(3), v]); totalPV += v; }
+    else if(k.indexOf('dl:')===0){ dl.push([k.slice(3), v]); totalDL += v; }
+    else if(k.indexOf('dev:')===0){ dev[k.slice(4)] = v; }
+    else if(k.indexOf('src:')===0){ src[k.slice(4)] = v; }
+    else other.push([k, v]);
+  });
+  var byN = function(a,b){ return b[1]-a[1]; };
+  pv.sort(byN); dl.sort(byN);
+
+  var sp = dev.sp||0, pcv = dev.pc||0, devTotal = sp+pcv;
+  var srcRows = Object.keys(src).map(function(k){ return [k, src[k]]; }).sort(byN);
+  var srcTotal = srcRows.reduce(function(s,r){ return s+r[1]; }, 0);
+
+  var html = '';
+
+  // 1. 数字のまとめ
+  html += '<div class="sec">'+h2('全体の数字', 'はじめてからの累計')
+    + '<div class="cards">'
+    + kpi(n(totalPV), '', 'ページ表示（のべ）', pv.length+' ページが1回以上')
+    + kpi(n(totalDL), '', 'ダウンロード（のべ）', dl.length+' 点が1回以上')
+    + kpi(pct1(totalDL,totalPV), '%', '持ち帰り率', '表示100回あたり '+Math.round(pct(totalDL,totalPV))+' 回の保存')
+    + kpi(devTotal ? Math.round(pct(sp,devTotal)) : '—', devTotal?'%':'', 'スマホから', devTotal ? ('スマホ '+n(sp)+'／パソコン '+n(pcv)) : '計測データなし')
+    + kpi(n(srcTotal), '', '目印つきの訪問', srcTotal ? ('上位：'+(SRC_NAMES[srcRows[0][0]]||srcRows[0][0])) : '?from= のリンク経由')
+    + '</div></div>';
+
+  // 2. 日ごとの動き
+  html += '<div class="sec">'+h2('日ごとの動き', daily&&daily.length ? '日本時間の日づけ' : '')
+    + (daily && daily.length ? dailyBlock(daily) : dailySetupNote())
+    + '</div>';
+
+  // 3. 棚ごと
+  html += '<div class="sec">'+h2('棚ごとの成績', '表示の多い順')+sectionTable(pv, dl, totalPV, totalDL)+'</div>';
+
+  // 4. ランキング（ページ／ダウンロード）
+  html += '<div class="sec">'+h2('よく見られた・よく持ち帰られた', '上位20')
+    + '<div class="cols">'
+    + '<div><h3>ページ表示</h3>'+rankPages(pv, 20)+'</div>'
+    + '<div><h3>ダウンロード</h3>'+rankDownloads(dl, 20)+'</div>'
+    + '</div></div>';
+
+  // 5. ダウンロードの内訳
+  html += '<div class="sec">'+h2('ダウンロードの中身', 'のべ'+n(totalDL)+'回の内訳')
+    + '<div class="cols3">'
+    + '<div><h3>形式べつ</h3>'+groupTable(dl, kindOf, totalDL, 'var(--dl)')+'</div>'
+    + '<div><h3>棚べつ</h3>'+groupTable(dl, function(p){ return sectionName(sectionOf(p)); }, totalDL, 'var(--dl)')+'</div>'
+    + '</div></div>';
+
+  // 6. 流入元と端末
+  html += '<div class="sec">'+h2('どこから来て、何で見ているか')
+    + '<div class="cols">'
+    + '<div><h3>目印つきの流入元</h3>'+srcTable(srcRows, srcTotal)+'</div>'
+    + '<div><h3>画面のはば（端末）</h3>'+devBlock(sp, pcv, devTotal)+'</div>'
+    + '</div>'
+    + '<p class="note">※ 流入元は棚のリンクに <code>?from=</code> の目印を付けた訪問だけを数えます。検索・直リンク・口づては入りません（合計はページ表示と一致しません）。</p>'
+    + '</div>';
+
+  // 7. 明細
+  html += '<div class="sec">'+h2('明細（全データ）', n(rows.length)+' 件')+detailBlock(rows)+'</div>';
+
+  html += '<p class="note">※ 同じ人が同じページを何度も見た再読込は、同一セッション内では二重に数えません。'
+    + (other.length ? '<br>※ 分類のつかないキーが '+other.length+' 件あります（明細で確認できます）。' : '')
+    + '</p>';
+
+  app.innerHTML = html;
+  wireDaily(daily);
+  wireDetail(rows);
+}
+
+// ── 日ごとのグラフ（PVとDLは桁がちがうので、軸を分けて2枚に並べる）
+var DAILY = null;
+function dailyBlock(daily){
+  DAILY = daily;
+  return '<div class="filters" id="dayrange">'
+    + '<span class="muted" style="font-size:11.5px">期間</span>'
+    + '<button class="btn" data-days="14">14日</button>'
+    + '<button class="btn" data-days="28" aria-pressed="true">28日</button>'
+    + '<button class="btn" data-days="90">90日</button>'
+    + '</div>'
+    + '<div class="cols" id="daycharts">'
+    + '<div class="chartbox"><div class="cap" data-cap="pv">ページ表示</div><div class="plot" data-plot="pv"></div></div>'
+    + '<div class="chartbox"><div class="cap" data-cap="dl">ダウンロード</div><div class="plot" data-plot="dl"></div></div>'
+    + '</div>';
+}
+function dailySetupNote(){
+  return '<div class="setup">いまは<b>はじめてからの合計</b>だけを貯めています。'
+    + '「先週とくらべてどうか」を見たいときは、<code>_setup/counter-daily.sql</code> を Supabase で実行し、'
+    + '<code>assets/counter-config.js</code> に <code>daily: true</code> を足してください。翌日からここに折れ線が出ます。</div>';
+}
+var DAYS = 28, resizeTimer = null;
+function wireDaily(daily){
+  if(!daily || !daily.length) return;
+  var box = document.getElementById('dayrange');
+  drawDaily(DAYS);
+  box.addEventListener('click', function(ev){
+    var b = ev.target.closest('button[data-days]');
+    if(!b) return;
+    Array.prototype.forEach.call(box.querySelectorAll('button'), function(x){ x.setAttribute('aria-pressed', x===b ? 'true':'false'); });
+    DAYS = Number(b.getAttribute('data-days'));
+    drawDaily(DAYS);
+  });
+  // 画面幅が変わったら描き直す（グラフは実寸で描くので、拡大縮小で字がつぶれない）
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ drawDaily(DAYS); }, 150);
+  });
+}
+function drawDaily(days){
+  var cut = daysAgo(days-1);
+  var have = {};
+  DAILY.forEach(function(r){ if(r.d >= cut) have[r.d] = r; });
+  // 空いた日も0で埋める（棒が詰まって日づけがずれて見えるのを防ぐ）
+  var series = [];
+  for(var i=days-1; i>=0; i--){
+    var key = daysAgo(i), r = have[key];
+    series.push({ d:key, pv:Number(r&&r.pv||0), dl:Number(r&&r.dl||0) });
+  }
+  // 期間が長いと1本が髪の毛のように細くなって読めない。35日を超えたら週まとめにする。
+  var weekly = days > 35;
+  var bars = weekly ? byWeek(series) : series;
+
+  [['pv','ページ表示','var(--pv)'], ['dl','ダウンロード','var(--dl)']].forEach(function(c){
+    var plot = document.querySelector('.plot[data-plot="'+c[0]+'"]');
+    var cap = document.querySelector('.cap[data-cap="'+c[0]+'"]');
+    if(!plot) return;
+    var total = series.reduce(function(s,r){ return s+r[c[0]]; }, 0);
+    cap.innerHTML = c[1]+'<em>'+days+'日で '+n(total)
+      + (weekly ? '（1週ごと・1日平均 ' : '／1日平均 ') + n(Math.round(total/days)) + (weekly ? '）' : '') + '</em>';
+    plot.innerHTML = chart(bars, c[0], c[1], c[2], plot.clientWidth || 460);
+  });
+}
+// 7日ずつ束ねる（新しいほうから数えるので、右はしはいつも「直近7日」）
+function byWeek(series){
+  var out = [];
+  for(var end=series.length; end>0; end-=7){
+    var start = Math.max(0, end-7), chunk = series.slice(start, end);
+    out.unshift({
+      d: chunk[0].d + ' 〜 ' + chunk[chunk.length-1].d,
+      x: chunk[0].d,
+      pv: chunk.reduce(function(s,r){ return s+r.pv; },0),
+      dl: chunk.reduce(function(s,r){ return s+r.dl; },0)
+    });
+  }
+  return out;
+}
+// 実寸（コンテナの幅）で描く。viewBox を引きのばさないので、目もりの字は
+// パソコンでもスマホでも同じ大きさで読める。
+function chart(series, field, label, color, W){
+  var H=168, L=36, R=6, T=14, B=22;
+  W = Math.max(W, 240);
+  var iw = W-L-R, ih = H-T-B;
+  var max = Math.max.apply(null, series.map(function(r){ return r[field]; }).concat([1]));
+  var step = niceStep(max);
+  var top = Math.max(Math.ceil(max/step)*step, step);
+  var bw = iw/series.length;
+  var gap = bw >= 6 ? 2 : Math.max(bw*0.2, 0.5);   // すきまは2px。ただし棒が細るときは詰める
+  var w = Math.max(bw-gap, 1.5);
+  var r = Math.min(4, w/2);
+
+  var g='', ticks='', labels='';
+  for(var v=0; v<=top; v+=step){
+    var y = T + ih - (v/top)*ih;
+    g += '<line class="'+(v===0?'baseline':'gridline')+'" x1="'+L+'" y1="'+y.toFixed(1)+'" x2="'+(W-R)+'" y2="'+y.toFixed(1)+'"/>';
+    ticks += '<text class="tick" x="'+(L-6)+'" y="'+(y+3.5).toFixed(1)+'" text-anchor="end">'+v.toLocaleString('ja-JP')+'</text>';
+  }
+  // 日づけは、幅に入るぶんだけ間引く（重なって読めなくなるのを防ぐ）
+  var every = Math.max(1, Math.ceil(series.length / Math.max(2, Math.floor(iw/46))));
+  var bars = series.map(function(row, i){
+    var h = (row[field]/top)*ih;
+    var x = L + i*bw + (bw-w)/2;
+    var y = T + ih - h;
+    if(i % every === 0){
+      var md = (row.x || row.d).slice(5).replace('-','/');
+      labels += '<text class="tick" x="'+(x+w/2).toFixed(1)+'" y="'+(H-7)+'" text-anchor="middle">'+md+'</text>';
+    }
+    return '<g class="b" data-d="'+row.d+'" data-v="'+row[field]+'" data-l="'+label+'">'
+      + '<rect class="bar-hit" x="'+(L+i*bw).toFixed(1)+'" y="'+T+'" width="'+bw.toFixed(1)+'" height="'+ih+'"/>'
+      + (h>0 ? '<path d="'+barPath(x,y,w,h,r)+'" fill="'+color+'"/>' : '')
+      + '</g>';
+  }).join('');
+
+  return '<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'" role="img" aria-label="'+label+'の日ごとの推移">'
+    + g + ticks + bars + labels + '</svg>';
+}
+// 下は台に着け、上だけ角を丸める
+function barPath(x,y,w,h,r){
+  r = Math.min(r, h);
+  return 'M'+x.toFixed(1)+' '+(y+h).toFixed(1)
+    +'V'+(y+r).toFixed(1)+'q0 '+(-r)+' '+r+' '+(-r)
+    +'h'+(w-2*r).toFixed(1)+'q'+r+' 0 '+r+' '+r
+    +'V'+(y+h).toFixed(1)+'Z';
+}
+function niceStep(max){
+  var raw = max/4, mag = Math.pow(10, Math.floor(Math.log(raw)/Math.LN10));
+  var k = raw/mag;
+  return (k<=1?1:k<=2?2:k<=5?5:10)*mag;
+}
+
+// ── 棚ごとの表
+function sectionTable(pv, dl, totalPV, totalDL){
+  var agg = {};
+  function add(list, field){
+    list.forEach(function(p){
+      var s = sectionOf(p[0]);
+      if(!agg[s]) agg[s] = { pv:0, dl:0, pages:0 };
+      agg[s][field] += p[1];
+      if(field==='pv') agg[s].pages++;
+    });
+  }
+  add(pv,'pv'); add(dl,'dl');
+  var rows = Object.keys(agg).map(function(s){ return [s, agg[s]]; })
+    .sort(function(a,b){ return b[1].pv-a[1].pv || b[1].dl-a[1].dl; });
+  if(!rows.length) return '<p class="empty">まだデータがありません。</p>';
+
+  var maxPV = Math.max.apply(null, rows.map(function(r){ return r[1].pv; }).concat([1]));
+  var maxDL = Math.max.apply(null, rows.map(function(r){ return r[1].dl; }).concat([1]));
+
+  var body = rows.map(function(r){
+    var s = r[0], a = r[1];
+    return '<tr><td><b>'+esc(sectionName(s))+'</b>'+(s?' <span class="muted" style="font-size:11px">/'+esc(s)+'/</span>':'')+'</td>'
+      + '<td class="num">'+n(a.pv)+'</td>'
+      + '<td style="width:22%">'+miniBar(pct(a.pv,maxPV),'var(--pv)')+'</td>'
+      + '<td class="num">'+n(a.dl)+'</td>'
+      + '<td style="width:22%">'+miniBar(pct(a.dl,maxDL),'var(--dl)')+'</td>'
+      + '<td class="num">'+(a.pv? pct1(a.dl,a.pv)+'%' : '—')+'</td>'
+      + '<td class="num muted" style="font-weight:400">'+n(a.pages)+'</td></tr>';
+  }).join('');
+
+  return '<div class="tw tw-wide"><table class="grid"><thead><tr><th>棚</th><th style="text-align:right">表示</th><th></th>'
+    + '<th style="text-align:right">DL</th><th></th><th style="text-align:right">持ち帰り率</th><th style="text-align:right">ページ数</th></tr></thead>'
+    + '<tbody>'+body+'</tbody></table></div>'
+    + legend([['var(--pv)','ページ表示'], ['var(--dl)','ダウンロード']]);
+}
+
+// ── ランキング（ページ）
+function rankPages(pv, limit){
+  if(!pv.length) return '<p class="empty">まだ表示がありません。</p>';
+  var max = pv[0][1];
+  return pv.slice(0,limit).map(function(p,i){
+    var sec = sectionOf(p[0]);
+    return '<div class="row"><span class="rank">'+(i+1)+'</span>'
+      + '<span class="nm"><span class="t">'+(sec?'<span class="chip">'+esc(sectionName(sec))+'</span>':'')+esc(pageName(p[0]))+'</span>'
+      + '<small>'+esc(p[0])+'</small></span>'
+      + bar(pct(p[1],max),'var(--pv)')
+      + '<span class="ct">'+n(p[1])+'</span></div>';
+  }).join('');
+}
+
+// ── ランキング（ダウンロード）
+function rankDownloads(dl, limit){
+  if(!dl.length) return '<p class="empty">まだダウンロードがありません。</p>';
+  var max = dl[0][1];
+  return dl.slice(0,limit).map(function(p,i){
+    var base = fileName(p[0]);
+    var m = bySrc[base];
+    var nm = m ? m.title : decodeURIComponent2(base);
+    var sec = sectionOf(p[0]);
+    var sub = m ? (m.subject+'／'+base) : p[0];
+    var th = (m && m.thumb) ? '<img class="thumb" src="'+esc(m.thumb)+'" alt="" loading="lazy">' : '<span class="thumb"></span>';
+    return '<div class="row"><span class="rank">'+(i+1)+'</span>'+th
+      + '<span class="nm"><span class="t">'+(sec?'<span class="chip">'+esc(sectionName(sec))+'</span>':'')+esc(nm)+'</span>'
+      + '<small>'+esc(sub)+'</small></span>'
+      + bar(pct(p[1],max),'var(--dl)')
+      + '<span class="ct">'+n(p[1])+'</span></div>';
+  }).join('');
+}
+function decodeURIComponent2(s){ try{ return decodeURIComponent(s); }catch(e){ return s; } }
+
+// ── まとめ表（形式べつ・棚べつ）
+function groupTable(list, keyFn, total, color){
+  if(!list.length) return '<p class="empty">まだデータがありません。</p>';
+  var agg = {};
+  list.forEach(function(p){ var k = keyFn(p[0]); agg[k] = (agg[k]||0)+p[1]; });
+  var rows = Object.keys(agg).map(function(k){ return [k, agg[k]]; }).sort(function(a,b){ return b[1]-a[1]; });
+  var max = rows[0][1];
+  return '<table class="grid"><tbody>'+rows.map(function(r){
+    return '<tr><td>'+esc(r[0])+'</td>'
+      + '<td class="num">'+n(r[1])+'</td>'
+      + '<td class="num muted" style="font-weight:400;width:52px">'+pct1(r[1],total)+'%</td>'
+      + '<td style="width:34%">'+miniBar(pct(r[1],max),color)+'</td></tr>';
+  }).join('')+'</tbody></table>';
+}
+
+// ── 流入元
+function srcTable(rows, total){
+  if(!rows.length) return '<p class="empty">まだ目印つきの訪問がありません。棚のリンクに <code>?from=x</code> のように付けると、ここに出ます。</p>';
+  var max = rows[0][1];
+  return '<table class="grid"><tbody>'+rows.map(function(r){
+    return '<tr><td><b>'+esc(SRC_NAMES[r[0]]||r[0])+'</b> <span class="muted" style="font-size:11px">'+esc(r[0])+'</span></td>'
+      + '<td class="num">'+n(r[1])+'</td>'
+      + '<td class="num muted" style="font-weight:400;width:52px">'+pct1(r[1],total)+'%</td>'
+      + '<td style="width:34%">'+miniBar(pct(r[1],max),'var(--pv)')+'</td></tr>';
+  }).join('')+'</tbody></table>';
+}
+
+// ── 端末（1本の帯に2つ・どちらも名前と割合を直接書く）
+function devBlock(sp, pc, total){
+  if(!total) return '<p class="empty">まだデータがありません。</p>';
+  var a = pct(sp,total), b = pct(pc,total);
+  return '<div class="stack">'
+    + '<i style="width:'+a+'%;background:var(--pv)"></i>'
+    + '<i style="width:'+b+'%;background:var(--dl)"></i></div>'
+    + '<table class="grid"><tbody>'
+    + '<tr><td><b style="display:inline-block;width:9px;height:9px;background:var(--pv);margin-right:6px"></b>スマホ・タブレット<span class="muted" style="font-size:11px">（画面 768px 未満）</span></td><td class="num">'+n(sp)+'</td><td class="num muted" style="font-weight:400;width:52px">'+pct1(sp,total)+'%</td></tr>'
+    + '<tr><td><b style="display:inline-block;width:9px;height:9px;background:var(--dl);margin-right:6px"></b>パソコン<span class="muted" style="font-size:11px">（768px 以上）</span></td><td class="num">'+n(pc)+'</td><td class="num muted" style="font-weight:400;width:52px">'+pct1(pc,total)+'%</td></tr>'
+    + '</tbody></table>'
+    + '<p class="note">お知らせをメールで出すか、スマホ前提の見せ方にするかを、勘ではなく数で決めるための目安です。</p>';
+}
+
+// ── 明細（さがす・CSVに書き出す）
+var ROWS = null;
+function detailBlock(rows){
+  ROWS = rows;
+  return '<div class="filters">'
+    + '<input class="search" id="q" type="search" placeholder="住所や名前でしぼりこむ（例: kokugo）">'
+    + '<button class="btn" id="csv" data-nocount>CSVで書き出す</button>'
+    + '<span class="muted" id="qn" style="font-size:11.5px"></span>'
+    + '</div><div id="detail"></div>';
+}
+function wireDetail(rows){
+  var q = document.getElementById('q');
+  var out = document.getElementById('detail');
+  var qn = document.getElementById('qn');
+
+  function draw(){
+    var s = (q.value||'').trim().toLowerCase();
+    var list = rows.filter(function(r){
+      if(!s) return true;
+      var k = String(r.key||'');
+      return k.toLowerCase().indexOf(s)>=0 || pageName(k.replace(/^(pv|dl):/,'')).toLowerCase().indexOf(s)>=0;
+    });
+    qn.textContent = list.length+' 件' + (list.length>300 ? '（上位300件を表示）' : '');
+    if(!list.length){ out.innerHTML = '<p class="empty">あてはまるものがありません。</p>'; return; }
+    out.innerHTML = '<div class="tw tw-wide"><table class="grid"><thead><tr><th>種類</th><th>名前</th><th>キー</th><th style="text-align:right">回数</th></tr></thead><tbody>'
+      + list.slice(0,300).map(function(r){
+          var k = String(r.key||''), t = k.split(':')[0], path = k.slice(t.length+1);
+          var label = t==='pv' ? '表示' : t==='dl' ? 'DL' : t==='dev' ? '端末' : t==='src' ? '流入' : t;
+          var nm = t==='pv' ? pageName(path)
+                 : t==='dl' ? ((bySrc[fileName(path)]||{}).title || decodeURIComponent2(fileName(path)))
+                 : t==='src' ? (SRC_NAMES[path]||path)
+                 : path;
+          return '<tr><td><span class="chip">'+esc(label)+'</span></td><td>'+esc(nm)+'</td>'
+            + '<td class="mono">'+esc(k)+'</td><td class="num">'+n(r.n)+'</td></tr>';
+        }).join('')
+      + '</tbody></table></div>';
+  }
+  q.addEventListener('input', draw);
+  draw();
+
+  document.getElementById('csv').addEventListener('click', function(){
+    var lines = ['key,name,count'].concat(rows.map(function(r){
+      var k = String(r.key||''), t = k.split(':')[0], path = k.slice(t.length+1);
+      var nm = t==='pv' ? pageName(path) : t==='dl' ? ((bySrc[fileName(path)]||{}).title || decodeURIComponent2(fileName(path))) : path;
+      return '"'+k.replace(/"/g,'""')+'","'+String(nm).replace(/"/g,'""')+'",'+(r.n||0);
+    }));
+    var blob = new Blob(['﻿'+lines.join('\r\n')], { type:'text/csv;charset=utf-8' });
+    var a = document.createElement('a');   // DOMに入れずに押す＝計測のクリック監視に拾わせない
+    a.href = URL.createObjectURL(blob);
+    a.download = 'school-stock-stats-'+daysAgo(0)+'.csv';
+    a.click();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 1000);
+  });
+}
+
+// ── グラフの吹き出し
+var tip = document.getElementById('tip');
+document.addEventListener('mouseover', function(ev){
+  var g = ev.target.closest ? ev.target.closest('g.b') : null;
+  if(!g){ tip.style.opacity = 0; return; }
+  tip.innerHTML = '<b>'+n(Number(g.getAttribute('data-v')))+'</b> '+esc(g.getAttribute('data-l'))+'<br>'+esc(g.getAttribute('data-d'));
+  tip.style.opacity = 1;
+});
+document.addEventListener('mousemove', function(ev){
+  if(tip.style.opacity==='0' || tip.style.opacity==='') return;
+  var x = Math.min(ev.clientX+14, window.innerWidth - tip.offsetWidth - 8);
+  tip.style.left = x+'px';
+  tip.style.top = Math.max(ev.clientY - tip.offsetHeight - 12, 8)+'px';
+});
+
 })();
 </script>
 <script src="/School_Stock/assets/soudan.js" defer></script>

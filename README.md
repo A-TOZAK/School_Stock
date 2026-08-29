@@ -25,6 +25,7 @@ School_Stock/
 
 **新しいツールを足すとき**：`tools/<name>/` を1フォルダ作り、`index.html`（LP）・`download/`・`img/` を置き、トップの `index.html` にカードを1枚追加する。
 **プリント教材を足すとき**：`prints/<教科>/` に置く（**自作・著作権クリアのみ**）。
+**ページを足したあと**：`python3 _build/build_pagemap.py` を実行して `stats/pagemap.json` を更新する（内部用の集計ページ `/stats/` が、住所ではなくページの題名で並ぶようにするため）。
 
 ## 公開の大原則（著作権ゲート）
 

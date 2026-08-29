@@ -1,0 +1,1049 @@
+{
+ "generated": "2026-08-29",
+ "pages": {
+  "/School_Stock/": {
+   "s": "",
+   "t": "School Stock ── 先生のための、無料の道具と教材の棚"
+  },
+  "/School_Stock/404.html": {
+   "s": "",
+   "t": "ページが見つかりません"
+  },
+  "/School_Stock/about/": {
+   "s": "about",
+   "t": "このサイトについて ── つくっている人と、School Stockの思い"
+  },
+  "/School_Stock/about/terms.html": {
+   "s": "about",
+   "t": "利用規約"
+  },
+  "/School_Stock/ai/": {
+   "s": "ai",
+   "t": "AI活用（プロンプト集）"
+  },
+  "/School_Stock/ai/es.html": {
+   "s": "ai",
+   "t": "小学校 Geminiプロンプト集｜学年・教科・領域から探す"
+  },
+  "/School_Stock/ai/gazo-slide.html": {
+   "s": "ai",
+   "t": "画像生成とスライドのプロンプト集"
+  },
+  "/School_Stock/ai/hs-senmon.html": {
+   "s": "ai",
+   "t": "高等学校 専門学科 Geminiプロンプト集｜農業・工業・商業・水産・家庭・看護・情報・福祉"
+  },
+  "/School_Stock/ai/hs.html": {
+   "s": "ai",
+   "t": "高等学校 Geminiプロンプト集｜教科・科目・領域から探す"
+  },
+  "/School_Stock/ai/jhs.html": {
+   "s": "ai",
+   "t": "中学校 Geminiプロンプト集｜学年・教科・領域から探す"
+  },
+  "/School_Stock/ai/shidou-hyouka-gem/": {
+   "s": "ai",
+   "t": "振り返りを、明日の一手に変える。｜指導と評価の一体化支援Gem 実践ガイド"
+  },
+  "/School_Stock/ai/univ.html": {
+   "s": "ai",
+   "t": "大学生のための Geminiプロンプト集"
+  },
+  "/School_Stock/board/": {
+   "s": "board",
+   "t": "思考ツールボード"
+  },
+  "/School_Stock/entertainment/": {
+   "s": "entertainment",
+   "t": "読みもの・アイデア"
+  },
+  "/School_Stock/entertainment/hitokoto/": {
+   "s": "entertainment",
+   "t": "写真で一言、大喜利"
+  },
+  "/School_Stock/entertainment/machigai-sagashi/": {
+   "s": "entertainment",
+   "t": "間違い探しを、AIに作らせる"
+  },
+  "/School_Stock/entertainment/prompt-book/": {
+   "s": "entertainment",
+   "t": "先生の寄り道プロンプト帳"
+  },
+  "/School_Stock/ideas/": {
+   "s": "ideas",
+   "t": "実践アイデア ── 授業・校務の実践アイデア集"
+  },
+  "/School_Stock/ideas/a/atama-oshiri.html": {
+   "s": "ideas",
+   "t": "あたまおしりことばゲーム ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/boardgame.html": {
+   "s": "ideas",
+   "t": "小学校現場で使える学習ボードゲーム集 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/class-chat.html": {
+   "s": "ideas",
+   "t": "教室の中だけで動く「LINEみたいなやつ」をつくる ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/classroom-gas.html": {
+   "s": "ideas",
+   "t": "Classroom一括削除・一括作成GAS ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/firefly-shashin.html": {
+   "s": "ideas",
+   "t": "AIに写真をたのむときの、たった4つの言い方 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/forms-furikaeri.html": {
+   "s": "ideas",
+   "t": "FormsとSheetsで振り返りを見える化する ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/games.html": {
+   "s": "ideas",
+   "t": "授業で使えるゲーム集 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/guest-teacher-gemini.html": {
+   "s": "ideas",
+   "t": "見通しをもって、ゲストティーチャーと出会う ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/guest-teacher-sakurei/irai-set.html": {
+   "s": "ideas",
+   "t": "作例 管理職への相談メモ＋ゲストティーチャーへの依頼文"
+  },
+  "/School_Stock/ideas/a/iizuka-fukudokuhon.html": {
+   "s": "ideas",
+   "t": "飯塚市の「市の様子」を、書き込めるデジタル副読本にした ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/ikimono-zukan.html": {
+   "s": "ideas",
+   "t": "4年国語「生き物図かん」Gemini学習サポートサイト ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/jugyo-planner-tsukurikata.html": {
+   "s": "ideas",
+   "t": "授業プランナーの作り方 ── AIに何をどう頼んだか ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/jugyo-planner.html": {
+   "s": "ideas",
+   "t": "学期分の見通しを、AIと一緒に組んでみた ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/kenshu-ict-ai.html": {
+   "s": "ideas",
+   "t": "研修資料「小学校の学びが変わるICTと生成AIの活用」 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/kids-shakai-prompt.html": {
+   "s": "ideas",
+   "t": "子どものための社会科プロンプトライブラリ ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/kokugo-gallery.html": {
+   "s": "ideas",
+   "t": "国語プリントギャラリー ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/note-print.html": {
+   "s": "ideas",
+   "t": "すぐ印刷して使える全学年対応ノート集 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/notebooklm-kenshu-toi.html": {
+   "s": "ideas",
+   "t": "Gemini Notebookで校内研修の「問い」を作る ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/oita-source-mini.html": {
+   "s": "ideas",
+   "t": "中学社会科向け 資料読解ミニプリント集 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/sansu-print-review.html": {
+   "s": "ideas",
+   "t": "小学校算数プリント集とレビューツール ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/slide-gohousoku.html": {
+   "s": "ideas",
+   "t": "教師のスライドづくり 見た目の大原則5つ ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/slides-copy-gas.html": {
+   "s": "ideas",
+   "t": "Googleスライド全ページ一括コピーGAS ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/workspace-studio-flow.html": {
+   "s": "ideas",
+   "t": "Workspace Studioの「フロー」で校務のくり返しを自動化 ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/zukou-junbi-gemini.html": {
+   "s": "ideas",
+   "t": "図工の準備は「よかったら」でいい ── 実践アイデア"
+  },
+  "/School_Stock/ideas/a/zukou-sakurei/01-nenkan-mitoshi.html": {
+   "s": "ideas",
+   "t": "作例① 図工「1年間の準備」ご家庭への見通しおたより"
+  },
+  "/School_Stock/ideas/a/zukou-sakurei/02-onegai-print.html": {
+   "s": "ideas",
+   "t": "作例② 図工「はこでつくったよ」ちょっとお願い（題材ごと）"
+  },
+  "/School_Stock/ideas/a/zukou-sakurei/03-onegai-yasashii.html": {
+   "s": "ideas",
+   "t": "作例③ ずこう「はこで つくったよ」ちょっと おねがい（やさしい版）"
+  },
+  "/School_Stock/ideas/a/zukou-sakurei/04-katsudo-card.html": {
+   "s": "ideas",
+   "t": "作例④ ずこう「たいせつボックス」めあてと ながれ カード（掲示用）"
+  },
+  "/School_Stock/kyozai-kenkyu/": {
+   "s": "kyozai-kenkyu",
+   "t": "教材研究ノート ── こう考えたら、授業が面白いかも"
+  },
+  "/School_Stock/kyozai-kenkyu/anshin-anzen-machi/": {
+   "s": "kyozai-kenkyu",
+   "t": "「安心・安全なまち」って、だれにとって？ ── 小4総合「福祉×防災のまちづくり」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/anshin-anzen-machi/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4総合「安心・安全なまちづくり」第7時 当事者に出会う ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/anshin-anzen-machi/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── 4つの目でまちを見よう（小4総合・安心安全なまちづくり）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/bai-no-mikata/": {
+   "s": "kyozai-kenkyu",
+   "t": "どっちが「よく」のびた？ ── 小4算数「割合（倍の見方）」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/bai-no-mikata/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4算数「倍の見方」差から倍へ ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/bai-no-mikata/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── 倍の見方「よくのびたのはどっち？」（小4算数）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/hitotsu-no-hana/": {
+   "s": "kyozai-kenkyu",
+   "t": "なぜ「一つの花」なんだろう？ ── 小4国語「一つの花」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/hitotsu-no-hana/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4国語「一つの花」対比から題名の意味へ ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/hitotsu-no-hana/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── 「一つの花」くらべて読もう（小4国語）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/menseki/": {
+   "s": "kyozai-kenkyu",
+   "t": "「広い」って、どうやって決める？ ── 小4算数「面積」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/menseki/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4算数「面積」L字型の面積の求め方 ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/menseki/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── L字がたの面積（小4算数「面積」）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/mono-no-ondo-to-taiseki/": {
+   "s": "kyozai-kenkyu",
+   "t": "金属を熱すると、なぜ体積が増える？ ── 小4理科「物の温度と体積」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/mono-no-ondo-to-taiseki/shidoan-shoriken.html": {
+   "s": "kyozai-kenkyu",
+   "t": "第4学年1組 理科学習指導案（飯塚市小理研 様式）── 物の体積と温度 ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/mono-no-ondo-to-taiseki/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4理科「物の温度と体積」金属の温度と体積 ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/mono-no-ondo-to-taiseki/shiryo-rail.html": {
+   "s": "kyozai-kenkyu",
+   "t": "あつい日、レールはどうなる？ ── 小4理科「物の体積と温度」提示資料"
+  },
+  "/School_Stock/kyozai-kenkyu/mono-no-ondo-to-taiseki/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── 金ぞくの温度と体積（小4理科）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/shizen-saigai/": {
+   "s": "kyozai-kenkyu",
+   "t": "助けは、すぐ来ない？ ── 小4社会「自然災害にそなえるまちづくり」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/shizen-saigai/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4社会「自然災害から人々を守る活動」自助・共助・公助 ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/shizen-saigai/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "ワークシート ── 自助・共助・公助（小4社会「自然災害から人々を守る活動」）｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/tsuki-to-hoshi/": {
+   "s": "kyozai-kenkyu",
+   "t": "夜の観察を、どう成功させる？ ── 小4理科「月や星の見え方」の授業を考える ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/tsuki-to-hoshi/shidoan.html": {
+   "s": "kyozai-kenkyu",
+   "t": "本時 指導案 ── 小4理科「月と星」位置の変化を整理する ｜ 教材研究ノート"
+  },
+  "/School_Stock/kyozai-kenkyu/tsuki-to-hoshi/worksheet.html": {
+   "s": "kyozai-kenkyu",
+   "t": "観察カード ── 月と星の見え方（小4理科）｜ 教材研究ノート"
+  },
+  "/School_Stock/lab/": {
+   "s": "lab",
+   "t": "教室の中の特別支援 ── 通常学級の担任のための連載"
+  },
+  "/School_Stock/lab/01-kyoshitsu-genjitsu/": {
+   "s": "lab",
+   "t": "35人の教室に、3人。 ── 教室の中の特別支援 第1回"
+  },
+  "/School_Stock/lab/02-jittai-haaku/": {
+   "s": "lab",
+   "t": "診断名ではなく「困り」で見る ── 教室の中の特別支援 第2回"
+  },
+  "/School_Stock/lab/03-ninchi-tokusei/": {
+   "s": "lab",
+   "t": "覚えられないのは、怠けじゃない ── 教室の中の特別支援 第3回"
+  },
+  "/School_Stock/lab/04-goritekihairyo/": {
+   "s": "lab",
+   "t": "「あの子だけずるい」にどう答えるか ── 教室の中の特別支援 第4回"
+  },
+  "/School_Stock/lab/05-yomenai-shotai/": {
+   "s": "lab",
+   "t": "「読めない」を2つに分ける ── 教室の中の特別支援 第5回"
+  },
+  "/School_Stock/lab/06-ondoku-ryuchosei/": {
+   "s": "lab",
+   "t": "音読のなめらかさが、すべての土台 ── 教室の中の特別支援 第6回"
+  },
+  "/School_Stock/lab/07-goi-fusoku/": {
+   "s": "lab",
+   "t": "知らない言葉は、読めない ── 教室の中の特別支援 第7回"
+  },
+  "/School_Stock/lab/08-mondaibun-ud/": {
+   "s": "lab",
+   "t": "問題文のほうを直す ── 教室の中の特別支援 第8回"
+  },
+  "/School_Stock/lab/09-yomiage-onsei/": {
+   "s": "lab",
+   "t": "読み上げという足場 ── 教室の中の特別支援 第9回"
+  },
+  "/School_Stock/lab/10-yometeru-tsumori/": {
+   "s": "lab",
+   "t": "「読めているつもり」を見抜く ── 教室の中の特別支援 第10回"
+  },
+  "/School_Stock/lab/11-kensaku-renshu/": {
+   "s": "lab",
+   "t": "思い出す練習が、記憶をつくる ── 教室の中の特別支援 第11回"
+  },
+  "/School_Stock/lab/12-bunsan-gakushu/": {
+   "s": "lab",
+   "t": "同じ10問なら、分けて出す ── 教室の中の特別支援 第12回"
+  },
+  "/School_Stock/lab/13-working-memory/": {
+   "s": "lab",
+   "t": "一度に持てる量を超えない ── 教室の中の特別支援 第13回"
+  },
+  "/School_Stock/lab/14-small-step/": {
+   "s": "lab",
+   "t": "失敗させずに教える ── 教室の中の特別支援 第14回"
+  },
+  "/School_Stock/lab/15-kyokun-kino/": {
+   "s": "lab",
+   "t": "まちがい直しを、宝に変える ── 教室の中の特別支援 第15回"
+  },
+  "/School_Stock/lab/16-shukudai-saisekkei/": {
+   "s": "lab",
+   "t": "宿題と小テストを設計し直す ── 教室の中の特別支援 第16回"
+  },
+  "/School_Stock/lab/17-tegatomaru-riyu/": {
+   "s": "lab",
+   "t": "手が止まる子の4つの理由 ── 教室の中の特別支援 第17回"
+  },
+  "/School_Stock/lab/18-chakushu-shien/": {
+   "s": "lab",
+   "t": "最初の1問を、一緒に ── 教室の中の特別支援 第18回"
+  },
+  "/School_Stock/lab/19-planning/": {
+   "s": "lab",
+   "t": "段取りを外に出す ── 教室の中の特別支援 第19回"
+  },
+  "/School_Stock/lab/20-enjo-yosei/": {
+   "s": "lab",
+   "t": "「わかりません」が言える教室 ── 教室の中の特別支援 第20回"
+  },
+  "/School_Stock/lab/21-fuan-jikokoryoku/": {
+   "s": "lab",
+   "t": "動けないのは、不安のせいかもしれない ── 教室の中の特別支援 第21回"
+  },
+  "/School_Stock/lab/22-careless-bunrui/": {
+   "s": "lab",
+   "t": "ケアレスミスをまず分類する ── 教室の中の特別支援 第22回"
+  },
+  "/School_Stock/lab/23-minaoshi-gijutsu/": {
+   "s": "lab",
+   "t": "見直しは、性格ではなく技術 ── 教室の中の特別支援 第23回"
+  },
+  "/School_Stock/lab/24-keisan-miss/": {
+   "s": "lab",
+   "t": "計算ミスが減る紙面と手順 ── 教室の中の特別支援 第24回"
+  },
+  "/School_Stock/lab/25-test-ukekata/": {
+   "s": "lab",
+   "t": "テストの受け方は、教えられる ── 教室の中の特別支援 第25回"
+  },
+  "/School_Stock/lab/26-kokugo-goi-kanji/": {
+   "s": "lab",
+   "t": "国語の知識・技能：漢字と語彙の科学 ── 教室の中の特別支援 第26回"
+  },
+  "/School_Stock/lab/27-kokugo-dokkai/": {
+   "s": "lab",
+   "t": "国語の思考・判断・表現①：読みの方略を教える ── 教室の中の特別支援 第27回"
+  },
+  "/School_Stock/lab/28-kokugo-kaku/": {
+   "s": "lab",
+   "t": "国語の思考・判断・表現②：根拠を明確に書く ── 教室の中の特別支援 第28回"
+  },
+  "/School_Stock/lab/29-sansu-keisan/": {
+   "s": "lab",
+   "t": "算数の知識・技能：計算の自動化と数の感覚 ── 教室の中の特別支援 第29回"
+  },
+  "/School_Stock/lab/30-sansu-bunshodai/": {
+   "s": "lab",
+   "t": "算数の思考・判断・表現：文章題は図で考える ── 教室の中の特別支援 第30回"
+  },
+  "/School_Stock/lab/31-yonensei-kabe/": {
+   "s": "lab",
+   "t": "4年生の壁 ── 教室の中の特別支援 第31回"
+  },
+  "/School_Stock/lab/32-test-ud/": {
+   "s": "lab",
+   "t": "テストのユニバーサルデザインと配慮の実際 ── 教室の中の特別支援 第32回"
+  },
+  "/School_Stock/lab/33-hyoka-sankanten/": {
+   "s": "lab",
+   "t": "3観点の評価で「がんばり」を見えるようにする ── 教室の中の特別支援 第33回"
+  },
+  "/School_Stock/lab/34-hogosha-renkei/": {
+   "s": "lab",
+   "t": "保護者とどう話すか ── 教室の中の特別支援 第34回"
+  },
+  "/School_Stock/lab/35-konai-shien/": {
+   "s": "lab",
+   "t": "ひとりで抱えない ── 教室の中の特別支援 第35回"
+  },
+  "/School_Stock/oshirase/": {
+   "s": "oshirase",
+   "t": "入荷のお知らせを受け取る"
+  },
+  "/School_Stock/prints/": {
+   "s": "prints",
+   "t": "教科のプリント"
+  },
+  "/School_Stock/prints/atama/": {
+   "s": "prints",
+   "t": "あたまのじゅんび運動 ── すきま5分の認知機能トレーニングプリント"
+  },
+  "/School_Stock/prints/english-puzzles/": {
+   "s": "prints",
+   "t": "英語のことばパズル ── Word Search と Crossword（9レベル）"
+  },
+  "/School_Stock/prints/furikaeri/": {
+   "s": "prints",
+   "t": "ふりかえりプリント 9月ぶん（1〜6年・全120枚）"
+  },
+  "/School_Stock/prints/kokugo/": {
+   "s": "prints",
+   "t": "国語プリント ── 現役教員がつくった無料の国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No01_はをへのつかいかた.html": {
+   "s": "prints",
+   "t": "はをへのつかいかた（かなづかい・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No01_説明文_あさがおのつる.html": {
+   "s": "prints",
+   "t": "あさがおのつる（説明文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No02_説明文_てんとうむし.html": {
+   "s": "prints",
+   "t": "てんとうむし（説明文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No03_説明文_はがぬけるわけ.html": {
+   "s": "prints",
+   "t": "はがぬけるわけ（説明文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No04_説明文_ねこのひげ.html": {
+   "s": "prints",
+   "t": "ねこのひげ（説明文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No05_説明文_つばめのす.html": {
+   "s": "prints",
+   "t": "つばめのす（説明文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No06_物語文_ぶらんこのじゅんばん.html": {
+   "s": "prints",
+   "t": "ぶらんこのじゅんばん（物語文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No07_物語文_あめのひのかさ.html": {
+   "s": "prints",
+   "t": "あめのひのかさ（物語文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No08_物語文_どんぐりひろい.html": {
+   "s": "prints",
+   "t": "どんぐりひろい（物語文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No09_物語文_おとうとのくつ.html": {
+   "s": "prints",
+   "t": "おとうとのくつ（物語文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/1年_No10_物語文_たなばたのねがいごと.html": {
+   "s": "prints",
+   "t": "たなばたのねがいごと（物語文・1年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No01_かたかなで書くことば.html": {
+   "s": "prints",
+   "t": "かたかなで書くことば（かたかな・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No01_説明文_ひまわりのたね.html": {
+   "s": "prints",
+   "t": "ひまわりのたね（説明文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No02_説明文_かえるのふゆごし.html": {
+   "s": "prints",
+   "t": "かえるのふゆごし（説明文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No03_説明文_ちょうになるまで.html": {
+   "s": "prints",
+   "t": "ちょうになるまで（説明文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No04_説明文_せみのなきごえ.html": {
+   "s": "prints",
+   "t": "せみのなきごえ（説明文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No05_物語文_かけっこでころんでも.html": {
+   "s": "prints",
+   "t": "かけっこでころんでも（物語文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No06_物語文_おかあさんのおべんとう.html": {
+   "s": "prints",
+   "t": "おかあさんのおべんとう（物語文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No07_物語文_こうえんのすなやま.html": {
+   "s": "prints",
+   "t": "こうえんのすなやま（物語文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No08_物語文_ひとりでおつかい.html": {
+   "s": "prints",
+   "t": "ひとりでおつかい（物語文・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No09_語句_はんたいのことば.html": {
+   "s": "prints",
+   "t": "はんたいのことば（語句・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/2年_No10_語句_かぞえることば.html": {
+   "s": "prints",
+   "t": "かぞえることば（語句・2年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No01_気持ちを表す言葉.html": {
+   "s": "prints",
+   "t": "気持ちを表す言葉（語句・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No01_説明文_ダンゴムシのひみつ.html": {
+   "s": "prints",
+   "t": "ダンゴムシのひみつ（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No02_つなぎ言葉.html": {
+   "s": "prints",
+   "t": "つなぎ言葉（つなぎ言葉・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No02_説明文_にじはどうしてできるの.html": {
+   "s": "prints",
+   "t": "にじはどうしてできるの（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No03_説明文_たんぽぽのわた毛のたび.html": {
+   "s": "prints",
+   "t": "たんぽぽのわた毛のたび（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No04_説明文_こおりはどうしてとける.html": {
+   "s": "prints",
+   "t": "こおりはどうしてとける（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No05_説明文_かげのふしぎ.html": {
+   "s": "prints",
+   "t": "かげのふしぎ（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No06_説明文_カタツムリのくらし.html": {
+   "s": "prints",
+   "t": "カタツムリのくらし（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No07_説明文_音はどうつたわるの.html": {
+   "s": "prints",
+   "t": "音はどうつたわるの（説明文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No08_物語文_おばあちゃんの手.html": {
+   "s": "prints",
+   "t": "おばあちゃんの手（物語文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No09_物語文_まいごの子犬.html": {
+   "s": "prints",
+   "t": "まいごの子犬（物語文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No10_物語文_はじめてのおるすばん.html": {
+   "s": "prints",
+   "t": "はじめてのおるすばん（物語文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No11_物語文_ころんだ子とさしのべた手.html": {
+   "s": "prints",
+   "t": "ころんだ子とさしのべた手（物語文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No12_物語文_引っこす友だちへの手紙.html": {
+   "s": "prints",
+   "t": "引っこす友だちへの手紙（物語文・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No13_要約_ミミズは土の名医.html": {
+   "s": "prints",
+   "t": "ミミズは土の名医（要約・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No14_要約_くもの巣のふしぎ.html": {
+   "s": "prints",
+   "t": "くもの巣のふしぎ（要約・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No15_要約_はしの正しい持ち方.html": {
+   "s": "prints",
+   "t": "はしの正しい持ち方（要約・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No16_語句_体の言葉のかんようく.html": {
+   "s": "prints",
+   "t": "体の言葉のかんようく（語句・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/3年_No17_語句_気持ちを表す言葉.html": {
+   "s": "prints",
+   "t": "気持ちを表す言葉（語句・3年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No01_ことわざ生きもの.html": {
+   "s": "prints",
+   "t": "ことわざ生きもの（ことわざ・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No01_説明文_アリの力.html": {
+   "s": "prints",
+   "t": "アリの力（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No02_説明文_カブトムシの一生.html": {
+   "s": "prints",
+   "t": "カブトムシの一生（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No03_説明文_風の力とかざぐるま.html": {
+   "s": "prints",
+   "t": "風の力とかざぐるま（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No04_説明文_塩のけっしょう.html": {
+   "s": "prints",
+   "t": "塩のけっしょう（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No05_説明文_落ち葉が土になるまで.html": {
+   "s": "prints",
+   "t": "落ち葉が土になるまで（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No06_説明文_わたり鳥のふしぎ.html": {
+   "s": "prints",
+   "t": "わたり鳥のふしぎ（説明文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No07_物語文_絵の具とみなと.html": {
+   "s": "prints",
+   "t": "絵の具とみなと（物語文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No08_物語文_わすれ物と友だち.html": {
+   "s": "prints",
+   "t": "わすれ物と友だち（物語文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No09_物語文_弟の運動会.html": {
+   "s": "prints",
+   "t": "弟の運動会（物語文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No10_物語文_ひみつ基地の約束.html": {
+   "s": "prints",
+   "t": "ひみつ基地の約束（物語文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No11_物語文_二重とびがとべた日.html": {
+   "s": "prints",
+   "t": "二重とびがとべた日（物語文・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No12_要約_森のはたらき.html": {
+   "s": "prints",
+   "t": "森のはたらき（要約・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No13_要約_和紙のよさ.html": {
+   "s": "prints",
+   "t": "和紙のよさ（要約・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No14_要約_信号きの色の意味.html": {
+   "s": "prints",
+   "t": "信号きの色の意味（要約・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/4年_No15_語句_つなぎ言葉のはたらき.html": {
+   "s": "prints",
+   "t": "つなぎ言葉のはたらき（語句・4年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No01_敬語尊敬語.html": {
+   "s": "prints",
+   "t": "敬語尊敬語（敬語・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No01_説明文_食品ロスを考える.html": {
+   "s": "prints",
+   "t": "食品ロスを考える（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No02_説明文_AIと私たちのくらし.html": {
+   "s": "prints",
+   "t": "AIと私たちのくらし（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No03_説明文_地産地消のよさ.html": {
+   "s": "prints",
+   "t": "地産地消のよさ（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No04_説明文_森林と二酸化炭素.html": {
+   "s": "prints",
+   "t": "森林と二酸化炭素（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No05_説明文_生物多様性を守る.html": {
+   "s": "prints",
+   "t": "生物多様性を守る（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No06_説明文_節水と水の循環.html": {
+   "s": "prints",
+   "t": "節水と水の循環（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No07_物語文_転校生とわたし.html": {
+   "s": "prints",
+   "t": "転校生とわたし（物語文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No08_物語文_祖父の畑をつぐ.html": {
+   "s": "prints",
+   "t": "祖父の畑をつぐ（物語文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No09_物語文_合唱コンクールの一票.html": {
+   "s": "prints",
+   "t": "合唱コンクールの一票（物語文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No10_物語文_けんかした親友.html": {
+   "s": "prints",
+   "t": "けんかした親友（物語文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No11_詩_たね.html": {
+   "s": "prints",
+   "t": "たね（詩・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No12_詩_朝.html": {
+   "s": "prints",
+   "t": "朝（詩・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No13_詩_風.html": {
+   "s": "prints",
+   "t": "風（詩・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No14_情報の読み取り_時刻表を読む.html": {
+   "s": "prints",
+   "t": "時刻表を読む（情報の読み取り・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No15_情報の読み取り_円グラフで見る一日の時間.html": {
+   "s": "prints",
+   "t": "円グラフで見る一日の時間（情報の読み取り・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No22_説明文_和菓子職人になるまで.html": {
+   "s": "prints",
+   "t": "和菓子職人になるまで（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No23_説明文_動物園の獣医師になるまで.html": {
+   "s": "prints",
+   "t": "動物園の獣医師になるまで（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No24_説明文_土の手ざわりをたしかめる仕事.html": {
+   "s": "prints",
+   "t": "土の手ざわりをたしかめる仕事（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/5年_No25_説明文_不安な気持ちに気づく仕事.html": {
+   "s": "prints",
+   "t": "不安な気持ちに気づく仕事（説明文・5年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No01_熟語の成り立ち.html": {
+   "s": "prints",
+   "t": "熟語の成り立ち（熟語・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No01_説明文_海のプラスチックごみ.html": {
+   "s": "prints",
+   "t": "海のプラスチックごみ（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No02_説明文_再生可能エネルギー.html": {
+   "s": "prints",
+   "t": "再生可能エネルギー（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No03_説明文_フェアトレード.html": {
+   "s": "prints",
+   "t": "フェアトレード（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No04_説明文_ユニバーサルデザイン.html": {
+   "s": "prints",
+   "t": "ユニバーサルデザイン（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No05_説明文_外来種の問題.html": {
+   "s": "prints",
+   "t": "外来種の問題（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No06_物語文_バトンをつなぐ.html": {
+   "s": "prints",
+   "t": "バトンをつなぐ（物語文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No07_物語文_初めての一人旅.html": {
+   "s": "prints",
+   "t": "初めての一人旅（物語文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No08_物語文_最後の試合.html": {
+   "s": "prints",
+   "t": "最後の試合（物語文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No09_詩_なみ.html": {
+   "s": "prints",
+   "t": "なみ（詩・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No10_詩_たびだち.html": {
+   "s": "prints",
+   "t": "たびだち（詩・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No11_情報の読み取り_グラフで見るごみの量.html": {
+   "s": "prints",
+   "t": "グラフで見るごみの量（情報の読み取り・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No12_情報の読み取り_天気予報の言葉.html": {
+   "s": "prints",
+   "t": "天気予報の言葉（情報の読み取り・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No19_説明文_商店街の変化と移動販売車.html": {
+   "s": "prints",
+   "t": "商店街の変化と移動販売車（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No20_説明文_みかん畑をつぐまで.html": {
+   "s": "prints",
+   "t": "みかん畑をつぐまで（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No21_説明文_本を手わたす仕事.html": {
+   "s": "prints",
+   "t": "本を手わたす仕事（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/6年_No22_説明文_けがのあとで見つけた仕事.html": {
+   "s": "prints",
+   "t": "けがのあとで見つけた仕事（説明文・6年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No16_学級文庫に学習まんが.html": {
+   "s": "prints",
+   "t": "学級文庫に学習まんが（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No17_休み時間の体育館わり当て.html": {
+   "s": "prints",
+   "t": "休み時間の体育館わり当て（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No18_調べ学習は本かインターネットか.html": {
+   "s": "prints",
+   "t": "調べ学習は本かインターネットか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No19_昼休みに外遊びの日を作るべきか.html": {
+   "s": "prints",
+   "t": "昼休みに外遊びの日を作るべきか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No20_給食の量は全員同じか選ぶか.html": {
+   "s": "prints",
+   "t": "給食の量は全員同じか選ぶか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No21_お知らせは紙かアプリか.html": {
+   "s": "prints",
+   "t": "お知らせは紙かアプリか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No22_駅前の空き地の使い方.html": {
+   "s": "prints",
+   "t": "駅前の空き地の使い方（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No23_運動会の種目は全員リレーか選択制か.html": {
+   "s": "prints",
+   "t": "運動会の種目は全員リレーか選択制か（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No24_宿題は紙かデジタルか.html": {
+   "s": "prints",
+   "t": "宿題は紙かデジタルか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No25_防災訓練に小学生はどう参加するか.html": {
+   "s": "prints",
+   "t": "防災訓練に小学生はどう参加するか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No26_そうじの分担は固定か週替わりか.html": {
+   "s": "prints",
+   "t": "そうじの分担は固定か週替わりか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No27_地域の魅力は動画かパンフか.html": {
+   "s": "prints",
+   "t": "地域の魅力は動画かパンフか（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kokugo/p/No28_朝読書は紙の本か電子書籍か.html": {
+   "s": "prints",
+   "t": "朝読書は紙の本か電子書籍か（条件作文・高学年）── 国語プリント"
+  },
+  "/School_Stock/prints/kotoba-asobi/": {
+   "s": "prints",
+   "t": "ことばあそびプリント ── ことばさがしとひらがなクロスワード"
+  },
+  "/School_Stock/prints/nanmon/": {
+   "s": "prints",
+   "t": "難問集 4年算数 No.1（全10まい）"
+  },
+  "/School_Stock/prints/rika/": {
+   "s": "prints",
+   "t": "理科プリント ── 現役教員がつくった無料の理科プリント"
+  },
+  "/School_Stock/prints/sansu-ensyu/": {
+   "s": "prints",
+   "t": "算数プリント ── レベル別演習プリント（基礎〜まとめ・問題と解答）"
+  },
+  "/School_Stock/prints/sansu/": {
+   "s": "prints",
+   "t": "算数プリント ── 式と言葉で説明する実態別プリント（レベル1〜4＋解答）"
+  },
+  "/School_Stock/prints/shakai/": {
+   "s": "prints",
+   "t": "社会プリント ── 現役教員がつくった無料の社会プリント"
+  },
+  "/School_Stock/prints/taiiku/": {
+   "s": "prints",
+   "t": "体育 学習カード ── 現役教員がつくった無料の体育プリント"
+  },
+  "/School_Stock/prints/tsukaeru/": {
+   "s": "prints",
+   "t": "つかえるシリーズ ── きそ→よみとる→かんがえる→あらわす（1単元4まい＋解答）"
+  },
+  "/School_Stock/prints/tsukaeru/genteikoukai/": {
+   "s": "prints",
+   "t": "つかえるシリーズ 3〜6年（限定公開）"
+  },
+  "/School_Stock/r/fp/": {
+   "s": "r",
+   "t": "ふりかえりプリント まちがい報告"
+  },
+  "/School_Stock/shien/": {
+   "s": "shien",
+   "t": "支援カード"
+  },
+  "/School_Stock/shien/hoshibon/": {
+   "s": "shien",
+   "t": "星本のトリセツ ── 通常学級の先生のための、特別支援学校の教科書ガイド"
+  },
+  "/School_Stock/shien/links/": {
+   "s": "shien",
+   "t": "特別支援の実践リンク集 ── その子の「今」から授業を組むために"
+  },
+  "/School_Stock/shien/toolbox/": {
+   "s": "shien",
+   "t": "支援の道具箱 ── 類題生成プロンプト6本とローテク支援"
+  },
+  "/School_Stock/shien/ugoku/": {
+   "s": "shien",
+   "t": "うごく解説（支援で使う）"
+  },
+  "/School_Stock/shien/yomimono/": {
+   "s": "shien",
+   "t": "しんどさの正体 ── テストで手が止まる子を、4つの部屋で見る"
+  },
+  "/School_Stock/soudan/": {
+   "s": "soudan",
+   "t": "先生の相談窓口"
+  },
+  "/School_Stock/sozai/": {
+   "s": "sozai",
+   "t": "授業素材ライブラリ ── 授業で使える無料イラスト・写真・うごく解説"
+  },
+  "/School_Stock/sozai/howto.html": {
+   "s": "sozai",
+   "t": "素材シートの使い方 ── 1枚から必要なパーツだけ切り取る"
+  },
+  "/School_Stock/sozai/photo/": {
+   "s": "sozai",
+   "t": "AIでつくった写真素材 ── 授業素材ライブラリ"
+  },
+  "/School_Stock/sozai/schools/": {
+   "s": "sozai",
+   "t": "学校だよりに、安心して使える絵を。｜School Stock 素材ライブラリ"
+  },
+  "/School_Stock/stats/": {
+   "s": "stats",
+   "t": "アクセス集計（内部用）"
+  },
+  "/School_Stock/tankyu/": {
+   "s": "tankyu",
+   "t": "探究・問題解決サポート"
+  },
+  "/School_Stock/tankyu/machi-lab/": {
+   "s": "tankyu",
+   "t": "安心・安全なまちづくり｜4年 総合的な学習の時間"
+  },
+  "/School_Stock/tankyu/machi-lab/kurumaisu.html": {
+   "s": "tankyu",
+   "t": "車いす・アイマスク｜安心・安全なまちづくり"
+  },
+  "/School_Stock/tankyu/machi-lab/links.html": {
+   "s": "tankyu",
+   "t": "しらべるリンク｜安心・安全なまちづくり"
+  },
+  "/School_Stock/tankyu/machi-lab/shuwa.html": {
+   "s": "tankyu",
+   "t": "手話｜安心・安全なまちづくり"
+  },
+  "/School_Stock/tankyu/machi-lab/tenji.html": {
+   "s": "tankyu",
+   "t": "点字｜安心・安全なまちづくり"
+  },
+  "/School_Stock/tankyu/prompts/": {
+   "s": "tankyu",
+   "t": "探究の壁打ちプロンプト集──段階別・コピーしてそのまま使える"
+  },
+  "/School_Stock/tankyu/taiwa-ronsho/": {
+   "s": "tankyu",
+   "t": "対話型論証モデルの読み込みノート"
+  },
+  "/School_Stock/tankyu/yomimono/": {
+   "s": "tankyu",
+   "t": "調べる、の前に。──探究を「発表会」で終わらせない7つの視点"
+  },
+  "/School_Stock/telop/": {
+   "s": "telop",
+   "t": "授業テロップ ── 話したことが字幕で出て、1行ずつ残る"
+  },
+  "/School_Stock/tools/": {
+   "s": "tools",
+   "t": "授業と校務の道具"
+  },
+  "/School_Stock/tools/eigo-flashcards/": {
+   "s": "tools",
+   "t": "英単語フラッシュカード ── 校種・学年べつのランダム出題"
+  },
+  "/School_Stock/tools/note-prints/": {
+   "s": "tools",
+   "t": "すぐ印刷して使えるノートプリント集 ── 方眼・マス・作文"
+  },
+  "/School_Stock/tools/pdf-toolbox/": {
+   "s": "tools",
+   "t": "先生のPDF道具箱 ── 児童の個人情報を、校外に出さないPDFツール"
+  },
+  "/School_Stock/tools/pdf-toolbox/terms.html": {
+   "s": "tools",
+   "t": "利用規約 — 先生のPDF道具箱"
+  }
+ },
+ "sections": {
+  "": "棚トップ",
+  "about": "このサイトについて",
+  "ai": "AI活用（プロンプト集）",
+  "board": "思考ツールボード",
+  "entertainment": "読みもの・アイデア",
+  "ideas": "実践アイデア",
+  "kyozai-kenkyu": "教材研究ノート",
+  "lab": "教室の中の特別支援",
+  "oshirase": "入荷のお知らせを受け取る",
+  "prints": "教科のプリント",
+  "r": "r",
+  "shien": "支援カード",
+  "soudan": "先生の相談窓口",
+  "sozai": "授業素材ライブラリ",
+  "stats": "アクセス集計（内部用）",
+  "tankyu": "探究・問題解決サポート",
+  "telop": "授業テロップ",
+  "tools": "授業と校務の道具"
+ }
+}
