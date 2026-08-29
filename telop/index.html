@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>授業テロップ ── School Stock</title>
+<meta name="description" content="話したことが画面の下に字幕で出て、1行ずつ残ります。無料・登録不要・Chromeで開くだけ。">
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<style>
+:root{
+  --ink:#15181c; --black:#0e0f11; --paper:#ffffff; --wash:#f6f6f4;
+  --line:#e6e6e3; --sub:#767b83; --accent:#2b5fd9; --danger:#c0392b;
+  --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+}
+*{box-sizing:border-box; margin:0; padding:0;}
+html,body{height:100%;}
+body{
+  font-family:var(--font-ja); color:var(--ink); background:var(--paper);
+  display:flex; flex-direction:column; line-break:strict;
+}
+button{font-family:inherit; cursor:pointer;}
+
+/* ── 上の帯 ─────────────────────────── */
+header{
+  display:flex; align-items:center; gap:14px; flex-wrap:wrap;
+  padding:10px 16px; border-bottom:1px solid var(--line); background:var(--paper);
+}
+.brand{display:flex; align-items:baseline; gap:8px;}
+.brand h1{font-size:16px; font-weight:800; letter-spacing:.02em; white-space:nowrap;}
+.brand .by{font-size:11px; color:var(--sub); white-space:nowrap;}
+#status{font-size:12px; color:var(--sub); display:flex; align-items:center; gap:6px; min-width:7em;}
+#status .dot{width:8px; height:8px; border-radius:50%; background:var(--line); flex:none;}
+body.running #status .dot{background:var(--danger); animation:blink 1.2s infinite;}
+@keyframes blink{0%,100%{opacity:1;}50%{opacity:.25;}}
+.spacer{flex:1;}
+.btn{
+  border:1px solid var(--line); background:var(--paper); color:var(--ink);
+  font-size:13px; padding:7px 12px; border-radius:3px; white-space:nowrap;
+}
+.btn:hover{border-color:var(--sub);}
+.btn:disabled{opacity:.35; cursor:default;}
+.btn:disabled:hover{border-color:var(--line);}
+#btnStart{
+  background:var(--accent); border-color:var(--accent); color:#fff;
+  font-size:14px; font-weight:700; padding:8px 20px;
+}
+body.running #btnStart{background:var(--paper); color:var(--danger); border-color:var(--danger);}
+.tools{display:flex; gap:8px; flex-wrap:wrap;}
+
+/* ── ログ（本文） ─────────────────────── */
+/* 残った文は下から積む。いちばん新しい行がテロップのすぐ上に来るので、
+   子どもの目の動きが小さくてすむ（情報保障の実践研究の指摘） */
+#logWrap{flex:1; overflow-y:auto; background:var(--paper); display:flex; flex-direction:column;}
+#log{width:100%; max-width:960px; margin:auto auto 0; padding:22px 20px 14px;}
+#empty{margin-bottom:auto;}
+#log p{
+  font-size:20px; line-height:1.75; padding:4px 6px;
+  border-bottom:1px solid var(--wash); cursor:text;
+}
+#log p:hover{background:var(--wash);}
+#log p:focus{outline:2px solid var(--accent); outline-offset:-2px; background:var(--paper);}
+#empty{max-width:960px; margin:0 auto; padding:48px 20px; color:var(--sub);}
+#empty h2{font-size:20px; font-weight:800; color:var(--ink); margin-bottom:14px; word-break:auto-phrase; text-wrap:pretty;}
+#empty p{font-size:14px; line-height:2; word-break:auto-phrase;}
+#empty .rule{margin-top:18px; padding-top:14px; border-top:1px solid var(--line); font-size:12px; line-height:1.9;}
+
+/* テロップだけ表示（上の余白もテロップの色にそろえる） */
+body.view-telop #logWrap{background:var(--black);}
+body.view-telop.theme-light #logWrap{background:var(--paper);}
+body.view-telop #log, body.view-telop #empty{visibility:hidden;}
+
+/* ── テロップ ─────────────────────────── */
+#telopHome{flex:none;}
+#telop{
+  background:var(--black); color:#fff; position:relative; overflow:hidden;
+  font-weight:800; letter-spacing:.01em;
+}
+#telopInner{
+  position:absolute; left:0; right:0; bottom:0;
+  padding:14px 28px 16px;
+  max-width:30em; /* 1行が長すぎると読めない（字幕研究の16字×2行を教室距離に緩めた値） */
+  word-break:auto-phrase; line-height:1.45; /* balanceは使わない＝表示済みの文字を動かさない */
+}
+#telopInner:empty::before{
+  content:"ここに 話したことが 出ます";
+  color:#585d65; font-weight:500; font-size:20px; letter-spacing:.04em;
+}
+/* 文字の大きさ（テロップ） */
+body.size-s  #telopInner{font-size:32px;} body.size-s  #telop{height:calc(32px*1.45 + 30px);}
+body.size-m  #telopInner{font-size:46px;} body.size-m  #telop{height:calc(46px*1.45 + 30px);}
+body.size-l  #telopInner{font-size:62px;} body.size-l  #telop{height:calc(62px*1.45 + 30px);}
+body.size-xl #telopInner{font-size:82px;} body.size-xl #telop{height:calc(82px*1.45 + 30px);}
+body.lines-2.size-s  #telop{height:calc(32px*1.45*2 + 30px);}
+body.lines-2.size-m  #telop{height:calc(46px*1.45*2 + 30px);}
+body.lines-2.size-l  #telop{height:calc(62px*1.45*2 + 30px);}
+body.lines-2.size-xl #telop{height:calc(82px*1.45*2 + 30px);}
+/* 配色 */
+body.theme-light #telop{background:#ffffff; color:var(--black); border-top:1px solid var(--line);}
+body.theme-light #telopInner:empty::before{color:#a8aaa6;}
+body.theme-yellow #telop{background:var(--black); color:#ffd900;}
+#telopGone{display:none; background:var(--wash); color:var(--sub); font-size:13px; padding:12px 28px;}
+body.pip-out #telopGone{display:block;}
+
+/* 前に出したときの小窓：窓いっぱいに字だけ。すきまを作らない */
+body.pip{background:var(--black); display:block; height:100vh; overflow:hidden;}
+body.pip.theme-light{background:var(--paper);}
+body.pip #telop{height:100vh !important; max-height:none !important;}
+body.pip #telopInner{padding:6px 18px 8px; max-width:none;}
+/* 窓のふちをつかんで大きさを変えると、字もいっしょに変わります、の合図 */
+body.pip #pipHint{
+  position:fixed; right:10px; bottom:8px; font-size:11px; font-weight:500;
+  color:#7c828b; opacity:0; transition:opacity .2s; pointer-events:none;
+}
+body.pip:hover #pipHint{opacity:1;}
+
+/* ── モーダル ─────────────────────────── */
+dialog{
+  border:1px solid var(--line); border-radius:4px; padding:0;
+  width:min(560px, calc(100vw - 32px)); max-height:85vh;
+  margin:auto;   /* 画面の中央に出す */
+}
+dialog::backdrop{background:rgba(14,15,17,.45);}
+.dlgHead{
+  display:flex; align-items:center; justify-content:space-between;
+  padding:14px 20px; border-bottom:1px solid var(--line);
+}
+.dlgHead h2{font-size:15px; font-weight:800;}
+.dlgHead button{border:0; background:none; font-size:18px; color:var(--sub); padding:2px 6px;}
+.dlgHead button:focus:not(:focus-visible){outline:none;}
+#dictArea::placeholder{color:#b6bac1;}
+.dlgBody{padding:18px 20px 22px; overflow-y:auto; max-height:calc(85vh - 54px);}
+.set{margin-bottom:18px;}
+.set h3{font-size:12px; color:var(--sub); font-weight:600; margin-bottom:8px;}
+.seg{display:flex; gap:6px; flex-wrap:wrap;}
+.seg button{
+  border:1px solid var(--line); background:var(--paper); font-size:13px;
+  padding:6px 14px; border-radius:3px;
+}
+.seg button.on{border-color:var(--accent); color:var(--accent); font-weight:700;}
+.setNote{font-size:11.5px; color:var(--sub); margin-top:6px; line-height:1.7;}
+#dictArea{
+  width:100%; border:1px solid var(--line); border-radius:3px; padding:8px 10px;
+  font-family:inherit; font-size:13px; line-height:1.8; resize:vertical; color:var(--ink);
+}
+#dictArea:focus{outline:none; border-color:var(--accent);}
+.dangerRow{border-top:1px solid var(--line); padding-top:16px;}
+.btnDanger{border:1px solid var(--line); background:var(--paper); color:var(--danger); font-size:13px; padding:6px 14px; border-radius:3px;}
+/* つかいかた */
+#dlgHelp h3{font-size:13.5px; font-weight:800; margin:16px 0 6px; word-break:auto-phrase;}
+#dlgHelp h3:first-child{margin-top:0;}
+#dlgHelp p, #dlgHelp li{font-size:13.5px; line-height:1.9;}
+#dlgHelp ol{padding-left:1.4em;}
+#dlgHelp .fine{font-size:12px; color:var(--sub); line-height:1.8;}
+#dlgHelp .credit{margin-top:16px; padding-top:12px; border-top:1px solid var(--line); font-size:12px; color:var(--sub);}
+
+/* トースト */
+#toast{
+  position:fixed; left:50%; bottom:24px; transform:translateX(-50%) translateY(20px);
+  background:var(--black); color:#fff; font-size:13px; padding:10px 18px; border-radius:3px;
+  opacity:0; pointer-events:none; transition:.25s; z-index:50; max-width:90vw;
+}
+#toast.show{opacity:1; transform:translateX(-50%) translateY(0);}
+
+@media (max-width:640px){
+  header{gap:8px; padding:8px 10px;}
+  .brand .by,#status{display:none;}
+  body.running #status{display:flex;}
+  #log p{font-size:17px;}
+  #telopInner{padding:10px 16px 12px;}
+  /* 画面が狭いときは、どの大きさを選んでいても収まる字にそろえる */
+  body.size-s  #telopInner{font-size:22px;} body.size-s  #telop{height:calc(22px*1.45 + 22px);}
+  body.size-m  #telopInner{font-size:28px;} body.size-m  #telop{height:calc(28px*1.45 + 22px);}
+  body.size-l  #telopInner{font-size:34px;} body.size-l  #telop{height:calc(34px*1.45 + 22px);}
+  body.size-xl #telopInner{font-size:40px;} body.size-xl #telop{height:calc(40px*1.45 + 22px);}
+  body.lines-2.size-s  #telop{height:calc(22px*1.45*2 + 22px);}
+  body.lines-2.size-m  #telop{height:calc(28px*1.45*2 + 22px);}
+  body.lines-2.size-l  #telop{height:calc(34px*1.45*2 + 22px);}
+  body.lines-2.size-xl #telop{height:calc(40px*1.45*2 + 22px);}
+}
+/* 画面が低いとき、テロップが場所を取りすぎないようにする */
+#telop{max-height:42vh;}
+</style>
+</head>
+<body class="size-l lines-2 theme-dark view-log">
+
+<header>
+  <div class="brand">
+    <h1>授業テロップ</h1><span class="by">School Stock</span>
+  </div>
+  <button class="btn" id="btnStart">はじめる</button>
+  <span id="status"><span class="dot"></span><span id="statusText">とまっています</span></span>
+  <div class="spacer"></div>
+  <div class="tools">
+    <button class="btn" id="btnPip" hidden>テロップを前に出す</button>
+    <button class="btn" id="btnSave" disabled>のこす</button>
+    <button class="btn" id="btnAI" disabled>AIでまとめる</button>
+    <button class="btn" id="btnSet">設定</button>
+    <button class="btn" id="btnHelp">つかいかた</button>
+  </div>
+</header>
+
+<div id="logWrap">
+  <div id="empty">
+    <h2>話したことが 下に字幕で出て 1行ずつ残ります</h2>
+    <p>
+      「はじめる」を押して、マイクを許可してください。<br>
+      この画面をモニターやプロジェクターに映せば、聞き逃しても目で追えます。<br>
+      残った文は「のこす」でテキストに保存でき、「AIでまとめる」を生成AIに貼ると、誤認識を直しながら整理してくれます。
+    </p>
+    <p class="rule">
+      Google Chromeで使ってください（音声認識がChromeの機能のため）。<br>
+      音声はChromeの音声認識のしくみ（Googleのサーバー）で処理されます。学校で使うときは、お使いの自治体の情報の取り扱いルールに従ってください。
+    </p>
+  </div>
+  <div id="log" hidden></div>
+</div>
+
+<div id="telopHome">
+  <div id="telopGone">テロップは前の小さな窓に出ています。窓を閉じると、ここに戻ります。</div>
+  <div id="telop"><div id="telopInner"></div></div>
+</div>
+
+<dialog id="dlgSet">
+  <div class="dlgHead"><h2>設定</h2><button data-close>✕</button></div>
+  <div class="dlgBody">
+    <div class="set">
+      <h3>文字の大きさ</h3>
+      <div class="seg" data-key="size">
+        <button data-v="s">小</button><button data-v="m">中</button>
+        <button data-v="l">大</button><button data-v="xl">特大</button>
+      </div>
+    </div>
+    <div class="set">
+      <h3>テロップの行数</h3>
+      <div class="seg" data-key="lines">
+        <button data-v="1">1行</button><button data-v="2">2行</button>
+      </div>
+    </div>
+    <div class="set">
+      <h3>テロップの色</h3>
+      <div class="seg" data-key="theme">
+        <button data-v="dark">黒地に白</button><button data-v="light">白地に黒</button><button data-v="yellow">黒地に黄</button>
+      </div>
+    </div>
+    <div class="set">
+      <h3>画面の表示</h3>
+      <div class="seg" data-key="view">
+        <button data-v="log">残った文もみせる</button><button data-v="telop">テロップだけ</button>
+      </div>
+      <p class="setNote">スライドと一緒に使うときは、上の「テロップを前に出す」も使えます（テロップだけの小さな窓が、ほかの画面の上に出ます）。</p>
+    </div>
+    <div class="set">
+      <h3>ことばの置きかえ辞書</h3>
+      <textarea id="dictArea" rows="4" placeholder="たいせき→体積&#10;いいづかし→飯塚市&#10;（1行に1つ。「まちがい→ただしい」の形で書きます）"></textarea>
+      <p class="setNote">
+        単元の用語・地名・人名など、よくまちがえられる言葉を登録しておくと、字幕とログに出る前に置きかわります。
+        出したくない言葉を「◯◯」に置きかえる使い方もできます。
+      </p>
+    </div>
+    <div class="set dangerRow">
+      <h3>ログ</h3>
+      <button class="btnDanger" id="btnClear">残った文をぜんぶ消す</button>
+      <p class="setNote">消す前に「のこす」で保存しておけます。</p>
+    </div>
+  </div>
+</dialog>
+
+<dialog id="dlgHelp">
+  <div class="dlgHead"><h2>つかいかた</h2><button data-close>✕</button></div>
+  <div class="dlgBody">
+    <h3>なにをするもの？</h3>
+    <p>
+      話したことが画面の下に字幕（テロップ）で出て、1行ずつ残っていきます。
+      耳で聞くだけでは流れて消えてしまう言葉を、目でも追えるようにする道具です。
+      先生の話がもう一度読めるので、分かるまで自分のペースで見返せます。
+    </p>
+    <h3>はじめかた</h3>
+    <ol>
+      <li>Google Chromeでこのページを開く</li>
+      <li>「はじめる」を押して、マイクを許可する</li>
+      <li>この画面をモニターやプロジェクターに映す</li>
+    </ol>
+    <h3>スライドと一緒に使うとき</h3>
+    <p>
+      「テロップを前に出す」を押すと、テロップだけの小さな窓が出て、スライドなどほかの画面の上に重なって表示されます。窓を閉じると元に戻ります。
+    </p>
+    <h3>残った文のいかしかた</h3>
+    <p>
+      残った文は、<b>クリックするとその場で直せます</b>（Enterで確定・空にすると行が消えます）。<br>
+      「のこす」で、時刻つきのテキストファイルとして保存できます。<br>
+      「AIでまとめる」を押すと、ログとお願いの文がコピーされます。ChatGPTやGeminiなどに貼りつけると、誤認識を文脈から直したうえで、要約・キーワード・やることの一覧に整理してくれます。
+    </p>
+    <h3>字幕が読みやすくなる話し方のコツ</h3>
+    <p class="fine">
+      認識のよしあしは、道具より話し方で変わります（授業実践の研究では、話し方の工夫で認識率が4割から8割まで上がった報告があります）。
+    </p>
+    <ol>
+      <li>ゆっくりめに話す（1分間に300字くらい）</li>
+      <li>一文を短くして、言い切ったら1秒あける</li>
+      <li>マイクは口の近くに（ピンマイクが向いています）</li>
+      <li>単元の用語・地名・人名は、設定の「置きかえ辞書」に登録しておく</li>
+      <li>子どもの発言は、先生が復唱してテロップに乗せる（復唱は授業でも自然な動きです）</li>
+    </ol>
+    <p class="fine">
+      向いているのは、先生がひとりで話す説明・指示の場面です。グループ活動などでまわりがにぎやかなときは、認識が大きく崩れます。
+    </p>
+    <h3>おことわり</h3>
+    <p class="fine">
+      ・音声認識はChromeの機能を使います。認識のとき、音声はGoogleのしくみで処理されます。学校で使うときは、お使いの自治体・学校の情報の取り扱いルールに従ってください。<br>
+      ・残った文は、このパソコンのブラウザの中にだけ保存されます。どこかに送られることはありません。<br>
+      ・人の名前などが字幕やログに残ることがあります。映す場面・のこす場面に合わせて気をつけてお使いください。<br>
+      ・認識は完璧ではありません。大事な連絡は、口頭や板書と合わせてお使いください。<br>
+      ・この道具は、認識された言葉を勝手に書き直しません（自動の文章整形は、直る数より増える誤りのほうが多いことがあるため）。直すのは人の役目にして、クリック訂正と「AIでまとめる」に分けています。
+    </p>
+    <p class="credit">© School Stock ／ 無料・登録不要。認識する言語は日本語だけの、シンプルな道具です。</p>
+  </div>
+</dialog>
+
+<div id="toast"></div>
+
+<script>
+"use strict";
+/* ── 状態 ─────────────────────────── */
+const $ = s => document.querySelector(s);
+const els = {
+  start: $("#btnStart"), pip: $("#btnPip"), save: $("#btnSave"), ai: $("#btnAI"),
+  set: $("#btnSet"), help: $("#btnHelp"), clear: $("#btnClear"),
+  status: $("#statusText"), logWrap: $("#logWrap"), log: $("#log"), empty: $("#empty"),
+  telop: $("#telop"), telopInner: $("#telopInner"), telopHome: $("#telopHome"),
+  dlgSet: $("#dlgSet"), dlgHelp: $("#dlgHelp"), toast: $("#toast"),
+};
+const LS_LOG = "telop-log-v1", LS_SET = "telop-set-v1";
+const state = { running:false, lines:[], seq:0, rec:null, wake:null, pipWin:null,
+                restartTimer:null, recStartedAt:0, recFails:0 };
+const settings = Object.assign(
+  { size:"l", lines:"2", theme:"dark", view:"log", dict:"" },
+  readJSON(LS_SET) || {}
+);
+
+const DEMO = new URLSearchParams(location.search).has("demo");
+function readJSON(k){ try{ return JSON.parse(localStorage.getItem(k)); }catch(e){ return null; } }
+function writeJSON(k,v){
+  if(DEMO) return;            /* デモの文を本物のログに混ぜない */
+  try{ localStorage.setItem(k, JSON.stringify(v)); }
+  catch(e){                   /* 容量あふれ：古い行を捨ててもう一度だけ試す */
+    if(k === LS_LOG && Array.isArray(v) && v.length > 400){
+      state.lines = v.slice(-400);
+      try{ localStorage.setItem(k, JSON.stringify(state.lines)); }catch(e2){}
+    }
+  }
+}
+
+/* ── 設定の反映 ─────────────────────── */
+function applySettings(){
+  const b = document.body;
+  b.className = b.className.replace(/\b(size|lines|theme|view)-\S+/g, "").trim();
+  b.classList.add("size-"+settings.size, "lines-"+settings.lines, "theme-"+settings.theme, "view-"+settings.view);
+  if(state.running) b.classList.add("running");
+  if(state.pipWin){
+    b.classList.add("pip-out");
+    state.pipWin.document.body.className = "pip size-"+settings.size+" lines-"+settings.lines+" theme-"+settings.theme;
+    fitPip();   /* 行数や色を変えたら、小窓の字も合わせ直す */
+  }
+  document.querySelectorAll(".seg").forEach(seg=>{
+    const key = seg.dataset.key;
+    seg.querySelectorAll("button").forEach(btn=>btn.classList.toggle("on", btn.dataset.v === settings[key]));
+  });
+  writeJSON(LS_SET, settings);
+}
+document.querySelectorAll(".seg").forEach(seg=>{
+  seg.addEventListener("click", e=>{
+    const btn = e.target.closest("button"); if(!btn) return;
+    settings[seg.dataset.key] = btn.dataset.v; applySettings();
+  });
+});
+const dictArea = $("#dictArea");
+dictArea.value = settings.dict || "";
+dictArea.addEventListener("change", ()=>{
+  settings.dict = dictArea.value; buildDict(); writeJSON(LS_SET, settings);
+});
+
+/* ── ログ ─────────────────────────── */
+function timeStr(d){ return String(d.getHours()).padStart(2,"0")+":"+String(d.getMinutes()).padStart(2,"0")+":"+String(d.getSeconds()).padStart(2,"0"); }
+function dateStr(d){ return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0"); }
+
+function addLine(text){
+  text = text.trim(); if(!text) return;
+  const now = new Date();
+  const line = { id: state.seq++, t: now.toISOString(), s: timeStr(now), x: text };
+  state.lines.push(line);
+  if(state.lines.length > 2000) state.lines = state.lines.slice(-2000);
+  writeJSON(LS_LOG, state.lines);
+  els.log.appendChild(makeP(line));
+  while(els.log.children.length > 500) els.log.removeChild(els.log.firstChild);
+  refreshLogView(); scrollLog();
+}
+function makeP(line){
+  const p = document.createElement("p");
+  p.textContent = line.x; p.dataset.id = line.id;
+  return p;
+}
+function refreshLogView(){
+  const has = state.lines.length > 0;
+  els.empty.hidden = has; els.log.hidden = !has;
+  els.save.disabled = !has; els.ai.disabled = !has;
+}
+function scrollLog(){
+  const w = els.logWrap;
+  const nearBottom = w.scrollHeight - w.scrollTop - w.clientHeight < 240;
+  if(nearBottom) w.scrollTop = w.scrollHeight;
+}
+function restoreLog(){
+  const saved = readJSON(LS_LOG);
+  if(Array.isArray(saved)){
+    state.lines = saved.slice(-2000);
+    state.lines.forEach((l, i)=>{ if(l.id === undefined) l.id = i; });
+    state.seq = state.lines.reduce((m, l)=>Math.max(m, l.id + 1), state.seq);
+    const frag = document.createDocumentFragment();
+    state.lines.slice(-500).forEach(l=>frag.appendChild(makeP(l)));
+    els.log.appendChild(frag);
+  }
+  refreshLogView();
+  els.logWrap.scrollTop = els.logWrap.scrollHeight;
+}
+
+/* ── ログの行はクリックで直せる ──────────
+   読み手は誤認識に自分では気づけない・認識率98%の放送でも人手修正を外さない、
+   という知見が根拠。自動で直させず、人がさっと直せる形にする */
+els.log.addEventListener("click", e=>{
+  const p = e.target.closest("p");
+  if(!p || p.isContentEditable) return;
+  try{ p.contentEditable = "plaintext-only"; }catch(err){ p.contentEditable = "true"; }
+  p.focus();
+});
+els.log.addEventListener("keydown", e=>{
+  if(e.key === "Enter"){ e.preventDefault(); e.target.blur(); }
+  if(e.key === "Escape"){ e.target.blur(); }
+});
+els.log.addEventListener("focusout", e=>{
+  const p = e.target.closest ? e.target.closest("p") : null;
+  if(!p || !p.isContentEditable) return;
+  p.contentEditable = "false";
+  const id = Number(p.dataset.id);
+  const idx = state.lines.findIndex(l=>l.id === id);
+  const text = p.textContent.replace(/\s+/g, " ").trim();  /* 貼りつけの改行で崩さない */
+  if(idx >= 0){
+    if(text){ state.lines[idx].x = text; p.textContent = text; }
+    else{ state.lines.splice(idx, 1); p.remove(); }
+    writeJSON(LS_LOG, state.lines);
+    refreshLogView();
+  }
+});
+
+/* ── テロップ表示 ───────────────────── */
+function setTelop(text){ els.telopInner.textContent = text; }
+
+/* 認識中（interim）の描画は250msに1回まで。書き換えのチラつきは読み手の疲労と
+   相関することが実証されている（CHI 2023）ため、更新を間引く */
+let pendingInterim = null, interimTimer = null, lastShown = "";
+function showInterim(text){
+  pendingInterim = text;
+  if(interimTimer) return;
+  interimTimer = setTimeout(()=>{
+    interimTimer = null;
+    if(pendingInterim !== null && pendingInterim !== lastShown){
+      setTelop(pendingInterim); lastShown = pendingInterim;
+    }
+    pendingInterim = null;
+  }, 250);
+}
+function showFinalTelop(text){
+  clearTimeout(interimTimer); interimTimer = null; pendingInterim = null;
+  setTelop(text); lastShown = text;
+}
+
+/* ── 置きかえ辞書・言いよどみ ───────────── */
+let dictRules = [];
+function buildDict(){
+  dictRules = (settings.dict || "").split("\n")
+    .map(s => { const m = s.match(/^(.*?)(?:→|->)(.*)$/); return m ? [m[1].trim(), m[2].trim()] : null; })
+    .filter(a => a && a[0]);
+}
+function applyDict(text){
+  for(const [a, b] of dictRules) text = text.split(a).join(b);
+  return text;
+}
+/* 行の頭の言いよどみだけを控えめに削る。文の中身は書き換えない（自動整形は
+   成功率3割・悪化もあるという実測が根拠。tjsai 37-3 IDS-F） */
+const FILLER_HEAD = /^(えー+と?|えっと[ー〜]?|あのー+|んー+|うーんと)[、。\s]*/;
+const AIZUCHI = new Set(["はい","うん","ええ","あー","えー","うーん","おー","そう","そうそう","うんうん","なるほど","えっと","あの","はいはい"]);
+function cleanFinal(text){
+  text = applyDict(text.trim()).replace(FILLER_HEAD, "").trim();
+  if(AIZUCHI.has(text)) return "";   /* 相槌だけの行はログに残さない */
+  return text;
+}
+
+/* ── 音声認識 ─────────────────────── */
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+
+function makeRec(){
+  const rec = new SR();
+  rec.lang = "ja-JP"; rec.continuous = true; rec.interimResults = true;
+  rec.onresult = ev=>{
+    let interim = "";
+    for(let i = ev.resultIndex; i < ev.results.length; i++){
+      const r = ev.results[i];
+      if(r.isFinal){
+        const line = cleanFinal(r[0].transcript);
+        if(line){ addLine(line); showFinalTelop(line); }
+      }
+      else interim += r[0].transcript;
+    }
+    interim = applyDict(interim.trim()).replace(FILLER_HEAD, "");
+    if(interim) showInterim(interim);
+  };
+  rec.onerror = ev=>{
+    if(ev.error === "not-allowed" || ev.error === "service-not-allowed"){
+      stop(); els.status.textContent = "マイクが許可されていません";
+      toast("マイクが許可されていません。アドレスバーのマイクのマークから許可してください");
+    }else if(ev.error === "network"){
+      els.status.textContent = "ネットワークを確認してください";
+    }
+    /* no-speech / aborted は onend の再開にまかせる */
+  };
+  /* 認識は黙っていると勝手に終わるので、終わったらすぐ入れ直す。
+     ただし、すぐ終わるのが続くとき（マイクが使えない等）は間隔をのばして、
+     ぐるぐる回り続けるのを防ぐ */
+  rec.onstart = ()=>{ state.recStartedAt = Date.now(); };
+  rec.onend = ()=>{
+    if(!state.running) return;
+    const lived = Date.now() - (state.recStartedAt || 0);
+    state.recFails = lived < 1000 ? state.recFails + 1 : 0;
+    if(state.recFails >= 8){
+      stop();
+      els.status.textContent = "認識をつづけられません";
+      toast("音声認識をつづけられませんでした。マイクとネットワークを確かめて、もう一度「はじめる」を押してください");
+      return;
+    }
+    const wait = Math.min(250 * Math.pow(2, Math.max(0, state.recFails - 1)), 8000);
+    clearTimeout(state.restartTimer);
+    state.restartTimer = setTimeout(()=>{ try{ rec.start(); }catch(e){} }, wait);
+  };
+  return rec;
+}
+
+async function start(){
+  if(state.running) return;
+  if(!SR && !DEMO){
+    toast("このブラウザでは音声認識が使えません。Google Chromeで開いてください");
+    return;
+  }
+  state.running = true;
+  state.recFails = 0;
+  document.body.classList.add("running");
+  els.start.textContent = "とめる";
+  els.status.textContent = "きいています";
+  if(DEMO){ demoStart(); }
+  else{
+    state.rec = state.rec || makeRec();
+    try{ state.rec.start(); }catch(e){}
+  }
+  try{ state.wake = await navigator.wakeLock.request("screen"); }catch(e){}
+}
+function stop(){
+  if(!state.running) return;
+  state.running = false;
+  document.body.classList.remove("running");
+  els.start.textContent = "はじめる";
+  els.status.textContent = "とまっています";
+  clearTimeout(state.restartTimer);
+  if(DEMO) demoStop();
+  else if(state.rec){ try{ state.rec.stop(); }catch(e){} }
+  if(state.wake){ state.wake.release().catch(()=>{}); state.wake = null; }
+}
+els.start.addEventListener("click", ()=> state.running ? stop() : start());
+document.addEventListener("visibilitychange", async ()=>{
+  if(document.visibilityState === "visible" && state.running && !state.wake){
+    try{ state.wake = await navigator.wakeLock.request("screen"); }catch(e){}
+  }
+});
+
+/* ── 保存・コピー ───────────────────── */
+els.save.addEventListener("click", ()=>{
+  const d = new Date();
+  const head = "授業テロップのログ " + dateStr(d) + "\n\n";
+  const body = state.lines.map(l=>l.s + "  " + l.x).join("\n");
+  const blob = new Blob([head + body + "\n"], {type:"text/plain;charset=utf-8"});
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = "授業テロップ_" + dateStr(d) + "_" + String(d.getHours()).padStart(2,"0") + String(d.getMinutes()).padStart(2,"0") + ".txt";
+  a.click(); URL.revokeObjectURL(a.href);
+  toast("テキストファイルに保存しました");
+});
+
+const AI_PROMPT = [
+  "以下は、授業や発表の音声認識ログです（自動認識のため、誤りを含みます）。",
+  "",
+  "次の3つを、読みやすい日本語で整理してください。",
+  "1. 誤認識と思われる言葉を文脈から直したうえでの、内容の要約",
+  "2. 大事な言葉（キーワード）と、その短い説明",
+  "3. 「やること」「持ってくるもの」など、聞き手への連絡や指示があれば一覧",
+  "",
+  "--- ログここから ---",
+].join("\n");
+els.ai.addEventListener("click", async ()=>{
+  const body = state.lines.map(l=>l.s + "  " + l.x).join("\n");
+  const text = AI_PROMPT + "\n" + body + "\n--- ログここまで ---";
+  try{
+    await navigator.clipboard.writeText(text);
+    toast("お願いの文とログをコピーしました。ChatGPTやGeminiに貼りつけてください");
+  }catch(e){
+    toast("コピーできませんでした。「のこす」で保存して貼りつけてください");
+  }
+});
+
+els.clear.addEventListener("click", ()=>{
+  if(!confirm("残った文をぜんぶ消します。よろしいですか？（保存していないログは戻せません）")) return;
+  state.lines = []; els.log.innerHTML = ""; writeJSON(LS_LOG, []);
+  setTelop(""); refreshLogView(); els.dlgSet.close();
+  toast("消しました");
+});
+
+/* ── モーダル・トースト ───────────────── */
+els.set.addEventListener("click", ()=> els.dlgSet.showModal());
+els.help.addEventListener("click", ()=> els.dlgHelp.showModal());
+document.querySelectorAll("[data-close]").forEach(b=> b.addEventListener("click", ()=> b.closest("dialog").close()));
+document.querySelectorAll("dialog").forEach(d=> d.addEventListener("click", e=>{ if(e.target === d) d.close(); }));
+let toastTimer = null;
+function toast(msg){
+  els.toast.textContent = msg; els.toast.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(()=> els.toast.classList.remove("show"), 3800);
+}
+
+/* ── 前に出す（Document Picture-in-Picture） ── */
+if("documentPictureInPicture" in window) els.pip.hidden = false;
+/* 小窓の高さに合わせて字の大きさを決める。窓のふちをつかんで広げれば字も大きくなる */
+function fitPip(){
+  if(!state.pipWin) return;
+  const h = state.pipWin.innerHeight - 12;                    /* 上下の余白ぶん */
+  /* 2行の設定でも、窓が低いときは1行ぶんで大きく出す（小さくて読めない方が困る） */
+  const lines = (settings.lines === "2" && h >= 120) ? 2 : 1;
+  const byHeight = Math.floor(h / (lines * 1.45));
+  const byWidth  = Math.floor(state.pipWin.innerWidth / 8);   /* 1行に8字は入るように */
+  els.telopInner.style.fontSize = Math.max(20, Math.min(byHeight, byWidth)) + "px";
+}
+els.pip.addEventListener("click", async ()=>{
+  if(state.pipWin){ state.pipWin.close(); return; }
+  try{
+    const lines = settings.lines === "2" ? 2 : 1;
+    const win = await documentPictureInPicture.requestWindow({
+      width: 680, height: lines === 2 ? 150 : 96      /* 小さめに出して、あとは好きな大きさへ */
+    });
+    state.pipWin = win;
+    win.document.documentElement.lang = "ja";
+    [...document.styleSheets].forEach(ss=>{
+      try{
+        const st = win.document.createElement("style");
+        st.textContent = [...ss.cssRules].map(r=>r.cssText).join("\n");
+        win.document.head.appendChild(st);
+      }catch(e){}
+    });
+    win.document.body.appendChild(els.telop);
+    const hint = win.document.createElement("div");
+    hint.id = "pipHint"; hint.textContent = "ふちをつかむと大きさが変わります";
+    win.document.body.appendChild(hint);
+    document.body.classList.add("pip-out");
+    els.pip.textContent = "テロップを戻す";
+    applySettings();
+    fitPip();
+    win.addEventListener("resize", fitPip);
+    win.addEventListener("pagehide", ()=>{
+      els.telopHome.appendChild(els.telop);
+      els.telopInner.style.fontSize = "";   /* 元の大きさに戻す */
+      state.pipWin = null;
+      document.body.classList.remove("pip-out");
+      els.pip.textContent = "テロップを前に出す";
+      applySettings();
+    });
+  }catch(e){
+    toast("小さな窓を出せませんでした。Chromeを最新にしてお試しください");
+  }
+});
+
+/* ── デモ（?demo=1・検証用。マイクなしで動きを確かめる） ── */
+let demoTimers = [];
+const DEMO_LINES = [
+  "それでは理科の授業を始めます",
+  "えーと 今日は物の体積と温度について調べます",
+  "空気を閉じ込めた試験管を温めると どうなると思いますか",
+  "予想をノートに書いてから 実験の準備をしましょう",
+  "大事な言葉はこの3つです 体積 温度 変化",
+  "実験が終わったら 結果と分かったことをまとめます",
+];
+function demoStart(){
+  let i = 0;
+  function next(){
+    if(!state.running) return;
+    const line = DEMO_LINES[i % DEMO_LINES.length]; i++;
+    let n = 0;
+    const t = setInterval(()=>{
+      if(!state.running){ clearInterval(t); return; }
+      n += 3;
+      showInterim(line.slice(0, n).replace(FILLER_HEAD, ""));
+      if(n >= line.length){
+        clearInterval(t);
+        const clean = cleanFinal(line);
+        if(clean){ addLine(clean); showFinalTelop(clean); }
+        demoTimers.push(setTimeout(next, 1600));
+      }
+    }, 90);
+    demoTimers.push(t);
+  }
+  next();
+}
+function demoStop(){ demoTimers.forEach(t=>{ clearTimeout(t); clearInterval(t); }); demoTimers = []; }
+
+/* ── 起動 ─────────────────────────── */
+/* ※このページには相談窓口ボタン（soudan.js）を入れていない。
+   右下の固定ボタンが、教室に映したときテロップの上に重なるため */
+/* URLで見た目を指定できる（例：?size=xl&theme=yellow&view=telop）。
+   ブックマークで「いつもの見た目」を固定できる。URL指定は保存しない */
+const params = new URLSearchParams(location.search);
+let urlOverride = false;
+[["size",["s","m","l","xl"]],["lines",["1","2"]],["theme",["dark","light","yellow"]],["view",["log","telop"]]].forEach(([k, ok])=>{
+  const v = params.get(k);
+  if(v && ok.includes(v)){ settings[k] = v; urlOverride = true; }
+});
+if(urlOverride){ const _w = writeJSON; writeJSON = (k,v)=>{ if(k !== LS_SET) _w(k,v); }; }
+buildDict();
+applySettings();
+restoreLog();
+if(DEMO) start();
+
+if(params.get("open") === "set") els.dlgSet.showModal();
+if(params.get("open") === "help") els.dlgHelp.showModal();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
