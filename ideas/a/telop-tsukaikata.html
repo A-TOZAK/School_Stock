@@ -100,6 +100,13 @@
   .tip.warn b { color:#b8500f; }
   .rel { border-top:1px solid var(--line); padding-top:14px; margin-top:22px; font-size:13.5px; color:var(--sub); }
   .rel a { font-weight:700; }
+  .refs { margin-top:8px; counter-reset:rf; }
+  .refs h3 { font-size:14px; margin:22px 0 8px; }
+  .refs ol { list-style:none; }
+  .refs li { position:relative; padding:0 0 12px 34px; font-size:13.5px; line-height:1.85; color:#3d4148; }
+  .refs li::before { counter-increment:rf; content:"["counter(rf)"]"; position:absolute; left:0; top:0; font-size:12px; color:var(--sub); font-weight:700; }
+  .refs a { text-decoration:underline; text-underline-offset:3px; word-break:break-all; }
+  .refs .src { color:var(--sub); font-size:12.5px; }
   figure img { background:#fff; }
 </style>
 <link rel="manifest" href="/School_Stock/manifest.webmanifest">
@@ -260,6 +267,63 @@ alt="「AIでまとめる」を押した直後の画面。下に「お願いの�
 </div>
 
 <p><a href="../../telop/"><b>授業テロップを開く →</b></a></p>
+
+
+<h2>参考にしたもの</h2>
+
+<div class="refs">
+
+<h3>もとになった道具</h3>
+<p>この道具は、<b>音声認識字幕ちゃん</b>（西村良太さん・さぁたんさん制作）を実際に使わせてもらい、
+「教室で使う」ぶんだけ機能をしぼって新しく作ったものです。コードは流用していませんが、
+設定の考え方（文の区切りを待つ時間・認識中の文字を流す・置きかえ辞書・伏字）は、この道具から学びました。
+配信のために作られたものを、教室に置きかえたのがこの授業テロップです。</p>
+<ol>
+  <li>西村良太（さよなりω）「<a href="https://www.sayonari.com/trans_asr/asr.html" target="_blank" rel="noopener">音声認識字幕ちゃん</a>」<span class="src">／ 紹介と設計の考え方は <a href="https://www.sayonari.com/trans_asr/" target="_blank" rel="noopener">チャット翻訳ちゃん・字幕ちゃん</a></span></li>
+  <li>sayonari「<a href="https://github.com/sayonari/jimakuChan" target="_blank" rel="noopener">jimakuChan（音声認識字幕ちゃん）</a>」GitHub <span class="src">MITライセンス。実装が公開されています</span></li>
+</ol>
+
+<h3>話し言葉を機械が扱うことについて</h3>
+<p>認識された文を機械に書き直させない、と決めた根拠です。</p>
+<ol start="3">
+  <li>西村良太・森雷太・太田健吾・北岡教英（2022）「音声対話システムのための自由発話に対応した照応解析による入力発話への話題補完手法」<span class="src">人工知能学会論文誌 37巻3号</span><br>
+  <a href="https://www.jstage.jst.go.jp/article/tjsai/37/3/37_37-3_IDS-F/_article/-char/ja/" target="_blank" rel="noopener">https://www.jstage.jst.go.jp/article/tjsai/37/3/37_37-3_IDS-F/</a></li>
+  <li>Jotaro Emoto, Ryota Nishimura, Kengo Ohta, Norihide Kitaoka (2025) "Real-time VAD-less speech recognition by fine-tuning SSL model with data containing tagged non-speech segments"<span class="src">／ APSIPA ASC 2025, pp.980-985</span><br>
+  <a href="http://www.apsipa.org/proceedings/2025/papers/APSIPA2025_P390.pdf" target="_blank" rel="noopener">http://www.apsipa.org/proceedings/2025/papers/APSIPA2025_P390.pdf</a></li>
+  <li>西村良太（2019-2023）「スムーズな対話のための対話テンポのリアルタイム制御に基づく音声対話システム」<span class="src">科学研究費 19K04311・研究成果報告</span><br>
+  <a href="https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-19K04311/" target="_blank" rel="noopener">https://kaken.nii.ac.jp/grant/KAKENHI-PROJECT-19K04311/</a></li>
+</ol>
+
+<h3>字幕の読みやすさ</h3>
+<p>1行の長さ・行数・字の出し方を決めるときに見たものです。</p>
+<ol start="6">
+  <li>小畑修一・西川俊・高橋秀知（1985）「聴覚障害者のための字幕挿入に関する研究：台詞に忠実な字幕挿入の可能性と効果」<span class="src">特殊教育学研究 23巻2号。1画面16字×2行・1秒あたり4.8字が目安</span><br>
+  <a href="https://www.jstage.jst.go.jp/article/tokkyou/23/2/23_KJ00004950842/_article/-char/ja/" target="_blank" rel="noopener">https://www.jstage.jst.go.jp/article/tokkyou/23/2/23_KJ00004950842/</a></li>
+  <li>浦谷則好（2001）「聴覚障害者のための字幕放送の充実をめざした研究開発」<span class="src">月刊ノーマライゼーション 通巻241号。提示は1分間に300字が目安</span><br>
+  <a href="https://www.dinf.ne.jp/doc/japanese/prdl/jsrd/norma/n241/n241_04-01.html" target="_blank" rel="noopener">https://www.dinf.ne.jp/doc/japanese/prdl/jsrd/norma/n241/n241_04-01.html</a></li>
+  <li>黒木速人ほか（2011）「聴覚障害者のためのリアルタイム字幕システムにおける話者顔映像と誤認識字幕の呈示タイミングに関する研究」<span class="src">映像情報メディア学会誌 65巻12号。字幕を先に出すほうが理解が上がる</span><br>
+  <a href="https://www.jstage.jst.go.jp/article/itej/65/12/65_12_1750/_article/-char/ja/" target="_blank" rel="noopener">https://www.jstage.jst.go.jp/article/itej/65/12/65_12_1750/</a></li>
+  <li>Xingyu Bruce Liu ほか（2023）"Modeling and Improving Text Stability in Live Captions"<span class="src">／ CHI 2023 Extended Abstracts（Google）。認識中の文字の書き換わりが、読み手の疲れと結びつく</span><br>
+  <a href="https://research.google/blog/modeling-and-improving-text-stability-in-live-captions/" target="_blank" rel="noopener">https://research.google/blog/modeling-and-improving-text-stability-in-live-captions/</a></li>
+  <li>Sushant Kafle, Matt Huenerfauth (2017) "Evaluating the Usability of Automatically Generated Captions for People who are Deaf or Hard of Hearing"<span class="src">／ ASSETS 2017。大事な言葉の誤りが効いて、助詞の誤りはあまり効かない</span><br>
+  <a href="https://arxiv.org/pdf/1712.02033" target="_blank" rel="noopener">https://arxiv.org/pdf/1712.02033</a></li>
+</ol>
+
+<h3>教室・講義で実際に使った記録</h3>
+<p>話し方のコツと、人が直す工程を残した理由です。</p>
+<ol start="11">
+  <li>皆川雅章（2016）「ICTを用いた情報保障の取組み—学生・教職員協働による実践事例—」<span class="src">コンピュータ&amp;エデュケーション Vol.40, pp.26-31。話し方の工夫で認識率が4〜6割から約8割へ</span><br>
+  <a href="https://www.jstage.jst.go.jp/article/konpyutariyoukyouiku/40/0/40_26/_pdf" target="_blank" rel="noopener">https://www.jstage.jst.go.jp/article/konpyutariyoukyouiku/40/0/40_26/_pdf</a></li>
+  <li>若月大輔「ろう・難聴者支援のためのWebベース文字通訳システム captiOnline」<span class="src">筑波技術大学 注目の研究 vol.8。音声認識だけでは足りず、人が直す工程が要る</span><br>
+  <a href="http://www.tsukuba-tech.ac.jp/research/notable/vol8202541.html" target="_blank" rel="noopener">http://www.tsukuba-tech.ac.jp/research/notable/vol8202541.html</a></li>
+  <li>Yahoo!ニュース ニュースHACK（2018）「認識率98％——字幕で伝えるニュース、NHKの音声認識技術の今」<span class="src">取材先：佐藤庄衛（NHK放送技術研究所）。認識率98%でも人の確認と修正は外していない</span><br>
+  <a href="https://news.yahoo.co.jp/newshack/media_watch/caption_nhk.html" target="_blank" rel="noopener">https://news.yahoo.co.jp/newshack/media_watch/caption_nhk.html</a></li>
+</ol>
+
+<p class="src">リンクはすべて2026年8月30日に開いて確認しました。<br>
+参考にした論文・記事の内容をこの記事に引き写してはいません。字幕の見せ方を決めるための材料として読みました。</p>
+
+</div>
 
 <div class="rel">この棚の関連：<a href="../../shien/">支援カード</a>／<a href="../../shien/links/">特別支援 実践リンク集</a>／<a href="../../board/">思考ツールボード</a></div>
 

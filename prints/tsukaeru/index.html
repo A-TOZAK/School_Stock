@@ -73,7 +73,7 @@
   .sec-no { font-family:Georgia,serif; font-style:italic; font-size:21px; font-weight:700; color:var(--accent); }
   .sec-label { font-size:11px; font-weight:700; letter-spacing:0.22em; color:var(--sub); }
   h2 { font-size:22px; font-weight:700; margin:6px 0 4px; }
-  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; }
+  .sec-note { font-size:13px; color:var(--sub); margin-bottom:20px; word-break:auto-phrase; }
   .sec-note .cnt { color:var(--ink); font-weight:700; }
   .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(210px,1fr)); gap:20px 18px; }
   .card { border:1px solid var(--line); display:flex; flex-direction:column; transition:border-color .15s; }
@@ -84,7 +84,7 @@
   .tags { display:flex; gap:6px; flex-wrap:wrap; }
   .tag { font-size:10.5px; font-weight:700; letter-spacing:0.04em; padding:3px 8px; border:1px solid var(--line); color:var(--sub); }
   .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
-  .tt { font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); }
+  .tt { font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); word-break:auto-phrase; }
   .tt:hover { color:var(--accent); }
   .acts { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; row-gap:8px; }
   .more { font-size:12.5px; font-weight:700; color:var(--accent); white-space:nowrap; }
@@ -156,12 +156,12 @@
       <div class="step"><span class="sn">4</span><b>あらわす</b><small>誤答の分析と、指定語句をつかった記述。</small></div>
     </div>
     <div class="meta">
-      <span><b>全56単元</b>（各4まい＋解答4枚・計8枚）</span>
+      <span><b>全63単元</b>（各4まい＋解答4枚・計8枚）</span>
       <span>算数 23（3年 1／4年 13／5年 8／6年 1）</span>
+      <span>国語 7（1年 1／2年 1／3年 1／4年 2／5年 1／6年 1）</span>
       <span>理科 9（3年 1／4年 6／5年 2）</span>
       <span>社会 8（4年 4／5年 4・先生向け資料編つき）</span>
       <span>数学 16（中3 8／中2 5／中1 3）</span>
-      <span>国語は準備中</span>
       <span>© School Stock</span>
     </div>
   </div>
@@ -169,13 +169,13 @@
   <div class="filter">
     <div class="frow">
       <span class="fl">教科</span>
-      <button class="fbtn on" data-subj="all">すべて</button><button class="fbtn" data-subj="sansu">算数</button><button class="fbtn" data-subj="rika">理科</button><button class="fbtn" data-subj="shakai">社会</button><button class="fbtn" data-subj="sugaku">数学（中学）</button>
+      <button class="fbtn on" data-subj="all">すべて</button><button class="fbtn" data-subj="sansu">算数</button><button class="fbtn" data-subj="kokugo">国語</button><button class="fbtn" data-subj="rika">理科</button><button class="fbtn" data-subj="shakai">社会</button><button class="fbtn" data-subj="sugaku">数学（中学）</button>
     </div>
     <div class="frow">
       <span class="fl">学年</span>
-      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button><button class="fbtn" data-band="g6">6年</button><button class="fbtn" data-band="c1">中1</button><button class="fbtn" data-band="c2">中2</button><button class="fbtn" data-band="c3">中3</button>
+      <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g1">1年</button><button class="fbtn" data-band="g2">2年</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button><button class="fbtn" data-band="g6">6年</button><button class="fbtn" data-band="c1">中1</button><button class="fbtn" data-band="c2">中2</button><button class="fbtn" data-band="c3">中3</button>
     </div>
-    <p class="count"><b id="shown">56</b> 単元を表示中</p>
+    <p class="count"><b id="shown">63</b> 単元を表示中</p>
   </div>
 
   <section data-sec id="sec-sansu-g3">
@@ -459,8 +459,127 @@
 </div>
     </div>
   </section>
+  <section data-sec id="sec-kokugo-g1">
+    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　1年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span>　じゅんじょをあらわすことばを手がかりに、文しょうの順を読みます。1・2年は分かち書き・全ルビ・なぞりの足場つきです。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g1" data-hay="じゅんじょをかんがえてよむ 順序 はじめ つぎ それから 1年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k1_junjo.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k1_junjo.png" alt="じゅんじょをかんがえてよむ"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 1年</span><span class="tag">じゅんじょ</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k1_junjo.pdf">じゅんじょをかんがえてよむ</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k1_junjo.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-kokugo-g2">
+    <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　2年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span>　二つの文しょうを、同じところとちがうところで見くらべます。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g2" data-hay="同じところとちがうところ 比べる 共通 相違 2年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_onaji.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k2_onaji.png" alt="同じところとちがうところ"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 2年</span><span class="tag">くらべて読む</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_onaji.pdf">同じところとちがうところ</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_onaji.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-kokugo-g3">
+    <div class="sec-head"><span class="sec-no">07</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　3年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span>　引用のしかたと出典の示し方です。本のページと調べたメモを行き来しながら読みます。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g3" data-hay="引用して書く 出典 かぎかっこ 調べたメモ 報告文 3年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k3_inyou.png" alt="引用して書く（出典の示し方）"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 3年</span><span class="tag">引用・出典</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou.pdf">引用して書く（出典の示し方）</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-kokugo-g4">
+    <div class="sec-head"><span class="sec-no">08</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　4年</h2>
+    <p class="sec-note"><span class="cnt">全2単元</span>　考えと、それを支える理由や事例のつながりを読みます。中心となる語や文を見つけて要約するところまで。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g4" data-hay="理由や事例をとらえる なぜなら たとえば 発表原こう 4年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_riyu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k4_riyu.png" alt="理由や事例をとらえる"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 4年</span><span class="tag">理由・事例</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_riyu.pdf">理由や事例をとらえる</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_riyu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="kokugo" data-band="g4" data-hay="要約する 中心となる語や文 整理表 話し合い 4年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_youyaku.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k4_youyaku.png" alt="中心の語や文を見つけて要約する"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 4年</span><span class="tag">要約</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_youyaku.pdf">中心の語や文を見つけて要約する</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k4_youyaku.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-kokugo-g5">
+    <div class="sec-head"><span class="sec-no">09</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　5年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span>　事実と意見を、文末の言葉から読み分けます。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g5" data-hay="事実と意見を読み分ける 文末 である と思う 5年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k5_jijitsu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k5_jijitsu.png" alt="事実と意見を読み分ける"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 5年</span><span class="tag">事実と意見</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k5_jijitsu.pdf">事実と意見を読み分ける</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k5_jijitsu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-kokugo-g6">
+    <div class="sec-head"><span class="sec-no">10</span><span class="sec-label">JAPANESE</span></div>
+    <h2>つかえる国語　6年</h2>
+    <p class="sec-note"><span class="cnt">全1単元</span>　提案文を、事実（データ）と考えのつながりから読んで書きます。</p>
+    <div class="grid">
+<div class="card" data-subj="kokugo" data-band="g6" data-hay="筋道の通った提案文を書く 提案 アンケート データ 下書き 6年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k6_teian.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k6_teian.png" alt="筋道の通った提案文を書く"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">国語 6年</span><span class="tag">提案文</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k6_teian.pdf">筋道の通った提案文を書く</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k6_teian.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+    </div>
+  </section>
   <section data-sec id="sec-rika-g3">
-    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">11</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　3年</h2>
     <p class="sec-note"><span class="cnt">全1単元</span>　理科の学習が始まる学年です。条件をそろえて調べることを、風とゴムの実験からつかみます。</p>
     <div class="grid">
@@ -479,7 +598,7 @@
   </section>
 
   <section data-sec id="sec-rika-g4">
-    <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">12</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　4年</h2>
     <p class="sec-note"><span class="cnt">全6単元</span>　観察や実験の場面から「調べる問題」を見出して、予想→結果→考察へ登ります。資料の数字には出典と年次を入れています。</p>
     <div class="grid">
@@ -552,7 +671,7 @@
     </div>
   </section>
   <section data-sec id="sec-rika-g5">
-    <div class="sec-head"><span class="sec-no">07</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">13</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　5年</h2>
     <p class="sec-note"><span class="cnt">全2単元</span>　流れる水のはたらきと物のとけ方です。5年の「条件をそろえて調べる」を、実験の記録から組み立てます。</p>
     <div class="grid">
@@ -582,7 +701,7 @@
   </section>
 
   <section data-sec id="sec-shakai-g4">
-    <div class="sec-head"><span class="sec-no">08</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <div class="sec-head"><span class="sec-no">14</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　4年</h2>
     <p class="sec-note"><span class="cnt">全4単元</span>　地域の実データ（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="grid">
@@ -636,7 +755,7 @@
     </div>
   </section>
   <section data-sec id="sec-shakai-g5">
-    <div class="sec-head"><span class="sec-no">09</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <div class="sec-head"><span class="sec-no">15</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　5年</h2>
     <p class="sec-note"><span class="cnt">全4単元</span>　実際の統計（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="grid">
@@ -692,7 +811,7 @@
   </section>
 
   <section data-sec id="sec-sugaku-c3">
-    <div class="sec-head"><span class="sec-no">10</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">16</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中3</h2>
     <p class="sec-note"><span class="cnt">全8単元</span>　中3の1年ぶんがそろいました（学習時期の順）。全国学力・学習状況調査（中3）の問い方の型と正答率の穴をもとに、記述には「見本」と結論文の形を添えています。あいているところは、途中の計算に使えます。</p>
     <div class="grid">
@@ -788,7 +907,7 @@
   </section>
 
   <section data-sec id="sec-sugaku-c2">
-    <div class="sec-head"><span class="sec-no">11</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">17</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中2</h2>
     <p class="sec-note"><span class="cnt">全5単元</span>　2学期からの5単元です（学習時期の順）。証明は「方針を選ぶ」ところから、確率と箱ひげ図は数え方と読み方の型を置いています。</p>
     <div class="grid">
@@ -851,7 +970,7 @@
   </section>
 
   <section data-sec id="sec-sugaku-c1">
-    <div class="sec-head"><span class="sec-no">12</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">18</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中1</h2>
     <p class="sec-note"><span class="cnt">全3単元</span>　比例と反比例、平面図形、空間図形の3単元です（学習時期の順）。作図と展開図は、手を動かす前の見通しに重さを置いています。</p>
     <div class="grid">
@@ -891,12 +1010,6 @@
     </div>
   </section>
 
-  <div class="soon">
-    <b>つかえる国語の4単元は、いま校内で試しています</b>
-    <p>つかえる国語（3〜6年）の4単元は、教室で使ってみている最中です。
-      手ごたえを見てから、この棚に並べます。先に見てくださる方むけに、
-      <a href="genteikoukai/">合言葉つきのページ</a>に置いてあります。合言葉は直接おたずねください。</p>
-  </div>
 </div>
 <footer class="foot">
   <div class="foot-in">

@@ -4,41 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="robots" content="noindex, nofollow">
-<title>つかえる国語 3〜6年（限定公開）｜School Stock</title>
+<title>つかえる国語は棚で公開しました｜School Stock</title>
 <style>
-  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2b5fd9; --line:#e6e6e3; --black:#0e0f11; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
-         background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+         background:#fff; color:var(--ink); line-height:1.9; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
   a { color:var(--accent); text-decoration:none; }
   .topbar { background:var(--black); color:#fff; }
   .topbar-in { max-width:860px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; }
   .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; }
   .topbar a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; }
-  .wrap { max-width:860px; margin:0 auto; padding:56px 24px 96px; }
-  h1 { font-size:26px; font-weight:700; letter-spacing:0.04em; line-height:1.5; }
-  .lead { color:var(--sub); font-size:14.5px; margin-top:14px; }
-  .gate { margin-top:36px; padding:28px; background:var(--wash); border:1px solid var(--line); }
-  .gate label { display:block; font-size:13px; font-weight:700; margin-bottom:10px; }
-  .row { display:flex; gap:10px; flex-wrap:wrap; }
-  input[type=password] { flex:1 1 220px; font-family:inherit; font-size:15px; padding:11px 14px;
-                         border:1px solid var(--ink); background:#fff; }
-  button { font-family:inherit; font-size:14px; font-weight:700; letter-spacing:0.08em; padding:11px 26px;
-           border:1px solid var(--ink); background:var(--ink); color:#fff; cursor:pointer; }
-  button:disabled { opacity:.45; cursor:default; }
-  .msg { margin-top:12px; font-size:13px; color:#b3261e; min-height:1.4em; }
-  .msg.ok { color:var(--sub); }
-  #list { margin-top:40px; display:none; }
-  .grp { font-size:12px; font-weight:700; letter-spacing:0.18em; color:var(--sub); margin:28px 0 10px; }
-  .item { display:flex; justify-content:space-between; align-items:center; gap:14px;
-          padding:15px 0; border-top:1px solid var(--line); }
-  .item:last-child { border-bottom:1px solid var(--line); }
-  .ttl { font-size:15px; font-weight:700; }
-  .sub { font-size:12.5px; color:var(--sub); margin-top:2px; }
-  .dl { flex:0 0 auto; font-size:12.5px; font-weight:700; letter-spacing:0.08em;
-        border:1px solid var(--ink); padding:8px 16px; color:var(--ink); background:#fff; cursor:pointer;
-        font-family:inherit; }
-  .note { margin-top:44px; font-size:12.5px; color:var(--sub); border-top:1px solid var(--line); padding-top:20px; }
+  .wrap { max-width:860px; margin:0 auto; padding:64px 24px 96px; }
+  h1 { font-size:24px; font-weight:700; line-height:1.6; }
+  p { margin-top:18px; font-size:15px; }
+  .btn { display:inline-block; margin-top:28px; background:var(--ink); color:#fff; font-weight:700;
+         font-size:14px; letter-spacing:0.06em; padding:13px 26px; }
+  .note { margin-top:40px; padding-top:20px; border-top:1px solid var(--line); font-size:12.5px; color:var(--sub); }
 </style>
 <link rel="manifest" href="/School_Stock/manifest.webmanifest">
 <meta name="theme-color" content="#0e0f11">
@@ -50,101 +32,11 @@
   <span class="wordmark">SCHOOL STOCK</span>
   <a href="../">← つかえるシリーズの棚へ</a>
 </div></div>
-
 <div class="wrap">
-  <h1>つかえる国語 3〜6年<br>（限定公開）</h1>
-  <p class="lead">
-    1単元＝きそ → よみとる → かんがえる → あらわす の4まい＋赤字解答4枚。<br>
-    こちらは校内での試用中のため、合言葉を知っている方だけがひらけます。<br>
-    つかえる算数は<a href="../">つかえるシリーズの棚</a>で公開しています。
-  </p>
-
-  <div class="gate">
-    <label for="pw">合言葉</label>
-    <div class="row">
-      <input type="password" id="pw" autocomplete="off" placeholder="合言葉を入力">
-      <button id="go">ひらく</button>
-    </div>
-    <p class="msg" id="msg"></p>
-  </div>
-
-  <div id="list">
-    <p class="grp">つかえる国語</p>
-    <div class="item"><div><div class="ttl">3年　引用して書く（出典の示し方）</div><div class="sub">4まい＋解答4枚</div></div><button class="dl" data-f="tsukaeru_k3_inyou.pdf">ダウンロード</button></div>
-    <div class="item"><div><div class="ttl">4年　要約する（中心となる語や文を見つける）</div><div class="sub">4まい＋解答4枚</div></div><button class="dl" data-f="tsukaeru_k4_youyaku.pdf">ダウンロード</button></div>
-    <div class="item"><div><div class="ttl">5年　事実と意見を読み分ける</div><div class="sub">4まい＋解答4枚</div></div><button class="dl" data-f="tsukaeru_k5_jijitsu.pdf">ダウンロード</button></div>
-    <div class="item"><div><div class="ttl">6年　筋道の通った提案文を書く</div><div class="sub">4まい＋解答4枚</div></div><button class="dl" data-f="tsukaeru_k6_teian.pdf">ダウンロード</button></div>
-  </div>
-
-  <p class="note">
-    すべて自作です。教科書の本文・市販教材の転載はありません。<br>
-    印刷して自由にお使いください。再配布のときは出どころだけ添えていただけると助かります。<br>
-    © School Stock
-  </p>
+  <h1>つかえる国語は、棚で公開しました</h1>
+  <p>合言葉つきで置いていたつかえる国語（1〜6年）は、つかえるシリーズの棚に並べました。合言葉なしでそのまま開けます。つかえる算数も同じ棚にあります。</p>
+  <a class="btn" href="../">つかえるシリーズの棚を見る</a>
+  <p class="note">© School Stock（外﨑顯博 / 小学校）／ 教材はすべて自作です。学校・家庭で自由に印刷して使えます。</p>
 </div>
-
-<script>
-// 合言葉から鍵を作り、ブラウザの中だけで復号する。
-// 置いてあるのは暗号文（.enc）だけなので、合言葉がなければ中身は取り出せない。
-let KEYPW = null;
-
-async function deriveKey(password, salt) {
-  const base = await crypto.subtle.importKey(
-    "raw", new TextEncoder().encode(password), "PBKDF2", false, ["deriveKey"]);
-  return crypto.subtle.deriveKey(
-    { name: "PBKDF2", salt, iterations: 200000, hash: "SHA-256" },
-    base, { name: "AES-GCM", length: 256 }, false, ["decrypt"]);
-}
-
-async function fetchAndDecrypt(file, password) {
-  const res = await fetch(file + ".enc", { cache: "no-store" });
-  if (!res.ok) throw new Error("ファイルが見つかりません");
-  const buf = new Uint8Array(await res.arrayBuffer());
-  const salt = buf.slice(0, 16), iv = buf.slice(16, 28), ct = buf.slice(28);
-  const key = await deriveKey(password, salt);
-  return new Blob([await crypto.subtle.decrypt({ name: "AES-GCM", iv }, key, ct)],
-                  { type: "application/pdf" });
-}
-
-const msg = document.getElementById("msg");
-const go = document.getElementById("go");
-const pw = document.getElementById("pw");
-
-async function unlock() {
-  const p = pw.value.trim();
-  if (!p) { msg.textContent = "合言葉を入れてください。"; return; }
-  go.disabled = true; msg.className = "msg ok"; msg.textContent = "たしかめています…";
-  try {
-    await fetchAndDecrypt("tsukaeru_s3_amari.pdf", p);   // 1本ためして合否を見る
-    KEYPW = p;
-    document.querySelector(".gate").style.display = "none";
-    document.getElementById("list").style.display = "block";
-  } catch (e) {
-    msg.className = "msg"; msg.textContent = "合言葉がちがうようです。";
-  } finally { go.disabled = false; }
-}
-
-go.addEventListener("click", unlock);
-pw.addEventListener("keydown", e => { if (e.key === "Enter") unlock(); });
-
-document.querySelectorAll(".dl").forEach(b => {
-  b.addEventListener("click", async () => {
-    const f = b.dataset.f, label = b.textContent;
-    b.disabled = true; b.textContent = "ひらいています…";
-    try {
-      const blob = await fetchAndDecrypt(f, KEYPW);
-      const url = URL.createObjectURL(blob);
-      const a = document.createElement("a");
-      a.href = url; a.download = f; a.click();
-      setTimeout(() => URL.revokeObjectURL(url), 4000);
-    } catch (e) {
-      alert("うまくひらけませんでした。ページを開き直してください。");
-    } finally { b.disabled = false; b.textContent = label; }
-  });
-});
-</script>
-<script src="/School_Stock/assets/counter-config.js"></script>
-<script src="/School_Stock/assets/counter.js" defer></script>
-<script src="/School_Stock/assets/soudan.js" defer></script>
 </body>
 </html>
