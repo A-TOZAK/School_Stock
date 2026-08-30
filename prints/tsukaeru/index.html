@@ -86,9 +86,9 @@
   .tag.type { color:var(--accent); border-color:#cdd9f4; background:#f2f6fd; }
   .tt { font-size:14.5px; font-weight:700; line-height:1.5; flex:1; color:var(--ink); }
   .tt:hover { color:var(--accent); }
-  .acts { display:flex; align-items:center; justify-content:space-between; gap:8px; }
-  .more { font-size:12.5px; font-weight:700; color:var(--accent); }
-  .dl { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; }
+  .acts { display:flex; align-items:center; justify-content:space-between; gap:8px; flex-wrap:wrap; row-gap:8px; }
+  .more { font-size:12.5px; font-weight:700; color:var(--accent); white-space:nowrap; }
+  .dl { display:inline-flex; align-items:center; gap:6px; font-size:12.5px; font-weight:700; color:#fff; background:var(--black); padding:7px 13px; white-space:nowrap; }
   .dl svg { width:12px; height:12px; }
   .soon { border:1px solid var(--line); background:var(--wash); padding:18px 20px; margin:30px 0 4px; }
   .soon b { display:block; font-size:14.5px; margin-bottom:3px; }
@@ -156,11 +156,11 @@
       <div class="step"><span class="sn">4</span><b>あらわす</b><small>誤答の分析と、指定語句をつかった記述。</small></div>
     </div>
     <div class="meta">
-      <span><b>全47単元</b>（各4まい＋解答4枚・計8枚）</span>
+      <span><b>全56単元</b>（各4まい＋解答4枚・計8枚）</span>
       <span>算数 23（3年 1／4年 13／5年 8／6年 1）</span>
-      <span>理科 8（3年 1／4年 6／5年 1）</span>
-      <span>社会 6（4年 3／5年 3・先生向け資料編つき）</span>
-      <span>数学 10（中3 8／中2 1／中1 1）</span>
+      <span>理科 9（3年 1／4年 6／5年 2）</span>
+      <span>社会 8（4年 4／5年 4・先生向け資料編つき）</span>
+      <span>数学 16（中3 8／中2 5／中1 3）</span>
       <span>国語は準備中</span>
       <span>© School Stock</span>
     </div>
@@ -175,7 +175,7 @@
       <span class="fl">学年</span>
       <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button><button class="fbtn" data-band="g6">6年</button><button class="fbtn" data-band="c1">中1</button><button class="fbtn" data-band="c2">中2</button><button class="fbtn" data-band="c3">中3</button>
     </div>
-    <p class="count"><b id="shown">47</b> 単元を表示中</p>
+    <p class="count"><b id="shown">56</b> 単元を表示中</p>
   </div>
 
   <section data-sec id="sec-sansu-g3">
@@ -554,7 +554,7 @@
   <section data-sec id="sec-rika-g5">
     <div class="sec-head"><span class="sec-no">07</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　5年</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　流れる水のはたらきを、実験の記録と川のようすの読み取りからたどります。</p>
+    <p class="sec-note"><span class="cnt">全2単元</span>　流れる水のはたらきと物のとけ方です。5年の「条件をそろえて調べる」を、実験の記録から組み立てます。</p>
     <div class="grid">
 <div class="card" data-subj="rika" data-band="g5" data-hay="流れる水のはたらき 侵食 運ぱん たい積 川 上流 下流 5年 つかえる理科">
   <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r5_nagareru.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_r5_nagareru.png" alt="流れる水のはたらき"></div></a>
@@ -567,13 +567,24 @@
     </div>
   </div>
 </div>
+<div class="card" data-subj="rika" data-band="g5" data-hay="物のとけ方 水よう液 食塩 ミョウバン 条件制御 メスシリンダー ろ過 5年 つかえる理科">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r5_tokekata.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_r5_tokekata.png" alt="物のとけ方"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">理科 5年</span><span class="tag">物のとけ方</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r5_tokekata.pdf">物のとけ方</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r5_tokekata.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
   <section data-sec id="sec-shakai-g4">
     <div class="sec-head"><span class="sec-no">08</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　4年</h2>
-    <p class="sec-note"><span class="cnt">全3単元</span>　地域の実データ（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
+    <p class="sec-note"><span class="cnt">全4単元</span>　地域の実データ（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="grid">
 <div class="card" data-subj="shakai" data-band="g4" data-hay="自然災害からくらしを守る 水害 防災 遠賀川 飯塚 4年 つかえる社会">
   <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh4_saigai.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh4_saigai.png" alt="自然災害からくらしを守る"></div></a>
@@ -610,12 +621,24 @@
     </div>
   </div>
 </div>
+<div class="card" data-subj="shakai" data-band="g4" data-hay="ごみはどこへ ごみの処理 もやすごみ 分別 リサイクル 清掃工場 飯塚 4年 つかえる社会">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh4_gomi.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh4_gomi.png" alt="ごみはどこへ"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">社会 4年</span><span class="tag">ごみの処理</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh4_gomi.pdf">ごみはどこへ</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh4_gomi.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh4_gomi_shiryohen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料編</a>
+    </div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-shakai-g5">
     <div class="sec-head"><span class="sec-no">09</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　5年</h2>
-    <p class="sec-note"><span class="cnt">全3単元</span>　実際の統計（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
+    <p class="sec-note"><span class="cnt">全4単元</span>　実際の統計（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="grid">
 <div class="card" data-subj="shakai" data-band="g5" data-hay="水産業 漁業 養殖 のり まだい 有明海 福岡県 5年 つかえる社会">
   <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_suisan.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh5_suisan.png" alt="水産業のさかんな地域"></div></a>
@@ -650,6 +673,18 @@
       <span class="more">4まい＋解答（8枚）</span>
       <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_kogyo.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
       <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_kogyo_shiryohen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料編</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="shakai" data-band="g5" data-hay="情報産業 情報 メディア ニュース番組 放送局 発信 5年 つかえる社会">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_joho.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh5_joho.png" alt="情報産業とわたしたちのくらし"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">社会 5年</span><span class="tag">情報産業</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_joho.pdf">情報産業とわたしたちのくらし</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_joho.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh5_joho_shiryohen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料編</a>
     </div>
   </div>
 </div>
@@ -755,7 +790,7 @@
   <section data-sec id="sec-sugaku-c2">
     <div class="sec-head"><span class="sec-no">11</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中2</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　一次関数から始めています。学力調査で正答率35.4%だった「増加量」の読み方が的です。</p>
+    <p class="sec-note"><span class="cnt">全5単元</span>　2学期からの5単元です（学習時期の順）。証明は「方針を選ぶ」ところから、確率と箱ひげ図は数え方と読み方の型を置いています。</p>
     <div class="grid">
 <div class="card" data-subj="sugaku" data-band="c2" data-hay="一次関数 変化の割合 傾き 切片 グラフ 増加量 中2 中学校 つかえる数学">
   <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_ichiji.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m2_ichiji.png" alt="一次関数"></div></a>
@@ -768,13 +803,57 @@
     </div>
   </div>
 </div>
+<div class="card" data-subj="sugaku" data-band="c2" data-hay="図形の性質と合同 対頂角 同位角 錯角 平行線 内角 外角 合同条件 証明 中2 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_goudou.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m2_goudou.png" alt="図形の性質と合同"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中2</span><span class="tag">合同と証明</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_goudou.pdf">図形の性質と合同</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_goudou.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="sugaku" data-band="c2" data-hay="三角形と四角形 二等辺三角形 直角三角形 平行四辺形 ひし形 長方形 証明 中2 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_sankaku.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m2_sankaku.png" alt="三角形と四角形"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中2</span><span class="tag">三角形と四角形</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_sankaku.pdf">三角形と四角形</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_sankaku.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="sugaku" data-band="c2" data-hay="確率 樹形図 同様に確からしい さいころ くじ 中2 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_kakuritsu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m2_kakuritsu.png" alt="確率"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中2</span><span class="tag">確率</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_kakuritsu.pdf">確率</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_kakuritsu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="sugaku" data-band="c2" data-hay="箱ひげ図 四分位数 四分位範囲 中央値 データの分布 中2 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_hakohige.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m2_hakohige.png" alt="箱ひげ図とデータの活用"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中2</span><span class="tag">箱ひげ図</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_hakohige.pdf">箱ひげ図とデータの活用</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m2_hakohige.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
     </div>
   </section>
 
   <section data-sec id="sec-sugaku-c1">
     <div class="sec-head"><span class="sec-no">12</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中1</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　比例と反比例から始めています。「増えるから比例」の思いこみを、積が一定になる例でくずします。</p>
+    <p class="sec-note"><span class="cnt">全3単元</span>　比例と反比例、平面図形、空間図形の3単元です（学習時期の順）。作図と展開図は、手を動かす前の見通しに重さを置いています。</p>
     <div class="grid">
 <div class="card" data-subj="sugaku" data-band="c1" data-hay="比例と反比例 比例定数 グラフ 座標 中1 中学校 つかえる数学">
   <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_hirei.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m1_hirei.png" alt="比例と反比例"></div></a>
@@ -784,6 +863,28 @@
     <div class="acts">
       <span class="more">4まい＋解答（8枚）</span>
       <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_hirei.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="sugaku" data-band="c1" data-hay="平面図形 作図 垂直二等分線 角の二等分線 移動 おうぎ形 弧の長さ 中1 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_heimen.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m1_heimen.png" alt="平面図形"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中1</span><span class="tag">平面図形</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_heimen.pdf">平面図形</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_heimen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
+    </div>
+  </div>
+</div>
+<div class="card" data-subj="sugaku" data-band="c1" data-hay="空間図形 立体 展開図 投影図 表面積 体積 角柱 円すい 中1 中学校 つかえる数学">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_kukan.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_m1_kukan.png" alt="空間図形"></div></a>
+  <div class="b">
+    <div class="tags"><span class="tag type">数学 中1</span><span class="tag">空間図形</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_kukan.pdf">空間図形</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_m1_kukan.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>PDF</a>
     </div>
   </div>
 </div>
