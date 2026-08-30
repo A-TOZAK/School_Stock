@@ -391,7 +391,8 @@ function card(it){
         ? '<a class="dl" href="'+esc(it.img)+'" download onclick="event.stopPropagation()">'+ICON+'GIF</a>'
           +'<a class="dl line" href="'+esc(it.mp4)+'" download onclick="event.stopPropagation()">'+ICON+'MP4</a>'
         : '<a class="dl" href="'+esc(it.img)+'" download onclick="event.stopPropagation()">'+ICON+'カラー</a>'
-          + (it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download onclick="event.stopPropagation()">'+ICON+'白黒</a>':''))
+          + (it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download onclick="event.stopPropagation()">'+ICON+'白黒</a>':'')
+          + (it.png?'<a class="dl line" href="'+esc(it.png)+'" download onclick="event.stopPropagation()">'+ICON+'透過PNG</a>':''))
     +'</div>'
     +'<div class="credit">'+esc(credit(it.author))+'</div>'
     +'</div></div>';
@@ -503,7 +504,8 @@ function openModal(id){
           +'<a class="dl line" href="'+esc(it.mp4)+'" download>'+ICON+'MP4（一時停止できる）</a>'
           +'<a class="dl line" href="'+esc(it.poster)+'" download>'+ICON+'静止画PNG</a>'
         : '<a class="dl" href="'+esc(it.img)+'" download>'+ICON+'カラーを保存</a>'
-          +(it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download>'+ICON+'白黒を保存</a>':''))
+          +(it.mono?'<a class="dl line" href="'+esc(it.mono)+'" download>'+ICON+'白黒を保存</a>':'')
+          +(it.png?'<a class="dl line" href="'+esc(it.png)+'" download>'+ICON+'透過PNGを保存</a>':''))
     +'</div>'
     +(isMotion?'<div class="mi-alt"><b>ウェブやLMSに載せるときの説明文</b>'
         +'<textarea readonly onclick="this.select()" id="miAlt">読み込み中…</textarea></div>':'')

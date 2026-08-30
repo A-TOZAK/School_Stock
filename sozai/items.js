@@ -36116,7 +36116,8 @@ const SOZAI = [
   ],
   "img": "img/gaku_046_enzetsu_girl.jpg",
   "thumb": "img/gaku_046_enzetsu_girl_thumb.jpg",
-  "mono": "img/gaku_046_enzetsu_girl_mono.jpg"
+  "mono": "img/gaku_046_enzetsu_girl_mono.jpg",
+  "png": "img/gaku_046_enzetsu_girl.png"
  },
  {
   "id": "gaku_047_rouka_pair",
@@ -36180,7 +36181,8 @@ const SOZAI = [
   ],
   "img": "img/gaku_048_kiritsu_boy.jpg",
   "thumb": "img/gaku_048_kiritsu_boy_thumb.jpg",
-  "mono": "img/gaku_048_kiritsu_boy_mono.jpg"
+  "mono": "img/gaku_048_kiritsu_boy_mono.jpg",
+  "png": "img/gaku_048_kiritsu_boy.png"
  },
  {
   "id": "gaku_049_suito_girl",
@@ -40366,21 +40368,26 @@ const SOZAI = [
   "uses": [
    "文章題プリント",
    "ワークシート",
-   "掲示物"
+   "掲示物",
+   "スライド"
   ],
-  "description": "文章題用のスポット挿絵。1個だけ描く方式（レーンS）。個数を絵に描き込まず、紙面側（LaTeXの\\sashiegroup等）で必要な数だけ並べるため、問題文の数と絵の数が食い違うことが起きない。白黒コピーでも読める線画。",
-  "howto": "そのまま紙面に置き、必要な数だけ横に並べて使ってください。塗る場合は線の中だけ塗ります。",
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
   "tags": [
    "算数",
    "文章題",
    "挿絵",
-   "えんぴつ",
    "1個だけの絵",
-   "白黒対応"
+   "白黒対応",
+   "透過PNG",
+   "えんぴつ",
+   "鉛筆",
+   "文ぼうぐ"
   ],
   "img": "img/sashie_enpitsu_01.jpg",
   "thumb": "img/sashie_enpitsu_01_thumb.jpg",
-  "mono": "img/sashie_enpitsu_01_mono.jpg"
+  "mono": "img/sashie_enpitsu_01_mono.jpg",
+  "png": "img/sashie_enpitsu_01.png"
  },
  {
   "id": "sashie_ball_01",
@@ -40396,20 +40403,377 @@ const SOZAI = [
   "uses": [
    "文章題プリント",
    "ワークシート",
-   "掲示物"
+   "掲示物",
+   "スライド"
   ],
-  "description": "文章題用のスポット挿絵。1個だけ描く方式（レーンS）。個数を絵に描き込まず、紙面側（LaTeXの\\sashiegroup等）で必要な数だけ並べるため、問題文の数と絵の数が食い違うことが起きない。白黒コピーでも読める線画。",
-  "howto": "そのまま紙面に置き、必要な数だけ横に並べて使ってください。塗る場合は線の中だけ塗ります。",
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
   "tags": [
    "算数",
    "文章題",
    "挿絵",
-   "ボール",
    "1個だけの絵",
-   "白黒対応"
+   "白黒対応",
+   "透過PNG",
+   "ボール",
+   "たま",
+   "体育"
   ],
   "img": "img/sashie_ball_01.jpg",
   "thumb": "img/sashie_ball_01_thumb.jpg",
-  "mono": "img/sashie_ball_01_mono.jpg"
+  "mono": "img/sashie_ball_01_mono.jpg",
+  "png": "img/sashie_ball_01.png"
+ },
+ {
+  "id": "sashie_ringo_01",
+  "title": "算数の文章題挿絵・りんご（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "りんご1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "りんご",
+   "くだもの",
+   "果物"
+  ],
+  "img": "img/sashie_ringo_01.jpg",
+  "thumb": "img/sashie_ringo_01_thumb.jpg",
+  "mono": "img/sashie_ringo_01_mono.jpg",
+  "png": "img/sashie_ringo_01.png"
+ },
+ {
+  "id": "sashie_mikan_01",
+  "title": "算数の文章題挿絵・みかん（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "みかん1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "みかん",
+   "くだもの",
+   "果物"
+  ],
+  "img": "img/sashie_mikan_01.jpg",
+  "thumb": "img/sashie_mikan_01_thumb.jpg",
+  "mono": "img/sashie_mikan_01_mono.jpg",
+  "png": "img/sashie_mikan_01.png"
+ },
+ {
+  "id": "sashie_ichigo_01",
+  "title": "算数の文章題挿絵・いちご（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "いちご1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "いちご",
+   "くだもの",
+   "果物"
+  ],
+  "img": "img/sashie_ichigo_01.jpg",
+  "thumb": "img/sashie_ichigo_01_thumb.jpg",
+  "mono": "img/sashie_ichigo_01_mono.jpg",
+  "png": "img/sashie_ichigo_01.png"
+ },
+ {
+  "id": "sashie_hana_shiro_01",
+  "title": "算数の文章題挿絵・花・中心が白（1本）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "花1本・中心が白（線画）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "花",
+   "はな",
+   "中心が白",
+   "2しゅるいを見分ける"
+  ],
+  "img": "img/sashie_hana_shiro_01.jpg",
+  "thumb": "img/sashie_hana_shiro_01_thumb.jpg",
+  "mono": "img/sashie_hana_shiro_01_mono.jpg",
+  "png": "img/sashie_hana_shiro_01.png"
+ },
+ {
+  "id": "sashie_hana_kuro_01",
+  "title": "算数の文章題挿絵・花・中心が黒（1本）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "花1本・中心が黒（線画）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "花",
+   "はな",
+   "中心が黒",
+   "2しゅるいを見分ける"
+  ],
+  "img": "img/sashie_hana_kuro_01.jpg",
+  "thumb": "img/sashie_hana_kuro_01_thumb.jpg",
+  "mono": "img/sashie_hana_kuro_01_mono.jpg",
+  "png": "img/sashie_hana_kuro_01.png"
+ },
+ {
+  "id": "sashie_ohajiki_01",
+  "title": "算数の文章題挿絵・おはじき（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "おはじき1こ（線画）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "おはじき",
+   "具体物",
+   "まる"
+  ],
+  "img": "img/sashie_ohajiki_01.jpg",
+  "thumb": "img/sashie_ohajiki_01_thumb.jpg",
+  "mono": "img/sashie_ohajiki_01_mono.jpg",
+  "png": "img/sashie_ohajiki_01.png"
+ },
+ {
+  "id": "sashie_ame_01",
+  "title": "算数の文章題挿絵・あめ（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "あめ1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "あめ",
+   "キャンディ",
+   "おかし"
+  ],
+  "img": "img/sashie_ame_01.jpg",
+  "thumb": "img/sashie_ame_01_thumb.jpg",
+  "mono": "img/sashie_ame_01_mono.jpg",
+  "png": "img/sashie_ame_01.png"
+ },
+ {
+  "id": "sashie_fusen_01",
+  "title": "算数の文章題挿絵・ふうせん（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "ふうせん1こ（線画・白ぬり）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "ふうせん",
+   "風船"
+  ],
+  "img": "img/sashie_fusen_01.jpg",
+  "thumb": "img/sashie_fusen_01_thumb.jpg",
+  "mono": "img/sashie_fusen_01_mono.jpg",
+  "png": "img/sashie_fusen_01.png"
+ },
+ {
+  "id": "sashie_donguri_01",
+  "title": "算数の文章題挿絵・どんぐり（1こ）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "どんぐり1こ（線画）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "どんぐり",
+   "秋",
+   "木の実"
+  ],
+  "img": "img/sashie_donguri_01.jpg",
+  "thumb": "img/sashie_donguri_01_thumb.jpg",
+  "mono": "img/sashie_donguri_01_mono.jpg",
+  "png": "img/sashie_donguri_01.png"
+ },
+ {
+  "id": "sashie_kodomo_01",
+  "title": "算数の文章題挿絵・子ども（1人）",
+  "author": "innami",
+  "type": "illust",
+  "subject": "算数・文章題の挿絵",
+  "grade": "小1〜小3",
+  "unit": "数える・たす・ひく・かける文章題（個数を並べる）",
+  "scenes": [
+   "子ども1人・立ちすがた（線画）"
+  ],
+  "uses": [
+   "文章題プリント",
+   "ワークシート",
+   "掲示物",
+   "スライド"
+  ],
+  "description": "文章題のための、1こだけの挿絵です。絵の中に個数を描きこんでいないので、問題文の数だけ紙面に並べて使えます。数と絵が食いちがうことが起きません。白黒コピーでも読める線画です。",
+  "howto": "必要な数だけ横に並べて置いてください。色をぬるときは線の内側だけをぬります。透過PNGはスライドの色地の上にもそのまま置けます。",
+  "tags": [
+   "算数",
+   "文章題",
+   "挿絵",
+   "1個だけの絵",
+   "白黒対応",
+   "透過PNG",
+   "子ども",
+   "人",
+   "1人",
+   "立ちすがた"
+  ],
+  "img": "img/sashie_kodomo_01.jpg",
+  "thumb": "img/sashie_kodomo_01_thumb.jpg",
+  "mono": "img/sashie_kodomo_01_mono.jpg",
+  "png": "img/sashie_kodomo_01.png"
  }
 ];
