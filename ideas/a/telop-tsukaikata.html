@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>授業テロップの使い方 ── 話したことを、画面の下に残す ── 実践アイデア｜School Stock</title>
+<meta name="description" content="聞きのがしても目で追えるように、話した内容を画面の下に字幕で出す道具の使い方。画面の写真つきで、はじめかたから、誤りの直し方、残した文の使い道まで。無料・登録不要。">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="授業テロップの使い方 ── 話したことを、画面の下に残す">
+<meta property="og:description" content="聞きのがしても目で追えるように、話した内容を画面の下に字幕で出す道具の使い方。画面の写真つきで、はじめかたから、誤りの直し方、残した文の使い道まで。無料・登録不要。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/ideas/a/telop-tsukaikata.html">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/ideas/a/telop-tsukaikata-img/hero.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<style>
+  :root { --ink:#15181c; --sub:#6b7077; --accent:#2f6f52; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:2; letter-spacing:0.02em; -webkit-font-smoothing:antialiased; }
+  a { color:var(--accent); text-decoration:none; }
+  .topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+  .topbar-in { max-width:960px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+  .wordmark { font-size:12.5px; font-weight:700; letter-spacing:0.28em; color:#fff; }
+  .topbar .nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:0.1em; margin-left:16px; }
+  .topbar .nav a:hover { color:#fff; }
+  .container { max-width:720px; margin:0 auto; padding:0 24px 72px; }
+  .crumb { font-size:12px; color:var(--sub); padding:22px 0 0; }
+  .crumb a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+  .kicker { display:inline-block; font-size:11px; font-weight:700; letter-spacing:0.2em; color:#fff; background:var(--accent); padding:3px 11px; margin:26px 0 14px; }
+  h1 { font-size:clamp(24px,4.5vw,32px); font-weight:700; line-height:1.45; margin-bottom:12px; }
+  .meta { font-size:12.5px; color:var(--sub); margin-bottom:8px; }
+  .lead { font-size:15.5px; color:#3d4148; border-left:3px solid var(--accent); padding-left:14px; margin:22px 0 30px; }
+  h2 { font-size:19px; font-weight:700; border-bottom:1px solid var(--ink); padding-bottom:8px; margin:38px 0 14px; }
+  h3 { font-size:15.5px; font-weight:700; margin:22px 0 6px; }
+  p { font-size:15px; color:#24272c; margin-bottom:14px; }
+  ul.feat { list-style:none; margin:14px 0 20px; }
+  ul.feat li { position:relative; padding:0 0 10px 20px; font-size:15px; }
+  ul.feat li::before { content:""; position:absolute; left:0; top:14px; width:7px; height:7px; background:var(--accent); border-radius:50%; }
+  ul.feat b { color:var(--ink); }
+  ol.steps { counter-reset:st; list-style:none; margin:14px 0; }
+  ol.steps li { position:relative; padding:0 0 14px 46px; font-size:15px; }
+  ol.steps li::before { counter-increment:st; content:counter(st); position:absolute; left:0; top:4px; width:30px; height:30px; background:var(--black); color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; font-size:14px; }
+  .tip { background:var(--wash); border:1px solid var(--line); border-left:4px solid var(--accent); padding:14px 18px; margin:16px 0; font-size:13.5px; }
+  .tip b { color:var(--accent); }
+  figure { margin:22px 0 26px; }
+  figure img { width:100%; display:block; border:1px solid var(--line); }
+  figcaption { font-size:12.5px; color:var(--sub); margin-top:8px; line-height:1.8; }
+  .two { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+  @media (max-width:560px){ .two { grid-template-columns:1fr; } }
+  .hero { margin:26px 0 6px; }
+  .hero img { width:100%; display:block; border:0; }
+  .sum { background:var(--wash); border-top:2px solid var(--ink); padding:18px 22px; margin:30px 0 6px; }
+  .sum .st { font-size:11.5px; font-weight:700; letter-spacing:0.2em; color:var(--sub); margin-bottom:10px; }
+  .sum ol { list-style:none; }
+  .sum li { position:relative; padding:0 0 8px 30px; font-size:14.5px; line-height:1.9; }
+  .sum li::before { content:"—"; position:absolute; left:2px; color:var(--accent); font-weight:700; }
+  .sum li:last-child { padding-bottom:0; }
+  .browser { border:1px solid var(--line); border-radius:8px; overflow:hidden; box-shadow:0 1px 3px rgba(20,20,20,.06); }
+  .browser .bar { display:flex; align-items:center; gap:6px; background:#eceae5; padding:8px 12px; }
+  .browser .bar i { width:9px; height:9px; border-radius:50%; background:#d5d1c8; }
+  .browser .bar span { font-size:11px; color:#8d8779; margin-left:8px; letter-spacing:0.03em;
+    overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
+  .browser img { border:0; }
+  .share { display:flex; align-items:center; gap:10px; flex-wrap:wrap; margin:26px 0 6px;
+    padding:14px 0; border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+  .share .sl { font-size:11.5px; font-weight:700; letter-spacing:0.16em; color:var(--sub); margin-right:2px; }
+  .share a, .share button { display:inline-flex; align-items:center; gap:7px; cursor:pointer;
+    font-family:inherit; font-size:13px; font-weight:700; color:var(--ink); background:#fff;
+    border:1px solid var(--ink); padding:8px 16px; border-radius:999px; }
+  .share a:hover, .share button:hover { background:var(--ink); color:#fff; }
+  .share svg { width:14px; height:14px; fill:currentColor; }
+  .share .ok { border-color:var(--accent); color:var(--accent); }
+  .cta { display:inline-flex; align-items:center; gap:8px; font-size:14.5px; font-weight:700; color:#fff; background:var(--black); padding:12px 22px; margin:8px 8px 4px 0; }
+  .cta.sub { background:#fff; color:var(--ink); border:1px solid var(--ink); }
+  .back { display:inline-flex; font-size:13.5px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:10px 20px; margin-top:34px; }
+  .foot { background:var(--black); color:#b9bcc2; margin-top:56px; }
+  .foot-in { max-width:960px; margin:0 auto; padding:28px 24px; font-size:12.5px; line-height:2; }
+  .foot a { color:#d7dade; text-decoration:underline; }
+
+  .pbox { border:1px solid var(--ink); margin:18px 0 24px; background:#fff; }
+  .ph { display:flex; align-items:center; justify-content:space-between; gap:12px;
+    background:var(--wash); border-bottom:1px solid var(--ink); padding:9px 14px; }
+  .pl { font-size:11.5px; font-weight:700; letter-spacing:0.12em; color:var(--ink); }
+  .pc { font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:0.1em;
+    color:var(--ink); background:#fff; border:1px solid var(--ink); padding:5px 13px; cursor:pointer;
+    white-space:nowrap; }
+  .pc:hover { background:var(--ink); color:#fff; }
+  .pc.ok { border-color:var(--accent); color:var(--accent); background:#fff; }
+  .pbox pre { margin:0; padding:15px 16px; font-size:12.5px; line-height:1.95;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace; white-space:pre-wrap;
+    word-break:break-word; color:#24272c; overflow-x:auto; }
+  .pn { font-size:12.5px; color:var(--sub); line-height:1.85; margin:0;
+    padding:11px 16px; border-top:1px solid var(--line); }
+  .pn code { font-family:ui-monospace,Menlo,monospace; font-size:12px; background:var(--wash); padding:1px 5px; }
+  .lede-warn { font-size:13.5px; line-height:1.9; color:#24272c; background:#fdf7f2;
+    border:1px solid #e7d4c4; border-left:4px solid #b8500f; padding:12px 16px; margin:14px 0 0; }
+  .lede-warn b { color:#b8500f; }
+  .lede-warn a { color:#b8500f; font-weight:700; text-decoration:underline; text-underline-offset:3px; }
+  .tip.warn { border-left-color:#b8500f; background:#fdf7f2; }
+  .tip.warn { scroll-margin-top:70px; }
+  .tip.warn b { color:#b8500f; }
+  .rel { border-top:1px solid var(--line); padding-top:14px; margin-top:22px; font-size:13.5px; color:var(--sub); }
+  .rel a { font-weight:700; }
+  figure img { background:#fff; }
+</style>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+</head>
+<body>
+
+<div class="topbar">
+  <div class="topbar-in">
+    <a class="wordmark" href="../../">SCHOOL STOCK</a>
+    <div class="nav"><a href="../">← 実践アイデアにもどる</a></div>
+  </div>
+</div>
+
+<div class="container">
+
+<div class="crumb"><a href="../../">棚トップ</a> ／ <a href="../">実践アイデア</a> ／ 授業テロップの使い方</div>
+
+<span class="kicker">気になる子の支援</span>
+<h1>授業テロップの使い方<br>── 話したことを、画面の下に残す</h1>
+<div class="meta">2026年8月30日　／　実践アイデア</div>
+
+<figure class="hero"><img src="telop-tsukaikata-img/hero.jpg" alt="黒板の前で話す先生と、それを聞く子どもたちの水彩画"></figure>
+
+<p class="lead">板書は残ります。でも、口で言ったことは消えていきます。
+聞きのがした子は、どこへ戻ればいいのか分かりません。
+話したことを画面の下に字幕で出して、1行ずつ残していく道具を作りました。
+ブラウザで開くだけで、登録もインストールもいりません。</p>
+
+<div class="sum">
+  <div class="st">３行でいうと</div>
+  <ol>
+    <li>Chromeで開いて「はじめる」を押すと、話したことが画面の下に字幕で出ます</li>
+    <li>字幕は1行ずつ上に残るので、聞きのがしても子どもが自分で追いつけます</li>
+    <li>残った文はテキストで保存でき、生成AIに渡して要点や連絡を整理できます</li>
+  </ol>
+</div>
+
+<p><a href="../../telop/"><b>授業テロップを開く →</b></a>　無料・登録不要・Google Chrome で動きます。</p>
+
+<h2>どんな子のための道具か</h2>
+<p>まっすぐに言うと、<b>耳から入る言葉が残りにくい子</b>のためのものです。</p>
+<p>聞こえていないわけではないのに、話が流れていってしまう。
+大事な言葉だと分かっても、書き留める前に次の話が始まっている。
+「もう一度言ってください」と言える子ばかりでもありません。</p>
+<p>聴覚に障害のある子への情報保障としても使えます。
+手話通訳やノートテイクを毎時間つけるのは、現実には難しい。その間を少しだけ埋めるためのものです。</p>
+<p>先生の側が楽をするための道具ではありません。
+先生はこれまでどおり話し、板書もします。その上で、<b>それでも追いつけない子のために、もう一つ道を足す</b>という位置づけです。</p>
+
+<h2>はじめかた</h2>
+<ol class="steps">
+  <li><b>Google Chrome で開きます。</b>音声認識にChromeのしくみを使うので、ほかのブラウザでは動きません</li>
+  <li><b>「はじめる」を押して、マイクを許可します。</b>最初の1回だけ、ブラウザが確認してきます</li>
+  <li><b>この画面をモニターや電子黒板に映します。</b>画面を複製して映せば、そのまま教室のテロップになります</li>
+</ol>
+
+<figure><img src="telop-tsukaikata-img/shot-open.png"
+alt="授業テロップを開いた直後の画面。上に操作のボタンが並び、中央に説明、下に黒いテロップの帯がある">
+<figcaption>開いた直後の画面です。上のボタンは6つだけ。下の黒い帯に字幕が出ます。</figcaption></figure>
+
+<figure><img src="telop-tsukaikata-img/shot-live.png"
+alt="認識中の画面。下の黒い帯に大きな白文字で今の発言が出て、その上に話した文が1行ずつ並んでいる">
+<figcaption>話しはじめると、下の帯に今の言葉が出ます。文が決まると、上に1行ずつたまっていきます。
+少し上を見れば、さっきの話がそのまま読めます。</figcaption></figure>
+
+<div class="tip"><b>画面が暗くならないようにしてあります。</b>
+話しているあいだ、パソコンのスリープを止めています。授業の途中で画面が消える心配はありません。</div>
+
+<h2>見た目を教室に合わせる</h2>
+<p>うしろの席から読めるかどうかは、教室の広さとモニターの大きさで変わります。
+文字の大きさは4段階、色は3つから選べるので、実際に教室で見て決めてください。</p>
+
+<figure><img src="telop-tsukaikata-img/shot-set.png"
+alt="設定の画面。文字の大きさ4段階、テロップの行数、テロップの色3つ、画面の表示、ことばの置きかえ辞書の欄が並んでいる">
+<figcaption>設定はこれだけです。「黒地に黄」は、教室が明るくて白が飛ぶときに読みやすくなります。</figcaption></figure>
+
+<ul class="feat">
+  <li><b>文字の大きさ。</b>小・中・大・特大の4段階。まず「大」で試して、うしろの席から見てもらうのが早いです</li>
+  <li><b>テロップの行数。</b>1行だと今の一言だけ、2行だと少し前まで見えます</li>
+  <li><b>テロップの色。</b>黒地に白／白地に黒／黒地に黄</li>
+  <li><b>画面の表示。</b>「テロップだけ」にすると、残った文を隠して字幕だけを映せます</li>
+</ul>
+
+<h3>スライドと一緒に使うとき</h3>
+<p>「テロップを前に出す」を押すと、<b>テロップだけの小さな窓</b>が出て、スライドなどほかの画面の上に重なります。
+窓のふちをつかんで大きさを変えると、字の大きさも一緒に変わります。窓を閉じれば元の画面に戻ります。</p>
+
+<h2>まちがって聞き取られたら</h2>
+<p>音声認識は完璧ではありません。とくに<b>単元の用語・地名・人名</b>は外れやすく、
+そこを外すと意味が変わってしまいます。直し方は2つあります。</p>
+
+<h3>1. その場でクリックして直す</h3>
+<p>残った文はクリックすると、その場で書き直せます。Enterで確定、空にすればその行が消えます。</p>
+
+<figure><img src="telop-tsukaikata-img/shot-edit.png"
+alt="ログの1行が青い枠で囲まれて編集できる状態。「大事な言葉はこの3つです 席 温度 変化」と誤って認識されている">
+<figcaption>「体積」が「席」になってしまった行を、クリックして直しているところ。
+青い枠が出たら、そのまま打ち直せます。</figcaption></figure>
+
+<h3>2. あらかじめ辞書に登録しておく</h3>
+<p>設定の「ことばの置きかえ辞書」に <code>たいせき→体積</code> のように1行ずつ書いておくと、
+字幕とログに出る前に置きかわります。授業の前に、その時間の用語を2〜3語だけ入れておくのが現実的です。</p>
+
+<div class="tip"><b>この道具は、文を勝手に書き直しません。</b>
+話し言葉を機械が整った文に直そうとすると、直る数より新しく生まれる誤りのほうが多くなることがあります
+（人工知能学会論文誌 37巻3号ほか）。だから、直すのは人の役目にしています。</div>
+
+<h2>残した文をどう使うか</h2>
+<p>授業が終わったら「のこす」で、時刻つきのテキストとして保存できます。
+そのまま読み返してもいいのですが、生成AIに渡すと整理してくれます。</p>
+
+<figure><img src="telop-tsukaikata-img/shot-ai.png"
+alt="「AIでまとめる」を押した直後の画面。下に「お願いの文とログをコピーしました」という知らせが出ている">
+<figcaption>「AIでまとめる」を押すと、ログとお願いの文が一緒にコピーされます。
+あとは ChatGPT や Gemini に貼りつけるだけです。</figcaption></figure>
+
+<p>返ってくるのは、だいたいこの3つです。</p>
+<ul class="feat">
+  <li><b>その時間の要点。</b>誤認識を文脈から直したうえでまとめてくれます</li>
+  <li><b>大事な言葉と、その短い説明。</b>板書し忘れた用語の拾い直しに使えます</li>
+  <li><b>連絡の一覧。</b>持ち物・宿題・提出物など、口で言ったきりのものが並びます</li>
+</ul>
+<p>休んだ子への連絡や、自分のふりかえりに使えます。</p>
+
+<h2>字幕が読みやすくなる話し方</h2>
+<p>認識のよしあしは、道具よりも話し方で変わります。
+大学の授業で音声認識を使った実践報告では、<b>話し方を意識するだけで認識率が4割から8割まで上がった</b>という記録があります
+（皆川ら 2016・コンピュータ&amp;エデュケーション）。次の5つだけ気をつけてみてください。</p>
+<ol class="steps">
+  <li><b>ゆっくりめに話す。</b>1分間に300字くらいが目安です</li>
+  <li><b>一文を短くして、言い切ったら1秒あける。</b>この「間」が、文の切れ目になります</li>
+  <li><b>マイクは口の近くに。</b>ピンマイクがあると安定します</li>
+  <li><b>単元の用語・地名・人名は、辞書に登録しておく。</b>いちばん効きます</li>
+  <li><b>子どもの発言は、先生が復唱してテロップに乗せる。</b>復唱は授業でも自然な動きです</li>
+</ol>
+<p>向いているのは、<b>先生がひとりで話す説明や指示の場面</b>です。
+グループ活動のようにまわりがにぎやかなときは、認識が大きく崩れます。そこは無理に使わないほうがいいと思います。</p>
+
+<h2>使う前に知っておいてほしいこと</h2>
+<ul class="feat">
+  <li><b>音声はChromeのしくみで処理されます。</b>認識のとき、音声はGoogleのしくみを通ります。
+  学校でお使いになる場合は、お使いの自治体・学校の情報の取り扱いのきまりに合わせてご判断ください</li>
+  <li><b>残った文は、そのパソコンの中にだけ保存されます。</b>どこかに送られることはありません</li>
+  <li><b>人の名前が字幕やログに残ることがあります。</b>映す場面・残す場面に合わせて気をつけてお使いください</li>
+  <li><b>認識は完璧ではありません。</b>大事な連絡は、口頭や板書と合わせてお使いください</li>
+</ul>
+
+<div class="sum">
+  <div class="st">まとめ</div>
+  <ol>
+    <li>Chromeで開いて「はじめる」だけ。画面をモニターに映せば、そのまま教室で使えます</li>
+    <li>まちがいはクリックで直せます。用語は先に辞書へ入れておくと、そもそも外れにくくなります</li>
+    <li>残った文はAIに渡して、要点・用語・連絡に整理できます</li>
+  </ol>
+</div>
+
+<p><a href="../../telop/"><b>授業テロップを開く →</b></a></p>
+
+<div class="rel">この棚の関連：<a href="../../shien/">支援カード</a>／<a href="../../shien/links/">特別支援 実践リンク集</a>／<a href="../../board/">思考ツールボード</a></div>
+
+</div>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
