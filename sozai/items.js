@@ -42778,5 +42778,81 @@ const SOZAI = [
   "alt": "img/sansu2_kakezan_imi_01_alt.txt",
   "seconds": null,
   "phase": ""
+ },
+ {
+  "id": "rika5_omosa_01",
+  "title": "とけても 重さは 変わらない",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "もののとけ方",
+  "scenes": [
+   "とかす前と後の重さをくらべる"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "ふたをした容器のまま食塩をとかす。見えなくなっても電子てんびんの表示は120gのまま。",
+  "howto": "もののとけ方のまとめに。実験の前の予想や、実験後の確認に。",
+  "tags": [
+   "もののとけ方",
+   "重さ",
+   "保存",
+   "食塩",
+   "電子てんびん",
+   "5年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/rika5_omosa_01.gif",
+  "thumb": "img/rika5_omosa_01_thumb.jpg",
+  "gifMobile": "img/rika5_omosa_01_mobile.gif",
+  "mp4": "img/rika5_omosa_01.mp4",
+  "poster": "img/rika5_omosa_01_poster.png",
+  "alt": "img/rika5_omosa_01_alt.txt",
+  "seconds": null,
+  "phase": ""
+ },
+ {
+  "id": "sansu3_amari_shori_01",
+  "title": "あまりが 出たら もう1台",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "あまりのあるわり算",
+  "scenes": [
+   "あまりを場面にもどして考える"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "13人が4人ずつ車に乗る。3台と1人あまり。あまった1人も乗るので車は4台いる。",
+  "howto": "あまりの処理（切り上げ）のまとめに。「あまり1」で止まってしまう子に。",
+  "tags": [
+   "あまり",
+   "切り上げ",
+   "わり算",
+   "13÷4",
+   "場面にもどす",
+   "3年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu3_amari_shori_01.gif",
+  "thumb": "img/sansu3_amari_shori_01_thumb.jpg",
+  "gifMobile": "img/sansu3_amari_shori_01_mobile.gif",
+  "mp4": "img/sansu3_amari_shori_01.mp4",
+  "poster": "img/sansu3_amari_shori_01_poster.png",
+  "alt": "img/sansu3_amari_shori_01_alt.txt",
+  "seconds": null,
+  "phase": ""
  }
 ];
