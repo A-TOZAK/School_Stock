@@ -2,11 +2,11 @@
 const AUTHORS = {
  "makabe": {
   "romaji": "Makabe",
-  "count": 119
+  "count": 122
  },
  "masuda": {
   "romaji": "Masuda",
-  "count": 10
+  "count": 16
  },
  "suou": {
   "romaji": "Suou",
@@ -18,7 +18,7 @@ const AUTHORS = {
  },
  "riko": {
   "romaji": "Chihaya",
-  "count": 812
+  "count": 820
  },
  "himi": {
   "romaji": "Himi",
@@ -26,7 +26,7 @@ const AUTHORS = {
  },
  "studio": {
   "romaji": "Studio",
-  "count": 29
+  "count": 33
  },
  "innami": {
   "romaji": "Innami",

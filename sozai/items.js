@@ -41953,5 +41953,643 @@ const SOZAI = [
   "img": "img/jinbutsu_senjin.jpg",
   "thumb": "img/jinbutsu_senjin_thumb.jpg",
   "mono": "img/jinbutsu_senjin_mono.jpg"
+ },
+ {
+  "id": "pe_01_stopwatch",
+  "title": "ストップウォッチ",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の道具",
+  "scenes": [
+   "時間をはかる"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "手のひらに収まる大きさのデジタルストップウォッチと、そのひも。",
+  "howto": "記録会・シャトルラン・持久走の説明に。道具の名前あてにも。",
+  "tags": [
+   "ストップウォッチ",
+   "タイム",
+   "記録",
+   "体育",
+   "道具",
+   "計測"
+  ],
+  "img": "img/pe_01_stopwatch.jpg",
+  "thumb": "img/pe_01_stopwatch_thumb.jpg"
+ },
+ {
+  "id": "pe_02_bigtimer",
+  "title": "大型デジタルタイマー",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の道具",
+  "scenes": [
+   "みんなで残り時間を見る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "表示面が学校机の幅の半分ほどある、置き型の大型タイマー。数字は消えている。",
+  "howto": "記録会・練習の残り時間の説明に。教室の活動時間の掲示にも。",
+  "tags": [
+   "タイマー",
+   "デジタルタイマー",
+   "残り時間",
+   "記録会",
+   "体育",
+   "道具"
+  ],
+  "img": "img/pe_02_bigtimer.jpg",
+  "thumb": "img/pe_02_bigtimer_thumb.jpg"
+ },
+ {
+  "id": "pe_03_linecar",
+  "title": "ラインカー（白線を引く）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の道具",
+  "scenes": [
+   "グラウンドに線を引く"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "石灰を入れる漏斗状のタンクと2つの車輪、押し手のついたラインカー。散布口に石灰がこびりつき、地面に白い粉のあとが残っている。",
+  "howto": "運動会の準備、係の仕事の説明に。用具の名前あてにも。",
+  "tags": [
+   "ラインカー",
+   "ライン引き",
+   "白線",
+   "石灰",
+   "グラウンド",
+   "運動会",
+   "準備"
+  ],
+  "img": "img/pe_03_linecar.jpg",
+  "thumb": "img/pe_03_linecar_thumb.jpg"
+ },
+ {
+  "id": "pe_04_whistle",
+  "title": "ホイッスル",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の道具",
+  "scenes": [
+   "合図をする"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "首ひものついたオレンジのホイッスル。ストップウォッチの3分の2ほどの長さ。",
+  "howto": "集合・開始・終了の合図の説明に。係の仕事の掲示にも。",
+  "tags": [
+   "ホイッスル",
+   "笛",
+   "合図",
+   "体育",
+   "道具"
+  ],
+  "img": "img/pe_04_whistle.jpg",
+  "thumb": "img/pe_04_whistle_thumb.jpg"
+ },
+ {
+  "id": "pe_05_towel",
+  "title": "タオル（たたんだ状態）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の持ち物",
+  "scenes": [
+   "汗をふく"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "たたんだ水色のフェイスタオル。",
+  "howto": "体育や運動会の持ち物の掲示・おたよりに。水筒・赤白帽と3点で並べて使う。",
+  "tags": [
+   "タオル",
+   "持ち物",
+   "汗",
+   "体育",
+   "運動会",
+   "熱中症"
+  ],
+  "img": "img/pe_05_towel.jpg",
+  "thumb": "img/pe_05_towel_thumb.jpg"
+ },
+ {
+  "id": "pe_06_kohaku_cap",
+  "title": "赤白帽（紅白帽）",
+  "author": "masuda",
+  "type": "photo",
+  "subject": "体育",
+  "grade": "全学年",
+  "unit": "体育の持ち物",
+  "scenes": [
+   "体育の用意をする"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "おたより"
+  ],
+  "description": "赤い面を上にして置いた赤白帽。ふちを折り返して白い裏が見えている。",
+  "howto": "体育や運動会の持ち物の掲示・おたよりに。水筒・タオルと3点で並べて使う。",
+  "tags": [
+   "赤白帽",
+   "紅白帽",
+   "ぼうし",
+   "持ち物",
+   "体育",
+   "運動会"
+  ],
+  "img": "img/pe_06_kohaku_cap.jpg",
+  "thumb": "img/pe_06_kohaku_cap_thumb.jpg"
+ },
+ {
+  "id": "kateika_01_saihou_set",
+  "title": "裁縫セット（ふたを開けた中身）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "高学年",
+  "unit": "手ぬい",
+  "scenes": [
+   "道具の名前を知る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ふたを開けた裁縫ケース。針山とまち針、糸切りばさみ、裁ちばさみ、糸3色、メジャー、リッパー、指ぬき、針のパックが並んでいる。",
+  "howto": "家庭科の最初の時間、道具の名前あて、持ち物の確認に。",
+  "tags": [
+   "裁縫セット",
+   "さいほう",
+   "家庭科",
+   "手ぬい",
+   "道具",
+   "針",
+   "はさみ"
+  ],
+  "img": "img/kateika_01_saihou_set.jpg",
+  "thumb": "img/kateika_01_saihou_set_thumb.jpg",
+  "mono": "img/kateika_01_saihou_set_mono.jpg"
+ },
+ {
+  "id": "kateika_02_harijama",
+  "title": "針山とまち針・糸切りばさみ",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "高学年",
+  "unit": "手ぬい",
+  "scenes": [
+   "安全に道具を使う"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "まち針と縫い針をさした赤い針山、糸切りばさみ、白い糸巻き。",
+  "howto": "針の数を数える指導、安全の約束の掲示に。",
+  "tags": [
+   "針山",
+   "まち針",
+   "糸切りばさみ",
+   "安全",
+   "家庭科",
+   "手ぬい"
+  ],
+  "img": "img/kateika_02_harijama.jpg",
+  "thumb": "img/kateika_02_harijama_thumb.jpg",
+  "mono": "img/kateika_02_harijama_mono.jpg"
+ },
+ {
+  "id": "kateika_03_mishin",
+  "title": "ミシン（各部が分かる図）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "技術・家庭",
+  "grade": "高学年",
+  "unit": "ミシンぬい",
+  "scenes": [
+   "ミシンの部分の名前を知る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "針・押さえ・糸こま・糸道・はずみ車・平らな台が分かるミシンの図。押さえの下に布がある。",
+  "howto": "ミシンの学習の最初、部分の名前あて、操作の説明に。",
+  "tags": [
+   "ミシン",
+   "押さえ",
+   "はずみ車",
+   "糸道",
+   "家庭科",
+   "ミシンぬい"
+  ],
+  "img": "img/kateika_03_mishin.jpg",
+  "thumb": "img/kateika_03_mishin_thumb.jpg",
+  "mono": "img/kateika_03_mishin_mono.jpg"
+ },
+ {
+  "id": "s4_01_kanki_mado",
+  "title": "小学生・まどを開けてかんきする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "係・当番の仕事",
+  "scenes": [
+   "空気を入れかえる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "教室のまどを両手で開けて、外を見る子。カーテンがふわりと持ち上がっている。",
+  "howto": "かん気の呼びかけ、係の仕事の掲示、保健のおたよりに。",
+  "tags": [
+   "かんき",
+   "換気",
+   "まど",
+   "空気",
+   "係",
+   "当番",
+   "教室"
+  ],
+  "img": "img/s4_01_kanki_mado.jpg",
+  "thumb": "img/s4_01_kanki_mado_thumb.jpg",
+  "mono": "img/s4_01_kanki_mado_mono.jpg"
+ },
+ {
+  "id": "s4_02_houki",
+  "title": "小学生・ほうきではく子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "係・当番の仕事",
+  "scenes": [
+   "そうじをする"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "ほうきを両手で持ち、ほうき先が床につき、前にごみが集まっている子。",
+  "howto": "そうじの手順の掲示、当番表、学級通信に。",
+  "tags": [
+   "そうじ",
+   "ほうき",
+   "当番",
+   "係",
+   "教室"
+  ],
+  "img": "img/s4_02_houki.jpg",
+  "thumb": "img/s4_02_houki_thumb.jpg",
+  "mono": "img/s4_02_houki_mono.jpg"
+ },
+ {
+  "id": "s4_03_zoukin",
+  "title": "小学生・ぞうきんがけをする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "係・当番の仕事",
+  "scenes": [
+   "そうじをする"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "足を伸ばし腰を落として、両手でぞうきんを前に押していく子。",
+  "howto": "そうじの手順の掲示、当番表に。ほうきの絵と並べて使う。",
+  "tags": [
+   "ぞうきん",
+   "ぞうきんがけ",
+   "そうじ",
+   "当番",
+   "教室"
+  ],
+  "img": "img/s4_03_zoukin.jpg",
+  "thumb": "img/s4_03_zoukin_thumb.jpg",
+  "mono": "img/s4_03_zoukin_mono.jpg"
+ },
+ {
+  "id": "s4_04_locker",
+  "title": "小学生・ロッカーをせいとんする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "係・当番の仕事",
+  "scenes": [
+   "整理整とんをする"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "ロッカーの前にひざをついて、本の向きをそろえ、上ぐつを並べている子。",
+  "howto": "整理整とんの呼びかけ、持ち物の指導、学級通信に。",
+  "tags": [
+   "整理整とん",
+   "せいとん",
+   "ロッカー",
+   "片づけ",
+   "教室"
+  ],
+  "img": "img/s4_04_locker.jpg",
+  "thumb": "img/s4_04_locker_thumb.jpg",
+  "mono": "img/s4_04_locker_mono.jpg"
+ },
+ {
+  "id": "s4_05_hoken_bed",
+  "title": "小学生・ほけんしつのベッドで休む子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "保健室",
+  "grade": "全学年",
+  "unit": "保健室での過ごし方",
+  "scenes": [
+   "体調が悪いとき休む"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "保健室のベッドに横になり、うすい毛布をかけて目を閉じて休んでいる子。",
+  "howto": "保健室の使い方の説明、ほけんだよりに。",
+  "tags": [
+   "保健室",
+   "ベッド",
+   "休む",
+   "体調",
+   "ほけんだより"
+  ],
+  "img": "img/s4_05_hoken_bed.jpg",
+  "thumb": "img/s4_05_hoken_bed_thumb.jpg",
+  "mono": "img/s4_05_hoken_bed_mono.jpg"
+ },
+ {
+  "id": "s4_06_taion",
+  "title": "小学生・体温をはかる子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "保健室",
+  "grade": "全学年",
+  "unit": "保健室での過ごし方",
+  "scenes": [
+   "体調をたしかめる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "いすにすわり、体温計をわきにはさんで、もう一方の手でうでを押さえて待つ子。",
+  "howto": "けんこう観察、体調が悪いときの流れの説明に。",
+  "tags": [
+   "体温",
+   "体温計",
+   "けんこう観察",
+   "保健室",
+   "体調"
+  ],
+  "img": "img/s4_06_taion.jpg",
+  "thumb": "img/s4_06_taion_thumb.jpg",
+  "mono": "img/s4_06_taion_mono.jpg"
+ },
+ {
+  "id": "s4_07_suibun",
+  "title": "小学生・練習中に水分ほきゅうをする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "保健室",
+  "grade": "全学年",
+  "unit": "熱中症の予防",
+  "scenes": [
+   "こまめに水をのむ"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "体育服と赤白帽のまま、水筒を両手で持って飲んでいる子。",
+  "howto": "運動会の練習前の指導、熱中症予防のおたより、掲示に。",
+  "tags": [
+   "水分ほきゅう",
+   "水筒",
+   "熱中症",
+   "運動会",
+   "練習",
+   "体育"
+  ],
+  "img": "img/s4_07_suibun.jpg",
+  "thumb": "img/s4_07_suibun_thumb.jpg",
+  "mono": "img/s4_07_suibun_mono.jpg"
+ },
+ {
+  "id": "s4_08_hikage",
+  "title": "小学生・日かげで休むふたり",
+  "author": "riko",
+  "type": "illust",
+  "subject": "保健室",
+  "grade": "全学年",
+  "unit": "熱中症の予防",
+  "scenes": [
+   "日かげで体を休める"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "おたより",
+   "掲示"
+  ],
+  "description": "走ったあと、日かげにすわって休むふたり。ひとりは手であおぎ、ひとりは首にタオルをかけている。",
+  "howto": "熱中症予防の掲示、運動会の練習のきまりの説明に。",
+  "tags": [
+   "日かげ",
+   "休けい",
+   "熱中症",
+   "運動会",
+   "水分",
+   "タオル"
+  ],
+  "img": "img/s4_08_hikage.jpg",
+  "thumb": "img/s4_08_hikage_thumb.jpg",
+  "mono": "img/s4_08_hikage_mono.jpg"
+ },
+ {
+  "id": "shien_01_timetimer",
+  "title": "タイムタイマー（残り45分）",
+  "author": "studio",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "視覚的な支援",
+  "scenes": [
+   "残り時間を目で見て分かる"
+  ],
+  "uses": [
+   "掲示",
+   "プリント・ワークシート",
+   "スライド"
+  ],
+  "description": "60分計のタイムタイマー。残り時間ぶんの赤い扇形が時間とともに減っていく形式。目もりと数字はすべて作図したもの。",
+  "howto": "見通しをもたせたい活動の掲示、時間の指導、支援の説明資料に。",
+  "tags": [
+   "タイムタイマー",
+   "残り時間",
+   "見通し",
+   "視覚支援",
+   "特別支援",
+   "時間"
+  ],
+  "img": "img/shien_01_timetimer.jpg",
+  "thumb": "img/shien_01_timetimer_thumb.jpg",
+  "mono": "img/shien_01_timetimer_mono.jpg"
+ },
+ {
+  "id": "shien_02_yoteihyo",
+  "title": "1日の予定表（時こく・やること・チェック欄）",
+  "author": "studio",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "視覚的な支援",
+  "scenes": [
+   "1日の見通しをもつ"
+  ],
+  "uses": [
+   "掲示",
+   "プリント・ワークシート",
+   "スライド"
+  ],
+  "description": "時こくとやることを縦に並べ、教科ごとに色の帯をつけ、終わったらチェックする□をつけた予定表。",
+  "howto": "朝の会での予定の確認、黒板の横の掲示、個別の支援に。",
+  "tags": [
+   "予定表",
+   "スケジュール",
+   "見通し",
+   "視覚支援",
+   "特別支援",
+   "朝の会"
+  ],
+  "img": "img/shien_02_yoteihyo.jpg",
+  "thumb": "img/shien_02_yoteihyo_thumb.jpg",
+  "mono": "img/shien_02_yoteihyo_mono.jpg"
+ },
+ {
+  "id": "shien_03_tejunhyo",
+  "title": "手順表（4つのじゅんばん）",
+  "author": "studio",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "視覚的な支援",
+  "scenes": [
+   "やることの順番が分かる"
+  ],
+  "uses": [
+   "掲示",
+   "プリント・ワークシート",
+   "スライド"
+  ],
+  "description": "1から4まで番号をつけた4つのこまに、やることを短い言葉で書いた手順表。",
+  "howto": "活動の始めの指示、机の上に置く個別の支援、係の仕事の掲示に。",
+  "tags": [
+   "手順表",
+   "じゅんばん",
+   "見通し",
+   "視覚支援",
+   "特別支援",
+   "指示"
+  ],
+  "img": "img/shien_03_tejunhyo.jpg",
+  "thumb": "img/shien_03_tejunhyo_thumb.jpg",
+  "mono": "img/shien_03_tejunhyo_mono.jpg"
+ },
+ {
+  "id": "shien_04_ima_tsugi",
+  "title": "「いま・つぎ」カード（2枠）",
+  "author": "studio",
+  "type": "illust",
+  "subject": "特別支援",
+  "grade": "全学年",
+  "unit": "視覚的な支援",
+  "scenes": [
+   "今することだけに集中する"
+  ],
+  "uses": [
+   "掲示",
+   "プリント・ワークシート",
+   "スライド"
+  ],
+  "description": "「いま」と「つぎ」の2つの枠だけを大きく置いたボード。中にカードを貼って使う。",
+  "howto": "情報を減らして今することだけを示したいときに。個別の支援、切りかえの指導に。",
+  "tags": [
+   "いまつぎ",
+   "ナウネクスト",
+   "切りかえ",
+   "視覚支援",
+   "特別支援",
+   "見通し"
+  ],
+  "img": "img/shien_04_ima_tsugi.jpg",
+  "thumb": "img/shien_04_ima_tsugi_thumb.jpg",
+  "mono": "img/shien_04_ima_tsugi_mono.jpg"
  }
 ];
