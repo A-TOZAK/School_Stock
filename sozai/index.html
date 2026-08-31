@@ -598,7 +598,7 @@ document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeModal();
   document.getElementById('drawer').classList.remove('open'); document.getElementById('scrim').classList.remove('show'); } });
 
 document.getElementById('mcount').textContent=SOZAI.length;
-const subOrder=['国語','算数','理科','社会','音楽','図工・美術','体育','外国語','技術・家庭','総合','特別支援','学校生活','部活動','行事','たより','先生・研修','ポーズ・表情'];
+const subOrder=['国語','算数','理科','社会','音楽','図工・美術','体育','外国語','技術・家庭','総合','特別支援','保健室','学校生活','部活動','行事','おたより通信','先生・研修','ポーズ・表情'];
 const gradeOrder=['全学年','1年','2年','3年','4年','5年','6年','低学年','中学年','中学年〜高学年','高学年','中学校','先生向け'];
 const useOrder=['スライド','プリント・ワークシート','おたより','掲示','挿絵','見出し・表紙','説明・図解','学習のまとめ','白黒印刷','うごく','Web・note'];
 // 一覧に無い値は末尾へ（indexOf の -1 が先頭に来ると並びが壊れる）

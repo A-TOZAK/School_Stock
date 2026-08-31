@@ -4400,7 +4400,7 @@ const SOZAI = [
   "title": "コスモスと赤とんぼ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・秋",
   "scenes": [
@@ -4438,7 +4438,7 @@ const SOZAI = [
   "title": "コスモスと赤とんぼ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・秋",
   "scenes": [
@@ -4476,7 +4476,7 @@ const SOZAI = [
   "title": "十五夜のおそなえ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・十五夜",
   "scenes": [
@@ -4514,7 +4514,7 @@ const SOZAI = [
   "title": "十五夜のおそなえ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・十五夜",
   "scenes": [
@@ -4552,7 +4552,7 @@ const SOZAI = [
   "title": "月ラベル 1月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月号",
   "scenes": [
@@ -4588,7 +4588,7 @@ const SOZAI = [
   "title": "月ラベル 2月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月号",
   "scenes": [
@@ -4624,7 +4624,7 @@ const SOZAI = [
   "title": "月ラベル 3月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月号",
   "scenes": [
@@ -4660,7 +4660,7 @@ const SOZAI = [
   "title": "月ラベル 4月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月号",
   "scenes": [
@@ -4696,7 +4696,7 @@ const SOZAI = [
   "title": "月ラベル 5月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月号",
   "scenes": [
@@ -4732,7 +4732,7 @@ const SOZAI = [
   "title": "月ラベル 6月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月号",
   "scenes": [
@@ -4768,7 +4768,7 @@ const SOZAI = [
   "title": "月ラベル 7月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月号",
   "scenes": [
@@ -4804,7 +4804,7 @@ const SOZAI = [
   "title": "月ラベル 8月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月号",
   "scenes": [
@@ -4840,7 +4840,7 @@ const SOZAI = [
   "title": "月ラベル 9月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月号",
   "scenes": [
@@ -4876,7 +4876,7 @@ const SOZAI = [
   "title": "月ラベル 10月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月号",
   "scenes": [
@@ -4912,7 +4912,7 @@ const SOZAI = [
   "title": "月ラベル 11月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月号",
   "scenes": [
@@ -4948,7 +4948,7 @@ const SOZAI = [
   "title": "月ラベル 12月（明朝・飾り枠）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月号",
   "scenes": [
@@ -4984,7 +4984,7 @@ const SOZAI = [
   "title": "月でもちつきするうさぎ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・お月見",
   "scenes": [
@@ -5022,7 +5022,7 @@ const SOZAI = [
   "title": "月でもちつきするうさぎ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・お月見",
   "scenes": [
@@ -5060,7 +5060,7 @@ const SOZAI = [
   "title": "彼岸花（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・お彼岸",
   "scenes": [
@@ -5098,7 +5098,7 @@ const SOZAI = [
   "title": "彼岸花（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・お彼岸",
   "scenes": [
@@ -5136,7 +5136,7 @@ const SOZAI = [
   "title": "ぶどう（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・実りの秋",
   "scenes": [
@@ -5174,7 +5174,7 @@ const SOZAI = [
   "title": "ぶどう（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "9月・実りの秋",
   "scenes": [
@@ -5212,7 +5212,7 @@ const SOZAI = [
   "title": "どんぐりと落ち葉（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・秋",
   "scenes": [
@@ -5250,7 +5250,7 @@ const SOZAI = [
   "title": "どんぐりと落ち葉（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・秋",
   "scenes": [
@@ -5288,7 +5288,7 @@ const SOZAI = [
   "title": "もみじの枝（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・紅葉",
   "scenes": [
@@ -5326,7 +5326,7 @@ const SOZAI = [
   "title": "もみじの枝（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・紅葉",
   "scenes": [
@@ -5364,7 +5364,7 @@ const SOZAI = [
   "title": "柿の実（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・実りの秋",
   "scenes": [
@@ -5402,7 +5402,7 @@ const SOZAI = [
   "title": "柿の実（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・実りの秋",
   "scenes": [
@@ -5440,7 +5440,7 @@ const SOZAI = [
   "title": "稲穂（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・収穫",
   "scenes": [
@@ -5478,7 +5478,7 @@ const SOZAI = [
   "title": "稲穂（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・収穫",
   "scenes": [
@@ -5516,7 +5516,7 @@ const SOZAI = [
   "title": "ハロウィンのかぼちゃ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・ハロウィン",
   "scenes": [
@@ -5554,7 +5554,7 @@ const SOZAI = [
   "title": "ハロウィンのかぼちゃ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "10月・ハロウィン",
   "scenes": [
@@ -5814,7 +5814,7 @@ const SOZAI = [
   "title": "いちょうと銀杏（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・紅葉",
   "scenes": [
@@ -5852,7 +5852,7 @@ const SOZAI = [
   "title": "いちょうと銀杏（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・紅葉",
   "scenes": [
@@ -5890,7 +5890,7 @@ const SOZAI = [
   "title": "焼きいも（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・晩秋",
   "scenes": [
@@ -5928,7 +5928,7 @@ const SOZAI = [
   "title": "焼きいも（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・晩秋",
   "scenes": [
@@ -5966,7 +5966,7 @@ const SOZAI = [
   "title": "菊の花（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・文化の日",
   "scenes": [
@@ -6004,7 +6004,7 @@ const SOZAI = [
   "title": "菊の花（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・文化の日",
   "scenes": [
@@ -6042,7 +6042,7 @@ const SOZAI = [
   "title": "七五三の千歳飴（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・七五三",
   "scenes": [
@@ -6080,7 +6080,7 @@ const SOZAI = [
   "title": "七五三の千歳飴（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・七五三",
   "scenes": [
@@ -6118,7 +6118,7 @@ const SOZAI = [
   "title": "みのむし（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・冬じたく",
   "scenes": [
@@ -6156,7 +6156,7 @@ const SOZAI = [
   "title": "みのむし（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "11月・冬じたく",
   "scenes": [
@@ -6194,7 +6194,7 @@ const SOZAI = [
   "title": "手あらい（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "手洗い・清潔",
   "scenes": [
@@ -6220,7 +6220,8 @@ const SOZAI = [
    "保健だより",
    "養護教諭",
    "生活習慣",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_tearai_sumire.jpg",
   "thumb": "img/hoken_tearai_sumire_thumb.jpg",
@@ -6231,7 +6232,7 @@ const SOZAI = [
   "title": "すいみん（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "睡眠・生活リズム",
   "scenes": [
@@ -6256,7 +6257,8 @@ const SOZAI = [
    "保健だより",
    "養護教諭",
    "生活習慣",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_suimin_sumire.jpg",
   "thumb": "img/hoken_suimin_sumire_thumb.jpg",
@@ -6267,7 +6269,7 @@ const SOZAI = [
   "title": "歯みがき（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "歯・口の健康",
   "scenes": [
@@ -6293,7 +6295,8 @@ const SOZAI = [
    "保健だより",
    "養護教諭",
    "生活習慣",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_hamigaki_sumire.jpg",
   "thumb": "img/hoken_hamigaki_sumire_thumb.jpg",
@@ -6304,7 +6307,7 @@ const SOZAI = [
   "title": "水分ほきゅう（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "熱中症予防・水分補給",
   "scenes": [
@@ -6330,7 +6333,8 @@ const SOZAI = [
    "夏",
    "保健だより",
    "養護教諭",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_suibun_sumire.jpg",
   "thumb": "img/hoken_suibun_sumire_thumb.jpg",
@@ -6341,7 +6345,7 @@ const SOZAI = [
   "title": "いただきます（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食・食事のあいさつ",
   "scenes": [
@@ -6378,7 +6382,7 @@ const SOZAI = [
   "title": "給食当番（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食・配膳",
   "scenes": [
@@ -6415,7 +6419,7 @@ const SOZAI = [
   "title": "クリスマスリース（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・クリスマス",
   "scenes": [
@@ -6453,7 +6457,7 @@ const SOZAI = [
   "title": "クリスマスリース（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・クリスマス",
   "scenes": [
@@ -6491,7 +6495,7 @@ const SOZAI = [
   "title": "雪だるま（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬",
   "scenes": [
@@ -6529,7 +6533,7 @@ const SOZAI = [
   "title": "雪だるま（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬",
   "scenes": [
@@ -6567,7 +6571,7 @@ const SOZAI = [
   "title": "大掃除の道具（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・年末",
   "scenes": [
@@ -6605,7 +6609,7 @@ const SOZAI = [
   "title": "大掃除の道具（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・年末",
   "scenes": [
@@ -6643,7 +6647,7 @@ const SOZAI = [
   "title": "冬至のゆず湯（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬至",
   "scenes": [
@@ -6681,7 +6685,7 @@ const SOZAI = [
   "title": "冬至のゆず湯（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬至",
   "scenes": [
@@ -6719,7 +6723,7 @@ const SOZAI = [
   "title": "雪の結晶（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬",
   "scenes": [
@@ -6757,7 +6761,7 @@ const SOZAI = [
   "title": "雪の結晶（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "12月・冬",
   "scenes": [
@@ -6980,7 +6984,7 @@ const SOZAI = [
   "title": "門松（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月",
   "scenes": [
@@ -7018,7 +7022,7 @@ const SOZAI = [
   "title": "門松（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月",
   "scenes": [
@@ -7056,7 +7060,7 @@ const SOZAI = [
   "title": "鏡もち（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月",
   "scenes": [
@@ -7094,7 +7098,7 @@ const SOZAI = [
   "title": "鏡もち（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月",
   "scenes": [
@@ -7132,7 +7136,7 @@ const SOZAI = [
   "title": "お正月の凧（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月遊び",
   "scenes": [
@@ -7170,7 +7174,7 @@ const SOZAI = [
   "title": "お正月の凧（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・正月遊び",
   "scenes": [
@@ -7208,7 +7212,7 @@ const SOZAI = [
   "title": "春の七草（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・七草がゆ",
   "scenes": [
@@ -7246,7 +7250,7 @@ const SOZAI = [
   "title": "春の七草（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・七草がゆ",
   "scenes": [
@@ -7284,7 +7288,7 @@ const SOZAI = [
   "title": "雪うさぎ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・冬",
   "scenes": [
@@ -7322,7 +7326,7 @@ const SOZAI = [
   "title": "雪うさぎ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "1月・冬",
   "scenes": [
@@ -7360,7 +7364,7 @@ const SOZAI = [
   "title": "節分の鬼の面と豆（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・節分",
   "scenes": [
@@ -7398,7 +7402,7 @@ const SOZAI = [
   "title": "節分の鬼の面と豆（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・節分",
   "scenes": [
@@ -7436,7 +7440,7 @@ const SOZAI = [
   "title": "梅の花（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・早春",
   "scenes": [
@@ -7474,7 +7478,7 @@ const SOZAI = [
   "title": "梅の花（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・早春",
   "scenes": [
@@ -7512,7 +7516,7 @@ const SOZAI = [
   "title": "梅にうぐいす（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・早春",
   "scenes": [
@@ -7550,7 +7554,7 @@ const SOZAI = [
   "title": "梅にうぐいす（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・早春",
   "scenes": [
@@ -7588,7 +7592,7 @@ const SOZAI = [
   "title": "ふきのとう（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・春の兆し",
   "scenes": [
@@ -7626,7 +7630,7 @@ const SOZAI = [
   "title": "ふきのとう（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・春の兆し",
   "scenes": [
@@ -7664,7 +7668,7 @@ const SOZAI = [
   "title": "恵方巻（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・節分",
   "scenes": [
@@ -7702,7 +7706,7 @@ const SOZAI = [
   "title": "恵方巻（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "2月・節分",
   "scenes": [
@@ -7740,7 +7744,7 @@ const SOZAI = [
   "title": "よい姿勢（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "姿勢・体づくり",
   "scenes": [
@@ -7765,7 +7769,8 @@ const SOZAI = [
    "保健だより",
    "養護教諭",
    "生活習慣",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_shisei_sumire.jpg",
   "thumb": "img/hoken_shisei_sumire_thumb.jpg",
@@ -7776,7 +7781,7 @@ const SOZAI = [
   "title": "目を休める（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "目の健康",
   "scenes": [
@@ -7800,7 +7805,8 @@ const SOZAI = [
    "目を休める",
    "保健だより",
    "養護教諭",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_me_sumire.jpg",
   "thumb": "img/hoken_me_sumire_thumb.jpg",
@@ -7811,7 +7817,7 @@ const SOZAI = [
   "title": "せきエチケット（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "咳エチケット・感染症予防",
   "scenes": [
@@ -7835,7 +7841,8 @@ const SOZAI = [
    "感染症予防",
    "保健だより",
    "養護教諭",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_seki_sumire.jpg",
   "thumb": "img/hoken_seki_sumire_thumb.jpg",
@@ -7846,7 +7853,7 @@ const SOZAI = [
   "title": "保健室で休む（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "保健室・休養",
   "scenes": [
@@ -7870,7 +7877,8 @@ const SOZAI = [
    "ベッド",
    "養護教諭",
    "保健だより",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/hoken_hokenshitsu_sumire.jpg",
   "thumb": "img/hoken_hokenshitsu_sumire_thumb.jpg",
@@ -7881,7 +7889,7 @@ const SOZAI = [
   "title": "よくかんで食べる（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食・よく噛む",
   "scenes": [
@@ -7917,7 +7925,7 @@ const SOZAI = [
   "title": "朝ごはん（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "食育・朝ごはん",
   "scenes": [
@@ -7942,7 +7950,8 @@ const SOZAI = [
    "給食だより",
    "栄養教諭",
    "生活習慣",
-   "水彩"
+   "水彩",
+   "保健"
   ],
   "img": "img/kyushoku_asagohan_sumire.jpg",
   "thumb": "img/kyushoku_asagohan_sumire_thumb.jpg",
@@ -7953,7 +7962,7 @@ const SOZAI = [
   "title": "三色食品群・赤（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・三色食品群",
   "scenes": [
@@ -7993,7 +8002,7 @@ const SOZAI = [
   "title": "三色食品群・黄（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・三色食品群",
   "scenes": [
@@ -8031,7 +8040,7 @@ const SOZAI = [
   "title": "三色食品群・緑（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・三色食品群",
   "scenes": [
@@ -8069,7 +8078,7 @@ const SOZAI = [
   "title": "やさいいろいろ（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・野菜",
   "scenes": [
@@ -8106,7 +8115,7 @@ const SOZAI = [
   "title": "くだものいろいろ（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・果物",
   "scenes": [
@@ -8144,7 +8153,7 @@ const SOZAI = [
   "title": "バランスのよい食事（フラット）",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "食育・栄養バランス",
   "scenes": [
@@ -8181,7 +8190,7 @@ const SOZAI = [
   "title": "ひな人形（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・ひなまつり",
   "scenes": [
@@ -8219,7 +8228,7 @@ const SOZAI = [
   "title": "ひな人形（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・ひなまつり",
   "scenes": [
@@ -8257,7 +8266,7 @@ const SOZAI = [
   "title": "桜のつぼみ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・早春",
   "scenes": [
@@ -8295,7 +8304,7 @@ const SOZAI = [
   "title": "桜のつぼみ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・早春",
   "scenes": [
@@ -8333,7 +8342,7 @@ const SOZAI = [
   "title": "つくし（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・早春",
   "scenes": [
@@ -8371,7 +8380,7 @@ const SOZAI = [
   "title": "つくし（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・早春",
   "scenes": [
@@ -8409,7 +8418,7 @@ const SOZAI = [
   "title": "卒業証書の筒（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・卒業",
   "scenes": [
@@ -8447,7 +8456,7 @@ const SOZAI = [
   "title": "卒業証書の筒（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・卒業",
   "scenes": [
@@ -8485,7 +8494,7 @@ const SOZAI = [
   "title": "モンシロチョウ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・春",
   "scenes": [
@@ -8523,7 +8532,7 @@ const SOZAI = [
   "title": "モンシロチョウ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "3月・春",
   "scenes": [
@@ -8561,7 +8570,7 @@ const SOZAI = [
   "title": "桜満開（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・入学",
   "scenes": [
@@ -8599,7 +8608,7 @@ const SOZAI = [
   "title": "桜満開（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・入学",
   "scenes": [
@@ -8637,7 +8646,7 @@ const SOZAI = [
   "title": "ランドセル（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・入学",
   "scenes": [
@@ -8675,7 +8684,7 @@ const SOZAI = [
   "title": "ランドセル（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・入学",
   "scenes": [
@@ -8713,7 +8722,7 @@ const SOZAI = [
   "title": "チューリップ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8751,7 +8760,7 @@ const SOZAI = [
   "title": "チューリップ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8789,7 +8798,7 @@ const SOZAI = [
   "title": "菜の花（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8827,7 +8836,7 @@ const SOZAI = [
   "title": "菜の花（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8865,7 +8874,7 @@ const SOZAI = [
   "title": "つばめ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8903,7 +8912,7 @@ const SOZAI = [
   "title": "つばめ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "4月・春",
   "scenes": [
@@ -8941,7 +8950,7 @@ const SOZAI = [
   "title": "こいのぼり（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -8979,7 +8988,7 @@ const SOZAI = [
   "title": "こいのぼり（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -9017,7 +9026,7 @@ const SOZAI = [
   "title": "かしわもち（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -9055,7 +9064,7 @@ const SOZAI = [
   "title": "かしわもち（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -9093,7 +9102,7 @@ const SOZAI = [
   "title": "兜（五月人形）（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -9131,7 +9140,7 @@ const SOZAI = [
   "title": "兜（五月人形）（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・端午の節句",
   "scenes": [
@@ -9169,7 +9178,7 @@ const SOZAI = [
   "title": "新緑の若葉（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・初夏",
   "scenes": [
@@ -9207,7 +9216,7 @@ const SOZAI = [
   "title": "新緑の若葉（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・初夏",
   "scenes": [
@@ -9245,7 +9254,7 @@ const SOZAI = [
   "title": "新茶と茶摘みかご（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・八十八夜",
   "scenes": [
@@ -9283,7 +9292,7 @@ const SOZAI = [
   "title": "新茶と茶摘みかご（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "5月・八十八夜",
   "scenes": [
@@ -9428,7 +9437,7 @@ const SOZAI = [
   "title": "あじさいとかたつむり（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9466,7 +9475,7 @@ const SOZAI = [
   "title": "あじさいとかたつむり（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9504,7 +9513,7 @@ const SOZAI = [
   "title": "てるてる坊主（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9542,7 +9551,7 @@ const SOZAI = [
   "title": "てるてる坊主（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9580,7 +9589,7 @@ const SOZAI = [
   "title": "傘と長ぐつ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9618,7 +9627,7 @@ const SOZAI = [
   "title": "傘と長ぐつ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅雨",
   "scenes": [
@@ -9656,7 +9665,7 @@ const SOZAI = [
   "title": "梅の実（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅仕事",
   "scenes": [
@@ -9694,7 +9703,7 @@ const SOZAI = [
   "title": "梅の実（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・梅仕事",
   "scenes": [
@@ -9732,7 +9741,7 @@ const SOZAI = [
   "title": "ホタル（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・初夏の夜",
   "scenes": [
@@ -9770,7 +9779,7 @@ const SOZAI = [
   "title": "ホタル（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "6月・初夏の夜",
   "scenes": [
@@ -9808,7 +9817,7 @@ const SOZAI = [
   "title": "風鈴（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・夏",
   "scenes": [
@@ -9846,7 +9855,7 @@ const SOZAI = [
   "title": "風鈴（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・夏",
   "scenes": [
@@ -9884,7 +9893,7 @@ const SOZAI = [
   "title": "ひまわり（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・盛夏",
   "scenes": [
@@ -9921,7 +9930,7 @@ const SOZAI = [
   "title": "ひまわり（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・盛夏",
   "scenes": [
@@ -9958,7 +9967,7 @@ const SOZAI = [
   "title": "七夕の笹飾り（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・七夕",
   "scenes": [
@@ -9996,7 +10005,7 @@ const SOZAI = [
   "title": "七夕の笹飾り（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・七夕",
   "scenes": [
@@ -10034,7 +10043,7 @@ const SOZAI = [
   "title": "すいか（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・夏",
   "scenes": [
@@ -10071,7 +10080,7 @@ const SOZAI = [
   "title": "すいか（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・夏",
   "scenes": [
@@ -10108,7 +10117,7 @@ const SOZAI = [
   "title": "せみ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・盛夏",
   "scenes": [
@@ -10146,7 +10155,7 @@ const SOZAI = [
   "title": "せみ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "7月・盛夏",
   "scenes": [
@@ -10184,7 +10193,7 @@ const SOZAI = [
   "title": "朝顔（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・盛夏",
   "scenes": [
@@ -10222,7 +10231,7 @@ const SOZAI = [
   "title": "朝顔（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・盛夏",
   "scenes": [
@@ -10260,7 +10269,7 @@ const SOZAI = [
   "title": "かき氷（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・夏",
   "scenes": [
@@ -10298,7 +10307,7 @@ const SOZAI = [
   "title": "かき氷（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・夏",
   "scenes": [
@@ -10336,7 +10345,7 @@ const SOZAI = [
   "title": "手持ち花火（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・夏",
   "scenes": [
@@ -10374,7 +10383,7 @@ const SOZAI = [
   "title": "手持ち花火（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・夏",
   "scenes": [
@@ -10412,7 +10421,7 @@ const SOZAI = [
   "title": "虫とり網とカブトムシ（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・盛夏",
   "scenes": [
@@ -10450,7 +10459,7 @@ const SOZAI = [
   "title": "虫とり網とカブトムシ（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・盛夏",
   "scenes": [
@@ -10488,7 +10497,7 @@ const SOZAI = [
   "title": "精霊馬（水彩）",
   "author": "sumire",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・お盆",
   "scenes": [
@@ -10526,7 +10535,7 @@ const SOZAI = [
   "title": "精霊馬（線画）",
   "author": "makabe",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "8月・お盆",
   "scenes": [
@@ -39366,7 +39375,7 @@ const SOZAI = [
   "title": "小学生・手あらいをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "手洗い",
   "scenes": [
@@ -39396,7 +39405,7 @@ const SOZAI = [
   "title": "小学生・うがいをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "うがい",
   "scenes": [
@@ -39426,7 +39435,7 @@ const SOZAI = [
   "title": "小学生・歯みがきをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "歯みがき",
   "scenes": [
@@ -39456,7 +39465,7 @@ const SOZAI = [
   "title": "小学生・ばんそうこうをはる子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "けがの手当",
   "scenes": [
@@ -39486,7 +39495,7 @@ const SOZAI = [
   "title": "小学生・よいしせいですわる子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "姿勢",
   "scenes": [
@@ -39516,7 +39525,7 @@ const SOZAI = [
   "title": "小学生・ぐっすりねむる子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "睡眠",
   "scenes": [
@@ -39546,7 +39555,7 @@ const SOZAI = [
   "title": "小学生・朝ごはんを食べる子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "食育",
   "scenes": [
@@ -39576,7 +39585,7 @@ const SOZAI = [
   "title": "小学生・ハンカチで口をおさえる子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "保健室",
   "grade": "全学年",
   "unit": "せきエチケット",
   "scenes": [
@@ -39606,7 +39615,7 @@ const SOZAI = [
   "title": "小学生・はいぜんをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食当番",
   "scenes": [
@@ -39636,7 +39645,7 @@ const SOZAI = [
   "title": "小学生・きゅうしょくをはこぶ子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食当番",
   "scenes": [
@@ -39666,7 +39675,7 @@ const SOZAI = [
   "title": "小学生・牛にゅうをのむ子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食",
   "scenes": [
@@ -39696,7 +39705,7 @@ const SOZAI = [
   "title": "小学生・いただきますをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食",
   "scenes": [
@@ -39725,7 +39734,7 @@ const SOZAI = [
   "title": "小学生・おかわりをする子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食",
   "scenes": [
@@ -39755,7 +39764,7 @@ const SOZAI = [
   "title": "小学生・しょっきをかたづける子",
   "author": "riko",
   "type": "illust",
-  "subject": "たより",
+  "subject": "おたより通信",
   "grade": "全学年",
   "unit": "給食",
   "scenes": [
