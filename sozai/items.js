@@ -42591,5 +42591,117 @@ const SOZAI = [
   "img": "img/shien_04_ima_tsugi.jpg",
   "thumb": "img/shien_04_ima_tsugi_thumb.jpg",
   "mono": "img/shien_04_ima_tsugi_mono.jpg"
+ },
+ {
+  "id": "sansu1_kuriagari_01",
+  "title": "4を 1と3に わけて 10を つくる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "1年",
+  "unit": "たしざん（くり上がり）",
+  "scenes": [
+   "くり上がりのたし算のしかたをつかむ"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "9＋4。10のわくに9こ、右に4こ。4を1と3に分け、1こを移して10をつくる。10と3で13。",
+  "howto": "くり上がりのたし算のまとめに。電子黒板で何度でも見せられる。",
+  "tags": [
+   "くり上がり",
+   "たしざん",
+   "10のまとまり",
+   "数図ブロック",
+   "1年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu1_kuriagari_01.gif",
+  "thumb": "img/sansu1_kuriagari_01_thumb.jpg",
+  "gifMobile": "img/sansu1_kuriagari_01_mobile.gif",
+  "mp4": "img/sansu1_kuriagari_01.mp4",
+  "poster": "img/sansu1_kuriagari_01_poster.png",
+  "alt": "img/sansu1_kuriagari_01_alt.txt",
+  "seconds": null,
+  "phase": ""
+ },
+ {
+  "id": "sansu1_kurisagari_01",
+  "title": "10から ひいて、のこりと あわせる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "1年",
+  "unit": "ひきざん（くり下がり）",
+  "scenes": [
+   "くり下がりのひき算のしかたをつかむ"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "13−9。13を10と3に分け、10から9をひいて1。1と3をあわせて4。減加法。",
+  "howto": "くり下がりのひき算のまとめに。たし算の本と対で使う。",
+  "tags": [
+   "くり下がり",
+   "ひきざん",
+   "減加法",
+   "10のまとまり",
+   "数図ブロック",
+   "1年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu1_kurisagari_01.gif",
+  "thumb": "img/sansu1_kurisagari_01_thumb.jpg",
+  "gifMobile": "img/sansu1_kurisagari_01_mobile.gif",
+  "mp4": "img/sansu1_kurisagari_01.mp4",
+  "poster": "img/sansu1_kurisagari_01_poster.png",
+  "alt": "img/sansu1_kurisagari_01_alt.txt",
+  "seconds": null,
+  "phase": ""
+ },
+ {
+  "id": "sansu3_amari_01",
+  "title": "4まいずつ 配ると 1まい あまる",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "あまりのあるわり算",
+  "scenes": [
+   "あまりの意味をつかむ"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "13÷4。13まいのカードを4まいずつ配ると3回配れて1まいあまる。あまりは4に足りない。",
+  "howto": "あまりのあるわり算のまとめに。あまりがわる数より小さいことの確認に。",
+  "tags": [
+   "あまり",
+   "わり算",
+   "13÷4",
+   "包含除",
+   "3年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu3_amari_01.gif",
+  "thumb": "img/sansu3_amari_01_thumb.jpg",
+  "gifMobile": "img/sansu3_amari_01_mobile.gif",
+  "mp4": "img/sansu3_amari_01.mp4",
+  "poster": "img/sansu3_amari_01_poster.png",
+  "alt": "img/sansu3_amari_01_alt.txt",
+  "seconds": null,
+  "phase": ""
  }
 ];
