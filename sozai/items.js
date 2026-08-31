@@ -42854,5 +42854,43 @@ const SOZAI = [
   "alt": "img/sansu3_amari_shori_01_alt.txt",
   "seconds": null,
   "phase": ""
+ },
+ {
+  "id": "sansu4_bundoki_01",
+  "title": "見当を つけてから 読む",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "4年",
+  "unit": "角の大きさ",
+  "scenes": [
+   "分度器の内と外をまちがえない"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "60度の角。先に直角と比べて見当をつけてから分度器を当て、内がわ60と外がわ120のどちらを読むか決める。",
+  "howto": "角の大きさのまとめに。分度器の読みちがえが多いときに。",
+  "tags": [
+   "分度器",
+   "角の大きさ",
+   "見当",
+   "内がわ",
+   "外がわ",
+   "4年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu4_bundoki_01.gif",
+  "thumb": "img/sansu4_bundoki_01_thumb.jpg",
+  "gifMobile": "img/sansu4_bundoki_01_mobile.gif",
+  "mp4": "img/sansu4_bundoki_01.mp4",
+  "poster": "img/sansu4_bundoki_01_poster.png",
+  "alt": "img/sansu4_bundoki_01_alt.txt",
+  "seconds": null,
+  "phase": ""
  }
 ];
