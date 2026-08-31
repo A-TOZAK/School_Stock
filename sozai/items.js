@@ -40714,5 +40714,1235 @@ const SOZAI = [
   "thumb": "img/sashie_kodomo_01_thumb.jpg",
   "mono": "img/sashie_kodomo_01_mono.jpg",
   "png": "img/sashie_kodomo_01.png"
+ },
+ {
+  "id": "rika_kigu_01_mescylinder",
+  "title": "メスシリンダー（水を入れた状態）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "全学年",
+  "unit": "実験器具",
+  "scenes": [
+   "体積をはかる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "目もりのついたメスシリンダーに水が入った図。",
+  "howto": "器具の名前あて、実験の準備の説明に。",
+  "tags": [
+   "メスシリンダー",
+   "体積",
+   "計量",
+   "実験器具",
+   "ガラス器具"
+  ],
+  "img": "img/rika_kigu_01_mescylinder.jpg",
+  "thumb": "img/rika_kigu_01_mescylinder_thumb.jpg",
+  "mono": "img/rika_kigu_01_mescylinder_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_02_spoit",
+  "title": "スポイト",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "全学年",
+  "unit": "実験器具",
+  "scenes": [
+   "液体を少しずつとる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ゴム球のついたガラススポイト。",
+  "howto": "水よう液の実験、器具の名前あてに。",
+  "tags": [
+   "スポイト",
+   "実験器具",
+   "液体",
+   "ガラス器具"
+  ],
+  "img": "img/rika_kigu_02_spoit.jpg",
+  "thumb": "img/rika_kigu_02_spoit_thumb.jpg",
+  "mono": "img/rika_kigu_02_spoit_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_03_roka_set",
+  "title": "ろ過のそうち（ろうと・ろ紙・ガラス棒・ビーカー）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "もののとけ方",
+  "scenes": [
+   "ろ過のしかたを確かめる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ろうと台にろうとをのせ、ガラス棒を伝わせてビーカーに落とす、ろ過のひとそろい。",
+  "howto": "ろ過の手順の説明、実験前の確認に。",
+  "tags": [
+   "ろ過",
+   "ろうと",
+   "ろ紙",
+   "ガラス棒",
+   "ビーカー",
+   "もののとけ方"
+  ],
+  "img": "img/rika_kigu_03_roka_set.jpg",
+  "thumb": "img/rika_kigu_03_roka_set_thumb.jpg",
+  "mono": "img/rika_kigu_03_roka_set_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_04_funnel_stand",
+  "title": "ろうと台とろうと",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "全学年",
+  "unit": "実験器具",
+  "scenes": [
+   "器具を組み立てる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "木のろうと台にろうとをのせただけの図。中身は入っていない。",
+  "howto": "器具の名前あて、組み立ての説明に。",
+  "tags": [
+   "ろうと",
+   "ろうと台",
+   "実験器具"
+  ],
+  "img": "img/rika_kigu_04_funnel_stand.jpg",
+  "thumb": "img/rika_kigu_04_funnel_stand_thumb.jpg",
+  "mono": "img/rika_kigu_04_funnel_stand_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_05_compass",
+  "title": "方位じしん",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "3年",
+  "unit": "じしゃく",
+  "scenes": [
+   "方位を調べる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "赤い針が北をさす方位じしんを真上から見た図。",
+  "howto": "方位の学習、じしゃくの実験、地図の学習に。",
+  "tags": [
+   "方位磁針",
+   "方位じしん",
+   "じしゃく",
+   "方位",
+   "北"
+  ],
+  "img": "img/rika_kigu_05_compass.jpg",
+  "thumb": "img/rika_kigu_05_compass_thumb.jpg",
+  "mono": "img/rika_kigu_05_compass_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_06_wrap_cup",
+  "title": "ラップをかけた容器の水",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "水のすがた",
+  "scenes": [
+   "水の変化を調べる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "透明な容器に水を入れ、上をラップでおおって輪ゴムでとめた図。",
+  "howto": "じょう発と結ろの実験の説明に。",
+  "tags": [
+   "ラップ",
+   "じょう発",
+   "結ろ",
+   "水のすがた",
+   "容器"
+  ],
+  "img": "img/rika_kigu_06_wrap_cup.jpg",
+  "thumb": "img/rika_kigu_06_wrap_cup_thumb.jpg",
+  "mono": "img/rika_kigu_06_wrap_cup_mono.jpg"
+ },
+ {
+  "id": "rika_kigu_07_ryusui",
+  "title": "流水実験のそうち（といに土と水）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "流れる水のはたらき",
+  "scenes": [
+   "流れる水のはたらきを調べる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "かたむけたといに土をしき、水を流して受け皿でうける実験そうち。",
+  "howto": "しん食・運ぱん・たい積の実験の説明に。",
+  "tags": [
+   "流れる水",
+   "しん食",
+   "運ぱん",
+   "たい積",
+   "流水実験"
+  ],
+  "img": "img/rika_kigu_07_ryusui.jpg",
+  "thumb": "img/rika_kigu_07_ryusui_thumb.jpg",
+  "mono": "img/rika_kigu_07_ryusui_mono.jpg"
+ },
+ {
+  "id": "rika5_electromagnet",
+  "title": "電磁石（コイルと鉄しんと電池）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "電流のはたらき",
+  "scenes": [
+   "電磁石のしくみを見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "鉄しんにエナメル線をまいたコイルを電池につなぎ、クリップを引きつけている図。導線は＋赤・−青。",
+  "howto": "電磁石の学習、回路の説明に。",
+  "tags": [
+   "電磁石",
+   "コイル",
+   "鉄しん",
+   "電流",
+   "クリップ"
+  ],
+  "img": "img/rika5_electromagnet.jpg",
+  "thumb": "img/rika5_electromagnet_thumb.jpg",
+  "mono": "img/rika5_electromagnet_mono.jpg"
+ },
+ {
+  "id": "rika5_filter",
+  "title": "ろ過している手もと",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "もののとけ方",
+  "scenes": [
+   "ろ過のしかたを確かめる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ガラス棒を伝わせて液をろうとに注ぐ、ろ過の手もとの図。",
+  "howto": "ろ過の手順の説明、実験の注意点の確認に。",
+  "tags": [
+   "ろ過",
+   "ろうと",
+   "ガラス棒",
+   "もののとけ方"
+  ],
+  "img": "img/rika5_filter.jpg",
+  "thumb": "img/rika5_filter_thumb.jpg",
+  "mono": "img/rika5_filter_mono.jpg"
+ },
+ {
+  "id": "rika5_flower_cross",
+  "title": "花のつくり（たてに切った図）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "花から実へ",
+  "scenes": [
+   "花のつくりを調べる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "めしべ・おしべ・花びら・がくが分かるように、花をたてに切った図。",
+  "howto": "花のつくりの学習、受粉の説明に。",
+  "tags": [
+   "花のつくり",
+   "めしべ",
+   "おしべ",
+   "受粉",
+   "断面"
+  ],
+  "img": "img/rika5_flower_cross.jpg",
+  "thumb": "img/rika5_flower_cross_thumb.jpg",
+  "mono": "img/rika5_flower_cross_mono.jpg"
+ },
+ {
+  "id": "rika5_medaka_osu",
+  "title": "メダカ（おす）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "メダカのたんじょう",
+  "scenes": [
+   "おすとめすを見分ける"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "せびれに切れこみがあり、しりびれが平行四辺形に近いメダカのおす。",
+  "howto": "おすとめすの見分けの学習に。めすと並べて使う。",
+  "tags": [
+   "メダカ",
+   "おす",
+   "せびれ",
+   "しりびれ",
+   "たんじょう"
+  ],
+  "img": "img/rika5_medaka_osu.jpg",
+  "thumb": "img/rika5_medaka_osu_thumb.jpg",
+  "mono": "img/rika5_medaka_osu_mono.jpg"
+ },
+ {
+  "id": "rika5_medaka_mesu",
+  "title": "メダカ（めす）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "メダカのたんじょう",
+  "scenes": [
+   "おすとめすを見分ける"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "せびれに切れこみがなく、しりびれが後ろへ短いメダカのめす。",
+  "howto": "おすとめすの見分けの学習に。おすと並べて使う。",
+  "tags": [
+   "メダカ",
+   "めす",
+   "せびれ",
+   "しりびれ",
+   "たんじょう"
+  ],
+  "img": "img/rika5_medaka_mesu.jpg",
+  "thumb": "img/rika5_medaka_mesu_thumb.jpg",
+  "mono": "img/rika5_medaka_mesu_mono.jpg"
+ },
+ {
+  "id": "rika5_pendulum",
+  "title": "ふりこの実験そうち",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "ふりこの運動",
+  "scenes": [
+   "ふりこの動きを調べる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "スタンドからおもりをつるしたふりこ。ふれはばと長さが分かる図。",
+  "howto": "ふりこの長さ・おもり・ふれはばの実験の説明に。",
+  "tags": [
+   "ふりこ",
+   "おもり",
+   "スタンド",
+   "1往復",
+   "ふれはば"
+  ],
+  "img": "img/rika5_pendulum.jpg",
+  "thumb": "img/rika5_pendulum_thumb.jpg",
+  "mono": "img/rika5_pendulum_mono.jpg"
+ },
+ {
+  "id": "rika5_river_bend",
+  "title": "曲がって流れる川（外側と内側）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "流れる水のはたらき",
+  "scenes": [
+   "川の内側と外側をくらべる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "カーブした川を上から見た図。外側はけずられ、内側には砂がたまっている。",
+  "howto": "しん食とたい積の学習、川の観察の前後に。",
+  "tags": [
+   "川",
+   "カーブ",
+   "しん食",
+   "たい積",
+   "流れる水"
+  ],
+  "img": "img/rika5_river_bend.jpg",
+  "thumb": "img/rika5_river_bend_thumb.jpg",
+  "mono": "img/rika5_river_bend_mono.jpg"
+ },
+ {
+  "id": "rika5_seed_cross",
+  "title": "種子のつくり（たてに切った図）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "植物の発芽と成長",
+  "scenes": [
+   "子葉と はいを見つける"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "インゲンマメの種子をたてに切り、子葉とはいが分かるようにした図。",
+  "howto": "発芽の学習、ヨウ素液の実験の前に。",
+  "tags": [
+   "種子",
+   "子葉",
+   "はい",
+   "発芽",
+   "インゲンマメ",
+   "断面"
+  ],
+  "img": "img/rika5_seed_cross.jpg",
+  "thumb": "img/rika5_seed_cross_thumb.jpg",
+  "mono": "img/rika5_seed_cross_mono.jpg"
+ },
+ {
+  "id": "rika5_womb_cross",
+  "title": "子宮の中の赤ちゃん（たてに切った図）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "5年",
+  "unit": "人のたんじょう",
+  "scenes": [
+   "育つようすを知る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "子宮の中で、へそのおとたいばんにつながった赤ちゃんの図。",
+  "howto": "人のたんじょうの学習に。",
+  "tags": [
+   "人のたんじょう",
+   "子宮",
+   "たいばん",
+   "へそのお",
+   "たい児"
+  ],
+  "img": "img/rika5_womb_cross.jpg",
+  "thumb": "img/rika5_womb_cross_thumb.jpg",
+  "mono": "img/rika5_womb_cross_mono.jpg"
+ },
+ {
+  "id": "rika4_soapfilm_flat",
+  "title": "試験管の石けん膜（変化なし）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "空気の体積の変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "口に石けん膜をはった試験管。膜は平らなまま。",
+  "howto": "あたためる前のようすとして、ふくらむ図と並べて使う。",
+  "tags": [
+   "試験管",
+   "石けん膜",
+   "空気",
+   "体積",
+   "温度"
+  ],
+  "img": "img/rika4_soapfilm_flat.jpg",
+  "thumb": "img/rika4_soapfilm_flat_thumb.jpg",
+  "mono": "img/rika4_soapfilm_flat_mono.jpg"
+ },
+ {
+  "id": "rika4_soapfilm_bulge",
+  "title": "試験管の石けん膜（ふくらむ）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "あたためたときの変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "あたためて空気の体積がふえ、石けん膜が外へふくらんだ試験管。",
+  "howto": "平らな図・へこんだ図と3枚で並べる。",
+  "tags": [
+   "試験管",
+   "石けん膜",
+   "空気",
+   "ふくらむ",
+   "あたためる"
+  ],
+  "img": "img/rika4_soapfilm_bulge.jpg",
+  "thumb": "img/rika4_soapfilm_bulge_thumb.jpg",
+  "mono": "img/rika4_soapfilm_bulge_mono.jpg"
+ },
+ {
+  "id": "rika4_soapfilm_dent",
+  "title": "試験管の石けん膜（へこむ）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "冷やしたときの変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "冷やして空気の体積がへり、石けん膜が内へへこんだ試験管。",
+  "howto": "平らな図・ふくらむ図と3枚で並べる。",
+  "tags": [
+   "試験管",
+   "石けん膜",
+   "空気",
+   "へこむ",
+   "冷やす"
+  ],
+  "img": "img/rika4_soapfilm_dent.jpg",
+  "thumb": "img/rika4_soapfilm_dent_thumb.jpg",
+  "mono": "img/rika4_soapfilm_dent_mono.jpg"
+ },
+ {
+  "id": "rika4_beaker_warm",
+  "title": "湯の入ったビーカー（湯気）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "あたためる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ゆげの立つ湯が入ったビーカー。60〜70℃の湯であたためる場面。",
+  "howto": "「あたためる」（湯）と「熱する」（炎）を区別して示すときに。",
+  "tags": [
+   "ビーカー",
+   "湯",
+   "ゆげ",
+   "あたためる",
+   "温度"
+  ],
+  "img": "img/rika4_beaker_warm.jpg",
+  "thumb": "img/rika4_beaker_warm_thumb.jpg",
+  "mono": "img/rika4_beaker_warm_mono.jpg"
+ },
+ {
+  "id": "rika4_beaker_ice",
+  "title": "氷水の入ったビーカー",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "冷やす"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "氷が浮かんだ水の入ったビーカー。",
+  "howto": "冷やす場面の図として、湯のビーカーと並べて使う。",
+  "tags": [
+   "ビーカー",
+   "氷水",
+   "冷やす",
+   "温度"
+  ],
+  "img": "img/rika4_beaker_ice.jpg",
+  "thumb": "img/rika4_beaker_ice_thumb.jpg",
+  "mono": "img/rika4_beaker_ice_mono.jpg"
+ },
+ {
+  "id": "rika4_flask_level_normal",
+  "title": "丸底フラスコの水面（もとの高さ）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "水の体積の変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "ガラス管をさした丸底フラスコ。管の中の水面はもとの高さ。",
+  "howto": "高い図と2枚で、前後のちがいを見せる。",
+  "tags": [
+   "丸底フラスコ",
+   "ガラス管",
+   "水面",
+   "体積",
+   "水"
+  ],
+  "img": "img/rika4_flask_level_normal.jpg",
+  "thumb": "img/rika4_flask_level_normal_thumb.jpg",
+  "mono": "img/rika4_flask_level_normal_mono.jpg"
+ },
+ {
+  "id": "rika4_flask_level_high",
+  "title": "丸底フラスコの水面（上がった）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "あたためたときの変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "あたためて水の体積がふえ、ガラス管の中の水面が上がった丸底フラスコ。",
+  "howto": "もとの高さの図と2枚で並べる。",
+  "tags": [
+   "丸底フラスコ",
+   "ガラス管",
+   "水面",
+   "ふえる",
+   "あたためる"
+  ],
+  "img": "img/rika4_flask_level_high.jpg",
+  "thumb": "img/rika4_flask_level_high_thumb.jpg",
+  "mono": "img/rika4_flask_level_high_mono.jpg"
+ },
+ {
+  "id": "rika4_ball_ring_pass",
+  "title": "球膨張試験器（輪を通る）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "金属の体積の変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "あたためる前の金属の球。輪をぎりぎり通る。金属ののびはごくわずか。",
+  "howto": "通らない図と2枚で並べる。ちがいが小さいことも合わせて伝える。",
+  "tags": [
+   "球膨張試験器",
+   "金属",
+   "体積",
+   "輪",
+   "あたためる"
+  ],
+  "img": "img/rika4_ball_ring_pass.jpg",
+  "thumb": "img/rika4_ball_ring_pass_thumb.jpg",
+  "mono": "img/rika4_ball_ring_pass_mono.jpg"
+ },
+ {
+  "id": "rika4_ball_ring_stuck",
+  "title": "球膨張試験器（輪を通らない）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "4年",
+  "unit": "ものの温度と体積",
+  "scenes": [
+   "あたためたときの変化を見る"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "あたためて体積がわずかにふえ、輪を通らなくなった金属の球。",
+  "howto": "通る図と2枚で並べる。",
+  "tags": [
+   "球膨張試験器",
+   "金属",
+   "体積",
+   "輪",
+   "ぼうちょう"
+  ],
+  "img": "img/rika4_ball_ring_stuck.jpg",
+  "thumb": "img/rika4_ball_ring_stuck_thumb.jpg",
+  "mono": "img/rika4_ball_ring_stuck_mono.jpg"
+ },
+ {
+  "id": "rika6_jar_lid",
+  "title": "びんにふたをしたろうそく（消える）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "6年",
+  "unit": "ものの燃え方",
+  "scenes": [
+   "空気の入れかわりを考える"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "底のあるびんにろうそくを入れ、ふたをして火が消えたようす。",
+  "howto": "すきまのある図と2枚で並べる。",
+  "tags": [
+   "ろうそく",
+   "びん",
+   "ふた",
+   "燃え方",
+   "酸素"
+  ],
+  "img": "img/rika6_jar_lid.jpg",
+  "thumb": "img/rika6_jar_lid_thumb.jpg",
+  "mono": "img/rika6_jar_lid_mono.jpg"
+ },
+ {
+  "id": "rika6_jar_open",
+  "title": "すきまのあるびんのろうそく（燃え続ける）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "6年",
+  "unit": "ものの燃え方",
+  "scenes": [
+   "空気の入れかわりを考える"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "びんの下にすきまをつくり、空気が入れかわって燃え続けるようす。",
+  "howto": "ふたをした図と2枚で並べる。",
+  "tags": [
+   "ろうそく",
+   "びん",
+   "すきま",
+   "燃え方",
+   "空気の流れ"
+  ],
+  "img": "img/rika6_jar_open.jpg",
+  "thumb": "img/rika6_jar_open_thumb.jpg",
+  "mono": "img/rika6_jar_open_mono.jpg"
+ },
+ {
+  "id": "rika6_shokakan",
+  "title": "消化管（口から こう門まで）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "理科",
+  "grade": "6年",
+  "unit": "人の体のつくりとはたらき",
+  "scenes": [
+   "食べ物の通り道をたどる"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "食道・胃・小腸・大腸のつながりが分かる、体の中の消化管の図。",
+  "howto": "消化の学習、通り道をなぞる活動に。",
+  "tags": [
+   "消化",
+   "消化管",
+   "胃",
+   "小腸",
+   "大腸",
+   "人の体"
+  ],
+  "img": "img/rika6_shokakan.jpg",
+  "thumb": "img/rika6_shokakan_thumb.jpg",
+  "mono": "img/rika6_shokakan_mono.jpg"
+ },
+ {
+  "id": "ud_shampoo",
+  "title": "シャンプーのきざみ（さわって分かる）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "全学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "見えなくても分かる工夫をさがす"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "シャンプーの容器の横にあるぎざぎざのきざみを、指でさわっている図。リンスにはない。",
+  "howto": "ユニバーサルデザインさがし、点字や合理的配慮の学習に。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "シャンプー",
+   "きざみ",
+   "さわって分かる"
+  ],
+  "img": "img/ud_shampoo.jpg",
+  "thumb": "img/ud_shampoo_thumb.jpg",
+  "mono": "img/ud_shampoo_mono.jpg"
+ },
+ {
+  "id": "ud_milk",
+  "title": "牛乳パックの切りかき",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "全学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "見えなくても分かる工夫をさがす"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "牛乳パックの口の反対側にある半円の切りかきを、指でさわっている図。",
+  "howto": "ユニバーサルデザインさがしに。ほかの飲みものと見分ける工夫。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "牛乳パック",
+   "切りかき",
+   "さわって分かる"
+  ],
+  "img": "img/ud_milk.jpg",
+  "thumb": "img/ud_milk_thumb.jpg",
+  "mono": "img/ud_milk_mono.jpg"
+ },
+ {
+  "id": "ud_curb",
+  "title": "段差をなくした歩道（車輪が通る）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "全学年",
+  "unit": "ユニバーサルデザイン",
+  "scenes": [
+   "まちの工夫をさがす"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "歩道と車道の段差を低くしたところを、車輪が通っている図。",
+  "howto": "バリアフリーの学習、まち探検のふり返りに。",
+  "tags": [
+   "ユニバーサルデザイン",
+   "UD",
+   "バリアフリー",
+   "段差",
+   "歩道",
+   "車いす"
+  ],
+  "img": "img/ud_curb.jpg",
+  "thumb": "img/ud_curb_thumb.jpg",
+  "mono": "img/ud_curb_mono.jpg"
+ },
+ {
+  "id": "ud_hydrant",
+  "title": "しょう火せん",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4年",
+  "unit": "くらしを守る",
+  "scenes": [
+   "まちの安全の工夫をさがす"
+  ],
+  "uses": [
+   "プリント・ワークシート",
+   "スライド",
+   "説明・図解",
+   "白黒印刷"
+  ],
+  "description": "道ばたに立つ赤いしょう火せん。",
+  "howto": "消防の学習、まち探検の記録に。",
+  "tags": [
+   "しょう火せん",
+   "消防",
+   "安全",
+   "まち",
+   "くらしを守る"
+  ],
+  "img": "img/ud_hydrant.jpg",
+  "thumb": "img/ud_hydrant_thumb.jpg",
+  "mono": "img/ud_hydrant_mono.jpg"
+ },
+ {
+  "id": "machi_town_flat",
+  "title": "いろいろな人が行きかう横断歩道（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "全学年",
+  "unit": "わたしたちのまち",
+  "scenes": [
+   "まちにいる人を見わたす"
+  ],
+  "uses": [
+   "スライド",
+   "見出し・表紙",
+   "Web・note"
+  ],
+  "description": "車いすの人、ベビーカー、つえの人、子どもが行きかう横断歩道の横長イラスト。",
+  "howto": "まちづくり・福祉の学習のとびら、スライドの見出しに。",
+  "tags": [
+   "まち",
+   "横断歩道",
+   "車いす",
+   "ベビーカー",
+   "多様性",
+   "フラット"
+  ],
+  "img": "img/machi_town_flat.jpg",
+  "thumb": "img/machi_town_flat_thumb.jpg",
+  "mono": "img/machi_town_flat_mono.jpg"
+ },
+ {
+  "id": "machi_people_flat",
+  "title": "いろいろな人がならぶ（フラット）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "総合",
+  "grade": "全学年",
+  "unit": "ともに生きる",
+  "scenes": [
+   "ちがいを見わたす"
+  ],
+  "uses": [
+   "スライド",
+   "見出し・表紙",
+   "Web・note"
+  ],
+  "description": "高れい者、車いすの人、赤ちゃんをだいた人、子どもが横にならんだイラスト。",
+  "howto": "福祉・人権の学習のとびら、たよりの見出しに。",
+  "tags": [
+   "多様性",
+   "車いす",
+   "高れい者",
+   "赤ちゃん",
+   "福祉",
+   "フラット"
+  ],
+  "img": "img/machi_people_flat.jpg",
+  "thumb": "img/machi_people_flat_thumb.jpg",
+  "mono": "img/machi_people_flat_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_himiko",
+  "title": "卑弥呼（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "大昔のくらし",
+  "scenes": [
+   "大昔の人物を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "銅鏡を持った卑弥呼の想像図。すがたを伝える資料は残っておらず、想像で描いたもの。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを子どもに伝えて使う。",
+  "tags": [
+   "卑弥呼",
+   "邪馬台国",
+   "弥生",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_himiko.jpg",
+  "thumb": "img/jinbutsu_himiko_thumb.jpg",
+  "mono": "img/jinbutsu_himiko_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_shotoku",
+  "title": "聖徳太子（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "天皇中心の国づくり",
+  "scenes": [
+   "大昔の人物を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "しゃくを持った聖徳太子の想像図。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを伝えて使う。",
+  "tags": [
+   "聖徳太子",
+   "飛鳥",
+   "十七条の憲法",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_shotoku.jpg",
+  "thumb": "img/jinbutsu_shotoku_thumb.jpg",
+  "mono": "img/jinbutsu_shotoku_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_yoritomo",
+  "title": "源頼朝（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "武士の世の中",
+  "scenes": [
+   "武士の世の中を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "東帯すがたの源頼朝の想像図。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを伝えて使う。",
+  "tags": [
+   "源頼朝",
+   "鎌倉",
+   "武士",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_yoritomo.jpg",
+  "thumb": "img/jinbutsu_yoritomo_thumb.jpg",
+  "mono": "img/jinbutsu_yoritomo_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_nobunaga",
+  "title": "織田信長（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "天下統一",
+  "scenes": [
+   "天下統一の人物を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "陣ばおりすがたの織田信長の想像図。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを伝えて使う。",
+  "tags": [
+   "織田信長",
+   "戦国",
+   "天下統一",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_nobunaga.jpg",
+  "thumb": "img/jinbutsu_nobunaga_thumb.jpg",
+  "mono": "img/jinbutsu_nobunaga_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_hideyoshi",
+  "title": "豊臣秀吉（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "天下統一",
+  "scenes": [
+   "天下統一の人物を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "扇を持った豊臣秀吉の想像図。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを伝えて使う。",
+  "tags": [
+   "豊臣秀吉",
+   "検地",
+   "刀狩",
+   "天下統一",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_hideyoshi.jpg",
+  "thumb": "img/jinbutsu_hideyoshi_thumb.jpg",
+  "mono": "img/jinbutsu_hideyoshi_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_ieyasu",
+  "title": "徳川家康（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "6年",
+  "unit": "江戸幕府",
+  "scenes": [
+   "江戸の世をひらいた人物を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "かみしもすがたの徳川家康の想像図。",
+  "howto": "年表づくり、人物カード、歴史新聞に。想像図であることを伝えて使う。",
+  "tags": [
+   "徳川家康",
+   "江戸幕府",
+   "歴史人物",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_ieyasu.jpg",
+  "thumb": "img/jinbutsu_ieyasu_thumb.jpg",
+  "mono": "img/jinbutsu_ieyasu_mono.jpg"
+ },
+ {
+  "id": "jinbutsu_senjin",
+  "title": "新田を開く先人（想像図）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "社会",
+  "grade": "4年",
+  "unit": "きょう土の発展",
+  "scenes": [
+   "きょう土をひらいた人を知る"
+  ],
+  "uses": [
+   "スライド",
+   "プリント・ワークシート",
+   "掲示",
+   "白黒印刷"
+  ],
+  "description": "くわで土を起こす人と、なえを運ぶ人。きょう土の開発につくした先人のようす。",
+  "howto": "きょう土の発展の学習、地域の先人の調べ学習に。",
+  "tags": [
+   "先人",
+   "新田",
+   "きょう土",
+   "開発",
+   "用水",
+   "想像図"
+  ],
+  "img": "img/jinbutsu_senjin.jpg",
+  "thumb": "img/jinbutsu_senjin_thumb.jpg",
+  "mono": "img/jinbutsu_senjin_mono.jpg"
  }
 ];
