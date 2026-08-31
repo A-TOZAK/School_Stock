@@ -42703,5 +42703,80 @@ const SOZAI = [
   "alt": "img/sansu3_amari_01_alt.txt",
   "seconds": null,
   "phase": ""
+ },
+ {
+  "id": "rika3_kage_01",
+  "title": "かげは 太陽の 反対がわ",
+  "author": "studio",
+  "type": "motion",
+  "subject": "理科",
+  "grade": "3年",
+  "unit": "かげと太陽",
+  "scenes": [
+   "かげのできる向きをつかむ"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "棒を1本立て、朝・昼・夕方で太陽とかげがどう動くかを見せる。太陽・棒の先・かげの先はいつも一直線。",
+  "howto": "かげと太陽のまとめに。かげふみや観察の前後に。",
+  "tags": [
+   "かげ",
+   "太陽",
+   "日なた",
+   "日陰",
+   "東西南北",
+   "3年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/rika3_kage_01.gif",
+  "thumb": "img/rika3_kage_01_thumb.jpg",
+  "gifMobile": "img/rika3_kage_01_mobile.gif",
+  "mp4": "img/rika3_kage_01.mp4",
+  "poster": "img/rika3_kage_01_poster.png",
+  "alt": "img/rika3_kage_01_alt.txt",
+  "seconds": null,
+  "phase": ""
+ },
+ {
+  "id": "sansu2_kakezan_imi_01",
+  "title": "1つ分が いくつ分",
+  "author": "studio",
+  "type": "motion",
+  "subject": "算数",
+  "grade": "2年",
+  "unit": "かけ算",
+  "scenes": [
+   "かけ算の意味をつかむ"
+  ],
+  "uses": [
+   "スライド",
+   "説明・図解",
+   "うごく",
+   "学習のまとめ"
+  ],
+  "description": "3こずつのまとまりが1つずつ増えていく。3×4＝12。かけ算は「1つ分の数×いくつ分」。",
+  "howto": "かけ算の意味のまとめに。九九に入る前の確認に。",
+  "tags": [
+   "かけ算",
+   "1つ分",
+   "いくつ分",
+   "アレイ図",
+   "2年",
+   "うごく",
+   "GIF"
+  ],
+  "img": "img/sansu2_kakezan_imi_01.gif",
+  "thumb": "img/sansu2_kakezan_imi_01_thumb.jpg",
+  "gifMobile": "img/sansu2_kakezan_imi_01_mobile.gif",
+  "mp4": "img/sansu2_kakezan_imi_01.mp4",
+  "poster": "img/sansu2_kakezan_imi_01_poster.png",
+  "alt": "img/sansu2_kakezan_imi_01_alt.txt",
+  "seconds": null,
+  "phase": ""
  }
 ];
