@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>月の目標カード ── School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="月の目標カード（12か月）｜School Stock">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/gakkyu/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/gakkyu/card.png">
+<meta name="description" content="1か月の目標を1枚に書いて、教室や廊下に積んでいくA4カード。今月の私の目標・学級の目標・週ごとにがんばること・ふりかえり。12か月ぶん無料。">
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b7a4b; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --tc:#2b7a4b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+.drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+.drawer.open { transform:none; }
+.drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+.drawer-head b { font-size:12px; letter-spacing:.22em; }
+.drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+.drawer nav { padding:10px 0 30px; }
+.dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:.2em; color:var(--sub); }
+.drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
+.drawer nav a:hover { background:var(--wash); }
+.scrim { position:fixed; inset:0; background:rgba(14,15,17,.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+.scrim.show { opacity:1; pointer-events:auto; }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 24px; margin-bottom:8px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:14.5px; color:#3d4148; line-height:1.85; max-width:660px; }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.sh { display:flex; align-items:center; gap:12px; margin:36px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; background:var(--accent); }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .sen { font-size:12px; color:var(--sub); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:20px; }
+.pc { border:1px solid var(--ink); display:flex; flex-direction:column; transition:box-shadow .15s; background:#fff; }
+.pc:hover { box-shadow:4px 4px 0 var(--ink); }
+.th { display:block; }
+.thumb { aspect-ratio:210/297; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; }
+.thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.pm { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.ptag { align-self:flex-start; font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:2px 8px; }
+.pm h3 { font-size:14.5px; font-weight:700; line-height:1.4; }
+.pm .ai { font-size:12px; color:var(--sub); line-height:1.6; flex:1; }
+.dl { align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; margin-top:2px; }
+.dl:hover { background:var(--accent); color:#fff; }
+.dl svg { width:14px; height:14px; }
+.dlall { display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:13.5px; font-weight:700; color:#fff; background:var(--accent); border:1px solid var(--accent); padding:9px 18px; }
+.dlall:hover { background:#1f5c37; border-color:#1f5c37; }
+.dlall svg { width:15px; height:15px; }
+.dlall small { font-weight:500; font-size:11.5px; opacity:.9; }
+.howto { margin-top:44px; border-top:2px solid var(--ink); padding-top:20px; }
+.howto h2 { font-size:17px; margin-bottom:10px; }
+.howto ol { margin:10px 0 0 20px; font-size:14px; line-height:1.95; color:#3d4148; }
+.howto p { font-size:14px; line-height:1.9; color:#3d4148; max-width:720px; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../">SCHOOL STOCK</a>
+  <div class="nav">
+      <a href="../#prints">プリント</a>
+      <a href="../#support">支援</a>
+      <a href="../#toolbox">道具</a>
+      <a href="../#reading">読みもの</a>
+      <a href="../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+  <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+</div></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS｜教科のプリント</div>
+    <a href="../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り 全279枚</small></a>
+    <a href="../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>ふだんの演習・宿題に。全88単元</small></a>
+    <a href="../prints/rika/">理科プリント<small>基礎知識・技能／答えつき</small></a>
+    <a href="../prints/taiiku/">体育 学習カード<small>たんげんカード・ふりかえりカード</small></a>
+    <div class="dr-sec">CLASSROOM｜学級経営</div>
+    <a href="../gakkyu/">月の目標カード<small>1か月の目標を1枚に。12か月ぶん</small></a>
+    <div class="dr-sec">SUPPORT｜気になる子の支援</div>
+    <a href="../shien/">支援カード<small>自分を助ける合言葉 全35枚</small></a>
+    <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
+    <a href="../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <a href="../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラストと写真</small></a>
+    <a href="../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <div class="dr-sec">READING｜読みもの・アイデア</div>
+    <a href="../ideas/">実践アイデア<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../about/">このサイトについて<small>つくっている人と思い</small></a>
+  </nav>
+</aside>
+
+<div class="container">
+  <div class="head">
+    <span class="kicker">CLASSROOM｜学級経営</span>
+    <h1>月の目標カード</h1>
+    <p class="lead">1か月の目標を、1枚に書く紙です。書いたら教室や廊下に置いて、次の月の紙を上に積んでいきます。月が変わるたびに1枚ずつ増えるので、あとから見返すと「自分がこの1年で何をがんばってきたか」がそのまま残ります。</p>
+    <p class="meta">A4・1か月1枚　／　<b>12か月ぶん</b>　／　書体はUDデジタル教科書体　／　さし絵は季節のモチーフ</p>
+    <div class="note-use">週の欄には「いつ どこで 何をするか」まで書けるようにしてあります。<b>「がんばる」で終わらせない</b>ための欄です。第1週から第5週まであるので、5週ある月もそのまま使えます。</div>
+    <a class="dlall" href="/School_Stock_files/gakkyu/pdf/目標カード_12か月まとめ.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>12か月まとめてダウンロード<small>PDF・12ページ</small></a>
+  </div>
+
+  <div class="sh"><span class="sbar"></span><h2>1か月ずつ</h2><span class="sen">使う月の紙だけ印刷できます</span></div>
+  <div class="grid">
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_04月.pdf" download>
+          <div class="thumb"><img src="thumb/04.png" width="480" height="679"
+               alt="4月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">4月</span>
+          <h3>4月の目標カード</h3>
+          <p class="ai">さし絵は桜。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_04月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_05月.pdf" download>
+          <div class="thumb"><img src="thumb/05.png" width="480" height="679"
+               alt="5月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">5月</span>
+          <h3>5月の目標カード</h3>
+          <p class="ai">さし絵はこいのぼり。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_05月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_06月.pdf" download>
+          <div class="thumb"><img src="thumb/06.png" width="480" height="679"
+               alt="6月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">6月</span>
+          <h3>6月の目標カード</h3>
+          <p class="ai">さし絵はあじさい。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_06月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_07月.pdf" download>
+          <div class="thumb"><img src="thumb/07.png" width="480" height="679"
+               alt="7月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">7月</span>
+          <h3>7月の目標カード</h3>
+          <p class="ai">さし絵は七夕。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_07月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_08月.pdf" download>
+          <div class="thumb"><img src="thumb/08.png" width="480" height="679"
+               alt="8月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">8月</span>
+          <h3>8月の目標カード</h3>
+          <p class="ai">さし絵は朝顔。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_08月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_09月.pdf" download>
+          <div class="thumb"><img src="thumb/09.png" width="480" height="679"
+               alt="9月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">9月</span>
+          <h3>9月の目標カード</h3>
+          <p class="ai">さし絵はコスモスと赤とんぼ。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_09月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_10月.pdf" download>
+          <div class="thumb"><img src="thumb/10.png" width="480" height="679"
+               alt="10月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">10月</span>
+          <h3>10月の目標カード</h3>
+          <p class="ai">さし絵はもみじ。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_10月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_11月.pdf" download>
+          <div class="thumb"><img src="thumb/11.png" width="480" height="679"
+               alt="11月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">11月</span>
+          <h3>11月の目標カード</h3>
+          <p class="ai">さし絵はいちょう。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_11月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_12月.pdf" download>
+          <div class="thumb"><img src="thumb/12.png" width="480" height="679"
+               alt="12月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">12月</span>
+          <h3>12月の目標カード</h3>
+          <p class="ai">さし絵は雪だるま。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_12月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_01月.pdf" download>
+          <div class="thumb"><img src="thumb/01.png" width="480" height="679"
+               alt="1月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">1月</span>
+          <h3>1月の目標カード</h3>
+          <p class="ai">さし絵は門松。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_01月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_02月.pdf" download>
+          <div class="thumb"><img src="thumb/02.png" width="480" height="679"
+               alt="2月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">2月</span>
+          <h3>2月の目標カード</h3>
+          <p class="ai">さし絵は梅。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_02月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/pdf/目標カード_03月.pdf" download>
+          <div class="thumb"><img src="thumb/03.png" width="480" height="679"
+               alt="3月の目標カードの紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">3月</span>
+          <h3>3月の目標カード</h3>
+          <p class="ai">さし絵は桜のつぼみ。第1週から第5週まで書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/pdf/目標カード_03月.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>PDF</a>
+        </div>
+      </article>
+  </div>
+
+  <div class="howto">
+    <h2>使い方</h2>
+    <ol>
+      <li>月のはじめに、<b>今月の私の目標</b>と<b>学級の目標</b>を書きます。</li>
+      <li>週のはじめに、<b>その週にがんばること</b>を1行書きます。「いつ どこで 何をするか」まで書くと、実行できたかどうかが自分で分かります。</li>
+      <li>週の終わりに、できたかどうかに ◎○△ をつけます。</li>
+      <li>月の終わりに、<b>ふりかえり</b>を書きます。何ができたのか、これからどうしたらいいか。</li>
+      <li>書いた紙は、教室か廊下のA4ポケットに入れて積んでいきます。</li>
+    </ol>
+    <p style="margin-top:14px">学年の欄は空けてあるので、どの学年でも使えます。学級全員ぶんを1枚ずつ印刷して配ってください。</p>
+  </div>
+</div>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../">棚トップにもどる</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></footer>
+
+<script>
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
