@@ -119,19 +119,35 @@ a { color:var(--accent); text-decoration:none; }
 </aside>
 
 <div class="container">
+<style>
+.pick{margin:22px 0 4px;padding:12px 16px 10px;border:1px solid var(--line);background:var(--wash)}
+.pick-row{display:flex;flex-wrap:wrap;align-items:center;gap:6px;margin:4px 0}
+.pick-l{font-size:11px;color:var(--sub);letter-spacing:.14em;width:3.4em;flex:none}
+.pick button{font:inherit;font-size:12.5px;line-height:1;padding:7px 12px;border:1px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;border-radius:0}
+.pick button.on{background:var(--ink);color:#fff}
+.pick-n{font-size:12px;color:var(--sub);margin:6px 0 0}
+.pm h3{word-break:auto-phrase}
+.sh.hide,.grid.hide,.pc.hide{display:none}
+</style>
   <div class="head">
     <span class="kicker">CLASSROOM｜学級経営</span>
     <h1>お礼の手紙 びんせん20種</h1>
     <p class="lead">地域の方や専門家の方に授業をしていただいたあと、お礼の手紙を書く時間のための紙です。マス目の紙10種と、けい線・絵入り・季節・社会科の見学用が10種。たて書きとよこ書き、マス目は18mmから8mmまであるので、同じ活動を、それぞれの子が自分に合った大きさの字で書けます。1種につき「びんせん」と「書き方のれい」の2まい組です。</p>
-    <p class="meta">A4・全20種　／　<b>びんせん20まい＋書き方のれい20まい＋先生向けの使い方1まい</b>　／　書体はUDデジタル教科書体　／　さし絵は水彩の描きおろし20枚</p>
-    <div class="note-use">マスが大きいほど書ける量は少なくなります。<b>書く力ではなく、鉛筆の運びに合わせて</b>選んでください。けい線の紙は字の大きさを自分で決められるので、いちばん手軽です。同じ学級で紙を分けても活動は同じなので、並べて掲示できます。</div>
-    <a class="dlall" href="/School_Stock_files/gakkyu/tegami/pdf/tegami_binsen_all.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>まとめてダウンロード<small>ZIP・41まい</small></a>
+    <p class="meta">A4・全20種　／　<b>びんせん20まい＋見出しなし20まい＋書き方のれい20まい＋先生向けの使い方1まい</b>　／　書体はUDデジタル教科書体　／　さし絵は水彩の描きおろし20枚</p>
+    <div class="note-use">マスが大きいほど書ける量は少なくなります。<b>書く力ではなく、鉛筆の運びに合わせて</b>選んでください。けい線の紙は字の大きさを自分で決められるので、いちばん手軽です。同じ学級で紙を分けても活動は同じなので、並べて掲示できます。<br>「<b>見出しなし</b>」は、上の「お礼の手紙」「〜へ」を書いていない版です。題を自分で書くときや、ほかの手紙に使うときに。</div>
+    <a class="dlall" href="/School_Stock_files/gakkyu/tegami/pdf/tegami_binsen_all.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>まとめてダウンロード<small>ZIP・61まい</small></a>
     <p class="meta" style="margin-top:12px"><a href="/School_Stock_files/gakkyu/tegami/pdf/00_tsukaikata.pdf" download>先生向けの使い方（A4・2まい）</a>　／　20種の一覧・45分の流れ・国語と社会の学習指導要領との対応が入っています。</p>
   </div>
 
+  <div class="pick" id="pick">
+    <div class="pick-row"><span class="pick-l">学年</span><button data-f="grade" data-v="" class="on">すべて</button><button data-f="grade" data-v="低">1・2年</button><button data-f="grade" data-v="中">3・4年</button><button data-f="grade" data-v="高">5・6年</button></div>
+    <div class="pick-row"><span class="pick-l">紙</span><button data-f="kind" data-v="" class="on">すべて</button><button data-f="kind" data-v="masu">マス目</button><button data-f="kind" data-v="keisen">けい線</button><button data-f="kind" data-v="egaki">絵と手紙・カード</button><button data-f="kind" data-v="kisetsu">季節</button><button data-f="kind" data-v="shakai">社会科の見学</button></div>
+    <div class="pick-row"><span class="pick-l">向き</span><button data-f="dir" data-v="" class="on">すべて</button><button data-f="dir" data-v="tate">たて書き</button><button data-f="dir" data-v="yoko">よこ書き</button></div>
+    <p class="pick-n" id="pickN">全20種を表示しています</p>
+  </div>
   <div class="sh"><span class="sbar"></span><h2>マス目のびんせん</h2><span class="sen">字数を数えて書く紙。たて書き5種・よこ書き5種</span></div>
   <div class="grid">
-      <article class="pc">
+      <article class="pc" data-grade="低" data-kind="masu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/T1_binsen.png" width="480" height="679"
                alt="ありがとうの てがみ（たて書き・マス18mm）の紙面" loading="lazy"></div></a>
@@ -142,10 +158,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T1_mudai.pdf" download title="「ありがとうの てがみ」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中" data-kind="masu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/T2_binsen.png" width="480" height="679"
                alt="ありがとうの 手紙（たて書き・マス15mm）の紙面" loading="lazy"></div></a>
@@ -156,10 +173,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T2_mudai.pdf" download title="「ありがとうの 手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="中" data-kind="masu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T3_binsen.pdf" download>
           <div class="thumb"><img src="thumb/T3_binsen.png" width="480" height="679"
                alt="お礼の手紙（たて書き・マス12mm）の紙面" loading="lazy"></div></a>
@@ -170,10 +188,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T3_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T3_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T3_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="高" data-kind="masu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T4_binsen.pdf" download>
           <div class="thumb"><img src="thumb/T4_binsen.png" width="480" height="679"
                alt="お礼の手紙（たて書き・マス9mm）の紙面" loading="lazy"></div></a>
@@ -184,10 +203,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T4_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T4_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T4_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="masu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T5_binsen.pdf" download>
           <div class="thumb"><img src="thumb/T5_binsen.png" width="480" height="679"
                alt="ひとことの お礼（たて書き・マス15mm）の紙面" loading="lazy"></div></a>
@@ -198,10 +218,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T5_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T5_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T5_mudai.pdf" download title="「ひとことの お礼」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低" data-kind="masu" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/Y1_binsen.png" width="480" height="679"
                alt="ありがとうの てがみ（よこ書き・マス14mm）の紙面" loading="lazy"></div></a>
@@ -212,10 +233,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_mudai.pdf" download title="「ありがとうの てがみ」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="中" data-kind="masu" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/Y2_binsen.png" width="480" height="679"
                alt="お礼の手紙（よこ書き・マス12mm）の紙面" loading="lazy"></div></a>
@@ -226,10 +248,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="中 高" data-kind="masu" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_binsen.pdf" download>
           <div class="thumb"><img src="thumb/Y3_binsen.png" width="480" height="679"
                alt="お礼の手紙（よこ書き・マス10mm）の紙面" loading="lazy"></div></a>
@@ -240,10 +263,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="高" data-kind="masu" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_binsen.pdf" download>
           <div class="thumb"><img src="thumb/Y4_binsen.png" width="480" height="679"
                alt="お礼の手紙（よこ書き・マス8mm）の紙面" loading="lazy"></div></a>
@@ -254,6 +278,7 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
@@ -261,7 +286,7 @@ a { color:var(--accent); text-decoration:none; }
 
   <div class="sh"><span class="sbar"></span><h2>けい線のびんせん</h2><span class="sen">マス目がないぶん、いちばん手軽に書けます</span></div>
   <div class="grid">
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="keisen" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/R1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/R1_binsen.png" width="480" height="679"
                alt="お礼の手紙（たて書き・けい線）の紙面" loading="lazy"></div></a>
@@ -272,10 +297,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R1_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="keisen" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/R2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/R2_binsen.png" width="480" height="679"
                alt="お礼の手紙（よこ書き・けい線）の紙面" loading="lazy"></div></a>
@@ -286,6 +312,7 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/R2_mudai.pdf" download title="「お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
@@ -293,7 +320,7 @@ a { color:var(--accent); text-decoration:none; }
 
   <div class="sh"><span class="sbar"></span><h2>絵と手紙</h2><span class="sen">上に絵をかいて、下に文を書きます</span></div>
   <div class="grid">
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="egaki" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_binsen.pdf" download>
           <div class="thumb"><img src="thumb/Y5_binsen.png" width="480" height="679"
                alt="ありがとうカード（よこ書き・けい線）の紙面" loading="lazy"></div></a>
@@ -304,10 +331,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_mudai.pdf" download title="「ありがとうカード」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低" data-kind="egaki" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/E1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/E1_binsen.png" width="480" height="679"
                alt="えと てがみ（よこ書き・絵の枠＋けい線）の紙面" loading="lazy"></div></a>
@@ -318,10 +346,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E1_mudai.pdf" download title="「えと てがみ」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="中 高" data-kind="egaki" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/E2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/E2_binsen.png" width="480" height="679"
                alt="絵と手紙（よこ書き・絵の枠＋けい線）の紙面" loading="lazy"></div></a>
@@ -332,6 +361,7 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/E2_mudai.pdf" download title="「絵と手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
@@ -339,7 +369,7 @@ a { color:var(--accent); text-decoration:none; }
 
   <div class="sh"><span class="sbar"></span><h2>季節のびんせん</h2><span class="sen">さし絵が季節のモチーフ。行事のあとのお礼にも</span></div>
   <div class="grid">
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="kisetsu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/K1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/K1_binsen.png" width="480" height="679"
                alt="はるの お礼の手紙（たて書き・けい線）の紙面" loading="lazy"></div></a>
@@ -350,10 +380,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K1_mudai.pdf" download title="「はるの お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="kisetsu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/K2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/K2_binsen.png" width="480" height="679"
                alt="なつの お礼の手紙（たて書き・けい線）の紙面" loading="lazy"></div></a>
@@ -364,10 +395,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K2_mudai.pdf" download title="「なつの お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="kisetsu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/K3_binsen.pdf" download>
           <div class="thumb"><img src="thumb/K3_binsen.png" width="480" height="679"
                alt="あきの お礼の手紙（たて書き・けい線）の紙面" loading="lazy"></div></a>
@@ -378,10 +410,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K3_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K3_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K3_mudai.pdf" download title="「あきの お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="低 中 高" data-kind="kisetsu" data-dir="tate">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/K4_binsen.pdf" download>
           <div class="thumb"><img src="thumb/K4_binsen.png" width="480" height="679"
                alt="ふゆの お礼の手紙（たて書き・けい線）の紙面" loading="lazy"></div></a>
@@ -392,6 +425,7 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K4_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K4_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/K4_mudai.pdf" download title="「ふゆの お礼の手紙」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
@@ -399,7 +433,7 @@ a { color:var(--accent); text-decoration:none; }
 
   <div class="sh"><span class="sbar"></span><h2>社会科の見学のあとに</h2><span class="sen">「教えてもらったくふう」と「気づいたこと」を分けて書く型</span></div>
   <div class="grid">
-      <article class="pc">
+      <article class="pc" data-grade="中 高" data-kind="shakai" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/S1_binsen.pdf" download>
           <div class="thumb"><img src="thumb/S1_binsen.png" width="480" height="679"
                alt="畑ではたらく人へ（よこ書き・けい線）の紙面" loading="lazy"></div></a>
@@ -410,10 +444,11 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S1_mudai.pdf" download title="「畑ではたらく人へ」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
-      <article class="pc">
+      <article class="pc" data-grade="中" data-kind="shakai" data-dir="yoko">
         <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/S2_binsen.pdf" download>
           <div class="thumb"><img src="thumb/S2_binsen.png" width="480" height="679"
                alt="お店ではたらく人へ（よこ書き・けい線）の紙面" loading="lazy"></div></a>
@@ -424,6 +459,7 @@ a { color:var(--accent); text-decoration:none; }
           <div style="display:flex;flex-wrap:wrap;gap:6px">
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
           <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/S2_mudai.pdf" download title="「お店ではたらく人へ」の見出しを書いていない版"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>見出しなし</a>
           </div>
         </div>
       </article>
@@ -450,6 +486,30 @@ a { color:var(--accent); text-decoration:none; }
     <p style="margin-top:14px">消防署・警察署、水道やごみ、工場、昔のくらしの聞き取りなど、ほかの見学ではR1・R2か季節の紙を使うと、同じ流れで書けます。後付けの形式は高学年の内容なので、中学年までは本文の最後に自分の名前を書く形で足ります。さし絵は白黒で印刷しても読めます。</p>
   </div>
 </div>
+<script>
+(function(){
+  var st={grade:"",kind:"",dir:""}, pick=document.getElementById("pick");
+  if(!pick) return;
+  function apply(){
+    var n=0;
+    document.querySelectorAll(".pc").forEach(function(c){
+      var ok=(!st.grade||c.dataset.grade.split(" ").indexOf(st.grade)>=0)&&(!st.kind||c.dataset.kind===st.kind)&&(!st.dir||c.dataset.dir===st.dir);
+      c.classList.toggle("hide",!ok); if(ok)n++;
+    });
+    document.querySelectorAll(".sh").forEach(function(h){
+      var g=h.nextElementSibling; if(!g||!g.classList.contains("grid")) return;
+      var any=g.querySelector(".pc:not(.hide)"); h.classList.toggle("hide",!any); g.classList.toggle("hide",!any);
+    });
+    document.getElementById("pickN").textContent = n===20 ? "全20種を表示しています" : "20種のうち "+n+" 種";
+  }
+  pick.addEventListener("click",function(e){
+    var b=e.target.closest("button"); if(!b) return;
+    st[b.dataset.f]=b.dataset.v;
+    pick.querySelectorAll("button[data-f="+b.dataset.f+"]").forEach(function(x){x.classList.toggle("on",x===b);});
+    apply();
+  });
+})();
+</script>
 
 <footer class="foot"><div class="foot-in">
   <div class="fw">SCHOOL STOCK</div>
