@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>お礼の手紙 びんせん10種 ── School Stock</title>
+<meta property="og:type" content="website">
+<meta property="og:title" content="お礼の手紙 びんせん10種｜School Stock">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/gakkyu/tegami/card.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://a-tozak.github.io/School_Stock/gakkyu/tegami/card.png">
+<meta name="description" content="ゲストティーチャーへのお礼の手紙を書くためのA4びんせん。たて書き5種・よこ書き5種、マス目は18mmから8mmまで。書き方のれい・先生向けの使い方つき。全21まい無料。">
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2b7a4b; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --tc:#2b7a4b; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.9; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+.menu-btn { display:inline-flex; align-items:center; gap:7px; font-family:inherit; font-size:11.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:none; border:1px solid #4a4e55; padding:6px 12px; cursor:pointer; }
+.drawer { position:fixed; top:0; right:0; bottom:0; width:min(320px,86vw); background:var(--paper); border-left:1px solid var(--ink); z-index:60; transform:translateX(102%); transition:transform .22s ease; overflow-y:auto; }
+.drawer.open { transform:none; }
+.drawer-head { display:flex; justify-content:space-between; align-items:center; padding:16px 20px; border-bottom:1px solid var(--ink); }
+.drawer-head b { font-size:12px; letter-spacing:.22em; }
+.drawer-close { font-family:inherit; background:none; border:none; font-size:20px; cursor:pointer; color:var(--ink); line-height:1; }
+.drawer nav { padding:10px 0 30px; }
+.dr-sec { padding:14px 20px 4px; font-size:10.5px; font-weight:700; letter-spacing:.2em; color:var(--sub); }
+.drawer nav a { display:block; padding:9px 20px; font-size:14px; font-weight:700; color:var(--ink); border-bottom:1px solid var(--wash); }
+.drawer nav a small { display:block; font-size:11px; font-weight:400; color:var(--sub); letter-spacing:.04em; }
+.drawer nav a:hover { background:var(--wash); }
+.scrim { position:fixed; inset:0; background:rgba(14,15,17,.4); z-index:50; opacity:0; pointer-events:none; transition:opacity .22s; }
+.scrim.show { opacity:1; pointer-events:auto; }
+.container { max-width:1040px; margin:0 auto; padding:0 24px 72px; }
+.head { border-bottom:1px solid var(--ink); padding:34px 0 24px; margin-bottom:8px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--black); padding:4px 12px; margin-bottom:16px; }
+.head h1 { font-size:clamp(24px,4vw,34px); font-weight:700; line-height:1.4; margin-bottom:12px; }
+.head .lead { font-size:14.5px; color:#3d4148; line-height:1.85; max-width:660px; }
+.head .meta { margin-top:14px; font-size:12.5px; color:var(--sub); }
+.head .meta b { color:var(--ink); }
+.note-use { margin:18px 0 4px; background:var(--wash); border-left:3px solid var(--accent); padding:12px 18px; font-size:13px; line-height:1.8; color:#3d4148; }
+.sh { display:flex; align-items:center; gap:12px; margin:36px 0 16px; }
+.sh .sbar { width:5px; height:22px; border-radius:2px; background:var(--accent); }
+.sh h2 { font-size:19px; font-weight:700; }
+.sh .sen { font-size:12px; color:var(--sub); }
+.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(190px,1fr)); gap:20px; }
+.pc { border:1px solid var(--ink); display:flex; flex-direction:column; transition:box-shadow .15s; background:#fff; }
+.pc:hover { box-shadow:4px 4px 0 var(--ink); }
+.th { display:block; }
+.thumb { aspect-ratio:210/297; background:var(--wash); border-bottom:1px solid var(--ink); overflow:hidden; }
+.thumb img { width:100%; height:100%; object-fit:cover; object-position:top center; display:block; }
+.pm { padding:12px 14px 14px; display:flex; flex-direction:column; gap:6px; flex:1; }
+.ptag { align-self:flex-start; font-size:9.5px; font-weight:700; letter-spacing:.1em; color:#fff; background:var(--tc); padding:2px 8px; }
+.pm h3 { font-size:14.5px; font-weight:700; line-height:1.4; }
+.pm .ai { font-size:12px; color:var(--sub); line-height:1.6; flex:1; }
+.dl { align-self:flex-start; display:inline-flex; align-items:center; gap:5px; font-size:12.5px; font-weight:700; color:var(--accent); border:1px solid var(--accent); padding:4px 12px; margin-top:2px; }
+.dl:hover { background:var(--accent); color:#fff; }
+.dl svg { width:14px; height:14px; }
+.dlall { display:inline-flex; align-items:center; gap:8px; margin-top:16px; font-size:13.5px; font-weight:700; color:#fff; background:var(--accent); border:1px solid var(--accent); padding:9px 18px; }
+.dlall:hover { background:#1f5c37; border-color:#1f5c37; }
+.dlall svg { width:15px; height:15px; }
+.dlall small { font-weight:500; font-size:11.5px; opacity:.9; }
+.howto { margin-top:44px; border-top:2px solid var(--ink); padding-top:20px; }
+.howto h2 { font-size:17px; margin-bottom:10px; }
+.howto ol { margin:10px 0 0 20px; font-size:14px; line-height:1.95; color:#3d4148; }
+.howto p { font-size:14px; line-height:1.9; color:#3d4148; max-width:720px; }
+.foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+      <a href="../../#prints">プリント</a>
+      <a href="../../#support">支援</a>
+      <a href="../../#toolbox">道具</a>
+      <a href="../../#reading">読みもの</a>
+      <a href="../../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+  <button class="menu-btn" id="menuBtn" aria-label="メニューを開く"><span>≡</span>MENU</button>
+</div></div>
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-label="サイトマップ">
+  <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
+  <nav>
+    <a href="../../">棚トップ<small>School Stock の入り口</small></a>
+    <div class="dr-sec">PRINTS｜教科のプリント</div>
+    <a href="../../prints/kokugo/">国語プリント<small>読解・言葉・作文・聞き取り 全279枚</small></a>
+    <a href="../../prints/sansu-ensyu/">算数プリント（レベル別演習）<small>ふだんの演習・宿題に。全88単元</small></a>
+    <a href="../../prints/rika/">理科プリント<small>基礎知識・技能／答えつき</small></a>
+    <a href="../../prints/taiiku/">体育 学習カード<small>たんげんカード・ふりかえりカード</small></a>
+    <div class="dr-sec">CLASSROOM｜学級経営</div>
+    <a href="../../gakkyu/tegami/">お礼の手紙 びんせん<small>ゲストティーチャーへ。全10種</small></a>
+    <a href="../../gakkyu/">月の目標カード<small>1か月の目標を1枚に。12か月ぶん</small></a>
+    <div class="dr-sec">SUPPORT｜気になる子の支援</div>
+    <a href="../../shien/">支援カード<small>自分を助ける合言葉 全35枚</small></a>
+    <div class="dr-sec">TOOLBOX｜授業と校務の道具</div>
+    <a href="../../tools/pdf-toolbox/">先生のPDF道具箱<small>結合・修正・縦書き。通信ゼロ</small></a>
+    <a href="../../sozai/">授業素材ライブラリ<small>スライド・プリントに使えるイラストと写真</small></a>
+    <a href="../../tankyu/">探究・問題解決サポート<small>学びの地図・話型・リハーサル</small></a>
+    <div class="dr-sec">READING｜読みもの・アイデア</div>
+    <a href="../../ideas/">実践アイデア<small>授業・校務の実践アイデア集</small></a>
+    <div class="dr-sec">ABOUT</div>
+    <a href="../../about/">このサイトについて<small>つくっている人と思い</small></a>
+  </nav>
+</aside>
+
+<div class="container">
+  <div class="head">
+    <span class="kicker">CLASSROOM｜学級経営</span>
+    <h1>お礼の手紙 びんせん10種</h1>
+    <p class="lead">地域の方や専門家の方に授業をしていただいたあと、お礼の手紙を書く時間のための紙です。たて書き5種・よこ書き5種、マス目の大きさは18mmから8mmまであります。同じ活動を、それぞれの子が自分に合った大きさの字で書けます。1種につき「びんせん」と「書き方のれい」の2まい組です。</p>
+    <p class="meta">A4・全10種　／　<b>びんせん10まい＋書き方のれい10まい＋先生向けの使い方1まい</b>　／　書体はUDデジタル教科書体　／　さし絵は水彩の描きおろし</p>
+    <div class="note-use">マスが大きいほど書ける量は少なくなります。<b>書く力ではなく、鉛筆の運びに合わせて</b>選んでください。同じ学級で紙を分けても活動は同じなので、並べて掲示できます。</div>
+    <a class="dlall" href="/School_Stock_files/gakkyu/tegami/pdf/tegami_binsen_all.zip" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>21まいまとめてダウンロード<small>ZIP・PDF21本</small></a>
+    <p class="meta" style="margin-top:12px"><a href="/School_Stock_files/gakkyu/tegami/pdf/00_tsukaikata.pdf" download>先生向けの使い方（A4・1まい）</a>　／　10種の一覧・45分の流れ・学習指導要領との対応が入っています。</p>
+  </div>
+
+  <div class="sh"><span class="sbar"></span><h2>10種から1まいずつ</h2><span class="sen">「びんせん」と「書き方のれい」を別々に印刷できます</span></div>
+  <div class="grid">
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T1_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/T1_binsen.png" width="480" height="679"
+               alt="ありがとうの てがみ（たて書き・マス18mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">T1　たて書き・18mm</span>
+          <h3>ありがとうの てがみ<span style="font-weight:400;font-size:13px;color:#6b7077">　1・2年・12字×8行</span></h3>
+          <p class="ai">いちばん 大きいマス。ひらがなでも ゆったり 書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T2_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/T2_binsen.png" width="480" height="679"
+               alt="ありがとうの 手紙（たて書き・マス15mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">T2　たて書き・15mm</span>
+          <h3>ありがとうの 手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　2・3年・15字×9行</span></h3>
+          <p class="ai">はじめ・なか・おわりの 三つに 分けて 書きます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T3_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/T3_binsen.png" width="480" height="679"
+               alt="お礼の手紙（たて書き・マス12mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">T3　たて書き・12mm</span>
+          <h3>お礼の手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　3・4年・19字×11行</span></h3>
+          <p class="ai">「なか」を二つの だんらくに 分けて 書きます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T3_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T3_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T4_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/T4_binsen.png" width="480" height="679"
+               alt="お礼の手紙（たて書き・マス9mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">T4　たて書き・9mm</span>
+          <h3>お礼の手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　5・6年・25字×15行</span></h3>
+          <p class="ai">手紙の形式（前文・本文・末文・後付け）で書きます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T4_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T4_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/T5_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/T5_binsen.png" width="480" height="679"
+               alt="ひとことの お礼（たて書き・マス15mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">T5　たて書き・15mm</span>
+          <h3>ひとことの お礼<span style="font-weight:400;font-size:13px;color:#6b7077">　全学年・15字×6行</span></h3>
+          <p class="ai">みじかく 書く ための 紙。三文で 気持ちが とどきます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T5_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/T5_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/Y1_binsen.png" width="480" height="679"
+               alt="ありがとうの てがみ（よこ書き・マス14mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">Y1　よこ書き・14mm</span>
+          <h3>ありがとうの てがみ<span style="font-weight:400;font-size:13px;color:#6b7077">　1・2年・12字×13行</span></h3>
+          <p class="ai">よこ書きの 大きい マス。えんぴつが すべりません。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y1_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/Y2_binsen.png" width="480" height="679"
+               alt="お礼の手紙（よこ書き・マス12mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">Y2　よこ書き・12mm</span>
+          <h3>お礼の手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　3・4年・15字×15行</span></h3>
+          <p class="ai">「なか」を二つの だんらくに 分けて 書きます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y2_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/Y3_binsen.png" width="480" height="679"
+               alt="お礼の手紙（よこ書き・マス10mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">Y3　よこ書き・10mm</span>
+          <h3>お礼の手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　4・5年・18字×17行</span></h3>
+          <p class="ai">ふつうの原こう用紙に近い大きさ。文章の量を書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y3_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/Y4_binsen.png" width="480" height="679"
+               alt="お礼の手紙（よこ書き・マス8mm）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">Y4　よこ書き・8mm</span>
+          <h3>お礼の手紙<span style="font-weight:400;font-size:13px;color:#6b7077">　5・6年・22字×22行</span></h3>
+          <p class="ai">小さめのマス。手紙の形式をきちんと書けます。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y4_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+      <article class="pc">
+        <a class="th" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_binsen.pdf" download>
+          <div class="thumb"><img src="thumb/Y5_binsen.png" width="480" height="679"
+               alt="ありがとうカード（よこ書き・マス罫線）の紙面" loading="lazy"></div></a>
+        <div class="pm">
+          <span class="ptag">Y5　よこ書き・罫線</span>
+          <h3>ありがとうカード<span style="font-weight:400;font-size:13px;color:#6b7077">　全学年・罫線8行</span></h3>
+          <p class="ai">マス目のない カード。絵や 図を かき足しても かまいません。</p>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_binsen.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>びんせん</a>
+          <a class="dl" href="/School_Stock_files/gakkyu/tegami/pdf/Y5_rei.pdf" download><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 3v12M7 11l5 5 5-5M4 20h16"/></svg>書き方のれい</a>
+        </div>
+      </article>
+  </div>
+
+  <div class="howto">
+    <h2>使い方</h2>
+    <ol>
+      <li>話を思い出して、<b>心にのこったことを三つ</b>書き出します（5分）。</li>
+      <li>いちばん書きたいものに丸をつけて、<b>一つに決めます</b>（5分）。</li>
+      <li>「書き方のれい」を見て、どこに何を書くかを確かめます（5分）。</li>
+      <li>びんせんに書きます（25分）。</li>
+      <li>読み返して、名前・あて名・字のまちがいを見ます（5分）。</li>
+    </ol>
+    <p style="margin-top:14px"><b>「書き方のれい」は型を見せるための紙です。そのまま写させないでください。</b>書けない子には、れいの一文目だけを声に出して読ませ、続きは自分の言葉で言わせると動き出します。相手の名前の漢字は、渡す前に確かめて板書しておくと間違いが減ります。</p>
+    <h2 style="margin-top:26px">学習指導要領（国語）との対応</h2>
+    <ol>
+      <li><b>第1学年及び第2学年</b>　B書くこと(2)イ「日記や手紙を書くなど、思ったことや伝えたいことを書く活動」。構成は(1)イ「事柄の順序に沿って簡単な構成を考えること」。T1・T2・Y1の「はじめ・なか・おわり」がこれです。短い文や伝言で表すことも認められています（T5・Y5）。</li>
+      <li><b>第3学年及び第4学年</b>　B書くこと(1)イ「書く内容の中心を明確にし、内容のまとまりで段落をつくったり、段落相互の関係に注意したりして、文章の構成を考えること」。T3・Y2・Y3で「なか」を二つに分けているのは、心にのこったこと（中心）とそのわけ（支える段落）を分けるためです。</li>
+      <li><b>第5学年及び第6学年</b>　B書くこと(2)イ「行事の案内やお礼の文章を書くなど、伝えたいことを手紙に書く活動」。解説には、お礼の手紙では後付けにおける署名や宛て名の位置関係といった基本的な形式を押さえることが必要だと書かれています。T4・Y4はその形式で、拝啓と敬具の置き場所も入れてあります。</li>
+    </ol>
+    <p style="margin-top:14px">後付けの形式は高学年の内容です。中学年までは、本文の最後に自分の名前を書く形で足ります。さし絵は白黒で印刷しても読めます。</p>
+  </div>
+</div>
+
+<footer class="foot"><div class="foot-in">
+  <div class="fw">SCHOOL STOCK</div>
+  先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。
+  <div style="margin-top:12px"><a href="../../">棚トップにもどる</a>　／　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a></div>
+  <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+</div></footer>
+
+<script>
+(function(){
+  var d=document.getElementById('drawer'),s=document.getElementById('scrim');
+  function open(){d.classList.add('open');s.classList.add('show');}
+  function close(){d.classList.remove('open');s.classList.remove('show');}
+  document.getElementById('menuBtn').addEventListener('click',open);
+  document.getElementById('drawerClose').addEventListener('click',close);
+  s.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
