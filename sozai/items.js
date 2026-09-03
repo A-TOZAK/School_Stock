@@ -42892,5 +42892,78 @@ const SOZAI = [
   "alt": "img/sansu4_bundoki_01_alt.txt",
   "seconds": null,
   "phase": ""
+ },
+ {
+  "id": "chumoku_class_front_suisai",
+  "title": "前を向く子どもたちと先生（教室うしろから）",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "情景・授業の姿",
+  "scenes": [
+   "教室のうしろから見た、電子黒板と先生のほうを向く3人の子ども。先生は横向きで手をひらいて画面をさす"
+  ],
+  "uses": [
+   "スライド",
+   "挿絵",
+   "見出し・表紙",
+   "Web・note",
+   "おたより",
+   "画面の合図"
+  ],
+  "description": "新JISの机にすわった3人が前を向き、先生が電子黒板（無地の画面）のよこで手をひらいている。水彩・白背景・文字なし。思考ツールボードの「先生の画面に注目しましょう」の画面用に描いた1枚。",
+  "howto": "『前を見よう』『説明を聞こう』の合図のスライドや、授業の約束のおたよりに。文字は上下の余白に置く。",
+  "tags": [
+   "教室",
+   "電子黒板",
+   "先生",
+   "子ども",
+   "前を向く",
+   "注目",
+   "水彩",
+   "情景",
+   "白背景",
+   "授業"
+  ],
+  "img": "img/chumoku_class_front_suisai.jpg",
+  "thumb": "img/chumoku_class_front_suisai_thumb.jpg",
+  "mono": "img/chumoku_class_front_suisai_mono.jpg"
+ },
+ {
+  "id": "chumoku_over_shoulder_suisai",
+  "title": "肩ごしに見る先生と電子黒板",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "情景・授業の姿",
+  "scenes": [
+   "前の席の2人の肩ごしに、電子黒板のよこで手をひらく先生を見る。机の上にとじたタブレット"
+  ],
+  "uses": [
+   "スライド",
+   "挿絵",
+   "見出し・表紙",
+   "Web・note",
+   "画面の合図"
+  ],
+  "description": "子どもの目線で、電子黒板（無地の画面）とそのよこに立つ先生を見上げる。手前に2人の後ろ姿と、とじたタブレット。水彩・白背景・文字なし。思考ツールボードの「注目」の画面に使っている。",
+  "howto": "『先生の画面に注目』の合図の画面やスライドに。文字は下の余白に置く。",
+  "tags": [
+   "教室",
+   "電子黒板",
+   "先生",
+   "子ども",
+   "肩ごし",
+   "注目",
+   "水彩",
+   "情景",
+   "白背景",
+   "タブレット"
+  ],
+  "img": "img/chumoku_over_shoulder_suisai.jpg",
+  "thumb": "img/chumoku_over_shoulder_suisai_thumb.jpg",
+  "mono": "img/chumoku_over_shoulder_suisai_mono.jpg"
  }
 ];
