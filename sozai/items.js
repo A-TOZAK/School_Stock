@@ -42965,5 +42965,77 @@ const SOZAI = [
   "img": "img/chumoku_over_shoulder_suisai.jpg",
   "thumb": "img/chumoku_over_shoulder_suisai_thumb.jpg",
   "mono": "img/chumoku_over_shoulder_suisai_mono.jpg"
+ },
+ {
+  "id": "oyasumi_hitori_tablet_suisai",
+  "title": "ひとりでタブレットに描く子と、布をかけた電子黒板",
+  "author": "sumire",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "情景・授業の姿",
+  "scenes": [
+   "窓ぎわの教室で、4年生くらいの子が机のタブレットにペンで描いている。後ろの電子黒板は電源が切れ、上半分に灰色の布がかかって休んでいる"
+  ],
+  "uses": [
+   "お知らせ",
+   "スライド",
+   "挿絵",
+   "Web・note",
+   "見出し・表紙"
+  ],
+  "description": "ひとりで静かにタブレットに描く子の後ろ姿と、布をかけて休んでいる電子黒板。水彩・白背景・文字なし。思考ツールボードの「みんなで使う はお休み中」のお知らせに使っている。",
+  "howto": "「お休み中」「ひとりでできる」「静かに取り組む」の場面に。文字は絵の外に置く。",
+  "tags": [
+   "教室",
+   "電子黒板",
+   "タブレット",
+   "子ども",
+   "後ろ姿",
+   "お休み",
+   "ひとりで",
+   "水彩",
+   "情景",
+   "白背景"
+  ],
+  "img": "img/oyasumi_hitori_tablet_suisai.jpg",
+  "thumb": "img/oyasumi_hitori_tablet_suisai_thumb.jpg",
+  "mono": "img/oyasumi_hitori_tablet_suisai_mono.jpg"
+ },
+ {
+  "id": "oyasumi_minna_no_kami_blanket",
+  "title": "毛布をかけて休ませた、みんなの紙",
+  "author": "riko",
+  "type": "illust",
+  "subject": "学校生活",
+  "grade": "全学年",
+  "unit": "アイコン・画面の合図",
+  "scenes": [
+   "床に置いた大きな紙（ふきだしが4つ）の奥半分に灰色の毛布がかかり、そばにペンが1本。上に思考の雲"
+  ],
+  "uses": [
+   "お知らせ",
+   "アイコン",
+   "画面の合図",
+   "スライド",
+   "Web・note"
+  ],
+  "description": "みんなで書く紙に毛布をかけて休ませている、平らな絵。ペン1本と思考の雲。文字なし・白背景。思考ツールボードの「みんなで使う はお休み中」のカードに使っている。",
+  "howto": "「お休み中」「いったん止める」「また今度」の合図に。文字は絵の外に置く。",
+  "tags": [
+   "お休み",
+   "紙",
+   "ふきだし",
+   "毛布",
+   "ペン",
+   "雲",
+   "フラット",
+   "アイコン",
+   "白背景",
+   "ボード"
+  ],
+  "img": "img/oyasumi_minna_no_kami_blanket.jpg",
+  "thumb": "img/oyasumi_minna_no_kami_blanket_thumb.jpg",
+  "mono": "img/oyasumi_minna_no_kami_blanket_mono.jpg"
  }
 ];
