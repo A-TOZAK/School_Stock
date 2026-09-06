@@ -7,13 +7,25 @@ School Stock 支援カード棚ビルダー
 枚数は cards12.json / wakei.json から自動で拾う（2026-07-07現在：掲示43・ミニ11・話型6・先生用3）。
 使い方: python3 shien/build_shien.py
 """
-import json, re, shutil, subprocess, html, zipfile
+import json, re, shutil, subprocess, html, zipfile, sys
 from pathlib import Path
+
+# ⚠ 2026-09-06：このビルダーは index.html を丸ごと作り直すが、公開中の index.html には
+#   ビルダーに入っていない手直しが積まれている（OGP・manifest・apple-touch-icon・
+#   トップバーとドロワーのリンク・子棚バナー・相談窓口ボタン・counter.js など）。
+#   そのまま回すとそれが全部消える。実際に2026-09-06に消して戻した。
+#   → 既定では index.html を書かない。PDF・サムネ・zip だけ更新する。
+#     ページに手を入れるときは、公開中の index.html を土台に必要な所だけ差し込む。
+#     テンプレートを現物に追いつかせたうえで全面再生成するなら --write-index を付ける。
+WRITE_INDEX = "--write-index" in sys.argv
 
 SITE = Path(__file__).resolve().parent          # .../School_Stock/shien
 PROJ = Path.home() / "Claude" / "Projects" / "🃏-支援カード集"
 SRC04 = PROJ / "04_エビデンス版"
 SRC06 = PROJ / "06_話型集"
+# 配布PDF/ZIPの公開先は別リポジトリ School_Stock_files（2026-08-10 容量分離）。
+# HTMLに書くリンクは必ずこの絶対パスにする（相対 pdf/ だと404）。
+FILES = "/School_Stock_files/shien"
 PDFDIR = SITE / "pdf"; THUMB = SITE / "thumb"
 PDFDIR.mkdir(exist_ok=True); THUMB.mkdir(exist_ok=True)
 
@@ -128,6 +140,50 @@ for mark, ascii_no, label in [("①", "1", "よみとり・かかわり"),
 sections.append(dict(key="teacher", head="先生用シート", en="使う場・根拠の一覧（先生向け）",
                      color="#333", items=teach_items))
 
+# 5) 話し合って発表する（09_話し合いと発表・A3掲示5枚＋班に配る2枚＋先生用）
+SRC09 = PROJ / "09_話し合いと発表"
+if SRC09.exists():
+    H = json.loads((SRC09 / "cards.json").read_text(encoding="utf-8"))
+    HC = H["meta"]["cat"]["color"]
+
+    def copy_pdf09(stem, dest_name):
+        """A3カードはPNGを埋めるとChrome出力が重いので、gsで組み直してから置く"""
+        src = SRC09 / "pdf" / f"{stem}.pdf"
+        dest = PDFDIR / dest_name
+        r = subprocess.run(["gs", "-sDEVICE=pdfwrite", "-dCompatibilityLevel=1.5",
+                            "-dPDFSETTINGS=/prepress", "-dNOPAUSE", "-dQUIET", "-dBATCH",
+                            f"-sOutputFile={dest}", str(src)])
+        if r.returncode != 0 or not dest.exists() or dest.stat().st_size >= src.stat().st_size:
+            shutil.copy2(src, dest)      # 縮まなかったら元のまま
+        return dest.name
+
+    h_items = []
+    for c in H["cards"]:
+        cid = c["id"]
+        pdf = copy_pdf09(cid, f"{cid}_{slug(c['name'])}.pdf")
+        th = make_thumb(SRC09 / "png" / f"{cid}.png", f"{cid}.png")
+        h_items.append(dict(id=cid, title=plain(c["name"]), sub=plain(c["aikotoba"]),
+                            tag="A3掲示", tagcolor=HC, pdf=pdf, thumb=th,
+                            modal=True, aikotoba=plain(c["aikotoba"]),
+                            steps=[plain(b["title"]) + "（" + plain(b["ai"]) + "）"
+                                   for b in c["blocks"]] if c.get("type") == "flow"
+                                  else [plain(x) for x in c["steps"]],
+                            badge="", bamen=c.get("bamen", ""), naze=c.get("naze", ""),
+                            refs=[]))
+    for stem, title, sub, tag in [
+        ("G1_すすめ方", "班のシート　話し合いの進め方", "班に1枚。ラミネートして机の中央に置く", "班に配る"),
+        ("G2_発表メモ", "班のシート　発表メモ", "書きこむ紙。まとめて刷って話し合うたびに配る", "班に配る"),
+        ("T_先生用", "先生用シート　話し合って発表する", "場面・なぜ効くか・使う場＋運用ノート（3ページ）", "先生向け"),
+    ]:
+        pdf = copy_pdf09(stem, f"{stem}.pdf")
+        th = make_thumb(SRC09 / "png" / f"{stem}.png", f"{stem}.png")
+        h_items.append(dict(id=stem, title=title, sub=sub,
+                            tag=tag, tagcolor=HC if tag == "班に配る" else "#333",
+                            pdf=pdf, thumb=th))
+    sections.insert(0, dict(key="hanashiai", head="話し合って発表する",
+                            en="班で話し合って発表するまでの4段階（A3掲示5枚＋班に配る2枚＋先生用）",
+                            color=HC, items=h_items))
+
 total = sum(len(s["items"]) for s in sections)
 
 # ---------- まとめてダウンロードzip ----------
@@ -157,17 +213,17 @@ def card_html(it):
           f'<p class="ai">{E(it["sub"])}</p>'
           f'<div class="pacts">'
           f'<button class="dl kaisetsu" data-modal="{E(it["id"])}">解説を見る</button>'
-          f'<a class="dl ghost" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
+          f'<a class="dl ghost" href="{FILES}/pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
           f'</div></div></div>')
     return (
       f'<div class="pc">'
-      f'<a class="th" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">'
+      f'<a class="th" href="{FILES}/pdf/{E(it["pdf"])}" target="_blank" rel="noopener">'
       f'<div class="thumb"><img loading="lazy" src="thumb/{E(it["thumb"])}" alt="{E(it["title"])}"></div></a>'
       f'<div class="pm">'
       f'<span class="ptag" style="--tc:{it["tagcolor"]}">{E(it["tag"])}</span>'
       f'<h3>{E(it["title"])}</h3>'
       f'<p class="ai">{E(it["sub"])}</p>'
-      f'<a class="dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
+      f'<a class="dl" href="{FILES}/pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}PDF</a>'
       f'</div></div>')
 
 def ref_links(keys):
@@ -200,7 +256,7 @@ def modal_html(it):
       f'<div class="m-block"><span class="m-lbl">こんなときに使う</span><p>{E(it["bamen"])}</p></div>'
       f'<div class="m-block"><span class="m-lbl">なぜ効くのか</span><p>{E(it["naze"])}</p></div>'
       f'{refs_block}'
-      f'<a class="m-dl" href="pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}カードのPDFをひらく</a>'
+      f'<a class="m-dl" href="{FILES}/pdf/{E(it["pdf"])}" target="_blank" rel="noopener">{DL_SVG}カードのPDFをひらく</a>'
       f'<p class="m-note">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——その手続きとセットで使ってください。</p>'
       f'</div></div></div>')
 
@@ -422,7 +478,7 @@ PAGE = f"""<!DOCTYPE html>
     <p class="lead">つまずきのある子が「自分を助ける」ための、声に出す合言葉カード。研究で効果が確かめられた支援だけを土台に、
     どの教科・どの場面でも使えるようにしました。難易度で分けず、<b>子どもが自分に合う1枚を選ぶ</b>——その設計です。</p>
     <div class="meta"><b>全{total}枚・無料</b>　｜　掲示カード・机上ミニ版・話型シート・先生用シート　｜　A4／PDF　｜　© School Stock</div>
-    <a class="dlall" href="{ZIP_NAME}" download>{DL_SVG}まとめてダウンロード<small>（全{total}枚・zip・約{ZIP_MB:.0f}MB）</small></a>
+    <a class="dlall" href="{FILES}/{ZIP_NAME}" download>{DL_SVG}まとめてダウンロード<small>（全{total}枚・zip・約{ZIP_MB:.0f}MB）</small></a>
     <div class="note-use">カードは「配って終わり」では効きません。先生が一度いっしょにやってみせてから手渡し、できたら認める——
     その手続きとセットで使ってください（使う場と根拠は「先生用シート」にまとめてあります）。</div>
   </div>
@@ -476,7 +532,12 @@ PAGE = f"""<!DOCTYPE html>
 </html>
 """
 
-(SITE / "index.html").write_text(PAGE, encoding="utf-8")
-print(f"built shien/index.html  ({total} cards, {len(sections)} sections)")
+if WRITE_INDEX:
+    (SITE / "index.html").write_text(PAGE, encoding="utf-8")
+    print(f"built shien/index.html  ({total} cards, {len(sections)} sections)")
+else:
+    (SITE / "_index_generated.html").write_text(PAGE, encoding="utf-8")
+    print(f"index.html は書いていない（--write-index で上書き）。"
+          f"生成結果は shien/_index_generated.html に置いた（{total} cards, {len(sections)} sections）")
 print(f"  pdf/  -> {len(list(PDFDIR.glob('*.pdf')))} files")
 print(f"  thumb/ -> {len(list(THUMB.glob('*.png')))} files")
