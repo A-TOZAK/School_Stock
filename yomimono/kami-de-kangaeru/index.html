@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>紙とペンで考えると なぜ頭が整うのか ｜ School Stock</title>
+<meta name="description" content="紙とペンで3時間考えたら、パソコンや生成AIより思考が整った。あの「脳が汗をかく」感覚の正体を、認知負荷理論・単語認知・手書きの脳研究・紙と画面の読解メタ分析・生成AIの実験まで、J-STAGEと海外の論文110本あまりを読み込んで整理した長い読み物。ワークシートに何を書かせるか、子どもがノートを書かない理由まで。">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="紙とペンで考えると なぜ頭が整うのか">
+<meta property="og:description" content="「脳が汗をかく」感覚の正体を、論文110本あまりから整理した長い読み物。ワークシートに何を書かせるか、子どもがノートを書かない理由まで。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/yomimono/kami-de-kangaeru/">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/yomimono/kami-de-kangaeru/card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2e5d7d; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --mark:#e7eef2; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+img { max-width:100%; display:block; }
+.ja { word-break:auto-phrase; text-wrap:pretty; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover, .nav a.on { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+
+.hero { max-width:1040px; margin:0 auto; padding:0 24px; }
+.hero-in { position:relative; margin-top:22px; border:1px solid var(--line); overflow:hidden; background:#fbf7f1; }
+.hero-in img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
+.hero-txt { position:absolute; left:0; top:0; bottom:0; width:42%; display:flex; flex-direction:column; justify-content:center; padding:24px 20px 24px 32px; background:linear-gradient(90deg, rgba(251,247,241,.96) 62%, rgba(251,247,241,0)); }
+.hero-txt .kicker { align-self:flex-start; }
+.hero-txt h1 { font-size:clamp(20px,3.3vw,34px); font-weight:700; line-height:1.5; color:var(--black); }
+.hero-txt .sub { margin-top:12px; font-size:clamp(11px,1.3vw,14px); color:#3d4148; line-height:1.9; }
+@media (max-width:700px){
+  .hero-in img { aspect-ratio:auto; }
+  .hero-txt { position:static; width:100%; background:none; padding:18px 18px 8px; }
+}
+
+.article { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:10px 0 26px; margin-bottom:34px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--accent); padding:3px 11px; margin-bottom:16px; }
+.head .meta { font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.head .meta b { color:var(--ink); font-weight:700; }
+.toc { background:var(--wash); padding:18px 22px; margin:0 0 10px; font-size:13.5px; }
+.toc b { display:block; font-size:12px; letter-spacing:.14em; color:var(--sub); margin-bottom:8px; }
+.toc ol { padding-left:1.4em; line-height:1.9; }
+.toc a { color:var(--ink); }
+.toc a:hover { color:var(--accent); }
+
+.lead { font-size:17px; line-height:2.05; color:#20242a; margin-bottom:8px; }
+.lead b { font-weight:700; }
+h2 { font-size:22px; font-weight:700; line-height:1.5; margin:52px 0 6px; padding-top:14px; border-top:2px solid var(--ink); display:flex; gap:12px; align-items:flex-start; }
+h2 .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); flex-shrink:0; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; letter-spacing:.06em; margin-bottom:20px; }
+h3 { font-size:16.5px; font-weight:700; margin:30px 0 4px; }
+p { font-size:15.5px; line-height:2.02; margin:18px 0; color:#20242a; }
+p .em, li .em { background:linear-gradient(transparent 62%, var(--mark) 62%); font-weight:700; }
+.pull { border-left:4px solid var(--accent); padding:6px 0 6px 22px; margin:30px 0; }
+.pull q { font-size:20px; font-weight:700; line-height:1.7; color:var(--ink); quotes:none; display:block; }
+.pull cite { display:block; margin-top:10px; font-size:12.5px; color:var(--sub); font-style:normal; }
+.motif { float:right; width:150px; margin:0 0 8px 20px; }
+@media (max-width:560px){ .motif { width:110px; } }
+
+.evidence { background:var(--wash); border-left:3px solid var(--accent); padding:16px 20px; margin:24px 0; font-size:13.5px; line-height:1.95; color:#3d4148; clear:both; }
+.evidence b { color:var(--ink); }
+.caveat { background:#fff; border:1px solid var(--line); border-left:3px solid #b8865b; padding:14px 18px; margin:24px 0; font-size:13.5px; line-height:1.9; color:#3d4148; }
+.caveat b { color:var(--ink); }
+.q5 { background:var(--wash); padding:20px 24px; margin:26px 0; }
+.q5 ol { padding-left:1.5em; }
+.q5 li { font-size:15px; line-height:1.9; margin:6px 0; }
+.checklist { background:var(--wash); border-left:3px solid var(--ink); padding:20px 24px; margin:34px 0; clear:both; }
+.checklist h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin:0 0 12px; }
+.checklist ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.checklist li { font-size:14.5px; line-height:1.8; padding-left:26px; position:relative; }
+.checklist li::before { content:"□"; position:absolute; left:0; top:-1px; font-size:16px; color:var(--sub); }
+table.tb { width:100%; border-collapse:collapse; font-size:13.5px; margin:18px 0; }
+table.tb th, table.tb td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.7; }
+table.tb th { font-size:12px; color:var(--sub); letter-spacing:.06em; white-space:nowrap; }
+table.tb td:first-child { white-space:nowrap; font-weight:700; }
+.tbwrap { overflow-x:auto; }
+
+ul.refs { list-style:none; margin:14px 0; }
+ul.refs li { font-size:12.5px; color:var(--sub); line-height:1.9; padding:4px 0 4px 18px; position:relative; border-bottom:1px solid var(--wash); }
+ul.refs li::before { content:"—"; position:absolute; left:0; color:var(--line); }
+ul.refs a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+ul.refs a:hover { color:var(--accent); }
+.refh { font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--ink); margin:26px 0 2px; }
+
+.end { margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; }
+.end p { font-size:15.5px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin:22px 0 6px; }
+.grid2 a { display:block; border:1px solid var(--line); padding:12px 14px; font-size:13.5px; font-weight:700; color:var(--ink); }
+.grid2 a:hover { border-color:var(--ink); background:var(--wash); }
+.grid2 a small { display:block; font-size:11.5px; font-weight:400; color:var(--sub); margin-top:2px; letter-spacing:.02em; }
+@media (max-width:560px){ .grid2 { grid-template-columns:1fr; } }
+.note { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:20px; }
+
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+      <a href="../../#prints">プリント</a>
+      <a href="../../#support">支援</a>
+      <a href="../../#toolbox">道具</a>
+      <a href="../../#reading" class="on">読みもの</a>
+      <a href="../../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+</div></div>
+
+<div class="hero"><div class="hero-in">
+  <img src="img/nf_hero.webp" alt="机の上に広げたブロックメモに、鉛筆で書き込む手の水彩画" width="1600" height="1067">
+  <div class="hero-txt">
+    <span class="kicker">読み物 ｜ THINKING ON PAPER</span>
+    <h1 class="ja">紙とペンで考えると<br>なぜ頭が整うのか</h1>
+    <p class="sub ja">「脳が汗をかく」感覚の正体を、認知科学と脳科学の論文から読み解く。ワークシートに何を書かせるか、子どもがノートを書かない理由まで。</p>
+  </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../../#reading">読みもの</a> ／ 紙とペンで考える</div>
+  <div class="head">
+    <div class="meta"><b>先生向けの長い読み物</b><span>｜</span><span>読了の目安 40分</span><span>｜</span><span>参考文献 110本あまり（すべて出典を確認）</span><span>｜</span><a href="kodomo.html">4年生向けの版はこちら →</a><span>｜</span><span>© School Stock</span></div>
+  </div>
+
+  <div class="toc"><b>この読み物の中身</b>
+    <ol>
+      <li><a href="#s0">はじめに ブロックメモと3時間</a></li>
+      <li><a href="#s1">頭の中の作業台は狭い</a></li>
+      <li><a href="#s2">文字はどう認識されているか</a></li>
+      <li><a href="#s3">紙に出すと 思考そのものが変わる</a></li>
+      <li><a href="#s4">情報と情報が結びつくとき</a></li>
+      <li><a href="#s5">紙と画面 手書きとタイピング 自分の頭と生成AI</a></li>
+      <li><a href="#s6">教室へ ワークシートとノート</a></li>
+      <li><a href="#s7">まとめ 5つの問いへの答え</a></li>
+      <li><a href="#refs">参考にした研究</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s0"><span class="n">0</span>はじめに ブロックメモと3時間</h2>
+  <div class="h2sub">「脳が汗をかく」の正体を知りたくなった</div>
+
+  <p class="lead">ある日、紙とペンだけで2時間、3時間と考え続けたことがありました。
+  パソコンも開かず、生成AIにも聞かない。手元にあるのはブロックメモと鉛筆だけ。
+  すると、画面に向かっているときよりずっと、考えが整理されていきました。
+  <b>脳が汗をかいているような感覚</b>で、それが心地よかった。
+  通知は来ない。書いた紙は机の上に並んでいて、いつでも見返せる。
+  「紙って、いいな」と、あらためて思いました。</p>
+
+  <p>同じころ、紙の本のほうが賢くなる、と語る脳科学者の話を動画で見ました。
+  感覚としては分かる。でも、担任としては感覚のままにしておけません。
+  子どもたちに「ノートに書きなさい」と言い、ワークシートを配っているのは私です。
+  <span class="em">ノートは考えを整理する道具のはずなのに、書かない子がいる。あれはなぜなのか。</span>
+  ワークシートには、何を書かせるのがよいのか。紙と画面で、本当に頭の中の出来事は違うのか。
+  そこで、感覚を5つの問いに直して、論文を読みに行くことにしました。</p>
+
+  <div class="q5"><ol>
+    <li><b>言葉の認識</b>　人は文字と言葉をどう認識しているのか。手で書くことは、その認識にどう関わるのか</li>
+    <li><b>思考の整理</b>　考えを整理するとき、頭の中で何が起きているのか。紙に出すことの働きは何か</li>
+    <li><b>関係づけ</b>　情報と情報が結びつくのは、どんなときか。ぼんやりする時間や、通知のない環境の意味は何か</li>
+    <li><b>媒体の違い</b>　紙と画面、手書きとタイピング、自分の頭と生成AIで、読む・書く・考えるは何が違うのか</li>
+    <li><b>教室への含意</b>　ワークシートに何を書かせるべきか。子どもがノートを書かない理由は何か</li>
+  </ol></div>
+
+  <p>読んだのは、J-STAGEとCiNiiにある日本の論文と、海外の論文をあわせて110本あまりです。
+  すべて、著者・年・題名・掲載誌をデータベースで確認したものだけを使っています。
+  そして大事なことをひとつ先に書いておきます。
+  <span class="em">「紙のほうが良い」と単純に言える結果には、なりませんでした。</span>
+  手書きの優位を示した有名な研究が、追試で再現しなかった例もあります。
+  代わりに見えてきたのは、「頭の中に何を起こしたいか」によって、紙と画面、手書きとタイピングの向き不向きが決まる、という地図でした。
+  以下、問いの順に歩きます。長い読み物です。気になる章から読んでください。</p>
+
+  <h2 id="s1"><span class="n">1</span>頭の中の作業台は狭い</h2>
+  <div class="h2sub">ワーキングメモリと認知負荷</div>
+
+  <img class="motif" src="img/nf_memo.webp" alt="ブロックメモの束と鉛筆の水彩画" loading="lazy">
+
+  <p>最初に押さえたいのは、人が「今ここで」考えるために使える作業台の広さです。
+  この作業台を、心理学ではワーキングメモリと呼びます。
+  1956年のミラーの論文は「7±2」という数で有名ですが、ミラー自身は固定の容量を主張したわけではありません。
+  復唱やまとめ直しを封じた「純粋な」条件で測り直したカウワン（2001）は、<span class="em">平均して約4つ、3〜5個</span>が限界だと結論しました。
+  同時に手に持てる情報の塊は、それしかない。
+  バドリー（2000、2012）の整理では、この作業台には「音でつぶやいて保つ場所（音韻ループ）」「絵や位置で保つ場所（視空間スケッチパッド）」、そしてそれらを束ねて長期記憶とつなぐ「エピソディック・バッファ」があるとされています。</p>
+
+  <p>この狭さが、「考えがまとまらない」の正体の多くを説明します。
+  スウェラー（1988）は、初心者が問題を解くときに使う「目標と今の状態の差を埋めようとするやり方（手段目標分析）」が、目標・現状・差・小目標を同時に抱え込むため、作業台を占領して学びを妨げると示しました。
+  ここから育ったのが認知負荷理論です。
+  スウェラーらの1998年の総説では、負荷を「課題そのものの難しさ（内在的）」「教材の見せ方で生まれる余計な負荷（外在的）」「理解の型をつくるための負荷（学習関連）」の3つに分けました。
+  2019年の「20年後」の総説では、この3つを足し算で語る枠組みは見直され、<span class="em">同時に処理しなければならない要素の数（要素間相互作用性）</span>が負荷の源だと中心に据え直されています。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Cowan（2001, <i>Behavioral and Brain Sciences</i>）は多数の実験を再検討し、チャンク化や復唱を防いだ条件で保持できるのは約4チャンクだとした。Sweller（1988, <i>Cognitive Science</i>）は手段目標分析がワーキングメモリを占有してスキーマ獲得を妨げることを実験と計算モデルで示し、Sweller, van Merriënboer &amp; Paas（1998, 2019, <i>Educational Psychology Review</i>）が認知負荷理論として整理・更新した。2019年版は、ワーキングメモリの資源が消耗し休息で回復すること、負荷を「減らすこと」自体が目的ではなく要素間相互作用を扱える形に整えることが目的だとも述べている。</div>
+
+  <p>私の3時間に当てはめると、こうなります。
+  頭の中だけで考えているとき、私は「今考えていること」「さっき思いついたこと」「まだ決めていないこと」を全部作業台に載せようとしていました。
+  4つしか載らない台に、10個載せようとしていた。
+  紙に1枚ずつ書き出すと、台の上には「今書いている1枚」だけが残ります。
+  残りは机の上にあって、いつでも取り戻せる。
+  <span class="em">「脳が汗をかく」と感じたのは、負荷が増えたからではなく、余計な負荷が消えて、本来の難しさに全部の力を向けられたから</span>だったのだと思います。
+  2019年の総説の言葉を借りれば、負荷を減らすことが目的なのではなく、要素どうしの関係を扱える形に整えることが目的なのです。</p>
+
+  <div class="pull"><q>4つしか載らない作業台に 10個載せようとしていた</q><cite>紙は、作業台を広げるのではなく、台から下ろす場所をつくる</cite></div>
+
+  <h2 id="s2"><span class="n">2</span>文字はどう認識されているか</h2>
+  <div class="h2sub">見る・音にする・手で書く の三つ巴</div>
+
+  <p>1つ目の問いに入ります。人は文字と言葉をどう認識しているのか。
+  英語圏の研究では、文字列から音への変換に「単語をまるごと引く道」と「つづりと音の規則で組み立てる道」の2本があるとする二重経路モデル（Coltheart ら 2001）と、つづり・音・意味の3つを結ぶネットワークが統計的に学習するとするトライアングルモデル（Seidenberg &amp; McClelland 1989）が、長く論争を続けてきました。
+  どちらの立場でも共通しているのは、<span class="em">文字を「見た」だけでは認識は終わらない</span>ということです。音と意味が動いて、初めて言葉になります。</p>
+
+  <h3>読む脳は借り物の脳</h3>
+  <p>脳の側では、左半球の下のほう、後頭葉と側頭葉の境目に「視覚的単語形態野」と呼ばれる場所があります（Cohen ら 2000）。
+  ドゥアンヌとコーエンは、この領域がもともと物や顔を見分けるための皮質を「再利用」して読みに使われるようになったのだ、という仮説を立てました（2007、2011）。
+  文字を読む能力は数千年の歴史しかなく、進化の産物ではありません。
+  人類は、あるものを使い回して読めるようになった。
+  ですから、読むことは自然に身につく能力ではなく、<span class="em">脳を作り変える練習の結果</span>です。これは、入門期の子どもを見るときの前提になります。</p>
+
+  <h3>漢字とかなは重みの違う2つの道で読まれる</h3>
+  <p>日本語には、この話をさらに面白くする事情があります。漢字とかなです。
+  神経内科医の岩田誠は1984年に、漢字は意味へ向かう腹側の回路、かなは音へ向かう背側の回路が主に担うという「漢字・仮名二重回路」の仮説を出しました。
+  その後の画像研究では、櫻井らのPET（2000）で漢字とかなの音読時に活動する場所が違うこと、中村らのfMRI（2005）で表記ごとに違う領域と、表記をまたいで意味で合流する領域があることが示され、「完全に別の回路」ではなく「重みの違い」として修正されています。</p>
+
+  <p>では、漢字を読むとき、頭の中で音は鳴っているのか。ここは研究者の間でも結果が割れています。
+  Chen・玉岡ら（2007）は漢字どうしでは同音のプライミングが出ないと報告しましたが、水野（1997）は漢字語でも音韻処理が自動的に起きていることを示し、楠瀬ら（2013）も漢字熟語で同音語プライミングを観察しました。
+  <span class="em">「漢字は音を経ない」とも「必ず経る」とも言い切れない</span>、というのが誠実なまとめです。
+  ただ、少なくとも子どもが漢字語を読むときに、音でつぶやいて確かめる道は生きている。音読が効くのはここに根があります。</p>
+
+  <h3>文字を見ると書くための脳が動く</h3>
+  <p>ここからが、手で書くことと認識の結びつきです。
+  ロンカンらは2003年に、文字を「見るだけ」で、左の運動前野の、実際に字を書くときに働く場所が活動することを示しました。
+  書いたことのない擬似文字では、その場所は動きません。
+  ジェームズとゴーティエ（2006）も、文字を見るだけで運動に関わる領域が、書くときに文字専用の視覚領域が動くという、双方向の巻き込みを報告しています。
+  <span class="em">文字の記憶は、視覚だけでなく、手の運動の記憶と一体になって蓄えられている</span>ということです。</p>
+
+  <p>この結びつきは、覚え方で変わります。
+  ロンカンら（2005）は3〜5歳児76名を手書き群とタイピング群に分け、3週間練習させました。
+  年長の子では、手書きで練習した群のほうが文字の見分けが良かった。
+  成人に未知の文字を学ばせた2008年の研究でも、手書きで学んだ文字は鏡文字との区別が正確で、その差は数週間続き、fMRIではその文字を見たときに運動に関わる領域がより強く活動していました。
+  ジェームズとエンゲルハート（2012）は5歳児15名で、文字を見たときに「読みの回路」が動員されたのは手書きで練習した後だけで、タイピングやなぞり書きの後には見られなかったと報告しています。
+  日本でも、情報通信研究機構の井原ら（2021）が、日本語話者33名に未知の外国語を紙のペン・タブレットのペン・キーボードで学ばせ、手書きで学んだ語のほうが意味処理を示す脳波（N400）の効果が大きかったことを示しました。</p>
+
+  <div class="caveat"><b>ここまでで言える範囲：</b>幼児研究は15〜76名、井原ら（2021）は33名で行動テストの成績には差が出ていません。ノルウェーの高密度脳波研究（Van der Weel &amp; Van der Meer 2024）は手書き時に脳の結合が広がることを示しましたが、学習成績は測っていません。「手書きが常に優れる」ではなく、<b>文字の形を初めて覚える段階では、自分の手で形を作る経験が字形の認識と読みの回路の立ち上がりを助ける</b>、と対象と目的を限定して言うのが、論文で支えられる範囲です。なぞり書きより「自分で書く」ことが効いていた点は、入門期の指導にそのまま関わります。</div>
+
+  <p>1つ目の問いへの答えは、こうなります。
+  文字の認識は、見る・音にする・手で書くの3つが絡み合ってできている。
+  だから、<span class="em">手で書いた文字は「見た文字」より多くの道で脳に結びつく</span>。
+  紙に書いて考えていた私は、言葉を目で見るだけでなく、手で作り、（たぶん小さく）口の中で音にしていた。3本の道を同時に使っていたわけです。</p>
+
+  <h2 id="s3"><span class="n">3</span>紙に出すと 思考そのものが変わる</h2>
+  <div class="h2sub">外化・スケッチの返事・書いて学ぶ</div>
+
+  <p>2つ目の問い。考えを整理するとき、何が起きているのか。
+  1章で見たように、作業台は狭い。では紙は、単に「覚えておく場所」なのでしょうか。
+  認知科学の答えは、それ以上です。<span class="em">外に出した表象は、思考のやり方そのものを変える</span>。</p>
+
+  <h3>頭で回すより手で回す</h3>
+  <p>カーシュとマグリオ（1994）は、テトリスの熟達者ほど、置く位置を決めるために必要以上にピースを回転させることに気づきました。
+  頭の中で回して考えるより、外で動かして確かめるほうが速く確実だからです。
+  彼らはこれを、目標に近づくための「実用的行為」と区別して「認識的行為」と呼びました。
+  張とノーマン（1994）は、ハノイの塔と同じ構造の問題で、ルールのうち何個を物の形で外に置くかを変えました。
+  外に表現されたルールが多いほど、解決は速く、誤りは少なかった。
+  外部の表象は、次にできる操作を制約し、何を見るべきかを直接与えるので、思考の性質そのものが変わる、と彼らは結論しています。
+  ハッチンス（1995）が旅客機のコックピットで見たものも同じでした。着陸速度の記憶は、パイロット個人の頭にではなく、速度計に付ける目印やカードや声出し確認を含めた「系全体」にあった。</p>
+
+  <p>哲学者のクラークとチャーマーズ（1998）は、これを「拡張された心」と呼びました。
+  常に持ち歩き、自動的に信頼し、すぐ取り出せるノートは、その人の記憶の一部と見なしてよい、という主張です。
+  賛否の分かれる議論ですが、<span class="em">机の上に並んだブロックメモは、私の思考の外にある記録ではなく、思考の一部だった</span>、という私の実感には、こういう名前がついていました。</p>
+
+  <h3>描いたものが返事をしてくる</h3>
+  <p>ここで設計やデザインの研究に寄り道します。
+  諏訪正樹とトヴァスキー（1997）は、建築家と建築学生に設計スケッチを描かせ、あとでビデオを見ながら何を考えていたかを語ってもらいました。
+  熟達した建築家は、自分の描いたスケッチから、<span class="em">描いたときには意図していなかった関係を「読み取り」</span>、それを次の案に使っていました。
+  ゴールドシュミット（1991）はこれを「〜として見る」と「〜であると見る」の往復と呼び、ショーンは「状況からの返事（backtalk）」と呼びました。
+  描いた形が、想像を超えた情報を返してくる。それを見て、次の一手が決まる。</p>
+
+  <p>トヴァスキー（2011）の総説は、人が抽象的な関係を空間の関係に写して考えること、紙の上の配置・線・矢印が、記憶の負担を下げるだけでなく、要素を並べ替えて関係を発見する足場になることを整理しています。
+  ブロックメモが良かった理由が、ここでひとつ分かります。
+  <span class="em">1枚に1つ書いた紙は、並べ替えられる</span>。ノートの1ページに上から順に書いたものは、並べ替えられない。
+  紙が返事をしてくるためには、動かせる形で外に出ている必要があるのです。</p>
+
+  <h3>書くことは学ぶこと</h3>
+  <p>教室に近い研究に戻ります。
+  フィオレラとメイヤー（2016）は、学習を高める8つの「生成的な」方略を整理しました。要約する・図に写す・描く・想像する・自分をテストする・自分で説明する・人に教える・動作で表す。
+  どれも、与えられたものを受け取るだけでなく、<span class="em">自分の中から何かを生み出す</span>活動です。
+  チーとワイリー（2014）のICAPという枠組みは、学習活動を「受動的＜能動的＜構成的＜対話的」の4段に並べ、この順に学びが深いと予測しました。
+  自分の言葉でノートを書く・概念図を描く・自分で説明する、といった「材料を超える出力」を生む活動は「構成的」に入ります。
+  黒板を写すだけのノートは「能動的」止まりで、そこに差が生まれます。</p>
+
+  <p>自己説明の効果は、チーら（1989）が発見し、1994年の実験で因果が確かめられました。
+  中学2年生に循環器系の文章を読ませ、1文ごとに「これはどういうことか」を自分に説明させた群は、2回読んだ群より理解が深まり、特に文章に直接書かれていない深い問いで差が出ました。
+  日本でも、伊藤・垣花（2009）が、聞き手のいる場で説明した群のほうが「自分の言葉で意味づけ直す説明」を多く生み、成績も高かったことを示しています。
+  深谷（2011）は中学生に「仕組み・機能」という観点を与えた自己説明の訓練を行い、観点があるほうが働きやすいことを示しました。</p>
+
+  <div class="evidence"><b>数字で見る「書いて学ぶ」：</b>Graham, Kiuhara &amp; MacKay（2020, <i>Review of Educational Research</i>）は、小1〜高3を対象に理科・社会・算数数学の授業に書く活動を組み込んだ56本の実験を統合し、<b>平均効果量0.30</b>で学習を高めたと報告した。効果は教科や学校段階、書く活動の種類によらず見られた。それより前の Bangert-Drowns, Hurley &amp; Wilkinson（2004）の48研究のメタ分析では効果はより小さく（再解析で d≒0.22）、効果を高めたのは「自分の理解を振り返らせる問い」を添えることと、短く長く続けることだった。</div>
+
+  <p>そして、ひとつ大事な注意があります。
+  植阪（2009）は、生徒は授業で図表の使い方を見せられていても、自分では図表を使わない、と指摘しています。
+  清河（2002）や清河・伊澤・植田（2007）の実験は、自分の試行を別の目で評価する分業が見方の切り替えを起こすことを示しました。
+  三宅なほみ（1986）は、理解が一度で完成せず、説明しようとして自分の理解の穴に気づく反復の過程だと描いています。
+  つまり、<span class="em">「書いて考える」は、見せただけでは自発的には使われない</span>。型を渡し、観点を与え、書いたものを見返す場面まで含めて、初めて思考の整理として働きます。</p>
+
+  <p>2つ目の問いへの答え。
+  紙に出すと、作業台が空くだけではありません。
+  出したものが次の操作を制約し、意図しなかった関係を返してきて、自分の理解の穴を見せてくれる。
+  それを見て次を書く。この往復が、私が3時間やっていたことでした。</p>
+
+  <h2 id="s4"><span class="n">4</span>情報と情報が結びつくとき</h2>
+  <div class="h2sub">精緻化・比較・望ましい困難・ぼんやり・通知</div>
+
+  <img class="motif" src="img/nf_phone_fusete.webp" alt="ふせて置いたスマートフォンとブロックメモの水彩画" loading="lazy">
+
+  <p>3つ目の問い。情報と情報が結びつくのは、どんなときか。
+  「関連づけて考える」は指導案にもよく出る言葉ですが、頭の中で何が起きているのかは、あまり語られません。
+  記憶研究の答えは、はっきりしています。<span class="em">見た回数や費やした時間ではなく、意味を問い、自分で生み出し、思い出そうとしたとき</span>に結びつきます。</p>
+
+  <h3>意味を問い 自分で作り 思い出す</h3>
+  <p>クレイクとタルヴィング（1975）の10の実験では、単語について「大文字か」「韻を踏むか」「文に当てはまるか」と問いの深さを変えると、意味を問われた単語ほど記憶に残りました。
+  かかった時間や努力量をそろえても差は残ります。効いているのは処理の質です。
+  スラメッカとグラフ（1978）は、読んだ語より自分で生成した語のほうが一貫して記憶に残ることを示しました（生成効果）。
+  レディガーとカーピキ（2006）は、文章を再学習する群と思い出すテストをする群を比べ、5分後は再学習群が上でも、1週間後はテスト群がはっきり上回ることを示しました。
+  しかも学習者自身は、再学習のほうが覚えたと感じていた。<span class="em">手ごたえと実際は、逆を向くことがある</span>。</p>
+
+  <h3>2つ並べて共通点を自分の言葉で書く</h3>
+  <p>別々の知識がつながる最短の手続きを示したのが、ギックとホリオーク（1980、1983）です。
+  「将軍が軍を小分けにして要塞を四方から攻める」物語を読んだあとに、「腫瘍に弱い放射線を四方から当てる」問題を解かせても、ヒントなしでは約3割しか気づきません。
+  ところが、似た物語を2つ読んで<span class="em">共通の構造を自分で書き出した群</span>だけ、ヒントなしの転移がはっきり上がりました。1例だけでは転移しない。2例を見せるだけでも足りない。比較して、共通点を言葉にする作業が鍵でした。
+  ゲントナー（1983）の構造写像理論が言うように、写るのは見た目ではなく関係の構造です。
+  植阪（2010）の事例研究で、解いた問題から「何が学べたか」を自分の言葉でまとめる「教訓帰納」が別の教科にまで転移したのは、この授業版だと読めます。</p>
+
+  <p>そして枠組みは「先に」置く必要があります。
+  ブランスフォードとジョンソン（1972）は、意味の取りにくい文章に「洗濯」という題名を先に与えた群だけが理解も再生も高く、後から題名を与えても回復しないことを示しました。
+  情報は、入ってくるときに既有の枠と結びつかなければ、残りにくい。導入で先に枠を置く意味は、ここにあります。</p>
+
+  <h3>努力感は学べていない信号ではない</h3>
+  <p>「脳が汗をかく」感覚に戻ります。あれは何だったのか。
+  ビョークとビョーク（2011）は、分散・交互練習・思い出す練習・生成など、学習中の成績や手ごたえを下げる操作が、長期の保持と転移を上げることを「望ましい困難」と名づけました。
+  学習者は「今できる」感覚で判断するので、望ましい困難を避けやすい。
+  クールら（2010）は、報酬に差がなくても人は認知的な要求の少ないほうを選ぶことを示し、日本でも佐藤（1998）が、有効だと分かっていても手間が高いと感じる学習方略は使われないこと、吉田・村山（2013）が中学生の「どの方略が効くか」の認識が専門家とずれていることを示しています。
+  一方でインツリヒトら（2018）は「努力の逆説」を整理しました。人は努力を避けるのに、努力した成果や努力そのものに価値を置く。
+  シェンハブら（2017）の見方では、努力感は「資源が減った」信号というより、認知の制御をどこに配分するかを決める計器です。</p>
+
+  <p>この線で読むと、私の3時間はこうなります。
+  <span class="em">努力感が続いていたのは、結びつきを作っている途中の信号</span>だった。
+  そして心地よかったのは、その困難が、私の準備で乗り越えられる範囲にあったから。
+  ビョークらが2020年に強調したように、望ましい困難は、応えられる背景知識がある人にだけ望ましい。
+  同じ「紙で3時間」を、準備のない子どもに渡せば、ただの苦行になります。</p>
+
+  <h3>ぼんやりする時間は条件つきで効く</h3>
+  <p>「散歩していたら思いついた」という経験は誰にもあります。
+  問題をいったん置く「インキュベーション」の効果は、シオとオーマロッド（2009）のメタ分析で確認されました。
+  効果は中程度以下ですが本物で、発散的な課題で大きく、<span class="em">準備をしっかりしたあとほど効き、休止中に重い課題を入れると効かない</span>。
+  脳の側では、課題をしていないときに活動する「デフォルトモードネットワーク」（Raichle ら 2001）が、心のさまよい（Mason ら 2007）や自発的思考（Christoff ら 2016）と結びつけられ、ビーティら（2016）は創造的思考の最中にこのネットワークと評価を担う実行制御のネットワークが「協調」して働くことを示しました。
+  ぼんやりだけでも、集中だけでもなく、行き来が鍵です。</p>
+
+  <div class="caveat"><b>言い過ぎに注意：</b>「軽い作業中に心をさまよわせると創造性が上がる」という Baird ら（2012）の有名な結果は、443名の追試（Murray ら 2024）で再現しませんでした。日本の洞察研究（開・鈴木 1998、寺井ら 2005）が示すように、ひらめきは待って降りてくるものではなく、うまくいかない証拠に気づいて、思い込みの枠が段階的に緩む過程です。準備なしのぼんやりは、ただのぼんやりです。</div>
+
+  <h3>通知は触らなくても注意を削る</h3>
+  <p>最後に、通知のない環境について。
+  ストサートら（2015）は、注意を持続させる課題の最中に、実験と知らせないまま着信やメッセージの通知を送りました。
+  端末に触れなくても、通知を受けただけで成績が有意に下がり、その大きさは実際に通話やメッセージを使っているときの妨害と同程度でした。
+  ルロワ（2009）は、前の仕事を終えないまま切り替えると「注意の残り」が生じ、次の仕事の成績が下がることを示しています。
+  モンセル（2003）の総説が整理する課題切り替えのコストや、マークら（2008）が示した「中断されると速く働いて埋め合わせ、ストレスと努力感で代償を払う」という結果も、同じ方向です。
+  <span class="em">紙の上に通知は来ない。</span>私が紙で感じた「途切れなさ」の正体は、ここにありました。</p>
+
+  <div class="caveat"><b>これは言わないことにしました：</b>「スマホが机の上にあるだけで作業記憶の容量が減る」（Ward ら 2017）は、事前登録の直接追試（Ruiz Pardo &amp; Minda 2022）で再現せず、別の研究（Hartmann ら 2020）でも効果は見られませんでした。「メディアを同時に使う人は注意の制御が弱い」（Ophir ら 2009）も、追試とメタ分析（Wiradhany &amp; Nieuwenstein 2017）で関連は弱く不安定でした。語れるのは「通知が来る環境」と「中断される働き方」の害までです。端末の存在そのものや、使う人の脳を語るのは、証拠が足りません。</div>
+
+  <p>3つ目の問いへの答えを、順番に並べます。
+  先に枠を置く。意味を問い、自分で生成し、2つを比べて共通点を書く。思い出す。途中の努力感を続けてよいと分かっておく。
+  そして、準備のあとに、通知のない休止を置く。
+  この順序の各段に、再現性のある根拠が少なくとも1本ずつあります。</p>
+
+  <h2 id="s5"><span class="n">5</span>紙と画面 手書きとタイピング 自分の頭と生成AI</h2>
+  <div class="h2sub">4つ目の問い 何が本当に違うのか</div>
+
+  <img class="motif" src="img/nf_book.webp" alt="開いた紙の本と黄色いしおりの水彩画" loading="lazy">
+
+  <p>いよいよ本題です。紙と画面で、手書きとタイピングで、頭の中の出来事は違うのか。
+  ここは、感覚と証拠が食い違う場所でもあるので、ていねいに行きます。</p>
+
+  <h3>「手書きのほうが覚える」は追試で崩れた</h3>
+  <p>2014年、ミュラーとオッペンハイマーの「ペンはキーボードより強し」という論文が話題になりました。
+  講義動画のノートをノートPCで取った学生は、手書きの学生より概念問題の成績が低く、PCの学生は講義を逐語的に書き写す傾向が強かった、という結果です。
+  ところが、同じ材料と手順で行われた直接追試（Morehead ら 2019、Urry ら 2021）では、<span class="em">手書きとPCの成績差は再現されず、ノートを取らない群とも差がありませんでした</span>。
+  再現したのは「PCは語数が多く、逐語率が高い」という書き方の違いだけです。
+  ブイら（2013）は、PCで大量に書き写しても、あとで見直すことと組み合わせれば遅延テストで有利になり得ることを示しています。
+  ヤンセンら（2017）の総説がまとめるように、ノートの効果は媒体ではなく、取り方と負荷で決まります。</p>
+
+  <p>日本語には、もうひとつの事情があります。
+  海﨑ら（2023）は大学生に定型文を1分間、手書きとタイピングで書かせました。
+  77%の学生は「タイピングのほうが速い」と予想しましたが、<span class="em">実際には手書きのほうが1分間に書けた文字数が多かった</span>。
+  かな漢字変換を挟む日本語では、「タイピングは速いから逐語になる」という海外の前提が、そのまま成り立ちません。</p>
+
+  <h3>脳の活動は違う ただし成績まで示した研究は少ない</h3>
+  <p>手書きのときに脳の運動・感覚・記憶に関わる回路が広く働くことは、複数の研究が一貫して示しています（Longcamp ら 2006、2008、Ose Askvik ら 2020、Van der Weel &amp; Van der Meer 2024）。
+  なかでも東京大学の梅島・酒井ら（2021）の研究は、日本の文脈に直結します。
+  18〜29歳の48名を、予定を「紙の手帳」「タブレットに手書き」「スマートフォンに入力」で書き込む3群に分け、1時間後にfMRIの中で予定を思い出させました。
+  書き込みにかかった時間は紙群がいちばん短く、易しい問題の正答率も紙群が高い。
+  思い出すときの脳活動は全群で海馬や言語に関わる前頭野などに見られましたが、<span class="em">紙群でそれらが有意に高かった</span>。
+  タブレット群も手書きなので、差は「紙という物理的な媒体が持つ手がかりの豊かさ」に帰属されています。厚みや位置、ページの手ざわりが、思い出す手がかりになっている可能性です。</p>
+
+  <div class="caveat"><b>ここも言い過ぎに注意：</b>脳活動の研究で、行動の成績まで示したのは「新しい文字の形の記憶」（Longcamp）と「紙の手帳に書いた予定の再認」（Umejima）です。学校の学習全般への効果はまだ検証されていません。「脳が活性化している」と「学力が上がる」は同じではない。この読み物では、その2つを区別して書きます。</div>
+
+  <h3>紙の読みはわずかに有利 ただし条件で差は消える</h3>
+  <p>「紙の本のほうが賢くなる」の部分です。
+  読解については、大きなメタ分析が3本あります。
+  デルガドら（2018）は17万人あまりのデータで、画面で読むと紙より読解がわずかに低い（Hedges g = −0.21）と報告しました。
+  クリントン（2019）は無作為割付の実験だけに絞って g = −0.25。コングら（2018）も紙が有意に良い。
+  ただし、その差は小さく、<span class="em">条件で消えます</span>。
+  物語文では差がなく、説明文で差が出る（Delgado、Clinton。説明文で g = −0.32、物語文で −0.04）。
+  時間制限があると画面がより不利になり、自分のペースで読めるときは差が縮む。</p>
+
+  <p>差の正体は何か。アッカーマンとゴールドスミス（2011）の実験が答えています。
+  学習時間を固定すると、紙と画面で成績に差はありません。
+  自分で時間を決めさせると、画面のほうが成績が低くなった。
+  画面では自分の理解を過大に見積もり、早く切り上げてしまう。
+  <span class="em">画面で「読めない」のではなく、「分かったつもりで切り上げる」</span>。差は認知ではなく、メタ認知にある、というのが彼らの結論です。
+  クリントンのメタ分析でも、画面のほうが理解の見積もりが甘い傾向が確認されています。</p>
+
+  <p>小学生ではどうか。ノルウェーの10歳児1,139名に同じ読解テストを紙と画面の両方で受けさせた研究（Støle ら 2020）では、平均して画面の得点が低く、約3分の1の子どもが紙ではっきり良い成績でした。
+  意外なことに、画面の不利がいちばん大きかったのは成績上位の女子でした。
+  余暇のデジタル読書と読解力の関係を47万人分まとめたアルタムラら（2023）では、全体の相関はごく小さな正でしたが、<span class="em">小学校・中学校では負、高校・大学では正</span>でした。相関なので因果は言えませんが、低学年ほど紙で読む時間を残す根拠にはなります。</p>
+
+  <h3>紙の強みの一部は理解ではなく操作の軽さ</h3>
+  <p>富士ゼロックスにいた柴田博仁と大村賢悟の一連の研究は、日本でこのテーマを実測した貴重な仕事です。
+  複数の文書を見比べながら校正する課題では、紙のほうが時間が23%短く、誤りの発見率が11.5%高かった（2010）。
+  脚注を行き来しながら読む課題では、紙のほうが速く読めたが、<span class="em">再認テストの成績には差がなかった</span>（2011）。
+  彼らの主張は「紙は読解力を上げる」ではなく「紙は操作が軽い」です。両手で同時に扱える、見ずに操作できる、直接の手ざわりがある。
+  教材を見比べる・行き来する・書き込む場面では紙、一本道で読む・検索する・共有する場面では画面、という使い分けの根拠になります。</p>
+
+  <h3>生成AIは「答えを渡す設計」で学びを奪う</h3>
+  <p>最後に、自分の頭と生成AIです。
+  リスコとギルバート（2016）は、頭の負担を減らすために外の道具を使うことを「認知的オフローディング」と名づけ、外に預けた分は内側で処理されないこと、預けるかどうかの判断が自分の能力についての見積もりに依存することを整理しました。
+  フィッシャーら（2015）は、インターネットで説明を検索した人が、検索と無関係な事柄についても「自分は知っている」と評価を上げてしまうことを9つの実験で示しています。
+  <span class="em">情報にアクセスできることと、自分が理解していることを、人は混同する</span>。</p>
+
+  <p>生成AIについて、信頼できる大規模な実験はまだ少ないのですが、1本あります。
+  バスタニら（2025、PNAS）はトルコの高校で約1,000名を無作為に分け、数学の練習で「ChatGPTをそのまま使う群」「答えを出さずヒントだけ出すよう教師が設計した群」「AIなしの群」を比べました。
+  AIを使っている最中の成績は、そのまま使う群で48%、ヒント設計の群で127%上がりました。
+  ところが、<span class="em">AIを取り上げた試験では、そのまま使う群はAIなしの群より17%低かった</span>。
+  ヒント設計の群では、この悪化がほぼ消えていました。
+  シュタドラーら（2024）の実験（91名）でも、ChatGPTを使った群は検索エンジンの群より認知負荷が低かった一方で、論証の質が低くなっていました。楽になる分、深さが落ちる。</p>
+
+  <div class="caveat"><b>証拠の強さを分けて読む：</b>報道でよく引かれるMITの「Your Brain on ChatGPT」（Kosmyna ら 2025）は査読前のプレプリントで、54名（最終セッションは18名）の脳波研究です。「AIを使うと批判的思考が下がる」（Gerlich 2025）は自己報告の相関研究で、因果は言えません。「Google効果」（Sparrow ら 2011）の看板だった実験は追試で再現していません。<b>「AIで脳が衰える」と断定できる証拠は、まだありません。</b>言えるのは、「答えを渡す設計だと、学習が起きない条件がある」までです。</div>
+
+  <p>4つ目の問いへの答えは、二択ではなく地図になります。
+  覚える・文字を身につける・じっくり読む場面は、手書きと紙が有利な条件がそろいやすい。
+  大量に書く・検索する・共有する・見直す場面は、デジタルが有利。
+  生成AIは、答えを出させない設計のときだけ、学びの味方になる。
+  <span class="em">「いまの活動で、子どもの頭の中に何を起こしたいか」</span>で選ぶ。それが、論文110本あまりが支えてくれる範囲です。</p>
+
+  <h2 id="s6"><span class="n">6</span>教室へ ワークシートとノート</h2>
+  <div class="h2sub">5つ目の問い 子どもがノートを書かない理由と ワークシートに何を書かせるか</div>
+
+  <img class="motif" src="img/nf_note.webp" alt="ノートに鉛筆で書く子どもの手の水彩画" loading="lazy">
+
+  <p>ここまでの5章を、教室に持ち帰ります。
+  私がいちばん気になっていたのは、<span class="em">子どもがノートを書かない</span>ことでした。
+  思考を整理するための道具のはずなのに、なぜ書かないのか。論文は、かなりはっきりした答えをくれました。</p>
+
+  <h3>ノートには2つの働きがある</h3>
+  <p>ディヴェスタとグレイ（1972）以来、ノートの働きは2つに分けて研究されてきました。
+  書く行為そのものが覚えるのを助ける「符号化」と、あとで見直すための「外部保存」です。
+  小林敬一（2005）の57本のメタ分析では、符号化だけの効果は「正だが小さい」。
+  翌年の33本のメタ分析（2006）では、「取って、見直す」を合わせたときに効果は大きくなり、枠組みや教師のノートを与える介入は学校段階が低い学習者ほど効いていました。
+  <span class="em">見直さないノートは、働きの半分しか使っていない</span>。
+  藤木ら（2022）の調査では、小学4年生も6年生も、ノートを見直す頻度は「月1回から週1回」でした。</p>
+
+  <h3>書かない最大の理由は書く運動が作業台を食い尽くすから</h3>
+  <p>1章の作業台の話が、ここで効いてきます。
+  ブルダンとファヨル（1994）は、子どもと大人に単語の列を「口で言って」または「書いて」再生させました。
+  大人は書いても成績が落ちませんが、<span class="em">子どもは書くと、口で言うより記憶が落ちた</span>。
+  書く遅さだけでは説明できず、字の形と表記を作り出す作業そのものが容量を食っていました。
+  オリーブとケロッグ（2002）は、書きながら同時に内容を考えられるのは、慣れた書体で書く大人だけで、子どもと、不慣れな書体で書く大人は、書く運動が注意を使い切っていることを示しました。
+  グラハムら（1997）の300名の調査でも、手書きの流暢さは低学年だけでなく高学年でも作文の量と質を制約し、メドウェルら（2009）は10〜11歳でも一定の割合の子が手書きの自動化の低さのために作文を妨げられていると報告しています。
+  大学生ですら、ノートの質を予測したのは「書く速さ」だけでした（Peverly ら 2007）。</p>
+
+  <p>日本語のデータもあります。河野・平林・中邑（2008）は石川県の小学生5,400名あまりに5分間の視写をさせ、1分間に書ける字数が学年とともに直線的に増えることを示しました。
+  目安は<span class="em">小1で約13字、小4で約25字、小6で約32字</span>です。
+  平林ら（2010）がデジタルペンで測ると、漢字ではペンが「止まっている時間」が小5になるまで長く、字の形と読みを結びつける処理に時間がかかっていました。
+  先生が1分間に話す言葉の量を思えば、この速さで「聞きながら書く」がどれだけ無理な注文か分かります。
+  <span class="em">書けない子は怠けているのではなく、容量が足りていない。</span>
+  ヤンセンら（2017）の総説が言うとおり、書く負荷が大きい人・場面では、ノートの符号化効果は消えます。</p>
+
+  <h3>写せていないのは先生が「大事」と強調したところ</h3>
+  <p>藤木・山本・中條（2022）は、算数の1時間の板書と子どものノートを照合しました。
+  「めあて・まとめ」は4年生も6年生も8割以上写せています。
+  ところが、教師が色や囲みで強調した「重要箇所」の再現度は、<span class="em">4年生で4割台、6年生では3割弱</span>でした。
+  作図の単元では、図を写すのに手一杯で、ほかの情報に注意が向かない。
+  中村・桐生（2025）の理科授業の観察でも、板書の再現度は5〜6割で、学年が上がっても伸びていませんでした。
+  「強調してある＝書くべきところ」は、教えなければ伝わらないのです。
+  そして魚崎（2016）が大学生で示したように、配布資料がないとノートの量は増えますが、それはスライドの書き写しで、授業後に説明できる情報の量は変わりません。
+  <span class="em">たくさん写しても、理解は深まらない。</span>効いていたのは、自分で選んで書いた情報でした（魚崎 2014）。</p>
+
+  <h3>ワークシートは全部書かせるでも全部印刷するでもなく部分的に空ける</h3>
+  <p>ワークシートに何を書かせるか。いちばん直接の答えは、片山とロビンソン（2000）です。
+  大学生117名に、章ほどの長さの文章を「完成した整理図」「部分的に空いた整理図」「骨組みだけの整理図」で学ばせて、2日後に応用テストをしました。
+  <span class="em">部分的に空いたものが、完成版よりも、骨組みだけよりも良かった</span>。空欄は多すぎても少なすぎてもだめでした。
+  要点の一部を空欄にした「ガイド付きノート」のメタ分析（Konrad ら 2009）でも、学齢期の子どもで特に効果がありました。
+  ロビンソンとキウラ（1995）は、視覚的な配置そのものが論拠になる（visual argument）と述べています。表や矢印で関係を見せる整理図は、箇条書きより、関係の学習と応用で優れていました。</p>
+
+  <p>手順を教えるなら、認知負荷理論の処方が使えます。
+  スウェラーとクーパー（1985）の例題学習は、初学者の時間と誤りを減らしました。
+  ファン・メリエンボア（1990）は、一から書かせるより「途中まで出来たものを完成させる」ほうが力が伸び、脱落も少ないことを示しています。
+  日本の小学校でも、野村・小倉（2019）が4年生の理科「ものの温度と体積」で、レポートの書き方の枠を入れたワークシートを6回使い、少しずつ枠を外しました。
+  科学的な表現を選べる問題の正答率は、実験群が66%から81%に上がり、統制群は50%から47%でした。
+  チャンドラーとスウェラー（1992）の「注意の分割」の知見も、紙面に直結します。
+  図と説明が離れていると、頭の中で結びつける作業が余計な負荷になる。<span class="em">書き込む欄は、見るもののすぐ横に置く。</span></p>
+
+  <div class="caveat"><b>ただし、できる子には同じ足場が邪魔になる：</b>カリュガら（2003）の「熟達逆転効果」は、初学者に効く支援（例題・統合した図・詳しい説明）が、熟達が進んだ学習者には効かなくなり、逆効果にもなることを示しています。同じ学級に、足場がまだ要る子と、もう外してよい子が同時にいます。支援の量を子どもが選べる形にする理由は、ここにあります。</div>
+
+  <h3>問い方で書く中身が変わる</h3>
+  <p>鈴木ら（2022）は小学校の家庭科で、2種類のワークシートを比べました。
+  読み取りの手順を組み込んだワークシートのほうが、記述が具体的で、相手に提案する形になり、語彙も広がっていました。
+  「自由に書こう」は、容量のある子だけが書ける欄になります。
+  そして田中ら（2021）が大学生で示したように、自己効力感の低い学習者は、有効だと分かっていても手間のかかる方略（考えを外に出す）を使いません。
+  4章で見た佐藤（1998）の結果と同じです。
+  <span class="em">ノート指導は「全部書け」ではなく「ここだけは書く」を決めて、コストを下げる側に立つ</span>ほうが、証拠に合っています。</p>
+
+  <h3>1人1台端末の時代に</h3>
+  <p>端末についても、ひとつだけ。
+  木村（2022）が1人1台端末の導入直後の小学校で行った調査では、手書きを選ぶ子ほど端末に否定的で、その原因は操作のつまずきでした。
+  同論文が引く文部科学省の2015年の調査では、小学5年生のキーボード入力は平均で1分間に5.9文字。河野らの視写の約29字と並べると、<span class="em">導入初期のキーボードは、手書きよりはるかに遅い</span>。
+  一方で、書くことに困難のある子にとって、端末は「書けない」を「書ける」に変える道具になります（村上・齊藤 2023。私自身も5名の事例を報告しました。外﨑・立石 2024）。
+  手書きかキーボードかという二択より、<span class="em">写す量を減らして、選んで書く量を確保する</span>という設計のほうに、根拠がそろっています。</p>
+
+  <div class="checklist">
+    <h3>ワークシートとノートの手立て（研究から導いたもの）</h3>
+    <ul>
+      <li><b>書かせるもの</b>：めあてとまとめ（すでに8割書ける）／先生が強調した語や数値（今は半分しか書けていない。「ここは書く」と言葉で言う）／図の一部（全部は描かせない）／自分の言葉での言い換えや選択（符号化が効く欄）</li>
+      <li><b>書かせないもの</b>：板書の丸写し／長い問題文／図の全体／手順の全部（容量を食うだけで、符号化の効果は出ない）</li>
+      <li><b>与えるもの</b>：構造（表・矢印・枠）／例題を1つ／書き出しの型。慣れたら外す。外す時期は子どもによって違う</li>
+      <li><b>配置</b>：書く欄は見るもののすぐ横に。ページをまたがせない</li>
+      <li><b>見直す時間</b>：ノートは「取って、見直す」で働きが揃う。見直す場面を授業の中に置く</li>
+      <li><b>問い方</b>：「自由に書こう」より、読み取りの手順や観点を組み込んだ問いに</li>
+      <li><b>2つ並べる</b>：関係づけさせたいときは、事例を2つ並べて「同じところ」を自分の言葉で書かせる（4章）</li>
+    </ul>
+  </div>
+
+  <h2 id="s7"><span class="n">7</span>まとめ 5つの問いへの答え</h2>
+  <div class="h2sub">感覚は、おおむね正しかった ただし条件つきで</div>
+
+  <div class="tbwrap"><table class="tb">
+    <tr><th>問い</th><th>論文が支えてくれた答え</th></tr>
+    <tr><td>1 言葉の認識</td><td>文字の認識は、見る・音にする・手で書くの3つが絡み合ってできている。文字を見るだけで書くための運動野が動く。文字の形を初めて覚える段階では、自分の手で書く経験が字形の認識と読みの回路の立ち上がりを助ける（対象と目的は限定つき）</td></tr>
+    <tr><td>2 思考の整理</td><td>作業台には約4つしか載らない。紙に出すと、台が空くだけでなく、出したものが次の操作を制約し、意図しなかった関係を返してくる。自分の言葉で書く・描く・説明する活動は学びを高める（平均効果量0.30）。ただし型と観点を渡さないと自発的には使われない</td></tr>
+    <tr><td>3 関係づけ</td><td>先に枠を置く。意味を問い、自分で生み出し、2つを比べて共通点を書く。思い出す。途中の努力感は結びつきを作っている途中の信号。準備のあとに置く休止は効く。通知は触らなくても注意を削る</td></tr>
+    <tr><td>4 媒体の違い</td><td>「手書きのほうが覚える」は追試で崩れた。効くのは書き方と見直し。紙の読みはわずかに有利だが、正体は「画面では分かったつもりで切り上げる」というメタ認知の差。紙の強みの一部は操作の軽さ。生成AIは答えを渡す設計で学びを奪い、ヒント設計なら防げる</td></tr>
+    <tr><td>5 教室へ</td><td>子どもがノートを書かないのは、書く運動が作業台を食い尽くすから。写せていないのは先生が強調したところ。ワークシートは全部書かせるでも全部印刷するでもなく、部分的に空ける。見るもののすぐ横に書く欄を置き、見直す時間を授業の中に置く</td></tr>
+  </table></div>
+
+  <p>私の3時間に戻ります。
+  紙とペンで考えて頭が整ったのは、作業台から下ろす場所があり、下ろしたものが返事をしてきて、通知に途切れられず、乗り越えられる範囲の困難が続いていたからでした。
+  「脳が汗をかく」感覚は、おおむね本物です。
+  ただし、それは<span class="em">私に準備があり、私の手が自動的に字を書けるから</span>成り立っていました。
+  同じことを、1分間に25字しか書けない4年生に、そのまま渡すことはできません。
+  だから教室でやることは、「紙に戻す」ではなく、<span class="em">子どもの作業台に何を載せ、何を下ろすかを、こちらが設計する</span>ことになります。</p>
+
+  <div class="pull"><q>紙に戻すのではなく 作業台に何を載せて何を下ろすかを設計する</q><cite>それが、論文110本あまりを読んで残った一文です</cite></div>
+
+  <h3>私が明日やること</h3>
+  <p>ひとつだけ決めました。板書で色をつけたところで、「ここは書く」と口で言う。
+  藤木らの調査で、強調したところの再現度が半分以下だったからです。
+  それから、ワークシートを作るときは、空欄を「要点の語・数値・図の一部」に絞って、表や矢印はこちらで印刷しておく。
+  そして子どもたちにも、この読み物の4年生版を渡します。
+  自分の頭の中に作業台があって、それが狭いこと、紙はそこから下ろす場所だということを、子ども自身が知っていてほしいからです。</p>
+
+  <div class="end">
+    <p><b>この読み物とセットで使えるもの</b></p>
+    <div class="grid2">
+      <a href="kodomo.html">4年生向けの版<small>同じ内容を、小学4年生が読める言葉で。教室で配って読めます</small></a>
+      <a href="../../tools/note-prints/">ノートプリント集<small>方眼・マス・作文。印刷して使える全7種</small></a>
+      <a href="../../shien/yomimono/">しんどさの正体<small>テストで手が止まる子を4つの部屋で見る。この読み物の姉妹編</small></a>
+      <a href="../../shien/">支援カード<small>自分を助ける合言葉のカード全88枚</small></a>
+      <a href="../../prints/sansu/">算数プリント（式と言葉）<small>支援の量を子どもが選ぶ4レベル。6章の「足場を選べる形」の実物</small></a>
+      <a href="../../">School Stock 棚トップ<small>先生のための無料の道具と教材の棚</small></a>
+    </div>
+    <p class="note">この読み物は、通常学級の担任としての実践と、下記の研究を土台に書いています。
+    論文の要約は、抄録と本文で確認できた範囲で書き、人数や効果量が確認できなかったものは数字を書いていません。
+    追試で再現しなかった研究は、そのことを本文に明記しました。
+    研究の読み違いがあれば、noteやXでお知らせください。2026年9月15日。</p>
+  </div>
+
+  <h2 id="refs">参考にした研究</h2>
+  <p class="note">著者・年・題名・掲載誌は、DOIまたはJ-STAGE・CiNiiの書誌で確認したものだけを載せています。リンクはDOIか論文ページです。</p>
+
+  <div class="refh">1 頭の中の作業台</div>
+  <ul class="refs">
+    <li>Miller, G. A. (1956). The magical number seven, plus or minus two. <i>Psychological Review</i>, 63(2), 81–97. <a href="https://doi.org/10.1037/h0043158" target="_blank" rel="noopener">DOI</a></li>
+    <li>Cowan, N. (2001). The magical number 4 in short-term memory. <i>Behavioral and Brain Sciences</i>, 24(1), 87–114. <a href="https://doi.org/10.1017/S0140525X01003922" target="_blank" rel="noopener">DOI</a></li>
+    <li>Baddeley, A. (2000). The episodic buffer: a new component of working memory? <i>Trends in Cognitive Sciences</i>, 4(11), 417–423. <a href="https://doi.org/10.1016/S1364-6613(00)01538-2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Baddeley, A. (2012). Working memory: Theories, models, and controversies. <i>Annual Review of Psychology</i>, 63, 1–29. <a href="https://doi.org/10.1146/annurev-psych-120710-100422" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sweller, J. (1988). Cognitive load during problem solving. <i>Cognitive Science</i>, 12(2), 257–285. <a href="https://doi.org/10.1207/s15516709cog1202_4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sweller, J., van Merriënboer, J. J. G., &amp; Paas, F. (1998). Cognitive architecture and instructional design. <i>Educational Psychology Review</i>, 10(3), 251–296. <a href="https://doi.org/10.1023/A:1022193728205" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sweller, J., van Merriënboer, J. J. G., &amp; Paas, F. (2019). Cognitive architecture and instructional design: 20 years later. <i>Educational Psychology Review</i>, 31(2), 261–292. <a href="https://doi.org/10.1007/s10648-019-09465-5" target="_blank" rel="noopener">DOI</a></li>
+  </ul>
+
+  <div class="refh">2 文字の認識</div>
+  <ul class="refs">
+    <li>Coltheart, M., Rastle, K., Perry, C., Langdon, R., &amp; Ziegler, J. (2001). DRC: A dual route cascaded model of visual word recognition and reading aloud. <i>Psychological Review</i>, 108(1), 204–256. <a href="https://doi.org/10.1037/0033-295X.108.1.204" target="_blank" rel="noopener">DOI</a></li>
+    <li>Seidenberg, M. S., &amp; McClelland, J. L. (1989). A distributed, developmental model of word recognition and naming. <i>Psychological Review</i>, 96(4), 523–568. <a href="https://doi.org/10.1037/0033-295X.96.4.523" target="_blank" rel="noopener">DOI</a></li>
+    <li>Cohen, L., Dehaene, S., et al. (2000). The visual word form area. <i>Brain</i>, 123(2), 291–307. <a href="https://doi.org/10.1093/brain/123.2.291" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dehaene, S., &amp; Cohen, L. (2007). Cultural recycling of cortical maps. <i>Neuron</i>, 56(2), 384–398. <a href="https://doi.org/10.1016/j.neuron.2007.10.004" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dehaene, S., &amp; Cohen, L. (2011). The unique role of the visual word form area in reading. <i>Trends in Cognitive Sciences</i>, 15(6), 254–262. <a href="https://doi.org/10.1016/j.tics.2011.04.003" target="_blank" rel="noopener">DOI</a></li>
+    <li>Iwata, M. (1984). Kanji versus Kana: neuropsychological correlates of the Japanese writing system. <i>Trends in Neurosciences</i>, 7(8), 290–293. <a href="https://doi.org/10.1016/S0166-2236(84)80198-8" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sakurai, Y., Momose, T., Iwata, M., et al. (2000). Different cortical activity in reading of Kanji words, Kana words and Kana nonwords. <i>Cognitive Brain Research</i>, 9(1), 111–115. <a href="https://doi.org/10.1016/S0926-6410(99)00052-X" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sakurai, Y. (2004). Varieties of alexia from fusiform, posterior inferior temporal and posterior occipital gyrus lesions. <i>Behavioural Neurology</i>, 15(1-2), 35–50. <a href="https://doi.org/10.1155/2004/305194" target="_blank" rel="noopener">DOI</a></li>
+    <li>Nakamura, K., Dehaene, S., Jobert, A., Le Bihan, D., &amp; Kouider, S. (2005). Subliminal convergence of Kanji and Kana words. <i>Journal of Cognitive Neuroscience</i>, 17(6), 954–968. <a href="https://doi.org/10.1162/0898929054021166" target="_blank" rel="noopener">DOI</a></li>
+    <li>Chen, H.-C., Yamauchi, T., Tamaoka, K., &amp; Vaid, J. (2007). Homophonic and semantic priming of Japanese Kanji words. <i>Psychonomic Bulletin &amp; Review</i>, 14(1), 64–69. <a href="https://doi.org/10.3758/BF03194029" target="_blank" rel="noopener">DOI</a></li>
+    <li>Morita, A., &amp; Tamaoka, K. (2002). Semantic involvement in the lexical and sentence processing of Japanese kanji. <i>Brain and Language</i>, 82(1), 54–64. <a href="https://doi.org/10.1016/S0093-934X(02)00006-8" target="_blank" rel="noopener">DOI</a></li>
+    <li>佐久間尚子・伊藤元信・笹沼澄子（1989）プライミング・パラダイムによる漢字単語の認知ユニットの検討. 心理学研究, 60(1), 1–8. <a href="https://doi.org/10.4992/jjpsy.60.1" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>水野りか（1997）漢字表記語の音韻処理自動化仮説の検証. 心理学研究, 68(1), 1–8. <a href="https://doi.org/10.4992/jjpsy.68.1" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>楠瀬悠・中山真里子・日野泰志（2013）漢字熟語におけるマスク下の同音語プライミング効果. 認知心理学研究, 11(1), 11–19. <a href="https://doi.org/10.5265/jcogpsy.11.11" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>川上正浩（2002）漢字二字熟語の類似語数と構成文字の出現頻度が語彙判断課題に及ぼす効果. 心理学研究, 73(4), 346–351. <a href="https://doi.org/10.4992/jjpsy.73.346" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>Baddeley, A. (2003). Working memory: looking back and looking forward. <i>Nature Reviews Neuroscience</i>, 4(10), 829–839. <a href="https://doi.org/10.1038/nrn1201" target="_blank" rel="noopener">DOI</a></li>
+    <li>Frost, R. (1998). Toward a strong phonological theory of visual word recognition. <i>Psychological Bulletin</i>, 123(1), 71–99. <a href="https://doi.org/10.1037/0033-2909.123.1.71" target="_blank" rel="noopener">DOI</a></li>
+    <li>Rastle, K., &amp; Brysbaert, M. (2006). Masked phonological priming effects in English. <i>Cognitive Psychology</i>, 53(2), 97–145. <a href="https://doi.org/10.1016/j.cogpsych.2006.01.002" target="_blank" rel="noopener">DOI</a></li>
+    <li>Longcamp, M., Anton, J.-L., Roth, M., &amp; Velay, J.-L. (2003). Visual presentation of single letters activates a premotor area involved in writing. <i>NeuroImage</i>, 19(4), 1492–1500. <a href="https://doi.org/10.1016/S1053-8119(03)00088-0" target="_blank" rel="noopener">DOI</a></li>
+    <li>James, K. H., &amp; Gauthier, I. (2006). Letter processing automatically recruits a sensory–motor brain network. <i>Neuropsychologia</i>, 44(14), 2937–2949. <a href="https://doi.org/10.1016/j.neuropsychologia.2006.06.026" target="_blank" rel="noopener">DOI</a></li>
+    <li>Longcamp, M., Zerbato-Poudou, M.-T., &amp; Velay, J.-L. (2005). The influence of writing practice on letter recognition in preschool children. <i>Acta Psychologica</i>, 119(1), 67–79. <a href="https://doi.org/10.1016/j.actpsy.2004.10.019" target="_blank" rel="noopener">DOI</a></li>
+    <li>Longcamp, M., Boucard, C., Gilhodes, J.-C., &amp; Velay, J.-L. (2006). Remembering the orientation of newly learned characters depends on the associated writing knowledge. <i>Human Movement Science</i>, 25(4–5), 646–656. <a href="https://doi.org/10.1016/j.humov.2006.07.007" target="_blank" rel="noopener">DOI</a></li>
+    <li>Longcamp, M., Boucard, C., Gilhodes, J.-C., et al. (2008). Learning through hand- or typewriting influences visual recognition of new graphic shapes. <i>Journal of Cognitive Neuroscience</i>, 20(5), 802–815. <a href="https://doi.org/10.1162/jocn.2008.20504" target="_blank" rel="noopener">DOI</a></li>
+    <li>James, K. H., &amp; Engelhardt, L. (2012). The effects of handwriting experience on functional brain development in pre-literate children. <i>Trends in Neuroscience and Education</i>, 1(1), 32–42. <a href="https://doi.org/10.1016/j.tine.2012.08.001" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kiefer, M., Schuler, S., Mayer, C., et al. (2015). Handwriting or typewriting? <i>Advances in Cognitive Psychology</i>, 11(4), 136–146. <a href="https://doi.org/10.5709/acp-0178-7" target="_blank" rel="noopener">DOI</a></li>
+    <li>Vinci-Booher, S., &amp; James, K. H. (2020). Visual experiences during letter production contribute to the development of the neural systems supporting letter perception. <i>Developmental Science</i>, 23(5), e12965. <a href="https://doi.org/10.1111/desc.12965" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ihara, A. S., Nakajima, K., Kake, A., Ishimaru, K., Osugi, K., &amp; Naruse, Y. (2021). Advantage of handwriting over typing on learning words: Evidence from an N400 event-related potential index. <i>Frontiers in Human Neuroscience</i>, 15, 679191. <a href="https://doi.org/10.3389/fnhum.2021.679191" target="_blank" rel="noopener">DOI</a></li>
+    <li>Otsuka, S., &amp; Murai, T. (2024). The unique contribution of handwriting accuracy to literacy skills in Japanese adolescents. <i>Reading and Writing</i>, 37, 1183–1208. <a href="https://doi.org/10.1007/s11145-023-10433-3" target="_blank" rel="noopener">DOI</a></li>
+  </ul>
+
+  <div class="refh">3 外化・スケッチ・書いて学ぶ</div>
+  <ul class="refs">
+    <li>Kirsh, D., &amp; Maglio, P. (1994). On distinguishing epistemic from pragmatic action. <i>Cognitive Science</i>, 18(4), 513–549. <a href="https://doi.org/10.1207/s15516709cog1804_1" target="_blank" rel="noopener">DOI</a></li>
+    <li>Zhang, J., &amp; Norman, D. A. (1994). Representations in distributed cognitive tasks. <i>Cognitive Science</i>, 18(1), 87–122. <a href="https://doi.org/10.1207/s15516709cog1801_3" target="_blank" rel="noopener">DOI</a></li>
+    <li>Hutchins, E. (1995). How a cockpit remembers its speeds. <i>Cognitive Science</i>, 19(3), 265–288. <a href="https://doi.org/10.1207/s15516709cog1903_1" target="_blank" rel="noopener">DOI</a></li>
+    <li>Clark, A., &amp; Chalmers, D. (1998). The extended mind. <i>Analysis</i>, 58(1), 7–19. <a href="https://doi.org/10.1093/analys/58.1.7" target="_blank" rel="noopener">DOI</a></li>
+    <li>Tversky, B. (2011). Visualizing thought. <i>Topics in Cognitive Science</i>, 3(3), 499–535. <a href="https://doi.org/10.1111/j.1756-8765.2010.01113.x" target="_blank" rel="noopener">DOI</a></li>
+    <li>Suwa, M., &amp; Tversky, B. (1997). What do architects and students perceive in their design sketches? <i>Design Studies</i>, 18(4), 385–403. <a href="https://doi.org/10.1016/S0142-694X(97)00008-2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Goldschmidt, G. (1991). The dialectics of sketching. <i>Creativity Research Journal</i>, 4(2), 123–143. <a href="https://doi.org/10.1080/10400419109534381" target="_blank" rel="noopener">DOI</a></li>
+    <li>Schön, D. A., &amp; Wiggins, G. (1992). Kinds of seeing and their functions in designing. <i>Design Studies</i>, 13(2), 135–156. <a href="https://doi.org/10.1016/0142-694X(92)90268-F" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ainsworth, S., Prain, V., &amp; Tytler, R. (2011). Drawing to learn in science. <i>Science</i>, 333(6046), 1096–1097. <a href="https://doi.org/10.1126/science.1204153" target="_blank" rel="noopener">DOI</a></li>
+    <li>Fiorella, L., &amp; Mayer, R. E. (2016). Eight ways to promote generative learning. <i>Educational Psychology Review</i>, 28(4), 717–741. <a href="https://doi.org/10.1007/s10648-015-9348-9" target="_blank" rel="noopener">DOI</a></li>
+    <li>Chi, M. T. H., &amp; Wylie, R. (2014). The ICAP framework. <i>Educational Psychologist</i>, 49(4), 219–243. <a href="https://doi.org/10.1080/00461520.2014.965823" target="_blank" rel="noopener">DOI</a></li>
+    <li>Chi, M. T. H., Bassok, M., Lewis, M. W., Reimann, P., &amp; Glaser, R. (1989). Self-explanations. <i>Cognitive Science</i>, 13(2), 145–182. <a href="https://doi.org/10.1207/s15516709cog1302_1" target="_blank" rel="noopener">DOI</a></li>
+    <li>Chi, M. T. H., de Leeuw, N., Chiu, M.-H., &amp; LaVancher, C. (1994). Eliciting self-explanations improves understanding. <i>Cognitive Science</i>, 18(3), 439–477. <a href="https://doi.org/10.1207/s15516709cog1803_3" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bangert-Drowns, R. L., Hurley, M. M., &amp; Wilkinson, B. (2004). The effects of school-based writing-to-learn interventions on academic achievement. <i>Review of Educational Research</i>, 74(1), 29–58. <a href="https://doi.org/10.3102/00346543074001029" target="_blank" rel="noopener">DOI</a></li>
+    <li>Graham, S., Kiuhara, S. A., &amp; MacKay, M. (2020). The effects of writing on learning in science, social studies, and mathematics. <i>Review of Educational Research</i>, 90(2), 179–226. <a href="https://doi.org/10.3102/0034654320914744" target="_blank" rel="noopener">DOI</a></li>
+    <li>Miyake, N. (1986). Constructive interaction and the iterative process of understanding. <i>Cognitive Science</i>, 10(2), 151–177. <a href="https://doi.org/10.1207/s15516709cog1002_2" target="_blank" rel="noopener">DOI</a></li>
+    <li>伊藤貴昭・垣花真一郎（2009）説明はなぜ話者自身の理解を促すか. 教育心理学研究, 57(1), 86–98. <a href="https://doi.org/10.5926/jjep.57.86" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>深谷達史（2011）科学的概念の学習における自己説明訓練の効果. 教育心理学研究, 59(3), 342–354. <a href="https://doi.org/10.5926/jjep.59.342" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>市川伸一（1989）認知カウンセリングの構想と展開. 心理学評論, 32(4), 421–437. <a href="https://doi.org/10.24602/sjpr.32.4_421" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>植阪友理（2009）認知カウンセリングによる学習スキルの支援とその展開. 認知科学, 16(3), 313–332. <a href="https://doi.org/10.11225/jcss.16.313" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>清河幸子（2002）表象変化を促進する相互依存構造. 認知科学, 9(3), 450–458. <a href="https://doi.org/10.11225/jcss.9.450" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>清河幸子・伊澤太郎・植田一博（2007）洞察問題解決に試行と他者観察の交替が及ぼす影響の検討. 教育心理学研究, 55(2), 255–265. <a href="https://doi.org/10.5926/jjep1953.55.2_255" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>鈴木宏昭・杉谷祐美子（2012）レポートライティングにおける問題設定支援. 教育心理学年報, 51, 154–166. <a href="https://doi.org/10.5926/arepj.51.154" target="_blank" rel="noopener">J-STAGE</a></li>
+  </ul>
+
+  <div class="refh">4 関係づけ・努力・ぼんやり・通知</div>
+  <ul class="refs">
+    <li>Craik, F. I. M., &amp; Lockhart, R. S. (1972). Levels of processing. <i>Journal of Verbal Learning and Verbal Behavior</i>, 11(6), 671–684. <a href="https://doi.org/10.1016/S0022-5371(72)80001-X" target="_blank" rel="noopener">DOI</a></li>
+    <li>Craik, F. I. M., &amp; Tulving, E. (1975). Depth of processing and the retention of words in episodic memory. <i>Journal of Experimental Psychology: General</i>, 104(3), 268–294. <a href="https://doi.org/10.1037/0096-3445.104.3.268" target="_blank" rel="noopener">DOI</a></li>
+    <li>Slamecka, N. J., &amp; Graf, P. (1978). The generation effect. <i>Journal of Experimental Psychology: Human Learning and Memory</i>, 4(6), 592–604. <a href="https://doi.org/10.1037/0278-7393.4.6.592" target="_blank" rel="noopener">DOI</a></li>
+    <li>Roediger, H. L., &amp; Karpicke, J. D. (2006). Test-enhanced learning. <i>Psychological Science</i>, 17(3), 249–255. <a href="https://doi.org/10.1111/j.1467-9280.2006.01693.x" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dunlosky, J., Rawson, K. A., Marsh, E. J., Nathan, M. J., &amp; Willingham, D. T. (2013). Improving students' learning with effective learning techniques. <i>Psychological Science in the Public Interest</i>, 14(1), 4–58. <a href="https://doi.org/10.1177/1529100612453266" target="_blank" rel="noopener">DOI</a></li>
+    <li>Gick, M. L., &amp; Holyoak, K. J. (1980). Analogical problem solving. <i>Cognitive Psychology</i>, 12(3), 306–355. <a href="https://doi.org/10.1016/0010-0285(80)90013-4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Gick, M. L., &amp; Holyoak, K. J. (1983). Schema induction and analogical transfer. <i>Cognitive Psychology</i>, 15(1), 1–38. <a href="https://doi.org/10.1016/0010-0285(83)90002-6" target="_blank" rel="noopener">DOI</a></li>
+    <li>Gentner, D. (1983). Structure-mapping: A theoretical framework for analogy. <i>Cognitive Science</i>, 7(2), 155–170. <a href="https://doi.org/10.1207/s15516709cog0702_3" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dumas, D., Alexander, P. A., &amp; Grossnickle, E. M. (2013). Relational reasoning and its manifestations in the educational context. <i>Educational Psychology Review</i>, 25(3), 391–427. <a href="https://doi.org/10.1007/s10648-013-9224-4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bransford, J. D., &amp; Johnson, M. K. (1972). Contextual prerequisites for understanding. <i>Journal of Verbal Learning and Verbal Behavior</i>, 11(6), 717–726. <a href="https://doi.org/10.1016/S0022-5371(72)80006-9" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bjork, E. L., &amp; Bjork, R. A. (2011). Making things hard on yourself, but in a good way. In <i>Psychology and the real world</i> (pp. 56–64). Worth. <a href="https://bjorklab.psych.ucla.edu/wp-content/uploads/sites/13/2016/04/EBjork_RBjork_2011.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li>Bjork, R. A., &amp; Bjork, E. L. (2020). Desirable difficulties in theory and practice. <i>Journal of Applied Research in Memory and Cognition</i>, 9(4), 475–479. <a href="https://doi.org/10.1016/j.jarmac.2020.09.003" target="_blank" rel="noopener">DOI</a></li>
+    <li>Inzlicht, M., Shenhav, A., &amp; Olivola, C. Y. (2018). The effort paradox. <i>Trends in Cognitive Sciences</i>, 22(4), 337–349. <a href="https://doi.org/10.1016/j.tics.2018.01.007" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kool, W., McGuire, J. T., Rosen, Z. B., &amp; Botvinick, M. M. (2010). Decision making and the avoidance of cognitive demand. <i>Journal of Experimental Psychology: General</i>, 139(4), 665–682. <a href="https://doi.org/10.1037/a0020198" target="_blank" rel="noopener">DOI</a></li>
+    <li>Shenhav, A., Musslick, S., Lieder, F., et al. (2017). Toward a rational and mechanistic account of mental effort. <i>Annual Review of Neuroscience</i>, 40, 99–124. <a href="https://doi.org/10.1146/annurev-neuro-072116-031526" target="_blank" rel="noopener">DOI</a></li>
+    <li>Raichle, M. E., MacLeod, A. M., Snyder, A. Z., et al. (2001). A default mode of brain function. <i>PNAS</i>, 98(2), 676–682. <a href="https://doi.org/10.1073/pnas.98.2.676" target="_blank" rel="noopener">DOI</a></li>
+    <li>Mason, M. F., Norton, M. I., Van Horn, J. D., et al. (2007). Wandering minds. <i>Science</i>, 315(5810), 393–395. <a href="https://doi.org/10.1126/science.1131295" target="_blank" rel="noopener">DOI</a></li>
+    <li>Christoff, K., Irving, Z. C., Fox, K. C. R., Spreng, R. N., &amp; Andrews-Hanna, J. R. (2016). Mind-wandering as spontaneous thought. <i>Nature Reviews Neuroscience</i>, 17, 718–731. <a href="https://doi.org/10.1038/nrn.2016.113" target="_blank" rel="noopener">DOI</a></li>
+    <li>Beaty, R. E., Benedek, M., Silvia, P. J., &amp; Schacter, D. L. (2016). Creative cognition and brain network dynamics. <i>Trends in Cognitive Sciences</i>, 20(2), 87–95. <a href="https://doi.org/10.1016/j.tics.2015.10.004" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sio, U. N., &amp; Ormerod, T. C. (2009). Does incubation enhance problem solving? A meta-analytic review. <i>Psychological Bulletin</i>, 135(1), 94–120. <a href="https://doi.org/10.1037/a0014212" target="_blank" rel="noopener">DOI</a></li>
+    <li>Baird, B., Smallwood, J., Mrazek, M. D., et al. (2012). Inspired by distraction. <i>Psychological Science</i>, 23(10), 1117–1122. <a href="https://doi.org/10.1177/0956797612446024" target="_blank" rel="noopener">DOI</a>（追試で再現せず）</li>
+    <li>Murray, S., Liang, N., Brosowsky, N., &amp; Seli, P. (2024). What are the benefits of mind wandering to creativity? <i>Psychology of Aesthetics, Creativity, and the Arts</i>, 18(3), 403–416. <a href="https://doi.org/10.1037/aca0000420" target="_blank" rel="noopener">DOI</a></li>
+    <li>Stothart, C., Mitchum, A., &amp; Yehnert, C. (2015). The attentional cost of receiving a cell phone notification. <i>Journal of Experimental Psychology: Human Perception and Performance</i>, 41(4), 893–897. <a href="https://doi.org/10.1037/xhp0000100" target="_blank" rel="noopener">DOI</a></li>
+    <li>Leroy, S. (2009). Why is it so hard to do my work? The challenge of attention residue. <i>Organizational Behavior and Human Decision Processes</i>, 109(2), 168–181. <a href="https://doi.org/10.1016/j.obhdp.2009.04.002" target="_blank" rel="noopener">DOI</a></li>
+    <li>Monsell, S. (2003). Task switching. <i>Trends in Cognitive Sciences</i>, 7(3), 134–140. <a href="https://doi.org/10.1016/S1364-6613(03)00028-7" target="_blank" rel="noopener">DOI</a></li>
+    <li>Mark, G., Gudith, D., &amp; Klocke, U. (2008). The cost of interrupted work. <i>CHI '08</i>, 107–110. <a href="https://doi.org/10.1145/1357054.1357072" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ward, A. F., Duke, K., Gneezy, A., &amp; Bos, M. W. (2017). Brain drain. <i>Journal of the Association for Consumer Research</i>, 2(2), 140–154. <a href="https://doi.org/10.1086/691462" target="_blank" rel="noopener">DOI</a>（直接追試で再現せず）</li>
+    <li>Ruiz Pardo, A. C., &amp; Minda, J. P. (2022). Reexamining the "brain drain" effect. <i>Acta Psychologica</i>, 230, 103717. <a href="https://doi.org/10.1016/j.actpsy.2022.103717" target="_blank" rel="noopener">DOI</a></li>
+    <li>Hartmann, M., Martarelli, C. S., Reber, T. P., &amp; Rothen, N. (2020). Does a smartphone on the desk drain our brain? <i>Consciousness and Cognition</i>, 86, 103033. <a href="https://doi.org/10.1016/j.concog.2020.103033" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ophir, E., Nass, C., &amp; Wagner, A. D. (2009). Cognitive control in media multitaskers. <i>PNAS</i>, 106(37), 15583–15587. <a href="https://doi.org/10.1073/pnas.0903620106" target="_blank" rel="noopener">DOI</a>（追試・メタ分析で関連は弱い）</li>
+    <li>Wiradhany, W., &amp; Nieuwenstein, M. R. (2017). Cognitive control in media multitaskers: Two replication studies and a meta-analysis. <i>Attention, Perception, &amp; Psychophysics</i>, 79(8), 2620–2641. <a href="https://doi.org/10.3758/s13414-017-1408-4" target="_blank" rel="noopener">DOI</a></li>
+    <li>村山航（2003）学習方略の使用と短期的・長期的な有効性の認知との関係. 教育心理学研究, 51(2), 130–140. <a href="https://doi.org/10.5926/jjep1953.51.2_130" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>佐藤純（1998）学習方略の有効性の認知・コストの認知・好みが学習方略の使用に及ぼす影響. 教育心理学研究, 46(4), 367–376. <a href="https://doi.org/10.5926/jjep1953.46.4_367" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>植阪友理（2010）学習方略は教科間でいかに転移するか. 教育心理学研究, 58(1), 80–94. <a href="https://doi.org/10.5926/jjep.58.80" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>吉田寿夫・村山航（2013）なぜ学習者は専門家が学習に有効だと考えている方略を必ずしも使用しないのか. 教育心理学研究, 61(1), 32–43. <a href="https://doi.org/10.5926/jjep.61.32" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>寺井仁・三輪和久・古賀一男（2005）仮説空間とデータ空間の探索から見た洞察問題解決過程. 認知科学, 12(2), 74–88. <a href="https://doi.org/10.11225/jcss.12.74" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>開一夫・鈴木宏昭（1998）表象変化の動的緩和理論. 認知科学, 5(2), 69–79. <a href="https://doi.org/10.11225/jcss.5.2_69" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>鈴木宏昭・開一夫（2003）洞察問題解決への制約論的アプローチ. 心理学評論, 46(2), 211–232. <a href="https://doi.org/10.24602/sjpr.46.2_211" target="_blank" rel="noopener">J-STAGE</a></li>
+  </ul>
+
+  <div class="refh">5 紙と画面・手書きとタイピング・生成AI</div>
+  <ul class="refs">
+    <li>Mueller, P. A., &amp; Oppenheimer, D. M. (2014). The pen is mightier than the keyboard. <i>Psychological Science</i>, 25(6), 1159–1168. <a href="https://doi.org/10.1177/0956797614524581" target="_blank" rel="noopener">DOI</a>（直接追試で再現せず）</li>
+    <li>Morehead, K., Dunlosky, J., &amp; Rawson, K. A. (2019). How much mightier is the pen than the keyboard for note-taking? <i>Educational Psychology Review</i>, 31(3), 753–780. <a href="https://doi.org/10.1007/s10648-019-09468-2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Urry, H. L., Crittle, C. S., Floerke, V. A., et al. (2021). Don't ditch the laptop just yet. <i>Psychological Science</i>, 32(3), 326–339. <a href="https://doi.org/10.1177/0956797620965541" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bui, D. C., Myerson, J., &amp; Hale, S. (2013). Note-taking with computers. <i>Journal of Educational Psychology</i>, 105(2), 299–309. <a href="https://doi.org/10.1037/a0030367" target="_blank" rel="noopener">DOI</a></li>
+    <li>Jansen, R. S., Lakens, D., &amp; IJsselsteijn, W. A. (2017). An integrative review of the cognitive costs and benefits of note-taking. <i>Educational Research Review</i>, 22, 223–233. <a href="https://doi.org/10.1016/j.edurev.2017.10.001" target="_blank" rel="noopener">DOI</a></li>
+    <li>海﨑孝斗・澤山郁夫・永田智子・藤原雅弘（2023）大学生における手書きとタイピングによる日本語記述速度の比較およびその差異に関する事前予想の正確性. 日本教育工学会論文誌, 47(Suppl.), 157–160. <a href="https://doi.org/10.15077/jjet.S47078" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>Van der Weel, F. R., &amp; Van der Meer, A. L. H. (2024). Handwriting but not typewriting leads to widespread brain connectivity. <i>Frontiers in Psychology</i>, 14, 1219945. <a href="https://doi.org/10.3389/fpsyg.2023.1219945" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ose Askvik, E., van der Weel, F. R., &amp; van der Meer, A. L. H. (2020). The importance of cursive handwriting over typewriting for learning in the classroom. <i>Frontiers in Psychology</i>, 11, 1810. <a href="https://doi.org/10.3389/fpsyg.2020.01810" target="_blank" rel="noopener">DOI</a></li>
+    <li>Umejima, K., Ibaraki, T., Yamazaki, T., &amp; Sakai, K. L. (2021). Paper notebooks vs. mobile devices: Brain activation differences during memory retrieval. <i>Frontiers in Behavioral Neuroscience</i>, 15, 634158. <a href="https://doi.org/10.3389/fnbeh.2021.634158" target="_blank" rel="noopener">DOI</a></li>
+    <li>Delgado, P., Vargas, C., Ackerman, R., &amp; Salmerón, L. (2018). Don't throw away your printed books. <i>Educational Research Review</i>, 25, 23–38. <a href="https://doi.org/10.1016/j.edurev.2018.09.003" target="_blank" rel="noopener">DOI</a></li>
+    <li>Clinton, V. (2019). Reading from paper compared to screens. <i>Journal of Research in Reading</i>, 42(2), 288–325. <a href="https://doi.org/10.1111/1467-9817.12269" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kong, Y., Seo, Y. S., &amp; Zhai, L. (2018). Comparison of reading performance on screen and on paper. <i>Computers &amp; Education</i>, 123, 138–149. <a href="https://doi.org/10.1016/j.compedu.2018.05.005" target="_blank" rel="noopener">DOI</a></li>
+    <li>Mangen, A., Walgermo, B. R., &amp; Brønnick, K. (2013). Reading linear texts on paper versus computer screen. <i>International Journal of Educational Research</i>, 58, 61–68. <a href="https://doi.org/10.1016/j.ijer.2012.12.002" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ackerman, R., &amp; Goldsmith, M. (2011). Metacognitive regulation of text learning: On screen versus on paper. <i>Journal of Experimental Psychology: Applied</i>, 17(1), 18–32. <a href="https://doi.org/10.1037/a0022086" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ackerman, R., &amp; Lauterman, T. (2012). Taking reading comprehension exams on screen or on paper? <i>Computers in Human Behavior</i>, 28(5), 1816–1828. <a href="https://doi.org/10.1016/j.chb.2012.04.023" target="_blank" rel="noopener">DOI</a></li>
+    <li>Singer, L. M., &amp; Alexander, P. A. (2017). Reading on paper and digitally. <i>Review of Educational Research</i>, 87(6), 1007–1041. <a href="https://doi.org/10.3102/0034654317722961" target="_blank" rel="noopener">DOI</a></li>
+    <li>Altamura, L., Vargas, C., &amp; Salmerón, L. (2025). Do new forms of reading pay off? <i>Review of Educational Research</i>, 95(1), 53–88. <a href="https://doi.org/10.3102/00346543231216463" target="_blank" rel="noopener">DOI</a></li>
+    <li>Støle, H., Mangen, A., &amp; Schwippert, K. (2020). Assessing children's reading comprehension on paper and screen. <i>Computers &amp; Education</i>, 151, 103861. <a href="https://doi.org/10.1016/j.compedu.2020.103861" target="_blank" rel="noopener">DOI</a></li>
+    <li>柴田博仁・大村賢悟（2010）文書の移動・配置における紙の効果. ヒューマンインタフェース学会論文誌, 12(3), 301–311. <a href="https://doi.org/10.11184/his.12.3_301" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>柴田博仁・大村賢悟（2011）ページ間の行き来を伴う読みにおける紙と電子メディアの比較. ヒューマンインタフェース学会論文誌, 13(4), 345–356. <a href="https://doi.org/10.11184/his.13.4_345" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>柴田博仁・大村賢悟（2011）紙と電子メディア：読み書きのパフォーマンス比較. 画像電子学会誌, 40(6), 975–981. <a href="https://doi.org/10.11371/iieej.40.975" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>小林亮太ほか（2012）表示媒体が文章理解と記憶に及ぼす影響. 情報処理学会研究報告 HCI, 2012-HCI-147(29), 1–7. <a href="https://cir.nii.ac.jp/crid/1574231876790108672" target="_blank" rel="noopener">CiNii</a>（研究報告）</li>
+    <li>Risko, E. F., &amp; Gilbert, S. J. (2016). Cognitive offloading. <i>Trends in Cognitive Sciences</i>, 20(9), 676–688. <a href="https://doi.org/10.1016/j.tics.2016.07.002" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sparrow, B., Liu, J., &amp; Wegner, D. M. (2011). Google effects on memory. <i>Science</i>, 333(6043), 776–778. <a href="https://doi.org/10.1126/science.1207745" target="_blank" rel="noopener">DOI</a>（実験1は追試で再現せず）</li>
+    <li>Camerer, C. F., Dreber, A., Holzmeister, F., et al. (2018). Evaluating the replicability of social science experiments in Nature and Science between 2010 and 2015. <i>Nature Human Behaviour</i>, 2, 637–644. <a href="https://doi.org/10.1038/s41562-018-0399-z" target="_blank" rel="noopener">DOI</a></li>
+    <li>Fisher, M., Goddu, M. K., &amp; Keil, F. C. (2015). Searching for explanations: How the Internet inflates estimates of internal knowledge. <i>Journal of Experimental Psychology: General</i>, 144(3), 674–687. <a href="https://doi.org/10.1037/xge0000070" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bastani, H., Bastani, O., Sungu, A., Ge, H., Kabakcı, Ö., &amp; Mariman, R. (2025). Generative AI without guardrails can harm learning: Evidence from high school mathematics. <i>PNAS</i>, 122(26), e2422633122. <a href="https://doi.org/10.1073/pnas.2422633122" target="_blank" rel="noopener">DOI</a></li>
+    <li>Stadler, M., Bannert, M., &amp; Sailer, M. (2024). Cognitive ease at a cost: LLMs reduce mental effort but compromise depth in student scientific inquiry. <i>Computers in Human Behavior</i>, 160, 108386. <a href="https://doi.org/10.1016/j.chb.2024.108386" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kosmyna, N., et al. (2025). Your Brain on ChatGPT. <i>arXiv</i> 2506.08872. <a href="https://arxiv.org/abs/2506.08872" target="_blank" rel="noopener">arXiv</a>（査読前のプレプリント）</li>
+    <li>Gerlich, M. (2025). AI tools in society: Impacts on cognitive offloading and the future of critical thinking. <i>Societies</i>, 15(1), 6. <a href="https://doi.org/10.3390/soc15010006" target="_blank" rel="noopener">DOI</a>（相関研究）</li>
+  </ul>
+
+  <div class="refh">6 ノートとワークシート</div>
+  <ul class="refs">
+    <li>Di Vesta, F. J., &amp; Gray, G. S. (1972). Listening and note taking. <i>Journal of Educational Psychology</i>, 63(1), 8–14. <a href="https://doi.org/10.1037/h0032243" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kiewra, K. A. (1985). Investigating notetaking and review. <i>Educational Psychologist</i>, 20(1), 23–32. <a href="https://doi.org/10.1207/s15326985ep2001_4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kiewra, K. A. (1989). A review of note-taking: The encoding-storage paradigm and beyond. <i>Educational Psychology Review</i>, 1(2), 147–172. <a href="https://doi.org/10.1007/BF01326640" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kobayashi, K. (2005). What limits the encoding effect of note-taking? A meta-analytic examination. <i>Contemporary Educational Psychology</i>, 30(2), 242–262. <a href="https://doi.org/10.1016/j.cedpsych.2004.10.001" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kobayashi, K. (2006). Combined effects of note-taking/-reviewing on learning and the enhancement through interventions. <i>Educational Psychology</i>, 26(3), 459–477. <a href="https://doi.org/10.1080/01443410500342070" target="_blank" rel="noopener">DOI</a></li>
+    <li>Peverly, S. T., Ramaswamy, V., Brown, C., et al. (2007). What predicts skill in lecture note taking? <i>Journal of Educational Psychology</i>, 99(1), 167–180. <a href="https://doi.org/10.1037/0022-0663.99.1.167" target="_blank" rel="noopener">DOI</a></li>
+    <li>Piolat, A., Olive, T., &amp; Kellogg, R. T. (2005). Cognitive effort during note taking. <i>Applied Cognitive Psychology</i>, 19(3), 291–312. <a href="https://doi.org/10.1002/acp.1086" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kiewra, K. A., DuBois, N. F., Christian, D., et al. (1991). Note-taking functions and techniques. <i>Journal of Educational Psychology</i>, 83(2), 240–245. <a href="https://doi.org/10.1037/0022-0663.83.2.240" target="_blank" rel="noopener">DOI</a></li>
+    <li>Robinson, D. H., &amp; Kiewra, K. A. (1995). Visual argument: Graphic organizers are superior to outlines in improving learning from text. <i>Journal of Educational Psychology</i>, 87(3), 455–467. <a href="https://doi.org/10.1037/0022-0663.87.3.455" target="_blank" rel="noopener">DOI</a></li>
+    <li>Katayama, A. D., &amp; Robinson, D. H. (2000). Getting students "partially" involved in note-taking using graphic organizers. <i>Journal of Experimental Education</i>, 68(2), 119–133. <a href="https://doi.org/10.1080/00220970009598498" target="_blank" rel="noopener">DOI</a></li>
+    <li>Konrad, M., Joseph, L. M., &amp; Eveleigh, E. (2009). A meta-analytic review of guided notes. <i>Education and Treatment of Children</i>, 32(3), 421–444. <a href="https://doi.org/10.1353/etc.0.0066" target="_blank" rel="noopener">DOI</a></li>
+    <li>Sweller, J., &amp; Cooper, G. A. (1985). The use of worked examples as a substitute for problem solving in learning algebra. <i>Cognition and Instruction</i>, 2(1), 59–89. <a href="https://doi.org/10.1207/s1532690xci0201_3" target="_blank" rel="noopener">DOI</a></li>
+    <li>van Merriënboer, J. J. G. (1990). Strategies for programming instruction in high school: Program completion vs. program generation. <i>Journal of Educational Computing Research</i>, 6(3), 265–285. <a href="https://doi.org/10.2190/4NK5-17L7-TWQV-1EHL" target="_blank" rel="noopener">DOI</a></li>
+    <li>Chandler, P., &amp; Sweller, J. (1992). The split-attention effect as a factor in the design of instruction. <i>British Journal of Educational Psychology</i>, 62(2), 233–246. <a href="https://doi.org/10.1111/j.2044-8279.1992.tb01017.x" target="_blank" rel="noopener">DOI</a></li>
+    <li>Paas, F. G. W. C., &amp; van Merriënboer, J. J. G. (1994). Variability of worked examples and transfer of geometrical problem-solving skills. <i>Journal of Educational Psychology</i>, 86(1), 122–133. <a href="https://doi.org/10.1037/0022-0663.86.1.122" target="_blank" rel="noopener">DOI</a></li>
+    <li>Renkl, A. (2014). Toward an instructionally oriented theory of example-based learning. <i>Cognitive Science</i>, 38(1), 1–37. <a href="https://doi.org/10.1111/cogs.12086" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kalyuga, S., Ayres, P., Chandler, P., &amp; Sweller, J. (2003). The expertise reversal effect. <i>Educational Psychologist</i>, 38(1), 23–31. <a href="https://doi.org/10.1207/S15326985EP3801_4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Berninger, V. W., Vaughan, K., Abbott, R. D., et al. (2002). Teaching spelling and composition alone and together: Implications for the simple view of writing. <i>Journal of Educational Psychology</i>, 94(2), 291–304. <a href="https://doi.org/10.1037/0022-0663.94.2.291" target="_blank" rel="noopener">DOI</a></li>
+    <li>McCutchen, D. (1996). A capacity theory of writing: Working memory in composition. <i>Educational Psychology Review</i>, 8(3), 299–325. <a href="https://doi.org/10.1007/BF01464076" target="_blank" rel="noopener">DOI</a></li>
+    <li>Graham, S., Berninger, V. W., Abbott, R. D., Abbott, S. P., &amp; Whitaker, D. (1997). Role of mechanics in composing of elementary school students. <i>Journal of Educational Psychology</i>, 89(1), 170–182. <a href="https://doi.org/10.1037/0022-0663.89.1.170" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bourdin, B., &amp; Fayol, M. (1994). Is written language production more difficult than oral language production? A working memory approach. <i>International Journal of Psychology</i>, 29(5), 591–620. <a href="https://doi.org/10.1080/00207599408248175" target="_blank" rel="noopener">DOI</a></li>
+    <li>Olive, T., &amp; Kellogg, R. T. (2002). Concurrent activation of high- and low-level production processes in written composition. <i>Memory &amp; Cognition</i>, 30(4), 594–600. <a href="https://doi.org/10.3758/BF03194960" target="_blank" rel="noopener">DOI</a></li>
+    <li>Medwell, J., &amp; Wray, D. (2008). Handwriting – A forgotten language skill? <i>Language and Education</i>, 22(1), 34–47. <a href="https://doi.org/10.2167/le722.0" target="_blank" rel="noopener">DOI</a></li>
+    <li>Medwell, J., Strand, S., &amp; Wray, D. (2009). The links between handwriting and composing for Y6 children. <i>Cambridge Journal of Education</i>, 39(3), 329–344. <a href="https://doi.org/10.1080/03057640903103728" target="_blank" rel="noopener">DOI</a></li>
+    <li>藤木大介・山本真愛・中條和光（2022）小学校中高学年のノートテイクの実態：算数科における板書の再現度. 読書科学, 63(2), 53–63. <a href="https://doi.org/10.19011/sor.63.2_53" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>中村美優・桐生徹（2025）ノートテイクを伴う授業における児童のノートの再現度と教師の板書やノートに関する指示の事例的研究. 日本科学教育学会年会論文集, 49, 313–314. <a href="https://doi.org/10.14935/jssep.49.0_313" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>河野俊寛・平林ルミ・中邑賢龍（2008）小学校通常学級在籍児童の視写書字速度. 特殊教育学研究, 46(4), 223–230. <a href="https://doi.org/10.6033/tokkyou.46.223" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>河野俊寛・平林ルミ・中邑賢龍（2009）小学校通常学級在籍児童の聴写書字速度と正確さ. 特殊教育学研究, 46(5), 269–278. <a href="https://doi.org/10.6033/tokkyou.46.269" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>平林ルミ・河野俊寛・中邑賢龍（2010）小学生の視写における書字行動プロセスの時間分析. 特殊教育学研究, 48(4), 275–284. <a href="https://doi.org/10.6033/tokkyou.48.275" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>野村真司・小倉康（2019）科学的表現力を育成するための足場づくりを活用した実験レポートの指導. 理科教育学研究, 60(1), 153–161. <a href="https://doi.org/10.11639/sjst.18017" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>鈴木千春・小林裕子・村田晋太朗・永田智子（2022）ワークシートの違いが絵本活用授業の学習効果に与える影響. 教育メディア研究, 28(2), 15–26. <a href="https://doi.org/10.24458/jaems.28.2_15" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>吉岡昌子・藤健一・佐藤敬子（2024）講義の板書が教員の発話と大学生のノートテイキングに及ぼす影響. 教育心理学研究, 72(3), 157–168. <a href="https://doi.org/10.5926/jjep.72.157" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>魚崎祐子（2014）短期大学生のノートテイキングと講義内容の再生との関係. 日本教育工学会論文誌, 38(Suppl.), 137–140. <a href="https://doi.org/10.15077/jjet.KJ00009846876" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>魚崎祐子（2016）配布資料の有無が授業中のノートテイキングおよび講義内容の説明に与える影響. 日本教育工学会論文誌, 39(Suppl.), 101–104. <a href="https://doi.org/10.15077/jjet.S39065" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>田中光・山根嵩史・魚崎祐子・中條和光（2021）大学生におけるノートテイキングの方略使用の規定因. 日本教育工学会論文誌, 44(Suppl.), 89–92. <a href="https://doi.org/10.15077/jjet.S44047" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>木村和夫（2022）児童の、端末へのキーボード入力とノートへの手書きの選択と、端末使用への肯定的な意識との関係に関する一考察. 敬愛大学教育学会紀要, 1, 65–75. <a href="https://keiai.repo.nii.ac.jp/records/3340" target="_blank" rel="noopener">リポジトリ</a></li>
+    <li>外﨑顯博・立石力斗（2024）通常学級における書くことに困難さがある児童のタブレット端末の活用状況とその意識. 日本教育工学会研究報告集, 2024(2), 208–213. <a href="https://doi.org/10.15077/jsetstudy.2024.2_208" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>村上剛志・齊藤勝（2023）書字困難のある児童に対するICTを活用した段階的な代替アプローチの検討. コンピュータ＆エデュケーション, 55, 106–109. <a href="https://doi.org/10.14949/konpyutariyoukyouiku.55.106" target="_blank" rel="noopener">J-STAGE</a></li>
+  </ul>
+</article>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。<br>
+    <a href="../../">棚トップ</a>　/　<a href="../../#reading">読みもの</a>　/　<a href="../../shien/">支援カード</a>　/　<a href="../../tools/note-prints/">ノートプリント集</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+  </div>
+</footer>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
