@@ -43037,5 +43037,71 @@ const SOZAI = [
   "img": "img/oyasumi_minna_no_kami_blanket.jpg",
   "thumb": "img/oyasumi_minna_no_kami_blanket_thumb.jpg",
   "mono": "img/oyasumi_minna_no_kami_blanket_mono.jpg"
+ },
+ {
+  "id": "randoseru_front_makabe",
+  "title": "ランドセル（正面）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "白背景に立てて置いたランドセル1つ。かぶせ・留め具・肩ベルト・持ち手が見える正面やや上から"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ",
+   "アイコン"
+  ],
+  "description": "ランドセルを正面やや上から描いた線画淡彩。はかりの皿の上に置く、机の横に立てるなど、重さ・持ち物・学校生活の場面に合成して使う。文字なし・白背景。",
+  "howto": "重さの単元では、はかりの図（SVG）の皿の上に置いて「ランドセルだけをのせたとき」の絵にする。数字や目もりは絵に描かず、あとから載せる。",
+  "tags": [
+   "ランドセル",
+   "かばん",
+   "3年",
+   "重さ",
+   "線画",
+   "白背景",
+   "学校生活",
+   "持ち物"
+  ],
+  "img": "img/randoseru_front_makabe.jpg",
+  "thumb": "img/randoseru_front_makabe_thumb.jpg",
+  "mono": "img/randoseru_front_makabe_mono.jpg"
+ },
+ {
+  "id": "randoseru_threequarter_makabe",
+  "title": "ランドセル（ななめ）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "白背景に立てて置いたランドセル1つ。正面と横が見える斜め30度・やや上から"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ",
+   "アイコン"
+  ],
+  "description": "同じランドセルを斜め30度から描いた線画淡彩。正面版と並べて向きの違う絵として使える。文字なし・白背景。",
+  "howto": "持ち物・学校生活の挿絵に。重さの学習では、はかりや台ばかりの絵と組み合わせる。",
+  "tags": [
+   "ランドセル",
+   "かばん",
+   "3年",
+   "重さ",
+   "線画",
+   "白背景",
+   "学校生活",
+   "持ち物"
+  ],
+  "img": "img/randoseru_threequarter_makabe.jpg",
+  "thumb": "img/randoseru_threequarter_makabe_thumb.jpg",
+  "mono": "img/randoseru_threequarter_makabe_mono.jpg"
  }
 ];
