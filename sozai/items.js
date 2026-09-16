@@ -43167,5 +43167,69 @@ const SOZAI = [
   "img": "img/hakari_randoseru_lying_makabe.jpg",
   "thumb": "img/hakari_randoseru_lying_makabe_thumb.jpg",
   "mono": "img/hakari_randoseru_lying_makabe_mono.jpg"
+ },
+ {
+  "id": "hakari_randoseru_front_v2_makabe",
+  "title": "はかりにのせたランドセル（正面・本物の形）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "緑の上皿自動はかり（2kg）の皿に、ランドセルを立ててのせた正面の絵。かぶせが底まで・鋲4つ・パイピング。文字盤は空白"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ"
+  ],
+  "description": "実物のランドセルの構造（かぶせが前面を全部おおう・錠前は底・マチの重なり・幅広の肩ベルト）で描き直した線画淡彩。文字盤は空白で、目もり・数字・はりを描き足して使う。文字なし・白背景。",
+  "howto": "文字盤の円の上に、目もりと数字とはりを描き足して「何kg何g」の問題に。",
+  "tags": [
+   "はかり",
+   "上皿自動はかり",
+   "ランドセル",
+   "重さ",
+   "3年",
+   "線画",
+   "白背景",
+   "文字盤は空白"
+  ],
+  "img": "img/hakari_randoseru_front_v2_makabe.jpg",
+  "thumb": "img/hakari_randoseru_front_v2_makabe_thumb.jpg",
+  "mono": "img/hakari_randoseru_front_v2_makabe_mono.jpg"
+ },
+ {
+  "id": "hakari_randoseru_turned_v2_makabe",
+  "title": "はかりにのせたランドセル（ななめ・本物の形）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "同じはかりの皿の上で、ランドセルだけを25度回した絵。マチの重なりと前ポケットが見える。文字盤は空白"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ"
+  ],
+  "description": "ランドセルを少し回して、マチの重なり（3層）と前ポケットが見える線画淡彩。つかえる算数3年「重さ」3まい目で使用。文字盤は空白。文字なし・白背景。",
+  "howto": "文字盤の円の上に、目もりと数字とはりを描き足して使う。",
+  "tags": [
+   "はかり",
+   "上皿自動はかり",
+   "ランドセル",
+   "重さ",
+   "3年",
+   "線画",
+   "白背景",
+   "文字盤は空白"
+  ],
+  "img": "img/hakari_randoseru_turned_v2_makabe.jpg",
+  "thumb": "img/hakari_randoseru_turned_v2_makabe_thumb.jpg",
+  "mono": "img/hakari_randoseru_turned_v2_makabe_mono.jpg"
  }
 ];
