@@ -43103,5 +43103,69 @@ const SOZAI = [
   "img": "img/randoseru_threequarter_makabe.jpg",
   "thumb": "img/randoseru_threequarter_makabe_thumb.jpg",
   "mono": "img/randoseru_threequarter_makabe_mono.jpg"
+ },
+ {
+  "id": "hakari_randoseru_standing_makabe",
+  "title": "はかりにのせたランドセル（立てた）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "緑の上皿自動はかり（2kg・大和製衡SM-2型）の皿に、ランドセルを立ててのせた正面の絵。文字盤は空白"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ"
+  ],
+  "description": "上皿自動はかりにランドセルを立ててのせた線画淡彩。文字盤はわざと空白にしてあるので、目もり・数字・はりを自分で描き足して「何kg何g」の問題にできる。実寸どおりランドセルのほうがはかりより大きい。文字なし・白背景。",
+  "howto": "文字盤の円の上に、目もりと数字とはりを描き足して使う（つかえる算数3年「重さ」で使用）。数字は絵に描かせていない。",
+  "tags": [
+   "はかり",
+   "上皿自動はかり",
+   "ランドセル",
+   "重さ",
+   "3年",
+   "線画",
+   "白背景",
+   "文字盤は空白"
+  ],
+  "img": "img/hakari_randoseru_standing_makabe.jpg",
+  "thumb": "img/hakari_randoseru_standing_makabe_thumb.jpg",
+  "mono": "img/hakari_randoseru_standing_makabe_mono.jpg"
+ },
+ {
+  "id": "hakari_randoseru_lying_makabe",
+  "title": "はかりにのせたランドセル（寝かせた）",
+  "author": "makabe",
+  "type": "illust",
+  "subject": "算数",
+  "grade": "3年",
+  "unit": "重さ",
+  "scenes": [
+   "同じはかりの皿に、ランドセルを寝かせてのせた正面の絵。文字盤は空白"
+  ],
+  "uses": [
+   "プリント",
+   "スライド",
+   "お知らせ"
+  ],
+  "description": "上皿自動はかりにランドセルを寝かせてのせた線画淡彩。立てた版より低いので、紙面の高さが足りないときに使える。文字盤は空白。文字なし・白背景。",
+  "howto": "文字盤の円の上に、目もりと数字とはりを描き足して使う（つかえる算数3年「重さ」3まい目で使用）。",
+  "tags": [
+   "はかり",
+   "上皿自動はかり",
+   "ランドセル",
+   "重さ",
+   "3年",
+   "線画",
+   "白背景",
+   "文字盤は空白"
+  ],
+  "img": "img/hakari_randoseru_lying_makabe.jpg",
+  "thumb": "img/hakari_randoseru_lying_makabe_thumb.jpg",
+  "mono": "img/hakari_randoseru_lying_makabe_mono.jpg"
  }
 ];
