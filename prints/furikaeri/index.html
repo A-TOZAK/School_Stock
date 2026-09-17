@@ -447,7 +447,15 @@ h2 small{ font-size:13px; color:var(--sub); letter-spacing:.06em; margin-left:12
 <script>
 (function(){
   var MONTHS=[10, 9];
-  var st={g:0,m:MONTHS[0],ans:"yes"};
+  // 既定で開く月は、見ている日の月。無ければ、すでに始まった月のうち新しいもの。
+  function nowMonth(){
+    var m=new Date().getMonth()+1;
+    if(MONTHS.indexOf(m)>=0) return m;
+    var past=MONTHS.filter(function(x){return x<=m;});
+    if(past.length) return Math.max.apply(null,past);
+    return MONTHS[0];
+  }
+  var st={g:0,m:nowMonth(),ans:"yes"};
   var $=function(s,r){return (r||document).querySelectorAll(s);};
   function show(){
     $(".gtabs button").forEach(function(b){b.classList.toggle("on",+b.dataset.g===st.g);b.setAttribute("aria-selected",+b.dataset.g===st.g);});
