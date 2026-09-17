@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>脳は本当に疲れるのか ｜ School Stock</title>
+<meta name="description" content="脳の半分はグリア細胞、脳は疲れる、寝ている間に脳は掃除される、スマホの通知は切るべし。1本の動画で挙がった主張を、論文130本あまりと令和8年度の全国学力・学習状況調査に当てて確かめた長い読み物。追試で崩れた話と、根拠のある休み方まで。調査と執筆はAI（Claude Code）。">
+<link rel="icon" href="../../favicon.ico" sizes="32x32">
+<link rel="icon" href="../../assets/favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="脳は本当に疲れるのか">
+<meta property="og:description" content="グリア細胞、脳の掃除、スマホの通知、休み方。論文130本あまりを読んで分かったことと、分からなかったこと。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/yomimono/nou-no-tsukare/">
+<meta property="og:image" content="https://a-tozak.github.io/School_Stock/yomimono/nou-no-tsukare/card.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root { --ink:#15181c; --sub:#6b7077; --accent:#2e5d7d; --paper:#fff; --wash:#f6f6f4; --line:#e6e6e3; --black:#0e0f11; --mark:#e7eef2; }
+* { margin:0; padding:0; box-sizing:border-box; }
+body { font-family:"Noto Sans JP","Hiragino Sans","Hiragino Kaku Gothic ProN","Yu Gothic Medium",sans-serif; background:var(--paper); color:var(--ink); line-height:1.95; letter-spacing:.02em; -webkit-font-smoothing:antialiased; }
+a { color:var(--accent); text-decoration:none; }
+img { max-width:100%; display:block; }
+.ja { word-break:auto-phrase; text-wrap:pretty; }
+.topbar { background:var(--black); color:#fff; position:sticky; top:0; z-index:40; }
+.topbar-in { max-width:1040px; margin:0 auto; padding:13px 24px; display:flex; justify-content:space-between; align-items:center; gap:14px; }
+.wordmark { font-size:12.5px; font-weight:700; letter-spacing:.28em; color:#fff; white-space:nowrap; }
+.nav { display:flex; gap:18px; align-items:center; }
+.nav a { color:#b9bcc2; font-size:11.5px; letter-spacing:.1em; white-space:nowrap; }
+.nav a:hover, .nav a.on { color:#fff; }
+@media (max-width:760px){ .nav { display:none; } }
+
+.hero { max-width:1040px; margin:0 auto; padding:0 24px; }
+.hero-in { position:relative; margin-top:22px; border:1px solid var(--line); overflow:hidden; background:#fbf7f1; }
+.hero-in img { width:100%; height:auto; aspect-ratio:3/2; object-fit:cover; }
+.hero-txt { position:absolute; left:0; top:0; bottom:0; width:42%; display:flex; flex-direction:column; justify-content:center; padding:24px 20px 24px 32px; background:linear-gradient(90deg, rgba(251,247,241,.96) 62%, rgba(251,247,241,0)); }
+.hero-txt .kicker { align-self:flex-start; }
+.hero-txt h1 { font-size:clamp(20px,3.3vw,34px); font-weight:700; line-height:1.5; color:var(--black); }
+.hero-txt .sub { margin-top:12px; font-size:clamp(11px,1.3vw,14px); color:#3d4148; line-height:1.9; }
+@media (max-width:700px){
+  .hero-in img { aspect-ratio:auto; }
+  .hero-txt { position:static; width:100%; background:none; padding:18px 18px 8px; }
+}
+
+.article { max-width:720px; margin:0 auto; padding:0 24px 80px; }
+.crumbs { font-size:12px; color:var(--sub); padding:22px 0 0; letter-spacing:.04em; }
+.crumbs a { color:var(--sub); }
+.crumbs a:hover { color:var(--ink); }
+.head { border-bottom:1px solid var(--ink); padding:10px 0 26px; margin-bottom:34px; }
+.kicker { display:inline-block; font-size:11.5px; font-weight:700; letter-spacing:.2em; color:#fff; background:var(--accent); padding:3px 11px; margin-bottom:16px; }
+.head .meta { font-size:12.5px; color:var(--sub); display:flex; gap:14px; flex-wrap:wrap; align-items:center; }
+.head .meta b { color:var(--ink); font-weight:700; }
+.toc { background:var(--wash); padding:18px 22px; margin:0 0 10px; font-size:13.5px; }
+.toc b { display:block; font-size:12px; letter-spacing:.14em; color:var(--sub); margin-bottom:8px; }
+.toc ol { padding-left:1.4em; line-height:1.9; }
+.toc a { color:var(--ink); }
+.toc a:hover { color:var(--accent); }
+
+.lead { font-size:17px; line-height:2.05; color:#20242a; margin-bottom:8px; }
+.lead b { font-weight:700; }
+h2 { font-size:22px; font-weight:700; line-height:1.5; margin:52px 0 6px; padding-top:14px; border-top:2px solid var(--ink); display:flex; gap:12px; align-items:flex-start; }
+h2 .n { font-family:Georgia,serif; font-style:italic; color:var(--accent); flex-shrink:0; }
+.h2sub { font-size:13px; color:var(--sub); font-weight:700; letter-spacing:.06em; margin-bottom:20px; }
+h3 { font-size:16.5px; font-weight:700; margin:30px 0 4px; }
+p { font-size:15.5px; line-height:2.02; margin:18px 0; color:#20242a; }
+p .em, li .em { background:linear-gradient(transparent 62%, var(--mark) 62%); font-weight:700; }
+.pull { border-left:4px solid var(--accent); padding:6px 0 6px 22px; margin:30px 0; }
+.pull q { font-size:20px; font-weight:700; line-height:1.7; color:var(--ink); quotes:none; display:block; }
+.pull cite { display:block; margin-top:10px; font-size:12.5px; color:var(--sub); font-style:normal; }
+.motif { float:right; width:150px; margin:0 0 8px 20px; }
+@media (max-width:560px){ .motif { width:110px; } }
+
+.evidence { background:var(--wash); border-left:3px solid var(--accent); padding:16px 20px; margin:24px 0; font-size:13.5px; line-height:1.95; color:#3d4148; clear:both; }
+.evidence b { color:var(--ink); }
+.caveat { background:#fff; border:1px solid var(--line); border-left:3px solid #b8865b; padding:14px 18px; margin:24px 0; font-size:13.5px; line-height:1.9; color:#3d4148; }
+.caveat b { color:var(--ink); }
+.q5 { background:var(--wash); padding:20px 24px; margin:26px 0; }
+.q5 ol { padding-left:1.5em; }
+.q5 li { font-size:15px; line-height:1.9; margin:6px 0; }
+.checklist { background:var(--wash); border-left:3px solid var(--ink); padding:20px 24px; margin:34px 0; clear:both; }
+.checklist h3 { font-size:14px; font-weight:700; letter-spacing:.08em; margin:0 0 12px; }
+.checklist ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.checklist li { font-size:14.5px; line-height:1.8; padding-left:26px; position:relative; }
+.checklist li::before { content:"□"; position:absolute; left:0; top:-1px; font-size:16px; color:var(--sub); }
+table.tb { width:100%; border-collapse:collapse; font-size:13.5px; margin:18px 0; }
+table.tb th, table.tb td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--line); vertical-align:top; line-height:1.7; }
+table.tb th { font-size:12px; color:var(--sub); letter-spacing:.06em; white-space:nowrap; }
+table.tb td:first-child { white-space:nowrap; font-weight:700; }
+.tbwrap { overflow-x:auto; }
+
+ul.refs { list-style:none; margin:14px 0; }
+ul.refs li { font-size:12.5px; color:var(--sub); line-height:1.9; padding:4px 0 4px 18px; position:relative; border-bottom:1px solid var(--wash); }
+ul.refs li::before { content:"—"; position:absolute; left:0; color:var(--line); }
+ul.refs a { color:var(--sub); text-decoration:underline; text-underline-offset:3px; }
+ul.refs a:hover { color:var(--accent); }
+.refh { font-size:13px; font-weight:700; letter-spacing:.08em; color:var(--ink); margin:26px 0 2px; }
+
+.end { margin-top:56px; border-top:2px solid var(--ink); padding-top:26px; }
+.end p { font-size:15.5px; }
+.grid2 { display:grid; grid-template-columns:1fr 1fr; gap:10px 16px; margin:22px 0 6px; }
+.grid2 a { display:block; border:1px solid var(--line); padding:12px 14px; font-size:13.5px; font-weight:700; color:var(--ink); }
+.grid2 a:hover { border-color:var(--ink); background:var(--wash); }
+.grid2 a small { display:block; font-size:11.5px; font-weight:400; color:var(--sub); margin-top:2px; letter-spacing:.02em; }
+@media (max-width:560px){ .grid2 { grid-template-columns:1fr; } }
+.note { font-size:12.5px; color:var(--sub); line-height:1.8; margin-top:20px; }
+
+.foot { background:var(--black); color:#b9bcc2; margin-top:70px; }
+.foot-in { max-width:1040px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
+.foot .fw { color:#fff; font-weight:700; letter-spacing:.26em; font-size:12px; margin-bottom:10px; }
+.foot a { color:#d7dade; text-decoration:underline; text-underline-offset:3px; }
+.foot-c { border-top:1px solid #33363c; padding-top:14px; margin-top:14px; font-size:11.5px; }
+</style>
+</head>
+<body>
+<div class="topbar"><div class="topbar-in">
+  <a class="wordmark" href="../../">SCHOOL STOCK</a>
+  <div class="nav">
+      <a href="../../#prints">プリント</a>
+      <a href="../../#support">支援</a>
+      <a href="../../#toolbox">道具</a>
+      <a href="../../#reading" class="on">読みもの</a>
+      <a href="../../about/">このサイトについて</a>
+      <a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    </div>
+</div></div>
+
+<div class="hero"><div class="hero-in">
+  <img src="img/nt_hero.webp" alt="校庭のはしの段に腰かけて、大きな木をながめる子どもの後ろ姿の水彩画" width="1600" height="1067">
+  <div class="hero-txt">
+    <span class="kicker">読み物 ｜ TIRED BRAIN</span>
+    <h1 class="ja">脳は本当に疲れるのか</h1>
+    <p class="sub ja">グリア細胞、脳の掃除、スマホの通知、休み方。1本の動画をきっかけに、論文130本あまりを読んで分かったことと、分からなかったこと。</p>
+  </div>
+</div></div>
+
+<article class="article">
+  <div class="crumbs"><a href="../../">School Stock</a> ／ <a href="../../#reading">読みもの</a> ／ 脳は本当に疲れるのか</div>
+  <div class="head">
+    <div class="meta"><b>先生向けの長い読み物</b><span>｜</span><span>読了の目安 35分</span><span>｜</span><span>参考文献 130本あまり（出典はAIが機械照合）</span><span>｜</span><span>調査・執筆：Claude Code（Fable 5.1）</span><span>｜</span><span>© School Stock</span></div>
+  </div>
+
+  <div class="caveat"><b>先に、作り方の断りを書いておきます。この読み物は、AI（Anthropic の Claude Code、モデルは Claude Fable 5.1）の出力です。</b>
+  文献を探し、読み、要約し、この文章を書いたのはAIです。外﨑がしたのは、きっかけの動画を見て「もっと調べたい」と頼んだこと、公開を決めたことの2つで、<b>外﨑自身は一次資料（論文の本文）を読んで確かめていません。</b>
+  論文の著者・年・題名・掲載誌はAIがデータベースで機械照合していますが、要約の読み違いが残っている可能性があります。
+  引用や授業での利用の前に、リンク先の原文をご確認ください。</div>
+
+  <div class="toc"><b>この読み物の中身</b>
+    <ol>
+      <li><a href="#s0">はじめに 1本の動画から</a></li>
+      <li><a href="#s1">脳の半分は「お世話係」</a></li>
+      <li><a href="#s2">脳は疲れる ただし「タンクが空になる」のではない</a></li>
+      <li><a href="#s3">追試で崩れた話 糖・意志力・15分・23分</a></li>
+      <li><a href="#s4">眠っている間の脳 マウスで分かったこと、人ではまだのこと</a></li>
+      <li><a href="#s5">スマホと通知 切るより、まとめる</a></li>
+      <li><a href="#s6">数字で見る日本の子ども 令和8年度の全国学力・学習状況調査</a></li>
+      <li><a href="#s7">休み方の研究 効いたもの、効かなかったもの</a></li>
+      <li><a href="#s8">教室へ 明日からできる5つ</a></li>
+      <li><a href="#s9">まとめ</a></li>
+      <li><a href="#refs">参考にした研究</a></li>
+    </ol>
+  </div>
+
+  <h2 id="s0"><span class="n">0</span>はじめに 1本の動画から</h2>
+  <div class="h2sub">「脳の半分はグリア細胞」と聞いて、調べたくなった</div>
+
+  <p class="lead">きっかけは、脳科学者の毛内拡さん（お茶の水女子大学）が出演した動画でした。「そもそも脳は疲れるのか」「脳がショートカットする理由」「グリア細胞とは」「現代人が脳疲労に陥る理由」「スマホの通知がもたらす脳疲労」。章の題を見ただけで、教室で毎日見ている光景と重なりました。</p>
+
+  <p>5時間目に机に伏せる子。休み時間のあとのほうが顔つきがよい子。「頭が疲れた」と言う子に、先生は何と答えればよいのか。ここで書きたいのは、動画の内容の要約ではありません。動画で挙がった主張を一つずつ、査読を通った論文と、国の調査という一次資料に当てて確かめた結果です。</p>
+
+  <p>先に、大事な断りを2つ書きます。ひとつは、動画本編の文字起こしは取得できなかったので、確かめたのは<span class="em">章の題と副題に書かれた主張</span>であって、毛内さんの発言そのものではないことです。この読み物の中で毛内さんの言葉を引用することはしません。もうひとつは、この読み物の姉妹編「<a href="../kami-de-kangaeru/">紙とペンで考えると なぜ頭が整うのか</a>」と同じように、調べて書いたのはAIだということです。</p>
+
+  <p>調べて意外だった発見が、はじめに一つありました。毛内さんは解説者というだけではなく、2016年に Nature Communications に載った論文の筆頭著者です。マウスの脳に微弱な電流を流すと、グリア細胞の一種であるアストロサイトがカルシウムで応答するという研究でした。グリア細胞の話は、ご本人の専門そのものだったのです。</p>
+
+  <div class="q5"><b>この読み物で確かめた5つの問い</b>
+    <ol>
+      <li>「脳の半分はグリア細胞」は本当か。グリア細胞は何をしているのか</li>
+      <li>脳は本当に疲れるのか。疲れるとしたら、何が起きているのか</li>
+      <li>眠っている間に脳は「掃除」されるのか</li>
+      <li>スマホの通知は、脳を疲れさせるのか。通知は切るべきなのか</li>
+      <li>脳を休める方法のうち、根拠があるのはどれか</li>
+    </ol>
+  </div>
+
+  <h2 id="s1"><span class="n">1</span>脳の半分は「お世話係」</h2>
+  <div class="h2sub">グリア細胞の3つの仕事</div>
+
+  <p>脳の細胞というと、電気信号をやりとりするニューロン（神経細胞）を思い浮かべます。ニューロンではない細胞をまとめてグリア細胞と呼びます。グリアはギリシャ語で「にかわ」、つまり接着剤です。長いあいだ「ニューロンのすき間を埋めているだけの細胞」と思われていたので、この名前がつきました。</p>
+
+  <p>まず数の話から。「脳の半分はグリア細胞」は本当でしょうか。2009年、ブラジルの研究チームがヒトの脳を溶かして細胞の核を数えるという方法で、ニューロンは約861億、ニューロン以外の細胞は約846億と報告しました。ほぼ1対1です。動画の「半分」という言い方は、この数字に近い。むしろ、昔よく聞いた「グリア細胞はニューロンの10倍ある」のほうが、根拠のない神話だったことが2016年の総説で明らかにされています。ただし「ニューロン以外」には血管の細胞も含まれるので、正確には「半分弱」です。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Azevedo ほか（2009, <i>Journal of Comparative Neurology</i>）は成人男性4人の脳を等方性分画法で計数し、ニューロン様細胞 86.1±8.1 億、非ニューロン細胞 84.6±9.8 億と報告した。von Bartheld, Bahney &amp; Herculano-Houzel（2016, 同誌）は150年分の細胞計数の研究を検証し、「グリア対ニューロンは10対1、総数1兆」という通説を支持する組織学データは存在せず、比はおよそ1対1だと結論した。</div>
+
+  <p>では、その半分は何をしているのか。グリア細胞には主に3種類あって、それぞれ違う仕事をしています。教室の言葉で言えば、ニューロンが「考える係」、グリア細胞が「お世話係」です。</p>
+
+  <figure style="margin:26px 0;">
+    <svg viewBox="0 0 720 300" width="100%" role="img" aria-label="ニューロンと3種類のグリア細胞の役割を示した模式図" style="max-width:720px;display:block;margin:0 auto;font-family:'Noto Sans JP',sans-serif;">
+      <rect width="720" height="300" fill="#fff"/>
+      <line x1="90" y1="150" x2="630" y2="150" stroke="#2e5d7d" stroke-width="3"/>
+      <circle cx="90" cy="150" r="26" fill="#fff" stroke="#2e5d7d" stroke-width="3"/>
+      <line x1="66" y1="132" x2="40" y2="110" stroke="#2e5d7d" stroke-width="3"/>
+      <line x1="66" y1="168" x2="40" y2="190" stroke="#2e5d7d" stroke-width="3"/>
+      <line x1="90" y1="124" x2="90" y2="96" stroke="#2e5d7d" stroke-width="3"/>
+      <circle cx="630" cy="150" r="9" fill="#2e5d7d"/>
+      <text x="90" y="230" text-anchor="middle" font-size="14" font-weight="700" fill="#15181c">ニューロン</text>
+      <text x="90" y="250" text-anchor="middle" font-size="12" fill="#6b7077">考える係</text>
+      <text x="630" y="185" text-anchor="middle" font-size="12" fill="#6b7077">シナプス</text>
+      <rect x="230" y="138" width="60" height="24" rx="4" fill="#e7eef2"/>
+      <rect x="310" y="138" width="60" height="24" rx="4" fill="#e7eef2"/>
+      <rect x="390" y="138" width="60" height="24" rx="4" fill="#e7eef2"/>
+      <text x="340" y="112" text-anchor="middle" font-size="14" font-weight="700" fill="#15181c">オリゴデンドロサイト</text>
+      <text x="340" y="196" text-anchor="middle" font-size="12" fill="#6b7077">よく使う配線に絶縁テープを巻き、信号を速くする</text>
+      <path d="M560 78 q40 -30 70 0 q30 30 0 50 q-30 25 -70 0 q-25 -25 0 -50z" fill="#fff" stroke="#2e5d7d" stroke-width="2.5"/>
+      <line x1="596" y1="126" x2="618" y2="142" stroke="#2e5d7d" stroke-width="2.5"/>
+      <text x="596" y="50" text-anchor="middle" font-size="14" font-weight="700" fill="#15181c">アストロサイト</text>
+      <text x="596" y="68" text-anchor="middle" font-size="12" fill="#6b7077">シナプスのそばで伝達を調整し、栄養を届ける</text>
+      <circle cx="660" cy="240" r="22" fill="#fff" stroke="#2e5d7d" stroke-width="2.5"/>
+      <line x1="646" y1="222" x2="638" y2="212" stroke="#2e5d7d" stroke-width="2.5"/>
+      <line x1="674" y1="222" x2="682" y2="212" stroke="#2e5d7d" stroke-width="2.5"/>
+      <line x1="660" y1="218" x2="642" y2="164" stroke="#2e5d7d" stroke-width="2.5" stroke-dasharray="4 4"/>
+      <text x="600" y="280" text-anchor="middle" font-size="14" font-weight="700" fill="#15181c">ミクログリア</text>
+      <text x="600" y="296" text-anchor="middle" font-size="12" fill="#6b7077">使われないシナプスを片づける</text>
+    </svg>
+    <figcaption style="font-size:12px;color:#6b7077;text-align:center;margin-top:6px;">3種類のグリア細胞の仕事（模式図）</figcaption>
+  </figure>
+
+  <p><b>アストロサイト</b>は、星の形をした細胞で、シナプス（ニューロンどうしのつなぎ目）のそばに腕を伸ばしています。1999年に「三者間シナプス」という考え方が提案されました。シナプスは送り手と受け手の2者だけでなく、アストロサイトを加えた3者で成り立っているという見方です。アストロサイトは伝達物質の濃さを整え、血管から受け取った栄養をニューロンに届けています。</p>
+
+  <p><b>ミクログリア</b>は、脳の中の免疫細胞です。2011年と2012年のマウスの研究で、発達期のミクログリアが使われていないシナプスを文字どおり「食べて」片づけ、脳の配線を整えていることが示されました。子どもの脳は、つながりを増やすだけでなく、いらないつながりを減らしながら育っています。</p>
+
+  <p><b>オリゴデンドロサイト</b>は、ニューロンの長い突起に髄鞘（ずいしょう）という絶縁の鞘を巻きます。電線に絶縁テープを巻くようなもので、信号が速く正確に伝わるようになります。2014年のマウスの研究では、新しい運動を覚えるときに髄鞘を作る細胞の新生が増え、それを止めると運動を習得できませんでした。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Araque ほか（1999, <i>Trends in Neurosciences</i>）が三者間シナプスを提唱。Paolicelli ほか（2011, <i>Science</i>）と Schafer ほか（2012, <i>Neuron</i>）はマウスで、ミクログリアが補体というタグを目印にシナプスを刈り込むことを示した。McKenzie ほか（2014, <i>Science</i>）はマウスの複雑な回し車の学習で、オリゴデンドロサイトの新生が必要であることを遺伝子操作で示した。Lebel &amp; Beaulieu（2011, <i>Journal of Neuroscience</i>）は5〜32歳の103人をMRIで追跡し、神経線維の成熟が20代まで続くことを報告した。</div>
+
+  <p>ここで先生に持ち帰ってほしい事実が一つあります。ヒトの脳をMRIで追いかけた研究では、配線の成熟は思春期を過ぎても続き、一部は20代まで変わり続けていました。<span class="em">子どもの脳は、いま配線の片づけと絶縁の最中にある</span>。これは動物実験とヒトの研究の両方から言える、安心して使える事実です。</p>
+
+  <h3>「脳内炎症」はどこまで言えるか</h3>
+
+  <p>動画の副題には「情報過多と炎症が脳に悪影響」とありました。ここは慎重に書きます。体のどこかで炎症が起きると、だるさ、意欲の低下、食欲の低下といった「病気のときの行動」が出ることは、免疫と脳の研究で確立しています。風邪をひいたときに何もする気が起きないのは、免疫の信号が脳に届いた結果です。慢性疲労症候群やうつ病の人の脳でミクログリアが活発になっているという報告もあります。ただし、その研究は参加者が9人対10人、20人対20人という小さな規模です。</p>
+
+  <p>そして、「情報過多やスマホの通知が脳内炎症を起こす」という橋渡しの部分を直接確かめた論文は、今回の調査では見つかりませんでした。「炎症が疲労を起こす」と「情報が多い」のあいだには、まだ研究で埋まっていない段差があります。この読み物では、そこを仮説として扱います。</p>
+
+  <div class="caveat"><b>言えること・言えないこと：</b>「炎症が起きるとだるくなる」は言える（Dantzer ほか 2008, <i>Nature Reviews Neuroscience</i>）。「慢性疲労やうつで脳の炎症細胞が活発という報告がある」も言える（Nakatomi ほか 2014、Setiawan ほか 2015。ともに小規模）。「スマホや情報過多が脳を炎症させる」は、一次資料が見つからず、言えない。</div>
+
+  <h2 id="s2"><span class="n">2</span>脳は疲れる ただし「タンクが空になる」のではない</h2>
+  <div class="h2sub">6時間頭を使うと、前頭前野に何がたまるか</div>
+
+  <p>「頭を使うと疲れる」は、当たり前のようでいて、長いあいだ科学的にはあやふやな話でした。筋肉なら乳酸がたまる、と説明できます。脳では何がたまるのか。2022年、フランスの研究チームが一つの答えを出しました。</p>
+
+  <p>参加者に1日6時間、記憶と注意を使う課題をやらせ、朝・昼・夕方の3回、MRIで脳の中の物質の濃さを測りました。すると、難しい課題を続けた群だけ、夕方に外側前頭前野でグルタミン酸という神経伝達物質の濃さが上がっていました。前頭前野は、計画を立てたり我慢したりするときに働く場所です。そして、疲れた参加者は「いますぐ少ない報酬」を「あとで多い報酬」より選びやすくなっていました。</p>
+
+  <p>同じチームの2016年の研究では、丸一日の課題のあとに衝動的な選択が増え、それが前頭前野の活動の低下と結びついていました。<span class="em">疲れると、脳は近道を選ぶ</span>。動画の「脳がショートカットする理由」は、この研究と重なります。人は情報を処理する力に限りがあるので、なるべく近道（ヒューリスティック）を使うという考え方は、心理学では「認知的倹約家」と呼ばれ、カーネマンの「速い思考と遅い思考」でも広く知られています。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Wiehler, Branzoli, Adanyeguh, Mochel &amp; Pessiglione（2022, <i>Current Biology</i>）は約40人を高負荷群と低負荷群に分け、1日6時間の課題の前後で磁気共鳴分光法により外側前頭前野のグルタミン酸を測定し、高負荷群でのみ濃度と拡散が有意に上昇したと報告した。Blain, Hollard &amp; Pessiglione（2016, <i>PNAS</i>）は丸一日の実行制御課題のあとに時間割引課題で衝動的な選択が増え、左中前頭回の活動低下と関連していたことを示した。</div>
+
+  <p>もう一つ、意外な事実があります。脳は体重の2％ほどの重さなのに、全身のエネルギーの20％ほどを使います。ところが、課題に取り組んでいるときに増える分は全体の1％程度で、大半は何もしていないように見えるときにも一定して使われています。「考えると急にエネルギーを大量に使う」わけではないのです。脳は、いつも同じくらい忙しい。</p>
+
+  <p>疲れの正体については、もう一つ別の説明もあります。「疲れ」とは資源が減った状態ではなく、脳が「この課題はもう続ける価値がない」と計算した結果だという考え方です。子どもが計算ドリルの途中で「疲れた」と言うとき、それは頭のエネルギーが切れたのではなく、「これを続けるより、ほかのことをしたほうがよい」と脳が判断した合図かもしれません。どちらの説明も、「タンクが空になる」という比喩を支持していません。</p>
+
+  <div class="pull"><q>疲れると、脳は近道を選ぶ</q><cite>6時間の課題のあと、前頭前野にグルタミン酸がたまり、目先の報酬を選びやすくなった（Wiehler ほか 2022、Blain ほか 2016）</cite></div>
+
+  <h2 id="s3"><span class="n">3</span>追試で崩れた話 糖・意志力・15分・23分</h2>
+  <div class="h2sub">教室でよく聞く説明のうち、根拠が消えたもの</div>
+
+  <p>この読み物でいちばん役に立つのは、たぶんこの章です。「脳の疲れ」について広く信じられている話のうち、大規模な追試で崩れたものを並べます。</p>
+
+  <h3>「疲れると糖を使い果たす。甘い物で回復する」</h3>
+
+  <p>2007年に、我慢を続けると血糖値が下がり、糖分の飲み物で自己制御の力が戻るという研究が発表され、有名になりました。しかしその後、5分程度の課題で脳の糖の消費が変わるほどの差は生まれないという再分析が出ました。決定的だったのは2012年の実験です。砂糖水を<span class="em">口に含んで吐き出すだけ</span>でも自己制御の成績が上がり、しかも血糖値は変わっていませんでした。効いていたのは糖ではなく、「報酬が来る」という予感だったのです。</p>
+
+  <h3>「意志力はタンクのように減る」</h3>
+
+  <p>「自我消耗」と呼ばれる有名な説があります。我慢を一度使うと、そのあとの我慢が効かなくなるという説です。1998年の「チョコレートを我慢してラディッシュを食べた人は、そのあとのパズルを早くあきらめた」という実験が有名です。この説は、2016年に23の研究室・2,141人、2021年に36の研究室・3,531人が、同じ手順で事前登録して追試しました。結果は、効果量がほぼゼロ。合計約60の研究室・5,600人規模で再現しなかった説を、教室で「意志力は使うと減るからね」と語るのは、もうやめてよさそうです。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Gailliot ほか（2007, <i>Journal of Personality and Social Psychology</i>）が糖と自己制御の関係を報告。Kurzban（2010, <i>Evolutionary Psychology</i>）が神経科学の知見から再分析し、Molden ほか（2012, <i>Psychological Science</i>）が4実験で、炭水化物のうがいだけで自己制御が向上し血糖は変化しないことを示した。自我消耗は Baumeister ほか（1998）が提唱し、Hagger ほか（2016, <i>Perspectives on Psychological Science</i>、23研究室・n=2,141、d=0.04）と Vohs ほか（2021, <i>Psychological Science</i>、36研究室・n=3,531、d=0.06）の多施設追試で再現しなかった。</div>
+
+  <h3>「集中は15分しか続かない」</h3>
+
+  <p>教育のコラムでよく見る数字ですが、確立した出典が見つかりませんでした。「アメリカ小児科学会の報告」と書かれていることがありますが、どの文献かを特定できません。大学の講義について「10〜15分で注意が落ちる」という説を検証した2007年の総説は、それを支持する強い根拠はなく、個人差のほうが大きいと結論しています。「15分」という数字を根拠に授業を区切る必要はありません。ただし、休憩そのものに効果があることは別の研究ではっきりしています（7章）。</p>
+
+  <h3>「中断から戻るのに23分かかる」</h3>
+
+  <p>「一度中断されると、元の作業に戻るまで23分15秒かかる」という数字も広く出回っています。よく出典とされる2008年の論文を確かめると、この数字は本文のどこにもありませんでした。出どころは2006年の雑誌のインタビューでの発言です。2008年の論文が実際に示したのは「中断されても作業は速く終わる。ただしストレスと焦りは増える」でした。</p>
+
+  <h3>「ドーパミン断ち」「ドーパミン中毒」</h3>
+
+  <p>動画の副題には「ドーパミンの活用法」とありました。ドーパミンについて確かなのは、1997年のサルの実験です。ドーパミンを出すニューロンは「報酬そのもの」ではなく「予想とのズレ」に反応します。予想していなかったごほうびには強く反応し、完全に予想できるごほうびには反応せず、予想したごほうびが来ないと活動が落ち込む。「新しさ」「小さな達成」「ごほうびの予感」がやる気を動かす土台は、ここにあります。一方で「ドーパミン断ち」という言葉は誤解です。ドーパミンは断てる物質ではなく、安静時にも脳は作り続けています。「刺激の少ない時間を意図して作る」という行動には意味がありますが、仕組みの説明として「断つ」は正しくありません。</p>
+
+  <h3>「蛙化現象も脳疲労」</h3>
+
+  <p>蛙化現象（好きな人に好かれた途端に気持ちが冷める）は、2004年の学会発表を初出に、心理学の研究対象になっています。けれど、それを脳の疲れと結びつけた論文は見つかりませんでした。動画も疑問形で提示しています。根拠なし、として扱います。</p>
+
+  <div class="checklist"><h3>この章の持ち帰り 教室で言わなくてよくなった言葉</h3>
+    <ul>
+      <li>「頭を使うと糖が減るから、甘い物を食べなさい」</li>
+      <li>「我慢すると意志力が減るから、大事なことは先に」</li>
+      <li>「集中は15分しかもたないから、15分で区切る」</li>
+      <li>「一度気がそれると、戻るのに23分かかる」</li>
+      <li>「ドーパミンを断てば脳がリセットされる」</li>
+    </ul>
+  </div>
+
+  <h2 id="s4"><span class="n">4</span>眠っている間の脳 マウスで分かったこと、人ではまだのこと</h2>
+  <div class="h2sub">「脳の掃除」は定説ではなく、進行中の論争</div>
+
+  <img class="motif" src="img/nt_sleep.webp" alt="ふとんで眠る子どもの後ろ姿と、窓に細い月の水彩画" loading="lazy">
+
+  <p>「寝ている間に脳の老廃物が洗い流される」という話を聞いたことがあると思います。これはグリア細胞と深く関わる、この10年でいちばん注目された研究の一つです。そして、いちばん慎重に書くべき話でもあります。</p>
+
+  <p>2012年、脳脊髄液（脳を浸している液体）が血管に沿って脳の奥まで入り込み、老廃物を運び出す経路が見つかりました。この流れにはアストロサイトの水の通り道（アクアポリン4）が要ります。グリアとリンパをかけて「グリンパティック系」と名づけられました。2013年の Science の論文は、マウスが眠ると脳の細胞と細胞のすき間が60％広がり、アルツハイマー病に関わるアミロイドβの除去が、起きているときの約2倍の速さになったと報告しました。</p>
+
+  <p>2025年には、さらに詳しい仕組みが分かりました。ノンレム睡眠中、ノルアドレナリンというホルモンのゆっくりした波が血管を縮めたり広げたりして、ポンプのように脳脊髄液を送っている。そして、睡眠薬（ゾルピデム）でこの波が半分に減り、脳への液の流入が3割以上減りました。薬で眠っても、同じ掃除は起きないかもしれない、という結果です。</p>
+
+  <p>ここまではマウスの話です。ヒトではどうか。2019年に、眠っている人の脳をMRIで撮り、脳波の深い波に合わせて脳脊髄液が波のように出入りする様子が観察されました。ただしこの研究は「液が動いている」ことを示したのであって、「老廃物がどれだけ減ったか」は測っていません。</p>
+
+  <p>そして2024年、「眠っているときや麻酔中は、脳から物が出ていく速さがむしろ遅い」という真っ向からの反論が Nature Neuroscience に載りました。提唱者側は2025年に「方法に問題がある」と再反論し、反論側がさらに反論しています。決着はついていません。</p>
+
+  <div class="caveat"><b>この読み物での線引き：</b>「マウスの実験では、眠っている間に脳のすき間が広がり、老廃物を洗い流す働きが強まることが確かめられている」とは書けます。「人間も寝ている間に脳がきれいになる」とは書きません。「脳の掃除説はもう否定された」とも書きません。研究者のあいだで意見が分かれている、と書きます。</div>
+
+  <h3>ヒトで言えること 睡眠と記憶、睡眠と感情</h3>
+
+  <p>一方で、睡眠と学習についてはヒトの研究がそろっています。一晩徹夜した人は、翌日に新しい映像を覚えるときの海馬の働きが落ち、覚える力が4割下がっていました。深い眠り（徐波睡眠）のあいだに、その日に習ったことが海馬から大脳皮質に移され、記憶として定着していく。これは多くの研究を整理した総説で大枠の合意になっています。「テストの前日に徹夜で詰め込む」より「早く寝て今日覚えたことを定着させる」ほうがよい、と子どもに言える根拠です。</p>
+
+  <p>感情についても分かっています。徹夜した人は、嫌な写真を見たときの扁桃体（感情の中枢）の反応が、よく眠った人より6割強く出ていました。寝不足の子が友達のひと言でかっとなるのは、性格の問題である前に、脳の状態の問題かもしれません。「今日はよく眠れた？」と聞く材料になります。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Iliff ほか（2012, <i>Science Translational Medicine</i>）、Xie ほか（2013, <i>Science</i>）、Hauglund ほか（2025, <i>Cell</i>）はいずれもマウス。Fultz ほか（2019, <i>Science</i>）はヒトのEEG・fMRI同時計測。Miao ほか（2024, <i>Nature Neuroscience</i>）が反論し、Plá &amp; Nedergaard ほか（2025）と Franks &amp; Wisden（2025）が同誌で応酬している。Yoo ほか（2007, <i>Nature Neuroscience</i>）は徹夜後の海馬の記銘低下を、Yoo ほか（2007, <i>Current Biology</i>）は扁桃体の過剰反応を報告。Rasch &amp; Born（2013, <i>Physiological Reviews</i>）は睡眠と記憶固定の総説。Astill ほか（2012, <i>Psychological Bulletin</i>）は5〜12歳の86研究・35,936人のメタ分析で、睡眠時間と認知機能に小さいが有意な関連（r=.08）を報告した。</div>
+
+  <h3>子どもの睡眠の目安</h3>
+
+  <p>米国睡眠医学会と、厚生労働省の「健康づくりのための睡眠ガイド2023」は一致して、小学生は9〜12時間、中高生は8〜10時間を目安としています。日本の小学生4,269人の調査では、平均の就寝は21時30分、睡眠時間は9時間4分。学年が上がるほど短くなります。0〜3歳の国際比較では、日本の子どもは17の国と地域の中でもっとも睡眠が短い側でした。</p>
+
+  <p>短い昼寝については、10分がもっとも効率がよく、30分眠ると起きたあとのぼんやりが35〜95分続くという実験があります。「NASAの26分仮眠で作業成績が34％改善」という有名な数字は、夜通し飛ぶパイロットの疲労対策としての数字です。健康な子どもの日常には、そのまま当てはめません。</p>
+
+  <h2 id="s5"><span class="n">5</span>スマホと通知 切るより、まとめる</h2>
+  <div class="h2sub">「今すぐ切るべし」を、実験に当てる</div>
+
+  <img class="motif" src="img/nf_phone_fusete.webp" alt="ふせて置いたスマートフォンとブロックメモの水彩画" loading="lazy">
+
+  <p>動画の副題は「スマホの通知は今すぐ切るべし」でした。通知が注意をそらすことは、実験で確かめられています。2015年の実験では、携帯電話を操作しなくても、通知の音や振動が来るだけで注意課題の誤りが増えました。2016年の実験では、通知をオンにして手元に置いた週は、通知を切って離れた場所に置いた週より、不注意や落ち着きのなさの自己報告が増えていました。ここまでは動画のとおりです。</p>
+
+  <p>ただし「今すぐ切る」が最善かというと、少し違いました。2019年のランダム化比較試験（237人）では、通知を完全に切った群より、<span class="em">1日3回、決まった時間にまとめて届ける群</span>のほうが幸福感の改善が大きかったのです。完全に切ると「何か来ているかもしれない」という取り残される不安が増え、かえって落ち着きませんでした。読み物としては「全部切る」ではなく「まとめる。決まった時間だけ見る」を勧めるのが、根拠に忠実です。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Stothart, Mitchum &amp; Yehnert（2015, <i>Journal of Experimental Psychology: Human Perception and Performance</i>）、Kushlev, Proulx &amp; Dunn（2016, <i>CHI</i>、n=221の被験者内比較）、Fitz ほか（2019, <i>Computers in Human Behavior</i>、n=237のRCT）。</div>
+
+  <h3>姉妹編の判断を、今回も守る</h3>
+
+  <p>姉妹編「紙とペンで考える」で、「スマホが机の上にあるだけで認知の容量が減る」という2017年の有名な研究は、直接の追試2本が再現しなかったので発信には使わない、と決めました。今回も同じです。メタ分析では小さな効果が残るという留保はつきますが、断定的には書きません。</p>
+
+  <p>「スマホが子どもの発達や学力に悪い」という主張の多くは相関研究で、効果の大きさは小さいものが多い。2019年の大規模な分析では、デジタル機器の利用が子どもの幸福感を説明する割合は0.4％で、これは「じゃがいもを食べる量」と同じ程度でした。2024年に話題になった『不安な世代』（ハイト）の「スマホが子どもの脳を配線し直している」という強い主張には、発達心理学者から「相関を因果に読み替えている」という批判が Nature に載っています。専門家の意見は分かれています。</p>
+
+  <p>学校でのスマホ禁止の効果も、研究によって割れています。禁止後に成績が上がったという準実験がある一方、2025年の英国30校の研究では、制限が厳しい学校と緩い学校で、成績も睡眠も気分も差がありませんでした。「禁止すれば解決する」とは書けません。</p>
+
+  <h3>効いた介入と、効かなかった道具</h3>
+
+  <p>効いたのは、スマホのモバイル通信を2週間止める（467人、注意の持続が改善）、SNSを1日30分に制限する、の2つです。「ほどほど」の利用がいちばん幸福感が高く、ゼロも過剰も低いという大規模調査もあります。目指すのは「ゼロ」ではなく「ほどよい量」です。</p>
+
+  <p>就寝前の画面については、発光する端末で寝る前に読書するとメラトニン（眠りのホルモン）が抑えられ、寝つきが遅くなる実験（12人）と、寝室にメディア機器があるだけで睡眠が短いというメタ分析があります。ここまでは根拠がある。一方、ブルーライトカット眼鏡は、2023年のコクランレビューで睡眠の質を改善しないと結論されました。効くのは眼鏡ではなく、時間帯と置き場所です。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Ward ほか（2017）の追試は Hartmann ほか（2020）、Ruiz Pardo &amp; Minda（2022）。Orben &amp; Przybylski（2019, <i>Nature Human Behaviour</i>）。Odgers（2024, <i>Nature</i>）。Goodyear ほか（2025, <i>Lancet Regional Health Europe</i>）。Castelo &amp; Kushlev（2025, <i>PNAS Nexus</i>、n=467の事前登録RCT）。Hunt ほか（2018）。Przybylski &amp; Weinstein（2017, <i>Psychological Science</i>）。Chang ほか（2015, <i>PNAS</i>、n=12）。Carter ほか（2016, <i>JAMA Pediatrics</i>、メタ分析）。Singh ほか（2023, <i>Cochrane Database of Systematic Reviews</i>）。</div>
+
+  <h2 id="s6"><span class="n">6</span>数字で見る日本の子ども 令和8年度の全国学力・学習状況調査</h2>
+  <div class="h2sub">小6の37.3％が、平日に3時間以上</div>
+
+  <p>海外の研究だけでは、教室の実感と距離があります。国の一次資料を見ます。令和8年度（2026年4月実施）の全国学力・学習状況調査の児童質問調査には、こういう質問があります。「普段（月〜金）、1日当たりどれくらいの時間、スマートフォンや携帯電話、パソコン、タブレット、ゲーム機、テレビ等でSNSや動画視聴などをしますか（学習する時間やゲームをする時間は除く）」。小学6年生の答えと、教科の平均正答率を並べたのが次の表です。</p>
+
+  <div class="tbwrap"><table class="tb">
+    <tr><th>平日1日の時間</th><th>小6の割合</th><th>国語の平均正答率</th><th>算数の平均正答率</th></tr>
+    <tr><td>4時間以上</td><td>21.7％</td><td>52.9</td><td>47.7</td></tr>
+    <tr><td>3時間以上4時間未満</td><td>15.6％</td><td>58.1</td><td>52.7</td></tr>
+    <tr><td>2時間以上3時間未満</td><td>19.9％</td><td>62.0</td><td>57.3</td></tr>
+    <tr><td>1時間以上2時間未満</td><td>20.9％</td><td>65.2</td><td>61.0</td></tr>
+    <tr><td>30分以上1時間未満</td><td>11.1％</td><td>67.5</td><td>63.7</td></tr>
+    <tr><td>30分未満</td><td>5.8％</td><td>70.7</td><td>68.6</td></tr>
+    <tr><td>持っていない</td><td>4.5％</td><td>64.1</td><td>60.7</td></tr>
+  </table></div>
+  <p class="note">出典：国立教育政策研究所「令和8年度 全国学力・学習状況調査 報告書（質問調査）」概要 p.76。相関係数は「持っていない」を除いて算出し、国語 −0.240、算数 −0.252。</p>
+
+  <p>3時間以上の子が合わせて37.3％。時間が長い子ほど正答率が低い階段が、きれいにできています。ただし、ここで3つ注意があります。</p>
+
+  <p>第一に、これは相関です。国立教育政策研究所は毎年「相関関係がみられるかを分析したものであり、因果関係を示したものではない」と注記しています。長く見る子の家庭の状況や学習時間が一緒に動いている可能性があります。第二に、<span class="em">「持っていない」子は「30分未満」の子より低い</span>。片側の階段だけ見せて「持たせなければよい」とは読めません。5章の「ほどよい量」と同じ形です。第三に、令和8年度から質問の機器の範囲が広がった（パソコン、タブレット、ゲーム機、テレビを含む）ので、前の年度と単純に並べられません。</p>
+
+  <p>参考までに、ゲームの時間を聞く項目は令和6年度が最後でした。「平日に4時間以上ゲームをする」小6は、平成26年度の8.8％から令和6年度の17.5％へ、10年で約2倍になっています。この項目は質問文が同じなので、比べられます。</p>
+
+  <p>睡眠については、「毎日、同じくらいの時刻に寝ている」と答えた小6は40.5％、「同じくらいの時刻に起きている」は56.0％です。10年間ほぼ横ばい。寝る時刻がそろっている子は4割で、起きる時刻のほうがそろえやすい、という形が見えます。</p>
+
+  <p>学校側の質問には、こういう項目もありました。「近視の予防の一環として、休み時間に屋外に出ることや、対象から30cm以上目を離す、30分に1回は目を休めるなどの配慮事項について指導していますか」。小学校の57.8％が「指導している」と答えています。「30分に1回、目を休める」は、すでに6割の小学校が口にしている言葉です。</p>
+
+  <h2 id="s7"><span class="n">7</span>休み方の研究 効いたもの、効かなかったもの</h2>
+  <div class="h2sub">根拠の強さで、三段に分ける</div>
+
+  <img class="motif" src="img/nt_break.webp" alt="校庭で両手を上げて飛び上がる子どもの後ろ姿の水彩画" loading="lazy">
+
+  <p>では、脳はどう休めればよいのか。「これが効く」という話は世の中にあふれています。根拠の強さで三段に分けます。</p>
+
+  <h3>強い 短い休憩と、軽い運動</h3>
+
+  <p>いちばん強い根拠は、デンマークの約200万件の全国テストのデータです。テストを受ける時刻が1時間遅いごとに成績が標準偏差の0.9％下がり、テストの直前に20〜30分の休み時間があると1.7％上がりました。この効果は、成績が低い子で大きかった。時間割という、学校が動かせる要因が学力テストに効くことを示した研究です。</p>
+
+  <p>授業の中では、単調な課題の途中に数十秒の気晴らしを挟むと、そのあとの注意が保たれるという実験があります。20分歩いた直後は、座って過ごしたあとより読解テストの成績が上がった（9〜10歳の20人）。授業中に体を動かす短い休憩を取り入れた学級を集めたメタ分析では、学力への効果量が1.03、課題への集中が0.60と、中から大の効果でした。米国の疾病対策センター（CDC）は小学校で1日20分以上の休み時間を勧め、罰として休み時間を取り上げないよう明記しています。</p>
+
+  <p>「ぼんやり」も、この段に入れます。何もしていないときに働く脳の回路（デフォルトモードネットワーク）は、記憶の整理や自分の振り返りを担っています。「休息は怠けではない」という2012年の総説の題が、この分野の結論です。簡単な作業をしながら心がさまよう時間は、そのあとの発想を助けました。ただし「何もせずじっと座って考える」ことは大人にも苦痛で、6〜15分それをさせる実験では、退屈に耐えかねて自分に電気ショックを与える人がいました。「ぼんやりさせる」のではなく、手を軽く動かせる自由な時間を残す、が正しい形です。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Sievertsen, Gino &amp; Piovesan（2016, <i>PNAS</i>、約200万件）。Ariga &amp; Lleras（2011, <i>Cognition</i>）。Hillman ほか（2009, <i>Neuroscience</i>、n=20）。Watson ほか（2017, <i>International Journal of Behavioral Nutrition and Physical Activity</i>、メタ分析）。Masini ほか（2020, <i>Journal of Science and Medicine in Sport</i>、小学校22研究）。Pellegrini &amp; Bohn（2005, <i>Educational Researcher</i>）、CDC &amp; SHAPE America（2017）。Raichle ほか（2001, <i>PNAS</i>）、Immordino-Yang ほか（2012, <i>Perspectives on Psychological Science</i>）、Baird ほか（2012, <i>Psychological Science</i>）、Wilson ほか（2014, <i>Science</i>）。</div>
+
+  <h3>条件つき 自然、呼吸</h3>
+
+  <p>「緑を見ると注意が回復する」という説（注意回復理論）には、公園を歩いたあとに作業記憶の課題が改善した（38人）、自然の中を90分歩くと反すうが減った、窓の外に緑がある教室のほうが注意が回復した（高校生94人）といった肯定的な研究があります。ただしメタ分析では、課題によって効果がばらつくという慎重な結論です。効くと断言はできませんが、害はない。休み時間に外に出る理由としては十分です。</p>
+
+  <p>呼吸法は、大人108人の試験で、1日5分の「長く吐く呼吸」が28日で気分をもっとも改善しました。子どもでの検証はまだです。</p>
+
+  <h3>効かなかった側 マインドフルネス授業、20-20-20</h3>
+
+  <p>ここは正直に書きます。子ども向けのマインドフルネスは、33本のランダム化比較試験を集めたメタ分析では、注意や不安に小から中程度の効果がありました。ところが、英国の85校・8,376人という最大級の試験（MYRIAD）で、教員が教える10コマのマインドフルネス授業は、抑うつ・幸福感のいずれにも通常授業との差がありませんでした。小さな研究の積み上げでは効きそうに見えたものが、規模を上げると消えた。「マインドフルネスをやれば落ち着く」という期待は、いまの根拠では持てません。</p>
+
+  <p>目の休め方の「20分ごとに20秒、20フィート先を見る」という20-20-20ルールも、2週間のランダム化比較試験で、視力や調節機能に差が出ませんでした。数字そのものに根拠はありません。ただし「画面を見続けない」という考え方に害はなく、目安として使うのはかまいません。</p>
+
+  <p>音楽については、曲と曲のあいだに挟んだ2分間の沈黙のときに、心拍と呼吸がもっとも落ち着いたという実験があります。歌詞つきの音楽を聴きながらの読解は、好きな曲でも無音より成績が下がりました。にぎやかな時間のあとに短い静かな時間を置く、くらいの使い方が妥当です。</p>
+
+  <div class="evidence"><b>研究の根拠：</b>Kaplan（1995）、Berman, Jonides &amp; Kaplan（2008, <i>Psychological Science</i>、n=38）、Bratman ほか（2015, <i>PNAS</i>）、Li &amp; Sullivan（2016, <i>Landscape and Urban Planning</i>、n=94）、Ohly ほか（2016）と Stevenson ほか（2018）のメタ分析。Balban ほか（2023, <i>Cell Reports Medicine</i>、n=108）。Dunning ほか（2019, <i>Journal of Child Psychology and Psychiatry</i>、RCT33本、d=0.16〜0.30）。Kuyken ほか（2022, <i>Evidence Based Mental Health</i>、85校・n=8,376）。Johnson &amp; Rosenfield（2023, <i>Optometry and Vision Science</i>）。Bernardi, Porta &amp; Sleight（2006, <i>Heart</i>）。Perham &amp; Currie（2014, <i>Applied Cognitive Psychology</i>）。</div>
+
+  <h3>学習指導要領との接続</h3>
+
+  <p>休養は、小学校の保健で3・4年「体の発育・発達」に「適切な運動、食事、休養及び睡眠が必要である」と明記され、運動・食事・睡眠と並ぶ4本柱の一つです。5・6年「心の健康」では不安や悩みへの対処を扱い、体育の「体ほぐしの運動」は全学年で「心と体を軽やかにしたりストレスを軽減したりする」活動として位置づけられています。この読み物の内容は、新しい単元を作らなくても、いまある保健と体育に入ります。</p>
+
+  <h2 id="s8"><span class="n">8</span>教室へ 明日からできる5つ</h2>
+  <div class="h2sub">根拠のあるものだけを、時間と分数つきで</div>
+
+  <p>7章の根拠を、学校の1日に置き直します。新しい道具はいりません。</p>
+
+  <div class="checklist"><h3>明日からできる5つ</h3>
+    <ul>
+      <li><b>テストの直前に20分の休み時間を置く。</b>単元テストや学力調査を、休み時間の直後のコマに組む。詰め込みの5分より、休みの20分（Sievertsen 2016）</li>
+      <li><b>一斉指導が10分を超えたら、形を変える。</b>1〜2分の体ほぐし、隣と話す、短い作業。「15分」の数字にはこだわらない（Ariga &amp; Lleras 2011、Godwin 2016）</li>
+      <li><b>休み時間を罰として取り上げない。</b>外に出て体を動かす20分は、次の授業への投資（CDC 2017、Hillman 2009）</li>
+      <li><b>「30分に1回、目を休める」を、そのまま使う。</b>すでに6割の小学校が指導している言葉。遠くの緑を見る、でよい（令和8年度学校質問、Li &amp; Sullivan 2016）</li>
+      <li><b>家庭には3つだけ伝える。</b>通知はまとめる。寝室にスマホを置かない。ルールは話し合って決める。禁止や取り上げは勧めない（Fitz 2019、Carter 2016、学テ保護者調査）</li>
+    </ul>
+  </div>
+
+  <p>そして、子どもに「疲れた」と言われたときの答え方が、少し変わります。「気合いが足りない」でも「糖分をとりなさい」でもありません。「頭を使うと、前のほうの脳に疲れのもとがたまる。休むと戻る」。それは研究が確かめた、本当の話です。</p>
+
+  <h2 id="s9"><span class="n">9</span>まとめ</h2>
+  <div class="h2sub">5つの問いへの答え</div>
+
+  <div class="q5">
+    <ol>
+      <li><b>脳の半分はグリア細胞か。</b>ほぼそのとおり（1対1）。「10倍」のほうが神話だった。グリア細胞はシナプスの調整、栄養の受け渡し、いらないシナプスの片づけ、配線の絶縁をしている。子どもの脳では、片づけと絶縁が20代まで続く</li>
+      <li><b>脳は疲れるか。</b>疲れる。6時間の課題で前頭前野にグルタミン酸がたまり、判断が近視眼的になる。ただし「糖が減る」「意志力のタンクが空になる」は追試で崩れた</li>
+      <li><b>眠っている間に脳は掃除されるか。</b>マウスでは繰り返し確かめられている。ヒトでは液の動きまでしか観察されておらず、2024年に反論も出て論争中。睡眠と記憶・感情の関係は、ヒトで言える</li>
+      <li><b>通知は切るべきか。</b>通知が注意をそらすのは確か。ただし完全に切るより「まとめる」ほうが根拠が厚い。「スマホがあるだけで頭が働かない」は使わない。効くのは眼鏡ではなく、時間帯と置き場所</li>
+      <li><b>根拠のある休み方は。</b>短い休憩と軽い運動がいちばん強い。自然と呼吸は条件つき。学校でのマインドフルネス授業と20-20-20は、大規模な検証で効果が出なかった</li>
+    </ol>
+  </div>
+
+  <div class="pull"><q>疲れの正体は、タンクの空ではなく、前頭前野にたまった疲れのもと。休むと戻る</q><cite>論文130本あまりを読んで残った、子どもに言える一文です</cite></div>
+
+  <div class="end">
+    <p>この読み物は、1本の動画から始まりました。動画の骨になる主張の多くは一次資料で支持され、「通知は今すぐ切れ」「脳の掃除」「炎症」の部分は言い過ぎでした。そのことを正直に書けたのが、この読み物の価値だと思っています。</p>
+    <div class="grid2">
+      <a href="../kami-de-kangaeru/">紙とペンで考えると なぜ頭が整うのか<small>この読み物の姉妹編。認知負荷・手書き・ノートの研究を読み込んだ長い読み物</small></a>
+      <a href="../../shien/yomimono/">しんどさの正体<small>テストで手が止まる子を4つの部屋で見る</small></a>
+      <a href="../../shien/">支援カード<small>自分を助ける合言葉のカード全88枚</small></a>
+      <a href="../../">School Stock 棚トップ<small>先生のための無料の道具と教材の棚</small></a>
+    </div>
+    <p class="note">この読み物は AI（Claude Code、Fable 5.1）の出力です。文献の調査と執筆はAIが行い、外﨑はきっかけの動画を見て調査を頼み、公開を判断しました。
+    外﨑自身は一次資料を読んでいません。論文の要約は、AIが抄録と本文で確認できた範囲で書き、人数や効果量が確認できなかったものは数字を書いていません。
+    追試で再現しなかった研究、反論が出ている研究は、そのことを本文に明記しました。動画本編の発言は確認できていないため、この読み物で検証したのは章立てと副題に書かれた主張です。
+    研究の読み違いがあれば、noteやXでお知らせください。2026年9月18日。</p>
+  </div>
+
+  <h2 id="refs">参考にした研究</h2>
+  <p class="note">著者・年・題名・掲載誌は、DOI、PubMed、J-STAGE、CiNii、官公庁の公開ページで確認したものだけを載せています。リンクはDOIか論文ページ、または公開PDFです。きっかけの動画は、PIVOT HEALTH「【脳科学が明かす、脳疲労の正体】」（毛内拡さん出演、<a href="https://www.youtube.com/watch?v=7fgxouo1wS8" target="_blank" rel="noopener">YouTube</a>）。</p>
+
+  <div class="refh">1 グリア細胞</div>
+  <ul class="refs">
+    <li>Azevedo, F. A. C., et al. (2009). Equal numbers of neuronal and nonneuronal cells make the human brain an isometrically scaled-up primate brain. <i>Journal of Comparative Neurology</i>, 513(5), 532–541. <a href="https://doi.org/10.1002/cne.21974" target="_blank" rel="noopener">DOI</a></li>
+    <li>von Bartheld, C. S., Bahney, J., &amp; Herculano-Houzel, S. (2016). The search for true numbers of neurons and glial cells in the human brain. <i>Journal of Comparative Neurology</i>, 524(18), 3865–3895. <a href="https://doi.org/10.1002/cne.24040" target="_blank" rel="noopener">DOI</a></li>
+    <li>Araque, A., Parpura, V., Sanzgiri, R. P., &amp; Haydon, P. G. (1999). Tripartite synapses: glia, the unacknowledged partner. <i>Trends in Neurosciences</i>, 22(5), 208–215. <a href="https://doi.org/10.1016/s0166-2236(98)01349-6" target="_blank" rel="noopener">DOI</a></li>
+    <li>Pellerin, L., &amp; Magistretti, P. J. (1994). Glutamate uptake into astrocytes stimulates aerobic glycolysis. <i>PNAS</i>, 91(22), 10625–10629. <a href="https://doi.org/10.1073/pnas.91.22.10625" target="_blank" rel="noopener">DOI</a></li>
+    <li>Paolicelli, R. C., et al. (2011). Synaptic pruning by microglia is necessary for normal brain development. <i>Science</i>, 333(6048), 1456–1458. <a href="https://doi.org/10.1126/science.1202529" target="_blank" rel="noopener">DOI</a></li>
+    <li>Schafer, D. P., et al. (2012). Microglia sculpt postnatal neural circuits in an activity and complement-dependent manner. <i>Neuron</i>, 74(4), 691–705. <a href="https://doi.org/10.1016/j.neuron.2012.03.026" target="_blank" rel="noopener">DOI</a></li>
+    <li>McKenzie, I. A., et al. (2014). Motor skill learning requires active central myelination. <i>Science</i>, 346(6207), 318–322. <a href="https://doi.org/10.1126/science.1254960" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bojarskaite, L., et al. (2020). Astrocytic Ca2+ signaling is reduced during sleep and is involved in the regulation of slow wave sleep. <i>Nature Communications</i>, 11, 3240. <a href="https://doi.org/10.1038/s41467-020-17062-2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Lebel, C., &amp; Beaulieu, C. (2011). Longitudinal development of human brain wiring continues from childhood into adulthood. <i>Journal of Neuroscience</i>, 31(30), 10937–10947. <a href="https://doi.org/10.1523/JNEUROSCI.5302-10.2011" target="_blank" rel="noopener">DOI</a></li>
+    <li>Monai, H., et al. (2016). Calcium imaging reveals glial involvement in transcranial direct current stimulation-induced plasticity in mouse brain. <i>Nature Communications</i>, 7, 11100. <a href="https://doi.org/10.1038/ncomms11100" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dantzer, R., O'Connor, J. C., Freund, G. G., Johnson, R. W., &amp; Kelley, K. W. (2008). From inflammation to sickness and depression. <i>Nature Reviews Neuroscience</i>, 9(1), 46–56. <a href="https://doi.org/10.1038/nrn2297" target="_blank" rel="noopener">DOI</a></li>
+    <li>Nakatomi, Y., et al. (2014). Neuroinflammation in patients with chronic fatigue syndrome/myalgic encephalomyelitis: An 11C-(R)-PK11195 PET study. <i>Journal of Nuclear Medicine</i>, 55(6), 945–950. <a href="https://doi.org/10.2967/jnumed.113.131045" target="_blank" rel="noopener">DOI</a></li>
+    <li>Setiawan, E., et al. (2015). Role of translocator protein density, a marker of neuroinflammation, in the brain during major depressive episodes. <i>JAMA Psychiatry</i>, 72(3), 268–275. <a href="https://doi.org/10.1001/jamapsychiatry.2014.2427" target="_blank" rel="noopener">DOI</a></li>
+  </ul>
+
+  <div class="refh">2・3 脳の疲れ、追試で崩れた話</div>
+  <ul class="refs">
+    <li>Wiehler, A., Branzoli, F., Adanyeguh, I., Mochel, F., &amp; Pessiglione, M. (2022). A neuro-metabolic account of why daylong cognitive work alters the control of economic decisions. <i>Current Biology</i>, 32(16), 3564–3575. <a href="https://pubmed.ncbi.nlm.nih.gov/35961314/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Blain, B., Hollard, G., &amp; Pessiglione, M. (2016). Neural mechanisms underlying the impact of daylong cognitive work on economic decisions. <i>PNAS</i>, 113(25), 6967–6972. <a href="https://doi.org/10.1073/pnas.1520527113" target="_blank" rel="noopener">DOI</a></li>
+    <li>Boksem, M. A. S., &amp; Tops, M. (2008). Mental fatigue: Costs and benefits. <i>Brain Research Reviews</i>, 59(1), 125–139. <a href="https://doi.org/10.1016/j.brainresrev.2008.07.001" target="_blank" rel="noopener">DOI</a></li>
+    <li>Hockey, G. R. J. (1997). Compensatory control in the regulation of human performance under stress and high workload. <i>Biological Psychology</i>, 45(1–3), 73–93. <a href="https://doi.org/10.1016/S0301-0511(96)05223-4" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kurzban, R., Duckworth, A., Kable, J. W., &amp; Myers, J. (2013). An opportunity cost model of subjective effort and task performance. <i>Behavioral and Brain Sciences</i>, 36(6), 661–679. <a href="https://doi.org/10.1017/S0140525X12003196" target="_blank" rel="noopener">DOI</a></li>
+    <li>Raichle, M. E., &amp; Gusnard, D. A. (2002). Appraising the brain's energy budget. <i>PNAS</i>, 99(16), 10237–10239. <a href="https://www.pnas.org/doi/10.1073/pnas.172399499" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Raichle, M. E. (2006). The brain's dark energy. <i>Science</i>, 314(5803), 1249–1250. <a href="https://doi.org/10.1126/science.1134405" target="_blank" rel="noopener">DOI</a></li>
+    <li>Gailliot, M. T., et al. (2007). Self-control relies on glucose as a limited energy source. <i>Journal of Personality and Social Psychology</i>, 92(2), 325–336. <a href="https://pubmed.ncbi.nlm.nih.gov/17279852/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Kurzban, R. (2010). Does the brain consume additional glucose during self-control tasks? <i>Evolutionary Psychology</i>, 8(2), 244–259. <a href="https://doi.org/10.1177/147470491000800208" target="_blank" rel="noopener">DOI</a></li>
+    <li>Molden, D. C., et al. (2012). Motivational versus metabolic effects of carbohydrates on self-control. <i>Psychological Science</i>, 23(10), 1137–1144. <a href="https://pubmed.ncbi.nlm.nih.gov/22972907/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Baumeister, R. F., Bratslavsky, E., Muraven, M., &amp; Tice, D. M. (1998). Ego depletion: Is the active self a limited resource? <i>Journal of Personality and Social Psychology</i>, 74(5), 1252–1265. <a href="https://pubmed.ncbi.nlm.nih.gov/9599441/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Hagger, M. S., et al. (2016). A multilab preregistered replication of the ego-depletion effect. <i>Perspectives on Psychological Science</i>, 11(4), 546–573. <a href="https://pubmed.ncbi.nlm.nih.gov/27474142/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Vohs, K. D., et al. (2021). A multisite preregistered paradigmatic test of the ego-depletion effect. <i>Psychological Science</i>, 32(10), 1566–1581. <a href="https://pubmed.ncbi.nlm.nih.gov/34520296/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Cowan, N. (2001). The magical number 4 in short-term memory. <i>Behavioral and Brain Sciences</i>, 24(1), 87–114. <a href="https://pubmed.ncbi.nlm.nih.gov/11515286/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Rubinstein, J. S., Meyer, D. E., &amp; Evans, J. E. (2001). Executive control of cognitive processes in task switching. <i>Journal of Experimental Psychology: Human Perception and Performance</i>, 27(4), 763–797. <a href="https://pubmed.ncbi.nlm.nih.gov/11518143/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Monsell, S. (2003). Task switching. <i>Trends in Cognitive Sciences</i>, 7(3), 134–140. <a href="https://doi.org/10.1016/S1364-6613(03)00028-7" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ophir, E., Nass, C., &amp; Wagner, A. D. (2009). Cognitive control in media multitaskers. <i>PNAS</i>, 106(37), 15583–15587. <a href="https://pubmed.ncbi.nlm.nih.gov/19706386/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Uncapher, M. R., &amp; Wagner, A. D. (2018). Minds and brains of media multitaskers: Current findings and future directions. <i>PNAS</i>, 115(40), 9889–9896. <a href="https://pubmed.ncbi.nlm.nih.gov/30275312/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Danziger, S., Levav, J., &amp; Avnaim-Pesso, L. (2011). Extraneous factors in judicial decisions. <i>PNAS</i>, 108(17), 6889–6892. <a href="https://pubmed.ncbi.nlm.nih.gov/21482790/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Weinshall-Margel, K., &amp; Shapard, J. (2011). Overlooked factors in the analysis of parole decisions. <i>PNAS</i>, 108(42), E833. <a href="https://pubmed.ncbi.nlm.nih.gov/21987788/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Schultz, W., Dayan, P., &amp; Montague, P. R. (1997). A neural substrate of prediction and reward. <i>Science</i>, 275(5306), 1593–1599. <a href="https://pubmed.ncbi.nlm.nih.gov/9054347/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Fei, S., et al. (2022). Maladaptive or misunderstood? Dopamine fasting as a potential intervention for behavioral addiction. <i>Lifestyle Medicine</i>, 3(2), e54. <a href="https://doi.org/10.1002/lim2.54" target="_blank" rel="noopener">DOI</a></li>
+    <li>Wilson, K., &amp; Korn, J. H. (2007). Attention during lectures: Beyond ten minutes. <i>Teaching of Psychology</i>, 34(2), 85–89. <a href="https://doi.org/10.1080/00986280701291291" target="_blank" rel="noopener">DOI</a></li>
+    <li>Mark, G., Gudith, D., &amp; Klocke, U. (2008). The cost of interrupted work: More speed and stress. <i>CHI 2008</i>. <a href="https://ics.uci.edu/~gmark/chi08-mark.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li>藤澤伸介（2004）女子が恋愛過程で遭遇する蛙化現象．日本心理学会第68回大会発表論文集，1095．<a href="https://jglobal.jst.go.jp/detail?JGLOBAL_ID=200902260863580220" target="_blank" rel="noopener">J-GLOBAL</a></li>
+    <li>喜入暁・押尾恵吾・谷口あや・松本昇（2023）蛙化現象傾向を測定する（1）．日本心理学会第89回大会発表論文集，89_217．<a href="https://www.jstage.jst.go.jp/article/pacjpa/89/0/89_217/_pdf" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>渡辺恭良（2007）疲労の分子神経メカニズムと疲労克服．<i>日本薬理学雑誌</i>，129(2)，94–98．<a href="https://www.jstage.jst.go.jp/article/fpj/129/2/129_2_94/_article/-char/ja/" target="_blank" rel="noopener">J-STAGE</a></li>
+    <li>倉恒弘彦．筋痛性脳脊髄炎／慢性疲労症候群（ME/CFS）―最近の知見―．<i>神経治療学</i>，38(3)，164–．<a href="https://www.jstage.jst.go.jp/article/jsnt/38/3/38_164/_pdf" target="_blank" rel="noopener">J-STAGE</a></li>
+  </ul>
+
+  <div class="refh">4 眠っている間の脳</div>
+  <ul class="refs">
+    <li>Iliff, J. J., et al. (2012). A paravascular pathway facilitates CSF flow through the brain parenchyma and the clearance of interstitial solutes, including amyloid β. <i>Science Translational Medicine</i>, 4(147), 147ra111. <a href="https://doi.org/10.1126/scitranslmed.3003748" target="_blank" rel="noopener">DOI</a></li>
+    <li>Xie, L., et al. (2013). Sleep drives metabolite clearance from the adult brain. <i>Science</i>, 342(6156), 373–377. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3880190/" target="_blank" rel="noopener">PMC</a></li>
+    <li>Mestre, H., et al. (2018). Aquaporin-4-dependent glymphatic solute transport in the rodent brain. <i>eLife</i>, 7, e40070. <a href="https://elifesciences.org/articles/40070" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Fultz, N. E., et al. (2019). Coupled electrophysiological, hemodynamic, and cerebrospinal fluid oscillations in human sleep. <i>Science</i>, 366(6465), 628–631. <a href="https://doi.org/10.1126/science.aax5440" target="_blank" rel="noopener">DOI</a></li>
+    <li>Hauglund, N. L., et al. (2025). Norepinephrine-mediated slow vasomotion drives glymphatic clearance during sleep. <i>Cell</i>, 188(3), 606–622. <a href="https://doi.org/10.1016/j.cell.2024.11.027" target="_blank" rel="noopener">DOI</a></li>
+    <li>Miao, A., et al. (2024). Brain clearance is reduced during sleep and anesthesia. <i>Nature Neuroscience</i>, 27, 1046–1050. <a href="https://www.nature.com/articles/s41593-024-01638-y" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Plá, V., et al. (2025). A curious concept of CNS clearance. <i>Nature Neuroscience</i>, 28, 731–733. <a href="https://www.nature.com/articles/s41593-025-01897-3" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Franks, N. P., &amp; Wisden, W. (2025). Reply to: A curious concept of CNS clearance. <i>Nature Neuroscience</i>, 28, 734–736. <a href="https://www.nature.com/articles/s41593-025-01898-2" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Yoo, S.-S., Hu, P. T., Gujar, N., Jolesz, F. A., &amp; Walker, M. P. (2007). A deficit in the ability to form new human memories without sleep. <i>Nature Neuroscience</i>, 10(3), 385–392. <a href="https://walkerlab.berkeley.edu/reprints/Walker_NatureNeurosci_2007.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li>Yoo, S.-S., Gujar, N., Hu, P., Jolesz, F. A., &amp; Walker, M. P. (2007). The human emotional brain without sleep. <i>Current Biology</i>, 17(20), R877–R878. <a href="https://doi.org/10.1016/j.cub.2007.08.007" target="_blank" rel="noopener">DOI</a></li>
+    <li>Rasch, B., &amp; Born, J. (2013). About sleep's role in memory. <i>Physiological Reviews</i>, 93(2), 681–766. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC3768102/" target="_blank" rel="noopener">PMC</a></li>
+    <li>Kurdziel, L., Duclos, K., &amp; Spencer, R. M. C. (2013). Sleep spindles in midday naps enhance learning in preschool children. <i>PNAS</i>, 110(43), 17267–17272. <a href="https://www.pnas.org/doi/10.1073/pnas.1306418110" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Astill, R. G., et al. (2012). Sleep, cognition, and behavioral problems in school-age children: A century of research meta-analyzed. <i>Psychological Bulletin</i>, 138(6), 1109–1138. <a href="https://pubmed.ncbi.nlm.nih.gov/22545685/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Paruthi, S., et al. (2016). Recommended amount of sleep for pediatric populations: A consensus statement of the American Academy of Sleep Medicine. <i>Journal of Clinical Sleep Medicine</i>, 12(6), 785–786. <a href="https://jcsm.aasm.org/doi/10.5664/jcsm.5866" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Mindell, J. A., et al. (2010). Cross-cultural differences in infant and toddler sleep. <i>Sleep Medicine</i>, 11(3), 274–280. <a href="https://doi.org/10.1016/j.sleep.2009.04.012" target="_blank" rel="noopener">DOI</a></li>
+    <li>村田絵美ほか（2014）日本の小学生の睡眠習慣と睡眠に影響を及ぼすライフスタイルについての大規模調査．<i>小児保健研究</i>，73(6)，798–810．<a href="https://cir.nii.ac.jp/crid/1520853834373983616" target="_blank" rel="noopener">CiNii</a></li>
+    <li>Mednick, S., Nakayama, K., &amp; Stickgold, R. (2003). Sleep-dependent learning: a nap is as good as a night. <i>Nature Neuroscience</i>, 6, 697–698. <a href="https://www.nature.com/articles/nn1078" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Rosekind, M. R., et al. (1995). Alertness management: strategic naps in operational settings. <i>Journal of Sleep Research</i>, 4(s2), 62–66. <a href="https://doi.org/10.1111/j.1365-2869.1995.tb00229.x" target="_blank" rel="noopener">DOI</a></li>
+    <li>Brooks, A., &amp; Lack, L. (2006). A brief afternoon nap following nocturnal sleep restriction: Which nap duration is most recuperative? <i>Sleep</i>, 29(6), 831–840. <a href="https://doi.org/10.1093/sleep/29.6.831" target="_blank" rel="noopener">DOI</a></li>
+    <li>厚生労働省（2024）健康づくりのための睡眠ガイド2023．<a href="https://www.mhlw.go.jp/stf/seisakunitsuite/bunya/kenkou_iryou/kenkou/suimin/index.html" target="_blank" rel="noopener">厚生労働省</a></li>
+  </ul>
+
+  <div class="refh">5 スマホと通知</div>
+  <ul class="refs">
+    <li>Stothart, C., Mitchum, A., &amp; Yehnert, C. (2015). The attentional cost of receiving a cell phone notification. <i>Journal of Experimental Psychology: Human Perception and Performance</i>, 41(4), 893–897. <a href="https://pubmed.ncbi.nlm.nih.gov/26121498/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Kushlev, K., Proulx, J., &amp; Dunn, E. W. (2016). "Silence your phones": Smartphone notifications increase inattention and hyperactivity symptoms. <i>CHI 2016</i>, 1011–1020. <a href="https://dl.acm.org/doi/10.1145/2858036.2858359" target="_blank" rel="noopener">ACM</a></li>
+    <li>Fitz, N., Kushlev, K., Jagannathan, R., Lewis, T., Paliwal, D., &amp; Ariely, D. (2019). Batching smartphone notifications can improve well-being. <i>Computers in Human Behavior</i>, 101, 84–94. <a href="https://doi.org/10.1016/j.chb.2019.07.016" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ward, A. F., Duke, K., Gneezy, A., &amp; Bos, M. W. (2017). Brain drain: The mere presence of one's own smartphone reduces available cognitive capacity. <i>Journal of the Association for Consumer Research</i>, 2(2), 140–154. <a href="https://doi.org/10.1086/691462" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ruiz Pardo, A. C., &amp; Minda, J. P. (2022). Reexamining the "brain drain" effect. <i>Consciousness and Cognition</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/36007374/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Böttger, T., Poschik, M., &amp; Zierer, K. (2023). Does the brain drain effect really exist? A meta-analysis. <i>Behavioral Sciences</i>, 13(9), 751. <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC10525686/" target="_blank" rel="noopener">PMC</a></li>
+    <li>Madigan, S., et al. (2019). Association between screen time and children's performance on a developmental screening test. <i>JAMA Pediatrics</i>, 173(3), 244–250. <a href="https://pubmed.ncbi.nlm.nih.gov/30688984/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Orben, A., &amp; Przybylski, A. K. (2019). The association between adolescent well-being and digital technology use. <i>Nature Human Behaviour</i>, 3, 173–182. <a href="https://www.nature.com/articles/s41562-018-0506-1" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Odgers, C. L. (2024). The great rewiring: is social media really behind an epidemic of teenage mental illness? <i>Nature</i>, 628, 29–30. <a href="https://www.nature.com/articles/d41586-024-01488-5" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Chang, A.-M., Aeschbach, D., Duffy, J. F., &amp; Czeisler, C. A. (2015). Evening use of light-emitting eReaders negatively affects sleep, circadian timing, and next-morning alertness. <i>PNAS</i>, 112(4), 1232–1237. <a href="https://www.pnas.org/doi/10.1073/pnas.1418490112" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Hale, L., &amp; Guan, S. (2015). Screen time and sleep among school-aged children and adolescents: A systematic literature review. <i>Sleep Medicine Reviews</i>, 21, 50–58. <a href="https://doi.org/10.1016/j.smrv.2014.07.007" target="_blank" rel="noopener">DOI</a></li>
+    <li>Carter, B., Rees, P., Hale, L., Bhattacharjee, D., &amp; Paradkar, M. S. (2016). Association between portable screen-based media device access or use and sleep outcomes. <i>JAMA Pediatrics</i>, 170(12), 1202–1208. <a href="https://doi.org/10.1001/jamapediatrics.2016.2341" target="_blank" rel="noopener">DOI</a></li>
+    <li>Singh, S., Keller, P. R., Busija, L., et al. (2023). Blue-light filtering spectacle lenses for visual performance, sleep, and macular health in adults. <i>Cochrane Database of Systematic Reviews</i>, 8, CD013244. <a href="https://doi.org/10.1002/14651858.CD013244.pub2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Castelo, N., Kushlev, K., et al. (2025). Blocking mobile internet on smartphones improves sustained attention, mental health, and subjective well-being. <i>PNAS Nexus</i>, 4(2). <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11834938/" target="_blank" rel="noopener">PMC</a></li>
+    <li>Hunt, M. G., Marx, R., Lipson, C., &amp; Young, J. (2018). No more FOMO: Limiting social media decreases loneliness and depression. <i>Journal of Social and Clinical Psychology</i>, 37(10), 751–768. <a href="https://guilfordjournals.com/doi/10.1521/jscp.2018.37.10.751" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Przybylski, A. K., &amp; Weinstein, N. (2017). A large-scale test of the Goldilocks hypothesis. <i>Psychological Science</i>, 28(2), 204–215. <a href="https://journals.sagepub.com/doi/10.1177/0956797616678438" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Beland, L.-P., &amp; Murphy, R. (2016). Ill communication: Technology, distraction &amp; student performance. <i>Labour Economics</i>, 41, 61–76. <a href="https://www.sciencedirect.com/science/article/abs/pii/S0927537116300136" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Goodyear, V. A., et al. (2025). School phone policies and their association with mental wellbeing, phone use, and social media use (SMART Schools). <i>Lancet Regional Health Europe</i>. <a href="https://pubmed.ncbi.nlm.nih.gov/40213498/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Nguyen, T. T., et al. (2025). Short-form video use and attention: a meta-analysis. <a href="https://pubmed.ncbi.nlm.nih.gov/41231585/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Clark, L., &amp; Zack, M. (2023). Engineered highs: Reward variability and frequency as potential prerequisites of behavioural addiction. <i>Addictive Behaviors</i>, 140, 107626. <a href="https://pubmed.ncbi.nlm.nih.gov/36701907/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>文部科学省．ICT端末の利用に当たっての健康への配慮（リーフレット）．<a href="https://www.mext.go.jp/a_menu/shotou/zyouhou/detail/mext_00001.html" target="_blank" rel="noopener">文部科学省</a></li>
+  </ul>
+
+  <div class="refh">6 日本の子どもの実数</div>
+  <ul class="refs">
+    <li>国立教育政策研究所（2026）令和8年度 全国学力・学習状況調査 報告書 質問調査（質問の経年変化・質問と学力のクロス分析）．<a href="https://www.nier.go.jp/26chousakekkahoukoku/report/question.html" target="_blank" rel="noopener">国立教育政策研究所</a></li>
+    <li>国立教育政策研究所（2024）令和6年度 全国学力・学習状況調査 報告書 質問調査．<a href="https://www.nier.go.jp/24chousakekkahoukoku/report/data/24qn.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li>文部科学省（2025）令和6年度 全国学力・学習状況調査 経年変化分析調査・保護者に対する調査 結果．<a href="https://www.mext.go.jp/content/20250731-mxt_chousa02-000044035-05.pdf" target="_blank" rel="noopener">PDF</a></li>
+    <li>こども家庭庁（2025）令和6年度 青少年のインターネット利用環境実態調査．<a href="https://www.cfa.go.jp/assets/contents/node/basic_page/field_ref_resources/9a55b57d-cd9d-4cf6-8ed4-3da8efa12d63/0a26134c/20250328_policies_youth-kankyou_internet_research_results-etc_16.pdf" target="_blank" rel="noopener">PDF</a></li>
+  </ul>
+
+  <div class="refh">7・8 休み方の研究</div>
+  <ul class="refs">
+    <li>Sievertsen, H. H., Gino, F., &amp; Piovesan, M. (2016). Cognitive fatigue influences students' performance on standardized tests. <i>PNAS</i>, 113(10), 2621–2624. <a href="https://pubmed.ncbi.nlm.nih.gov/26884183/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Ariga, A., &amp; Lleras, A. (2011). Brief and rare mental "breaks" keep you focused. <i>Cognition</i>, 118(3), 439–443. <a href="https://doi.org/10.1016/j.cognition.2010.12.007" target="_blank" rel="noopener">DOI</a></li>
+    <li>Pellegrini, A. D., &amp; Bohn, C. M. (2005). The role of recess in children's cognitive performance and school adjustment. <i>Educational Researcher</i>, 34(1), 13–19. <a href="https://doi.org/10.3102/0013189X034001013" target="_blank" rel="noopener">DOI</a></li>
+    <li>CDC &amp; SHAPE America (2017). Strategies for Recess in Schools. <a href="https://www.cdc.gov/physical-activity-education/recess/index.html" target="_blank" rel="noopener">CDC</a></li>
+    <li>Godwin, K. E., et al. (2016). Off-task behavior in elementary school children. <i>Learning and Instruction</i>, 44, 128–143. <a href="https://doi.org/10.1016/j.learninstruc.2016.04.003" target="_blank" rel="noopener">DOI</a></li>
+    <li>Hillman, C. H., et al. (2009). The effect of acute treadmill walking on cognitive control and academic achievement in preadolescent children. <i>Neuroscience</i>, 159(3), 1044–1054. <a href="https://doi.org/10.1016/j.neuroscience.2009.01.057" target="_blank" rel="noopener">DOI</a></li>
+    <li>Erickson, K. I., et al. (2011). Exercise training increases size of hippocampus and improves memory. <i>PNAS</i>, 108(7), 3017–3022. <a href="https://doi.org/10.1073/pnas.1015950108" target="_blank" rel="noopener">DOI</a></li>
+    <li>Watson, A., Timperio, A., Brown, H., Best, K., &amp; Hesketh, K. D. (2017). Effect of classroom-based physical activity interventions on academic and physical activity outcomes. <i>International Journal of Behavioral Nutrition and Physical Activity</i>, 14, 114. <a href="https://doi.org/10.1186/s12966-017-0569-9" target="_blank" rel="noopener">DOI</a></li>
+    <li>Masini, A., et al. (2020). Evaluation of school-based interventions of active breaks in primary schools. <i>Journal of Science and Medicine in Sport</i>, 23(4), 377–384. <a href="https://doi.org/10.1016/j.jsams.2019.10.008" target="_blank" rel="noopener">DOI</a></li>
+    <li>Raichle, M. E., et al. (2001). A default mode of brain function. <i>PNAS</i>, 98(2), 676–682. <a href="https://doi.org/10.1073/pnas.98.2.676" target="_blank" rel="noopener">DOI</a></li>
+    <li>Immordino-Yang, M. H., Christodoulou, J. A., &amp; Singh, V. (2012). Rest is not idleness. <i>Perspectives on Psychological Science</i>, 7(4), 352–364. <a href="https://doi.org/10.1177/1745691612447308" target="_blank" rel="noopener">DOI</a></li>
+    <li>Baird, B., et al. (2012). Inspired by distraction: Mind wandering facilitates creative incubation. <i>Psychological Science</i>, 23(10), 1117–1122. <a href="https://doi.org/10.1177/0956797612446024" target="_blank" rel="noopener">DOI</a></li>
+    <li>Killingsworth, M. A., &amp; Gilbert, D. T. (2010). A wandering mind is an unhappy mind. <i>Science</i>, 330(6006), 932. <a href="https://doi.org/10.1126/science.1192439" target="_blank" rel="noopener">DOI</a></li>
+    <li>Wilson, T. D., et al. (2014). Just think: The challenges of the disengaged mind. <i>Science</i>, 345(6192), 75–77. <a href="https://doi.org/10.1126/science.1250830" target="_blank" rel="noopener">DOI</a></li>
+    <li>Mann, S., &amp; Cadman, R. (2014). Does being bored make us more creative? <i>Creativity Research Journal</i>, 26(2), 165–173. <a href="https://doi.org/10.1080/10400419.2014.901073" target="_blank" rel="noopener">DOI</a></li>
+    <li>Barker, J. E., et al. (2014). Less-structured time in children's daily lives predicts self-directed executive functioning. <i>Frontiers in Psychology</i>, 5, 593. <a href="https://doi.org/10.3389/fpsyg.2014.00593" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kaplan, S. (1995). The restorative benefits of nature: Toward an integrative framework. <i>Journal of Environmental Psychology</i>, 15(3), 169–182. <a href="https://doi.org/10.1016/0272-4944(95)90001-2" target="_blank" rel="noopener">DOI</a></li>
+    <li>Berman, M. G., Jonides, J., &amp; Kaplan, S. (2008). The cognitive benefits of interacting with nature. <i>Psychological Science</i>, 19(12), 1207–1212. <a href="https://pubmed.ncbi.nlm.nih.gov/19121124/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Bratman, G. N., et al. (2015). Nature experience reduces rumination and subgenual prefrontal cortex activation. <i>PNAS</i>, 112(28), 8567–8572. <a href="https://pubmed.ncbi.nlm.nih.gov/26124129/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Li, D., &amp; Sullivan, W. C. (2016). Impact of views to school landscapes on recovery from stress and mental fatigue. <i>Landscape and Urban Planning</i>, 148, 149–158. <a href="https://doi.org/10.1016/j.landurbplan.2015.12.015" target="_blank" rel="noopener">DOI</a></li>
+    <li>Ohly, H., et al. (2016). Attention Restoration Theory: A systematic review. <i>Journal of Toxicology and Environmental Health, Part B</i>, 19(7–8), 305–343. <a href="https://www.tandfonline.com/doi/full/10.1080/10937404.2016.1196155" target="_blank" rel="noopener">論文ページ</a></li>
+    <li>Stevenson, M. P., Schilhab, T., &amp; Bentsen, P. (2018). Attention Restoration Theory II: A systematic review to clarify attention processes affected by exposure to natural environments. <i>Journal of Toxicology and Environmental Health, Part B</i>, 21(4), 227–268. <a href="https://pubmed.ncbi.nlm.nih.gov/30130463/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Balban, M. Y., et al. (2023). Brief structured respiration practices enhance mood and reduce physiological arousal. <i>Cell Reports Medicine</i>, 4(1), 100895. <a href="https://doi.org/10.1016/j.xcrm.2022.100895" target="_blank" rel="noopener">DOI</a></li>
+    <li>Dunning, D. L., et al. (2019). The effects of mindfulness-based interventions on cognition and mental health in children and adolescents. <i>Journal of Child Psychology and Psychiatry</i>, 60(3), 244–258. <a href="https://doi.org/10.1111/jcpp.12980" target="_blank" rel="noopener">DOI</a></li>
+    <li>Kuyken, W., et al. (2022). Effectiveness and cost-effectiveness of universal school-based mindfulness training (MYRIAD). <i>Evidence Based Mental Health</i>, 25(3), 99–109. <a href="https://doi.org/10.1136/ebmental-2021-300396" target="_blank" rel="noopener">DOI</a></li>
+    <li>Johnson, S., &amp; Rosenfield, M. (2023). 20-20-20 rule: Are these numbers justified? <i>Optometry and Vision Science</i>, 100(1), 59–65. <a href="https://doi.org/10.1097/OPX.0000000000001971" target="_blank" rel="noopener">DOI</a></li>
+    <li>Bernardi, L., Porta, C., &amp; Sleight, P. (2006). Cardiovascular, cerebrovascular, and respiratory changes induced by different types of music. <i>Heart</i>, 92(4), 445–452. <a href="https://pubmed.ncbi.nlm.nih.gov/16199412/" target="_blank" rel="noopener">PubMed</a></li>
+    <li>Perham, N., &amp; Currie, H. (2014). Does listening to preferred music improve reading comprehension performance? <i>Applied Cognitive Psychology</i>, 28(2), 279–284. <a href="https://doi.org/10.1002/acp.2994" target="_blank" rel="noopener">DOI</a></li>
+    <li>文部科学省（2017）小学校学習指導要領（平成29年告示）解説 体育編．</li>
+  </ul>
+
+</article>
+
+<footer class="foot">
+  <div class="foot-in">
+    <div class="fw">SCHOOL STOCK</div>
+    先生向けの、現場で使える教材・便利ツールの棚。完成品は、いつも無料です。<br>
+    <a href="../../">棚トップ</a>　/　<a href="../../#reading">読みもの</a>　/　<a href="../kami-de-kangaeru/">紙とペンで考える</a>　/　<a href="../../shien/">支援カード</a>　/　<a href="https://note.com/tozaki_edu" target="_blank" rel="noopener">note ↗</a>
+    <div class="foot-c">© School Stock（外﨑顯博 / 小学校）</div>
+  </div>
+</footer>
+
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+</body>
+</html>
