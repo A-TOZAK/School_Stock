@@ -86,9 +86,19 @@
     '/School_Stock/stats/':'（この集計ページ）'
   };
 
-  fetch(CFG.url+'/rest/v1/counts?select=key,n&order=n.desc&limit=2000',{
-    headers:{apikey:CFG.key, Authorization:'Bearer '+CFG.key}
-  }).then(function(r){return r.json();}).then(function(rows){
+  // Supabase は1回1000行までしか返さないので、key順に1000行ずつ最後まで取る。
+  var PAGE=1000;
+  function fetchAll(offset, acc){
+    return fetch(CFG.url+'/rest/v1/counts?select=key,n&order=key&limit='+PAGE+'&offset='+offset,{
+      headers:{apikey:CFG.key, Authorization:'Bearer '+CFG.key}
+    }).then(function(r){return r.json();}).then(function(rows){
+      if(!Array.isArray(rows)) return rows;
+      acc=acc.concat(rows);
+      return rows.length<PAGE ? acc : fetchAll(offset+PAGE, acc);
+    });
+  }
+
+  fetchAll(0, []).then(function(rows){
     if(!Array.isArray(rows)){ app.innerHTML='<div class="setup">読み込みに失敗しました。キーやSQL設定を確認してください。</div>'; return; }
     var pv=[], dl=[], totalPV=0, totalDL=0;
     rows.forEach(function(x){
