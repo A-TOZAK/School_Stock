@@ -13,11 +13,31 @@
 <link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
 <meta name="apple-mobile-web-app-title" content="School Stock">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2329527a'/%3E%3Cpath d='M8 8h16v16H8zM8 13.3h16M8 18.7h16M13.3 8v16M18.7 8v16' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/app.css?v=9">
-<link rel="stylesheet" href="assets/app-extra.css?v=9">
+<link rel="stylesheet" href="assets/app.bundle.css?v=fa8f49e5">
+<link rel="preload" as="image" href="assets/lp/loading.webp" type="image/webp">
+<style>
+/* ---------- 読みこみ中の画面 ----------
+ * すぐ開けたときに ちらつかないように、0.3秒たってから見せる。絵は野々宮すみれの水彩。 */
+.loading { position: fixed; inset: 0; z-index: 200; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 6px; background: #fff; opacity: 1; transition: opacity .3s; }
+.loading img, .loading p { opacity: 0; animation: loading-in .4s ease .3s forwards; }
+.loading img { width: min(220px, 50vw); height: auto; mix-blend-mode: multiply; }
+.loading p { margin: 0; font-size: 14px; letter-spacing: .12em; color: #5a6069; }
+.loading p::after { content: "…"; display: inline-block; width: 1em; text-align: left; animation: loading-dots 1.2s steps(4, end) infinite; overflow: hidden; vertical-align: bottom; }
+.loading.out { opacity: 0; pointer-events: none; }
+@keyframes loading-in { to { opacity: 1; } }
+@keyframes loading-dots { from { width: 0; } to { width: 1em; } }
+@media (prefers-reduced-motion: reduce) { .loading p::after { animation: none; } }
+@media print { .loading { display: none !important; } }
+body.shot .loading { display: none; }
+</style>
 <style id="page-rule"></style>
 </head>
 <body>
+
+<div id="loading" class="loading" role="status" aria-live="polite">
+  <img src="assets/lp/loading.webp" alt="" width="220" height="220" decoding="async">
+  <p>読みこんでいます</p>
+</div>
 
 <header class="bar">
   <div class="name">マス目プリントメーカー<small>試作</small></div>
@@ -37,7 +57,8 @@
     <button id="zoom-out" type="button" class="btn ghost sq" aria-label="縮小">−</button>
     <span id="zoom-val">100%</span>
     <button id="zoom-in" type="button" class="btn ghost sq" aria-label="拡大">＋</button>
-    <button id="zoom-fit" type="button" class="btn ghost">ページ幅</button>
+    <button id="zoom-page" type="button" class="btn ghost" title="1ページ全体が見える大きさにする">全体</button>
+    <button id="zoom-fit" type="button" class="btn ghost" title="紙の幅を画面の幅に合わせる">ページ幅</button>
   </div>
   <div class="cluster">
     <button id="btn-open" type="button" class="btn ghost">開く</button>
@@ -59,18 +80,6 @@
 <input id="file-image" type="file" accept="image/*" hidden>
 <input id="file-font" type="file" accept=".ttf,.otf,.woff,.woff2" hidden>
 
-<script src="assets/masu.js?v=9"></script>
-<script src="assets/hissan.js?v=9"></script>
-<script src="assets/shiki.js?v=9"></script>
-<script src="assets/examples.js?v=9"></script>
-<script src="assets/app-core.js?v=9"></script>
-<script src="assets/app-safe.js?v=9"></script>
-<script src="assets/app-icons.js?v=9"></script>
-<script src="assets/app-font.js?v=9"></script>
-<script src="assets/app-render.js?v=9"></script>
-<script src="assets/app-edit.js?v=9"></script>
-<script src="assets/app-hinagata.js?v=9"></script>
-<script src="assets/app-start.js?v=9"></script>
-<script src="assets/app-panel.js?v=9"></script>
+<script src="assets/app.bundle.js?v=33b54b33"></script>
 </body>
 </html>
