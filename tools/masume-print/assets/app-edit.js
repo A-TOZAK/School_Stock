@@ -14,7 +14,9 @@
     App.renderPanel();
   };
 
+  var TOOL_TIPS = { line: "線", arrow: "矢印", rect: "四角形", ellipse: "楕円" };
   App.setTool = function (t) {
+    if (t && t !== App.tool && App.toast) App.toast("紙の上をドラッグして、" + (TOOL_TIPS[t] || "図形") + "を描きます。やめるときは Esc キーか、同じボタンをもう一度押します。", 5000);
     App.tool = t;
     document.body.classList.toggle("drawing", !!t);
     document.querySelectorAll(".tools button[data-tool]").forEach(function (b) {
@@ -425,6 +427,22 @@
       var off = (addCount++ % 5) * 6;
       b.x = m + 5 + off;
       b.y = App.snap(Math.min(Math.max(0, (sr.top - pr.top) / k) + 15 + off, size[1] - 40));
+    }
+    // いま見えている範囲（mm）。決めた場所が見えていないか、ほかと重なるときは、見えている所で空いている場所を探す
+    var visTop = Math.max(0, (sr.top - pr.top) / k), visBot = Math.min(size[1], (sr.bottom - pr.top) / k);
+    function hits(x, y) {
+      return others.some(function (o) { var r = App.bbox(o); return x < r.x + r.w && x + bw > r.x && y < r.y + r.h && y + bh > r.y; });
+    }
+    var unseen = b.y + Math.min(bh, 12) > visBot || b.y < visTop - 1;
+    if (!at && others.length && (unseen || hits(b.x, b.y))) {
+      var found = null, x0 = rightSide ? size[0] - m - bw : m;
+      for (var yy = Math.max(m, Math.ceil(visTop) + 4); yy + bh <= Math.min(size[1] - m, visBot) && !found; yy += 4) {
+        for (var xx = x0; xx >= m && xx + bw <= size[0] - m; xx += rightSide ? -8 : 8) {
+          if (!hits(xx, yy)) { found = [xx, yy]; break; }
+        }
+      }
+      if (found) { b.x = found[0]; b.y = App.snap(found[1]); }
+      else if (unseen) { b.x = m + 5 + off; b.y = App.snap(Math.min(visTop + 15 + off, size[1] - 40)); }
     }
     // at があれば、その点がまん中になるように置く（画像を紙の上に落としたとき）
     if (at) {

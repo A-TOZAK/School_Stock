@@ -187,7 +187,15 @@
           open(r.doc, fresh);
         } }, "このプリントを作る"))), true);
     refresh();
+    selectOnFirstFocus(ta);
   };
+
+  /** はじめから入っている例は、入力らんに入ったときに全部を選んでおく（そのまま打てば置きかわる）。 */
+  function selectOnFirstFocus(ta) {
+    var done = false;
+    ta.addEventListener("focus", function () { if (!done) { done = true; setTimeout(function () { ta.select(); }, 0); } });
+    ta.addEventListener("input", function () { done = true; });
+  }
 
   // ---------- 漢字練習を作る画面 ----------
   function mkSel(opts, cur) { var e = h("select"); opts.forEach(function (o) { e.appendChild(h("option", { value: o[0], selected: o[0] === cur }, o[1])); }); return e; }
@@ -232,6 +240,7 @@
           open(r.doc, fresh);
         } }, "このプリントを作る"))), true);
     refresh();
+    selectOnFirstFocus(ta);
   };
 
   // ---------- ひな形を絵で見て選ぶ ----------
@@ -242,11 +251,11 @@
   }
   App.openStart = function (fresh) {
     var body = h("div", { class: "dlg-body st" });
-    if (fresh) body.appendChild(h("p", { class: "st-lead" }, "どれから始めますか。あとから「テンプレートから始める」で、いつでも選びなおせます。"));
+    if (fresh) body.appendChild(h("p", { class: "st-lead" }, "どれから始めますか。あとから、上の「テンプレート」で、いつでも選びなおせます。"));
 
     var notes = App.NOTE_SHEETS || [];
     if (notes.length) {
-      body.appendChild(h("h3", null, "ノート（School Stock で配布しているもの）"));
+      body.appendChild(h("h3", null, "ノート"));
       var g0 = h("div", { class: "st-grid" });
       notes.forEach(function (s) {
         g0.appendChild(card(s.name, s.note, "assets/tpl/note-" + s.key + ".webp", function () { open(App.noteDoc(s), fresh); }));
@@ -277,7 +286,7 @@
       });
       body.appendChild(g2);
     }
-    dialog("テンプレートから始める", body, true);
+    dialog("テンプレート", body, true);
   };
 
   // ---------- 選んだ部品のすぐ上に出る小さなバー ----------
@@ -301,7 +310,9 @@
     // 部品の右上に、右はしをそろえて置く。紙の上はしに近いときは、部品の下に出す
     // つまみ（部品の左上の札）と重ならないように、札の高さ（画面で26px）だけ上に上げる
     var lift = 26 * k, above = r.y > 17 * k;
-    bar.style.cssText = "left:" + (r.x + r.w) + "mm;top:" + (above ? r.y : r.y + r.h) + "mm;transform:translate(-100%," + (above ? "-100%" : "0") + ") scale(" + k + ");transform-origin:right " + (above ? "bottom" : "top") + ";margin-top:" + (above ? -(lift + 3 * k) + "px" : 6 * k + "px");
+// 右はしをそろえて置く。紙の左はしに近くてバーが紙の外（左の道具の裏）に出るときは、左はしをそろえる
+    var barMm = 270 * k * 0.2646, leftAlign = r.x + r.w - barMm < 0;
+    bar.style.cssText = "left:" + (leftAlign ? Math.max(0, r.x) : r.x + r.w) + "mm;top:" + (above ? r.y : r.y + r.h) + "mm;transform:translate(" + (leftAlign ? "0" : "-100%") + "," + (above ? "-100%" : "0") + ") scale(" + k + ");transform-origin:" + (leftAlign ? "left " : "right ") + (above ? "bottom" : "top") + ";margin-top:" + (above ? -(lift + 3 * k) + "px" : 6 * k + "px");
     page.appendChild(bar);
   };
 
@@ -314,8 +325,8 @@
     if (ev.key === "Escape" && document.getElementById("start-dialog")) { ev.stopPropagation(); closeDialog(); }
   }, true);
   window.addEventListener("load", function () {
-    var tpl = App.$("#tpl");
-    if (tpl && tpl.children.length) tpl.insertBefore(h("option", { value: "gallery" }, "一覧から選ぶ…"), tpl.children[1] || null);
+    var bt = App.$("#btn-tpl");
+    if (bt) bt.addEventListener("click", function () { App.openStart(false); });
     var q = new URLSearchParams(location.search);
     if (firstVisit && !q.get("t") && q.get("e") === null && !q.get("src")) App.openStart(true);
   });

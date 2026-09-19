@@ -96,6 +96,7 @@
       if (o.date) blocks.push(text(x + W - 52, y - 10, 52, 10, o.kana ? "　がつ　　にち　　ようび" : "　　月　　日（　　）", { align: "end" }));
       var m = App.make.masu({ x: x, y: y, dir: o.dir, cell: c, perLine: o.perLine, lines: o.lines, gap: o.gap, leader: o.leader, gridColor: o.gridColor,
         text: o.headRow || "", autoGrow: false, fontScale: 0.72 });
+      if (o.rules) m.rules = Object.assign({}, m.rules, o.rules);
       if (o.headRow) { m.color = green; m.styles = Masu.applyStyle([], o.headRow.length, 0, o.headRow.length, { bold: true }); }
       blocks.push(m);
     }
@@ -133,19 +134,23 @@
   /** はじめの画面に出すノート。名前と並びは、配布中の棚（School Stock の tools/note-prints）と同じ。
    *  大きさと数は、実物の PDF を測った値。 */
   App.NOTE_SHEETS = [
-    { key: "hougan", name: "5mm方眼ノート（B4）", note: "教科を選ばない方眼の1枚。10mmのマスに、5mmの点線が入ります。",
-      opts: { title: "5mm方眼ノート", paper: "B4", orient: "landscape", dir: "h", cell: 10, perLine: 33, lines: 22, leader: true, sides: 1, top: 24, kana: false, date: true } },
-    { key: "kokugo8", name: "こくご 8マスノート", note: "27mmの大きなマス。たて8マスが6行で、2面あります。",
-      opts: { title: "こくご 8マスノート", paper: "B4", orient: "landscape", dir: "v", cell: 26.8, perLine: 8, lines: 6, gap: 0, leader: true, sides: 2, split: "h", between: 10.5, top: 23.5 } },
-    { key: "sansu10", name: "さんすう 10×6マスノート", note: "22mmのマス。1から10の見出しつきで、2面あります。",
-      opts: { title: "さんすう 10×6マスノート", paper: "B4", orient: "portrait", dir: "h", cell: 22, perLine: 10, lines: 7, leader: true, sides: 2, split: "v", between: 22, top: 22, headRow: "１２３４５６７８９10" } },
-    { key: "sansu12", name: "さんすう 12×7マスノート", note: "19mmのマス。1から10と、＋、－の見出しつきで、2面あります。",
-      opts: { title: "さんすう 12×7マスノート", paper: "B4", orient: "portrait", dir: "h", cell: 19, perLine: 12, lines: 8, leader: true, sides: 2, split: "v", between: 22, top: 22, headRow: "１２３４５６７８９10＋－" } },
-    { key: "sansu15", name: "さんすう 10×14マスノート", note: "15mmのマス。点線のない、はっきりしたマスが2面あります。",
-      opts: { title: "さんすう 10×14マスノート", paper: "B4", orient: "landscape", dir: "h", cell: 15, perLine: 10, lines: 15, leader: false, sides: 2, split: "h", between: 24, top: 22 } },
-    { key: "kokugo", name: "低学年 作文ノート", note: "18mmのマス。たて12マスが7行（84字）で、2面あります。行の右に、ふりがなのすきまがあります。",
-      opts: { title: "低学年 作文ノート", paper: "B4", orient: "landscape", dir: "v", cell: 18, perLine: 12, lines: 7, gap: 5.8, leader: true, sides: 2, split: "h", between: 22, top: 23.5 } },
-    { key: "jukugo", name: "漢字・熟語 学習プリント", note: "熟語の意味と文を書く表と、18mmの練習マスが1枚になっています。",
+    { key: "hougan", name: "5mm方眼ノート（B4）", note: "教科を選ばない方眼の1枚。10mmのマスに、5mmの点線が入ります。B4 横。",
+      opts: { title: "5mm方眼ノート", paper: "B4", orient: "landscape", dir: "h", cell: 10, perLine: 33, lines: 22, leader: true, top: 24, kana: false, date: true } },
+    { key: "kokugo8", name: "こくご 8マスノート", note: "27mmの大きなマス。たて8マスが6行。B5 縦。",
+      opts: { title: "こくご 8マスノート", paper: "B5", orient: "portrait", dir: "v", cell: 26.8, perLine: 8, lines: 6, gap: 0, leader: true, top: 26 } },
+    { key: "kokugo10", name: "こくご 10マスノート", note: "21.5mmのマス。たて10マスが7行。市販の学習帳と同じ数です。B5 縦。",
+      opts: { title: "こくご 10マスノート", paper: "B5", orient: "portrait", dir: "v", cell: 21.5, perLine: 10, lines: 7, gap: 0, leader: true, top: 28 } },
+    { key: "kokugo12", name: "こくご 12マスノート", note: "18mmのマス。たて12マスが8行。市販の学習帳と同じ数です。B5 縦。",
+      opts: { title: "こくご 12マスノート", paper: "B5", orient: "portrait", dir: "v", cell: 18, perLine: 12, lines: 8, gap: 0, leader: true, top: 27 } },
+    { key: "sansu10", name: "さんすう 10×6マスノート", note: "22mmのマス。よこ10マス。いちばん上に、1から10の見出しがあります。市販の低学年のさんすうと同じ、B5 横です。",
+      opts: { title: "さんすう 10×6マスノート", paper: "B5", orient: "landscape", dir: "h", cell: 22, perLine: 10, lines: 7, leader: true, top: 21, headRow: "１２３４５６７８９10" } },
+    { key: "sansu12", name: "さんすう 12×7マスノート", note: "19mmのマス。よこ12マス。いちばん上に、1から10と、＋、－の見出しがあります。B5 横です。",
+      opts: { title: "さんすう 12×7マスノート", paper: "B5", orient: "landscape", dir: "h", cell: 19, perLine: 12, lines: 8, leader: true, top: 22, headRow: "１２３４５６７８９10＋－" } },
+    { key: "sansu15", name: "さんすう 10×14マスノート", note: "15mmのマス。よこ10マス、たて14マス。点線のない、はっきりしたマスです。B5 縦。",
+      opts: { title: "さんすう 10×14マスノート", paper: "B5", orient: "portrait", dir: "h", cell: 15, perLine: 10, lines: 14, leader: false, top: 26 } },
+    { key: "kokugo", name: "低学年 作文ノート", note: "18mmのマス。たて12マスが7行（84字）。行の右に、ふりがなを書くすきまがあります。B5 縦。",
+      opts: { title: "低学年 作文ノート", paper: "B5", orient: "portrait", dir: "v", cell: 18, perLine: 12, lines: 7, gap: 5.8, leader: true, top: 26, rules: { danrakuSage: true } } },
+    { key: "jukugo", name: "漢字・熟語 学習プリント", note: "熟語の意味と文を書く表と、18mmの練習マスが1枚になっています。B4 横。",
       build: function () { return App.buildJukugo(); } }
   ];
   /** ノートの紙面を作る。 */

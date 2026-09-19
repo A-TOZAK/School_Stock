@@ -120,3 +120,24 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 
 /* 上のバーの「テンプレートから始める」が切れないようにする */
 .bar #tpl { max-width: 200px; }
+
+/* ---------- 実操作のレビュー（2026-09-19）を受けた直し ---------- */
+/* 小さすぎる字を 12px 以上に */
+.tools button { font-size: 12px; }
+.ribbon .row .lb, .ribbon .chk, .ribbon .seg button, .ribbon .btn { font-size: 12.5px; }
+.ribbon .grp h3 { font-size: 12px; bottom: 3px; }
+.num .unit { font-size: 12px; }
+.float-bar button { font-size: 12.5px; }
+.bar .name small { font-size: 12px; }
+.fold-btn { font-size: 12.5px; }
+/* 押すと開くわくを、ボタンらしく見せる */
+.fold-btn { border-color: var(--line-dark); background: var(--white); box-shadow: 0 1px 0 rgba(0,0,0,.05); }
+.fold-btn .caret { font-size: 12px; color: var(--ai); }
+/* 配置：左と上を2段にして、せまい画面でも切れないようにする */
+.ribbon > .grp:last-child .row { grid-row: span 2; align-items: flex-start; }
+.ribbon > .grp:last-child .row .lb { padding-top: 5px; }
+.ribbon > .grp:last-child .pair { display: flex; flex-direction: column; gap: 3px; }
+/* 選択している文字の色を、傍線（こい色）と見分けやすい、うすい色に */
+.selcell { background: rgba(255, 196, 0, .28); }
+/* 上のバーのテンプレートのボタン */
+.bar .tpl-btn { border-color: var(--ai); color: var(--ai); font-weight: 600; }

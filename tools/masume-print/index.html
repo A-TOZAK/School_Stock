@@ -13,8 +13,8 @@
 <link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
 <meta name="apple-mobile-web-app-title" content="School Stock">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2329527a'/%3E%3Cpath d='M8 8h16v16H8zM8 13.3h16M8 18.7h16M13.3 8v16M18.7 8v16' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
-<link rel="stylesheet" href="assets/app.css?v=7">
-<link rel="stylesheet" href="assets/app-extra.css?v=7">
+<link rel="stylesheet" href="assets/app.css?v=9">
+<link rel="stylesheet" href="assets/app-extra.css?v=9">
 <style id="page-rule"></style>
 </head>
 <body>
@@ -22,9 +22,8 @@
 <header class="bar">
   <div class="name">マス目プリントメーカー<small>試作</small></div>
   <input id="doc-title" class="title" type="text" aria-label="プリントの名前" spellcheck="false">
-  <select id="tpl" aria-label="テンプレートから始める">
-    <option value="">テンプレートから始める</option>
-  </select>
+<button id="btn-tpl" type="button" class="btn tpl-btn" title="ノートやテンプレートの一覧を開く">テンプレート</button>
+  <select id="tpl" hidden aria-hidden="true"><option value=""></option></select>
   <label class="paper-pick">用紙
     <select id="paper" aria-label="用紙の大きさと向き"></select>
   </label>
@@ -60,18 +59,18 @@
 <input id="file-image" type="file" accept="image/*" hidden>
 <input id="file-font" type="file" accept=".ttf,.otf,.woff,.woff2" hidden>
 
-<script src="assets/masu.js?v=7"></script>
-<script src="assets/hissan.js?v=7"></script>
-<script src="assets/shiki.js?v=7"></script>
-<script src="assets/examples.js?v=7"></script>
-<script src="assets/app-core.js?v=7"></script>
-<script src="assets/app-safe.js?v=7"></script>
-<script src="assets/app-icons.js?v=7"></script>
-<script src="assets/app-font.js?v=7"></script>
-<script src="assets/app-render.js?v=7"></script>
-<script src="assets/app-edit.js?v=7"></script>
-<script src="assets/app-hinagata.js?v=7"></script>
-<script src="assets/app-start.js?v=7"></script>
-<script src="assets/app-panel.js?v=7"></script>
+<script src="assets/masu.js?v=9"></script>
+<script src="assets/hissan.js?v=9"></script>
+<script src="assets/shiki.js?v=9"></script>
+<script src="assets/examples.js?v=9"></script>
+<script src="assets/app-core.js?v=9"></script>
+<script src="assets/app-safe.js?v=9"></script>
+<script src="assets/app-icons.js?v=9"></script>
+<script src="assets/app-font.js?v=9"></script>
+<script src="assets/app-render.js?v=9"></script>
+<script src="assets/app-edit.js?v=9"></script>
+<script src="assets/app-hinagata.js?v=9"></script>
+<script src="assets/app-start.js?v=9"></script>
+<script src="assets/app-panel.js?v=9"></script>
 </body>
 </html>

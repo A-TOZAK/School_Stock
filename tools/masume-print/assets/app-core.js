@@ -266,6 +266,9 @@
     App.fitWidth(1);
     App.renderPanel();
     App.syncHeader();
+    // 新しい紙面は、1ページ目のいちばん上から見せる（前の紙面の送った位置を残さない）
+    var st = App.$("#stage");
+    if (st) { st.scrollTop = 0; st.scrollLeft = 0; }
     if (App.warnMissingFonts) App.warnMissingFonts();
     return true;
   };
@@ -361,6 +364,7 @@
         var d = baseDoc("作文用紙", "landscape");
         var B = d.pages[0].blocks;
         B.push(App.make.masu({ x: 297 - 20 - 10 * 12 - 9 * 3, y: 25, dir: "v", cell: 8.5, perLine: 20, lines: 10, gap: 3, gridColor: "brown", text: "" }));
+        B[0].rules.danrakuSage = true;   // 作文用紙は、段落の先頭を自動で1マス空ける
         B[0].x = 297 - 20 - (10 * 8.5 + 9 * 3);
         B.push(App.make.text({ x: 18, y: 25, w: 17, h: 150, dir: "v", size: 12, html: "題名（　　　　　　　　　　　　）　　名前（　　　　　　　　）" }));
         return d;
