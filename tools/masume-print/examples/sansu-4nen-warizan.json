@@ -1,0 +1,81 @@
+{
+  "version": 1,
+  "title": "わり算の筆算",
+  "paper": "B4",
+  "orient": "landscape",
+  "margin": 10,
+  "snap": 1,
+  "meta": { "subject": "算数", "grade": "4年", "name": "わり算の筆算", "note": "2けたと3けたのわり算の筆算を、やさしい順に練習できます。" },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 150, "h": 14.5, "size": 20, "bold": true, "html": "わり算の筆算" },
+        { "type": "text", "x": 250, "y": 11, "w": 94, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 25, "x2": 354, "y2": 25, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 10, "y": 29, "w": 250, "h": 10, "size": 12, "html": "めあて　わり算の筆算を、やさしい順に練習しよう。" },
+
+        { "type": "text", "x": 10, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（1）" },
+        { "type": "hissan", "x": 15, "y": 52, "expr": "48÷4", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 65, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（2）" },
+        { "type": "hissan", "x": 70, "y": 52, "expr": "96÷3", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 120, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（3）" },
+        { "type": "hissan", "x": 125, "y": 52, "expr": "79÷3", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 175, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（4）" },
+        { "type": "hissan", "x": 180, "y": 52, "expr": "88÷5", "mode": "problem", "cell": 10, "grid": "hougan" },
+
+        { "type": "text", "x": 10, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（5）" },
+        { "type": "hissan", "x": 15, "y": 130, "expr": "636÷3", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 65, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（6）" },
+        { "type": "hissan", "x": 70, "y": 130, "expr": "428÷4", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 120, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（7）" },
+        { "type": "hissan", "x": 125, "y": 130, "expr": "527÷4", "mode": "problem", "cell": 10, "grid": "hougan" },
+        { "type": "text", "x": 175, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（8）" },
+        { "type": "hissan", "x": 180, "y": 130, "expr": "619÷6", "mode": "problem", "cell": 10, "grid": "hougan" },
+
+        { "type": "rect", "x": 230, "y": 38, "w": 120, "h": 106, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "text", "x": 240, "y": 44, "w": 104, "h": 11, "size": 14, "bold": true, "html": "（9）文章題" },
+        { "type": "text", "x": 240, "y": 60, "w": 104, "h": 33, "size": 13, "html": "ビーズが146こあります。<div>1つのふくろに9こずつ入れると、</div><div>何ふくろできて、何こあまりますか。</div><div>式と答えを書きましょう。</div>" },
+        { "type": "text", "x": 240, "y": 98, "w": 104, "h": 10, "size": 11, "html": "式" },
+        { "type": "line", "x1": 240, "y1": 112, "x2": 344, "y2": 112, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 240, "y": 120, "w": 104, "h": 11, "size": 13, "html": "答え（　　　　　　　　　　　　　　　　）" },
+
+        { "type": "text", "x": 244, "y": 236, "w": 100, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    },
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 150, "h": 14.5, "size": 20, "bold": true, "html": "わり算の筆算　（かいとう）" },
+        { "type": "text", "x": 250, "y": 11, "w": 94, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 25, "x2": 354, "y2": 25, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 10, "y": 29, "w": 250, "h": 10, "size": 12, "html": "めあて　わり算の筆算を、やさしい順に練習しよう。" },
+
+        { "type": "text", "x": 10, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（1）" },
+        { "type": "hissan", "x": 15, "y": 52, "expr": "48÷4", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 65, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（2）" },
+        { "type": "hissan", "x": 70, "y": 52, "expr": "96÷3", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 120, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（3）" },
+        { "type": "hissan", "x": 125, "y": 52, "expr": "79÷3", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 175, "y": 41, "w": 40, "h": 11, "size": 14, "html": "（4）" },
+        { "type": "hissan", "x": 180, "y": 52, "expr": "88÷5", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+
+        { "type": "text", "x": 10, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（5）" },
+        { "type": "hissan", "x": 15, "y": 130, "expr": "636÷3", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 65, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（6）" },
+        { "type": "hissan", "x": 70, "y": 130, "expr": "428÷4", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 120, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（7）" },
+        { "type": "hissan", "x": 125, "y": 130, "expr": "527÷4", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+        { "type": "text", "x": 175, "y": 119, "w": 40, "h": 11, "size": 14, "html": "（8）" },
+        { "type": "hissan", "x": 180, "y": 130, "expr": "619÷6", "mode": "answer", "cell": 10, "grid": "hougan", "ansColor": "#d12a1e" },
+
+        { "type": "rect", "x": 230, "y": 38, "w": 120, "h": 106, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "text", "x": 240, "y": 44, "w": 104, "h": 11, "size": 14, "bold": true, "html": "（9）文章題" },
+        { "type": "text", "x": 240, "y": 60, "w": 104, "h": 33, "size": 13, "html": "ビーズが146こあります。<div>1つのふくろに9こずつ入れると、</div><div>何ふくろできて、何こあまりますか。</div><div>式と答えを書きましょう。</div>" },
+        { "type": "text", "x": 240, "y": 98, "w": 104, "h": 10, "size": 11, "html": "式" },
+        { "type": "shiki", "x": 240, "y": 109, "src": "146÷9=16あまり2", "size": 16, "color": "#d12a1e" },
+        { "type": "text", "x": 240, "y": 127, "w": 104, "h": 11, "size": 13, "color": "#d12a1e", "html": "答え（16ふくろできて、2こあまる。）" },
+
+        { "type": "text", "x": 244, "y": 236, "w": 100, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    }
+  ]
+}

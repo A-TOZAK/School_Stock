@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="マス目に1字ずつ入るプリントを、ブラウザで作って刷る道具です。縦書き、原稿用紙のきまり、筆算、分数の式に対応しています。A4でもB4でも刷れます。">
+<title>マス目プリントメーカー｜School Stock</title>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2329527a'/%3E%3Cpath d='M8 8h16v16H8zM8 13.3h16M8 18.7h16M13.3 8v16M18.7 8v16' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/about.css?v=1">
+</head>
+<body>
+
+<header class="top">
+  <a class="brand" href="./about.html">マス目プリントメーカー</a>
+  <nav aria-label="ページの中">
+    <a href="#dekiru">できること</a>
+    <a href="#jirei">教科の事例</a>
+    <a href="#tsukaikata">使い方</a>
+    <a class="open" href="./">道具を開く</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <img class="hero-img" src="assets/lp/hero.webp" alt="朝の教室で、マス目のプリントに鉛筆で書きこむ子どもの手元" width="1600" height="900">
+    <div class="hero-text">
+      <p class="kicker">School Stock の道具</p>
+      <h1>マス目のプリントを<br>そのまま打って刷る</h1>
+      <p class="lead">マス目に1字ずつ入るプリントを、ブラウザで作る道具です。縦書きのかぎや句読点は、原稿用紙のきまりどおりに入ります。筆算と分数の式も、同じ紙面に置けます。</p>
+      <p class="cta"><a class="btn primary" href="./">道具を開く</a><a class="btn" href="#jirei">教科の事例を見る</a></p>
+      <p class="small">登録はいりません。パソコンと Chromebook のブラウザで動きます。</p>
+    </div>
+  </section>
+
+  <section class="scenes" aria-label="こんなときに">
+    <h2>こんなときに</h2>
+    <ul>
+      <li>あしたの視写のプリントを作りたい</li>
+      <li>記述らんのマスを字数ぴったりで用意したい</li>
+      <li>わり算の筆算を方眼つきで刷りたい</li>
+      <li>A4で作ったものをB4で刷りたい</li>
+    </ul>
+  </section>
+
+  <section id="dekiru" class="feature-list">
+    <h2>できること</h2>
+
+    <article class="feature">
+      <div class="f-text">
+        <p class="num">1</p>
+        <h3>マス目の中をクリックして打つ</h3>
+        <p>マス目を置いたら、中をクリックしてそのまま打てます。変換中の字もマス目に出ます。改行すれば次の行へ進みます。字の大きさは、マスの大きさから決まります。</p>
+        <p>字を入れなければ、子どもが書くための空のマス目になります。うすい灰色の字にすると、なぞり書きになります。</p>
+      </div>
+      <figure class="f-img"><img src="assets/lp/shot-editor.webp" alt="道具の画面。左に挿入のボタン、中央に紙面、上に書式の設定がある" loading="lazy" width="1440" height="900"><figcaption>道具の画面です。左の道具で部品を置き、右で細かく決めます。</figcaption></figure>
+    </article>
+
+    <article class="feature rev">
+      <div class="f-text">
+        <p class="num">2</p>
+        <h3>原稿用紙のきまりが入る</h3>
+        <p>「。」と「」」は同じマスに入ります。行のはじめに来た句読点は、前の行の最後のマスに入ります。小さい「っ」や句読点は、縦書きではマスの右上に寄ります。</p>
+        <p>会話文の2行目を1マス下げるかどうかなど、教科書や学年で書き方が変わる所は、設定で切りかえられます。</p>
+      </div>
+      <figure class="f-img narrow"><img src="assets/lp/shot-kimari.webp" alt="縦書きのマス目に、かぎと句読点がきまりどおりに入っている" loading="lazy" width="604" height="906"><figcaption>かぎ、句読点、行末の読点、傍線、色をつけた字。</figcaption></figure>
+    </article>
+
+    <article class="feature">
+      <div class="f-text">
+        <p class="num">3</p>
+        <h3>筆算と分数の式</h3>
+        <p>「92÷4」と打つと筆算になります。問題だけを刷るときも、子どもが途中の計算を省かずに書ける行数まで方眼を取ります。答えつきにすると、途中の計算まで赤で入ります。</p>
+        <p>分数は 2/3、帯分数は 1と2/3 と打ちます。数字は教科書体のまま組まれます。</p>
+      </div>
+      <figure class="f-img"><img src="assets/lp/shot-hissan.webp" alt="わり算、かけ算、小数のたし算の筆算と、分数の式" loading="lazy" width="1200" height="620"><figcaption>わり算は、あまりのある式や、商に0がたつ式にも対応しています。</figcaption></figure>
+    </article>
+
+    <article class="feature rev">
+      <div class="f-text">
+        <p class="num">4</p>
+        <h3>A4でもB4でも刷れる</h3>
+        <p>用紙は A4、B4、B5、A3 から選べます。たて向きとよこ向きがあります。大きさを変えると、マスも字も同じ割合で大きくなります。コピー機の拡大と同じです。</p>
+        <p>印刷の画面で送信先を「PDFに保存」にすると、PDFになります。</p>
+      </div>
+      <figure class="f-img"><img src="assets/lp/shot-paper.webp" alt="同じ紙面をA4とB4で刷ったもの" loading="lazy" width="1200" height="760"><figcaption>同じ紙面の A4 と B4 です。</figcaption></figure>
+    </article>
+  </section>
+
+  <section id="jirei" class="gallery">
+    <h2>教科の事例</h2>
+    <p class="sec-lead">この道具で作った紙面です。開いて字を打ちかえれば、そのまま使えます。PDF は A4 と B4 を用意しました。例文と問題はすべて自作です。</p>
+    <div id="cards" class="cards"></div>
+  </section>
+
+  <section id="tsukaikata" class="steps">
+    <h2>使い方</h2>
+    <div class="step-row">
+      <figure><img src="assets/lp/spot-tsukuru.webp" alt="" loading="lazy" width="1200" height="900"></figure>
+      <ol>
+        <li><b>選ぶ</b>開くと、ノートやテンプレートの一覧が出ます。白紙から始めるときは、左のボタンでマス目や筆算を紙の上に置きます。線と図形は、紙の上をドラッグして描きます。</li>
+        <li><b>打つ</b>マス目やテキストボックスの中をクリックして打ちます。色や傍線は、文字をドラッグで選択してから、上のボタンを押します。</li>
+        <li><b>動かす</b>上のつまみか、まわりの枠をドラッグします。角の四角で大きさが変わります。</li>
+      </ol>
+    </div>
+    <div class="step-row rev">
+      <figure><img src="assets/lp/spot-suru.webp" alt="" loading="lazy" width="1200" height="900"></figure>
+      <ol start="4">
+        <li><b>刷る</b>右上の「印刷」を押します。印刷の画面で、用紙を紙面と同じ大きさに、余白を「なし」に、倍率を100%にします。</li>
+        <li><b>残す</b>紙面はブラウザの中に自動で残ります。「保存」でファイルにしておくと、別のパソコンでも開けます。</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="notes">
+    <h2>きまりについて</h2>
+    <p>原稿用紙の書き方には、教科書会社や学年で違う所があります。会話文の2行目を1マス下げる書き方は、光村図書の小学校の教科書に合わせて、はじめからオンにしています。使っている教科書と違うときは、マス目の設定でオフにしてください。</p>
+    <p>「。」と「」」を同じマスに入れる書き方、横書きで半角の数字を2字で1マスに入れる書き方も、設定で切りかえられます。</p>
+
+    <h2>よくある質問</h2>
+    <dl>
+      <dt>登録は必要ですか</dt>
+      <dd>いりません。ページを開けばすぐ使えます。</dd>
+      <dt>作った紙面はどこに残りますか</dt>
+      <dd>使っているブラウザの中に残ります。外には送られません。「保存」を押すと、ファイルとして手元に残せます。</dd>
+      <dt>どの端末で使えますか</dt>
+      <dd>Windows、Mac、Chromebook のブラウザで使えます。字は、端末に入っている教科書体を使います。教科書体が入っていない端末では、この道具に入っている Klee One という書体で表示します。パソコンの中のほかのフォントも選べます（Chrome と Edge）。</dd>
+      <dt>まだできないことはありますか</dt>
+      <dd>ふりがな、英語の4線、わり算とかけ算の小数には、まだ対応していません。</dd>
+    </dl>
+  </section>
+</main>
+
+<footer class="foot">
+  <img src="assets/lp/footer.webp" alt="" loading="lazy" width="1800" height="600">
+  <p><a class="btn primary" href="./">道具を開く</a></p>
+  <p class="credit">作った人　外﨑顯博　／　水彩の絵は画像生成AIで描いています</p>
+  <p class="credit">試作版・© School Stock</p>
+</footer>
+
+<script src="assets/examples.js?v=1"></script>
+<script>
+(function () {
+  var list = window.MASUME_EXAMPLES || [], host = document.getElementById("cards");
+  if (!list.length) { host.innerHTML = '<p class="sec-lead">事例は準備中です。</p>'; return; }
+  list.forEach(function (ex, i) {
+    var a = document.createElement("article");
+    a.className = "card";
+    a.innerHTML =
+      '<a class="thumb" href="./?e=' + i + '"><img loading="lazy" alt="" src="examples/thumb/' + ex.key + '_p1.webp"></a>' +
+      '<p class="tag"></p><h3></h3><p class="note"></p>' +
+      '<p class="links"><a href="./?e=' + i + '">道具で開く</a><a href="/School_Stock_files/tools/masume-print/examples/pdf/' + ex.key + '_A4.pdf">PDF（A4）</a><a href="/School_Stock_files/tools/masume-print/examples/pdf/' + ex.key + '_B4.pdf">PDF（B4）</a></p>';
+    a.querySelector(".tag").textContent = [ex.subject, ex.grade].filter(Boolean).join("・") + (ex.pages > 1 ? "　" + ex.pages + "ページ" : "");
+    a.querySelector("h3").textContent = ex.title;
+    a.querySelector(".note").textContent = ex.note;
+    host.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>

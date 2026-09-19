@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data: blob:; connect-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
+<meta name="referrer" content="no-referrer">
+<meta name="description" content="マス目に1字ずつ入るプリントを、ブラウザで作って刷る道具です。縦書き、原稿用紙のきまり、筆算、分数の式に対応しています。">
+<title>マス目プリントメーカー</title>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2329527a'/%3E%3Cpath d='M8 8h16v16H8zM8 13.3h16M8 18.7h16M13.3 8v16M18.7 8v16' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="assets/app.css?v=7">
+<link rel="stylesheet" href="assets/app-extra.css?v=7">
+<style id="page-rule"></style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="name">マス目プリントメーカー<small>試作</small></div>
+  <input id="doc-title" class="title" type="text" aria-label="プリントの名前" spellcheck="false">
+  <select id="tpl" aria-label="テンプレートから始める">
+    <option value="">テンプレートから始める</option>
+  </select>
+  <label class="paper-pick">用紙
+    <select id="paper" aria-label="用紙の大きさと向き"></select>
+  </label>
+  <a class="about-link" href="about.html" target="_blank" rel="noopener">使い方と事例</a>
+  <div class="sp"></div>
+  <div class="cluster">
+    <button id="btn-undo" type="button" class="btn ghost" title="元に戻す（⌘Z / Ctrl+Z）">元に戻す</button>
+    <button id="btn-redo" type="button" class="btn ghost" title="やり直す（⌘⇧Z / Ctrl+Y）">やり直す</button>
+  </div>
+  <div class="cluster zoom">
+    <button id="zoom-out" type="button" class="btn ghost sq" aria-label="縮小">−</button>
+    <span id="zoom-val">100%</span>
+    <button id="zoom-in" type="button" class="btn ghost sq" aria-label="拡大">＋</button>
+    <button id="zoom-fit" type="button" class="btn ghost">ページ幅</button>
+  </div>
+  <div class="cluster">
+    <button id="btn-open" type="button" class="btn ghost">開く</button>
+    <button id="btn-save" type="button" class="btn ghost" title="ファイルに保存（⌘S / Ctrl+S）">保存</button>
+    <button id="btn-print" type="button" class="btn primary">印刷</button>
+  </div>
+</header>
+
+<div id="panel" class="panel ribbon" aria-label="書式の設定"></div>
+
+<div class="work">
+  <nav id="tools" class="tools" aria-label="挿入"></nav>
+  <main id="stage" class="stage"><div id="pages"></div></main>
+</div>
+
+<div id="toast" class="toast" role="status" aria-live="polite"></div>
+<textarea id="ime" aria-label="マス目に入れる文字" autocomplete="off" autocapitalize="off" spellcheck="false" tabindex="-1"></textarea>
+<input id="file-open" type="file" accept=".json,application/json" hidden>
+<input id="file-image" type="file" accept="image/*" hidden>
+<input id="file-font" type="file" accept=".ttf,.otf,.woff,.woff2" hidden>
+
+<script src="assets/masu.js?v=7"></script>
+<script src="assets/hissan.js?v=7"></script>
+<script src="assets/shiki.js?v=7"></script>
+<script src="assets/examples.js?v=7"></script>
+<script src="assets/app-core.js?v=7"></script>
+<script src="assets/app-safe.js?v=7"></script>
+<script src="assets/app-icons.js?v=7"></script>
+<script src="assets/app-font.js?v=7"></script>
+<script src="assets/app-render.js?v=7"></script>
+<script src="assets/app-edit.js?v=7"></script>
+<script src="assets/app-hinagata.js?v=7"></script>
+<script src="assets/app-start.js?v=7"></script>
+<script src="assets/app-panel.js?v=7"></script>
+</body>
+</html>

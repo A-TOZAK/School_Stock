@@ -1,0 +1,122 @@
+/* マス目プリントメーカー：あとから足した部分（同梱の字、選ぶ画面、画像を落とす場所、はじめの画面） */
+
+/* 教科書体が入っていないパソコンのための字。SIL Open Font License（assets/fonts/OFL.txt） */
+@font-face { font-family: "Klee One"; font-weight: 400; font-style: normal; font-display: swap; src: local("Klee One Regular"), local("KleeOne-Regular"), url("fonts/KleeOne-Regular.woff2") format("woff2"); }
+@font-face { font-family: "Klee One"; font-weight: 600 700; font-style: normal; font-display: swap; src: local("Klee One SemiBold"), local("KleeOne-SemiBold"), url("fonts/KleeOne-SemiBold.woff2") format("woff2"); }
+
+/* ---------- 選ぶ画面 ---------- */
+.dlg { position: fixed; inset: 0; z-index: 80; display: flex; align-items: center; justify-content: center; padding: 24px; background: rgba(32,36,43,.38); }
+.dlg-box { display: flex; flex-direction: column; width: min(640px, 100%); max-height: min(720px, 100%); background: var(--white); border: 1px solid var(--line-dark); border-radius: 6px; box-shadow: 0 12px 40px rgba(0,0,0,.22); }
+.dlg-box.wide { width: min(980px, 100%); max-height: min(860px, 100%); }
+.dlg-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 12px 12px 12px 18px; border-bottom: 1px solid var(--line); font-size: 15px; color: var(--ai); }
+.dlg-body { display: flex; flex-direction: column; min-height: 0; padding: 14px 18px 16px; }
+.dlg-tools { display: flex; align-items: center; gap: 12px; margin-bottom: 10px; }
+.dlg-filter { flex: 1; padding: 7px 10px; border: 1px solid var(--line-dark); border-radius: 4px; }
+.dlg-count { min-width: 48px; text-align: right; font-size: 12px; color: var(--ink-soft); font-variant-numeric: tabular-nums; }
+.dlg-list { flex: 1; min-height: 120px; overflow: auto; border: 1px solid var(--line); border-radius: 4px; }
+.dlg-item { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); align-items: center; gap: 12px; width: 100%; padding: 8px 12px; border: 0; border-bottom: 1px solid var(--line); background: var(--white); text-align: left; }
+.dlg-item:hover, .dlg-item:focus-visible { background: var(--ai-soft); }
+.dlg-item .fn { font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.dlg-item .fs { font-size: 19px; line-height: 1.4; overflow: hidden; white-space: nowrap; }
+.dlg-foot { display: flex; align-items: center; gap: 14px; margin-top: 12px; }
+.dlg-foot .hint { flex: 1; margin: 0; }
+
+/* ---------- 画像を落とす場所 ---------- */
+body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; background: var(--ai-soft); }
+
+/* ---------- はじめの画面（ひな形を絵で見て選ぶ） ---------- */
+.dlg-body.st { overflow: auto; }
+.st-lead { margin: 0 0 4px; font-size: 13px; color: var(--ink-soft); }
+.st h3 { margin: 16px 0 10px; padding-bottom: 6px; border-bottom: 1px solid var(--line); font-size: 13px; font-weight: 600; letter-spacing: .06em; color: var(--ink-soft); }
+.st h3:first-of-type { margin-top: 6px; }
+.st-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(168px, 1fr)); gap: 16px 14px; }
+.st-card { display: flex; flex-direction: column; gap: 4px; padding: 0; border: 0; background: transparent; text-align: left; }
+.st-thumb { display: block; aspect-ratio: 1 / 1; border: 1px solid var(--line-dark); background: #f6f5f1; overflow: hidden; }
+.st-thumb img { display: block; width: 100%; height: 100%; object-fit: contain; }
+.st-blank { display: block; width: 62%; height: 86%; margin: 7% auto; background: var(--white); border: 1px solid var(--line); }
+.st-card:hover .st-thumb, .st-card:focus-visible .st-thumb { border-color: var(--ai); box-shadow: 0 0 0 2px var(--ai-soft); }
+.st-card.make .st-thumb { border-color: var(--ai); }
+.st-name { margin-top: 4px; font-size: 13px; font-weight: 600; line-height: 1.5; word-break: auto-phrase; }
+.st-note { font-size: 11.5px; line-height: 1.6; color: var(--ink-soft); word-break: auto-phrase; }
+
+/* ---------- 計算プリントを作る ---------- */
+.dlg-body.ks { overflow: auto; }
+.ks-cols { display: grid; grid-template-columns: minmax(0, 6fr) minmax(0, 5fr); gap: 24px; }
+.ks-lb { margin: 0 0 6px; font-size: 12px; font-weight: 600; color: var(--ink-soft); }
+.ks-exprs { width: 100%; padding: 8px 10px; border: 1px solid var(--line-dark); border-radius: 4px; font-size: 15px; line-height: 1.7; font-variant-numeric: tabular-nums; resize: vertical; }
+.ks-rand { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 10px; }
+.ks-rand select, .ks-row select, .ks-row input { padding: 6px 8px; border: 1px solid var(--line-dark); border-radius: 4px; background: var(--white); }
+.ks-row { display: grid; grid-template-columns: 8.5em minmax(0, 1fr); align-items: center; gap: 8px; margin-bottom: 9px; font-size: 13px; }
+.ks-right .chk { margin-top: 4px; }
+.ks-info { margin: 14px 0 0; padding: 9px 12px; background: var(--ai-soft); color: var(--ink); }
+@media (max-width: 760px) { .ks-cols { grid-template-columns: 1fr; } }
+
+/* ---------- 上のリボン（選んだ部品の設定） ----------
+ * 右の設定らんをやめて、上のバーのすぐ下に横長に置く。わくごとに3段で並べ、わくの名前は下に出す。 */
+:root { --ribbon-h: 118px; }
+.work { height: calc(100% - 50px - var(--ribbon-h)); }
+.panel.ribbon { width: auto; height: var(--ribbon-h); display: flex; align-items: stretch; overflow-x: auto; overflow-y: hidden; padding: 0; background: var(--white); border-left: 0; border-bottom: 1px solid var(--line-dark); scrollbar-width: thin; }
+.ribbon .rb-wrap { display: contents; }
+.ribbon .ptitle { flex: none; width: 66px; padding: 0 6px; display: flex; align-items: center; justify-content: center; text-align: center; border-bottom: 0; border-right: 1px solid var(--line); background: var(--ai-soft); font-size: 13px; line-height: 1.4; }
+.ribbon .grp { flex: none; position: relative; margin: 0; padding: 7px 11px 21px; border: 0; border-right: 1px solid var(--line); }
+.ribbon .grp h3 { position: absolute; left: 0; right: 0; bottom: 4px; margin: 0; text-align: center; font-size: 10.5px; font-weight: 500; letter-spacing: .04em; white-space: nowrap; }
+.ribbon .grp-body { display: grid; grid-auto-flow: column; grid-template-rows: repeat(3, 28px); gap: 2px 12px; align-items: center; justify-items: start; }
+.ribbon .row, .ribbon .row.stack { display: flex; flex-direction: row; align-items: center; gap: 7px; margin: 0; white-space: nowrap; }
+.ribbon .row .lb { font-size: 11.5px; color: var(--ink-soft); }
+.ribbon .row .nt, .ribbon .row.sub, .ribbon .hint, .ribbon .howto { display: none; }
+.ribbon .chk { margin: 0; white-space: nowrap; font-size: 12px; }
+.ribbon .num input { width: 54px; padding: 3px 3px 3px 6px; }
+.ribbon select { max-width: 190px; padding: 3px 4px; }
+.ribbon input[type="text"] { width: 150px; padding: 3px 6px; }
+.ribbon .seg button { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; font-size: 12px; }
+.ribbon .btns { display: flex; gap: 4px; margin: 0; }
+.ribbon .btn { display: inline-flex; align-items: center; gap: 4px; padding: 3px 8px; font-size: 12px; }
+.ribbon .sw button { width: 20px; height: 20px; }
+/* 「部品」のわくの複製や削除は、部品のすぐ上の小さなバーにあるので、ここでは出さない */
+.ribbon > .grp:last-child .btns { display: none; }
+/* 押すと下に開くわく */
+.ribbon .grp.fold { padding: 7px 8px 7px; display: flex; align-items: center; }
+.ribbon .grp.fold > h3 { display: none; }
+.fold-btn { display: flex; flex-direction: column; align-items: center; gap: 3px; min-width: 86px; padding: 8px 8px 6px; border: 1px solid transparent; border-radius: 5px; background: transparent; font-size: 11.5px; color: var(--ink); white-space: nowrap; }
+.fold-btn:hover, .grp.fold.open .fold-btn { background: var(--ai-soft); border-color: var(--ai); color: var(--ai); }
+.fold-btn .caret { font-size: 9px; line-height: 1; color: var(--ink-soft); }
+.ribbon .grp.fold .grp-body { display: none; }
+.ribbon .grp.fold.open .grp-body { display: flex; flex-direction: column; align-items: flex-start; gap: 9px; position: fixed; z-index: 60; padding: 14px 16px; background: var(--white); border: 1px solid var(--line-dark); border-radius: 6px; box-shadow: 0 8px 28px rgba(0,0,0,.18); }
+.ribbon .grp.fold.open .grp-body select { max-width: none; }
+.ribbon .grp.fold.open .grp-body .hint { display: block; max-width: 300px; margin: 0; white-space: normal; }
+.ui-ic { flex: none; display: block; }
+.seg button.on .ui-ic { color: inherit; }
+/* 何も選んでいないときの案内 */
+.rb-tip { flex: 1; min-width: 260px; display: flex; align-items: center; gap: 14px; padding: 0 18px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+.rb-tip b { color: var(--ai); font-weight: 600; }
+.rb-tip .btn { flex: none; }
+/* 使い方の画面 */
+.help-body { overflow: auto; font-size: 13px; line-height: 1.8; }
+.help-body h3 { margin: 14px 0 6px; font-size: 13px; color: var(--ai); }
+.help-body h3:first-child { margin-top: 0; }
+.help-body ul { margin: 0; padding-left: 1.2em; }
+.help-body li b { display: inline-block; min-width: 3.4em; color: var(--ai); }
+
+/* ---------- 選んだ部品のすぐ上に出る小さなバー ---------- */
+.float-bar { position: absolute; z-index: 30; display: flex; gap: 2px; padding: 3px; background: var(--white); border: 1px solid var(--line-dark); border-radius: 7px; box-shadow: 0 3px 12px rgba(0,0,0,.16); white-space: nowrap; transform-origin: left bottom; }
+.float-bar button { display: flex; align-items: center; gap: 4px; padding: 4px 7px; border: 0; border-radius: 4px; background: transparent; font-size: 11.5px; color: var(--ink); }
+.float-bar button:hover { background: var(--ai-soft); color: var(--ai); }
+.float-bar button.danger:hover { background: #fdecea; color: #c0281c; }
+.float-bar .sep { width: 1px; margin: 3px 2px; background: var(--line); }
+@media print { .float-bar { display: none !important; } }
+
+/* せまい画面では、アイコンのあるボタンの字をかくす（名前は、マウスをのせると出る） */
+@media (max-width: 1460px) {
+  .ribbon .seg .ui-ic + .bl { display: none; }
+  .ribbon .seg button { padding: 4px 8px; }
+  .fold-btn { min-width: 70px; }
+}
+
+/* ---------- ページを足すボタン ---------- */
+.add-row { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.add-copy { border-style: solid; border-color: var(--ai); color: var(--ai); background: rgba(255,255,255,.6); }
+
+@media print { .dlg { display: none !important; } }
+
+/* 上のバーの「テンプレートから始める」が切れないようにする */
+.bar #tpl { max-width: 200px; }

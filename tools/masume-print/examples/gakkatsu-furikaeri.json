@@ -1,0 +1,41 @@
+{
+  "version": 1,
+  "title": "ふりかえりカード",
+  "paper": "B5",
+  "orient": "portrait",
+  "margin": 10,
+  "snap": 1,
+  "meta": {
+    "subject": "学級活動",
+    "grade": "3・4年",
+    "name": "ふりかえりカード",
+    "note": "学級活動や道徳の授業後に使う、3段階の自己評価つきふりかえりカードです。"
+  },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 75, "h": 13.5, "size": 18, "bold": true, "html": "ふりかえりカード" },
+        { "type": "text", "x": 90, "y": 11, "w": 82, "h": 10, "size": 11, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 23, "x2": 172, "y2": 23, "color": "#1b1b1b", "width": 0.5 },
+
+        { "type": "text", "x": 10, "y": 28, "w": 162, "h": 10, "size": 12, "html": "今日の学習に、どんな気持ちで取り組めたかな。" },
+
+        { "type": "text", "x": 10, "y": 51, "w": 54, "h": 20, "size": 30, "align": "center", "html": "◎" },
+        { "type": "text", "x": 64, "y": 51, "w": 54, "h": 20, "size": 30, "align": "center", "html": "○" },
+        { "type": "text", "x": 118, "y": 51, "w": 54, "h": 20, "size": 30, "align": "center", "html": "△" },
+
+        { "type": "text", "x": 10, "y": 76, "w": 54, "h": 9.5, "size": 11, "align": "center", "html": "よくできた" },
+        { "type": "text", "x": 64, "y": 76, "w": 54, "h": 9.5, "size": 11, "align": "center", "html": "できた" },
+        { "type": "text", "x": 118, "y": 76, "w": 54, "h": 9.5, "size": 11, "align": "center", "html": "もうすこし" },
+
+        { "type": "text", "x": 10, "y": 99, "w": 162, "h": 10, "size": 12, "html": "きょうの学習で　心にのこったこと（60字まで）" },
+        { "type": "masu", "x": 10, "y": 114, "dir": "h", "cell": 10, "perLine": 15, "lines": 4, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+
+        { "type": "text", "x": 10, "y": 167, "w": 162, "h": 10, "size": 12, "html": "つぎに　やってみたいこと（40字まで）" },
+        { "type": "masu", "x": 10, "y": 182, "dir": "h", "cell": 10, "perLine": 10, "lines": 4, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+
+        { "type": "text", "x": 10, "y": 238, "w": 162, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    }
+  ]
+}

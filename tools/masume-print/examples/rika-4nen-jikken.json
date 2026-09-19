@@ -1,0 +1,220 @@
+{
+ "version": 1,
+ "title": "実験の記録",
+ "paper": "A4",
+ "orient": "portrait",
+ "margin": 10,
+ "snap": 1,
+ "meta": {
+  "subject": "理科",
+  "grade": "4年",
+  "name": "実験の記録カード",
+  "note": "どの単元の実験でも使える記録カードです。"
+ },
+ "pages": [
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "x": 10,
+     "y": 10,
+     "w": 90,
+     "h": 14.5,
+     "size": 20,
+     "bold": true,
+     "html": "実験の記録"
+    },
+    {
+     "type": "text",
+     "x": 110,
+     "y": 10,
+     "w": 90,
+     "h": 10,
+     "size": 12,
+     "html": "　年　組　名前（　　　　　　　　　　）"
+    },
+    {
+     "type": "line",
+     "x1": 10,
+     "y1": 27,
+     "x2": 200,
+     "y2": 27,
+     "width": 0.5
+    },
+    {
+     "id": "baxq5or4",
+     "type": "text",
+     "x": 10,
+     "y": 36,
+     "w": 190,
+     "h": 10,
+     "dir": "h",
+     "html": "日づけ　　　月　　　日（　　　）　　　　天気（　　　　　　　　　）",
+     "size": 12,
+     "font": "kyokasho",
+     "color": "#1b1b1b",
+     "bold": false,
+     "align": "start",
+     "lineHeight": 1.6,
+     "border": "none",
+     "fill": "none",
+     "pad": 1.5
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 57,
+     "w": 180,
+     "h": 9,
+     "size": 10,
+     "html": "問題（しらべたいこと）を書きましょう。"
+    },
+    {
+     "type": "masu",
+     "x": 10,
+     "y": 68,
+     "dir": "h",
+     "cell": 10,
+     "perLine": 18,
+     "lines": 2,
+     "leader": true,
+     "autoGrow": false,
+     "text": ""
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 94,
+     "w": 180,
+     "h": 9,
+     "size": 10,
+     "html": "予想と、そのわけを書きましょう。（40字まで）"
+    },
+    {
+     "type": "masu",
+     "x": 10,
+     "y": 105,
+     "dir": "h",
+     "cell": 10,
+     "perLine": 10,
+     "lines": 4,
+     "leader": true,
+     "autoGrow": false,
+     "text": ""
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 151,
+     "w": 180,
+     "h": 9,
+     "size": 10,
+     "html": "実験の方法を、絵や図でかきましょう。"
+    },
+    {
+     "type": "rect",
+     "x": 10,
+     "y": 162,
+     "w": 180,
+     "h": 100,
+     "shape": "round",
+     "color": "#8a8f96",
+     "width": 0.4
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 279,
+     "w": 190,
+     "h": 8,
+     "size": 8,
+     "align": "end",
+     "html": "© School Stock"
+    }
+   ]
+  },
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "x": 10,
+     "y": 10,
+     "w": 108,
+     "h": 12.5,
+     "size": 16,
+     "bold": true,
+     "html": "実験の記録（２まい目）"
+    },
+    {
+     "type": "text",
+     "x": 120,
+     "y": 10,
+     "w": 80,
+     "h": 10,
+     "size": 10,
+     "html": "　年　組　名前（　　　　　　　　　　）"
+    },
+    {
+     "type": "line",
+     "x1": 10,
+     "y1": 24,
+     "x2": 200,
+     "y2": 24,
+     "width": 0.5
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 36,
+     "w": 180,
+     "h": 9,
+     "size": 10,
+     "html": "結果を書きましょう。（40字まで）"
+    },
+    {
+     "type": "masu",
+     "x": 10,
+     "y": 47,
+     "dir": "h",
+     "cell": 16,
+     "perLine": 10,
+     "lines": 4,
+     "leader": true,
+     "autoGrow": false,
+     "text": ""
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 119,
+     "w": 180,
+     "h": 9,
+     "size": 10,
+     "html": "考察（結果から分かったこと）を書きましょう。（60字まで）"
+    },
+    {
+     "type": "masu",
+     "x": 10,
+     "y": 130,
+     "dir": "h",
+     "cell": 16,
+     "perLine": 10,
+     "lines": 6,
+     "leader": true,
+     "autoGrow": false,
+     "text": ""
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 279,
+     "w": 190,
+     "h": 8,
+     "size": 8,
+     "align": "end",
+     "html": "© School Stock"
+    }
+   ]
+  }
+ ]
+}

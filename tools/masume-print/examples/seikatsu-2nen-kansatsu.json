@@ -1,0 +1,120 @@
+{
+ "version": 1,
+ "title": "かんさつカード",
+ "paper": "A4",
+ "orient": "portrait",
+ "margin": 10,
+ "snap": 1,
+ "meta": {
+  "subject": "生活",
+  "grade": "2年",
+  "name": "かんさつカード",
+  "note": "生き物や植物の様子を、絵と文で記録する観察カードです。"
+ },
+ "pages": [
+  {
+   "blocks": [
+    {
+     "type": "text",
+     "x": 10,
+     "y": 10,
+     "w": 90,
+     "h": 14.5,
+     "size": 20,
+     "bold": true,
+     "html": "かんさつカード"
+    },
+    {
+     "type": "text",
+     "x": 105,
+     "y": 11,
+     "w": 95,
+     "h": 10,
+     "size": 12,
+     "html": "　年　組　名前（　　　　　　　　　　）"
+    },
+    {
+     "type": "line",
+     "x1": 10,
+     "y1": 23,
+     "x2": 200,
+     "y2": 23,
+     "color": "#1b1b1b",
+     "width": 0.5
+    },
+    {
+     "id": "bxxegc2i",
+     "type": "text",
+     "x": 10,
+     "y": 36,
+     "w": 190,
+     "h": 11.5,
+     "dir": "h",
+     "html": "　　月　　日（　　）　　天気（　　　　　）　　気おん（　　　）ど",
+     "size": 14,
+     "font": "kyokasho",
+     "color": "#1b1b1b",
+     "bold": false,
+     "align": "start",
+     "lineHeight": 1.6,
+     "border": "none",
+     "fill": "none",
+     "pad": 1.5
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 58,
+     "w": 190,
+     "h": 10,
+     "size": 12,
+     "html": "見つけたものを　えに　かきましょう。"
+    },
+    {
+     "type": "rect",
+     "x": 10,
+     "y": 73,
+     "w": 190,
+     "h": 115,
+     "shape": "round",
+     "color": "#8a8f96",
+     "width": 0.5,
+     "dash": "solid",
+     "fill": "none"
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 193,
+     "w": 190,
+     "h": 10,
+     "size": 12,
+     "html": "見つけたことを　マス目に　書きましょう。（48字まで）"
+    },
+    {
+     "type": "masu",
+     "x": 10,
+     "y": 208,
+     "dir": "h",
+     "cell": 12,
+     "perLine": 12,
+     "lines": 4,
+     "leader": true,
+     "frame": true,
+     "gridColor": "green",
+     "text": ""
+    },
+    {
+     "type": "text",
+     "x": 10,
+     "y": 277,
+     "w": 190,
+     "h": 8,
+     "size": 8,
+     "align": "end",
+     "html": "© School Stock"
+    }
+   ]
+  }
+ ]
+}

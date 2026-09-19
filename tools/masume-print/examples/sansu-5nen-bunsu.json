@@ -1,0 +1,125 @@
+{
+  "version": 1,
+  "title": "分数のたし算とひき算",
+  "paper": "A4",
+  "orient": "portrait",
+  "margin": 10,
+  "snap": 1,
+  "meta": { "subject": "算数", "grade": "5年", "name": "分数のたし算とひき算", "note": "通分がいるたし算・ひき算を8問。帯分数を2問ふくみます。" },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 95, "h": 14.5, "size": 20, "bold": true, "html": "分数のたし算とひき算" },
+        { "type": "text", "x": 105, "y": 11, "w": 95, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 23, "x2": 200, "y2": 23, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 10, "y": 28, "w": 180, "h": 10, "size": 12, "html": "めあて　通分して、分数のたし算とひき算をしよう。" },
+
+        { "type": "text", "x": 110, "y": 40, "w": 30, "h": 9, "size": 10, "align": "center", "html": "答え" },
+        { "type": "text", "x": 145, "y": 40, "w": 50, "h": 9, "size": 10, "align": "center", "html": "とちゅうの計算" },
+
+        { "type": "text", "x": 10, "y": 54, "w": 16, "h": 11, "size": 14, "html": "（1）" },
+        { "type": "shiki", "x": 28, "y": 52, "src": "1/2 + 1/3 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 51, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 49, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 80, "w": 16, "h": 11, "size": 14, "html": "（2）" },
+        { "type": "shiki", "x": 28, "y": 78, "src": "1/3 + 1/4 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 77, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 75, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 106, "w": 16, "h": 11, "size": 14, "html": "（3）" },
+        { "type": "shiki", "x": 28, "y": 104, "src": "3/4 - 1/6 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 103, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 101, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 132, "w": 16, "h": 11, "size": 14, "html": "（4）" },
+        { "type": "shiki", "x": 28, "y": 130, "src": "5/6 - 3/8 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 129, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 127, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 158, "w": 16, "h": 11, "size": 14, "html": "（5）" },
+        { "type": "shiki", "x": 28, "y": 156, "src": "5/6 - 7/12 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 155, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 153, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 184, "w": 16, "h": 11, "size": 14, "html": "（6）" },
+        { "type": "shiki", "x": 28, "y": 182, "src": "2/3 + 5/6 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 181, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 179, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 210, "w": 16, "h": 11, "size": 14, "html": "（7）" },
+        { "type": "shiki", "x": 28, "y": 208, "src": "1と1/4 + 2/3 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 207, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 205, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 236, "w": 16, "h": 11, "size": 14, "html": "（8）" },
+        { "type": "shiki", "x": 28, "y": 234, "src": "2と1/6 - 1と1/2 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 233, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "rect", "x": 145, "y": 231, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 100, "y": 278, "w": 100, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    },
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 95, "h": 14.5, "size": 20, "bold": true, "html": "分数のたし算とひき算" },
+        { "type": "text", "x": 105, "y": 11, "w": 95, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 23, "x2": 200, "y2": 23, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 10, "y": 28, "w": 180, "h": 10, "size": 12, "html": "めあて　通分して、分数のたし算とひき算をしよう。（かいとう）" },
+
+        { "type": "text", "x": 110, "y": 40, "w": 30, "h": 9, "size": 10, "align": "center", "html": "答え" },
+        { "type": "text", "x": 145, "y": 40, "w": 50, "h": 9, "size": 10, "align": "center", "html": "とちゅうの計算" },
+
+        { "type": "text", "x": 10, "y": 54, "w": 16, "h": 11, "size": 14, "html": "（1）" },
+        { "type": "shiki", "x": 28, "y": 52, "src": "1/2 + 1/3 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 51, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 121.2, "y": 52.5, "src": "5/6", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 49, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 80, "w": 16, "h": 11, "size": 14, "html": "（2）" },
+        { "type": "shiki", "x": 28, "y": 78, "src": "1/3 + 1/4 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 77, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 119.3, "y": 78.5, "src": "7/12", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 75, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 106, "w": 16, "h": 11, "size": 14, "html": "（3）" },
+        { "type": "shiki", "x": 28, "y": 104, "src": "3/4 - 1/6 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 103, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 119.3, "y": 104.5, "src": "7/12", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 101, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 132, "w": 16, "h": 11, "size": 14, "html": "（4）" },
+        { "type": "shiki", "x": 28, "y": 130, "src": "5/6 - 3/8 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 129, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 119.3, "y": 130.5, "src": "11/24", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 127, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 158, "w": 16, "h": 11, "size": 14, "html": "（5）" },
+        { "type": "shiki", "x": 28, "y": 156, "src": "5/6 - 7/12 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 155, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 121.2, "y": 156.5, "src": "1/4", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 153, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 184, "w": 16, "h": 11, "size": 14, "html": "（6）" },
+        { "type": "shiki", "x": 28, "y": 182, "src": "2/3 + 5/6 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 181, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 119.1, "y": 182.5, "src": "1と1/2", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 179, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 210, "w": 16, "h": 11, "size": 14, "html": "（7）" },
+        { "type": "shiki", "x": 28, "y": 208, "src": "1と1/4 + 2/3 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 207, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 117.2, "y": 208.5, "src": "1と11/12", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 205, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 10, "y": 236, "w": 16, "h": 11, "size": 14, "html": "（8）" },
+        { "type": "shiki", "x": 28, "y": 234, "src": "2と1/6 - 1と1/2 =", "size": 20 },
+        { "type": "rect", "x": 110, "y": 233, "w": 30, "h": 18, "shape": "round", "color": "#8a8f96", "width": 0.4, "fill": "none" },
+        { "type": "shiki", "x": 121.2, "y": 234.5, "src": "2/3", "size": 16, "color": "#d12a1e" },
+        { "type": "rect", "x": 145, "y": 231, "w": 50, "h": 20, "shape": "rect", "color": "#8a8f96", "width": 0.3, "fill": "none" },
+
+        { "type": "text", "x": 100, "y": 278, "w": 100, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    }
+  ]
+}

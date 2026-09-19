@@ -1,0 +1,39 @@
+{
+  "version": 1,
+  "title": "かぎの つかいかた（2年）",
+  "paper": "B4",
+  "orient": "landscape",
+  "margin": 10,
+  "snap": 1,
+  "meta": { "subject": "国語", "grade": "2年", "name": "かぎ（「 」）のつかいかた", "note": "会話文の「かぎ」の使い方を、視写で身につけるプリントです。" },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 220, "h": 14.5, "dir": "h", "html": "かぎ（「 」）の つかいかた", "size": 20, "bold": true, "align": "start" },
+        { "type": "text", "x": 254, "y": 11, "w": 100, "h": 10, "dir": "h", "html": "　年　組　名前（　　　　　　　　　　）", "size": 12, "align": "start" },
+        { "type": "line", "x1": 10, "y1": 26, "x2": 354, "y2": 26, "color": "#1b1b1b", "width": 0.5, "dash": "solid" },
+        { "type": "text", "x": 10, "y": 30, "w": 344, "h": 10, "dir": "h", "html": "めあて　かぎ（「 」）を 正しく つかって 書きましょう。", "size": 12, "align": "start" },
+
+        { "type": "text", "x": 20, "y": 45, "w": 90, "h": 10, "dir": "h", "html": "ここに　かきうつしましょう", "size": 12, "align": "center" },
+        { "type": "text", "x": 254, "y": 45, "w": 90, "h": 10, "dir": "h", "html": "手本（読みましょう）", "size": 12, "align": "center" },
+
+        { "type": "masu", "x": 20, "y": 60, "dir": "v", "cell": 15, "perLine": 10, "lines": 6, "gap": 0,
+          "leader": true, "frame": true, "lineStyle": "solid", "gridColor": "green",
+          "text": "", "styles": [], "fontScale": 0.82, "font": "kyokasho", "color": "#1b1b1b", "autoGrow": false },
+
+        { "type": "masu", "x": 254, "y": 60, "dir": "v", "cell": 15, "perLine": 10, "lines": 6, "gap": 0,
+          "leader": false, "frame": true, "lineStyle": "solid", "gridColor": "green",
+          "text": "公園で　あいました。\n「いっしょに　あそぼう。」\nと、さそわれました。\n「いいよ。」\nと、へんじしました。",
+          "styles": [null,null,null,null,null,null,null,null,null,null,null,{"color":"#1d5fbf"},null,null,null,null,null,null,null,null,null,null,null,{"color":"#1d5fbf"},null,null,null,null,null,null,null,null,null,null,null,null,{"color":"#1d5fbf"},null,null,null,null,{"color":"#1d5fbf"},null,null,null,null,null,null,null,null,null,null,null],
+          "fontScale": 0.82, "font": "kyokasho", "color": "#1b1b1b", "autoGrow": false,
+          "rules": { "kutenKagi": true, "gyotou": "in", "kaiwaSage": true, "danrakuSage": false, "hankaku2": true } },
+
+        { "type": "text", "x": 118, "y": 60, "w": 128, "h": 48, "dir": "h", "size": 13, "align": "start",
+          "html": "<b>かぎを つかう ときの きまり</b><div>① 話した ことばは、「 」で かこみます。</div><div>② 「 」も、1つの マスに 1字 書きます。</div><div>③ まる（。）と とじかぎ（」）は、同じ マスに 書きます。</div>",
+          "border": "solid", "fill": "none", "pad": 5 },
+
+        { "type": "text", "x": 254, "y": 239, "w": 100, "h": 8, "dir": "h", "html": "© School Stock", "size": 8, "align": "end" }
+      ]
+    }
+  ]
+}

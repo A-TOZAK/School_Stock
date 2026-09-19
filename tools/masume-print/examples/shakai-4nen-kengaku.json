@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "title": "見学のまとめカード",
+  "paper": "B4",
+  "orient": "landscape",
+  "margin": 10,
+  "snap": 1,
+  "meta": { "subject": "社会", "grade": "4年", "name": "見学のまとめカード", "note": "どの見学先でも使えるまとめカードです。" },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 160, "h": 15.5, "size": 22, "bold": true, "html": "見学のまとめカード" },
+        { "type": "text", "x": 250, "y": 10, "w": 104, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 29, "x2": 354, "y2": 29, "width": 0.5 },
+
+        { "type": "text", "x": 10, "y": 34, "w": 165, "h": 10.5, "size": 13, "bold": true, "html": "見学メモ" },
+
+        { "type": "text", "x": 10, "y": 46, "w": 165, "h": 9, "size": 10, "html": "見たこと・聞いたこと①（30字まで）" },
+        { "type": "masu", "x": 10, "y": 56, "dir": "h", "cell": 10, "perLine": 10, "lines": 3, "leader": true, "autoGrow": false, "text": "" },
+
+        { "type": "text", "x": 10, "y": 91, "w": 165, "h": 9, "size": 10, "html": "見たこと・聞いたこと②（30字まで）" },
+        { "type": "masu", "x": 10, "y": 101, "dir": "h", "cell": 10, "perLine": 10, "lines": 3, "leader": true, "autoGrow": false, "text": "" },
+
+        { "type": "text", "x": 10, "y": 136, "w": 165, "h": 9, "size": 10, "html": "見たこと・聞いたこと③（30字まで）" },
+        { "type": "masu", "x": 10, "y": 146, "dir": "h", "cell": 10, "perLine": 10, "lines": 3, "leader": true, "autoGrow": false, "text": "" },
+
+        { "type": "text", "x": 10, "y": 182, "w": 165, "h": 9, "size": 10, "html": "働く人のくふうを書きましょう。（30字まで）" },
+        { "type": "masu", "x": 10, "y": 192, "dir": "h", "cell": 10, "perLine": 10, "lines": 3, "leader": true, "autoGrow": false, "text": "" },
+
+        { "type": "line", "x1": 180, "y1": 34, "x2": 180, "y2": 231, "width": 0.4, "color": "#8a8f96" },
+
+        { "type": "text", "x": 185, "y": 34, "w": 169, "h": 10, "size": 12, "html": "分かったことを100字でまとめましょう。" },
+        { "type": "masu", "x": 185, "y": 46, "dir": "v", "cell": 10, "perLine": 10, "lines": 10, "gap": 0, "leader": true, "autoGrow": false, "text": "" },
+
+        { "type": "text", "x": 185, "y": 151, "w": 169, "h": 9, "size": 10, "html": "絵や図をかきましょう。" },
+        { "type": "rect", "x": 185, "y": 161, "w": 169, "h": 70, "shape": "round", "color": "#8a8f96", "width": 0.4 },
+
+        { "type": "text", "x": 10, "y": 238, "w": 344, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    }
+  ]
+}

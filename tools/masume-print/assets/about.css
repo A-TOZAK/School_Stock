@@ -1,0 +1,124 @@
+/* マス目プリントメーカー 紹介ページ
+ * 藍1色と細い罫、水彩の絵。角丸のカードやパステルの地は使わない。
+ * 見出しと短い文は文節で折る（word-break:auto-phrase）。長い本文には当てない。
+ */
+:root {
+  --paper: #fbfaf7;
+  --white: #ffffff;
+  --ink: #20242b;
+  --ink-soft: #5a6069;
+  --line: #d9d6ce;
+  --line-dark: #b9b5aa;
+  --ai: #29527a;
+  --ai-soft: #eef3f8;
+  --font: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic", system-ui, sans-serif;
+  --wrap: 1080px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; font-family: var(--font); font-size: 17px; line-height: 1.95; color: var(--ink); background: var(--paper); line-break: strict; -webkit-text-size-adjust: 100%; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--ai); }
+h1, h2, h3 { margin: 0; font-weight: 700; letter-spacing: .04em; word-break: auto-phrase; text-wrap: balance; }
+p { margin: 0 0 1em; }
+
+/* ---------- 上の帯 ---------- */
+.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 10px max(16px, calc((100% - var(--wrap)) / 2)); background: rgba(251,250,247,.94); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+.brand { font-weight: 700; letter-spacing: .06em; color: var(--ai); text-decoration: none; white-space: nowrap; }
+.top nav { display: flex; align-items: center; gap: 22px; font-size: 14px; white-space: nowrap; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover { color: var(--ai); }
+.top nav a.open { padding: 6px 16px; border: 1px solid var(--ai); color: var(--ai); }
+.top nav a.open:hover { background: var(--ai); color: #fff; }
+
+/* ---------- 最初の面 ---------- */
+/* 絵の左上の白い所が、文字の席。絵は右下に寄せて置く */
+.hero { position: relative; margin-bottom: 84px; min-height: clamp(520px, 72vh, 700px); background: #fefefe; border-bottom: 1px solid var(--line); overflow: hidden; display: flex; align-items: center; }
+.hero-img { position: absolute; right: 0; bottom: 0; height: 100%; width: auto; max-width: none; }
+.hero { align-items: flex-start; }
+.hero-text { position: relative; z-index: 1; width: min(500px, 42%); margin-left: max(16px, calc((100% - var(--wrap)) / 2)); padding: 64px 0 56px; }
+/* 絵にかかる所だけ、うすい白のベールを敷く */
+.hero-text::before { content: ""; position: absolute; z-index: -1; left: -40px; right: -90px; top: 24px; bottom: 24px; background: radial-gradient(closest-side, rgba(254,254,254,.94) 62%, rgba(254,254,254,0)); }
+.kicker { margin: 0 0 10px; font-size: 13px; letter-spacing: .14em; color: var(--ai); }
+h1 { font-size: clamp(28px, 4.4vw, 44px); line-height: 1.45; margin-bottom: 18px; }
+.lead { font-size: 16.5px; color: var(--ink); word-break: auto-phrase; }
+.cta { display: flex; flex-wrap: wrap; gap: 12px; margin: 22px 0 12px; }
+.btn { display: inline-block; padding: 11px 26px; border: 1px solid var(--ai); color: var(--ai); text-decoration: none; font-weight: 500; letter-spacing: .06em; background: transparent; }
+.btn:hover { background: var(--ai-soft); }
+.btn.primary { background: var(--ai); color: #fff; }
+.btn.primary:hover { background: #1f4263; }
+.small { margin: 0; font-size: 13.5px; color: var(--ink-soft); }
+
+/* ---------- 共通の節 ---------- */
+section { padding: 0 max(16px, calc((100% - var(--wrap)) / 2)); margin-bottom: 96px; }
+section.hero { padding: 0; }
+h2 { font-size: clamp(22px, 2.6vw, 28px); padding-bottom: 12px; margin-bottom: 28px; border-bottom: 1px solid var(--line-dark); }
+.sec-lead { max-width: 46em; color: var(--ink-soft); }
+
+/* こんなときに */
+.scenes ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 0 48px; }
+.scenes li { padding: 16px 0 16px 1.4em; border-bottom: 1px solid var(--line); font-size: 18px; font-weight: 500; position: relative; word-break: auto-phrase; }
+.scenes li::before { content: ""; position: absolute; left: 0; top: 1.62em; width: .7em; height: 1px; background: var(--ai); }
+
+/* できること */
+.feature { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; padding: 44px 0; border-bottom: 1px solid var(--line); }
+.feature:first-of-type { padding-top: 8px; }
+.feature.rev .f-text { order: 2; }
+.feature .num { margin: 0 0 4px; font-size: 40px; font-weight: 700; line-height: 1; color: var(--ai); font-feature-settings: "tnum"; }
+.feature h3 { font-size: 22px; line-height: 1.6; margin-bottom: 14px; }
+.feature p { font-size: 16px; }
+.f-img { margin: 0; }
+.f-img img { border: 1px solid var(--line-dark); background: var(--white); width: 100%; }
+.f-img.narrow img { width: min(340px, 100%); margin: 0 auto; }
+.f-img figcaption { margin-top: 8px; font-size: 13px; line-height: 1.7; color: var(--ink-soft); }
+
+/* 教科の事例 */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 44px 32px; margin-top: 32px; }
+.card .thumb { display: block; border: 1px solid var(--line-dark); background: var(--white); aspect-ratio: 1 / 1; overflow: hidden; }
+.card .thumb img { width: 100%; height: 100%; object-fit: contain; transition: transform .25s; }
+.card .thumb:hover img { transform: scale(1.03); }
+.card .tag { margin: 14px 0 2px; font-size: 13px; letter-spacing: .08em; color: var(--ai); }
+.card h3 { font-size: 18px; line-height: 1.6; }
+.card .note { margin: 6px 0 10px; font-size: 14.5px; line-height: 1.8; color: var(--ink-soft); word-break: auto-phrase; }
+.card .links { display: flex; flex-wrap: wrap; gap: 4px 16px; margin: 0; font-size: 14px; }
+
+/* 使い方 */
+.step-row { display: grid; grid-template-columns: 5fr 7fr; gap: 56px; align-items: center; margin-bottom: 40px; }
+.step-row.rev figure { order: 2; }
+.step-row figure { margin: 0; }
+.step-row ol { margin: 0; padding: 0; list-style: none; counter-reset: none; }
+.step-row li { padding: 16px 0; border-bottom: 1px solid var(--line); font-size: 16px; }
+.step-row li b { display: inline-block; min-width: 4.2em; color: var(--ai); letter-spacing: .1em; }
+
+/* きまり・質問 */
+.notes { max-width: calc(760px + 2 * max(16px, calc((100% - var(--wrap)) / 2))); }
+.notes h2 { margin-top: 56px; }
+.notes h2:first-child { margin-top: 0; }
+.notes dl { margin: 0; }
+.notes dt { margin-top: 22px; font-weight: 700; }
+.notes dt::before { content: "Q　"; color: var(--ai); }
+.notes dd { margin: 4px 0 0; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+
+/* 下 */
+.foot { text-align: center; padding: 0 16px 56px; }
+.foot img { width: min(900px, 100%); margin: 0 auto 28px; }
+.foot .credit { margin: 6px 0 0; font-size: 13px; color: var(--ink-soft); }
+
+/* ---------- せまい画面 ---------- */
+@media (max-width: 860px) {
+  body { font-size: 16px; }
+  .top nav a:not(.open) { display: none; }
+  .hero { min-height: 0; flex-direction: column-reverse; align-items: stretch; }
+  .hero-img { position: static; width: 100%; height: auto; }
+  .hero-text { width: auto; margin: 0 16px; padding: 28px 0 8px; }
+  .hero-text::before { display: none; }
+  .scenes ul { grid-template-columns: 1fr; }
+  .feature, .step-row { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
+  .feature.rev .f-text, .step-row.rev figure { order: 0; }
+  .cards { grid-template-columns: repeat(2, 1fr); gap: 32px 18px; }
+  section { margin-bottom: 64px; }
+}
+@media (max-width: 520px) {
+  .cards { grid-template-columns: 1fr; }
+  .cta .btn { flex: 1 1 100%; text-align: center; }
+}

@@ -1,0 +1,44 @@
+{
+  "version": 1,
+  "title": "ひらがなの なぞりがき",
+  "paper": "A4",
+  "orient": "portrait",
+  "margin": 10,
+  "snap": 1,
+  "meta": {
+    "subject": "国語",
+    "grade": "1年",
+    "name": "ひらがなの なぞりがき",
+    "note": "うすい字をなぞってから、同じ数のマスに自分で書く練習です。"
+  },
+  "pages": [
+    {
+      "blocks": [
+        { "type": "text", "x": 10, "y": 10, "w": 90, "h": 14.5, "size": 20, "bold": true, "html": "ひらがなの　なぞりがき" },
+        { "type": "text", "x": 105, "y": 11, "w": 95, "h": 10, "size": 12, "html": "　年　組　名前（　　　　　　　　　　）" },
+        { "type": "line", "x1": 10, "y1": 23, "x2": 200, "y2": 23, "color": "#1b1b1b", "width": 0.5 },
+        { "type": "text", "x": 10, "y": 28, "w": 190, "h": 11, "size": 14, "html": "みぎの　うすい　じを　なぞって、ひだりに　じぶんで　かきましょう。" },
+
+        { "type": "masu", "x": 10, "y": 66, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 30, "y": 66, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "つくえ", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "masu", "x": 70, "y": 66, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 90, "y": 66, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "とけい", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "masu", "x": 130, "y": 66, "dir": "v", "cell": 20, "perLine": 4, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 150, "y": 66, "dir": "v", "cell": 20, "perLine": 4, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "えんぴつ", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "masu", "x": 10, "y": 173, "dir": "v", "cell": 20, "perLine": 4, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 30, "y": 173, "dir": "v", "cell": 20, "perLine": 4, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "けしごむ", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "masu", "x": 70, "y": 173, "dir": "v", "cell": 20, "perLine": 5, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 90, "y": 173, "dir": "v", "cell": 20, "perLine": 5, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "らんどせる", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "masu", "x": 130, "y": 173, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "" },
+        { "type": "masu", "x": 150, "y": 173, "dir": "v", "cell": 20, "perLine": 3, "lines": 1, "leader": true, "frame": true, "gridColor": "green", "text": "はさみ", "color": "#b9bcc0", "fontScale": 0.88 },
+
+        { "type": "text", "x": 10, "y": 278, "w": 190, "h": 8, "size": 8, "align": "end", "html": "© School Stock" }
+      ]
+    }
+  ]
+}
