@@ -99,6 +99,13 @@ h2 { font-size: clamp(22px, 2.6vw, 28px); padding-bottom: 12px; margin-bottom: 2
 .notes dt::before { content: "Q　"; color: var(--ai); }
 .notes dd { margin: 4px 0 0; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
 
+/* ほかの道具 */
+.others ul { list-style: none; margin: 24px 0 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 40px; }
+.others li { border-bottom: 1px solid var(--line); }
+.others li a { display: block; padding: 16px 0; font-size: 17px; font-weight: 500; text-decoration: none; color: var(--ink); }
+.others li a:hover { color: var(--ai); }
+.others li small { display: block; margin-top: 2px; font-size: 13.5px; font-weight: 400; line-height: 1.7; color: var(--ink-soft); word-break: auto-phrase; }
+
 /* 下 */
 .foot { text-align: center; padding: 0 16px 56px; }
 .foot img { width: min(900px, 100%); margin: 0 auto 28px; }
@@ -113,6 +120,7 @@ h2 { font-size: clamp(22px, 2.6vw, 28px); padding-bottom: 12px; margin-bottom: 2
   .hero-text { width: auto; margin: 0 16px; padding: 28px 0 8px; }
   .hero-text::before { display: none; }
   .scenes ul { grid-template-columns: 1fr; }
+  .others ul { grid-template-columns: 1fr; }
   .feature, .step-row { grid-template-columns: 1fr; gap: 22px; padding: 32px 0; }
   .feature.rev .f-text, .step-row.rev figure { order: 0; }
   .cards { grid-template-columns: repeat(2, 1fr); gap: 32px 18px; }

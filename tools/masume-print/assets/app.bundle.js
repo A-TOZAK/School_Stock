@@ -3025,6 +3025,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       });
       body.appendChild(g2);
     }
+    body.appendChild(h("p", { class: "st-foot" }, "できあがったプリントやノートの PDF は、",
+      h("a", { href: "https://a-tozak.github.io/School_Stock/", target: "_blank", rel: "noopener" }, "School Stock の棚"), "にもあります。"));
     dialog("テンプレート", body, true);
   };
 
@@ -3304,7 +3306,13 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       h("h3", null, "字の形"),
       h("ul", null,
         h("li", null, "教科書体は、パソコンに入っている UDデジタル教科書体を使います。入っていないときは、この道具に入っている Klee One で表示します。"),
-        h("li", null, "ほかのフォントを使いたいときは、マス目やテキストボックスを選んで「フォント」から「パソコンの中のフォントから選ぶ」を押します。")));
+        h("li", null, "ほかのフォントを使いたいときは、マス目やテキストボックスを選んで「フォント」から「パソコンの中のフォントから選ぶ」を押します。")),
+      h("h3", null, "School Stock"),
+      h("ul", null,
+        h("li", null, h("a", { href: "https://a-tozak.github.io/School_Stock/", target: "_blank", rel: "noopener" }, "School Stock のトップ"), "　先生がそのまま使える教材の、無料の棚です。"),
+        h("li", null, h("a", { href: "https://a-tozak.github.io/School_Stock/tools/note-prints/", target: "_blank", rel: "noopener" }, "ノートプリント集"), "　ノートを PDF でそのまま刷りたいとき。"),
+        h("li", null, h("a", { href: "https://a-tozak.github.io/School_Stock/tools/pdf-toolbox/", target: "_blank", rel: "noopener" }, "先生のPDF道具箱"), "　できた PDF を結合したり、書きこんだりするとき。"),
+        h("li", null, h("a", { href: "https://a-tozak.github.io/School_Stock/prints/", target: "_blank", rel: "noopener" }, "プリントの棚"), "　できあがったプリントを探すとき。")));
     var wrap = h("div", { id: "help-dialog", class: "dlg", onmousedown: function (ev) { if (ev.target === wrap) close(); } },
       h("div", { class: "dlg-box", role: "dialog", "aria-label": "使い方" },
         h("div", { class: "dlg-head" }, h("b", null, "使い方"), h("button", { type: "button", class: "btn ghost", onclick: close }, "閉じる")), body));
