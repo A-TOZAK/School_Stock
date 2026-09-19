@@ -9,6 +9,16 @@
 (function () {
   "use strict";
 
+  // スマホで見つけた人がパソコンへリンクを送る案内（assets/okuru.js）を、ここから全ページに読みこむ。
+  // 計測の設定が入っていなくても出したいので、下の guard より前に置く。スマホの幅でだけ読みこむ。
+  try {
+    if (window.innerWidth < 820 && !document.getElementById("ss-okuru-js")) {
+      var ok = document.createElement("script");
+      ok.id = "ss-okuru-js"; ok.src = "/School_Stock/assets/okuru.js?v=1"; ok.defer = true;
+      document.head.appendChild(ok);
+    }
+  } catch (e) {}
+
   // 設定は assets/counter-config.js（window.SS_COUNTER）から読む。
   // そこに2つの値を貼るだけで計測が始まる。貼るまでは下の guard で何もしない。
   var CFG = (window.SS_COUNTER || {});
