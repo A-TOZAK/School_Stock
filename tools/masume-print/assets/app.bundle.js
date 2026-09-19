@@ -2129,7 +2129,10 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     function up(u) {
       window.removeEventListener("pointermove", mv);
       window.removeEventListener("pointerup", up);
-      if (moved) { App.commit(); App.renderPanel(); }
+      if (moved) {
+        if (App.fitToMasu(b)) { App.refreshBlock(b); App.measureAuto(); App.drawSelection(); }
+        App.commit(); App.renderPanel();
+      }
       else if (!fromGrip && (b.type === "masu" || b.type === "text")) App.startEdit(b, u);
     }
     window.addEventListener("pointermove", mv);
@@ -2237,6 +2240,36 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     window.addEventListener("pointerup", up);
   }
 
+  // ---------- 筆算を、下にあるマス目に合わせる ----------
+  /** 筆算をマス目（ノートのマス）の上に置いたら、そのマス目にぴったり重ねる。
+   *  マスの大きさをそろえ、筆算の側の方眼は消す（線が二重にならない）。マス目の外へ出したら、方眼を戻す。
+   *  変えたら true。 */
+  App.fitToMasu = function (b) {
+    if (!b || b.type !== "hissan") return false;
+    var f = App.find(b.id);
+    if (!f) return false;
+    var r = App.bbox(b), cx = r.x + Math.min(r.w, b.cell * 1.5), cy = r.y + Math.min(r.h, b.cell * 1.5), hit = null;
+    App.doc.pages[f.page].blocks.forEach(function (m) {
+      if (m.type !== "masu" || (m.gap || 0) > 0.01) return;
+      var g = App.bbox(m);
+      if (cx >= g.x && cx <= g.x + g.w && cy >= g.y && cy <= g.y + g.h) hit = m;
+    });
+    if (!hit) {
+      if (!b.onMasu) return false;
+      b.onMasu = false; b.grid = "hougan";
+      return true;
+    }
+    var c = hit.cell, g = App.bbox(hit), sol = window.Hissan.solve(b.expr, { zeroStep: b.zeroStep });
+    var cols = sol.ok ? sol.cols : 3, rows = sol.ok ? Math.max(sol.rows, sol.reserveRows) + (b.spare || 0) : 3;
+    var maxCol = Math.max(0, Math.round(g.w / c) - cols), maxRow = Math.max(0, Math.round(g.h / c) - rows);
+    var col = clamp(Math.round((b.x - g.x) / c), 0, maxCol), row = clamp(Math.round((b.y - g.y) / c), 0, maxRow);
+    var nx = Math.round((g.x + col * c) * 100) / 100, ny = Math.round((g.y + row * c) * 100) / 100;
+    var changed = b.cell !== c || b.grid !== "none" || b.x !== nx || b.y !== ny || !b.onMasu;
+    b.cell = c; b.grid = "none"; b.x = nx; b.y = ny; b.onMasu = true;
+    if (changed && App.toast && !App.fitToMasu.told) { App.fitToMasu.told = true; App.toast("筆算を、下のマス目に合わせました。マス目の外へ動かすと、もとの方眼にもどります。", 5000); }
+    return changed;
+  };
+
   // ---------- 部品の出し入れ ----------
   App.currentPage = function () {
     var sr = App.$("#stage").getBoundingClientRect(), best = 0, bestVis = -1;
@@ -2293,6 +2326,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     }
     if (b.x + bw > size[0]) b.x = Math.max(0, size[0] - bw - m);
     b.x = App.snap(b.x);
+    if (App.fitToMasu(b)) { App.refreshBlock(b); App.measureAuto(); }
     App.placeBlock(App.blockEl(b.id), b);
     App.commit();
     App.selId = null;
@@ -2550,7 +2584,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         return;
       }
       if (mod && (key === "y" || key === "Y")) { if (inField) return; ev.preventDefault(); App.redo(); return; }
-      if (mod && (key === "s" || key === "S")) { ev.preventDefault(); App.saveFile(); return; }
+      if (mod && (key === "s" || key === "S")) { ev.preventDefault(); App.openSaveMenu(); return; }
       if (t.isContentEditable && key === "Escape") { App.stopEditing(); App.renderPanel(); return; }
       if (inIme || inField) return;
 
@@ -3084,6 +3118,209 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var q = new URLSearchParams(location.search);
     if (firstVisit && !q.get("t") && q.get("e") === null && !q.get("src")) App.openStart(true);
   });
+})();
+
+;
+/* マス目プリントメーカー：PDF と画像（PNG）で保存する
+ * 外のライブラリを使わずに、ブラウザの中だけで作る。
+ *   1) 紙面（.page）を写して、スタイルごと SVG の foreignObject に入れる
+ *   2) それを画像として canvas に描く（刷るのに足りる細かさで）
+ *   3) PNG はそのまま保存。PDF は、各ページを JPEG にして、自分で PDF の形に組む
+ * できた PDF と画像は、あとから直せない。直すための「編集用のファイル」は、別に保存できる。
+ */
+(function () {
+  "use strict";
+  var App = window.App, h = App.h;
+  var DPI_PDF = 250, DPI_PNG = 200;
+
+  // ---------- スタイルを集める ----------
+  var cssCache = null, fontCache = {};
+  function collectCss() {
+    if (cssCache !== null) return cssCache;
+    var out = [];
+    Array.prototype.forEach.call(document.styleSheets, function (sheet) {
+      var rules;
+      try { rules = sheet.cssRules; } catch (e) { return; }
+      Array.prototype.forEach.call(rules || [], function (r) {
+        if (r.type === CSSRule.FONT_FACE_RULE) return;          // 字は下で、要るものだけ埋めこむ
+        if (r.type === CSSRule.MEDIA_RULE && /print/.test(r.conditionText || (r.media && r.media.mediaText) || "")) return;
+        out.push(r.cssText);
+      });
+    });
+    cssCache = out.join("\n");
+    return cssCache;
+  }
+  function toBase64(buf) {
+    var bytes = new Uint8Array(buf), s = "", i;
+    for (i = 0; i < bytes.length; i += 0x8000) s += String.fromCharCode.apply(null, bytes.subarray(i, i + 0x8000));
+    return btoa(s);
+  }
+  /** この道具に入っている字（Klee One）を使っているときだけ、字のデータを埋めこむ。パソコンの中の字は、そのまま使える。 */
+  function fontCss() {
+    var use = App.kyokashoInUse ? App.kyokashoInUse() : { rank: 0 };
+    if (use.rank !== 2) return Promise.resolve("");
+    var files = [["400", "assets/fonts/KleeOne-Regular.core.woff2"], ["600 700", "assets/fonts/KleeOne-SemiBold.core.woff2"]];
+    return Promise.all(files.map(function (f) {
+      if (fontCache[f[1]]) return fontCache[f[1]];
+      return fetch(f[1]).then(function (r) { return r.arrayBuffer(); }).then(function (buf) {
+        return (fontCache[f[1]] = '@font-face{font-family:"Klee One";font-weight:' + f[0] + ';src:url(data:font/woff2;base64,' + toBase64(buf) + ') format("woff2");}');
+      }).catch(function () { return ""; });
+    })).then(function (a) { return a.join("\n"); });
+  }
+
+  // ---------- 1ページを canvas に描く ----------
+  function pageCanvas(pi, dpi, fontsCss) {
+    var src = App.pageEl(pi), size = App.pageSize();
+    var k = dpi / 96, W = Math.round(size[0] * App.MM * k), H = Math.round(size[1] * App.MM * k);
+    var clone = src.cloneNode(true);
+    Array.prototype.forEach.call(clone.querySelectorAll(".no-print, .float-bar, .selbox"), function (n) { n.remove(); });
+    Array.prototype.forEach.call(clone.querySelectorAll("[contenteditable]"), function (n) { n.removeAttribute("contenteditable"); });
+    clone.style.transform = "scale(" + k + ")";
+    clone.style.transformOrigin = "0 0";
+    clone.style.boxShadow = "none";
+    clone.style.margin = "0";
+    var wrap = document.createElement("div");
+    wrap.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+    wrap.style.cssText = "width:" + W + "px;height:" + H + "px;overflow:hidden;background:#fff;position:relative";
+    var st = document.createElement("style");
+    st.textContent = fontsCss + "\n" + collectCss() + "\n.page{position:absolute;left:0;top:0;background:#fff}";
+    wrap.appendChild(st);
+    wrap.appendChild(clone);
+    var xml = new XMLSerializer().serializeToString(wrap);
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '"><foreignObject x="0" y="0" width="100%" height="100%">' + xml + "</foreignObject></svg>";
+    return new Promise(function (resolve, reject) {
+      var img = new Image();
+      img.onload = function () {
+        var cv = document.createElement("canvas");
+        cv.width = W; cv.height = H;
+        var ctx = cv.getContext("2d");
+        ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+        ctx.drawImage(img, 0, 0, W, H);
+        resolve(cv);
+      };
+      img.onerror = function () { reject(new Error("紙面を画像にできませんでした")); };
+      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    });
+  }
+  function canvasBytes(cv, type, q) {
+    return new Promise(function (resolve, reject) {
+      cv.toBlob(function (b) { if (!b) return reject(new Error("画像にできませんでした")); b.arrayBuffer().then(function (a) { resolve(new Uint8Array(a)); }); }, type, q);
+    });
+  }
+
+  // ---------- PDF を組む（1ページに JPEG を1枚） ----------
+  function buildPdf(pages, wmm, hmm) {
+    var enc = new TextEncoder(), chunks = [], offsets = [], pos = 0;
+    function put(x) { var b = typeof x === "string" ? enc.encode(x) : x; chunks.push(b); pos += b.length; }
+    function obj(n, body, stream) {
+      offsets[n] = pos;
+      put(n + " 0 obj\n" + body + "\n");
+      if (stream) { put("stream\n"); put(stream); put("\nendstream\n"); }
+      put("endobj\n");
+    }
+    var Wpt = (wmm * 72 / 25.4).toFixed(2), Hpt = (hmm * 72 / 25.4).toFixed(2), n = pages.length;
+    put("%PDF-1.4\n%\xE2\xE3\xCF\xD3\n");
+    var kids = [];
+    for (var i = 0; i < n; i++) kids.push((3 + i * 3) + " 0 R");
+    obj(1, "<< /Type /Catalog /Pages 2 0 R >>");
+    obj(2, "<< /Type /Pages /Count " + n + " /Kids [" + kids.join(" ") + "] >>");
+    pages.forEach(function (p, i) {
+      var po = 3 + i * 3, co = po + 1, io = po + 2;
+      var content = "q " + Wpt + " 0 0 " + Hpt + " 0 0 cm /Im0 Do Q";
+      obj(po, "<< /Type /Page /Parent 2 0 R /MediaBox [0 0 " + Wpt + " " + Hpt + "] /Resources << /XObject << /Im0 " + io + " 0 R >> >> /Contents " + co + " 0 R >>");
+      obj(co, "<< /Length " + content.length + " >>", content);
+      obj(io, "<< /Type /XObject /Subtype /Image /Width " + p.w + " /Height " + p.h + " /ColorSpace /DeviceRGB /BitsPerComponent 8 /Filter /DCTDecode /Length " + p.bytes.length + " >>", p.bytes);
+    });
+    var total = 3 + n * 3, xref = pos;
+    put("xref\n0 " + total + "\n0000000000 65535 f \n");
+    for (var k = 1; k < total; k++) put(("0000000000" + offsets[k]).slice(-10) + " 00000 n \n");
+    put("trailer\n<< /Size " + total + " /Root 1 0 R >>\nstartxref\n" + xref + "\n%%EOF\n");
+    return new Blob(chunks, { type: "application/pdf" });
+  }
+
+  // ---------- ZIP を組む（圧縮なし。PNG が2ページ以上のとき） ----------
+  var crcTable = null;
+  function crc32(b) {
+    if (!crcTable) { crcTable = []; for (var n = 0; n < 256; n++) { var c = n; for (var k = 0; k < 8; k++) c = c & 1 ? 0xEDB88320 ^ (c >>> 1) : c >>> 1; crcTable[n] = c >>> 0; } }
+    var crc = 0xFFFFFFFF;
+    for (var i = 0; i < b.length; i++) crc = crcTable[(crc ^ b[i]) & 0xFF] ^ (crc >>> 8);
+    return (crc ^ 0xFFFFFFFF) >>> 0;
+  }
+  function buildZip(files) {
+    var enc = new TextEncoder(), parts = [], central = [], pos = 0;
+    function u16(v) { return [v & 255, (v >> 8) & 255]; }
+    function u32(v) { return [v & 255, (v >> 8) & 255, (v >> 16) & 255, (v >>> 24) & 255]; }
+    files.forEach(function (f) {
+      var name = enc.encode(f.name), crc = crc32(f.bytes), len = f.bytes.length;
+      var head = [].concat([0x50, 0x4b, 3, 4], u16(20), u16(0x0800), u16(0), u16(0), u16(0x21), u32(crc), u32(len), u32(len), u16(name.length), u16(0));
+      central.push({ head: [].concat([0x50, 0x4b, 1, 2], u16(20), u16(20), u16(0x0800), u16(0), u16(0), u16(0x21), u32(crc), u32(len), u32(len), u16(name.length), u16(0), u16(0), u16(0), u16(0), u32(0), u32(pos)), name: name });
+      parts.push(new Uint8Array(head), name, f.bytes);
+      pos += head.length + name.length + len;
+    });
+    var cstart = pos, csize = 0;
+    central.forEach(function (c) { parts.push(new Uint8Array(c.head), c.name); csize += c.head.length + c.name.length; });
+    parts.push(new Uint8Array([].concat([0x50, 0x4b, 5, 6], u16(0), u16(0), u16(files.length), u16(files.length), u32(csize), u32(cstart), u16(0))));
+    return new Blob(parts, { type: "application/zip" });
+  }
+
+  function download(blob, name) {
+    var a = h("a", { href: URL.createObjectURL(blob), download: name });
+    document.body.appendChild(a);
+    a.click();
+    setTimeout(function () { URL.revokeObjectURL(a.href); a.remove(); }, 1500);
+  }
+  function safeName() { return (App.doc.title || "プリント").replace(/[\\/:*?"<>|\n\r]/g, "_").slice(0, 80); }
+
+  /** kind = "pdf" か "png"。返すのは Promise（テストからも使う）。 */
+  App.exportAs = function (kind) {
+    App.stopEditing();
+    App.selId = null;
+    App.drawSelection();
+    var n = App.doc.pages.length, size = App.pageSize(), dpi = kind === "pdf" ? DPI_PDF : DPI_PNG, name = safeName();
+    App.toast((kind === "pdf" ? "PDF" : "画像") + "を作っています…（" + n + "ページ）", 60000);
+    return fontCss().then(function (fcss) {
+      var results = [], chain = Promise.resolve();
+      for (var i = 0; i < n; i++) (function (pi) {
+        chain = chain.then(function () { return pageCanvas(pi, dpi, fcss); }).then(function (cv) {
+          return canvasBytes(cv, kind === "pdf" ? "image/jpeg" : "image/png", 0.92).then(function (bytes) { results.push({ w: cv.width, h: cv.height, bytes: bytes }); cv.width = cv.height = 0; });
+        });
+      })(i);
+      return chain.then(function () { return results; });
+    }).then(function (pages) {
+      var blob, file;
+      if (kind === "pdf") { blob = buildPdf(pages, size[0], size[1]); file = name + ".pdf"; }
+      else if (pages.length === 1) { blob = new Blob([pages[0].bytes], { type: "image/png" }); file = name + ".png"; }
+      else { blob = buildZip(pages.map(function (p, i) { return { name: name + "_" + (i + 1) + ".png", bytes: p.bytes }; })); file = name + "_画像.zip"; }
+      download(blob, file);
+      App.toast("「" + file + "」を保存しました。");
+      return { blob: blob, file: file, pages: pages.length };
+    }).catch(function (e) {
+      App.toast("保存できませんでした。右上の「印刷」から「PDF に保存」を選ぶ方法も使えます。", 7000);
+      throw e;
+    });
+  };
+
+  // ---------- 「保存」のメニュー ----------
+  function closeMenu() { var m = document.getElementById("save-menu"); if (m) m.remove(); }
+  App.openSaveMenu = function () {
+    if (document.getElementById("save-menu")) return closeMenu();
+    var btn = App.$("#btn-save"), r = btn.getBoundingClientRect();
+    function item(title, note, fn, id) {
+      return h("button", { type: "button", id: id, onclick: function () { closeMenu(); fn(); } }, h("b", null, title), h("small", null, note));
+    }
+    var menu = h("div", { id: "save-menu", class: "save-menu", role: "menu" },
+      item("PDF で保存", "刷ったり、配ったりするとき。用紙の大きさのまま保存します。", function () { App.exportAs("pdf"); }, "save-pdf"),
+      item("画像（PNG）で保存", "スライドやおたよりに貼るとき。2ページ以上は、ZIP にまとめます。", function () { App.exportAs("png"); }, "save-png"),
+      h("hr"),
+      item("編集用のファイルで保存", "あとで「開く」から直したいとき。PDF と画像は、あとから直せません。", function () { App.saveFile(); }, "save-json"));
+    menu.style.top = (r.bottom + 6) + "px";
+    menu.style.right = Math.max(8, window.innerWidth - r.right) + "px";
+    document.body.appendChild(menu);
+  };
+  document.addEventListener("pointerdown", function (ev) {
+    if (document.getElementById("save-menu") && !(ev.target.closest && ev.target.closest("#save-menu, #btn-save"))) closeMenu();
+  }, true);
+  document.addEventListener("keydown", function (ev) { if (ev.key === "Escape") closeMenu(); });
 })();
 
 ;
@@ -3704,7 +3941,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     App.$("#zoom-fit").addEventListener("click", function () { App.fitWidth(); });
     App.$("#zoom-page").addEventListener("click", function () { App.fitPage(); });
     App.$("#btn-print").addEventListener("click", function () { App.print(); });
-    App.$("#btn-save").addEventListener("click", function () { App.saveFile(); });
+    App.$("#btn-save").addEventListener("click", function () { App.openSaveMenu(); });
     App.$("#btn-open").addEventListener("click", function () { var f = App.$("#file-open"); f.value = ""; f.click(); });
     App.$("#file-open").addEventListener("change", function (ev) {
       var file = ev.target.files && ev.target.files[0];
