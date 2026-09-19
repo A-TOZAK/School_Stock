@@ -136,6 +136,17 @@
       <dd>ふりがな、英語の4線、わり算とかけ算の小数には、まだ対応していません。</dd>
     </dl>
   </section>
+  <section id="pc" class="sendpc">
+    <h2>スマホで見つけた方へ</h2>
+    <p class="sec-lead">この道具は、画面の広いパソコン（Windows、Chromebook、Mac）で使います。リンクを自分に送っておくと、職員室のパソコンですぐ開けます。</p>
+    <p class="cta">
+      <button type="button" class="btn primary" id="pc-share">リンクを自分に送る</button>
+      <button type="button" class="btn" id="pc-copy">リンクをコピーする</button>
+    </p>
+    <p class="small" id="pc-msg"></p>
+    <p>パソコンで探すときは、<b>「School Stock 教材」</b>で検索して、School Stock の棚から「マス目プリントメーカー」を開きます。</p>
+  </section>
+
   <section id="hoka" class="others">
     <h2>School Stock のほかの道具とプリント</h2>
     <p class="sec-lead">School Stock は、先生がそのまま使える教材をまとめた、無料の棚です。</p>
@@ -173,6 +184,16 @@
     a.querySelector("h3").textContent = ex.title;
     a.querySelector(".note").textContent = ex.note;
     host.appendChild(a);
+  });
+})();
+
+(function () {
+  var url = "https://a-tozak.github.io/School_Stock/tools/masume-print/about.html", msg = document.getElementById("pc-msg");
+  var sh = document.getElementById("pc-share"), cp = document.getElementById("pc-copy");
+  if (!navigator.share) sh.hidden = true;
+  sh.addEventListener("click", function () { navigator.share({ title: "マス目プリントメーカー｜School Stock", text: "ワークシートをブラウザで作って刷る道具です。パソコンで開いてください。", url: url }).catch(function () {}); });
+  cp.addEventListener("click", function () {
+    (navigator.clipboard ? navigator.clipboard.writeText(url) : Promise.reject()).then(function () { msg.textContent = "リンクをコピーしました。メールやメモに貼って、パソコンで開いてください。"; }).catch(function () { msg.textContent = url; });
   });
 })();
 </script>

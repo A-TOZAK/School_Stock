@@ -395,3 +395,14 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 .save-menu b { display: block; font-size: 13.5px; font-weight: 600; color: var(--ink); }
 .save-menu small { display: block; margin-top: 2px; font-size: 12px; line-height: 1.6; color: var(--ink-soft); }
 .save-menu hr { margin: 5px 8px; border: 0; border-top: 1px solid var(--line); }
+
+/* 空のテキストボックスの案内の字は、折り返さない（折り返すと、わくの高さが2行ぶんに広がってしまう） */
+.tx:empty::before { white-space: nowrap; }
+
+/* スマホで開いた人への案内 */
+.pc-body { gap: 12px; font-size: 14px; line-height: 1.8; }
+.pc-body p { margin: 0; }
+.pc-btns { display: flex; flex-wrap: wrap; gap: 8px; }
+.pc-btns .btn { padding: 9px 14px; text-decoration: none; color: inherit; }
+.pc-btns .btn.primary { color: #fff; }
+.pc-search { padding: 10px 12px; background: var(--ai-soft); }

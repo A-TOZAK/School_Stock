@@ -738,7 +738,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         else { b.x = r2(b.x * k); b.y = r2(b.y * k); if (b.w) b.w = r2(b.w * k); if (b.h) b.h = r2(b.h * k); }
         if (b.type === "masu") { b.cell = r2(b.cell * k); b.gap = r2((b.gap || 0) * k); }
         if (b.type === "hissan") b.cell = r2(b.cell * k);
-        if (b.type === "text") { b.size = r2(b.size * k); b.pad = r2(b.pad * k); }
+        if (b.type === "text") { b.size = r2(b.size * k); b.pad = r2(b.pad * k); if (b.track) b.track = r2(b.track * k); }
         if (b.type === "shiki") b.size = r2(b.size * k);
         if (b.type === "line" || b.type === "rect") b.width = Math.max(0.1, r2(b.width * k));
       });
@@ -982,6 +982,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         b.align = pick(b.align, ["start", "center", "end"], "start");
         b.border = pick(b.border, ["none", "solid", "dotted", "bold"], "none");
         b.fill = color(b.fill, "none", true);
+        b.track = num(b.track, 0, 0, 60);
         break;
       case "line":
         b.width = num(b.width, 0.5, 0.05, 10);
@@ -1638,7 +1639,9 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     tx.style.cssText = "font-family:" + App.fontCss(b.font) + ";font-size:" + b.size + "pt;color:" + b.color +
       ";font-weight:" + (b.bold ? 700 : 400) + ";text-align:" + b.align + ";line-height:" + b.lineHeight +
       ";padding:" + b.pad + "mm;border:" + border + ";background:" + (b.fill === "none" ? "transparent" : b.fill) +
-      ";writing-mode:" + (b.dir === "v" ? "vertical-rl" : "horizontal-tb");
+      ";writing-mode:" + (b.dir === "v" ? "vertical-rl" : "horizontal-tb") +
+      // マス目に合わせているとき：1字が1マスぶん進むように字の間をあける（わくの位置を字の間の半分だけずらして、字をマスのまん中に置く）
+      (b.track > 0 ? ";letter-spacing:" + b.track + "mm" : "");
   }
 
   /** 文字の部品に入れてよいタグだけを残す。 */
@@ -2244,7 +2247,82 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   /** 筆算をマス目（ノートのマス）の上に置いたら、そのマス目にぴったり重ねる。
    *  マスの大きさをそろえ、筆算の側の方眼は消す（線が二重にならない）。マス目の外へ出したら、方眼を戻す。
    *  変えたら true。 */
+  /** 点（mm）の下にあるマス目と、その点にいちばん近いマスの左上を返す。 */
+  function masuCellAt(pageIndex, px, py, selfId) {
+    var best = null;
+    App.doc.pages[pageIndex].blocks.forEach(function (m) {
+      if (m.type !== "masu" || m.id === selfId) return;
+      var g = App.bbox(m);
+      if (px < g.x || px > g.x + g.w || py < g.y || py > g.y + g.h) return;
+      var geo = App.masuGeom(m), c = m.cell, hit = null, dist = 1e9;
+      for (var L = 0; L < m.lines; L++) for (var P = 0; P < m.perLine; P++) {
+        var xy = geo.xy(L, P), d = Math.abs(g.x + xy[0] + c / 2 - px) + Math.abs(g.y + xy[1] + c / 2 - py);
+        if (d < dist) { dist = d; hit = [g.x + xy[0], g.y + xy[1]]; }
+      }
+      best = { masu: m, x: hit[0], y: hit[1] };
+    });
+    return best;
+  }
+  function r2(v) { return Math.round(v * 100) / 100; }
+  function tellOnce(msg) { if (App.toast && !App.fitToMasu.told) { App.fitToMasu.told = true; App.toast(msg, 5500); } }
+
+  /** テキストボックスを、下のマス目に合わせる。1字が1マスに入る大きさと字の間にして、マスの角に置く。 */
+  function fitTextToMasu(b, f) {
+    var c0 = b.onMasu && b.cellFit ? b.cellFit : 10;
+    var at = b.dir === "v" ? masuCellAt(f.page, b.x + b.w - c0 / 2, b.y + c0 / 2, b.id) : masuCellAt(f.page, b.x + c0 / 2, b.y + c0 / 2, b.id);
+    if (!at) {
+      if (!b.onMasu) return false;
+      b.onMasu = false; b.track = 0; b.pad = 1.5; b.lineHeight = 1.6; delete b.cellFit;
+      b.h = Math.max(b.h, App.lineH(b.size, 1));
+      return true;
+    }
+    var m = at.masu, c = m.cell, gap = m.gap || 0, same = b.dir === m.dir, pitch = same ? c + gap : c;
+    var before = JSON.stringify([b.x, b.y, b.w, b.h, b.size, b.track, b.lineHeight, b.pad]);
+    if (!b.onMasu || b.cellFit !== c) b.size = Math.round(c * 0.68 / 0.3528 * 2) / 2;   // マス目の字の「中」と同じ割合
+    var fs = b.size * 0.3528;
+    // 行の数は、打ってある文の改行の数から（わくの高さからは数えない）
+    var nLines = Math.max(1, (String(b.html || "").match(/<div|<br/gi) || []).length + (/^\s*<div/i.test(b.html || "") ? 0 : 1));
+    // いちばん長い行の字数ぶんは、字の進む向きに場所を取る（取らないと、1字ごとに折り返してしまう）
+    var longest = String(b.html || "").replace(/<\/div>|<br[^>]*>/gi, "\n").replace(/<[^>]+>/g, "").replace(/&[a-z]+;/g, "x").split("\n").reduce(function (n, t) { return Math.max(n, Array.from(t).length); }, 0);
+    var mb = App.bbox(m);
+    b.track = r2(Math.max(0, c - fs)); b.pad = 0; b.lineHeight = Math.floor(pitch / fs * 100) / 100; b.onMasu = true; b.cellFit = c;
+    if (b.dir === "v") {
+      b.h = Math.max(c, Math.ceil((b.h - 0.3) / c) * c, Math.min(longest * c, mb.y + mb.h - at.y));
+      b.w = nLines * pitch;
+      b.x = r2(at.x + c + (same ? gap / 2 : 0) - b.w); b.y = r2(at.y + b.track / 2);
+    } else {
+      b.w = Math.max(c, Math.ceil((b.w - 0.3) / c) * c, Math.min(longest * c, mb.x + mb.w - at.x));
+      b.h = nLines * pitch;
+      b.x = r2(at.x + b.track / 2); b.y = r2(at.y - (same ? gap / 2 : 0));
+    }
+    var changed = before !== JSON.stringify([b.x, b.y, b.w, b.h, b.size, b.track, b.lineHeight, b.pad]);
+    // わくの大きさをすぐ画面に入れる（入れないと、前の高さが「中身の高さ」として測られて、もとにもどってしまう）
+    var elNow = App.blockEl(b.id);
+    if (elNow) App.placeBlock(elNow, b);
+    if (changed) tellOnce("テキストを、下のマス目に合わせました（1字が1マスに入ります）。マス目の外へ動かすと、もとにもどります。");
+    return changed;
+  }
+  /** 数式を、下のマス目に合わせる。左はしをマスの線に、高さはマスの行のまん中にそろえる。 */
+  function fitShikiToMasu(b, f) {
+    var r = App.bbox(b), at = masuCellAt(f.page, r.x + 3, r.y + Math.min(r.h / 2, 8), b.id);
+    if (!at) { if (!b.onMasu) return false; b.onMasu = false; return true; }
+    var c = at.masu.cell, before = [b.x, b.y, b.size].join();
+    if (!b.onMasu || b.cellFit !== c) { b.size = Math.round(c * 0.68 / 0.3528 * 2) / 2; b.cellFit = c; b.onMasu = true; return true; }   // 大きさが変わるので、測りなおしてからもう一度合わせる
+    var rows = Math.max(1, Math.ceil((r.h - 0.5) / c));
+    b.x = r2(at.x + c * 0.16); b.y = r2(at.y + (rows * c - r.h) / 2);
+    if (before !== [b.x, b.y, b.size].join()) { tellOnce("数式を、下のマス目に合わせました。"); return true; }
+    return false;
+  }
+
   App.fitToMasu = function (b) {
+    if (b && (b.type === "text" || b.type === "shiki")) {
+      var ff = App.find(b.id);
+      if (!ff) return false;
+      if (b.type === "text") return fitTextToMasu(b, ff);
+      var ch = fitShikiToMasu(b, ff);
+      if (ch && b.onMasu) { App.refreshBlock(b); App.measureAuto(); fitShikiToMasu(b, ff); }   // 字の大きさを変えたあとの高さで、置きなおす
+      return ch;
+    }
     if (!b || b.type !== "hissan") return false;
     var f = App.find(b.id);
     if (!f) return false;
@@ -2326,6 +2404,30 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     }
     if (b.x + bw > size[0]) b.x = Math.max(0, size[0] - bw - m);
     b.x = App.snap(b.x);
+    // 紙いっぱいのノートのマス目があるときは、そのマス目の中で、ほかの物と重ならないマスを探して置く
+    if (!at && (b.type === "hissan" || b.type === "text" || b.type === "shiki")) {
+      var note = others.filter(function (o) { if (o.type !== "masu") return false; var r = App.bbox(o); return r.w * r.h > size[0] * size[1] * 0.35; })[0];
+      if (note) {
+        var nb = App.bbox(note), c = note.cell, things = others.filter(function (o) { return o.type !== "masu"; });
+        // 1行目が見出し（1 2 3 …）のノートは、2行目から
+        var startRow = note.text && note.dir === "h" ? 1 : 0;
+        // まずマス目に合わせて大きさを決めてから、その大きさで空いている場所を探す
+        b.x = nb.x; b.y = nb.y + startRow * c;
+        if (App.fitToMasu(b)) { App.refreshBlock(b); App.measureAuto(); }
+        var rb = App.bbox(b);
+        var spot = null, ww = Math.max(rb.w, c), hh = Math.max(rb.h, c);
+        for (var ry = startRow; ry * c + hh <= nb.h + 0.5 && !spot; ry++) {
+          for (var rx = 0; rx * c + ww <= nb.w + 0.5; rx++) {
+            // 縦書きのノートは、右の行から探す
+            var tx = note.dir === "v" ? nb.x + nb.w - ww - rx * c : nb.x + rx * c, ty = nb.y + ry * c;
+            var clash = things.some(function (o) { var r = App.bbox(o); var mg = r.y + r.h <= nb.y + 1 ? 0 : c * 0.5;   // ノートの外にある名前らんなどは、すき間を取らない
+              return tx < r.x + r.w + mg && tx + ww + mg > r.x && ty < r.y + r.h + mg && ty + hh + mg > r.y; });
+            if (!clash) { spot = [tx, ty]; break; }
+          }
+        }
+        if (spot) { b.x = spot[0]; b.y = spot[1]; }
+      }
+    }
     if (App.fitToMasu(b)) { App.refreshBlock(b); App.measureAuto(); }
     App.placeBlock(App.blockEl(b.id), b);
     App.commit();
@@ -3109,14 +3211,42 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     el.classList.add("out");
     setTimeout(function () { el.remove(); }, 350);
   }
+  // ---------- スマホで開いた人へ：パソコンへリンクを送る ----------
+  var HOME = "https://a-tozak.github.io/School_Stock/tools/masume-print/about.html";
+  App.openSendToPc = function () {
+    var old = document.getElementById("pc-dialog"); if (old) old.remove();
+    function close() { wrap.remove(); }
+    var msg = h("p", { class: "hint pc-msg" });
+    var body = h("div", { class: "dlg-body pc-body" },
+      h("p", null, "この道具は、画面の広いパソコン（Windows、Chromebook、Mac）で使います。スマホでは、できることを見るだけにして、作るのはパソコンで行ってください。"),
+      h("div", { class: "pc-btns" },
+        navigator.share ? h("button", { type: "button", class: "btn primary", onclick: function () {
+          navigator.share({ title: "マス目プリントメーカー｜School Stock", text: "ワークシートをブラウザで作って刷る道具です。パソコンで開いてください。", url: HOME }).catch(function () {});
+        } }, "リンクを自分に送る（メール、LINE など）") : null,
+        h("button", { type: "button", class: "btn", onclick: function () {
+          (navigator.clipboard ? navigator.clipboard.writeText(HOME) : Promise.reject()).then(function () { msg.textContent = "リンクをコピーしました。メールやメモに貼って、パソコンで開いてください。"; })
+            .catch(function () { msg.textContent = HOME; });
+        } }, "リンクをコピーする")),
+      msg,
+      h("p", { class: "pc-search" }, "パソコンで探すときは、", h("b", null, "「School Stock 教材」"), "で検索して、School Stock の棚から「マス目プリントメーカー」を開きます。"),
+      h("div", { class: "pc-btns" },
+        h("a", { class: "btn", href: "about.html" }, "できることを見る"),
+        h("button", { type: "button", class: "btn ghost", onclick: close }, "このまま開く")));
+    var wrap = h("div", { id: "pc-dialog", class: "dlg" },
+      h("div", { class: "dlg-box", role: "dialog", "aria-label": "パソコンで使う道具です" },
+        h("div", { class: "dlg-head" }, h("b", null, "パソコンで使う道具です"), h("button", { type: "button", class: "btn ghost", onclick: close }, "閉じる")), body));
+    document.body.appendChild(wrap);
+  };
+
   window.addEventListener("load", function () {
+    if (window.innerWidth < 820 && !/[?&](t|e|src)=/.test(location.search)) setTimeout(App.openSendToPc, 300);
     var ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
     ready.then(function () { if (App.fitMode === "page") App.fitPage(); hideLoading(); });
     setTimeout(hideLoading, 4000);
     var bt = App.$("#btn-tpl");
     if (bt) bt.addEventListener("click", function () { App.openStart(false); });
     var q = new URLSearchParams(location.search);
-    if (firstVisit && !q.get("t") && q.get("e") === null && !q.get("src")) App.openStart(true);
+    if (firstVisit && window.innerWidth >= 820 && !q.get("t") && q.get("e") === null && !q.get("src")) App.openStart(true);
   });
 })();
 
@@ -3312,7 +3442,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       item("PDF で保存", "刷ったり、配ったりするとき。用紙の大きさのまま保存します。", function () { App.exportAs("pdf"); }, "save-pdf"),
       item("画像（PNG）で保存", "スライドやおたよりに貼るとき。2ページ以上は、ZIP にまとめます。", function () { App.exportAs("png"); }, "save-png"),
       h("hr"),
-      item("編集用のファイルで保存", "あとで「開く」から直したいとき。PDF と画像は、あとから直せません。", function () { App.saveFile(); }, "save-json"));
+      item("続きから直せるファイルで保存", "この道具の「開く」で開くと、続きから直せます（.json という種類のファイルです）。PDF と画像は、あとから直せません。", function () { App.saveFile(); }, "save-json"));
     menu.style.top = (r.bottom + 6) + "px";
     menu.style.right = Math.max(8, window.innerWidth - r.right) + "px";
     document.body.appendChild(menu);
