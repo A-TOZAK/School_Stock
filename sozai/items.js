@@ -43231,5 +43231,769 @@ const SOZAI = [
   "img": "img/hakari_randoseru_turned_v2_makabe.jpg",
   "thumb": "img/hakari_randoseru_turned_v2_makabe_thumb.jpg",
   "mono": "img/hakari_randoseru_turned_v2_makabe_mono.jpg"
+ },
+ {
+  "id": "s5_01_hanagasa_girl",
+  "title": "小学生・花笠音頭をおどる子（花笠を頭の上に）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・花笠音頭",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "体育服に赤いたすきをかけ、花笠を両手で頭の上にかかげておどる子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "花笠音頭",
+   "花笠",
+   "たすき",
+   "表現",
+   "民よう"
+  ],
+  "img": "img/s5_01_hanagasa_girl.jpg",
+  "thumb": "img/s5_01_hanagasa_girl_thumb.jpg",
+  "mono": "img/s5_01_hanagasa_girl_mono.jpg"
+ },
+ {
+  "id": "s5_02_hanagasa_boy",
+  "title": "小学生・花笠音頭をおどる子（花笠を下にふる）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・花笠音頭",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "体育服に赤いたすきをかけ、花笠を両手でひざの高さまでふり下ろす子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "花笠音頭",
+   "花笠",
+   "たすき",
+   "表現",
+   "民よう"
+  ],
+  "img": "img/s5_02_hanagasa_boy.jpg",
+  "thumb": "img/s5_02_hanagasa_boy_thumb.jpg",
+  "mono": "img/s5_02_hanagasa_boy_mono.jpg"
+ },
+ {
+  "id": "s5_03_hanagasa_back",
+  "title": "小学生・花笠音頭をおどる子（後ろすがた）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・花笠音頭",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "背中で交差した赤いたすきが見える後ろすがた。花笠を左上にかかげている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "花笠音頭",
+   "花笠",
+   "たすき",
+   "後ろすがた",
+   "民よう"
+  ],
+  "img": "img/s5_03_hanagasa_back.jpg",
+  "thumb": "img/s5_03_hanagasa_back_thumb.jpg",
+  "mono": "img/s5_03_hanagasa_back_mono.jpg"
+ },
+ {
+  "id": "s5_04_hanagasa_group",
+  "title": "小学生・花笠音頭をそろっておどる3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・花笠音頭",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "3人が同じ向きに花笠をかかげて、そろっておどっている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "花笠音頭",
+   "花笠",
+   "たすき",
+   "団体演技",
+   "民よう"
+  ],
+  "img": "img/s5_04_hanagasa_group.jpg",
+  "thumb": "img/s5_04_hanagasa_group_thumb.jpg",
+  "mono": "img/s5_04_hanagasa_group_mono.jpg"
+ },
+ {
+  "id": "s5_05_soran_boy",
+  "title": "小学生・ソーラン節をおどる子（あみを引く）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ソーラン節",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "はっぴとはちまきで、こしを低く落としてあみを引く動きをする子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ソーラン節",
+   "はっぴ",
+   "はちまき",
+   "表現",
+   "民よう"
+  ],
+  "img": "img/s5_05_soran_boy.jpg",
+  "thumb": "img/s5_05_soran_boy_thumb.jpg",
+  "mono": "img/s5_05_soran_boy_mono.jpg"
+ },
+ {
+  "id": "s5_06_soran_girl",
+  "title": "小学生・ソーラン節をおどる子（こぶしをつき上げる）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ソーラン節",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "はっぴとはちまきで、右のこぶしを空につき上げる子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ソーラン節",
+   "はっぴ",
+   "はちまき",
+   "表現",
+   "決めポーズ"
+  ],
+  "img": "img/s5_06_soran_girl.jpg",
+  "thumb": "img/s5_06_soran_girl_thumb.jpg",
+  "mono": "img/s5_06_soran_girl_mono.jpg"
+ },
+ {
+  "id": "s5_07_soran_wave",
+  "title": "小学生・ソーラン節をおどる子（波の動き）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ソーラン節",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "こしを低くして、両うでを横にのばし、波をえがく動きをする子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ソーラン節",
+   "はっぴ",
+   "はちまき",
+   "表現",
+   "波"
+  ],
+  "img": "img/s5_07_soran_wave.jpg",
+  "thumb": "img/s5_07_soran_wave_thumb.jpg",
+  "mono": "img/s5_07_soran_wave_mono.jpg"
+ },
+ {
+  "id": "s5_08_soran_group",
+  "title": "小学生・ソーラン節をそろっておどる3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ソーラン節",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "はっぴとはちまきの3人が、同じ低いかまえでそろっておどっている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ソーラン節",
+   "はっぴ",
+   "はちまき",
+   "団体演技",
+   "民よう"
+  ],
+  "img": "img/s5_08_soran_group.jpg",
+  "thumb": "img/s5_08_soran_group_thumb.jpg",
+  "mono": "img/s5_08_soran_group_mono.jpg"
+ },
+ {
+  "id": "s5_09_pompom_girl",
+  "title": "小学生・ポンポンを持ってジャンプする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ポンポンのダンス",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "赤いポンポンを両手に持ち、うでを上げてジャンプしている低学年の子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ポンポン",
+   "ダンス",
+   "低学年",
+   "表現",
+   "ジャンプ"
+  ],
+  "img": "img/s5_09_pompom_girl.jpg",
+  "thumb": "img/s5_09_pompom_girl_thumb.jpg",
+  "mono": "img/s5_09_pompom_girl_mono.jpg"
+ },
+ {
+  "id": "s5_10_pompom_boy",
+  "title": "小学生・ポンポンを持っておどる子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ポンポンのダンス",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "青いポンポンを両手に持ち、ななめ上とななめ下にうでをのばす低学年の子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ポンポン",
+   "ダンス",
+   "低学年",
+   "表現"
+  ],
+  "img": "img/s5_10_pompom_boy.jpg",
+  "thumb": "img/s5_10_pompom_boy_thumb.jpg",
+  "mono": "img/s5_10_pompom_boy_mono.jpg"
+ },
+ {
+  "id": "s5_11_pompom_group",
+  "title": "小学生・ポンポンを持っておどる3人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・ポンポンのダンス",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "赤と青のポンポンを持った1年生3人が、そろっておどっている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "ポンポン",
+   "ダンス",
+   "低学年",
+   "団体演技"
+  ],
+  "img": "img/s5_11_pompom_group.jpg",
+  "thumb": "img/s5_11_pompom_group_thumb.jpg",
+  "mono": "img/s5_11_pompom_group_mono.jpg"
+ },
+ {
+  "id": "s5_12_ouendan",
+  "title": "小学生・応援団の子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・応援",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "はちまき、たすき、白い手ぶくろをつけて、うでをまっすぐのばして声を出す応援団の子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "応援団",
+   "はちまき",
+   "たすき",
+   "応援合戦"
+  ],
+  "img": "img/s5_12_ouendan.jpg",
+  "thumb": "img/s5_12_ouendan_thumb.jpg",
+  "mono": "img/s5_12_ouendan_mono.jpg"
+ },
+ {
+  "id": "s5_13_housou_mic",
+  "title": "小学生・放送係（マイクでアナウンスする）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・放送の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "長机にすわり、原こうを見ながらマイクに向かって話す放送委員の子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "放送委員会",
+   "放送係",
+   "マイク",
+   "アナウンス",
+   "係の仕事"
+  ],
+  "img": "img/s5_13_housou_mic.jpg",
+  "thumb": "img/s5_13_housou_mic_thumb.jpg",
+  "mono": "img/s5_13_housou_mic_mono.jpg"
+ },
+ {
+  "id": "s5_14_housou_pair",
+  "title": "小学生・放送係のふたり（アナウンスと音の調整）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・放送の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "ひとりがマイクで話し、もうひとりがアンプのつまみを回して音を調整している。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "放送委員会",
+   "放送係",
+   "マイク",
+   "アンプ",
+   "係の仕事"
+  ],
+  "img": "img/s5_14_housou_pair.jpg",
+  "thumb": "img/s5_14_housou_pair_thumb.jpg",
+  "mono": "img/s5_14_housou_pair_mono.jpg"
+ },
+ {
+  "id": "s5_15_housou_jikkyo",
+  "title": "小学生・放送係（マイクを持って実きょうする）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・放送の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "ワイヤレスマイクを手に持ち、きょうぎを見ながら話す放送委員の子。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "放送委員会",
+   "放送係",
+   "マイク",
+   "実きょう",
+   "係の仕事"
+  ],
+  "img": "img/s5_15_housou_jikkyo.jpg",
+  "thumb": "img/s5_15_housou_jikkyo_thumb.jpg",
+  "mono": "img/s5_15_housou_jikkyo_mono.jpg"
+ },
+ {
+  "id": "s5_16_yougu_cone",
+  "title": "小学生・用具係（コーンを運ぶ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "うで章をつけたふたりが、コーンをかかえて走って運んでいる。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "用具係",
+   "準備係",
+   "コーン",
+   "委員会",
+   "係の仕事"
+  ],
+  "img": "img/s5_16_yougu_cone.jpg",
+  "thumb": "img/s5_16_yougu_cone_thumb.jpg",
+  "mono": "img/s5_16_yougu_cone_mono.jpg"
+ },
+ {
+  "id": "s5_17_goal_tape",
+  "title": "小学生・決勝係（ゴールテープを持つ）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "ふたりの係がゴールテープをぴんとはり、低学年の子がゴールする。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "決勝係",
+   "ゴールテープ",
+   "ゴール",
+   "かけっこ",
+   "係の仕事"
+  ],
+  "img": "img/s5_17_goal_tape.jpg",
+  "thumb": "img/s5_17_goal_tape_thumb.jpg",
+  "mono": "img/s5_17_goal_tape_mono.jpg"
+ },
+ {
+  "id": "s5_18_kesshou_flag",
+  "title": "小学生・決勝係（等しょう旗へ案内する）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "等しょう旗を持った係の子が、走り終わった低学年の子に行き先を手でしめしている。旗は無地。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "決勝係",
+   "等賞旗",
+   "案内",
+   "委員会",
+   "係の仕事"
+  ],
+  "img": "img/s5_18_kesshou_flag.jpg",
+  "thumb": "img/s5_18_kesshou_flag_thumb.jpg",
+  "mono": "img/s5_18_kesshou_flag_mono.jpg"
+ },
+ {
+  "id": "s5_19_tokuten",
+  "title": "小学生・得点係（得点板にカードをかける）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "赤組と白組の得点板に、カードをかけている係の子。板とカードは無地なので、数字を上からのせて使える。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "得点係",
+   "得点板",
+   "赤組",
+   "白組",
+   "係の仕事"
+  ],
+  "img": "img/s5_19_tokuten.jpg",
+  "thumb": "img/s5_19_tokuten_thumb.jpg",
+  "mono": "img/s5_19_tokuten_mono.jpg"
+ },
+ {
+  "id": "s5_20_kyugo",
+  "title": "小学生・救護係（けがをした子によりそう）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "ひざをすりむいた低学年の子のとなりにしゃがみ、背中に手をそえる係の子。横に救急箱がある。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "救護係",
+   "保健委員会",
+   "けが",
+   "救急箱",
+   "係の仕事"
+  ],
+  "img": "img/s5_20_kyugo.jpg",
+  "thumb": "img/s5_20_kyugo_thumb.jpg",
+  "mono": "img/s5_20_kyugo_mono.jpg"
+ },
+ {
+  "id": "s5_21_shuppatsu",
+  "title": "小学生・出発係（スタートの合図をする）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・係の仕事",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "白い旗を上げる係の子と、スタートラインでかまえるふたり。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "出発係",
+   "スタート",
+   "旗",
+   "かけっこ",
+   "係の仕事"
+  ],
+  "img": "img/s5_21_shuppatsu.jpg",
+  "thumb": "img/s5_21_shuppatsu_thumb.jpg",
+  "mono": "img/s5_21_shuppatsu_mono.jpg"
+ },
+ {
+  "id": "s5_22_tsunahiki",
+  "title": "小学生・つな引きをする4人",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・競技",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "赤ぼうしの4人が、体をうしろにたおしてつなを引いている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "つな引き",
+   "綱引き",
+   "赤組",
+   "団体競技"
+  ],
+  "img": "img/s5_22_tsunahiki.jpg",
+  "thumb": "img/s5_22_tsunahiki_thumb.jpg",
+  "mono": "img/s5_22_tsunahiki_mono.jpg"
+ },
+ {
+  "id": "s5_23_oodama",
+  "title": "小学生・大玉ころがしをする子",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・競技",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "白ぼうしの子が、大きな赤い玉を両手でおして転がしている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "大玉ころがし",
+   "大玉",
+   "白組",
+   "低学年",
+   "団体競技"
+  ],
+  "img": "img/s5_23_oodama.jpg",
+  "thumb": "img/s5_23_oodama_thumb.jpg",
+  "mono": "img/s5_23_oodama_mono.jpg"
+ },
+ {
+  "id": "s5_24_sensei",
+  "title": "小学生・選手せんせいをするふたり",
+  "author": "riko",
+  "type": "illust",
+  "subject": "行事",
+  "grade": "全学年",
+  "unit": "運動会・開会式",
+  "scenes": [
+   "運動会・体育祭"
+  ],
+  "uses": [
+   "おたより",
+   "プログラム",
+   "スライド",
+   "掲示"
+  ],
+  "description": "赤ぼうしと白ぼうしの代表のふたりが、右手をまっすぐ上げて選手せんせいをしている。文字なし・白背景。",
+  "howto": "運動会のおたより、プログラム、係の打ち合わせのスライド、掲示に。",
+  "tags": [
+   "運動会",
+   "体育祭",
+   "選手宣誓",
+   "開会式",
+   "代表",
+   "赤組",
+   "白組"
+  ],
+  "img": "img/s5_24_sensei.jpg",
+  "thumb": "img/s5_24_sensei_thumb.jpg",
+  "mono": "img/s5_24_sensei_mono.jpg"
  }
 ];
