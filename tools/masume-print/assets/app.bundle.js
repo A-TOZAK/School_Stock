@@ -605,7 +605,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       return Object.assign({
         id: App.uid(), type: "masu", x: 20, y: 30, dir: "v", cell: 10, perLine: 12, lines: 8, gap: 0,
         leader: false, frame: true, lineStyle: "solid", gridColor: "green",
-        text: "", styles: [], fontScale: 0.78, font: "kyokasho", color: "#1b1b1b", autoGrow: true,
+        text: "", styles: [], fontScale: 0.68, font: "kyokasho", color: "#1b1b1b", autoGrow: true,
         rules: Object.assign({}, Masu.DEFAULT_RULES, { kaiwaSage: true })
       }, o || {});
     },
@@ -883,7 +883,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         B.push(nameLine(105, 11, 95));
         var t = "　あさ、まどをあけると、つめたい風が入ってきました。\n「さむいね。」\nと、いもうとが言いました。";
         B.push(label(150, 28, 50, 11, "手本"));
-        B.push(App.make.masu({ x: 140, y: 38, dir: "v", cell: 12, perLine: 12, lines: 5, fontScale: 0.8, text: t }));
+        B.push(App.make.masu({ x: 140, y: 38, dir: "v", cell: 12, perLine: 12, lines: 5, text: t }));
         B.push(label(60, 28, 60, 11, "ここに書きます"));
         B.push(App.make.masu({ x: 60, y: 38, dir: "v", cell: 12, perLine: 12, lines: 5, leader: true, autoGrow: false, text: "" }));
         return d;
@@ -957,7 +957,9 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       case "masu":
         b.dir = pick(b.dir, ["v", "h"], "v");
         b.cell = num(b.cell, 10, 3, 60); b.perLine = Math.round(num(b.perLine, 12, 1, 80)); b.lines = Math.round(num(b.lines, 8, 1, 80));
-        b.gap = num(b.gap, 0, 0, 40); b.fontScale = num(b.fontScale, 0.78, 0.3, 1);
+        b.gap = num(b.gap, 0, 0, 40); b.fontScale = num(b.fontScale, 0.68, 0.3, 1);
+        // 字の大きさは「小・中・大」の3つ。前の版の値は、いちばん近いものに寄せる（前の「中」0.78 と「大」0.88 は「大」、前の「小」0.64 は「中」）
+        b.fontScale = [0.56, 0.68, 0.8].reduce(function (best, v) { return Math.abs(v - b.fontScale) < Math.abs(best - b.fontScale) ? v : best; }, 0.68);
         b.lineStyle = pick(b.lineStyle, ["solid", "dotted", "none"], "solid");
         b.gridColor = typeof b.gridColor === "string" && has(App.GRID_COLORS, b.gridColor) ? b.gridColor : "green";
         b.text = str(b.text, MAX_TEXT);
@@ -2641,7 +2643,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       var x = pw - m - yomiW - c - pitch * n;
       blocks.push(App.make.masu({
         x: Math.round(x * 2) / 2, y: top, dir: "v", cell: c, perLine: cells, lines: 1, gap: 0, leader: o.leader, gridColor: o.gridColor,
-        text: body, styles: reps > 1 ? styles : [], fontScale: 0.8, autoGrow: false,
+        text: body, styles: reps > 1 ? styles : [], autoGrow: false,
         rules: { kutenKagi: false, gyotou: "off", kaiwaSage: false, danrakuSage: false, hankaku2: false }
       }));
       if (it.yomi) {
@@ -2674,7 +2676,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       blocks.push(text(x, y - 13, Math.min(W * 0.6, 95), 14, o.kana ? "なまえ（　　　　　　　　　）" : "名前（　　　　　　　　　）"));
       if (o.date) blocks.push(text(x + W - 52, y - 10, 52, 10, o.kana ? "　がつ　　にち　　ようび" : "　　月　　日（　　）", { align: "end" }));
       var m = App.make.masu({ x: x, y: y, dir: o.dir, cell: c, perLine: o.perLine, lines: o.lines, gap: o.gap, leader: o.leader, gridColor: o.gridColor,
-        text: o.headRow || "", autoGrow: false, fontScale: 0.72 });
+        text: o.headRow || "", autoGrow: false });
       if (o.rules) m.rules = Object.assign({}, m.rules, o.rules);
       if (o.headRow) { m.color = green; m.styles = Masu.applyStyle([], o.headRow.length, 0, o.headRow.length, { bold: true }); }
       blocks.push(m);
@@ -3397,7 +3399,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     ));
 
     p.appendChild(group("フォント",
-      row("サイズ", seg([[0.64, "小"], [0.78, "中"], [0.88, "大"]], b.fontScale, function (v) { b.fontScale = v; touch(b); })),
+      row("サイズ", seg([[0.56, "小"], [0.68, "中"], [0.8, "大"]], b.fontScale, function (v) { b.fontScale = v; touch(b); })),
       fontRow(b),
       row("フォントの色", swatches(App.TEXT_COLORS, b.color, function (v) { b.color = v; touch(b); }))
     ));
