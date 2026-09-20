@@ -1761,7 +1761,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 
     sol.cells.forEach(function (cell) {
       if (cell.role === "answer" && !showAns) return;
-      var color = cell.role === "answer" ? b.ansColor : INK;
+      var color = cell.role === "answer" ? b.ansColor : (b.color || INK);
       var cx = cell.c * c + c / 2, cy = cell.r * c + c / 2;
       svg.appendChild(s("text", { x: cx, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
         "font-size": c * (cell.sign ? 0.62 : 0.74), fill: color }, cell.ch));
@@ -1772,7 +1772,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 
     sol.rules.forEach(function (r) {
       if (r.role === "answer" && !showAns) return;
-      var color = r.role === "answer" ? b.ansColor : INK;
+      var color = r.role === "answer" ? b.ansColor : (b.color || INK);
       svg.appendChild(s("line", { x1: r.c0 * c - (r.vinculum ? 0 : c * 0.08), y1: r.r * c, x2: (r.c1 + 1) * c + c * 0.08, y2: r.r * c,
         stroke: color, "stroke-width": 0.5, "stroke-linecap": "round" }));
     });
@@ -1780,7 +1780,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     if (sol.bracket) {
       var bx = sol.bracket.c * c, top = sol.bracket.r * c, bot = top + c;
       svg.appendChild(s("path", { d: "M" + bx + " " + top + "C" + (bx + c * 0.26) + " " + (top + c * 0.3) + " " + (bx + c * 0.26) + " " + (bot - c * 0.34) + " " + (bx - c * 0.1) + " " + (bot - c * 0.02),
-        fill: "none", stroke: INK, "stroke-width": 0.5, "stroke-linecap": "round" }));
+        fill: "none", stroke: b.color || INK, "stroke-width": 0.5, "stroke-linecap": "round" }));
     }
     el.appendChild(svg);
   }
@@ -1788,7 +1788,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   // ---------- 式 ----------
   function fillShiki(el, b) {
     el.innerHTML = "";
-    var box = h("div", { class: "sk", style: "font-family:" + App.fontCss(b.font) + ";font-size:" + b.size + "pt;color:" + b.color });
+    var box = h("div", { class: "sk" + (b.onBoard ? " on-board" : ""), style: "font-family:" + App.fontCss(b.font) + ";font-size:" + b.size + "pt;color:" + b.color });
     var tokens = Shiki.parse(b.src);
     if (!tokens.length) box.appendChild(h("span", { class: "sk-empty no-print" }, "式を入れてください"));
     tokens.forEach(function (t) {
@@ -2927,6 +2927,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   App.TEXT_COLORS.push(["白（黒板用）", WHITE], ["黄（黒板用）", YELLOW]);
   App.LINE_COLORS.push(["白（黒板用）", WHITE], ["黄（黒板用）", YELLOW]);
   App.FILL_COLORS.push(["黒板の緑", GREEN]);
+  App.GRID_COLORS.board = { name: "白（黒板用）", solid: "#dfece6", dot: "#8fb3a4" };
 
   function T(x, y, w, size, html, extra) {
     return App.make.text(Object.assign({ x: x, y: y, w: w, h: App.lineH(size, 1), size: size, html: html, font: "kyokasho" }, extra || {}));
@@ -2941,7 +2942,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));   // 黒板の面は、はじめからロック
     if (o.subject === "kokugo") {
       // 国語：縦書き。右から、日付と題名、めあて、本文や考え、まとめ
-      B.push(App.make.text({ x: bx + bw - 14, y: by + 5, w: 9, h: 40, dir: "v", size: 12, color: WHITE, html: "九月十九日（土）" }));
+      B.push(App.make.text({ x: bx + bw - 14, y: by + 5, w: 9, h: 40, dir: "v", size: 12, color: WHITE, html: "　月　　日（　）" }));
       B.push(App.make.text({ x: bx + bw - 30, y: by + 5, w: 13, h: 80, dir: "v", size: 18, color: WHITE, bold: true, html: "題名を書く" }));
       B.push(R(bx + bw - 52, by + 5, 17, bh - 10, { color: YELLOW, width: 0.7 }));
       B.push(App.make.text({ x: bx + bw - 50, y: by + 7, w: 13, h: bh - 14, dir: "v", size: 14, color: WHITE, html: "めあて　" }));
@@ -2949,9 +2950,38 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       B.push(App.make.text({ x: bx + bw - 70, y: by + 8, w: 9, h: 60, dir: "v", size: 11, color: YELLOW, html: "考えを書く場所" }));
       B.push(R(bx + 5, by + 5, 21, bh - 10, { color: PINK, width: 0.8 }));
       B.push(App.make.text({ x: bx + 8, y: by + 7, w: 15, h: bh - 14, dir: "v", size: 14, color: WHITE, html: "まとめ　" }));
+    } else if (o.subject === "rika") {
+      // 理科：問題、予想、実験の方法、結果、考察、結論。左から右へ、問題解決の順に進む
+      B.push(T(bx + 4, by + 3, 60, 12, "　／　（　）", { color: WHITE }));
+      B.push(R(bx + 4, by + 13, 84, 22, { color: YELLOW, width: 0.7 }));
+      B.push(T(bx + 6, by + 15, 80, 13, "問題　", { color: WHITE, h: 18 }));
+      B.push(T(bx + 4, by + 39, 84, 12, "予想", { color: YELLOW }));
+      B.push(R(bx + 4, by + 48, 84, 51, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(bx + 94, by + 3, 88, 12, "実験の方法", { color: YELLOW }));
+      B.push(R(bx + 94, by + 12, 88, 40, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(bx + 96, by + 14, 84, 10, "（図や写真をはる）", { color: "#cfe0d8" }));
+      B.push(T(bx + 94, by + 55, 88, 12, "結果", { color: YELLOW }));
+      B.push(R(bx + 94, by + 64, 88, 35, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(bx + 188, by + 3, 84, 12, "考察", { color: YELLOW }));
+      B.push(R(bx + 188, by + 12, 85, 52, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(R(bx + 188, by + 69, 85, 30, { color: PINK, width: 0.8 }));
+      B.push(T(bx + 190, by + 71, 81, 13, "結論　", { color: WHITE, h: 26 }));
+    } else if (o.subject === "shakai") {
+      // 社会：学習問題、資料（まん中）、気づいたこと、考えたこと、まとめ
+      B.push(T(bx + 4, by + 3, 60, 12, "　／　（　）", { color: WHITE }));
+      B.push(R(bx + 4, by + 13, bw - 8, 16, { color: YELLOW, width: 0.7 }));
+      B.push(T(bx + 6, by + 15, bw - 12, 13, "学習問題　", { color: WHITE, h: 12 }));
+      B.push(T(bx + 4, by + 32, 80, 12, "気づいたこと", { color: YELLOW }));
+      B.push(R(bx + 4, by + 41, 80, 34, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(R(bx + 90, by + 33, 97, 42, { color: WHITE, width: 0.6 }));
+      B.push(T(bx + 92, by + 35, 93, 10, "資料（地図、グラフ、写真をはる）", { color: "#cfe0d8" }));
+      B.push(T(bx + 193, by + 32, 80, 12, "考えたこと", { color: YELLOW }));
+      B.push(R(bx + 193, by + 41, 80, 34, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(R(bx + 4, by + 79, bw - 8, 20, { color: PINK, width: 0.8 }));
+      B.push(T(bx + 6, by + 81, bw - 12, 13, "まとめ　", { color: WHITE, h: 16 }));
     } else {
       // 算数：横書き。左に、日付、めあて、問題。右に、考えを2つ。下に、まとめ
-      B.push(T(bx + 4, by + 3, 60, 12, "9／19（土）", { color: WHITE }));
+      B.push(T(bx + 4, by + 3, 60, 12, "　／　（　）", { color: WHITE }));
       B.push(R(bx + 4, by + 13, 124, 17, { color: YELLOW, width: 0.7 }));
       B.push(T(bx + 6, by + 15, 120, 14, "めあて　", { color: WHITE, h: 13 }));
       B.push(T(bx + 4, by + 34, 124, 13, "問題　", { color: WHITE, h: 36 }));
@@ -2971,9 +3001,84 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     return { doc: { version: 1, title: o.title, paper: "A4", orient: "landscape", margin: 10, snap: 1, pages: [{ blocks: B }] } };
   };
 
+  /** ノートと同じマスの数で書く板書。黒板の上のマス目の1マスが、子どものノートの1マス。見開きの2ページぶん。
+   *  o = { title, subject: "sansu" | "kokugo" } */
+  App.buildBanshoNote = function (o) {
+    var B = [], bx = 10, by = 20, bw = 277, bh = 104, kokugo = o.subject === "kokugo";
+    B.push(T(10, 8, 277, 11, "板書計画　　　月　　日（　　）　　　年　　組　　単元（　　　　　　　　　　　　　　）　本時（　　／　　）"));
+    B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));
+    function page(x, y, label) {
+      var m = kokugo
+        ? App.make.masu({ x: x, y: y, dir: "v", cell: 7, perLine: 12, lines: 8, gap: 0, leader: false, gridColor: "board", color: WHITE, text: "", autoGrow: false, locked: true })
+        : App.make.masu({ x: x, y: y, dir: "h", cell: 5.5, perLine: 12, lines: 17, gap: 0, leader: false, gridColor: "board", color: WHITE, text: "", autoGrow: false, locked: true });
+      B.push(m);
+      return m;
+    }
+    if (kokugo) {
+      // 縦書きのノートは、右のページから始まる
+      B.push(T(bx + bw - 62, by + 3, 56, 9, "ノート 右のページ（12マス×8行）", { color: YELLOW, align: "end" }));
+      page(bx + bw - 6 - 56, by + 12);
+      B.push(T(bx + bw - 124, by + 3, 56, 9, "左のページ", { color: YELLOW, align: "end" }));
+      page(bx + bw - 12 - 112, by + 12);
+      B.push(R(bx + 5, by + 12, 140, 84, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(bx + 7, by + 3, 136, 9, "ノートに書かせないもの（本文の拡大、さし絵、子どもの考えの短冊）", { color: YELLOW }));
+    } else {
+      B.push(T(bx + 6, by + 1, 66, 9, "ノート 左のページ（よこ12×たて17）", { color: YELLOW }));
+      page(bx + 6, by + 8.5);
+      B.push(T(bx + 78, by + 1, 66, 9, "右のページ", { color: YELLOW }));
+      page(bx + 78, by + 8.5);
+      B.push(R(bx + 150, by + 8.5, 122, 93.5, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(bx + 152, by + 1, 120, 9, "ノートに書かせないもの（図、掲示物、子どもの考え）", { color: YELLOW }));
+    }
+    B.push(T(10, 128, 277, 11, "主な発問・指示", { bold: true }));
+    B.push(R(10, 137, 277, 63, { width: 0.4 }));
+    B.push(T(12, 139, 273, 11, "", { h: 59 }));
+    return { doc: { version: 1, title: o.title, paper: "A4", orient: "landscape", margin: 10, snap: 0.5, pages: [{ blocks: B }] } };
+  };
+
+  // ---------- 黒板の上に置いたものは、チョークの色にする ----------
+  /** 部品のまん中が、黒板の面（緑でぬった四角）の上にあるか。 */
+  function onBoard(b, pageIndex) {
+    var g = App.bbox(b), cx = g.x + g.w / 2, cy = g.y + g.h / 2;
+    return App.doc.pages[pageIndex].blocks.some(function (r) {
+      return r !== b && r.type === "rect" && r.fill === GREEN && cx > r.x && cx < r.x + r.w && cy > r.y && cy < r.y + r.h;
+    });
+  }
+  var INK = "#1b1b1b", RED = "#d12a1e";
+  function chalk(b) {
+    var f = App.find(b.id);
+    if (!f || ["text", "hissan", "shiki", "line", "rect"].indexOf(b.type) < 0 || (b.type === "rect" && b.fill === GREEN)) return false;
+    var on = onBoard(b, f.page);
+    if (on && !b.onBoard) {
+      b.onBoard = true;
+      if (!b.color || b.color === INK) b.color = WHITE;
+      if (b.type === "hissan") { if (b.ansColor === RED) b.ansColor = YELLOW; if (!b.onMasu) b.grid = "none"; }
+      return true;
+    }
+    if (!on && b.onBoard) {
+      delete b.onBoard;
+      if (b.color === WHITE) b.color = INK;
+      if (b.type === "hissan") { if (b.ansColor === YELLOW) b.ansColor = RED; if (!b.onMasu && b.grid === "none") b.grid = "hougan"; }
+      return true;
+    }
+    return false;
+  }
+  // 置いたときと、動かし終わったときに呼ばれる所（マス目に合わせる処理）に相乗りする
+  var fit0 = App.fitToMasu;
+  App.fitToMasu = function (b) {
+    var a = fit0.apply(App, arguments), c = chalk(b);
+    if (c && !a) { App.refreshBlock(b); if (App.toast && !chalk.told) { chalk.told = true; App.toast("黒板の上なので、チョークの色（白）にしました。色は「フォントの色」で変えられます。", 5000); } }
+    return a || c;
+  };
+  App.fitToMasu.told = fit0.told;
+
   App.BANSHO_SHEETS = [
     { key: "bansho-sansu", name: "板書計画（算数・横書き）", note: "黒板に、めあて、問題、考え、まとめの場所。下に、発問と、子どものノートの形。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（算数）", subject: "sansu" }); } },
-    { key: "bansho-kokugo", name: "板書計画（国語・縦書き）", note: "右から、題名、めあて、考え、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（国語）", subject: "kokugo" }); } }
+    { key: "bansho-kokugo", name: "板書計画（国語・縦書き）", note: "右から、題名、めあて、考え、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（国語）", subject: "kokugo" }); } },
+    { key: "bansho-rika", name: "板書計画（理科）", note: "問題、予想、実験の方法、結果、考察、結論の順。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（理科）", subject: "rika" }); } },
+    { key: "bansho-shakai", name: "板書計画（社会）", note: "学習問題、まん中に資料、気づいたこと、考えたこと、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（社会）", subject: "shakai" }); } },
+    { key: "bansho-note-sansu", name: "板書計画（算数・ノートと同じマス）", note: "黒板の上のマス目が、さんすう17マスノートの見開きと同じ数。1マスに1字で板書を考えます。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（算数・ノートと同じマス）", subject: "sansu" }); } },
+    { key: "bansho-note-kokugo", name: "板書計画（国語・ノートと同じマス）", note: "こくご12マスノートの見開きと同じ数。縦書き。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（国語・ノートと同じマス）", subject: "kokugo" }); } }
   ];
 })();
 
@@ -4167,7 +4272,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       row("表示", seg([["problem", "問題だけ"], ["answer", "答えつき"]], b.mode, function (v) { b.mode = v; touch(b); })),
       row("マスのサイズ", num(b, "cell", { min: 5, max: 25, step: 0.5, unit: "mm" })),
       row("方眼", seg([["hougan", "方眼"], ["masu", "マス"], ["none", "なし"]], b.grid, function (v) { b.grid = v; touch(b); })),
-      row("答えの色", swatches([["赤", "#d12a1e"], ["黒", "#1b1b1b"], ["青", "#1d5fbf"]], b.ansColor, function (v) { b.ansColor = v; touch(b); })),
+      row("フォントの色", swatches([["黒", "#1b1b1b"], ["白（黒板用）", "#ffffff"], ["黄（黒板用）", "#ffe066"]], b.color || "#1b1b1b", function (v) { b.color = v; touch(b); })),
+      row("答えの色", swatches([["赤", "#d12a1e"], ["黒", "#1b1b1b"], ["青", "#1d5fbf"], ["黄（黒板用）", "#ffe066"]], b.ansColor, function (v) { b.ansColor = v; touch(b); })),
       divRow,
       row("予備の行", num(b, "spare", { min: 0, max: 6, step: 1, unit: "行" }))
     ));

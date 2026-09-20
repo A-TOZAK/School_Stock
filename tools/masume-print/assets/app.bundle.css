@@ -423,3 +423,6 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 
 /* テンプレートの小さい絵を、紙の上へ引きずって落とせないようにする（画像として置かれてしまう） */
 .dlg img { -webkit-user-drag: none; user-select: none; }
+
+/* 黒板の上の数式：□は、ぬらずに白い線だけにする */
+.sk.on-board .sk-box { background: transparent; }
