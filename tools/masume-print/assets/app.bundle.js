@@ -1573,7 +1573,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       }
     }
     var dash = b.lineStyle === "dotted" ? "0.8 0.9" : null;
-    if (dots) svg.appendChild(s("path", { d: dots, fill: "none", stroke: col.dot, "stroke-width": 0.3, "stroke-dasharray": "0.6 1.5" }));
+    // 小さいマス（6mm未満）は、点線を細かく、うすくする（点がつぶれて汚く見えるため）
+    if (dots) svg.appendChild(s("path", { d: dots, fill: "none", stroke: col.dot, "stroke-width": c < 6 ? 0.18 : 0.3, "stroke-dasharray": c < 6 ? "0.25 0.55" : "0.6 1.5" }));
     svg.appendChild(s("path", { d: solid + frames, fill: "none", stroke: col.solid, "stroke-width": 0.32, "stroke-dasharray": dash }));
     if (b.frame) {
       var fr = (b.gap || 0) > 0 ? frames : "M0 0h" + g.W + "v" + g.H + "h" + -g.W + "z";
@@ -2927,7 +2928,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   App.TEXT_COLORS.push(["白（黒板用）", WHITE], ["黄（黒板用）", YELLOW]);
   App.LINE_COLORS.push(["白（黒板用）", WHITE], ["黄（黒板用）", YELLOW]);
   App.FILL_COLORS.push(["黒板の緑", GREEN]);
-  App.GRID_COLORS.board = { name: "白（黒板用）", solid: "#dfece6", dot: "#8fb3a4" };
+  App.GRID_COLORS.board = { name: "白（黒板用）", solid: "#dfece6", dot: "#5f8d7d" };
 
   function T(x, y, w, size, html, extra) {
     return App.make.text(Object.assign({ x: x, y: y, w: w, h: App.lineH(size, 1), size: size, html: html, font: "kyokasho" }, extra || {}));
@@ -3004,13 +3005,13 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   /** ノートと同じマスの数で書く板書。黒板の上のマス目の1マスが、子どものノートの1マス。見開きの2ページぶん。
    *  o = { title, subject: "sansu" | "kokugo" } */
   App.buildBanshoNote = function (o) {
-    var B = [], bx = 10, by = 20, bw = 277, bh = 104, kokugo = o.subject === "kokugo";
+    var B = [], bx = 10, by = 20, bw = 277, bh = 104, kokugo = o.subject === "kokugo", hougan = o.subject === "hougan";
     B.push(T(10, 8, 277, 11, "板書計画　　　月　　日（　　）　　　年　　組　　単元（　　　　　　　　　　　　　　）　本時（　　／　　）"));
     B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));
     function page(x, y, label) {
       var m = kokugo
         ? App.make.masu({ x: x, y: y, dir: "v", cell: 7, perLine: 12, lines: 8, gap: 0, leader: false, gridColor: "board", color: WHITE, text: "", autoGrow: false, locked: true })
-        : App.make.masu({ x: x, y: y, dir: "h", cell: 5.5, perLine: 12, lines: 17, gap: 0, leader: false, gridColor: "board", color: WHITE, text: "", autoGrow: false, locked: true });
+        : App.make.masu({ x: x, y: y, dir: "h", cell: hougan ? 4 : 5.5, perLine: hougan ? 16 : 12, lines: hougan ? 23 : 17, gap: 0, leader: hougan, gridColor: "board", color: WHITE, text: "", autoGrow: false, locked: true });
       B.push(m);
       return m;
     }
@@ -3023,12 +3024,14 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       B.push(R(bx + 5, by + 12, 140, 84, { color: WHITE, width: 0.4, dash: "dash" }));
       B.push(T(bx + 7, by + 3, 136, 9, "ノートに書かせないもの（本文の拡大、さし絵、子どもの考えの短冊）", { color: YELLOW }));
     } else {
-      B.push(T(bx + 6, by + 1, 66, 9, "ノート 左のページ（よこ12×たて17）", { color: YELLOW }));
-      page(bx + 6, by + 8.5);
-      B.push(T(bx + 78, by + 1, 66, 9, "右のページ", { color: YELLOW }));
-      page(bx + 78, by + 8.5);
-      B.push(R(bx + 150, by + 8.5, 122, 93.5, { color: WHITE, width: 0.4, dash: "dash" }));
-      B.push(T(bx + 152, by + 1, 120, 9, "ノートに書かせないもの（図、掲示物、子どもの考え）", { color: YELLOW }));
+      // 5mm方眼は、1マス4mm（よこ16×たて23）。さんすう17マスは、1マス5.5mm（よこ12×たて17）
+      var pw = hougan ? 64 : 66, top = hougan ? 9.5 : 8.5, x2 = bx + 6 + pw + 6, x3 = x2 + pw + 6;
+      B.push(T(bx + 6, by + 1, pw + 4, 9, hougan ? "ノート 左のページ（よこ16×たて23）" : "ノート 左のページ（よこ12×たて17）", { color: YELLOW }));
+      page(bx + 6, by + top);
+      B.push(T(x2, by + 1, pw, 9, "右のページ", { color: YELLOW }));
+      page(x2, by + top);
+      B.push(R(x3, by + top, bx + bw - 5 - x3, bh - top - 2, { color: WHITE, width: 0.4, dash: "dash" }));
+      B.push(T(x3 + 2, by + 1, bx + bw - 7 - x3, 9, "ノートに書かせないもの（図、掲示物、子どもの考え）", { color: YELLOW }));
     }
     B.push(T(10, 128, 277, 11, "主な発問・指示", { bold: true }));
     B.push(R(10, 137, 277, 63, { width: 0.4 }));
@@ -3078,6 +3081,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     { key: "bansho-rika", name: "板書計画（理科）", note: "問題、予想、実験の方法、結果、考察、結論の順。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（理科）", subject: "rika" }); } },
     { key: "bansho-shakai", name: "板書計画（社会）", note: "学習問題、まん中に資料、気づいたこと、考えたこと、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（社会）", subject: "shakai" }); } },
     { key: "bansho-note-sansu", name: "板書計画（算数・ノートと同じマス）", note: "黒板の上のマス目が、さんすう17マスノートの見開きと同じ数。1マスに1字で板書を考えます。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（算数・ノートと同じマス）", subject: "sansu" }); } },
+    { key: "bansho-note-hougan", name: "板書計画（5mm方眼ノートと同じマス）", note: "5mm方眼ノート（B5）の見開きと同じ、よこ16×たて23が2ページ。10mmのマスに5mmの点線。教科を選びません。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（5mm方眼ノートと同じマス）", subject: "hougan" }); } },
     { key: "bansho-note-kokugo", name: "板書計画（国語・ノートと同じマス）", note: "こくご12マスノートの見開きと同じ数。縦書き。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（国語・ノートと同じマス）", subject: "kokugo" }); } }
   ];
 })();
