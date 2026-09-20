@@ -952,6 +952,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       if ("w" in b) b.w = num(b.w, d.w || 60, 1, 700);
       if ("h" in b) b.h = num(b.h, d.h || 20, 1, 700);
     }
+    if ("locked" in b) { if (b.locked === true) b.locked = true; else delete b.locked; }
     if ("font" in b) b.font = font(b.font);
     if ("color" in b) b.color = color(b.color, d.color || "#1b1b1b");
     switch (b.type) {
@@ -1101,6 +1102,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     "前面へ": function () { return [p("M4.5 4.5h10v10h-10z", { "stroke-dasharray": "2 2" }), fillP("M9.5 9.5h10v10h-10z", 0.22)]; },
     "背面へ": function () { return [fillP("M4.5 4.5h10v10h-10z", 0.22), p("M9.5 14.5v5h10v-10h-5", { "stroke-dasharray": "2 2" })]; },
     "複製": function () { return [p("M8.5 8.5h11v11h-11z"), p("M5 15.5V4.5h11")]; },
+    "ロック": function () { return [p("M6.5 11h11v8.5h-11z"), p("M8.8 11V8.2a3.2 3.2 0 0 1 6.4 0V11"), p("M12 14.2v2.2")]; },
+    "ロック解除": function () { return [p("M6.5 11h11v8.5h-11z"), p("M8.8 11V8.2a3.2 3.2 0 0 1 6.2-1.1"), p("M12 14.2v2.2")]; },
     "削除": function () { return [p("M5 7h14"), p("M10 7V4.8h4V7"), p("M7 7l.9 12.2h8.2L17 7"), p("M10.5 10.5v5.5M13.5 10.5v5.5")]; },
     "画像を入れかえる": function () { return [p("M4 5h16v14H4z"), p("M4 16l4.5-4.5 3.5 3.5 3-3 5 5"), s("circle", { cx: 9, cy: 9.5, r: 1.4 })]; }
   };
@@ -1820,22 +1823,24 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var b = f.block, page = App.pageEl(f.page);
     if (!page) return;
     var r = App.bbox(b);
-    var box = h("div", { class: "selbox no-print " + b.type + (App.edit && App.edit.id === b.id ? " editing" : ""), "data-id": b.id });
+    var box = h("div", { class: "selbox no-print " + b.type + (App.edit && App.edit.id === b.id ? " editing" : "") + (b.locked ? " locked" : ""), "data-id": b.id });
+    var gripName = App.TYPE_NAMES[b.type] + (b.locked ? "（ロック中）" : "");
 
     if (b.type === "line") {
       box.style.cssText = "left:0;top:0;width:0;height:0;border:0";
-      [["p1", b.x1, b.y1], ["p2", b.x2, b.y2]].forEach(function (p) {
+      if (!b.locked) [["p1", b.x1, b.y1], ["p2", b.x2, b.y2]].forEach(function (p) {
         box.appendChild(h("div", { class: "h round", "data-h": p[0], style: "left:" + p[1] + "mm;top:" + p[2] + "mm" }));
       });
       var gx = Math.min(b.x1, b.x2), gy = Math.min(b.y1, b.y2);
-      box.appendChild(h("div", { class: "grip", style: "left:" + gx + "mm;top:calc(" + gy + "mm - 26px)" }, gripIcon(), App.TYPE_NAMES[b.type]));
+      box.appendChild(h("div", { class: "grip", style: "left:" + gx + "mm;top:calc(" + gy + "mm - 26px)" }, gripIcon(), gripName));
     } else {
       box.style.cssText = "left:" + r.x + "mm;top:" + r.y + "mm;width:" + r.w + "mm;height:" + r.h + "mm";
       ["n", "s", "e", "w"].forEach(function (k) { box.appendChild(h("div", { class: "edge " + k })); });
-      box.appendChild(h("div", { class: "grip" }, gripIcon(), App.TYPE_NAMES[b.type]));
+      box.appendChild(h("div", { class: "grip" }, gripIcon(), gripName));
       var hs = [];
       if (b.type === "masu" || b.type === "text" || b.type === "rect") hs = ["nw", "n", "ne", "e", "se", "s", "sw", "w"];
       else if (b.type === "image") hs = ["nw", "ne", "se", "sw"];
+      if (b.locked) hs = [];
       hs.forEach(function (k) { box.appendChild(h("div", { class: "h " + k, "data-h": k })); });
     }
     page.appendChild(box);
@@ -2121,9 +2126,10 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   // ---------- 動かす ----------
   function startMove(ev, b, fromGrip) {
     var f = App.find(b.id), page = App.pageEl(f.page), k = App.pxPerMm(page);
-    var sx = ev.clientX, sy = ev.clientY, o = JSON.parse(JSON.stringify(b)), moved = false;
+    var sx = ev.clientX, sy = ev.clientY, o = JSON.parse(JSON.stringify(b)), moved = false, told = false;
     function mv(m) {
       if (!moved && Math.hypot(m.clientX - sx, m.clientY - sy) < 4) return;
+      if (b.locked) { if (!told) { told = true; App.toast("ロックしています。動かすときは「ロック解除」を押します。", 4000); } return; }
       moved = true;
       var dx = (m.clientX - sx) / k, dy = (m.clientY - sy) / k;
       if (b.type === "line") {
@@ -2152,7 +2158,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   // ---------- 大きさを変える ----------
   function startResize(ev, code) {
     var b = App.selected();
-    if (!b) return;
+    if (!b || b.locked) return;
     var f = App.find(b.id), page = App.pageEl(f.page), k = App.pxPerMm(page);
     var sx = ev.clientX, sy = ev.clientY, o = JSON.parse(JSON.stringify(b)), changed = false;
     function mv(m) {
@@ -2457,6 +2463,17 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     App.commit();
   };
 
+  /** ロック：動かす・大きさを変える・消す、を止める。字を入れることはできる。 */
+  App.setLocked = function (id, on) {
+    var f = App.find(id);
+    if (!f) return;
+    if (on) f.block.locked = true; else delete f.block.locked;
+    App.drawSelection();
+    App.renderPanel();
+    App.commit();
+    App.toast(on ? "ロックしました。動かなくなります（字は入れられます）。" : "ロックを解除しました。");
+  };
+
   App.duplicate = function (id) {
     var f = App.find(id);
     if (!f) return;
@@ -2466,6 +2483,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   function pasteBlock(json, pi) {
     var b = JSON.parse(json);
     b.id = App.uid();
+    delete b.locked;
     if (b.type === "line") { b.x1 += 5; b.x2 += 5; b.y1 += 5; b.y2 += 5; } else { b.x += 5; b.y += 5; }
     App.doc.pages[pi].blocks.push(b);
     App.pageEl(pi).appendChild(App.buildBlock(b));
@@ -2643,6 +2661,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       var ae = document.activeElement;
       if (ae && ae !== ime && ae !== document.body && ae.closest && ae.closest("#panel, .bar")) ae.blur();
       // 大きさを変えるハンドル。横書きのマス目にも "h" というクラスがつくので、data-h のあるものだけを見る
+      if (App.tool) return startDraw(ev, page);
       var hEl = ev.target.closest(".h[data-h]");
       if (hEl) return startResize(ev, hEl.dataset.h);
       if (ev.target.closest(".grip") || ev.target.closest(".edge")) {
@@ -2650,7 +2669,6 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         if (sb) { App.stopEditing(); startMove(ev, sb, true); }
         return;
       }
-      if (App.tool) return startDraw(ev, page);
       var bEl = ev.target.closest(".blk");
       if (!bEl) { App.stopEditing(); App.select(null); return; }
       var f = App.find(bEl.dataset.id);
@@ -2701,6 +2719,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       if (mod && (key === "v" || key === "V") && clipboard) { ev.preventDefault(); pasteBlock(clipboard, App.currentPage()); return; }
       var b = App.selected();
       if (!b) return;
+      if (b.locked && (key === "Delete" || key === "Backspace" || /^Arrow/.test(key))) { ev.preventDefault(); App.toast("ロックしています。「ロック解除」を押すと、動かしたり消したりできます。", 4000); return; }
       if (key === "Delete" || key === "Backspace") { ev.preventDefault(); App.removeBlock(b.id); }
       else if (key === "Enter" && (b.type === "masu" || b.type === "text")) { ev.preventDefault(); App.startEdit(b, null); }
       else if (mod && (key === "d" || key === "D")) { ev.preventDefault(); App.duplicate(b.id); }
@@ -2819,7 +2838,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       blocks.push(text(x, y - 13, Math.min(W * 0.6, 95), 14, o.kana ? "なまえ（　　　　　　　　　）" : "名前（　　　　　　　　　）"));
       if (o.date) blocks.push(text(x + W - 52, y - 10, 52, 10, o.kana ? "　がつ　　にち　　ようび" : "　　月　　日（　　）", { align: "end" }));
       var m = App.make.masu({ x: x, y: y, dir: o.dir, cell: c, perLine: o.perLine, lines: o.lines, gap: o.gap, leader: o.leader, gridColor: o.gridColor,
-        text: o.headRow || "", autoGrow: false });
+        text: o.headRow || "", autoGrow: false, locked: true });   // ノートのマス目は、はじめからロック（線や筆算を置くときに動かないように）
       if (o.rules) m.rules = Object.assign({}, m.rules, o.rules);
       if (o.headRow) { m.color = green; m.styles = Masu.applyStyle([], o.headRow.length, 0, o.headRow.length, { bold: true }); }
       blocks.push(m);
@@ -2911,7 +2930,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     o = Object.assign({ title: "板書計画", subject: "sansu" }, o || {});
     var B = [], bx = 10, by = 20, bw = 277, bh = 104;
     B.push(T(10, 8, 277, 11, "板書計画　　　月　　日（　　）　　　年　　組　　単元（　　　　　　　　　　　　　　）　本時（　　／　　）"));
-    B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6 }));
+    B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));   // 黒板の面は、はじめからロック
     if (o.subject === "kokugo") {
       // 国語：縦書き。右から、日付と題名、めあて、本文や考え、まとめ
       B.push(App.make.text({ x: bx + bw - 14, y: by + 5, w: 9, h: 40, dir: "v", size: 12, color: WHITE, html: "九月十九日（土）" }));
@@ -3041,7 +3060,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var pw = 182, m = 12, blocks = [];
     blocks.push(App.make.text({ x: m, y: 9, w: 96, h: App.lineH(12, 1), size: 12, html: "Name（　　　　　　　　　　　）" }));
     blocks.push(App.make.text({ x: pw - m - 62, y: 9, w: 62, h: App.lineH(11, 1), size: 11, align: "end", html: "　　月　　日（　　）" }));
-    blocks.push(App.make.eisen({ x: m, y: 26, w: pw - m * 2, rows: o.rows, rowH: o.rowH, gap: o.gap }));
+    blocks.push(App.make.eisen({ x: m, y: 26, w: pw - m * 2, rows: o.rows, rowH: o.rowH, gap: o.gap, locked: true }));
     return { doc: { version: 1, title: o.title, paper: "B5", orient: "portrait", margin: 10, snap: 0.5, pages: [{ blocks: blocks }] } };
   };
   if (App.NOTE_SHEETS) {
@@ -3368,17 +3387,23 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       return h("button", { type: "button", class: cls || "", title: label, onmousedown: function (ev) { ev.preventDefault(); ev.stopPropagation(); },
         onpointerdown: function (ev) { ev.stopPropagation(); }, onclick: function (ev) { ev.stopPropagation(); fn(); } }, App.uiIcon(label, 16), h("span", null, label));
     }
-    var bar = h("div", { class: "float-bar no-print", onpointerdown: function (ev) { ev.stopPropagation(); }, onmousedown: function (ev) { ev.preventDefault(); ev.stopPropagation(); } },
-      b("複製", function () { App.duplicate(id); }),
-      b("前面へ", function () { App.reorder(id, "front"); }),
-      b("背面へ", function () { App.reorder(id, "back"); }),
-      h("span", { class: "sep" }),
-      b("削除", function () { App.removeBlock(id); }, "danger"));
+    var barProps = { class: "float-bar no-print", onpointerdown: function (ev) { ev.stopPropagation(); }, onmousedown: function (ev) { ev.preventDefault(); ev.stopPropagation(); } };
+    var bar = f.block.locked
+      ? h("div", barProps,
+        b("ロック解除", function () { App.setLocked(id, false); }),
+        b("複製", function () { App.duplicate(id); }))
+      : h("div", barProps,
+        b("複製", function () { App.duplicate(id); }),
+        b("前面へ", function () { App.reorder(id, "front"); }),
+        b("背面へ", function () { App.reorder(id, "back"); }),
+        b("ロック", function () { App.setLocked(id, true); }),
+        h("span", { class: "sep" }),
+        b("削除", function () { App.removeBlock(id); }, "danger"));
     // 部品の右上に、右はしをそろえて置く。紙の上はしに近いときは、部品の下に出す
     // つまみ（部品の左上の札）と重ならないように、札の高さ（画面で26px）だけ上に上げる
     var lift = 26 * k, above = r.y > 17 * k;
 // 右はしをそろえて置く。紙の左はしに近くてバーが紙の外（左の道具の裏）に出るときは、左はしをそろえる
-    var barMm = 270 * k * 0.2646, leftAlign = r.x + r.w - barMm < 0;
+    var barMm = (f.block.locked ? 190 : 340) * k * 0.2646, leftAlign = r.x + r.w - barMm < 0;
     bar.style.cssText = "left:" + (leftAlign ? Math.max(0, r.x) : r.x + r.w) + "mm;top:" + (above ? r.y : r.y + r.h) + "mm;transform:translate(" + (leftAlign ? "0" : "-100%") + "," + (above ? "-100%" : "0") + ") scale(" + k + ");transform-origin:" + (leftAlign ? "left " : "right ") + (above ? "bottom" : "top") + ";margin-top:" + (above ? -(lift + 3 * k) + "px" : 6 * k + "px");
     page.appendChild(bar);
   };
@@ -3483,7 +3508,36 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       return fetch(f[1]).then(function (r) { return r.arrayBuffer(); }).then(function (buf) {
         return (fontCache[f[1]] = '@font-face{font-family:"Klee One";font-weight:' + f[0] + ';src:url(data:font/woff2;base64,' + toBase64(buf) + ') format("woff2");}');
       }).catch(function () { return ""; });
-    })).then(function (a) { return a.join("\n"); });
+    })).then(function (a) { return a.join("\n"); }).then(function (css) { return warmFont(css).then(function () { return css; }); });
+  }
+  /** 埋めこんだ字が、絵の中で使えるようになるまで待つ。
+   *  用意ができるまで、絵の中の字は見えない（何も描かれない）。小さな絵に字を1つ描き、黒い点が出るまでくり返す（長くて5秒）。 */
+  function warmFont(css) {
+    if (!css) return Promise.resolve();
+    var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="120" height="60"><foreignObject x="0" y="0" width="100%" height="100%"><div xmlns="http://www.w3.org/1999/xhtml"><style>' + css +
+      '</style><span style="font:400 40px \'Klee One\';color:#000">永あ</span><span style="font:700 40px \'Klee One\';color:#000">永</span></div></foreignObject></svg>';
+    var url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg), tries = 0;
+    function once() {
+      return new Promise(function (resolve) {
+        var img = new Image();
+        img.onload = function () {
+          var cv = document.createElement("canvas"); cv.width = 120; cv.height = 60;
+          var c = cv.getContext("2d"); c.fillStyle = "#fff"; c.fillRect(0, 0, 120, 60); c.drawImage(img, 0, 0);
+          var d = c.getImageData(0, 0, 120, 60).data, dark = 0;
+          for (var i = 0; i < d.length; i += 4) if (d[i] < 128) dark++;
+          resolve(dark > 40);
+        };
+        img.onerror = function () { resolve(true); };
+        img.src = url;
+      });
+    }
+    function loop() {
+      return once().then(function (okNow) {
+        if (okNow || ++tries > 32) return;
+        return new Promise(function (r) { setTimeout(r, 150); }).then(loop);
+      });
+    }
+    return loop();
   }
 
   // ---------- 1ページを canvas に描く ----------
@@ -3506,19 +3560,46 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     wrap.appendChild(clone);
     var xml = new XMLSerializer().serializeToString(wrap);
     var svg = '<svg xmlns="http://www.w3.org/2000/svg" width="' + W + '" height="' + H + '"><foreignObject x="0" y="0" width="100%" height="100%">' + xml + "</foreignObject></svg>";
-    return new Promise(function (resolve, reject) {
-      var img = new Image();
-      img.onload = function () {
-        var cv = document.createElement("canvas");
-        cv.width = W; cv.height = H;
-        var ctx = cv.getContext("2d");
-        ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
-        ctx.drawImage(img, 0, 0, W, H);
-        resolve(cv);
-      };
-      img.onerror = function () { reject(new Error("紙面を画像にできませんでした")); };
-      img.src = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
-    });
+    var url = "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+    function drawOnce() {
+      return new Promise(function (resolve, reject) {
+        var img = new Image();
+        img.onload = function () {
+          var ready = img.decode ? img.decode().catch(function () {}) : Promise.resolve();
+          ready.then(function () {
+            var cv = document.createElement("canvas");
+            cv.width = W; cv.height = H;
+            var ctx = cv.getContext("2d");
+            ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, W, H);
+            ctx.drawImage(img, 0, 0, W, H);
+            resolve(cv);
+          });
+        };
+        img.onerror = function () { reject(new Error("紙面を画像にできませんでした")); };
+        img.src = url;
+      });
+    }
+    /** 小さく写して、黒さを数える。字がまだ描かれていない絵と、描かれた絵を見分けるため。 */
+    function ink(cv) {
+      var t = document.createElement("canvas"), tw = 240, th = Math.max(1, Math.round(240 * H / W));
+      t.width = tw; t.height = th;
+      var c = t.getContext("2d");
+      c.drawImage(cv, 0, 0, tw, th);
+      var d = c.getImageData(0, 0, tw, th).data, sum = 0;
+      for (var i = 0; i < d.length; i += 4) sum += 765 - d[i] - d[i + 1] - d[i + 2];
+      return sum;
+    }
+    // 絵の中の字は、絵が「読みこめた」と言ったあとに、おくれて用意されることがある（1回目の絵だけ字がぬける）。
+    // 同じ絵を、間をあけてもう一度描き、2回の黒さが同じになるまで待つ。
+    function settle(prev, prevInk, tries) {
+      return new Promise(function (r) { setTimeout(r, tries === 0 ? 120 : 300); }).then(drawOnce).then(function (cv) {
+        var now = ink(cv);
+        prev.width = prev.height = 0;
+        if (Math.abs(now - prevInk) <= Math.max(50, prevInk * 0.002) || tries >= 5) return cv;
+        return settle(cv, now, tries + 1);
+      });
+    }
+    return drawOnce().then(function (cv) { return settle(cv, ink(cv), 0); });
   }
   function canvasBytes(cv, type, q) {
     return new Promise(function (resolve, reject) {
@@ -3925,12 +4006,22 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     else pos = row("位置", h("span", { class: "pair" },
       num(b, "x", { min: -100, max: 500, step: 1, unit: "左" }),
       num(b, "y", { min: -100, max: 500, step: 1, unit: "上" })));
+    // ロック中は、位置の入力を止め、消すボタンを出さない
+    if (b.locked) {
+      if (pos) Array.prototype.forEach.call(pos.querySelectorAll("input"), function (i) { i.disabled = true; });
+      return group("配置",
+        pos,
+        h("div", { class: "btns" },
+          button("ロック解除", function () { App.setLocked(b.id, false); }),
+          button("複製", function () { App.duplicate(b.id); })));
+    }
     return group("配置",
       pos,
       h("div", { class: "btns" },
         button("前面へ", function () { App.reorder(b.id, "front"); }),
         button("背面へ", function () { App.reorder(b.id, "back"); }),
         button("複製", function () { App.duplicate(b.id); }),
+        button("ロック", function () { App.setLocked(b.id, true); }),
         button("削除", function () { App.removeBlock(b.id); }, "danger"))
     );
   }
