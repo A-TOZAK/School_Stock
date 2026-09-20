@@ -4031,11 +4031,17 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var linesNum = num(b, "lines", { min: 1, max: 80, step: 1, unit: "行", set: function (v) { App.setMasuLines(b, v); } });
     p.appendChild(group(null,
       row("文字の方向", seg([["v", "縦書き"], ["h", "横書き"]], b.dir, function (v) {
+        if (b.dir === v) return;
         b.dir = v;
-        // 向きを変えて紙からはみ出すときは、紙の中へ寄せる
-        var g = App.masuGeom(b), size = App.pageSize(), m = App.doc.margin || 0;
-        if (b.x + g.W > size[0] - m) b.x = Math.max(0, App.snap(size[0] - m - g.W));
-        if (b.y + g.H > size[1] - m) b.y = Math.max(0, App.snap(size[1] - m - g.H));
+        if (!(b.gap > 0)) {
+          // 行間のないマス目（方眼やノート）は、形と場所をそのままにして、字の進む向きだけを変える
+          var pl = b.perLine; b.perLine = b.lines; b.lines = pl;
+        } else if (!b.locked) {
+          // 行間のあるマス目は、向きといっしょに形が変わる。紙からはみ出すときは、紙の中へ寄せる
+          var g = App.masuGeom(b), size = App.pageSize(), m = App.doc.margin || 0;
+          if (b.x + g.W > size[0] - m) b.x = Math.max(0, App.snap(size[0] - m - g.W));
+          if (b.y + g.H > size[1] - m) b.y = Math.max(0, App.snap(size[1] - m - g.H));
+        }
         touch(b, null, true);
       })),
       row("マスのサイズ", cellNum),
