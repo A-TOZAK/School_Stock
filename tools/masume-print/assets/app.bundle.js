@@ -2082,6 +2082,12 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     window.addEventListener("pointerup", up);
   }
 
+  /** マス目の字を、範囲で選んでいるか。 */
+  App.masuHasRange = function () {
+    var e = App.edit, b = App.selected();
+    return !!(b && b.type === "masu" && e && e.type === "masu" && e.id === b.id && e.anchor !== e.focus);
+  };
+
   /** マス目の選んだ字に書式をつける。 */
   App.applyMasuStyle = function (patch) {
     var e = App.edit, b = App.selected();
@@ -2680,6 +2686,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       }
       App.stopEditing();
       App.select(b.id);
+      // ロックしたマス目は動かないので、1回目のドラッグから字を選べるようにする
+      if (b.locked && b.type === "masu") { App.startEdit(b, ev); masuPointerDown(ev, b); return; }
       startMove(ev, b, false);
     });
 
@@ -4055,12 +4063,16 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     p.appendChild(group("フォント",
       row("サイズ", seg([[0.56, "小"], [0.68, "中"], [0.8, "大"]], b.fontScale, function (v) { b.fontScale = v; touch(b); })),
       fontRow(b),
-      row("フォントの色", swatches(App.TEXT_COLORS, b.color, function (v) { b.color = v; touch(b); }))
+      // Word と同じ：字を選んでいれば、その字だけ。選んでいなければ、マス目ぜんぶ
+      row("フォントの色", swatches(App.TEXT_COLORS, b.color, function (v) {
+        if (App.masuHasRange()) { App.applyMasuStyle({ color: v === b.color ? null : v }); return; }
+        b.color = v; touch(b);
+        if (b.text) App.toast("マス目ぜんぶの字の色を変えました。一部だけ変えるときは、字をドラッグで選んでから色を押します。", 5000);
+      }))
     ));
 
     p.appendChild(group("選択した文字",
       h("p", { class: "hint" }, "マス目の中をドラッグして、文字を選択します。"),
-      row("フォントの色", swatches(App.TEXT_COLORS, null, function (v) { App.applyMasuStyle({ color: v === "#1b1b1b" ? null : v }); })),
       h("div", { class: "row stack" }, h("span", { class: "lb" }, "傍線"),
         h("span", { class: "ct" }, seg([["none", "なし"], ["single", "一重線"], ["double", "二重線"], ["wave", "波線"]], null, function (v) { App.applyMasuStyle({ side: v === "none" ? null : v }); }))),
       h("div", { class: "btns" },
