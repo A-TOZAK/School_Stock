@@ -985,6 +985,11 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         b.border = pick(b.border, ["none", "solid", "dotted", "bold"], "none");
         b.fill = color(b.fill, "none", true);
         b.track = num(b.track, 0, 0, 60);
+        if ("borderColor" in b) b.borderColor = color(b.borderColor, "#1b1b1b");
+        if ("round" in b) b.round = b.round === true;
+        if ("band" in b) b.band = pick(b.band, ["none", "red", "blue"], "none");
+        if ("bandLabel" in b) b.bandLabel = str(b.bandLabel, 12);
+        if ("hint" in b) b.hint = str(b.hint, 80);
         break;
       case "line":
         b.width = num(b.width, 0.5, 0.05, 10);
@@ -3054,7 +3059,8 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var on = onBoard(b, f.page);
     if (on && !b.onBoard) {
       b.onBoard = true;
-      if (!b.color || b.color === INK) b.color = WHITE;
+      if (!b.color || b.color === INK) { if (!(b.type === "text" && b.fill && b.fill !== "none")) b.color = WHITE; }
+      if (b.type === "text" && (!b.borderColor || b.borderColor === INK) && !(b.fill && b.fill !== "none")) b.borderColor = WHITE;
       if (b.type === "hissan") { if (b.ansColor === RED) b.ansColor = YELLOW; if (!b.onMasu) b.grid = "none"; }
       return true;
     }
@@ -3075,15 +3081,980 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   };
   App.fitToMasu.told = fit0.told;
 
-  App.BANSHO_SHEETS = [
-    { key: "bansho-sansu", name: "板書計画（算数・横書き）", note: "黒板に、めあて、問題、考え、まとめの場所。下に、発問と、子どものノートの形。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（算数）", subject: "sansu" }); } },
-    { key: "bansho-kokugo", name: "板書計画（国語・縦書き）", note: "右から、題名、めあて、考え、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（国語）", subject: "kokugo" }); } },
-    { key: "bansho-rika", name: "板書計画（理科）", note: "問題、予想、実験の方法、結果、考察、結論の順。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（理科）", subject: "rika" }); } },
-    { key: "bansho-shakai", name: "板書計画（社会）", note: "学習問題、まん中に資料、気づいたこと、考えたこと、まとめ。A4 横。", build: function () { return App.buildBansho({ title: "板書計画（社会）", subject: "shakai" }); } },
-    { key: "bansho-note-sansu", name: "板書計画（算数・ノートと同じマス）", note: "黒板の上のマス目が、さんすう17マスノートの見開きと同じ数。1マスに1字で板書を考えます。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（算数・ノートと同じマス）", subject: "sansu" }); } },
-    { key: "bansho-note-hougan", name: "板書計画（5mm方眼ノートと同じマス）", note: "5mm方眼ノート（B5）の見開きと同じ、よこ16×たて23が2ページ。10mmのマスに5mmの点線。教科を選びません。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（5mm方眼ノートと同じマス）", subject: "hougan" }); } },
-    { key: "bansho-note-kokugo", name: "板書計画（国語・ノートと同じマス）", note: "こくご12マスノートの見開きと同じ数。縦書き。A4 横。", build: function () { return App.buildBanshoNote({ title: "板書計画（国語・ノートと同じマス）", subject: "kokugo" }); } }
+  // =====================================================================
+  // 板書の部品（実物の板書の調べから。docs/板書の調べ_2026-09-21.md）
+  //   実物の板書は「見出しのついた箱」ではなく、めあての棒、問題番号、囲み、吹き出し、矢印、貼る紙でできている。
+  //   どれも、ふつうのテキスト ボックスに、かざりの設定を足したもの。動かす、字を打つ、消す、はテキスト ボックスと同じ。
+  // =====================================================================
+  var BAND = { red: "#e0483e", blue: "#3b82d6" };
+
+  var fillB0 = App.fillBlock;
+  App.fillBlock = function (el, b) {
+    fillB0(el, b);
+    if (b.type !== "text") return;
+    var tx = el.querySelector(".tx"), old = el.querySelector(".band-tag");
+    if (old) old.remove();
+    if (!tx) return;
+    if (b.borderColor && b.border && b.border !== "none") tx.style.borderColor = b.borderColor;
+    if (b.round) tx.style.borderRadius = "3.2mm";
+    if (b.band && BAND[b.band]) {
+      var bar = "1.5mm solid " + BAND[b.band];
+      if (b.dir === "v") { tx.style.borderLeft = bar; tx.style.borderRight = bar; } else { tx.style.borderTop = bar; tx.style.borderBottom = bar; }
+      if (b.bandLabel) el.appendChild(App.h("span", { class: "band-tag " + b.dir, style: "color:" + BAND[b.band] }, b.bandLabel));
+    }
+  };
+
+  /** テキスト ボックスの設定に、板書のかざりを足す。 */
+  App.textPanelExtra = function (p, b, ui) {
+    if (!hasBoard()) return;
+    p.appendChild(ui.group("板書",
+      ui.row("棒ではさむ", ui.seg([["none", "なし"], ["red", "赤（めあて）"], ["blue", "青（まとめ）"]], b.band || "none", function (v) {
+        b.band = v; b.bandLabel = v === "red" ? "めあて" : v === "blue" ? "まとめ" : ""; ui.touch(b);
+      })),
+      ui.row("枠線の色", ui.swatches([["白", WHITE], ["黄", YELLOW], ["ピンク", PINK], ["黒", "#1b1b1b"]], b.borderColor || "#1b1b1b", function (v) { b.borderColor = v; if (!b.border || b.border === "none") b.border = "solid"; ui.touch(b); })),
+      ui.check("角を丸くする（吹き出し）", !!b.round, function (v) { b.round = v; ui.touch(b); })));
+  };
+
+  function boardRect(pi) {
+    var page = App.doc && App.doc.pages[pi == null ? App.currentPage() : pi];
+    return page ? page.blocks.filter(function (r) { return r.type === "rect" && r.fill === GREEN; })[0] : null;
+  }
+  function hasBoard() { return !!(App.doc && App.doc.pages.some(function (pg, i) { return boardRect(i); })); }
+
+  // 部品の一覧。opts は、テキスト ボックスの設定
+  var BODY = 16;   // 黒板の上の字。実物の黒板（よこ3.6m）を紙のよこ277mmに写すと、16pt の字は実物で約7cm。4年の目安（8〜10cm）に近い
+  var PARTS = [
+    { key: "meate", name: "めあて", note: "赤い棒2本ではさむ", o: { w: 86, h: 17, size: BODY, band: "red", bandLabel: "めあて", pad: 2, html: "" } },
+    { key: "matome", name: "まとめ", note: "青い棒2本ではさむ", o: { w: 86, h: 24, size: BODY, band: "blue", bandLabel: "まとめ", pad: 2, html: "" } },
+    { key: "bango", name: "問題番号", note: "四角で囲んだ 1、2、3", o: { w: 8.5, h: 8.5, size: BODY, border: "solid", borderColor: WHITE, align: "center", pad: 0, lineHeight: 1.3, html: "1" } },
+    { key: "moji", name: "黒板の字", note: "白いチョーク", o: { w: 80, h: 8, size: BODY, pad: 0.5, html: "" } },
+    { key: "kiiro", name: "黄色の字", note: "大事な言葉", o: { w: 50, h: 8, size: BODY, color: YELLOW, pad: 0.5, html: "" } },
+    { key: "kakomi", name: "黄色の囲み", note: "式、公式、きまり", o: { w: 78, h: 10, size: BODY, border: "solid", borderColor: YELLOW, pad: 1.5, align: "center", html: "" } },
+    { key: "fukidashi", name: "吹き出し", note: "予想される子どもの言葉", o: { w: 60, h: 14, size: 13, border: "solid", borderColor: WHITE, round: true, pad: 2, lineHeight: 1.4, html: "" } },
+    { key: "tanzaku", name: "貼る紙（短冊）", note: "発問、子どもの考え、資料の札", o: { w: 60, h: 10, size: 14, fill: "#ffffff", color: "#1b1b1b", border: "solid", borderColor: "#1b1b1b", pad: 1.5, html: "" } },
+    { key: "hizuke", name: "日付とページ", note: "左はしに縦書きで", o: { w: 7, h: 40, dir: "v", size: 10, pad: 0.5, lineHeight: 1.2, html: "9／2（火）p.○〜○" } }
   ];
+  App.BANSHO_PARTS = PARTS;
+  var partCount = 0;
+  App.addBanshoPart = function (key) {
+    var part = PARTS.filter(function (x) { return x.key === key; })[0], bd = boardRect();
+    if (!part || !bd) return;
+    var o = Object.assign({ color: WHITE, font: "kyokasho" }, part.o), k = partCount++ % 6;
+    // 黒板の上で、ほかの部品と重ならない場所を、左上から順に探して置く。なければ、まん中あたりに少しずつずらして置く
+    var others = App.doc.pages[App.currentPage()].blocks.filter(function (x) { return x !== bd; }).map(App.bbox), spot = null;
+    for (var xx = bd.x + 12; xx + o.w <= bd.x + bd.w - 3 && !spot; xx += 4) {
+      for (var yy = bd.y + 4; yy + o.h <= bd.y + bd.h - 3; yy += 3.8) {
+        var hit = others.some(function (r) { return xx < r.x + r.w + 2 && xx + o.w + 2 > r.x && yy < r.y + r.h + 2 && yy + o.h + 2 > r.y; });
+        if (!hit) { spot = [xx, yy]; break; }
+      }
+    }
+    o.at = spot ? { page: App.currentPage(), x: spot[0] + o.w / 2, y: spot[1] + o.h / 2 }
+      : { page: App.currentPage(), x: bd.x + bd.w / 2 - 20 + k * 7, y: bd.y + bd.h / 2 - 10 + k * 5 };
+    o.onBoard = true;
+    App.addBlock("text", o);
+  };
+
+  // 左の道具の列に「板書の部品」を足す（黒板のある紙のときだけ出る）
+  function closeParts() { var m = document.getElementById("parts-menu"); if (m) m.remove(); }
+  function openParts(btn) {
+    if (document.getElementById("parts-menu")) return closeParts();
+    var r = btn.getBoundingClientRect();
+    var menu = App.h("div", { id: "parts-menu", class: "save-menu parts-menu", role: "menu" });
+    PARTS.forEach(function (x) {
+      menu.appendChild(App.h("button", { type: "button", "data-part": x.key, onclick: function () { closeParts(); App.addBanshoPart(x.key); } }, App.h("b", null, x.name), App.h("small", null, x.note)));
+    });
+    menu.style.left = (r.right + 8) + "px";
+    menu.style.top = Math.max(60, Math.min(r.top - 120, window.innerHeight - 470)) + "px";
+    document.body.appendChild(menu);
+  }
+  document.addEventListener("pointerdown", function (ev) {
+    if (document.getElementById("parts-menu") && !(ev.target.closest && ev.target.closest("#parts-menu, #btn-parts"))) closeParts();
+  }, true);
+  function syncPartsButton() {
+    var box = document.querySelector(".tools");
+    if (!box) return;
+    var btn = document.getElementById("btn-parts");
+    if (!btn) {
+      btn = App.h("button", { type: "button", id: "btn-parts", title: "めあて、まとめ、問題番号、吹き出しなど、板書の部品を置く", onclick: function () { openParts(btn); } });
+      btn.innerHTML = '<svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 5.5h18v11H3z"/><path d="M6.5 9h7M6.5 12h4.5"/><path d="M7 19.5h10"/></svg><span>板書</span>';
+      box.insertBefore(btn, box.firstChild);
+    }
+    btn.style.display = hasBoard() ? "" : "none";
+  }
+  var render0 = App.renderAll;
+  App.renderAll = function () { var r = render0.apply(App, arguments); syncPartsButton(); return r; };
+
+  // ---------- 見本：中身の入った板書計画（算数） ----------
+  /** 実物の黒板と同じ、よこ長の比（約3.6対1）。黒板の下に、発問と、予想される反応を、黒板の3つの場所にそろえて書く。 */
+  App.buildBanshoSample = function () {
+    var B = [], bx = 10, by = 18, bw = 277, bh = 78, z = bw / 3;
+    function C(x, y, w, html, extra) { return App.make.text(Object.assign({ x: x, y: y, w: w, h: 8, size: BODY, color: WHITE, pad: 0.5, lineHeight: 1.35, html: html, font: "kyokasho", onBoard: true }, extra || {})); }
+    B.push(T(10, 7, 277, 11, "板書計画　　4年　算数　「2けたでわるわり算」　本時 1／12　　ねらい：何十でわる計算のしかたを、10をもとにして考える。"));
+    B.push(R(bx, by, bw, bh, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));
+    // 左はし：日付とページ、区切りの線
+    B.push(C(bx + 1.5, by + 3, 6.5, "9／2（火）p.○", { dir: "v", size: 9, h: 40, lineHeight: 1.2 }));
+    B.push(App.make.line({ x1: bx + 9.5, y1: by + 3, x2: bx + 9.5, y2: by + bh - 3, color: WHITE, width: 0.4 }));
+    // 字は 16pt。1つの場所（黒板の3分の1）に入るのは、1行13〜15字、10行まで。実物の板書の調べ（1行11〜18字、5〜9行）と合う
+    var P = 7.6;   // 1行の送り
+    function row(n) { return by + 3 + P * n; }
+    // 左：はじめの問題（前の学年までの計算でできる）
+    B.push(C(bx + 12, row(0), z - 14, "90円でガムを買います。<br>1こ9円だと何こ買える？", { h: P * 2 }));
+    B.push(C(bx + 17, row(2), z - 20, "90÷9＝10　答え10こ"));
+    B.push(C(bx + 12, row(4), z - 14, "1こ30円のガムだと？"));
+    B.push(C(bx + 17, row(5), 34, "90÷30＝"));
+    B.push(C(bx + 50, row(5), 10, "？", { color: YELLOW }));
+    B.push(C(bx + 14, row(7), 60, "9÷3と同じになりそう", { h: 11, size: 13, border: "solid", borderColor: WHITE, round: true, pad: 2, align: "center" }));
+    // 中：問題番号、めあて、考え
+    var cx = bx + z + 2;
+    B.push(C(cx, row(0), 8.5, "1", { h: 8.5, border: "solid", borderColor: WHITE, align: "center", pad: 0, lineHeight: 1.3 }));
+    B.push(C(cx + 10, row(0), z - 16, "90÷30の計算のしかたを<br>考えましょう。", { h: P * 2 }));
+    B.push(C(cx, row(2) + 3, z - 6, "⑩をつかって、90÷30の<br>計算のしかたを考えよう。", { h: 19, band: "red", bandLabel: "めあて", pad: 1.6 }));
+    B.push(C(cx, row(5) + 2.5, z - 6, "10円玉の9こと3こをくらべる"));
+    B.push(C(cx + 5, row(6) + 2.5, z - 12, "⑩が（9÷3）こ → 3こ", { color: YELLOW }));
+    B.push(C(cx + 2, row(8), z - 12, "たしかめ　3×30＝90", { h: 10.5, border: "solid", borderColor: YELLOW, pad: 1.4, align: "center" }));
+    // 右：たしかめの問題、まとめ
+    var rx = bx + z * 2 + 2;
+    B.push(C(rx, row(0), 8.5, "2", { h: 8.5, border: "solid", borderColor: WHITE, align: "center", pad: 0, lineHeight: 1.3 }));
+    B.push(C(rx + 10, row(0), z - 16, "150円で、1こ30円の<br>ガムは何こ買えますか。", { h: P * 2 }));
+    B.push(C(rx + 5, row(2), z - 12, "⑩が15こ　15÷3＝5"));
+    B.push(C(rx + 5, row(3), z - 12, "150÷30＝5　答え5こ"));
+    B.push(C(rx, row(5), z - 8, "⑩の何こ分かと考えると、<br>わる数が2けたでも、<br>商の見当をつけられる。", { h: 27, band: "blue", bandLabel: "まとめ", pad: 1.6 }));
+    B.push(App.make.line({ x1: bx + 62, y1: row(5) + 2, x2: cx - 1.5, y2: row(3) + 4, color: YELLOW, width: 0.5, arrow: "end" }));
+    // 黒板の下：3つの場所にそろえて、発問と予想される反応
+    var ty = by + bh + 6, th = 210 - 10 - ty - 7;
+    ["はじめ（10分）", "考える（25分）", "まとめる（10分）"].forEach(function (t, i) {
+      B.push(T(bx + z * i + (i ? 2 : 0), ty, z - 4, 10.5, t + "　発問と、予想される反応", { bold: true }));
+      B.push(R(bx + z * i + (i ? 2 : 0), ty + 7, z - 4, th, { width: 0.4 }));
+    });
+    var notes = [
+      "①「1こ9円なら、何こ買える？」<br>　→ 90÷9＝10（3年の計算でできる）<br>②「30円のガムなら？ 式は？」<br>　→ 90÷30。わる数が2けたは初めて<br>　→「9÷3と同じになりそう」を吹き出しで残す",
+      "③「10円玉で考えると、90円は何こ？ 30円は？」<br>　→ 9こと3こ。9÷3＝3<br>④「3で本当に正しい？ どうやって確かめる？」<br>　→ 3×30＝90（たしかめの式を黄色で囲む）<br>・手が止まる子には、10円玉の図をかかせる",
+      "⑤ 2番を自分で解く。「⑩が何こ？」<br>　→ 15こ。15÷3＝5<br>⑥「今日分かったことを、自分の言葉で」<br>　→ 子どもの言葉をつないで、まとめにする<br>・めあてと、まとめがつながっているかを見る"
+    ];
+    notes.forEach(function (n, i) { B.push(T(bx + z * i + (i ? 2 : 0) + 1.5, ty + 8.5, z - 7, 10, n, { h: th - 3, lineHeight: 1.55 })); });
+    return { doc: { version: 1, title: "板書計画（算数・見本）", paper: "A4", orient: "landscape", margin: 8, snap: 0.5, pages: [{ blocks: B }] } };
+  };
+
+  // 教科ごとの型は app-bansho-kata.js と app-bansho-data*.js に移した（2026-09-21。前の「見出しだけの箱」の4つの型は外した）。
+  // ここに残すのは、黒板の上にノートと同じ数のマス目を置いた3つ。
+  App.BANSHO_SHEETS = [
+    { key: "bansho-note-sansu", name: "さんすう17マスノートと同じマス", note: "黒板の上のマス目が、ノートの見開き（よこ12×たて17が2ページ）と同じ数。1マスに1字で板書を考えます。", build: function () { return App.buildBanshoNote({ title: "板書計画（算数・ノートと同じマス）", subject: "sansu" }); } },
+    { key: "bansho-note-hougan", name: "5mm方眼ノートと同じマス", note: "5mm方眼ノート（B5）の見開きと同じ、よこ16×たて23が2ページ。10mmのマスに5mmの点線。", build: function () { return App.buildBanshoNote({ title: "板書計画（5mm方眼ノートと同じマス）", subject: "hougan" }); } },
+    { key: "bansho-note-kokugo", name: "こくご12マスノートと同じマス", note: "こくご12マスノートの見開き（12マス×8行が2ページ）と同じ数。縦書き。", build: function () { return App.buildBanshoNote({ title: "板書計画（国語・ノートと同じマス）", subject: "kokugo" }); } }
+  ];
+
+})();
+
+;
+/* マス目プリントメーカー：板書計画の型と記入例
+ * もとにしたもの：docs/板書の調べ_2026-09-21.md（板書ギャラリーと本人の板書、教科ごとの調べ）
+ * 1つの型は、部品の置き方を書いた表（KATA）。同じ表から、字の入っていない「型」と、字の入った「記入例」の両方を作る。
+ *   型　　：部品は置いてあり、うすい字で「ここに何を書くか」が出る。クリックして打つ。
+ *   記入例：4年生の学習を例に、中身を書きこんだもの。打ちかえて使ってもよい。
+ * app-bansho.js のあとに読みこむ。
+ */
+(function () {
+  "use strict";
+  var App = window.App;
+  var GREEN = "#2f5d50", FRAME = "#8a6a3b", WHITE = "#ffffff", YELLOW = "#ffe066", PINK = "#ff9e94", GUIDE = "#86aa9c", INK = "#1b1b1b";
+  var BX = 10, BY = 18, BW = 277, BH = 78, Z = BW / 3, P = 7.6, BODY = 16;
+
+  // 部品の種類ごとの、テキスト ボックスの設定
+  var KIND = {
+    moji: {},
+    kiiro: { color: YELLOW },
+    pink: { color: PINK },
+    midashi: { color: YELLOW, size: 13 },
+    meate: { band: "red", bandLabel: "めあて", pad: 1.6 },
+    matome: { band: "blue", bandLabel: "まとめ", pad: 1.6 },
+    furikaeri: { border: "dotted", borderColor: WHITE, pad: 1.4, size: 13 },
+    bango: { border: "solid", borderColor: WHITE, align: "center", pad: 0, lineHeight: 1.3 },
+    kakomi: { border: "solid", borderColor: YELLOW, pad: 1.4, align: "center" },
+    waku: { border: "solid", borderColor: WHITE, pad: 1.4 },
+    fuki: { border: "solid", borderColor: WHITE, round: true, pad: 1.8, size: 13, lineHeight: 1.4 },
+    tanzaku: { fill: "#ffffff", color: INK, border: "solid", borderColor: INK, pad: 1.4, size: 13 },
+    wb: { fill: "#ffffff", color: INK, border: "bold", borderColor: "#9aa0a6", pad: 1.2, size: 9, lineHeight: 1.4 },
+    shiryo: { fill: "#f0f0ee", color: "#555b62", border: "solid", borderColor: "#9aa0a6", pad: 1.4, size: 10, align: "center" }
+  };
+
+  /** 表の1行を、部品にする。
+   *  横書き：{ k, z: 0〜2（3分割のどこか）か省く, x, r（行。0〜9）, y（mm。r のかわり）, w, rows（高さを行数で）, h, t（記入例の字）, hint（型のうすい字） }
+   *  縦書き：{ k, c（右から何列めか）, cols（列の数）, top, len }  */
+  function item(it, example, vertical) {
+    var o = Object.assign({ size: BODY, color: WHITE, pad: 0.5, lineHeight: 1.35, font: "kyokasho", onBoard: true }, KIND[it.k] || {}, it.o || {});
+    var x, y, w, hh;
+    if (vertical) {
+      o.dir = (it.o && it.o.dir) || "v";
+      w = (it.cols || 1) * P;
+      x = BX + BW - 4 - (it.c || 0) * P - w + (it.dx || 0);
+      y = BY + (it.top == null ? 4 : it.top);
+      hh = it.len || BH - 8;
+    } else {
+      var zx = it.z == null ? BX : BX + Z * it.z + (it.z === 0 ? 11 : 2.5);
+      x = zx + (it.x || 0);
+      y = it.y != null ? BY + it.y : BY + 3 + P * (it.r || 0);
+      w = it.w || (it.z == null ? 60 : Z - (it.z === 0 ? 14 : 6) - (it.x || 0));
+      hh = it.h || P * (it.rows || 1) + (o.pad > 1 ? 2.5 : 0);
+    }
+    return App.make.text(Object.assign(o, { x: x, y: y, w: w, h: hh, html: example ? (it.t || "") : (it.keep ? it.t || "" : ""), hint: example ? "" : (it.hint || "") }));
+  }
+
+  function T(x, y, w, size, html, extra) {
+    return App.make.text(Object.assign({ x: x, y: y, w: w, h: App.lineH(size, 1), size: size, html: html, font: "kyokasho" }, extra || {}));
+  }
+  function R(x, y, w, hh, extra) { return App.make.rect(Object.assign({ x: x, y: y, w: w, h: hh, width: 0.5 }, extra || {})); }
+
+  /** 型の表から、紙を作る。example が true なら記入例。 */
+  App.buildKata = function (K, example) {
+    var B = [], vertical = K.dir === "v";
+    // 上の1行。長いときは、1行におさまる大きさまで字を小さくする
+    var headText = example ? K.head : "板書計画　　　年　　組　　教科（　　　）　単元（　　　　　　　　　　　　）　本時　　／　　　ねらい：";
+    var headSize = Math.max(8, Math.min(11, Math.floor(270 / headText.length / 0.3528 * 10) / 10));
+    B.push(T(10, headSize < 10 ? 8.5 : 7, 277, headSize, headText));
+    B.push(R(BX, BY, BW, BH, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));
+    if (!vertical) {
+      // 左はしの日付とページ、区切りの線
+      B.push(item({ k: "moji", y: 3, x: 1.5, w: 6.5, h: 46, t: "○／○（○）Ｐ○", keep: true, o: { dir: "v", size: 9, lineHeight: 1.2 } }, true, false));
+      B.push(App.make.line({ x1: BX + 9.5, y1: BY + 3, x2: BX + 9.5, y2: BY + BH - 3, color: WHITE, width: 0.4, locked: true }));
+    }
+    // 3分割の目安の線（うすい点線。刷っても目立たない）
+    if (K.split === 3) [1, 2].forEach(function (i) {
+      B.push(App.make.line({ x1: BX + Z * i, y1: BY + 2.5, x2: BX + Z * i, y2: BY + BH - 2.5, color: GUIDE, width: 0.3, dash: "dash", locked: true }));
+    });
+    (K.items || []).forEach(function (it) {
+      if (it.k === "line" || it.k === "arrow") {
+        if (!example && !it.keep) return;
+        B.push(App.make.line({ x1: BX + it.x1, y1: BY + it.y1, x2: BX + it.x2, y2: BY + it.y2, color: it.color || WHITE, width: it.width || 0.5, arrow: it.k === "arrow" ? "end" : "none", dash: it.dash || "solid" }));
+        return;
+      }
+      if (it.k === "rect") { B.push(R(BX + it.x, BY + it.y, it.w, it.h, { color: it.color || WHITE, width: it.width || 0.5, fill: "none", dash: it.dash || "solid" })); return; }
+      if (it.only === "example" && !example) return;
+      if (example && !it.t && !it.keep) return;   // 記入例で中身のない部品は置かない
+      B.push(item(it, example, vertical));
+    });
+    // 黒板の下：発問と、予想される反応。黒板の3つの場所（縦書きは右から）にそろえる
+    var ty = BY + BH + 6, th = 210 - 10 - ty - 7, order = vertical ? [2, 1, 0] : [0, 1, 2];
+    (K.notes || []).forEach(function (n, i) {
+      var nx = BX + Z * order[i] + (order[i] ? 2 : 0);
+      B.push(T(nx, ty, Z - 4, 10.5, n[0] + "　発問と、予想される反応", { bold: true }));
+      B.push(R(nx, ty + 7, Z - 4, th, { width: 0.4 }));
+      B.push(T(nx + 1.5, ty + 8.5, Z - 7, 10, example ? n[1] : "", { h: th - 3, lineHeight: 1.55, hint: example ? "" : "①「発問」　→ 予想される反応" }));
+    });
+    return { doc: { version: 1, title: K.name + (example ? "（記入例）" : ""), paper: "A4", orient: "landscape", margin: 8, snap: 0.5, pages: [{ blocks: B }] } };
+  };
+
+  // 型のうすい字（hint）を出す
+  var fill0 = App.fillBlock;
+  App.fillBlock = function (el, b) {
+    fill0(el, b);
+    if (b.type !== "text") return;
+    var tx = el.querySelector(".tx");
+    if (!tx) return;
+    if (b.hint) tx.setAttribute("data-hint", b.hint); else tx.removeAttribute("data-hint");
+    el.classList.toggle("on-board", !!b.onBoard && !(b.fill && b.fill !== "none"));
+  };
+
+  App.KATA = [];
+  /** 型を足す。K = { key, subject, name, note, head, dir, split, items, notes } */
+  App.addKata = function (K) { App.KATA.push(K); };
+})();
+
+;
+/* マス目プリントメーカー：板書計画の型のデータ（教科ごと）
+ * 行（r）は 0〜9。1つの場所（黒板の3分の1）に、1行13〜15字。記入例の文と数字は、どれも自作（教科書の文を写さない）。
+ */
+(function () {
+  "use strict";
+  var add = window.App.addKata;
+
+  // ======================= 算数 =======================
+  add({
+    key: "sansu-3", subject: "算数", name: "算数　3分割（問題、考え、まとめ）",
+    note: "左に問題と前に習ったこと、まん中にめあてと考え方、右にたしかめの問題とまとめ。いちばんよく使う形です。",
+    head: "板書計画　　4年　算数　「2けたでわるわり算」　本時 1／12　　ねらい：何十でわる計算のしかたを、10をもとにして考える。",
+    split: 3,
+    items: [
+      { k: "moji", z: 0, r: 0, rows: 2, t: "90円でガムを買います。<br>1こ9円だと何こ買える？", hint: "はじめの問題（前に習った計算でできるもの）" },
+      { k: "moji", z: 0, r: 2, x: 5, t: "90÷9＝10　答え10こ", hint: "式と答え" },
+      { k: "moji", z: 0, r: 4, t: "1こ30円のガムだと？", hint: "今日の問題につなぐ問い" },
+      { k: "moji", z: 0, r: 5, x: 5, w: 34, t: "90÷30＝", hint: "式" },
+      { k: "kiiro", z: 0, r: 5, x: 41, w: 10, t: "？", only: "example" },
+      { k: "fuki", z: 0, r: 7, x: 2, w: 60, h: 11, t: "9÷3と同じになりそう", hint: "子どものつぶやき", o: { align: "center" } },
+      { k: "bango", z: 1, r: 0, w: 8.5, h: 8.5, t: "1", keep: true },
+      { k: "moji", z: 1, r: 0, x: 10, rows: 2, t: "90÷30の計算のしかたを<br>考えましょう。", hint: "今日の問題" },
+      { k: "meate", z: 1, y: 21.2, h: 19, t: "⑩をつかって、90÷30の<br>計算のしかたを考えよう。", hint: "めあて" },
+      { k: "moji", z: 1, y: 43.5, t: "10円玉の9こと3こをくらべる", hint: "考え方（図、式、言葉）" },
+      { k: "kiiro", z: 1, y: 51.1, x: 5, t: "⑩が（9÷3）こ → 3こ", hint: "大事な言葉（黄色）" },
+      { k: "kakomi", z: 1, r: 8, x: 2, w: 80, h: 10.5, t: "たしかめ　3×30＝90", hint: "きまり、公式、たしかめ" },
+      { k: "bango", z: 2, r: 0, w: 8.5, h: 8.5, t: "2", keep: true },
+      { k: "moji", z: 2, r: 0, x: 10, rows: 2, t: "150円で、1こ30円の<br>ガムは何こ買えますか。", hint: "たしかめの問題" },
+      { k: "moji", z: 2, r: 2, x: 5, t: "⑩が15こ　15÷3＝5", hint: "考え方" },
+      { k: "moji", z: 2, r: 3, x: 5, t: "150÷30＝5　答え5こ", hint: "式と答え" },
+      { k: "matome", z: 2, r: 5, h: 27, t: "⑩の何こ分かと考えると、<br>わる数が2けたでも、<br>計算できる。", hint: "まとめ（めあてとつながる言葉で）" },
+      { k: "arrow", x1: 62, y1: 43, x2: 92.8, y2: 30, color: "#ffe066" }
+    ],
+    notes: [
+      ["はじめ（10分）", "①「1こ9円なら、何こ買える？」<br>　→ 90÷9＝10（3年の計算でできる）<br>②「30円のガムなら？ 式は？」<br>　→ 90÷30。わる数が2けたは初めて<br>　→「9÷3と同じになりそう」を吹き出しで残す"],
+      ["考える（25分）", "③「10円玉で考えると、90円は何こ？ 30円は？」<br>　→ 9こと3こ。9÷3＝3<br>④「3で本当に正しい？ どうやって確かめる？」<br>　→ 3×30＝90（たしかめの式を黄色で囲む）<br>・手が止まる子には、10円玉の図をかかせる"],
+      ["まとめる（10分）", "⑤ 2番を自分で解く。「⑩が何こ？」<br>　→ 15こ。15÷3＝5<br>⑥「今日分かったことを、自分の言葉で」<br>　→ 子どもの言葉をつないで、まとめにする<br>・めあてと、まとめがつながっているかを見る"]
+    ]
+  });
+
+  add({
+    key: "sansu-kurabe", subject: "算数", name: "算数　考えをならべてくらべる",
+    note: "まん中に、子どもの考えを2つか3つならべます。同じところに線を引いて、右でまとめます。面積や、計算のくふうの時間に。",
+    head: "板書計画　　4年　算数　「面積」　本時 6／10　　ねらい：L字の形の面積を、長方形に分けたり、おぎなったりして求める。",
+    split: 3,
+    items: [
+      { k: "bango", z: 0, r: 0, w: 8.5, h: 8.5, t: "1", keep: true },
+      { k: "moji", z: 0, r: 0, x: 10, rows: 2, t: "右の形の面積は<br>何cm²ですか。", hint: "今日の問題" },
+      { k: "shiryo", z: 0, r: 2, x: 8, w: 52, h: 26, t: "（L字の形の図）<br>たて6cm、よこ8cm<br>かけた所 3cm×4cm", hint: "図（かくか、紙を貼る）" },
+      { k: "meate", z: 0, y: 51, h: 19, t: "長方形でない形の面積の<br>求め方を考えよう。", hint: "めあて" },
+      { k: "midashi", z: 1, r: 0, w: 40, t: "分ける（○○さん）", hint: "考え①の名前" },
+      { k: "moji", z: 1, r: 1, rows: 3, t: "たてに切って2つの長方形<br>6×4＝24　3×4＝12<br>24＋12＝36", hint: "考え①（図、式）" },
+      { k: "midashi", z: 1, r: 5, w: 40, t: "ひく（△△さん）", hint: "考え②の名前" },
+      { k: "moji", z: 1, r: 6, rows: 3, t: "大きい長方形からひく<br>6×8＝48　3×4＝12<br>48−12＝36", hint: "考え②（図、式）" },
+      { k: "kiiro", z: 2, r: 0, rows: 2, t: "どちらも<br>長方形にして考えている", hint: "考えの同じところ（黄色）" },
+      { k: "bango", z: 2, r: 3, w: 8.5, h: 8.5, t: "2", keep: true },
+      { k: "moji", z: 2, r: 3, x: 10, t: "コの字の形でもできる？", hint: "たしかめの問題" },
+      { k: "matome", z: 2, r: 5, h: 27, t: "長方形でない形も、<br>長方形に分けたり、<br>ひいたりすれば求められる。", hint: "まとめ" },
+      { k: "arrow", x1: 170, y1: 22, x2: 187, y2: 12, color: "#ffe066" },
+      { k: "arrow", x1: 170, y1: 60, x2: 187, y2: 16, color: "#ffe066" }
+    ],
+    notes: [
+      ["はじめ（8分）", "①「この形、今までの形とどこがちがう？」<br>　→ 長方形じゃない。へこんでいる<br>②「公式はそのまま使える？」<br>　→ 使えない。でも長方形にすればできそう"],
+      ["考える（27分）", "③ 自分の考えを図と式でノートに（7分）<br>④「○○さんの式の 6×4 は、図のどこ？」<br>　→ 式と図を線でつながせる<br>⑤「2つの考えの同じところは？」<br>　→ どちらも長方形にしている（黄色で書く）"],
+      ["まとめる（10分）", "⑥ 2番：コの字の形。「どの考えが使いやすい？」<br>　→ ひく考えが早い、分けてもできる<br>⑦ まとめを自分の言葉で書く"]
+    ]
+  });
+
+  // ======================= 理科 =======================
+  add({
+    key: "rika-3", subject: "理科", name: "理科　3分割（問題と予想、実験、考察と結論）",
+    note: "左に問題と予想（人数も）、まん中に実験の方法と結果、右に考察と結論。4年は、予想に理由を書く場所をとります。",
+    head: "板書計画　　4年　理科　「とじこめた空気と水」　本時 2／7　　ねらい：とじこめた空気をおしたときの、体積と手ごたえの変わり方を調べる。",
+    split: 3,
+    items: [
+      { k: "meate", z: 0, r: 0, h: 19, t: "とじこめた空気をおすと、<br>体積はどうなるだろうか。", hint: "問題", o: { bandLabel: "問題" } },
+      { k: "midashi", z: 0, y: 25, w: 30, t: "予想", keep: true },
+      { k: "moji", z: 0, y: 33, rows: 2, t: "ア 小さくなる　　18人<br>イ 変わらない　　 9人", hint: "予想と人数" },
+      { k: "fuki", z: 0, y: 50, x: 2, w: 72, h: 17, t: "理由：空気でっぽうの玉をおしたとき、少しちぢんだ感じがしたから", hint: "予想の理由（前に習ったこと、生活の中のこと）" },
+      { k: "midashi", z: 1, r: 0, w: 40, t: "実験の方法", keep: true },
+      { k: "shiryo", z: 1, r: 1, x: 2, w: 40, h: 24, t: "（ちゅうしゃ器の図）<br>空気を入れて、<br>先をゴムの板におしつける", hint: "器具の図（かくか、貼る）" },
+      { k: "moji", z: 1, r: 1, x: 45, w: 42, rows: 3, o: { size: 12 }, t: "①目もりを読む<br>②ピストンをおす<br>③手をはなす", hint: "手順" },
+      { k: "midashi", z: 1, y: 35.5, w: 30, t: "結果", keep: true },
+      { k: "waku", z: 1, y: 43.5, w: 86, h: 31, o: { size: 12, lineHeight: 1.5 }, t: "おす前　　　20の目もり<br>おしたとき　12の目もり（手ごたえ大）<br>はなしたとき　20にもどった", hint: "結果（表、目もり、見えたこと）" },
+      { k: "midashi", z: 2, r: 0, w: 30, t: "考察", keep: true },
+      { k: "moji", z: 2, r: 1, rows: 3, t: "目もりがへったので、<br>空気はおされると<br>体積が小さくなるといえる。", hint: "考察（結果から言えること）" },
+      { k: "matome", z: 2, r: 5, h: 27, t: "とじこめた空気をおすと、<br>体積は小さくなり、<br>おし返す力は大きくなる。", hint: "結論（問題への答え）", o: { bandLabel: "結論" } }
+    ],
+    notes: [
+      ["問題と予想（12分）", "①「空気でっぽうの玉は、どうしてとんだのかな」<br>　→ 空気がおされて、ちぢんだ？<br>②「予想に手をあげよう。理由は？」<br>　→ 理由を1つ、吹き出しで残す（4年は根拠のある予想）"],
+      ["実験と結果（20分）", "③ 方法をたしかめる。「目もりはどこを読む？」<br>④ 班で実験。結果は目もりの数で書く<br>・おしすぎない。先をしっかりおさえる"],
+      ["考察と結論（13分）", "⑤「結果から、どんなことがいえる？」<br>　→「〜ので、〜といえる」の形で書かせる<br>⑥「はじめの問題に答えよう」<br>　→ 予想とくらべて、結論を書く"]
+    ]
+  });
+
+  add({
+    key: "rika-wb", subject: "理科", name: "理科　班のホワイトボードを6枚貼る",
+    note: "各班の結果や考えを書いたホワイトボードを、まん中に6枚ならべて貼ります。同じところに印をつけて、右で結論にまとめます。",
+    head: "板書計画　　4年　理科　「物の温度と体積」　本時 3／7　　ねらい：空気をあたためたり冷やしたりしたときの、体積の変わり方を調べる。",
+    items: [
+      { k: "meate", x: 11, r: 0, w: 66, h: 19, t: "空気は、温度によって<br>体積が変わるのだろうか。", hint: "問題", o: { bandLabel: "問題", size: 14 } },
+      { k: "midashi", x: 11, y: 26, w: 30, t: "予想", keep: true },
+      { k: "moji", x: 11, y: 33.5, w: 66, rows: 2, o: { size: 14 }, t: "大きくなる　20人<br>変わらない　 7人", hint: "予想と人数" },
+      { k: "fuki", x: 12, y: 51, w: 64, h: 22, o: { size: 12 }, t: "理由：へこんだピンポン玉をお湯に入れると、元にもどったから", hint: "予想の理由" },
+      { k: "line", x1: 80, y1: 3, x2: 80, y2: 75, color: "#86aa9c", width: 0.3, dash: "dash", keep: true },
+      { k: "midashi", x: 83, r: 0, w: 60, t: "各班の結果", keep: true },
+      { k: "wb", x: 83, y: 12, w: 36, h: 29, t: "1班<br>湯：まくがふくらんだ<br>氷水：まくがへこんだ", hint: "1班" },
+      { k: "wb", x: 121, y: 12, w: 36, h: 29, t: "2班<br>湯：ふくらんだ<br>氷水：下がった", hint: "2班" },
+      { k: "wb", x: 159, y: 12, w: 36, h: 29, t: "3班<br>湯：まくが高くなった<br>氷水：中に入った", hint: "3班" },
+      { k: "wb", x: 83, y: 44, w: 36, h: 29, t: "4班<br>湯：ふくらんだ<br>手であたためても<br>少しふくらんだ", hint: "4班" },
+      { k: "wb", x: 121, y: 44, w: 36, h: 29, t: "5班<br>湯：ふくらんだ<br>氷水：へこんだ", hint: "5班" },
+      { k: "wb", x: 159, y: 44, w: 36, h: 29, t: "6班<br>湯：ふくらんだ<br>氷水：へこんだ<br>元の温度でもどった", hint: "6班" },
+      { k: "line", x1: 198, y1: 3, x2: 198, y2: 75, color: "#86aa9c", width: 0.3, dash: "dash", keep: true },
+      { k: "midashi", x: 201, r: 0, w: 30, t: "考察", keep: true },
+      { k: "kiiro", x: 201, r: 1, w: 72, rows: 2, o: { size: 14 }, t: "どの班も、湯でふくらみ、<br>氷水でへこんだ", hint: "どの班にも同じところ（黄色）" },
+      { k: "matome", x: 201, r: 4, w: 72, h: 30, o: { size: 14, bandLabel: "結論" }, t: "空気は、あたためると<br>体積が大きくなり、<br>冷やすと小さくなる。", hint: "結論（問題への答え）" }
+    ],
+    notes: [
+      ["問題と予想（10分）", "①「へこんだピンポン玉が、お湯でもどったのはなぜ？」<br>②「予想と理由をノートに」<br>　→ 人数を書く。理由を1つ吹き出しに"],
+      ["実験（22分）", "③ 班で実験（試験管の口にせっけんのまく）<br>④ ホワイトボードに「見えたことだけを書こう」<br>⑤ 書けた班から黒板に貼る（班の番号の順）<br>・湯は60度くらい。やけどに注意"],
+      ["考察と結論（13分）", "⑥「6枚をくらべて、同じところは？」<br>　→ 同じ言葉に黄色で線を引く<br>⑦「ちがう結果の班は、どうしてだろう」<br>⑧ 結論を自分の言葉で書く"]
+    ]
+  });
+})();
+
+;
+/* マス目プリントメーカー：板書計画の型のデータ（国語。縦書き）
+ * c は右から何列めか（0〜34）。1列は 7.6mm。top と len は、黒板の上はしからの mm。1列に入る字は、16pt で12字、13pt で15字まで。
+ * 記入例の話と文は、どれも自作（教科書の文を写さない）。物語は、転校生のユイと、となりの席のソウタの話。説明文は「町の橋のくふう」。
+ */
+(function () {
+  "use strict";
+  var add = window.App.addKata;
+  var S13 = { size: 13 }, S12 = { size: 12 };
+  // 右はしの決まった置き方：日付、題名と作者、めあて
+  function head(title, author, meate, meateCols, authorHint) {
+    return [
+      { k: "moji", c: 0, cols: 1, top: 3, len: 40, t: "○月○日（○）", keep: true, o: { size: 9, lineHeight: 1.2 } },
+      { k: "moji", c: 1, cols: 1, top: 4, len: author ? 44 : 70, t: title, hint: "題名" },
+      { k: "moji", c: 2, cols: 1, top: 50, len: 26, t: author, hint: authorHint || "作者", o: S12 },
+      { k: "meate", c: 3.2, cols: meateCols || 3, top: 8, len: 66, t: meate, hint: "めあて" }
+    ];
+  }
+
+  function v(k, c, cols, top, len, t, hint, o, more) { return Object.assign({ k: k, c: c, cols: cols, top: top, len: len, t: t, hint: hint, o: o }, more || {}); }
+  function keep(k, c, cols, top, len, t, o) { return { k: k, c: c, cols: cols, top: top, len: len, t: t, keep: true, o: o }; }
+  var NOTE_K = ["はじめ（8分）", "読み深める（27分）", "まとめる（10分）"];
+
+  add({
+    key: "kokugo-bamen", subject: "国語", name: "国語　場面を右から順にならべる（物語）",
+    note: "右から場面一、二、三。上の段に行動や会話、下の段にそのときの気持ち。気持ちの移り変わりを追う時間に。",
+    head: "板書計画　　4年　国語　物語文「となりの席」（自作の話）　本時 4／8　　ねらい：行動や会話から、ソウタの気持ちの変化を読む。",
+    dir: "v",
+    items: head("となりの席", "（作者）", "ソウタの気持ちは、<br>どこでかわったのだろう。").concat([
+      { k: "arrow", x1: 212, y1: 39.5, x2: 66, y2: 39.5, color: "#ffe066", width: 0.4, keep: true },
+      keep("midashi", 7, 1, 4, 32, "行動・会話", S12), keep("midashi", 7, 1, 42, 30, "気持ち", S12),
+      keep("bango", 8.4, 1, 4, 8.5, "一"),
+      v("moji", 9.7, 3, 3, 35, "目を合わせない<br>本を読んでいる", "場面一の行動や会話", S13),
+      v("kiiro", 9.7, 3, 41, 35, "話し方が<br>分からない", "そのときの気持ち", S13),
+      keep("bango", 14.4, 1, 4, 8.5, "二"),
+      v("moji", 15.7, 3, 3, 35, "消しゴムをかす<br>「つかえば」", "場面二の行動や会話", S13),
+      v("kiiro", 15.7, 3, 41, 35, "こまった顔を<br>ほうって<br>おけない", "そのときの気持ち", S13),
+      keep("bango", 20.4, 1, 4, 8.5, "三"),
+      v("moji", 21.7, 3, 3, 35, "自分からさそう<br>「いっしょに<br>行こう」", "場面三の行動や会話", S13),
+      v("kiiro", 21.7, 3, 41, 35, "もっと話したい<br>友だちに<br>なりたい", "そのときの気持ち", S13),
+      v("matome", 30.2, 3.7, 8, 66, "ソウタは、ユイのこまった顔を見てから、自分から近づくようになった。", "まとめ", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「ソウタは、はじめとおわりで同じ人かな」<br>　→ ちがう。さいごは自分からさそっている<br>②「どこでかわったのか、場面ごとに見ていこう」"],
+      [NOTE_K[1], "③「場面一のソウタの行動は？ 気持ちは？」<br>　→ 行動は白、気持ちは黄色で書き分ける<br>④「消しゴムをかすとき、声が小さいのはなぜ？」<br>　→ はずかしい。でも、ほうっておけない<br>・本文のどの言葉から分かるかを必ず聞く"],
+      [NOTE_K[2], "⑤「気持ちが大きくかわったのは、どの場面？」<br>　→ 場面二。まん中の矢印を指でたどらせる<br>⑥ まとめを自分の言葉で書く"]
+    ]
+  });
+
+  add({
+    key: "kokugo-taihi", subject: "国語", name: "国語　二つをくらべる（対比）",
+    note: "まん中を上下2段に分けて、はじめとおわり、二人の人物などを同じ高さでくらべます。左はしに、くらべて分かったこと。",
+    head: "板書計画　　4年　国語　物語文「となりの席」（自作の話）　本時 6／8　　ねらい：はじめとおわりの場面をくらべて、二人の関係の変化をとらえる。",
+    dir: "v",
+    items: head("となりの席", "（作者）", "はじめの場面とおわりの<br>場面をくらべよう。").concat([
+      { k: "line", x1: 90, y1: 39.5, x2: 225, y2: 39.5, color: "#ffffff", width: 0.4, keep: true },
+      keep("kakomi", 6.8, 1.2, 5, 30, "はじめ", { size: 14 }), keep("kakomi", 6.8, 1.2, 43, 30, "おわり", { size: 14 }),
+      v("midashi", 9, 1, 4, 22, "会話", "観点①", S12),
+      v("moji", 10.2, 2, 3, 35, "「……」<br>返事をしない", "はじめ：観点①", S13),
+      v("moji", 10.2, 2, 41, 35, "「いっしょに<br>行こう」", "おわり：観点①", S13),
+      v("midashi", 14, 1, 4, 22, "きょり", "観点②", S12),
+      v("moji", 15.2, 2, 3, 35, "つくえをはなす", "はじめ：観点②", S13),
+      v("moji", 15.2, 2, 41, 35, "ならんで歩く", "おわり：観点②", S13),
+      v("midashi", 19, 1, 4, 22, "消しゴム", "観点③", S12),
+      v("moji", 20.2, 2, 3, 35, "だまってかす", "はじめ：観点③", S13),
+      v("moji", 20.2, 2, 41, 35, "二人で使う", "おわり：観点③", S13),
+      { k: "arrow", x1: 173, y1: 30, x2: 173, y2: 49, color: "#ffe066", only: "example" },
+      { k: "arrow", x1: 135, y1: 30, x2: 135, y2: 49, color: "#ffe066", only: "example" },
+      { k: "arrow", x1: 97, y1: 30, x2: 97, y2: 49, color: "#ffe066", only: "example" },
+      v("fuki", 25, 2.6, 8, 60, "席は同じなのに、<br>きょりがちがう", "子どもの気づき", { size: 12 }),
+      v("matome", 30.2, 3.7, 8, 66, "同じ教室でも、二人の間がちぢまったことが、会話の数やきょりで分かる。", "くらべて分かったこと", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「はじめとおわりで、にているところは？」<br>　→ 同じ教室、同じ席、消しゴムが出てくる<br>②「では、ちがうところをくらべよう」"],
+      [NOTE_K[1], "③ 観点（会話、きょり、消しゴム）は子どもから出させる<br>④「上と下で、いちばんかわったのは？」<br>　→ 会話。だまっていたのに、自分からさそった<br>・上下の同じ高さに書いて、矢印でつなぐ"],
+      [NOTE_K[2], "⑤「くらべると、何が分かった？」<br>⑥ まとめを書く。「〜で分かる」の形で"]
+    ]
+  });
+
+  add({
+    key: "kokugo-hyo", subject: "国語", name: "国語　表にまとめる",
+    note: "右に場面や段落、上に観点を書いた大きな表。表の左に、気づいたことを書きます。",
+    head: "板書計画　　4年　国語　物語文「となりの席」（自作の話）　本時 5／8　　ねらい：場面ごとの行動、会話、持ち物を表に整理して、かわったところを見つける。",
+    dir: "v",
+    items: head("となりの席", "（作者）", "表にして、かわった<br>ところを見つけよう。").concat([
+      { k: "line", x1: 95, y1: 6, x2: 95, y2: 74, keep: true }, { k: "line", x1: 222, y1: 6, x2: 222, y2: 74, keep: true },
+      { k: "line", x1: 95, y1: 6, x2: 222, y2: 6, keep: true }, { k: "line", x1: 95, y1: 74, x2: 222, y2: 74, keep: true },
+      { k: "line", x1: 95, y1: 28, x2: 222, y2: 28, keep: true }, { k: "line", x1: 95, y1: 51, x2: 222, y2: 51, keep: true },
+      { k: "line", x1: 206, y1: 6, x2: 206, y2: 74, keep: true }, { k: "line", x1: 153, y1: 6, x2: 153, y2: 74, keep: true },
+      keep("midashi", 7.7, 1, 8, 19, "行動", S12), keep("midashi", 7.7, 1, 30, 19, "会話", S12), keep("midashi", 7.7, 1, 53, 19, "持ち物", S12),
+      keep("kiiro", 9.6, 1, 7, 20, "場面一", { size: 12 }),
+      v("moji", 10.8, 3, 7, 20, "本を読む", "行動", S12), v("moji", 10.8, 3, 29.5, 20, "「……」", "会話", { size: 11 }), v("moji", 10.8, 3, 52.5, 20, "消しゴム", "持ち物", S12),
+      keep("kiiro", 17, 1, 7, 20, "場面四", { size: 12 }),
+      v("moji", 18.2, 3, 7, 20, "さそう", "行動", S12), v("moji", 18.2, 3, 29.5, 20, "「行こう」", "会話", { size: 11 }), v("moji", 18.2, 3, 52.5, 20, "消しゴム", "持ち物", S12),
+      v("fuki", 25.2, 2.6, 8, 60, "消しゴムが、<br>どちらにも出てくる", "表を見て気づいたこと", { size: 12 }),
+      v("matome", 30.2, 3.7, 8, 66, "消しゴムが、二人をつなぐ物になっている。", "まとめ", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「場面一と場面四を、表でくらべます」<br>②「何をくらべる？」→ 行動、会話、持ち物"],
+      [NOTE_K[1], "③ 表のますを、子どもの言葉でうめる<br>④「表をよこに見ると、何に気づく？」<br>　→ 会話がふえた。消しゴムはどちらにもある<br>・同じ言葉を黄色で囲む"],
+      [NOTE_K[2], "⑤「消しゴムは、この話で何の役目？」<br>⑥ まとめを書く"]
+    ]
+  });
+
+  add({
+    key: "kokugo-jinbutsu", subject: "国語", name: "国語　人物像を広げる（まん中に人物）",
+    note: "まん中に人物の名前を置いて、まわりに「どんな人か」を書き広げます。いちばん多い考えを太く囲みます。",
+    head: "板書計画　　4年　国語　物語文「となりの席」（自作の話）　本時 3／8　　ねらい：行動や会話をもとに、ユイの人物像を考える。",
+    dir: "v",
+    items: head("となりの席", "（作者）", "ユイは、どんな人だろう。", 2).concat([
+      v("waku", 6.3, 1.4, 8, 64, "ユイは□□な人。なぜなら〜", "○○は□□な人。なぜなら〜", { size: 13 }),
+      v("kakomi", 17.2, 1.6, 27, 24, "ユイ", "人物", { size: 18 }),
+      v("fuki", 9.5, 2.4, 5, 30, "がまん強い<br>（七人）", "考え", S12), v("fuki", 9.5, 2.4, 42, 32, "お礼をきちんと言う（五人）", "考え", S12),
+      v("fuki", 13.2, 1.5, 3, 22, "やさしい", "考え", S12), v("fuki", 13.2, 1.5, 50, 26, "しんが強い", "考え", S12),
+      v("fuki", 21, 1.5, 3, 31, "はずかしがり", "考え", S12), v("fuki", 21, 1.5, 50, 26, "友だち思い", "考え", S12),
+      v("fuki", 24.2, 2.4, 5, 32, "本当は話したい（九人）", "考え", { size: 12, borderColor: "#ffe066" }), v("fuki", 24.2, 2.4, 42, 32, "えんりょする<br>（六人）", "考え", S12),
+      v("matome", 30.2, 3.7, 8, 66, "ユイは、えんりょしながらも、相手を大切にする人。", "まとめ", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「ユイを一言で言うと？」→ ノートに1つ書く<br>② 書き出しの型「ユイは□□な人。なぜなら〜」をしめす"],
+      [NOTE_K[1], "③「なぜなら、の後を本文の言葉で言おう」<br>　→「『ありがとう』を小さな声で言ったから」<br>④ 人数を聞いて書く。多い考えを黄色で囲む<br>・にている考えは近くに書く"],
+      [NOTE_K[2], "⑤「みんなの考えをつなぐと、どんな人？」<br>⑥ まとめを書く"]
+    ]
+  });
+
+  add({
+    key: "kokugo-kankei", subject: "国語", name: "国語　人物の関係を図にする",
+    note: "人物を2人はなして置き、思いの向きを矢印で表します。矢印のそばに、本文の言葉と気持ちを書きます。",
+    head: "板書計画　　4年　国語　物語文「となりの席」（自作の話）　本時 7／8　　ねらい：二人の思いの向きの変化を、矢印で表して読む。",
+    dir: "v",
+    items: head("となりの席", "（作者）", "二人の思いの向きを、<br>矢印で表そう。").concat([
+      v("kakomi", 8.2, 1.6, 6, 22, "ユイ", "人物", { size: 18 }), v("kakomi", 8.2, 1.6, 50, 22, "ソウタ", "人物", { size: 16 }),
+      keep("midashi", 6.9, 1, 6, 18, "はじめ", S12),
+      { k: "arrow", x1: 204.5, y1: 30, x2: 204.5, y2: 48, color: "#ffffff", keep: true },
+      v("moji", 9.8, 1.2, 27, 25, "話したい", "ユイからソウタへの思い", S12),
+      v("fuki", 12.6, 2.6, 14, 50, "消しゴムの場面で、<br>ソウタがかわった", "かわったきっかけ", { size: 12 }),
+      { k: "arrow", x1: 186, y1: 70, x2: 140, y2: 70, color: "#ffe066", keep: true },
+      v("kakomi", 18.4, 1.6, 6, 22, "ユイ", "人物", { size: 18 }), v("kakomi", 18.4, 1.6, 50, 22, "ソウタ", "人物", { size: 16 }),
+      keep("midashi", 17.2, 1, 6, 18, "おわり", S12),
+      { k: "arrow", x1: 128, y1: 30, x2: 128, y2: 48, color: "#ffffff", keep: true }, { k: "arrow", x1: 122, y1: 48, x2: 122, y2: 30, color: "#ffe066", keep: true },
+      v("moji", 20.8, 1.2, 26, 27, "ありがとう", "ユイの思い", S12), v("kiiro", 22.2, 2, 28, 22, "友だちに<br>なりたい", "ソウタの思い", S12),
+      v("matome", 30.2, 3.7, 8, 66, "矢印が一本から二本になり、二人の思いが通い合った。", "まとめ", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「はじめ、思いはだれからだれへ向いている？」<br>　→ ユイからソウタへだけ"],
+      [NOTE_K[1], "②「ソウタからの矢印は、いつ出てくる？」<br>　→ 消しゴムの場面のあと<br>③「矢印に言葉をつけるなら？」→ 本文の言葉でつける<br>・矢印の色で、だれの思いかを分ける"],
+      [NOTE_K[2], "④「はじめとおわりの図をくらべると？」<br>⑤ まとめを書く"]
+    ]
+  });
+
+  add({
+    key: "kokugo-danraku", subject: "国語", name: "国語　段落のまとまりを見せる（説明文）",
+    note: "上に「はじめ、中、終わり」の帯。その下に段落番号を右からならべて、一言の要点を書きます。左に筆者の考え。",
+    head: "板書計画　　4年　国語　説明文「町の橋のくふう」（自作の文）　本時 2／7　　ねらい：段落を「はじめ、中、終わり」に分けて、筆者の考えを見つける。",
+    dir: "v",
+    items: head("町の橋のくふう", "（筆者）", "筆者の考えを、<br>段落から見つけよう。", 3, "筆者").concat([
+      v("kakomi", 7, 2.2, 4, 12, "はじめ", "", { size: 11, dir: "h" }, { keep: true }), v("kakomi", 10.5, 12, 4, 12, "中", "", { size: 11, dir: "h" }, { keep: true }), v("kakomi", 23.8, 3.8, 4, 12, "終わり", "", { size: 11, dir: "h" }, { keep: true }),
+      keep("bango", 7.3, 1, 19, 8, "①", { size: 13 }), v("moji", 8.4, 1, 19, 55, "問い　橋のくふうとは", "①の要点", S13),
+      keep("bango", 10.8, 1, 19, 8, "②", { size: 13 }), v("moji", 11.9, 2, 19, 55, "例一　川の橋<br>水の流れに合わせる", "②の要点", S13),
+      keep("bango", 15, 1, 19, 8, "③", { size: 13 }), v("moji", 16.1, 2, 19, 55, "例二　歩道橋<br>歩く人に合わせる", "③の要点", S13),
+      keep("bango", 19.2, 1, 19, 8, "④", { size: 13 }), v("moji", 20.3, 2, 19, 55, "例三　つり橋<br>場所に合わせる", "④の要点", S13),
+      keep("bango", 24.2, 1, 19, 8, "⑤", { size: 13 }), v("kiiro", 25.3, 2, 19, 55, "答え　使う人や場所に合わせて作る", "⑤の要点（答え）", S13),
+      v("matome", 30.2, 3.7, 8, 66, "筆者は、三つの例で、橋は使う人や場所に合わせて作られると伝えている。", "筆者の考え", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「この文章は、いくつの段落？」→ 5つ<br>②「問いの文はどこ？」→ ①段落"],
+      [NOTE_K[1], "③「②③④は、何が書いてある？」→ 橋の例<br>④「3つの例に同じ言葉は？」→「〜に合わせる」<br>　→ 同じ言葉に黄色で線を引く<br>・要点は一言で。長く書かない"],
+      [NOTE_K[2], "⑤「答えはどの段落？」→ ⑤<br>⑥ 筆者の考えを一文で書く"]
+    ]
+  });
+
+  add({
+    key: "kokugo-honbun", subject: "国語", name: "国語　本文を貼って書きこむ",
+    note: "拡大した本文（または手本の文）をまん中に貼り、言葉に線を引いて、わきに名前の札をつけます。書くことの推敲にも。",
+    head: "板書計画　　4年　国語　書くこと「ようすが伝わる文」（自作の手本）　本時 3／6　　ねらい：手本の文から、ようすが伝わる言葉を見つけて、自分の文に生かす。",
+    dir: "v",
+    items: head("ようすが伝わる文", "", "ようすが伝わる言葉を<br>さがそう。").concat([
+      v("shiryo", 8, 10, 5, 68, "（拡大した手本の文を貼る）<br>朝、まどをそっとあけると、つめたい風がすうっと入ってきた。<br>遠くで、カンカンとふみきりの音がした。", "拡大した本文を貼る", { size: 12, align: "start" }),
+      v("tanzaku", 18.6, 1.2, 8, 26, "見たこと", "名前の札", { size: 12 }), v("tanzaku", 20.2, 1.2, 8, 26, "聞いたこと", "名前の札", { size: 12 }), v("tanzaku", 21.8, 1.2, 8, 26, "思ったこと", "名前の札", { size: 12 }),
+      v("moji", 18.6, 1.2, 38, 36, "「そっと」", "見つけた言葉", S13), v("moji", 20.2, 1.2, 38, 36, "「カンカン」", "見つけた言葉", S13), v("moji", 21.8, 1.2, 38, 36, "「つめたい」", "見つけた言葉", S13),
+      v("fuki", 24.2, 2.6, 8, 60, "「そっと」で、<br>やさしさが分かる", "子どもの気づき", { size: 12 }),
+      v("matome", 30.2, 3.7, 8, 66, "見たこと、聞いたこと、思ったことを入れると、ようすが伝わる。", "まとめ", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "① 手本を音読。「ようすがうかぶ言葉は？」<br>　→ 線を引かせる"],
+      [NOTE_K[1], "②「その言葉は、見たこと？ 聞いたこと？」<br>　→ 名前の札の下に分けて書く<br>③「『そっと』がないと、どうなる？」<br>　→ くらべて読む"],
+      [NOTE_K[2], "④ まとめ<br>⑤ 自分の文に1つ足す（5分）"]
+    ]
+  });
+
+  add({
+    key: "kokugo-susumekata", subject: "国語", name: "国語　学習の進め方をしめす（書く、話す聞く）",
+    note: "まん中に進め方①②③と気をつけること。左に、子どもから出た例や、話し方の型。単元の1時間目や、話し合いの時間に。",
+    head: "板書計画　　4年　国語　話すこと聞くこと「おすすめの本を決めよう」　本時 2／5　　ねらい：理由をくらべながら話し合い、はんのおすすめの本を一さつ決める。",
+    dir: "v",
+    items: head("おすすめの本を決めよう", "", "話し合って、おすすめの<br>本を一さつ決めよう。").concat([
+      keep("midashi", 7.3, 1, 4, 30, "進め方", S12),
+      v("moji", 8.4, 1, 5, 68, "①一人ずつ、本と理由を言う", "進め方①", { size: 14 }), v("moji", 9.6, 1, 5, 68, "②理由をくらべる", "進め方②", { size: 14 }),
+      v("moji", 11, 1, 5, 68, "③一さつに決める", "進め方③", { size: 14 }), v("moji", 12.4, 1, 5, 68, "④決めた理由を書く", "進め方④", { size: 14 }),
+      keep("midashi", 14.6, 1, 4, 40, "話し方の型", S12),
+      v("kakomi", 15.8, 2.4, 5, 68, "わたしは〜がいいと思います。<br>なぜなら、〜だからです。", "話し方の型", { size: 13, align: "start" }),
+      keep("midashi", 19.4, 1, 4, 40, "気をつけること", S12),
+      v("fuki", 20.6, 2.4, 5, 32, "理由を先に言う", "子どもから出た言葉", S12), v("fuki", 20.6, 2.4, 41, 34, "ちがう考えも<br>一度聞く", "子どもから出た言葉", S12),
+      v("fuki", 24, 2.4, 5, 32, "決め方も<br>話し合う", "子どもから出た言葉", S12),
+      v("matome", 30.2, 3.7, 8, 66, "理由をくらべると、みんながなっとくして決めやすい。", "まとめ、ふり返り", { size: 14 })
+    ]),
+    notes: [
+      [NOTE_K[0], "①「一さつに決めるとき、こまることは？」<br>　→ 意見が分かれる。声の大きい人で決まる<br>② 進め方をたしかめる"],
+      [NOTE_K[1], "③ はんで話し合い（15分）。タイマーを貼る<br>④ とちゅうで止めて「うまくいっているはんのやり方は？」<br>　→ 出た言葉を吹き出しで残す"],
+      [NOTE_K[2], "⑤「決めやすかったのは、どんなとき？」<br>⑥ ふり返りを書く"]
+    ]
+  });
+
+  // ======================= 学級会（縦書き） =======================
+  add({
+    key: "gakkyu-kihon", subject: "学級会", name: "学級会　議題、柱、決まったこと",
+    note: "右はしに議題、提案理由、めあて、決まっていること。まん中に柱①②と意見の短冊。左に決まったこと。黒板記録の子が書きます。",
+    head: "板書計画　　4年　学級活動　第5回学級会　　ねらい：全員が楽しめるかを考えて、お楽しみ会の内容を決める。",
+    dir: "v",
+    items: [
+      v("moji", 0, 1, 3, 50, "第五回　学級会", "第○回　学級会", { size: 12 }),
+      keep("tanzaku", 1.2, 1.2, 4, 14, "議題", { size: 11 }), v("moji", 1.2, 1.2, 20, 56, "お楽しみ会で何をするか", "議題", { size: 13 }),
+      keep("tanzaku", 2.6, 1.2, 4, 22, "提案理由", { size: 11 }), v("moji", 3.9, 1.6, 4, 72, "新しい友だちが入ったので、みんなで遊んで、もっとなかよくなりたいから。", "提案理由", { size: 11 }),
+      v("meate", 6.4, 2.7, 8, 66, "全員が楽しめるかを<br>考えて決めよう。", "話し合いのめあて", { size: 13 }),
+      keep("tanzaku", 9.5, 1.2, 4, 36, "決まっていること", { size: 11 }), v("moji", 10.8, 1.6, 4, 72, "十月十日の五時間目　教室で<br>ゲームは二つで三十分", "日時、場所、時間など", { size: 11 }),
+      { k: "line", x1: 176.5, y1: 3, x2: 176.5, y2: 75, color: "#ffffff", width: 0.4, keep: true },
+      keep("kakomi", 13.1, 1.2, 4, 40, "柱①　何をするか", { size: 11 }),
+      v("moji", 14.4, 0.9, 4, 72, "出し合う → くらべ合う → まとめる", "", { size: 10, color: "#ffe066" }, { keep: true }),
+      v("tanzaku", 15.4, 1.3, 4, 38, "フルーツバスケット", "意見の短冊", { size: 10 }), v("tanzaku", 16.9, 1.3, 4, 38, "クイズ大会", "意見の短冊", { size: 10 }),
+      v("tanzaku", 18.4, 1.3, 4, 38, "いす取りゲーム", "意見の短冊", { size: 10 }), v("tanzaku", 19.9, 1.3, 4, 38, "じゃんけん列車", "意見の短冊", { size: 10 }),
+      v("moji", 15.4, 1.3, 43, 33.5, "◎全員できる７人", "賛成や心配", { size: 10 }), v("moji", 16.9, 1.3, 43, 33.5, "◎考えて楽しい９人", "賛成や心配", { size: 10 }),
+      v("moji", 18.4, 1.3, 44, 32, "△負けるとひま", "賛成や心配", { size: 11 }), v("moji", 19.9, 1.3, 44, 32, "△教室はせまい", "賛成や心配", { size: 11 }),
+      keep("kakomi", 21.6, 1.3, 4, 46, "柱②　楽しめるくふう", { size: 11 }),
+      v("moji", 23.1, 1.7, 4, 72, "・負けた人も問題を出す役になる<br>・はんで答える", "くふうの意見", { size: 12 }),
+      { k: "line", x1: 81.5, y1: 3, x2: 81.5, y2: 75, color: "#ffffff", width: 0.4, keep: true },
+      keep("tanzaku", 25.8, 1.2, 4, 30, "決まったこと", { size: 11, color: "#d12a1e" }),
+      v("waku", 27.2, 2.3, 4, 72, "クイズ大会と、ルールをかえたフルーツバスケット", "決まったこと（赤で囲む）", { size: 13, borderColor: "#ff9e94" }),
+      keep("moji", 30.2, 1, 4, 40, "先生の話", { size: 11 }), keep("moji", 32, 1, 4, 40, "ふり返り", { size: 11 })
+    ],
+    notes: [
+      ["はじめ（5分）", "・司会、黒板記録2人、ノート記録。計画委員会で板書の場所を決めておく<br>・議題、提案理由、めあて、決まっていることは、前の日に短冊で用意する"],
+      ["話し合い（30分）", "・出し合う（8分）：短冊に書いて貼る。にた意見は近くに<br>・くらべ合う（15分）：賛成は◎、心配は△。人数は数字で<br>　「○○に賛成です。理由は〜」「〜が心配です。〜にかえたら？」<br>・まとめる（7分）：合わせられる意見がないかを先に聞く<br>・教師は、めあてからそれたときだけ入る"],
+      ["おわり（10分）", "・決まったことを赤で囲む<br>・ふり返り：自分も友だちも楽しめる決め方だったか<br>・先生の話：よかった発言を名前を出してほめる"]
+    ]
+  });
+
+  add({
+    key: "gakkyu-hyo", subject: "学級会", name: "話し合い　二つの案を表でくらべる",
+    note: "案が2つか3つにしぼれたときに。よい点と心配な点を表にして、新しい案へ進みます。教科の話し合いにも使えます。",
+    head: "板書計画　　4年　学級活動　第6回学級会　　ねらい：二つの案のよい点と心配な点をくらべて、みんながなっとくできる案を作る。",
+    dir: "v",
+    items: [
+      v("moji", 0, 1, 3, 50, "第六回　学級会", "第○回　学級会", { size: 12 }),
+      keep("tanzaku", 1.3, 1.1, 4, 14, "議題", { size: 10 }), v("moji", 1.3, 1.1, 19, 58, "雨の日の遊びを決めよう", "議題", { size: 13 }),
+      v("meate", 3.5, 1.8, 8, 66, "よい点と心配な点をくらべて決めよう。", "話し合いのめあて", { size: 13 }),
+      { k: "line", x1: 70, y1: 6, x2: 70, y2: 74, keep: true }, { k: "line", x1: 226, y1: 6, x2: 226, y2: 74, keep: true },
+      { k: "line", x1: 70, y1: 6, x2: 226, y2: 6, keep: true }, { k: "line", x1: 70, y1: 74, x2: 226, y2: 74, keep: true },
+      { k: "line", x1: 70, y1: 22, x2: 226, y2: 22, keep: true }, { k: "line", x1: 70, y1: 48, x2: 226, y2: 48, keep: true },
+      { k: "line", x1: 151, y1: 6, x2: 151, y2: 74, keep: true },
+      keep("midashi", 6.4, 1, 24, 22, "よい点", S12), keep("midashi", 6.4, 1, 50, 22, "心配な点", S12),
+      v("kakomi", 9, 1.4, 7.5, 13, "Ａ", "", { size: 13 }, { keep: true }), v("moji", 11, 1, 7.5, 14, "トランプ", "Ａ案", { size: 9 }),
+      v("moji", 8, 4, 23, 24, "少人数でできる<br>しずかにできる", "よい点", { size: 10 }), v("moji", 8, 4, 49, 24, "入れない人が出る", "心配な点", { size: 10 }),
+      v("kakomi", 19.6, 1.4, 7.5, 13, "Ｂ", "", { size: 13 }, { keep: true }), v("moji", 21.6, 1, 7.5, 14, "しりとり", "Ｂ案", { size: 9 }),
+      v("moji", 18.6, 4, 23, 24, "全員でできる<br>もり上がる", "よい点", { size: 10 }), v("moji", 18.6, 4, 49, 24, "用意がいる<br>時間がかかる", "心配な点", { size: 10 }),
+      keep("tanzaku", 28.6, 1.1, 4, 30, "決まったこと", { size: 11, color: "#d12a1e" }),
+      v("waku", 29.9, 3, 4, 72, "曜日で分ける。月水金はトランプ、火木は全員でしりとり", "新しい案（C案）や、決まったこと", { size: 12, borderColor: "#ff9e94" })
+    ],
+    notes: [
+      ["はじめ（5分）", "・前の時間に出た案を、AとBの2つにしぼっておく<br>・表のわくは、先にかいておく"],
+      ["話し合い（30分）", "・「Aのよい点は？」「Bのよい点は？」を先に聞く（よい点から）<br>・心配な点には「どうすればなくせる？」を必ず返す<br>・「AとBを合わせられない？」→ C案へ"],
+      ["おわり（10分）", "・決まったことを赤で囲む<br>・ふり返り"]
+    ]
+  });
+
+  // ======================= 道徳（縦書き） =======================
+  add({
+    key: "dotoku-bamen", subject: "道徳", name: "道徳　右から場面を追う",
+    note: "右から場面絵と子どもの言葉をならべ、まん中に中心の発問。左はしに「今日考えたこと」。心情を追う読み物の時間に。",
+    head: "板書計画　　4年　道徳　「席をゆずる」（自作の話）　内容項目：親切、思いやり　　ねらい：相手の立場で考えて、進んで親切にしようとする心情を育てる。",
+    dir: "v",
+    items: [
+      keep("moji", 0, 1, 3, 40, "○月○日（○）", { size: 9, lineHeight: 1.2 }),
+      v("moji", 1, 1, 4, 50, "席をゆずる", "教材名"),
+      v("meate", 2.6, 1.4, 8, 66, "親切にするとき、心の中で何が起きているのだろう。", "今日の問い", { size: 13, bandLabel: "問い" }),
+      v("shiryo", 5.6, 3, 5, 26, "（場面絵①）<br>バスの中", "場面絵", { dir: "h", size: 8.5 }), v("moji", 5.6, 3, 34, 42, "立っている<br>おばあさんに<br>気づく", "場面①の出来事", S12),
+      v("shiryo", 10, 3, 5, 26, "（場面絵②）<br>まよう", "場面絵", { dir: "h", size: 8.5 }),
+      v("fuki", 10, 1.4, 34, 42, "ことわられそう", "子どもの言葉", { size: 11 }), v("fuki", 11.6, 1.4, 34, 42, "みんなが見ている", "子どもの言葉", { size: 11 }),
+      v("tanzaku", 14.6, 1.6, 4, 72, "立ち上がったとき、どんなことを考えていただろう。", "中心の発問（赤で囲む）", { size: 13, borderColor: "#d12a1e" }),
+      v("fuki", 16.8, 1.4, 5, 34, "こまっていそう", "子どもの言葉", { size: 11 }), v("fuki", 16.8, 1.4, 42, 34, "家族だったら", "子どもの言葉", { size: 11 }),
+      v("fuki", 18.6, 1.4, 5, 34, "見ぬふりはいや", "子どもの言葉", { size: 11 }), v("fuki", 18.6, 1.4, 42, 34, "ドキドキする", "子どもの言葉", { size: 11 }),
+      v("shiryo", 21, 3, 5, 26, "（場面絵③）<br>お礼の言葉", "場面絵", { dir: "h", size: 8.5 }), v("kiiro", 21, 3, 34, 42, "言ってよかった<br>心があたたかい", "そのときの気持ち", S12),
+      v("matome", 30.2, 3.7, 8, 66, "相手の立場で考えると、一歩が出る。", "今日考えたこと", { size: 14, bandLabel: "今日考えたこと" })
+    ],
+    notes: [
+      ["導入（5分）", "①「親切にしようと思ったのに、できなかったことは？」<br>　→ 経験を2、3人に聞く。責めない"],
+      ["展開（30分）", "② 話を読む。場面絵を右から貼る<br>③「まよっているとき、心の中は？」→ 両方の気持ちを吹き出しに<br>④ 中心の発問「立ち上がったとき、どんなことを考えていた？」<br>　→ 問い返す「はずかしさは、なくなったの？」"],
+      ["終末（10分）", "⑤「今日考えたこと」を書く<br>・教師の説話で価値をおしつけない"]
+    ]
+  });
+})();
+
+;
+/* マス目プリントメーカー：板書計画の型のデータ（社会、総合、音楽、図工、道徳の横書き）
+ * x、y は、黒板の左上からの mm。字の幅の目安：16pt は1字5.6mm、14pt は4.9mm、13pt は4.6mm、12pt は4.2mm。
+ * 記入例は、どれも自作（教科書の文を写さない。曲名や作品名は出さない）。
+ */
+(function () {
+  "use strict";
+  var add = window.App.addKata;
+  function p(k, x, y, w, hh, t, hint, o, more) { return Object.assign({ k: k, x: x, y: y, w: w, h: hh, t: t, hint: hint, o: o }, more || {}); }
+  function keep(k, x, y, w, hh, t, o) { return { k: k, x: x, y: y, w: w, h: hh, t: t, keep: true, o: o }; }
+  var S14 = { size: 14 }, S13 = { size: 13 }, S12 = { size: 12 }, G = "#86aa9c", Y = "#ffe066";
+  function guide(x) { return { k: "line", x1: x, y1: 19, x2: x, y2: 75, color: G, width: 0.3, dash: "dash", keep: true }; }
+
+  // ======================= 社会 =======================
+  add({
+    key: "shakai-kotoba", subject: "社会", name: "社会　資料は電子黒板、黒板は言葉",
+    note: "いちばん上に学習問題を1行。下を、予想、分かったこと、考えとまとめに分けます。資料は貼らず、電子黒板に映した資料の名前だけを札で残します。",
+    head: "板書計画　　4年　社会　「水はどこから」　本時 3／10　　ねらい：水がとどくまでの道すじと、そこで働く人のくふうを調べる。",
+    items: [
+      p("meate", 11, 3, 262, 12, "じゃ口の水は、どこから、どのようにして来るのだろう。", "学習問題（上に1行）", { bandLabel: "学習問題" }),
+      guide(72), guide(200),
+      keep("midashi", 11, 19, 30, 7, "予想"),
+      p("moji", 11, 26, 58, 22, "・川から来る<br>・きれいにする所がある", "予想", S13),
+      p("tanzaku", 11, 56, 56, 16, "電子黒板：<br>水の通り道の図", "電子黒板に映す資料の名前", { size: 11 }),
+      keep("midashi", 76, 19, 50, 7, "分かったこと"),
+      p("moji", 76, 27, 28, 9, "ダム", "①", S14), p("moji", 106, 27, 40, 9, "じょう水場", "②", S14), p("moji", 152, 27, 40, 9, "水道管 → 家", "③", S14),
+      { k: "arrow", x1: 92, y1: 31.5, x2: 105, y2: 31.5, color: "#ffffff", only: "example" }, { k: "arrow", x1: 140, y1: 31.5, x2: 151, y2: 31.5, color: "#ffffff", only: "example" },
+      p("moji", 76, 38, 120, 16, "・じょう水場で、ごみやばいきんを取る<br>・毎日、水を検査する人がいる", "調べて分かったこと（言葉で）", S13),
+      p("kiiro", 76, 58, 120, 16, "24時間、交代で見守っている", "大事な言葉（黄色）", S14),
+      keep("midashi", 204, 19, 30, 7, "考え"),
+      p("fuki", 204, 26, 68, 17, "たくさんの人としせつが<br>つながっている", "子どもの考え", S12),
+      p("matome", 204, 49, 69, 24, "水は、ダム、じょう水場、水道管を通り、安全にしてとどけられる。", "まとめ", { size: 13 })
+    ],
+    notes: [
+      ["つかむ（10分）", "①「けさ使った水は、どこから来たのかな」<br>　→ 予想をノートに。2、3人に聞いて書く<br>・学習問題は単元を通して同じ。上に1行で"],
+      ["調べる（25分）", "② 電子黒板に水の通り道の図を映す<br>③「じょう水場では、何をしている？」<br>　→ 教科書と資料集から言葉で見つける<br>④「だれが、いつ、はたらいている？」→ 24時間を黄色で<br>・資料は映すだけ。黒板には言葉をのこす"],
+      ["まとめる（10分）", "⑤「学習問題に、今日の言葉で答えよう」<br>⑥ まとめを書く。次の時間の問いを1つ聞く"]
+    ]
+  });
+
+  add({
+    key: "shakai-tachiba", subject: "社会", name: "社会　立場で分ける",
+    note: "上に問い。下を、立場ごとの3つのわくに分けます。話し合いの時間や、単元の終わりに。",
+    head: "板書計画　　4年　社会　「自然災害からくらしを守る」　本時 7／10　　ねらい：水害へのそなえを、市や県、地域、家庭の立場から整理する。",
+    items: [
+      p("meate", 11, 3, 262, 12, "水害にそなえて、だれが、何をしているのだろう。", "問い（上に1行）", { bandLabel: "問い" }),
+      p("waku", 11, 25, 84, 33, "・ハザードマップを作る<br>・ていぼうを高くする<br>・ひなん所を開く", "立場①がしていること", { size: 12, borderColor: "#ff9e94" }), keep("kakomi", 11, 17, 30, 7.5, "市や県", { size: 12, fill: "#2f5d50" }),
+      p("waku", 99, 25, 84, 33, "・消防団の見回り<br>・ひなん訓練<br>・声をかけ合う", "立場②がしていること", { size: 12, borderColor: Y }), keep("kakomi", 99, 17, 30, 7.5, "地域", { size: 12, fill: "#2f5d50" }),
+      p("waku", 187, 25, 86, 33, "・ひじょう持ち出しぶくろ<br>・ひなん場所を家族で決める", "立場③がしていること", { size: 12, borderColor: "#ffffff" }), keep("kakomi", 187, 17, 30, 7.5, "家庭", { size: 12, fill: "#2f5d50" }),
+      p("kiiro", 11, 61, 120, 9, "どれか一つでは守れない", "立場をこえて言えること（黄色）", S14),
+      p("matome", 138, 61, 135, 13, "市や県、地域、家庭が協力してそなえている。", "まとめ", { size: 13 })
+    ],
+    notes: [
+      ["つかむ（8分）", "①「これまで調べたそなえを、だれがしているかで分けよう」"],
+      ["話し合う（27分）", "② はんで付せんを3つの立場に分ける<br>③「自分の家でできているのは？」<br>④「市だけががんばれば守れる？」→ 守れない。なぜ？<br>・わくの色を変えて、立場を見分けやすくする"],
+      ["まとめる（10分）", "⑤ まとめ<br>⑥「自分にできること」を1つノートに"]
+    ]
+  });
+
+  add({
+    key: "shakai-nagare", subject: "社会", name: "社会　流れ図でしくみをつかむ",
+    note: "言葉を矢印でつないで、物や仕事の流れを見せます。ごみ、水、物がとどくまで、などに。",
+    head: "板書計画　　4年　社会　「ごみのしょりと利用」　本時 4／10　　ねらい：もえるごみが処理されるまでの流れを調べる。",
+    items: [
+      p("meate", 11, 3, 262, 12, "もえるごみは、どこへ行き、どうなるのだろう。", "学習問題（上に1行）", { bandLabel: "学習問題" }),
+      p("kakomi", 14, 24, 40, 11, "家のごみ", "はじめ", { borderColor: "#ffffff" }), { k: "arrow", x1: 55, y1: 29.5, x2: 66, y2: 29.5, keep: true },
+      p("kakomi", 67, 24, 40, 11, "しゅう集車", "つぎ", { borderColor: "#ffffff" }), { k: "arrow", x1: 108, y1: 29.5, x2: 119, y2: 29.5, keep: true },
+      p("kakomi", 120, 24, 46, 11, "せいそう工場", "つぎ", { borderColor: Y }), { k: "arrow", x1: 167, y1: 29.5, x2: 178, y2: 29.5, keep: true },
+      p("kakomi", 179, 24, 30, 11, "はい", "つぎ", { borderColor: "#ffffff" }), { k: "arrow", x1: 210, y1: 29.5, x2: 221, y2: 29.5, keep: true },
+      p("kakomi", 222, 24, 50, 11, "うめ立て場", "おわり", { borderColor: "#ff9e94" }),
+      p("moji", 60, 38, 56, 14, "決まった曜日に<br>地区ごとに回る", "そこでのくふう", S12), p("moji", 120, 38, 56, 14, "高い温度でもやす<br>熱で電気を作る", "そこでのくふう", S12), p("moji", 222, 38, 52, 14, "あと○年で<br>いっぱいになる", "そこでの問題（市の資料の数字を入れる）", { size: 12, color: "#ff9e94" }),
+      p("fuki", 14, 58, 100, 16, "もやすと、かさが小さくなるんだ", "子どもの気づき", S12),
+      p("matome", 138, 55, 135, 19, "ごみは工場でもやされ、はいはうめ立て場に運ばれる。<br>うめ立て場には、かぎりがある。", "まとめ", { size: 12 })
+    ],
+    notes: [
+      ["つかむ（8分）", "①「ごみ出しのあと、ごみはどこへ？」"],
+      ["調べる（27分）", "② 電子黒板に工場の写真。流れを言葉でつなぐ<br>③「なぜ、もやすの？」→ かさをへらす<br>④「はいは、どこへ？」→ うめ立て場。あと何年使える？"],
+      ["まとめる（10分）", "⑤ まとめ<br>⑥ 次の時間の問い「ごみをへらすには？」"]
+    ]
+  });
+
+  // ======================= 総合的な学習の時間 =======================
+  add({
+    key: "sogo-web", subject: "総合", name: "総合　まん中から広げる（ウェビング）",
+    note: "まん中にテーマ。まわりに子どもの言葉を線でつなぎ、同じ仲間を色で囲みます。いちばん下に、みんなの課題を1行。",
+    head: "板書計画　　4年　総合的な学習の時間　「○○川を調べよう」　本時 2／30　　ねらい：川について知っていることや疑問を出し合い、みんなの課題を決める。",
+    items: [
+      p("kakomi", 118, 27, 44, 13, "○○川", "テーマ", { size: 18 }),
+      p("fuki", 20, 5, 62, 10, "ごみがういていた", "子どもの言葉", S12), p("fuki", 20, 19, 62, 10, "水がにごっている", "子どもの言葉", S12),
+      p("fuki", 196, 5, 70, 10, "昔は泳げたらしい", "子どもの言葉", S12), p("fuki", 196, 19, 70, 10, "おじいちゃんに聞いた", "子どもの言葉", S12),
+      p("fuki", 20, 42, 62, 10, "魚は何びきいる？", "子どもの言葉", S12), p("fuki", 196, 42, 70, 10, "大雨でふえてこわい", "子どもの言葉", S12),
+      p("pink", 86, 8, 28, 8, "よごれ", "仲間の名前", S13), p("kiiro", 166, 8, 28, 8, "昔と今", "仲間の名前", S13), p("moji", 86, 44, 28, 8, "生き物", "仲間の名前", S13), p("moji", 166, 44, 28, 8, "水害", "仲間の名前", S13),
+      { k: "line", x1: 118, y1: 30, x2: 83, y2: 14, keep: true }, { k: "line", x1: 162, y1: 30, x2: 195, y2: 14, keep: true },
+      { k: "line", x1: 118, y1: 38, x2: 83, y2: 46, keep: true }, { k: "line", x1: 162, y1: 38, x2: 195, y2: 46, keep: true },
+      p("meate", 11, 60, 262, 13, "○○川は、昔とくらべて、どうかわったのだろう。", "みんなの課題（下に1行）", { bandLabel: "みんなの課題" })
+    ],
+    notes: [
+      ["出し合う（15分）", "①「○○川と聞いて、思いうかぶことは？」<br>　→ まん中から線でつなぐ。出た順に書く"],
+      ["仲間に分ける（20分）", "②「にているものは、どれとどれ？」→ 色チョークで囲む<br>③「仲間に名前をつけよう」<br>④「いちばん調べたいのは？」→ 人数を聞く"],
+      ["課題を決める（10分）", "⑤ みんなの課題を1行で<br>⑥「だれに聞けば分かる？」→ 次の時間へ"]
+    ]
+  });
+
+  add({
+    key: "sogo-nakama", subject: "総合", name: "総合　仲間に分けて整理する",
+    note: "上に問い。下に、名前のついた3つのわく。調べたことの短冊を貼って、分けます。",
+    head: "板書計画　　4年　総合的な学習の時間　「だれもがくらしやすい町」　本時 12／30　　ねらい：町で見つけたくふうを仲間に分けて、調べる課題をしぼる。",
+    items: [
+      p("meate", 11, 3, 262, 12, "町で見つけたくふうは、だれのためのものだろう。", "今日の問い", { bandLabel: "問い" }),
+      { k: "rect", x: 11, y: 22, w: 84, h: 40, color: Y }, keep("kakomi", 14, 18.5, 46, 7.5, "目の不自由な人", { size: 12, fill: "#2f5d50" }),
+      p("tanzaku", 15, 29, 36, 8, "点字ブロック", "短冊", { size: 11 }), p("tanzaku", 55, 29, 36, 8, "音の出る信号", "短冊", { size: 11 }), p("tanzaku", 15, 41, 50, 8, "シャンプーのぎざぎざ", "短冊", { size: 11 }),
+      { k: "rect", x: 99, y: 22, w: 84, h: 40, color: "#ff9e94" }, keep("kakomi", 102, 18.5, 46, 7.5, "車いすの人", { size: 12, fill: "#2f5d50" }),
+      p("tanzaku", 103, 29, 36, 8, "スロープ", "短冊", { size: 11 }), p("tanzaku", 143, 29, 36, 8, "低いボタン", "短冊", { size: 11 }),
+      { k: "rect", x: 187, y: 22, w: 86, h: 40 }, keep("kakomi", 190, 18.5, 46, 7.5, "みんな", { size: 12, fill: "#2f5d50" }),
+      p("tanzaku", 191, 29, 36, 8, "絵の案内", "短冊", { size: 11 }), p("tanzaku", 231, 29, 38, 8, "広い通路", "短冊", { size: 11 }),
+      p("kiiro", 11, 65, 262, 9, "こまっている人のためのくふうは、みんなにも使いやすい", "分けて気づいたこと（黄色）", S14)
+    ],
+    notes: [
+      ["出し合う（10分）", "① 町たんけんで見つけたくふうを、短冊に書いて貼る"],
+      ["分ける（25分）", "②「だれのためのくふう？」→ わくに動かす<br>③「どちらにも入るものは？」→ わくの間に置く<br>④「分けてみて、気づいたことは？」"],
+      ["しぼる（10分）", "⑤ 調べたいものを1つえらぶ<br>⑥ インタビューの質問を3つ考える"]
+    ]
+  });
+
+  // ======================= 音楽 =======================
+  add({
+    key: "ongaku-kansho", subject: "音楽", name: "音楽　きき取ったことと、感じ取ったこと（鑑賞）",
+    note: "左にめあて。まん中に「きき取ったこと」、右に「感じ取ったこと」をならべて、矢印でつなぎます。",
+    head: "板書計画　　4年　音楽　鑑賞「3拍子の曲と2拍子の曲」　本時 1／2　　ねらい：拍子や旋律のちがいをきき取り、曲の感じとのかかわりを考える。",
+    split: 3,
+    items: [
+      { k: "meate", z: 0, r: 0, h: 19, t: "曲のよさを見つけて、<br>音楽の言葉でつたえよう。", hint: "めあて" },
+      { k: "midashi", z: 0, y: 27, w: 60, t: "音楽の言葉", keep: true },
+      { k: "tanzaku", z: 0, y: 34, w: 24, h: 8, t: "拍子", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 34, x: 27, w: 24, h: 8, t: "旋律", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 34, x: 54, w: 24, h: 8, t: "速さ", hint: "札", o: { size: 11, align: "center" } },
+      { k: "tanzaku", z: 0, y: 45, w: 24, h: 8, t: "強弱", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 45, x: 27, w: 24, h: 8, t: "音色", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 45, x: 54, w: 24, h: 8, t: "くり返し", hint: "札", o: { size: 11, align: "center" } },
+      { k: "midashi", z: 1, r: 0, w: 60, t: "きき取ったこと", keep: true },
+      { k: "moji", z: 1, y: 11, rows: 2, o: S13, t: "A　音が高くて長い<br>　　1、2、3でゆれる", hint: "1曲めで、きき取ったこと" },
+      { k: "moji", z: 1, y: 40, rows: 2, o: S13, t: "B　短い音が多い<br>　　1、2で進む", hint: "2曲めで、きき取ったこと" },
+      { k: "midashi", z: 2, r: 0, w: 60, t: "感じ取ったこと", keep: true },
+      { k: "kiiro", z: 2, y: 11, rows: 2, o: S13, t: "なめらか<br>おどっているみたい", hint: "1曲めで、感じ取ったこと" },
+      { k: "kiiro", z: 2, y: 40, rows: 2, o: S13, t: "にぎやか<br>行進しているみたい", hint: "2曲めで、感じ取ったこと" },
+      { k: "arrow", x1: 170, y1: 17, x2: 187, y2: 17, color: "#ffffff", keep: true }, { k: "arrow", x1: 170, y1: 46, x2: 187, y2: 46, color: "#ffffff", keep: true },
+      { k: "matome", z: 2, y: 59, h: 15, o: { size: 12 }, t: "拍子や音の長さで、曲の感じがかわる。", hint: "まとめ" }
+    ],
+    notes: [
+      ["つかむ（8分）", "① 2曲を少しずつ聴く。「どんな感じ？」<br>　→ 感じた言葉を右に書く"],
+      ["聴き深める（27分）", "②「なめらかに感じたのは、音がどうなっていたから？」<br>　→ きき取ったことをまん中に。矢印でつなぐ<br>③ 音楽の言葉の札を指して「どれのこと？」<br>・体を動かして拍子をたしかめる"],
+      ["まとめる（10分）", "④ すきな曲をえらび、よさを「〜だから、〜な感じ」で書く"]
+    ]
+  });
+
+  add({
+    key: "ongaku-tsukuru", subject: "音楽", name: "音楽　音楽づくり（つくり方のやくそくと、できた音楽）",
+    note: "左にめあてと、つくるときのやくそく。まん中に、拍のわく（ここに音のカードを置く）。右に、くふうの言葉とふり返り。",
+    head: "板書計画　　4年　音楽　音楽づくり「打楽器で、始め、中、終わりのある音楽」　本時 3／5　　ねらい：音の重ね方やつなげ方をくふうして、「中」の部分をつくる。",
+    split: 3,
+    items: [
+      { k: "meate", z: 0, r: 0, h: 19, t: "音の重ね方とつなげ方を<br>くふうして「中」をつくろう。", hint: "めあて", o: { size: 14 } },
+      { k: "midashi", z: 0, y: 27, w: 60, t: "やくそく", keep: true },
+      { k: "moji", z: 0, y: 34, rows: 3, o: S13, t: "①8拍を2回<br>②楽器は3つまで<br>③休みを1つ入れる", hint: "つくるときのやくそく" },
+      { k: "midashi", z: 1, r: 0, w: 60, t: "拍のわく", keep: true },
+      { k: "shiryo", z: 1, y: 11, w: 86, h: 26, t: "1　2　3　4　5　6　7　8<br>（音のカードを置く）", hint: "拍のわく（カードを置く）" },
+      { k: "moji", z: 1, y: 41, rows: 2, o: S13, t: "木の楽器 → みんなで重ねる<br>→ だんだん小さく", hint: "できた音楽の組み立て" },
+      { k: "midashi", z: 2, r: 0, w: 60, t: "くふうの言葉", keep: true },
+      { k: "fuki", z: 2, y: 11, w: 80, h: 12, t: "木の楽器だけでまとまりを出した", hint: "子どもの言葉", o: S12 },
+      { k: "fuki", z: 2, y: 26, w: 80, h: 12, t: "くり返してから、重ねた", hint: "子どもの言葉", o: S12 },
+      { k: "kiiro", z: 2, y: 42, rows: 1, o: S14, t: "重ねる　つなげる　くり返す", hint: "音楽の言葉（黄色）" },
+      { k: "furikaeri", z: 2, y: 55, w: 84, h: 18, t: "ふり返り：重ねると、つなげるで、感じはどうかわった？", hint: "ふり返り" }
+    ],
+    notes: [
+      ["つかむ（8分）", "① 前の時間の「始め」を聴く。「中は、どうしたい？」<br>② やくそくをたしかめる"],
+      ["つくる（27分）", "③ はんでつくる。とちゅうで1つのはんを聴く<br>④「今のはんのくふうは？」→ 吹き出しで残す<br>・音を出す時間と、話し合う時間を分ける"],
+      ["聴き合う（10分）", "⑤ 2つのはんを聴き合う<br>⑥ ふり返りを書く"]
+    ]
+  });
+
+  add({
+    key: "ongaku-utau", subject: "音楽", name: "音楽　歌唱（拡大楽譜に書きこむ）",
+    note: "まん中に拡大楽譜を貼り、強弱や気をつける所を書きこみます。左にめあてと第一印象、右に思いをこめたい所。",
+    head: "板書計画　　4年　音楽　歌唱「日本の歌」　本時 2／3　　ねらい：旋律の動きや強弱に気をつけて、情景を思いうかべながら歌う。",
+    split: 3,
+    items: [
+      { k: "meate", z: 0, r: 0, h: 19, t: "強弱と旋律の動きに<br>気をつけて歌おう。", hint: "めあて" },
+      { k: "midashi", z: 0, y: 27, w: 60, t: "聴いた感じ", keep: true },
+      { k: "fuki", z: 0, y: 34, x: 2, w: 72, h: 11, t: "しずかで、広い感じ", hint: "第一印象", o: S12 }, { k: "fuki", z: 0, y: 48, x: 2, w: 72, h: 11, t: "夕方の景色がうかぶ", hint: "第一印象", o: S12 },
+      { k: "shiryo", z: 1, r: 0, w: 86, h: 40, t: "（拡大楽譜を貼る）", hint: "拡大楽譜を貼る" },
+      { k: "kiiro", z: 1, y: 47, rows: 2, o: S13, t: "3段め　だんだん強く<br>音が上がる → 山", hint: "楽譜から見つけたこと" },
+      { k: "midashi", z: 2, r: 0, w: 70, t: "思いをこめたい所", keep: true },
+      { k: "moji", z: 2, y: 11, rows: 2, o: S13, t: "いちばん高い音<br>　→ 遠くへとどける声で", hint: "思いをこめたい所と、歌い方" },
+      { k: "moji", z: 2, y: 30, rows: 2, o: S13, t: "さいごの音が下がる所<br>　→ しみじみと、やさしく", hint: "思いをこめたい所と、歌い方" },
+      { k: "furikaeri", z: 2, y: 55, w: 84, h: 18, t: "ふり返り：どこを、どのように歌った？", hint: "ふり返り" }
+    ],
+    notes: [
+      ["つかむ（8分）", "① 範唱を聴く。「どんな感じ？ どんな景色？」"],
+      ["歌い深める（27分）", "②「その感じは、楽譜のどこから？」→ 楽譜に印<br>③「だんだん強く」を、強くしないで歌ってくらべる<br>④ 思いをこめたい所をえらんで、歌い方を決める"],
+      ["まとめる（10分）", "⑤ 通して歌う。録音して聴く<br>⑥ ふり返りを書く"]
+    ]
+  });
+
+  // ======================= 図画工作 =======================
+  add({
+    key: "zuko-nagare", subject: "図工", name: "図工　めあて、活動の流れ、やくそく",
+    note: "はじめに全部書いておき、作っている間も消しません。左にめあて、まん中に流れとヒント、右に安全のやくそくと時間。",
+    head: "板書計画　　4年　図画工作　「切った木から思いついて」　本時 2／6　　ねらい：のこぎりで切った木の形や組み合わせから、表したいものを思いつく。",
+    split: 3,
+    items: [
+      { k: "moji", z: 0, r: 0, t: "切った木から思いついて", hint: "題材の名前" },
+      { k: "meate", z: 0, y: 14, h: 19, t: "木の形や組み合わせから<br>思いついたものを作ろう。", hint: "めあて", o: { size: 14 } },
+      { k: "fuki", z: 0, y: 40, x: 2, w: 72, h: 11, t: "ななめに切ると屋根みたい", hint: "子どものつぶやき", o: S12 }, { k: "fuki", z: 0, y: 54, x: 2, w: 72, h: 11, t: "重ねると階だんになる", hint: "子どものつぶやき", o: S12 },
+      { k: "midashi", z: 1, r: 0, w: 60, t: "活動の流れ", keep: true },
+      { k: "moji", z: 1, y: 11, rows: 4, o: S13, t: "①切る（長さをかえて）<br>②ならべる、組み合わせる<br>③思いついたら、つける<br>④かたづけ（○時○分）", hint: "活動の流れ" },
+      { k: "shiryo", z: 1, y: 46, w: 86, h: 27, t: "（参考作品や、組み合わせの写真を貼る）", hint: "参考作品を貼る" },
+      { k: "waku", z: 2, r: 0, w: 84, h: 44, o: { size: 13, borderColor: "#ff9e94" }, t: "安全のやくそく<br>・木をしっかりおさえる<br>・切る先に手を置かない<br>・持って歩くときは、はを下に", hint: "安全のやくそく" },
+      { k: "kiiro", z: 2, y: 50, rows: 1, o: S14, t: "○時○分まで", hint: "終わりの時こく" },
+      { k: "furikaeri", z: 2, y: 59, w: 84, h: 15, t: "ふり返り：形から何を思いついた？", hint: "ふり返り" }
+    ],
+    notes: [
+      ["導入（10分）", "① 切った木を見せる。「何に見える？」<br>② のこぎりのやくそくをたしかめる（実演）"],
+      ["活動（65分）", "③ 切る → ならべる → つける<br>④ とちゅうで手を止めて、友だちの作品を見る（5分）<br>・やくそくは消さない。時こくを書いておく"],
+      ["ふり返り（15分）", "⑤ 作品をならべて見合う<br>⑥ ふり返りを書く。かたづけ"]
+    ]
+  });
+
+  add({
+    key: "zuko-kansho", subject: "図工", name: "図工　鑑賞（見る視点の札）",
+    note: "まん中に作品を貼り、そばに「色」「形」「動き」などの札を置いて、子どもの言葉を書きます。中間鑑賞にも。",
+    head: "板書計画　　4年　図画工作　鑑賞「友だちの作品のよさを見つけよう」　本時 6／6　　ねらい：色、形、表し方に目を向けて、作品のよさやおもしろさを感じ取る。",
+    split: 3,
+    items: [
+      { k: "meate", z: 0, r: 0, h: 19, t: "友だちの作品のよさを<br>見つけてつたえよう。", hint: "めあて" },
+      { k: "midashi", z: 0, y: 27, w: 60, t: "見る視点", keep: true },
+      { k: "tanzaku", z: 0, y: 34, w: 24, h: 8, t: "色", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 34, x: 27, w: 24, h: 8, t: "形", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 34, x: 54, w: 24, h: 8, t: "動き", hint: "札", o: { size: 11, align: "center" } },
+      { k: "tanzaku", z: 0, y: 45, w: 38, h: 8, t: "組み合わせ", hint: "札", o: { size: 11, align: "center" } }, { k: "tanzaku", z: 0, y: 45, x: 41, w: 37, h: 8, t: "表したい思い", hint: "札", o: { size: 11, align: "center" } },
+      { k: "shiryo", z: 1, r: 0, w: 86, h: 40, t: "（作品か、作品の写真を貼る）", hint: "作品を貼る" },
+      { k: "kiiro", z: 1, y: 47, rows: 2, o: S13, t: "色：明るい色でうれしさが出ている<br>形：長い木で高さを出している", hint: "札ごとに、子どもの言葉" },
+      { k: "midashi", z: 2, r: 0, w: 60, t: "つたえ方", keep: true },
+      { k: "kakomi", z: 2, y: 11, w: 84, h: 20, o: { size: 13, align: "start" }, t: "〜のところが、〜でいいね。<br>わたしは〜と感じたよ。", hint: "つたえ方の型" },
+      { k: "fuki", z: 2, y: 36, w: 80, h: 12, t: "いろんな人がいて、にぎやか", hint: "子どもの言葉", o: S12 },
+      { k: "furikaeri", z: 2, y: 55, w: 84, h: 18, t: "ふり返り：友だちの作品から、まねしたいことは？", hint: "ふり返り" }
+    ],
+    notes: [
+      ["つかむ（8分）", "① 1つの作品をみんなで見る。「どこがいい？」<br>　→ 出た言葉を、視点の札の下に分けて書く"],
+      ["見合う（27分）", "② 作品を自由に見て回る。カードに書いて置く<br>③「作った人に聞いてみたいことは？」"],
+      ["まとめる（10分）", "④ もらったカードを読む<br>⑤ ふり返りを書く"]
+    ]
+  });
+
+  // ======================= 道徳（横書き） =======================
+  add({
+    key: "dotoku-taihi", subject: "道徳", name: "道徳　左右でくらべる（まよう気持ち）",
+    note: "左右に2つの立場を置き、間に両向きの矢印。名前のマグネットで自分の立場をしめします。下で1つにまとめます。",
+    head: "板書計画　　4年　道徳　「やくそく」（自作の話）　内容項目：正直、誠実　　ねらい：自分の心に正直に行動しようとする判断力を育てる。",
+    items: [
+      p("moji", 11, 3, 60, 8, "やくそく", "教材名"),
+      p("tanzaku", 80, 3, 190, 10, "自分なら、どちらをえらぶだろう。それはなぜだろう。", "中心の発問", { size: 14, borderColor: "#d12a1e" }),
+      p("kakomi", 14, 18, 100, 10, "友だちとのやくそくを守る", "立場A", { size: 14, borderColor: "#ffffff" }), p("kakomi", 172, 18, 100, 10, "自分のしたいことをする", "立場B", { size: 14, borderColor: "#ffffff" }),
+      { k: "arrow", x1: 118, y1: 23, x2: 168, y2: 23, color: Y, keep: true }, { k: "arrow", x1: 168, y1: 23, x2: 118, y2: 23, color: Y, keep: true },
+      p("shiryo", 126, 27, 34, 12, "名前の<br>マグネット", "名前のマグネットを置く線", { size: 9 }),
+      p("fuki", 14, 30.5, 100, 10, "やくそくは先にしたから", "子どもの言葉", S12), p("fuki", 14, 42, 100, 10, "あとで自分がくやむ", "子どもの言葉", S12),
+      p("fuki", 172, 30.5, 100, 10, "めったにないチャンスだから", "子どもの言葉", S12), p("fuki", 172, 42, 100, 10, "あやまればゆるしてくれる", "子どもの言葉", S12),
+      p("kiiro", 60, 53.5, 170, 8, "どちらをえらんでも、自分の心にうそはつけない", "2つの立場に同じところ（黄色）", S14),
+      p("matome", 40, 63, 200, 8, "自分の心に正直にえらぶ。", "今日考えたこと", { size: 13, bandLabel: "今日考えたこと" })
+    ],
+    notes: [
+      ["導入（5分）", "①「やくそくを守れなかったことは、ある？」→ 2、3人に聞く"],
+      ["展開（30分）", "② 話を読む。「自分ならどちら？」名前のマグネットを置く<br>③ 理由を聞いて、左右に書く<br>④「相手の気持ちを聞いて、動かしたい人は？」→ 動かしてよい<br>⑤「どちらの人にも同じ気持ちは？」"],
+      ["終末（10分）", "⑥「今日考えたこと」を書く。数人が読む"]
+    ]
+  });
 })();
 
 ;
@@ -3447,9 +4418,15 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var body = h("div", { class: "dlg-body st" });
     if (fresh) body.appendChild(h("p", { class: "st-lead" }, "どれから始めますか。あとから、上の「テンプレート」で、いつでも選びなおせます。"));
 
+    // 上の目次（長い画面なので、見たい所へとぶ）
+    var toc = h("div", { class: "st-toc" });
+    [["ノート", "st-note"], ["板書計画", "st-bansho"], ["問題を入れて作る", "st-make"], ["テンプレート", "st-tpl"], ["教科の事例", "st-ex"]].forEach(function (t) {
+      toc.appendChild(h("button", { type: "button", "data-to": t[1], onclick: function () { var el = document.getElementById(t[1]); if (el) el.scrollIntoView({ block: "start" }); } }, t[0]));
+    });
+    body.appendChild(toc);
     var notes = App.NOTE_SHEETS || [];
     if (notes.length) {
-      body.appendChild(h("h3", null, "ノート"));
+      body.appendChild(h("h3", { id: "st-note" }, "ノート"));
       var g0 = h("div", { class: "st-grid" });
       notes.forEach(function (s) {
         g0.appendChild(card(s.name, s.note, "assets/tpl/note-" + s.key + ".webp", function () { open(App.noteDoc(s), fresh); }));
@@ -3457,19 +4434,47 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       body.appendChild(g0);
     }
 
-    var boards = App.BANSHO_SHEETS || [];
-    if (boards.length) {
-      body.appendChild(h("h3", null, "板書計画"));
-      var gb = h("div", { class: "st-grid" });
-      boards.forEach(function (s) { gb.appendChild(card(s.name, s.note, "assets/tpl/" + s.key + ".webp", function () { open(s.build().doc, fresh); })); });
+    // 板書計画：教科ごとに型をならべる。1つの型に「型で始める」と「記入例を見る」の2つの入口
+    var kata = App.KATA || [];
+    if (kata.length) {
+      body.appendChild(h("h3", { id: "st-bansho" }, "板書計画"));
+      body.appendChild(h("p", { class: "st-sub" }, "「型で始める」は、部品だけが置いてあります。うすい字の所をクリックして打ちます。「記入例」は、4年生の学習を例に書きこんだものです。"));
+      // 教科でしぼる
+      var subjects = []; kata.forEach(function (K) { if (subjects.indexOf(K.subject) < 0) subjects.push(K.subject); });
+      var chips = h("div", { class: "st-chips", role: "group", "aria-label": "教科でしぼる" });
+      function pick(sub) {
+        Array.prototype.forEach.call(chips.children, function (c) { c.classList.toggle("on", c.dataset.sub === sub); });
+        Array.prototype.forEach.call(gb.children, function (c) { c.style.display = sub === "すべて" || c.dataset.sub === sub ? "" : "none"; });
+      }
+      ["すべて"].concat(subjects).forEach(function (sub) {
+        chips.appendChild(h("button", { type: "button", "data-sub": sub, class: sub === "すべて" ? "on" : "", onclick: function () { pick(sub); } },
+          sub + (sub === "すべて" ? "" : "（" + kata.filter(function (K) { return K.subject === sub; }).length + "）")));
+      });
+      body.appendChild(chips);
+      var gb = h("div", { class: "st-grid kata" });
+      kata.forEach(function (K) {
+        gb.appendChild(h("div", { class: "st-card kata", "data-kata": K.key, "data-sub": K.subject },
+          h("span", { class: "st-thumb" }, h("img", { src: "assets/tpl/kata-" + K.key + ".webp", alt: "", loading: "lazy" })),
+          h("span", { class: "st-tag" }, K.subject), h("span", { class: "st-name" }, K.name.replace(/^\S+　/, "")), h("span", { class: "st-note" }, K.note),
+          h("span", { class: "st-two" },
+            h("button", { type: "button", class: "btn primary", "data-go": "kata", onclick: function () { open(App.buildKata(K, false).doc, fresh); } }, "型で始める"),
+            h("button", { type: "button", class: "btn", "data-go": "example", onclick: function () { open(App.buildKata(K, true).doc, fresh); } }, "記入例を見る"))));
+      });
       body.appendChild(gb);
+      var boards = App.BANSHO_SHEETS || [];
+      if (boards.length) {
+        body.appendChild(h("h4", { class: "st-h4" }, "黒板の上に、ノートと同じ数のマス目を置いたもの"));
+        var gn = h("div", { class: "st-grid" });
+        boards.forEach(function (s) { gn.appendChild(card(s.name, s.note, "assets/tpl/" + s.key + ".webp", function () { open(s.build().doc, fresh); })); });
+        body.appendChild(gn);
+      }
     }
-    body.appendChild(h("h3", null, "問題を入れて作る"));
+    body.appendChild(h("h3", { id: "st-make" }, "問題を入れて作る"));
     body.appendChild(h("div", { class: "st-grid" },
       card("計算プリントを作る", "式を入れると、筆算が並びます。答えのページもできます。", "assets/tpl/keisan.webp", function () { App.openKeisan(fresh); }, "make"),
       card("漢字練習プリントを作る", "ことばを入れると、手本、なぞり書き、書くマスが並びます。", "assets/tpl/kanji.webp", function () { App.openKanji(fresh); }, "make")));
 
-    body.appendChild(h("h3", null, "テンプレート"));
+    body.appendChild(h("h3", { id: "st-tpl" }, "テンプレート"));
     var g1 = h("div", { class: "st-grid" });
     Object.keys(App.templates).forEach(function (k) {
       if (k === "hissan6") return;   // 「計算プリントを作る」と同じものなので、ここには出さない
@@ -3480,7 +4485,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 
     var ex = window.MASUME_EXAMPLES || [];
     if (ex.length) {
-      body.appendChild(h("h3", null, "教科の事例"));
+      body.appendChild(h("h3", { id: "st-ex" }, "教科の事例"));
       var g2 = h("div", { class: "st-grid" });
       ex.forEach(function (e) {
         g2.appendChild(card(e.name, (e.paper || "") + (e.pages > 1 ? "、" + e.pages + "ページ" : ""), "examples/thumb/" + e.key + "_p1.webp", function () { open(e.doc, fresh); }));
@@ -3672,7 +4677,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     wrap.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
     wrap.style.cssText = "width:" + W + "px;height:" + H + "px;overflow:hidden;background:#fff;position:relative";
     var st = document.createElement("style");
-    st.textContent = fontsCss + "\n" + collectCss() + "\n.page{position:absolute;left:0;top:0;background:#fff}";
+    st.textContent = fontsCss + "\n" + collectCss() + "\n.page{position:absolute;left:0;top:0;background:#fff}\n.tx:empty::before{content:\"\" !important}";
     wrap.appendChild(st);
     wrap.appendChild(clone);
     var xml = new XMLSerializer().serializeToString(wrap);
@@ -4233,6 +5238,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       row("塗りつぶし", swatches(App.FILL_COLORS, b.fill, function (v) { b.fill = v; touch(b); })),
       row("余白", num(b, "pad", { min: 0, max: 15, step: 0.5, unit: "mm" }))
     ));
+    if (App.textPanelExtra) App.textPanelExtra(p, b, { group: group, row: row, num: num, seg: seg, check: check, swatches: swatches, select: select, touch: touch });
   }
 
   function strokeRows(b) {

@@ -426,3 +426,36 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 
 /* 黒板の上の数式：□は、ぬらずに白い線だけにする */
 .sk.on-board .sk-box { background: transparent; }
+
+/* 板書の部品：めあて、まとめの札（棒の上にのる白い札） */
+.band-tag { position: absolute; z-index: 2; background: #fff; font: 700 9pt/1.25 var(--ui, sans-serif); padding: .5mm 1.6mm; border-radius: .6mm; white-space: nowrap; pointer-events: none; }
+.band-tag.h { left: 0; top: -2.4mm; }
+.band-tag.v { left: 100%; top: 0; margin-left: .2mm; writing-mode: vertical-rl; padding: 1.6mm .5mm; }
+.parts-menu { width: 250px; max-height: 80vh; overflow: auto; }
+#btn-parts { color: #2f5d50; }
+
+/* 板書の型：まだ字を入れていない所に、何を書くかをうすく出す */
+.tx[data-hint]:empty::before { content: attr(data-hint); white-space: normal; }
+.blk.on-board .tx:empty::before { color: rgba(255,255,255,.38); }
+@media print { .tx[data-hint]:empty::before { content: "" !important; } }
+
+/* テンプレートの画面：板書計画の型（入口が2つあるカード） */
+.st-sub { margin: -4px 0 10px; font-size: 12.5px; line-height: 1.7; color: var(--ink-soft); }
+.st-grid.kata { grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); }
+.st-card.kata { cursor: default; }
+.st-card.kata .st-thumb { aspect-ratio: 297 / 120; }
+.st-card.kata .st-thumb img { object-fit: cover; object-position: top; width: 100%; height: 100%; }
+.st-tag { align-self: flex-start; margin-top: 4px; padding: 1px 8px; border-radius: 9px; background: #2f5d50; color: #fff; font-size: 11px; }
+.st-two { display: flex; gap: 6px; margin-top: 4px; }
+.st-two .btn { flex: 1; padding: 6px 4px; font-size: 12.5px; border: 1px solid var(--line-dark); border-radius: 5px; background: #fff; }
+.st-two .btn.primary { background: var(--ai); border-color: var(--ai); color: #fff; }
+
+.st-h4 { margin: 18px 0 8px; font-size: 13px; font-weight: 600; color: var(--ink-soft); }
+.st-toc { position: sticky; top: -1px; z-index: 3; display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 6px; padding: 8px 0; background: var(--white, #fff); border-bottom: 1px solid var(--line, #e3e3e0); }
+.st-toc button, .st-chips button { padding: 5px 12px; border: 1px solid var(--line-dark, #c9c9c5); border-radius: 14px; background: #fff; font-size: 12.5px; }
+.st-toc button:hover, .st-chips button:hover { border-color: var(--ai); }
+.st-chips { display: flex; flex-wrap: wrap; gap: 6px; margin: 0 0 12px; }
+.st-chips button.on { background: #2f5d50; border-color: #2f5d50; color: #fff; }
+
+/* 黒板の上の字：語のとちゅうで折れにくくする（文節で折る） */
+.blk.text .tx { word-break: auto-phrase; line-break: strict; }
