@@ -2164,6 +2164,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         App.commit(); App.renderPanel();
       }
       else if (!fromGrip && (b.type === "masu" || b.type === "text")) App.startEdit(b, u);
+      else if (!fromGrip && b.type === "eisen" && App.startEisenEdit) App.startEisenEdit(b, u);
     }
     window.addEventListener("pointermove", mv);
     window.addEventListener("pointerup", up);
@@ -2663,7 +2664,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     // フォーカスを持っていかれないようにする（マス目に打っている最中・つまみ・ハンドル）
     pages.addEventListener("mousedown", function (ev) {
       var blk = ev.target.closest(".blk");
-      var editingText = App.edit && App.edit.type === "text" && blk && blk.dataset.id === App.edit.id;
+      var editingText = App.edit && (App.edit.type === "text" || App.edit.type === "eisen") && blk && blk.dataset.id === App.edit.id;
       if (!editingText) ev.preventDefault();
     });
 
@@ -2738,6 +2739,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       if (b.locked && (key === "Delete" || key === "Backspace" || /^Arrow/.test(key))) { ev.preventDefault(); App.toast("ロックしています。「ロック解除」を押すと、動かしたり消したりできます。", 4000); return; }
       if (key === "Delete" || key === "Backspace") { ev.preventDefault(); App.removeBlock(b.id); }
       else if (key === "Enter" && (b.type === "masu" || b.type === "text")) { ev.preventDefault(); App.startEdit(b, null); }
+      else if (key === "Enter" && b.type === "eisen" && App.startEisenEdit) { ev.preventDefault(); App.startEisenEdit(b, null); }
       else if (mod && (key === "d" || key === "D")) { ev.preventDefault(); App.duplicate(b.id); }
       else if (mod && (key === "c" || key === "C")) { clipboard = JSON.stringify(b); App.toast("コピーしました。"); }
       else if (/^Arrow/.test(key)) {
@@ -4135,35 +4137,52 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 
   // ---------- 字の大きさを、4線に合わせて決める ----------
   var metricsCache = {};
-  /** その書体の、x の高さと h の高さ（字の大きさ1に対する割合）。 */
+  /** その書体の、x の高さ、h の高さ、p の下がり（字の大きさ1に対する割合）と、
+   *  ブラウザが行の中で字を置くときに使う、書体そのものの上と下の高さ（fbA、fbD）。 */
   function metrics(fontCss) {
     if (metricsCache[fontCss]) return metricsCache[fontCss];
     var cv = document.createElement("canvas").getContext("2d");
     cv.font = "200px " + fontCss;
     var x = cv.measureText("x"), hh = cv.measureText("h"), p = cv.measureText("p");
-    var m = { x: (x.actualBoundingBoxAscent || 96) / 200, asc: (hh.actualBoundingBoxAscent || 144) / 200, desc: (p.actualBoundingBoxDescent || 44) / 200 };
+    var m = { x: (x.actualBoundingBoxAscent || 96) / 200, asc: (hh.actualBoundingBoxAscent || 144) / 200, desc: (p.actualBoundingBoxDescent || 44) / 200,
+      fbA: (hh.fontBoundingBoxAscent || 200) / 200, fbD: (hh.fontBoundingBoxDescent || 60) / 200 };
     if (document.fonts && document.fonts.status === "loaded") metricsCache[fontCss] = m;
     return m;
   }
 
+  /** 段の形。y0 が上の線、y2 が基線（第3線）、fs が字の大きさ（mm）。 */
+  function rowGeom(b, i) {
+    var r = RATIOS[b.ratio] || RATIOS["565"], sum = r[0] + r[1] + r[2], m = metrics(App.fontCss(b.font));
+    var y0 = i * (b.rowH + b.gap), xH = b.rowH * r[1] / sum, fs = xH / (m.x || 0.48);
+    return { y0: y0, y1: y0 + b.rowH * r[0] / sum, y2: y0 + b.rowH * (r[0] + r[1]) / sum, y3: y0 + b.rowH, fs: fs, m: m };
+  }
+
+  /** 紙の上で字を打つ段。段ごとに、そのまま打てる小さな入れ物（contenteditable）を 4線の上に置く。
+   *  基線（第3線）に字がのるように、入れ物の上の位置を書体の高さから計算する。 */
   function fillEisen(el, b) {
     el.innerHTML = "";
-    var H = App.eisenHeight(b), W = b.w, r = RATIOS[b.ratio] || RATIOS["565"], sum = r[0] + r[1] + r[2];
+    var H = App.eisenHeight(b), W = b.w;
     b.h = H;
     var svg = s("svg", { viewBox: "0 0 " + W + " " + H, width: "100%", height: "100%", preserveAspectRatio: "none", style: "display:block;overflow:visible" });
-    var fcss = App.fontCss(b.font), m = metrics(fcss), lines = String(b.text || "").split("\n");
-    var xH = b.rowH * r[1] / sum, fs = xH / (m.x || 0.48);
+    var fcss = App.fontCss(b.font), lines = String(b.text || "").split("\n");
     for (var i = 0; i < b.rows; i++) {
-      var y0 = i * (b.rowH + b.gap), y1 = y0 + b.rowH * r[0] / sum, y2 = y0 + b.rowH * (r[0] + r[1]) / sum, y3 = y0 + b.rowH;
-      svg.appendChild(s("line", { x1: 0, y1: y0, x2: W, y2: y0, stroke: b.lineColor, "stroke-width": 0.25 }));
-      svg.appendChild(s("line", { x1: 0, y1: y1, x2: W, y2: y1, stroke: b.lineColor, "stroke-width": 0.25, "stroke-dasharray": b.dash2 ? "1.2 1.2" : null }));
-      svg.appendChild(s("line", { x1: 0, y1: y2, x2: W, y2: y2, stroke: b.baseColor, "stroke-width": 0.45 }));
-      svg.appendChild(s("line", { x1: 0, y1: y3, x2: W, y2: y3, stroke: b.lineColor, "stroke-width": 0.25 }));
-      if (lines[i]) {
-        var t = s("text", { x: 3, y: y2, "font-size": fs, fill: b.color, style: "font-family:" + fcss + ";white-space:pre", "xml:space": "preserve" });
-        t.textContent = lines[i];
-        svg.appendChild(t);
-      }
+      var g = rowGeom(b, i);
+      svg.appendChild(s("line", { x1: 0, y1: g.y0, x2: W, y2: g.y0, stroke: b.lineColor, "stroke-width": 0.25 }));
+      svg.appendChild(s("line", { x1: 0, y1: g.y1, x2: W, y2: g.y1, stroke: b.lineColor, "stroke-width": 0.25, "stroke-dasharray": b.dash2 ? "1.2 1.2" : null }));
+      svg.appendChild(s("line", { x1: 0, y1: g.y2, x2: W, y2: g.y2, stroke: b.baseColor, "stroke-width": 0.45 }));
+      svg.appendChild(s("line", { x1: 0, y1: g.y3, x2: W, y2: g.y3, stroke: b.lineColor, "stroke-width": 0.25 }));
+      // 字の入れ物：行の高さを rowH にして、基線が y2 に来る位置に置く
+      var L = b.rowH, top = g.y2 - L / 2 + (g.m.fbD - g.m.fbA) * g.fs / 2;
+      var fo = s("foreignObject", { x: 3, y: top, width: W - 3, height: L });
+      var div = document.createElement("div");
+      div.setAttribute("xmlns", "http://www.w3.org/1999/xhtml");
+      div.className = "el";
+      div.setAttribute("data-row", i);
+      div.setAttribute("spellcheck", "false");
+      div.style.cssText = "font-family:" + fcss + ";font-size:" + g.fs + "px;line-height:" + L + "px;height:" + L + "px;color:" + b.color + ";white-space:pre;overflow:visible;outline:none;margin:0;padding:0";
+      div.textContent = lines[i] || "";
+      fo.appendChild(div);
+      svg.appendChild(fo);
     }
     el.appendChild(svg);
   }
@@ -4173,6 +4192,104 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     if (b.type === "eisen") { fillEisen(el, b); App.placeBlock(el, b); return; }
     fill0(el, b);
   };
+
+  // ---------- 紙の上で打つ ----------
+  function rowsOf(b) { return Array.prototype.slice.call(App.blockEl(b.id).querySelectorAll(".el")); }
+  function readRows(b) { b.text = rowsOf(b).map(function (d) { return d.textContent.replace(/\n/g, ""); }).join("\n").replace(/\n+$/, ""); }
+  function caretTo(div, pos) {
+    div.focus({ preventScroll: true });
+    var sel = window.getSelection(), range = document.createRange(), node = div.firstChild;
+    if (!node) { range.setStart(div, 0); } else { range.setStart(node, Math.max(0, Math.min(pos, node.length))); }
+    range.collapse(true); sel.removeAllRanges(); sel.addRange(range);
+  }
+  function caretPos(div) {
+    var sel = window.getSelection();
+    if (!sel.rangeCount || !div.contains(sel.anchorNode)) return div.textContent.length;
+    return sel.anchorNode === div ? div.textContent.length : sel.anchorOffset;
+  }
+  /** 段の幅をこえた字を、次の段へ送る（単語のとちゅうでは切らない）。送ったら true。 */
+  function flow(b, i) {
+    var rows = rowsOf(b), d = rows[i];
+    if (!d || d.scrollWidth <= d.clientWidth + 1) return false;
+    var t = d.textContent, cut = -1;
+    // 入りきる長さを、うしろから探す（空白の所で切る）
+    for (var k = t.length - 1; k > 0; k--) {
+      if (t[k] !== " ") continue;
+      d.textContent = t.slice(0, k);
+      if (d.scrollWidth <= d.clientWidth + 1) { cut = k; break; }
+    }
+    if (cut < 0) { d.textContent = t; return false; }   // 1語が段より長い。そのままにする
+    var rest = t.slice(cut + 1);
+    if (i + 1 >= rows.length) { d.textContent = t; App.toast("段が足りません。「段の数」をふやすと、続きが入ります。", 4000); return false; }
+    var next = rows[i + 1];
+    next.textContent = rest + (next.textContent ? " " + next.textContent : "");
+    return true;
+  }
+  App.startEisenEdit = function (b, ev) {
+    App.stopEditing();
+    App.selId = b.id;
+    App.edit = { id: b.id, type: "eisen" };
+    var rows = rowsOf(b), div = null, pos = 0;
+    if (ev) {
+      var hit = document.elementFromPoint(ev.clientX, ev.clientY), inRow = hit && hit.closest && hit.closest(".el");
+      if (inRow) { div = inRow; var r = document.caretRangeFromPoint && document.caretRangeFromPoint(ev.clientX, ev.clientY); pos = r && div.contains(r.startContainer) ? r.startOffset : div.textContent.length; }
+      else {
+        // 段と段の間や、右の空いた所を押したときは、いちばん近い段
+        var el = App.blockEl(b.id), rc = el.getBoundingClientRect(), yy = (ev.clientY - rc.top) / rc.height * App.eisenHeight(b), best = 1e9;
+        rows.forEach(function (d, i) { var g = rowGeom(b, i), c = (g.y0 + g.y3) / 2; if (Math.abs(c - yy) < best) { best = Math.abs(c - yy); div = d; } });
+        pos = div ? div.textContent.length : 0;
+      }
+    }
+    if (!div) { div = rows[0]; pos = div.textContent.length; }
+    rows.forEach(function (d) { d.contentEditable = "true"; });
+    caretTo(div, pos);
+    App.drawSelection();
+    App.renderPanel();
+  };
+  var stop0 = App.stopEditing;
+  App.stopEditing = function () {
+    var e = App.edit;
+    if (e && e.type === "eisen") {
+      App.edit = null;
+      var f = App.find(e.id);
+      if (f) {
+        readRows(f.block);
+        rowsOf(f.block).forEach(function (d) { d.contentEditable = "false"; d.blur(); });
+        var sel = window.getSelection(); if (sel) sel.removeAllRanges();
+        var ta = document.querySelector("#panel .eisen-text"); if (ta) ta.value = f.block.text;
+      }
+      App.commit();
+      App.drawSelection();
+      return;
+    }
+    stop0.apply(App, arguments);
+  };
+  document.addEventListener("input", function (ev) {
+    var d = ev.target;
+    if (!(d.classList && d.classList.contains("el")) || !App.edit || App.edit.type !== "eisen") return;
+    var f = App.find(App.edit.id); if (!f) return;
+    var b = f.block, i = +d.dataset.row, pos = caretPos(d), len = d.textContent.length;
+    if (flow(b, i)) {
+      // 送ったあと、カーソルが送った字の中にあったなら、次の段へ移す
+      var rows = rowsOf(b), moved = len - rows[i].textContent.length;
+      if (pos > rows[i].textContent.length) caretTo(rows[i + 1], Math.max(0, pos - rows[i].textContent.length - 1));
+      else caretTo(rows[i], Math.min(pos, rows[i].textContent.length));
+      for (var k = i + 1; k < rows.length - 1 && flow(b, k); k++) {}
+    }
+    readRows(b);
+    var ta = document.querySelector("#panel .eisen-text"); if (ta) ta.value = b.text;
+    App.commit("eisen:" + b.id);
+  }, true);
+  document.addEventListener("keydown", function (ev) {
+    var d = ev.target;
+    if (!(d.classList && d.classList.contains("el")) || !App.edit || App.edit.type !== "eisen") return;
+    var f = App.find(App.edit.id); if (!f) return;
+    var rows = rowsOf(f.block), i = +d.dataset.row;
+    if (ev.key === "Enter" || ev.key === "ArrowDown") { ev.preventDefault(); if (rows[i + 1]) caretTo(rows[i + 1], ev.key === "Enter" ? 0 : Math.min(caretPos(d), rows[i + 1].textContent.length)); }
+    else if (ev.key === "ArrowUp") { ev.preventDefault(); if (rows[i - 1]) caretTo(rows[i - 1], Math.min(caretPos(d), rows[i - 1].textContent.length)); }
+    else if (ev.key === "Backspace" && caretPos(d) === 0 && rows[i - 1]) { ev.preventDefault(); var prev = rows[i - 1], at = prev.textContent.length; prev.textContent = prev.textContent + d.textContent; d.textContent = ""; caretTo(prev, at); readRows(f.block); App.commit("eisen:" + f.block.id); }
+    else if (ev.key === "Escape") { ev.preventDefault(); App.stopEditing(); App.renderPanel(); }
+  }, true);
 
   // ---------- 設定（リボン） ----------
   /** app-panel.js から呼ばれる。ui は、設定の部品を作る関数のあつまり。 */
@@ -4188,9 +4305,9 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     p.appendChild(ui.group("罫線",
       ui.row("基線の色", ui.swatches(BASE_COLORS, b.baseColor, function (v) { b.baseColor = v; ui.touch(b); })),
       ui.row("線の色", ui.swatches(LINE_COLORS, b.lineColor, function (v) { b.lineColor = v; ui.touch(b); }))));
-    var ta = h("textarea", { class: "eisen-text", rows: 3, spellcheck: "false", placeholder: "1行が1段になります（例：apple）", "aria-label": "4線に入れる字" });
+    var ta = h("textarea", { class: "eisen-text", rows: 3, spellcheck: "false", placeholder: "紙の上の段をクリックすると、そのまま打てます。ここに打ってもよい（1行が1段）", "aria-label": "4線に入れる字" });
     ta.value = b.text || "";
-    ta.addEventListener("input", function () { b.text = ta.value; redraw(); App.commit("eisen-text:" + b.id); });
+    ta.addEventListener("input", function () { if (App.edit && App.edit.type === "eisen") App.stopEditing(); b.text = ta.value; redraw(); App.commit("eisen-text:" + b.id); });
     p.appendChild(ui.group("4線に入れる字",
       h("div", { class: "row" }, ta),
       ui.row("フォントの色", ui.swatches(App.TEXT_COLORS, b.color, function (v) { b.color = v; ui.touch(b); }))));

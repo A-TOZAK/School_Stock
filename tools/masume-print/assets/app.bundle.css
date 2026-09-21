@@ -459,3 +459,8 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 
 /* 黒板の上の字：語のとちゅうで折れにくくする（文節で折る） */
 .blk.text .tx { word-break: auto-phrase; line-break: strict; }
+
+/* 英語の4線：紙の上の段に直接打つ */
+.blk.eisen .el { cursor: text; }
+.blk.eisen .el:empty::before { content: ""; }
+.selbox.editing.eisen { border-style: dashed; }
