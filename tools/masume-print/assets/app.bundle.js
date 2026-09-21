@@ -952,6 +952,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       if ("w" in b) b.w = num(b.w, d.w || 60, 1, 700);
       if ("h" in b) b.h = num(b.h, d.h || 20, 1, 700);
     }
+    if ("guide3" in b) { if (b.guide3 === true) b.guide3 = true; else delete b.guide3; }
     if ("locked" in b) { if (b.locked === true) b.locked = true; else delete b.locked; }
     if ("font" in b) b.font = font(b.font);
     if ("color" in b) b.color = color(b.color, d.color || "#1b1b1b");
@@ -1030,6 +1031,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     d = base(d);
     if (!d) return d;
     d.title = str(d.title, 120) || "無題のプリント";
+    if ("boardDir" in d) d.boardDir = d.boardDir === "v" ? "v" : "h";
     d.margin = num(d.margin, 10, 0, 40);
     d.snap = num(d.snap, 1, 0.1, 20);
     d.pages = d.pages.slice(0, MAX_PAGES);
@@ -3140,12 +3142,32 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var part = PARTS.filter(function (x) { return x.key === key; })[0], bd = boardRect();
     if (!part || !bd) return;
     var o = Object.assign({ color: WHITE, font: "kyokasho" }, part.o), k = partCount++ % 6;
+    // 縦書きの黒板（縦書きの字の方が多い）では、部品も縦書きで、たてよこを入れかえて出す
+    var onB = App.doc.pages[App.currentPage()].blocks.filter(function (x) { return x.onBoard && x.type === "text"; });
+    // 黒板の向きは、紙に書いてあればそれ（boardDir）。なければ、黒板の上の字の向きで決める（左はしの細い日付は数えない）
+    var body = onB.filter(function (x) { return x.w > 9 || x.dir !== "v"; });
+    var vertical = App.doc.boardDir ? App.doc.boardDir === "v" : (body.length > 0 && body.filter(function (x) { return x.dir === "v"; }).length > body.length / 2);
+    if (vertical && part.key !== "hizuke") { o.dir = "v"; var tmp = o.w; o.w = Math.max(o.h, 9); o.h = Math.min(tmp, bd.h - 8); }
     // 黒板の上で、ほかの部品と重ならない場所を、左上から順に探して置く。なければ、まん中あたりに少しずつずらして置く
-    var others = App.doc.pages[App.currentPage()].blocks.filter(function (x) { return x !== bd; }).map(App.bbox), spot = null;
-    for (var xx = bd.x + 12; xx + o.w <= bd.x + bd.w - 3 && !spot; xx += 4) {
-      for (var yy = bd.y + 4; yy + o.h <= bd.y + bd.h - 3; yy += 3.8) {
-        var hit = others.some(function (r) { return xx < r.x + r.w + 2 && xx + o.w + 2 > r.x && yy < r.y + r.h + 2 && yy + o.h + 2 > r.y; });
-        if (!hit) { spot = [xx, yy]; break; }
+    var others = App.doc.pages[App.currentPage()].blocks.filter(function (x) { return x !== bd && !x.guide3; }).map(function (x) {
+      var r = App.bbox(x);   // 線のわくは、つかみやすいように太らせてある。置き場所さがしでは、線そのものの太さで見る
+      return x.type === "line" ? { x: r.x + 2.5, y: r.y + 2.5, w: Math.max(0.5, r.w - 5), h: Math.max(0.5, r.h - 5) } : r;
+    }), spot = null;
+    // 縦書きの黒板は右から、横書きは左から。棒ではさむ部品は、札のぶん（縦書きは右に7mm、横書きは上に3mm）を空ける
+    var tagR = vertical && o.band ? 7 : 0, tagT = !vertical && o.band ? 3 : 0;
+    function free(xx, yy) {
+      return !others.some(function (r) { return xx < r.x + r.w + 2 && xx + o.w + 2 + tagR > r.x && yy - tagT < r.y + r.h + 2 && yy + o.h + 2 > r.y; });
+    }
+    var xs = [], x0 = bd.x + 12, x1 = bd.x + bd.w - 3 - o.w - tagR;
+    // まず、3つの場所それぞれの左はしをためす（3分割の線をまたがないように）。それから、4mmきざみで探す
+    var zw = bd.w / 3;
+    o.w = Math.min(o.w, zw - 17);
+    [bd.x + 13.5, bd.x + zw + 3, bd.x + zw * 2 + 3].forEach(function (zx) { if (zx + o.w <= bd.x + bd.w - 3) xs.push(zx); });
+    for (var xx = x0; xx <= x1; xx += 4) xs.push(xx);
+    if (vertical) { xs = []; for (xx = bd.x + bd.w - 12 - o.w - tagR; xx >= bd.x + 4; xx -= 4) xs.push(xx); }
+    for (var i = 0; i < xs.length && !spot; i++) {
+      for (var yy = bd.y + 4 + tagT; yy + o.h <= bd.y + bd.h - 3; yy += 3.8) {
+        if (free(xs[i], yy)) { spot = [xs[i], yy]; break; }
       }
     }
     o.at = spot ? { page: App.currentPage(), x: spot[0] + o.w / 2, y: spot[1] + o.h / 2 }
@@ -3160,6 +3182,11 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     if (document.getElementById("parts-menu")) return closeParts();
     var r = btn.getBoundingClientRect();
     var menu = App.h("div", { id: "parts-menu", class: "save-menu parts-menu", role: "menu" });
+    if (App.toggleGuide3) {
+      var has3 = App.doc.pages[App.currentPage()].blocks.some(function (b) { return b.guide3; });
+      menu.appendChild(App.h("button", { type: "button", "data-part": "guide3", onclick: function () { closeParts(); App.toggleGuide3(); } }, App.h("b", null, has3 ? "3分割の線を消す" : "3分割の線を出す"), App.h("small", null, "黒板を3つに分ける、うすい点線")));
+      menu.appendChild(App.h("hr"));
+    }
     PARTS.forEach(function (x) {
       menu.appendChild(App.h("button", { type: "button", "data-part": x.key, onclick: function () { closeParts(); App.addBanshoPart(x.key); } }, App.h("b", null, x.name), App.h("small", null, x.note)));
     });
@@ -3308,7 +3335,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   App.buildKata = function (K, example) {
     var B = [], vertical = K.dir === "v";
     // 上の1行。長いときは、1行におさまる大きさまで字を小さくする
-    var headText = example ? K.head : "板書計画　　　年　　組　　教科（　　　）　単元（　　　　　　　　　　　　）　本時　　／　　　ねらい：";
+    var headText = example && K.head ? K.head : "板書計画　　　年　　組　　教科（　　　）　単元（　　　　　　　　　　　　）　本時　　／　　　ねらい：";
     var headSize = Math.max(8, Math.min(11, Math.floor(270 / headText.length / 0.3528 * 10) / 10));
     B.push(T(10, headSize < 10 ? 8.5 : 7, 277, headSize, headText));
     B.push(R(BX, BY, BW, BH, { fill: GREEN, color: FRAME, width: 1.6, locked: true }));
@@ -3318,9 +3345,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       B.push(App.make.line({ x1: BX + 9.5, y1: BY + 3, x2: BX + 9.5, y2: BY + BH - 3, color: WHITE, width: 0.4, locked: true }));
     }
     // 3分割の目安の線（うすい点線。刷っても目立たない）
-    if (K.split === 3) [1, 2].forEach(function (i) {
-      B.push(App.make.line({ x1: BX + Z * i, y1: BY + 2.5, x2: BX + Z * i, y2: BY + BH - 2.5, color: GUIDE, width: 0.3, dash: "dash", locked: true }));
-    });
+    if (K.split === 3) guideLines().forEach(function (l) { B.push(l); });
     (K.items || []).forEach(function (it) {
       if (it.k === "line" || it.k === "arrow") {
         if (!example && !it.keep) return;
@@ -3340,7 +3365,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       B.push(R(nx, ty + 7, Z - 4, th, { width: 0.4 }));
       B.push(T(nx + 1.5, ty + 8.5, Z - 7, 10, example ? n[1] : "", { h: th - 3, lineHeight: 1.55, hint: example ? "" : "①「発問」　→ 予想される反応" }));
     });
-    return { doc: { version: 1, title: K.name + (example ? "（記入例）" : ""), paper: "A4", orient: "landscape", margin: 8, snap: 0.5, pages: [{ blocks: B }] } };
+    return { doc: { version: 1, boardDir: vertical ? "v" : "h", title: K.name + (example && !K.free ? "（記入例）" : ""), paper: "A4", orient: "landscape", margin: 8, snap: 0.5, pages: [{ blocks: B }] } };
   };
 
   // 型のうすい字（hint）を出す
@@ -3352,6 +3377,29 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     if (!tx) return;
     if (b.hint) tx.setAttribute("data-hint", b.hint); else tx.removeAttribute("data-hint");
     el.classList.toggle("on-board", !!b.onBoard && !(b.fill && b.fill !== "none"));
+  };
+
+  /** 3分割の目安の線（2本）。guide3 の印をつけておき、あとから出したり消したりできる。 */
+  function guideLines() {
+    return [1, 2].map(function (i) {
+      return App.make.line({ x1: BX + Z * i, y1: BY + 2.5, x2: BX + Z * i, y2: BY + BH - 2.5, color: GUIDE, width: 0.3, dash: "dash", locked: true, guide3: true });
+    });
+  }
+  /** いまの紙の黒板に、3分割の線を出す。出ていれば消す。 */
+  App.toggleGuide3 = function () {
+    var pg = App.doc.pages[App.currentPage()], bd = pg.blocks.filter(function (r) { return r.type === "rect" && r.fill === GREEN; })[0];
+    if (!bd) return;
+    var had = pg.blocks.some(function (b) { return b.guide3; });
+    if (had) pg.blocks = pg.blocks.filter(function (b) { return !b.guide3; });
+    else {
+      // 黒板の面のすぐ上（ほかの字の下）に入れる
+      var at = pg.blocks.indexOf(bd) + 1, z = bd.w / 3;
+      [1, 2].forEach(function (i, n) {
+        pg.blocks.splice(at + n, 0, App.make.line({ x1: bd.x + z * i, y1: bd.y + 2.5, x2: bd.x + z * i, y2: bd.y + bd.h - 2.5, color: GUIDE, width: 0.3, dash: "dash", locked: true, guide3: true }));
+      });
+    }
+    App.stopEditing(); App.selId = null; App.renderAll(); App.commit();
+    App.toast(had ? "3分割の線を消しました。" : "3分割の線を出しました。うすい点線です。");
   };
 
   App.KATA = [];
@@ -3366,6 +3414,12 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 (function () {
   "use strict";
   var add = window.App.addKata;
+
+  // ======================= 白紙の黒板 =======================
+  add({ key: "free-h", subject: "白紙", free: true, name: "白紙の黒板（横書き）", note: "黒板と、左はしの日付だけ。左の「板書」から、めあて、まとめ、吹き出しなどを1つずつ置いていきます。", items: [], notes: [["はじめ", ""], ["なか", ""], ["おわり", ""]] });
+  add({ key: "free-h3", subject: "白紙", free: true, name: "白紙の黒板（横書き、3分割の線つき）", note: "うすい点線で3つに分けてあります。線は、左の「板書」から、いつでも消したり出したりできます。", split: 3, items: [], notes: [["はじめ", ""], ["なか", ""], ["おわり", ""]] });
+  add({ key: "free-v", subject: "白紙", free: true, name: "白紙の黒板（縦書き）", note: "国語、学級会、道徳などに。右はしの日付だけ。部品は縦書きで出ます。", dir: "v",
+    items: [{ k: "moji", c: 0, cols: 1, top: 3, len: 40, t: "○月○日（○）", keep: true, o: { size: 9, lineHeight: 1.2 } }], notes: [["はじめ", ""], ["なか", ""], ["おわり", ""]] });
 
   // ======================= 算数 =======================
   add({
@@ -4456,9 +4510,11 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         gb.appendChild(h("div", { class: "st-card kata", "data-kata": K.key, "data-sub": K.subject },
           h("span", { class: "st-thumb" }, h("img", { src: "assets/tpl/kata-" + K.key + ".webp", alt: "", loading: "lazy" })),
           h("span", { class: "st-tag" }, K.subject), h("span", { class: "st-name" }, K.name.replace(/^\S+　/, "")), h("span", { class: "st-note" }, K.note),
-          h("span", { class: "st-two" },
-            h("button", { type: "button", class: "btn primary", "data-go": "kata", onclick: function () { open(App.buildKata(K, false).doc, fresh); } }, "型で始める"),
-            h("button", { type: "button", class: "btn", "data-go": "example", onclick: function () { open(App.buildKata(K, true).doc, fresh); } }, "記入例を見る"))));
+          K.free
+            ? h("span", { class: "st-two" }, h("button", { type: "button", class: "btn primary", "data-go": "kata", onclick: function () { open(App.buildKata(K, false).doc, fresh); } }, "白紙で始める"))
+            : h("span", { class: "st-two" },
+              h("button", { type: "button", class: "btn primary", "data-go": "kata", onclick: function () { open(App.buildKata(K, false).doc, fresh); } }, "型で始める"),
+              h("button", { type: "button", class: "btn", "data-go": "example", onclick: function () { open(App.buildKata(K, true).doc, fresh); } }, "記入例を見る"))));
       });
       body.appendChild(gb);
       var boards = App.BANSHO_SHEETS || [];
