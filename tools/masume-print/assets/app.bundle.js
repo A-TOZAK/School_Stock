@@ -341,88 +341,246 @@
     rules.push({ r: 2, c0: 0, c1: cols - 1, role: "given" });
     put(R, 2, "answer", true);
 
+    // 書く順番（ord）：一の位から1けたずつ。くり上がり・くり下がりは小さい数字（mark）で、上の数のマスに書く
+    var L = I + F, ta = zeros(L - A.int.length - F) + A.int + A.frac + zeros(F - A.frac.length);
+    var tb = zeros(L - B.int.length - F) + B.int + B.frac + zeros(F - B.frac.length);
+    var T = ta.split("").map(Number), Bd = tb.split("").map(Number);
+    var ord = 0, stepList = [], carry = 0;
+    function colOf(j) { return cols - 1 - j; }                    // j＝右から何けた目（0が右はし）
+    function place(j) { var p = j - F; return p >= 0 ? ["一", "十", "百", "千", "一万", "十万"][p] + "の位" : "1/" + Math.pow(10, -p) + "の位"; }
+    function resultAt(c) { return cells.filter(function (x) { return x.r === 2 && x.c === c && x.role === "answer"; }); }
+    function mark(c, ch, o, strike) {
+      if (strike) cells.push({ r: 0, c: c, ch: "", role: "answer", strike: true, mark: true, ord: o });
+      var old = cells.filter(function (x) { return x.small && x.r === 0 && x.c === c; })[0];
+      if (old) { old.ch = ch; old.ord = o; } else cells.push({ r: 0, c: c, ch: ch, role: "answer", small: true, mark: true, ord: o });
+    }
+    for (var j = 0; j < L; j++) {
+      var da = T[L - 1 - j], db = Bd[L - 1 - j], c = colOf(j), text;
+      ord++;
+      if (op === "add") {
+        var sum = da + db + carry, dig = sum % 10;
+        text = place(j) + "　" + da + "＋" + db + (carry ? "＋1" : "") + "＝" + sum;
+        carry = sum >= 10 ? 1 : 0;
+        if (carry && j < L - 1) { mark(c - 1, "1", ord); text += " → " + dig + "を書いて、1くり上げる"; }
+        if (carry && j === L - 1) resultAt(c - 1).forEach(function (x) { x.ord = ord; });
+      } else {
+        var t0 = T[L - 1 - j];
+        if (t0 < db) {
+          var k = j + 1;
+          while (k < L && T[L - 1 - k] === 0) k++;
+          T[L - 1 - k] -= 1; mark(colOf(k), String(T[L - 1 - k]), ord, true);
+          for (var m2 = j + 1; m2 < k; m2++) { T[L - 1 - m2] = 9; mark(colOf(m2), "9", ord, true); }
+          T[L - 1 - j] += 10;
+          text = place(j) + "　" + t0 + "−" + db + "はひけないので、" + place(k) + "から1くり下げる → " + T[L - 1 - j] + "−" + db + "＝" + (T[L - 1 - j] - db);
+        } else text = place(j) + "　" + t0 + "−" + db + "＝" + (t0 - db);
+      }
+      resultAt(c).forEach(function (x) { x.ord = ord; });
+      stepList.push({ ord: ord, kind: "col" + j, text: text });
+    }
+    cells.forEach(function (x) { if (x.role === "answer" && x.ord == null) x.ord = ord; });
+
     var ans = R.int + (R.frac.replace(/0+$/, "") ? "." + R.frac.replace(/0+$/, "") : "");
     return { ok: true, op: op, a: a, b: b, cols: cols, rows: 3, reserveRows: 3,
-             cells: cells, rules: rules, bracket: null, answer: ans };
+             cells: cells, rules: rules, bracket: null, answer: ans, steps: stepList, maxOrd: ord };
   }
   function zeros(n) { var s = ""; while (s.length < n) s += "0"; return s; }
 
-  function solveMul(a, b) {
-    if (a.indexOf(".") >= 0 || b.indexOf(".") >= 0) {
-      return { ok: false, error: "かけ算の筆算は、いまは整数だけに対応しています。" };
+  /* 小数を「点をぬいた数字の並び」と「小数点より下のけた数」に分ける。"0.72" → {d:"072", f:2} */
+  function digitsOf(s) {
+    s = s.replace(/^0+(?=\d)/, "");
+    var p = s.indexOf(".");
+    return p < 0 ? { d: s, f: 0 } : { d: s.slice(0, p) + s.slice(p + 1), f: s.length - p - 1 };
+  }
+  /* 数字の並びを endCol に右をそろえて置く。小数点は、一の位のマスの右下に打つ */
+  function putNum(cells, n, r, endCol, role) {
+    var dp = n.d.length - n.f - 1;
+    for (var k = 0; k < n.d.length; k++) {
+      var cell = { r: r, c: endCol - (n.d.length - 1 - k), ch: n.d[k], role: role };
+      if (n.f && k === dp) cell.point = true;
+      cells.push(cell);
     }
-    var A = BigInt(a), B = BigInt(b);
-    var sa = A.toString(), sb = B.toString(), res = (A * B).toString();
+  }
+  /* 数字の並びと小数点より下のけた数から、答えの文字列を作る（終わりの0は消す） */
+  function fmtNum(d, f) {
+    var i = d.slice(0, d.length - f).replace(/^0+(?=\d)/, "") || "0";
+    var fr = f ? d.slice(d.length - f).replace(/0+$/, "") : "";
+    return i + (fr ? "." + fr : "");
+  }
+  /* 答えの小数点より下の、終わりの0に消す印をつける（教科書の書き方） */
+  function strikeTrailing(cells, r, c0, d, f) {
+    if (!f) return;
+    var m = /0+$/.exec(d.slice(d.length - f)), t = m ? m[0].length : 0;
+    cells.forEach(function (cell) {
+      if (cell.r !== r || cell.c < c0 || cell.c > c0 + d.length - 1) return;
+      var k = cell.c - c0;
+      if (k >= d.length - t && cell.ch !== "") cell.strike = true;
+      if (t === f && k === d.length - f - 1 && cell.ch !== "") cell.pointStrike = true;
+    });
+  }
+
+  /* かけ算。小数でも数は右をそろえて書き、とちゅうの積は整数のまま。
+   * 答えの小数点は、かけられる数とかける数の小数点より下のけた数をあわせた数だけ右から数えて打つ */
+  function solveMul(a, b) {
+    var A = digitsOf(a), B = digitsOf(b), F = A.f + B.f;
+    var IA = BigInt(A.d), IB = BigInt(B.d);
+    var P = (IA * IB).toString();
+    while (P.length < F + 1) P = "0" + P;          // 0.3×0.2＝0.06 のように、上に0を足す
     // 答えのいちばん上のけたは、記号の列の下に入ってよい（教科書の書き方）
-    var cols = Math.max(1 + Math.max(sa.length, sb.length), res.length), end = cols - 1;
+    var cols = Math.max(1 + Math.max(A.d.length, B.d.length), P.length), end = cols - 1;
     var cells = [], rules = [];
-    putRight(cells, sa, 0, end, "given");
-    putRight(cells, sb, 1, end, "given");
+    putNum(cells, A, 0, end, "given");
+    putNum(cells, B, 1, end, "given");
     cells.push({ r: 1, c: 0, ch: "×", role: "given", sign: true });
     rules.push({ r: 2, c0: 0, c1: end, role: "given" });
 
     var partial = [];
-    for (var j = 0; j < sb.length; j++) {
-      var d = sb[sb.length - 1 - j];
-      if (d !== "0") partial.push({ j: j, val: (A * BigInt(d)).toString() });
+    for (var j = 0; j < B.d.length; j++) {
+      var d = B.d[B.d.length - 1 - j];
+      if (d !== "0") partial.push({ j: j, val: (IA * BigInt(d)).toString() });
     }
-    var rows;
-    if (sb.length === 1 || partial.length <= 1) {
-      putRight(cells, res, 2, end, "answer");
-      rows = 3;
+    // 書く順番（ord）：小数点がないものとして かける → たす → 積の小数点をうつ → 終わりの0を消す
+    var rows, resRow, ord = 0, stepList = [], from;
+    if (partial.length <= 1) {
+      resRow = 2; rows = 3;
     } else {
       for (var p = 0; p < partial.length; p++) {
+        from = cells.length;
         putRight(cells, partial[p].val, 2 + p, end - partial[p].j, "answer");
+        ord++; for (var q2 = from; q2 < cells.length; q2++) cells[q2].ord = ord;
+        stepList.push({ ord: ord, kind: "kakeru", text: A.d.replace(/^0+(?=\d)/, "") + "×" + B.d[B.d.length - 1 - partial[p].j] + "＝" + partial[p].val });
       }
-      rules.push({ r: 2 + partial.length, c0: 0, c1: end, role: "answer" });
-      putRight(cells, res, 2 + partial.length, end, "answer");
-      rows = 3 + partial.length;
+      rules.push({ r: 2 + partial.length, c0: 0, c1: end, role: "answer", ord: ord + 1 });
+      resRow = 2 + partial.length; rows = 3 + partial.length;
     }
-    var reserve = sb.length === 1 ? 3 : 2 + sb.length + 1;
+    from = cells.length;
+    putNum(cells, { d: P, f: F }, resRow, end, "answer");
+    strikeTrailing(cells, resRow, end - P.length + 1, P, F);
+    ord++;
+    var intP = P.replace(/^0+(?=\d)/, "");
+    stepList.push({ ord: ord, kind: partial.length > 1 ? "tasu" : "kakeru",
+      text: partial.length > 1 ? "たす → " + intP : A.d.replace(/^0+(?=\d)/, "") + "×" + B.d.replace(/^0+(?=\d)/, "") + "＝" + intP });
+    for (var q3 = from; q3 < cells.length; q3++) {
+      var cq = cells[q3]; cq.ord = ord;
+      if (cq.point) cq.pointOrd = ord + 1;
+      if (cq.strike || cq.pointStrike) cq.strikeOrd = ord + 2;
+    }
+    if (F > 0) {
+      stepList.push({ ord: ord + 1, kind: "ten", text: "点の下のけた " + A.f + "＋" + B.f + "＝" + F + " → 右から" + F + "けたのところに点" });
+      ord++;
+      if (/0$/.test(P.slice(P.length - F))) { ord++; stepList.push({ ord: ord, kind: "zero", text: "終わりの0を消す → " + fmtNum(P, F) }); }
+    }
+    var nb = (B.d.replace(/^0+/, "") || "0").length;
+    var reserve = nb === 1 ? 3 : 2 + nb + 1;
     return { ok: true, op: "mul", a: a, b: b, cols: cols, rows: rows, reserveRows: Math.max(rows, reserve),
-             cells: cells, rules: rules, bracket: null, answer: res };
+             cells: cells, rules: rules, bracket: null, answer: fmtNum(P, F), steps: stepList, maxOrd: ord };
   }
 
+  /* わり算。
+   * わる数が小数のときは、わる数とわられる数の小数点を同じけただけ右へ移して、わる数を整数にする
+   *   （もとの小数点に消す印、移した先に新しい点。どちらも答えの側に書く）。
+   * 商の小数点は、わられる数の（移した）小数点の真上に打つ。
+   * opts.divMode … "amari"（あまりを出す）／"warikiru"（0をつけたしてわりきれるまで）／
+   *                 省くと、整数どうしは あまり、小数があれば わりきれるとき（0を3つまで）だけ わり進む。
+   * あまりの小数点は、わられる数の「もとの」小数点にそろえる。 */
   function solveDiv(a, b, opts) {
-    if (a.indexOf(".") >= 0 || b.indexOf(".") >= 0) {
-      return { ok: false, error: "わり算の筆算は、いまは整数だけに対応しています。" };
+    opts = opts || {};
+    var A = digitsOf(a), B = digitsOf(b);
+    var IB = BigInt(B.d);
+    if (IB === 0n) return { ok: false, error: "0でわることはできません。" };
+    var skipZero = opts.zeroStep !== "write";
+    var s = B.f;                                   // 小数点を移すけた数
+    var W = A.d.split(""), wRole = W.map(function () { return "given"; });
+    var fW = A.f - s;
+    while (fW < 0) { W.push("0"); wRole.push("answer"); fW++; }   // 3.6÷0.12 → 360÷12 の0
+    var isDec = A.f > 0 || B.f > 0;
+    var mode = opts.divMode && opts.divMode !== "auto" ? opts.divMode : (isDec ? "auto" : "amari");
+    if (mode !== "amari") {
+      var rem = BigInt(W.join("")) % IB, extra = 0, max = mode === "warikiru" ? 6 : 3;
+      while (rem !== 0n && extra < max) { rem = rem * 10n % IB; extra++; }
+      if (rem !== 0n) {
+        if (mode === "warikiru") return { ok: false, error: "わりきれません（0を6つつけたしても終わりません）。" };
+        extra = 0;
+      }
+      for (var e = 0; e < extra; e++) { W.push("0"); wRole.push("answer"); fW++; }
     }
-    var Bn = BigInt(b);
-    if (Bn === 0n) return { ok: false, error: "0でわることはできません。" };
-    var skipZero = !(opts && opts.zeroStep === "write");
-    var sa = stripInt(a), sb = Bn.toString();
-    var nb = sb.length, na = sa.length, cols = nb + na;
+    var n = W.length, onesIdx = n - fW - 1;
+    var nb = B.d.length, cols = nb + n;
     var cells = [], rules = [];
-    putRight(cells, sb, 1, nb - 1, "given");
-    putRight(cells, sa, 1, cols - 1, "given");
+    putNum(cells, B, 1, nb - 1, "given");
+    putNum(cells, A, 1, nb + A.d.length - 1, "given");
+    for (var z = A.d.length; z < n; z++) cells.push({ r: 1, c: nb + z, ch: W[z], role: wRole[z] });
+    var ord = 0, stepList = [];
+    if (s > 0) {
+      ord = 1;
+      cells.push({ r: 1, c: nb - B.f - 1, ch: "", role: "answer", pointStrike: true, ord: 1 });
+      if (A.f > 0) cells.push({ r: 1, c: nb + A.d.length - A.f - 1, ch: "", role: "answer", pointStrike: true, ord: 1 });
+      cells.push({ r: 1, c: nb + onesIdx, ch: "", role: "answer", point: true, ord: 1 });
+      for (var z2 = A.d.length; z2 < A.d.length + Math.max(0, s - A.f); z2++) cells.forEach(function (x) { if (x.r === 1 && x.c === nb + z2) x.ord = 1; });
+      stepList.push({ ord: 1, kind: "utsusu", text: "点を" + s + "けた右へ移す → " + fmtNum(W.slice(0, A.d.length + Math.max(0, s - A.f)).join(""), Math.max(0, A.f - s)) + "÷" + IB });
+    }
     rules.push({ r: 1, c0: nb, c1: cols - 1, role: "given", vinculum: true });
 
-    var cur = 0n, started = false, subtracted = false, r = 2, steps = 0, q = "";
-    for (var k = 0; k < na; k++) {
-      cur = cur * 10n + BigInt(sa[k]);
-      var qd = cur / Bn;
-      if (!started && qd === 0n && k < na - 1) continue;
+    // 書く順番（ord）と、その一手の短い式（stepList）も持つ。コマ送りの例題に使う
+    //   たてる → かける → ひく →（おろす → たてる → …）
+    var cur = 0n, started = false, subtracted = false, r = 2, steps = 0, q = "", qStart = -1;
+    var hikuOrd = 0, diffLen = 0;
+    function tag(from, o) { for (var i = from; i < cells.length; i++) cells[i].ord = o; }
+    for (var k = 0; k < n; k++) {
+      cur = cur * 10n + BigInt(W[k]);
+      var qd = cur / IB;
+      if (!started && qd === 0n && k < onesIdx) continue;
+      if (!started) qStart = k;
       started = true;
       steps++;
       q += qd.toString();
-      cells.push({ r: 0, c: nb + k, ch: qd.toString(), role: "answer" });
-      if (qd === 0n && skipZero) continue;
       var curStr = cur.toString();
-      if (subtracted) { putRight(cells, curStr, r, nb + k, "answer"); r++; }
-      var prod = (qd * Bn).toString();
+      if (subtracted && !(qd === 0n && skipZero)) {
+        // ひいた答え（前の「ひく」の続き）と、下ろした数（「おろす」）を同じ行に書く
+        var from = cells.length;
+        putRight(cells, curStr, r, nb + k, "answer"); r++;
+        ord++;
+        for (var d = from; d < cells.length; d++) cells[d].ord = (diffLen > 0 && d - from < diffLen) ? hikuOrd : ord;
+        stepList.push({ ord: ord, kind: "orosu", text: W[k] + "を下ろす → " + curStr });
+      }
+      ord++;
+      cells.push({ r: 0, c: nb + k, ch: qd.toString(), role: "answer", ord: ord });
+      stepList.push({ ord: ord, kind: "tateru", text: curStr + "÷" + IB + " → " + qd + "をたてる" });
+      if (qd === 0n && (skipZero || !subtracted)) continue;
+      var prod = (qd * IB).toString();
+      var f2 = cells.length;
       putRight(cells, prod, r, nb + k, "answer");
+      ord++; tag(f2, ord);
+      stepList.push({ ord: ord, kind: "kakeru", text: qd + "×" + IB + "＝" + prod });
       r++;
-      rules.push({ r: r, c0: nb + k - (Math.max(curStr.length, prod.length) - 1), c1: nb + k, role: "answer" });
-      cur = cur - qd * Bn;
+      ord++; hikuOrd = ord;
+      rules.push({ r: r, c0: nb + k - (Math.max(curStr.length, prod.length) - 1), c1: nb + k, role: "answer", ord: ord });
+      cur = cur - qd * IB;
+      diffLen = cur > 0n ? cur.toString().length : 0;
+      stepList.push({ ord: ord, kind: "hiku", text: curStr + "−" + prod + "＝" + cur });
       subtracted = true;
     }
-    if (subtracted) { putRight(cells, cur.toString(), r, cols - 1, "answer"); r++; }
+    var qf = n - 1 - onesIdx;                      // 商の小数点より下のけた数
+    if (qf > 0) {
+      cells.forEach(function (cell) { if (cell.r === 0 && cell.c === nb + onesIdx) { cell.point = true; cell.pointOrd = cell.ord; } });
+      strikeTrailing(cells, 0, nb + qStart, q, qf);
+    }
+    // あまり：小数点は、わられる数のもとの小数点（移す前）にそろえる
+    var origOnes = A.d.length - A.f - 1, rf = Math.max(0, (n - 1) - origOnes), rd = cur.toString();
+    while (rd.length < rf + 1) rd = "0" + rd;
+    if (subtracted) {
+      var f3 = cells.length;
+      if (cur > 0n && rf > 0) putNum(cells, { d: rd, f: rf }, r, cols - 1, "answer");
+      else putRight(cells, cur.toString(), r, cols - 1, "answer");
+      tag(f3, hikuOrd);
+      r++;
+    }
     var rows = r;
     var reserve = 2 + steps * 2;
-    var ans = q + (cur > 0n ? " あまり " + cur.toString() : "");
+    var qs = fmtNum(q, qf), rs = cur > 0n ? fmtNum(rd, rf) : "0";
+    var ans = qs + (cur > 0n ? " あまり " + rs : "");
     return { ok: true, op: "div", a: a, b: b, cols: cols, rows: rows, reserveRows: Math.max(rows, reserve),
              cells: cells, rules: rules, bracket: { r: 1, c: nb }, answer: ans,
-             quotient: q, remainder: cur.toString() };
+             quotient: qs, remainder: rs, steps: stepList, maxOrd: ord };
   }
 
   function solve(src, opts) {
@@ -458,6 +616,8 @@
 
   var OPS = { "+": "+", "-": "−", "*": "×", "×": "×", "÷": "÷", "=": "=", "<": "<", ">": ">", "≦": "≦", "≧": "≧" };
   var PART = "[0-9□○△A-Za-z]+";
+  // 分子・分母には「(2×1)」のように式も書ける（途中式を出すため。2026-09-23）
+  var GROUP = "(?:\\([^()\\/]*\\)|" + PART + ")";
 
   function normalize(src) {
     return String(src || "")
@@ -475,7 +635,7 @@
   function parse(src) {
     var s = normalize(src), out = [], m;
     var reMixed = new RegExp("^([0-9]+)\\s*と\\s*(" + PART + ")\\/(" + PART + ")");
-    var reFrac = new RegExp("^(" + PART + ")\\/(" + PART + ")");
+    var reFrac = new RegExp("^(" + GROUP + ")\\/(" + GROUP + ")");
     while (s.length) {
       if ((m = /^\s+/.exec(s))) { s = s.slice(m[0].length); continue; }
       if ((m = reMixed.exec(s))) { out.push({ t: "mixed", whole: m[1], num: m[2], den: m[3] }); s = s.slice(m[0].length); continue; }
@@ -628,7 +788,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     hissan: function (o) {
       return Object.assign({
         id: App.uid(), type: "hissan", x: 20, y: 20, expr: "92÷4", mode: "problem", cell: 10, grid: "hougan",
-        ansColor: "#d12a1e", zeroStep: "skip", spare: 0, font: "kyokasho"
+        ansColor: "#d12a1e", zeroStep: "skip", divMode: "auto", spare: 0, font: "kyokasho"
       }, o || {});
     },
     shiki: function (o) {
@@ -791,7 +951,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
           if (res && res.lines.length > b.lines) out.push(name + "：字が入りきっていません（必要 " + res.lines.length + "行 ／ いま " + b.lines + "行）");
         }
         if (b.type === "hissan") {
-          var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep });
+          var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep, divMode: b.divMode });
           if (!sol.ok) out.push(name + "：式「" + b.expr + "」を解けません（" + sol.error + "）");
         }
       });
@@ -1007,6 +1167,9 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         b.expr = str(b.expr, 60); b.cell = num(b.cell, 10, 3, 40); b.spare = Math.round(num(b.spare, 0, 0, 20));
         b.mode = pick(b.mode, ["problem", "answer"], "problem");
         b.zeroStep = pick(b.zeroStep, ["skip", "write"], "skip");
+        b.divMode = pick(b.divMode, ["auto", "amari", "warikiru"], "auto");
+        b.upto = Math.round(num(b.upto, 0, 0, 99));
+        b.marks = b.marks === true;
         b.grid = pick(b.grid, ["hougan", "masu", "none"], "hougan");
         b.ansColor = color(b.ansColor, "#d12a1e");
         break;
@@ -1743,13 +1906,23 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   // ---------- 筆算 ----------
   function fillHissan(el, b) {
     el.innerHTML = "";
-    var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep });
+    var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep, divMode: b.divMode });
     if (!sol.ok) {
       b.w = 70; b.h = 16;
       el.appendChild(h("div", { class: "hissan-err no-print" }, sol.error));
       return;
     }
-    var c = b.cell, showAns = b.mode === "answer";
+    // upto＝コマ送りの例題。その手までの答えだけを見せ、いま書いた数字だけを答えの色、前に書いた数字は黒にする
+    var upto = b.upto > 0 ? b.upto : 0;
+    var c = b.cell, showAns = b.mode === "answer" || upto > 0;
+    function stepColor(o) {
+      if (!upto) return b.ansColor;
+      return o === upto ? b.ansColor : (b.color || INK);
+    }
+    function hidden(o) {
+      if (!upto) return false;
+      return o == null ? upto < (sol.maxOrd || 0) : o > upto;
+    }
     var rows = Math.max(sol.rows, sol.reserveRows) + (b.spare || 0);
     var W = sol.cols * c, H = rows * c;
     b.w = W; b.h = H;
@@ -1768,19 +1941,28 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     }
 
     sol.cells.forEach(function (cell) {
-      if (cell.role === "answer" && !showAns) return;
-      var color = cell.role === "answer" ? b.ansColor : (b.color || INK);
+      if (cell.role === "answer" && (!showAns || hidden(cell.ord))) return;
+      // くり上がり・くり下がりの小さい数字と印は、コマ送りか「印も見せる」のときだけ
+      if (cell.mark && !upto && !b.marks) return;
+      var color = cell.role === "answer" ? stepColor(cell.ord) : (b.color || INK);
       var cx = cell.c * c + c / 2, cy = cell.r * c + c / 2;
-      svg.appendChild(s("text", { x: cx, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
-        "font-size": c * (cell.sign ? 0.62 : 0.74), fill: color }, cell.ch));
-      if (cell.point) svg.appendChild(s("circle", { cx: cell.c * c + c, cy: cell.r * c + c * 0.8, r: c * 0.06, fill: color }));
-      if (cell.strike) svg.appendChild(s("line", { x1: cx + c * 0.26, y1: cy - c * 0.34, x2: cx - c * 0.26, y2: cy + c * 0.34, stroke: color, "stroke-width": 0.35 }));
-      if (cell.pointStrike) svg.appendChild(s("line", { x1: cell.c * c + c + c * 0.12, y1: cell.r * c + c * 0.66, x2: cell.c * c + c - c * 0.12, y2: cell.r * c + c * 0.94, stroke: color, "stroke-width": 0.35 }));
+      if (cell.small) {
+        svg.appendChild(s("text", { x: cell.c * c + c * 0.83, y: cell.r * c + c * 0.22, "text-anchor": "middle", "dominant-baseline": "central",
+          "font-size": c * 0.42, fill: color }, cell.ch));
+      } else if (cell.ch !== "") {
+        svg.appendChild(s("text", { x: cx, y: cy, "text-anchor": "middle", "dominant-baseline": "central",
+          "font-size": c * (cell.sign ? 0.62 : 0.74), fill: color }, cell.ch));
+      }
+      function shown(o) { return o == null || !upto || o <= upto; }
+      function colorOf(o) { return o == null ? color : (cell.role === "answer" ? stepColor(o) : (o === upto ? b.ansColor : color)); }
+      if (cell.point && shown(cell.pointOrd)) svg.appendChild(s("circle", { cx: cell.c * c + c, cy: cell.r * c + c * 0.8, r: c * 0.06, fill: colorOf(cell.pointOrd) }));
+      if (cell.strike && shown(cell.strikeOrd)) svg.appendChild(s("line", { x1: cx + c * 0.26, y1: cy - c * 0.34, x2: cx - c * 0.26, y2: cy + c * 0.34, stroke: colorOf(cell.strikeOrd), "stroke-width": 0.35 }));
+      if (cell.pointStrike && shown(cell.strikeOrd)) svg.appendChild(s("line", { x1: cell.c * c + c + c * 0.12, y1: cell.r * c + c * 0.66, x2: cell.c * c + c - c * 0.12, y2: cell.r * c + c * 0.94, stroke: colorOf(cell.strikeOrd), "stroke-width": 0.35 }));
     });
 
     sol.rules.forEach(function (r) {
-      if (r.role === "answer" && !showAns) return;
-      var color = r.role === "answer" ? b.ansColor : (b.color || INK);
+      if (r.role === "answer" && (!showAns || hidden(r.ord))) return;
+      var color = r.role === "answer" ? stepColor(r.ord) : (b.color || INK);
       svg.appendChild(s("line", { x1: r.c0 * c - (r.vinculum ? 0 : c * 0.08), y1: r.r * c, x2: (r.c1 + 1) * c + c * 0.08, y2: r.r * c,
         stroke: color, "stroke-width": 0.5, "stroke-linecap": "round" }));
     });
@@ -1814,7 +1996,9 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   }
   function fracPart(v) {
     if (/^□+$/.test(v)) return h("span", { class: "sk-part" }, h("span", { class: "sk-box small", style: "width:" + (1.1 * v.length) + "em" }));
-    return h("span", { class: "sk-part" }, v);
+    // 「(2×1)」は、かっこを外して 2×1 と組む（分子・分母に式を書いたとき）
+    var inner = /^\(([^()]*)\)$/.exec(v);
+    return h("span", { class: "sk-part" }, inner ? Shiki.normalize(inner[1]).replace(/\*/g, "×").replace(/-/g, "−") : v);
   }
 
   // ---------- 画像 ----------
@@ -2365,7 +2549,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       b.onMasu = false; b.grid = "hougan";
       return true;
     }
-    var c = hit.cell, g = App.bbox(hit), sol = window.Hissan.solve(b.expr, { zeroStep: b.zeroStep });
+    var c = hit.cell, g = App.bbox(hit), sol = window.Hissan.solve(b.expr, { zeroStep: b.zeroStep, divMode: b.divMode });
     var cols = sol.ok ? sol.cols : 3, rows = sol.ok ? Math.max(sol.rows, sol.reserveRows) + (b.spare || 0) : 3;
     var maxCol = Math.max(0, Math.round(g.w / c) - cols), maxRow = Math.max(0, Math.round(g.h / c) - rows);
     var col = clamp(Math.round((b.x - g.x) / c), 0, maxCol), row = clamp(Math.round((b.y - g.y) / c), 0, maxRow);
@@ -4356,7 +4540,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
    *  o = { title, exprs[], paper, orient, cell, cols("auto"か数), answers, num("kakko"|"maru"), zeroStep }
    *  返すのは { doc, skipped[]（筆算にできなかった式）, cols } */
   App.buildKeisan = function (o) {
-    o = Object.assign({ title: "計算プリント", exprs: [], paper: "A4", orient: "portrait", cell: 10, cols: "auto", answers: true, num: "kakko", zeroStep: "skip" }, o || {});
+    o = Object.assign({ title: "計算プリント", exprs: [], paper: "A4", orient: "portrait", cell: 10, cols: "auto", answers: true, num: "kakko", zeroStep: "skip", divMode: "auto" }, o || {});
     var P = App.PAPER[o.paper] || App.PAPER.A4;
     var pw = o.orient === "landscape" ? P[1] : P[0], ph = o.orient === "landscape" ? P[0] : P[1];
     var m = 12, c = o.cell, gapY = Math.max(8, c * 0.8), numW = 11;
@@ -4364,7 +4548,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     o.exprs.forEach(function (src) {
       src = String(src || "").trim();
       if (!src) return;
-      var sol = Hissan.solve(src, { zeroStep: o.zeroStep });
+      var sol = Hissan.solve(src, { zeroStep: o.zeroStep, divMode: o.divMode });
       if (!sol.ok) { skipped.push(src); return; }
       items.push({ expr: src, w: sol.cols * c, h: Math.max(sol.rows, sol.reserveRows) * c });
     });
@@ -4402,7 +4586,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         row.forEach(function (it, k) {
           var x = m + slot * k;
           blocks.push(textBlock(x, y - 1, numW, 12, numLabel(i + k, o.num)));
-          blocks.push(App.make.hissan({ x: Math.ceil((x + numW + 1) * 2) / 2, y: y, expr: it.expr, mode: mode, cell: c, zeroStep: o.zeroStep }));
+          blocks.push(App.make.hissan({ x: Math.ceil((x + numW + 1) * 2) / 2, y: y, expr: it.expr, mode: mode, cell: c, zeroStep: o.zeroStep, divMode: o.divMode }));
         });
         y += rowH + gapY;
         i += cols;
@@ -4432,7 +4616,11 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     "wari22": ["わり算（2けた÷2けた）", function () { var b = rnd(12, 38); return rnd(b * 2, 99) + "÷" + b; }],
     "wari32": ["わり算（3けた÷2けた）", function () { var b = rnd(12, 78); return rnd(Math.max(105, b * 2), 987) + "÷" + b; }],
     "shosuTasu": ["小数のたし算", function () { return (rnd(11, 98) / 10).toFixed(1) + "+" + (rnd(105, 989) / 100).toFixed(2).replace(/0$/, ""); }],
-    "shosuHiku": ["小数のひき算", function () { var a = rnd(51, 98), b = rnd(11, a - 5); return (a / 10).toFixed(1) + "-" + (b / 10).toFixed(1); }]
+    "shosuHiku": ["小数のひき算", function () { var a = rnd(51, 98), b = rnd(11, a - 5); return (a / 10).toFixed(1) + "-" + (b / 10).toFixed(1); }],
+    "shosuKakeSei": ["小数×整数", function () { return (rnd(12, 98) / 10).toFixed(1) + "×" + rnd(3, 9); }],
+    "shosuKake": ["小数×小数", function () { return (rnd(12, 98) / 10).toFixed(1) + "×" + (rnd(12, 49) / 10).toFixed(1); }],
+    "shosuWariSei": ["小数÷整数（わりきれる）", function () { var b = rnd(2, 9); return (b * rnd(12, 98) / 10).toFixed(1) + "÷" + b; }],
+    "shosuWari": ["小数÷小数（わりきれる）", function () { var b = rnd(12, 48), q = rnd(2, 9) * (rnd(0, 1) ? 1 : 10) / 10; return (b * q / 10).toFixed(2).replace(/0$/, "") + "÷" + (b / 10).toFixed(1); }]
   };
   App.keisanRandom = function (kind, n) {
     var mk = MAKERS[kind] && MAKERS[kind][1], out = [], seen = {}, guard = 0;
@@ -4475,6 +4663,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     var cols = sel([["auto", "おまかせ"], ["2", "2問"], ["3", "3問"], ["4", "4問"], ["5", "5問"], ["6", "6問"]], "auto");
     var num = sel([["kakko", "（1）（2）"], ["maru", "① ②"]], "kakko");
     var zero = sel([["skip", "省く"], ["write", "書く"]], "skip");
+    var divm = sel([["auto", "おまかせ"], ["amari", "あまりを出す"], ["warikiru", "わりきれるまで"]], "auto");
     var ans = h("input", { type: "checkbox" }); ans.checked = true;
     var kind = sel(Object.keys(MAKERS).map(function (k) { return [k, MAKERS[k][0]]; }), "wari21");
     var count = sel([["6", "6問"], ["9", "9問"], ["12", "12問"], ["16", "16問"], ["20", "20問"]], "12");
@@ -4482,7 +4671,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 
     function read() {
       var pp = paper.value.split(":");
-      return { title: title.value || "計算プリント", exprs: ta.value.split(/\n/), paper: pp[0], orient: pp[1], cell: parseFloat(cell.value), cols: cols.value, answers: ans.checked, num: num.value, zeroStep: zero.value };
+      return { title: title.value || "計算プリント", exprs: ta.value.split(/\n/), paper: pp[0], orient: pp[1], cell: parseFloat(cell.value), cols: cols.value, answers: ans.checked, num: num.value, zeroStep: zero.value, divMode: divm.value };
     }
     function refresh() {
       var r = App.buildKeisan(read()), n = r.doc.pages.length, q = ans.checked ? n / 2 : n;
@@ -4491,7 +4680,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
       info.textContent = msg;
       return r;
     }
-    [ta, paper, cell, cols, num, zero, ans].forEach(function (e) { e.addEventListener("input", refresh); e.addEventListener("change", refresh); });
+    [ta, paper, cell, cols, num, zero, divm, ans].forEach(function (e) { e.addEventListener("input", refresh); e.addEventListener("change", refresh); });
 
     function line(label, control) { return h("label", { class: "ks-row" }, h("span", null, label), control); }
     dialog("計算プリントを作る", h("div", { class: "dlg-body ks" },
@@ -4513,6 +4702,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
           line("1行の問題数", cols),
           line("問題の番号", num),
           line("商に0がたつ段", zero),
+          line("わり算の答え", divm),
           h("label", { class: "chk" }, ans, h("span", null, "答えのページもつける（赤い字）")))),
       info,
       h("div", { class: "dlg-foot" },
@@ -5440,14 +5630,16 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
   function hissanPanel(p, b) {
     var note = h("p", { class: "hint" });
     function showAnswer() {
-      var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep });
+      var sol = Hissan.solve(b.expr, { zeroStep: b.zeroStep, divMode: b.divMode });
       note.textContent = sol.ok ? "答え　" + sol.answer : sol.error;
       note.classList.toggle("err", !sol.ok);
       divRow.style.display = sol.ok && sol.op === "div" ? "" : "none";
     }
     var inp = h("input", { type: "text", value: b.expr, "data-main": "1", placeholder: "92÷4", spellcheck: "false" });
     inp.addEventListener("input", function () { b.expr = inp.value; touch(b, "expr"); showAnswer(); });
-    var divRow = row("商に0がたつ段", seg([["skip", "省く"], ["write", "書く"]], b.zeroStep, function (v) { b.zeroStep = v; touch(b); showAnswer(); }));
+    var divRow = h("div", null,
+      row("商に0がたつ段", seg([["skip", "省く"], ["write", "書く"]], b.zeroStep, function (v) { b.zeroStep = v; touch(b); showAnswer(); })),
+      row("わり算の答え", seg([["auto", "おまかせ"], ["amari", "あまりを出す"], ["warikiru", "わりきれるまで"]], b.divMode || "auto", function (v) { b.divMode = v; touch(b); showAnswer(); })));
     p.appendChild(group(null,
       row("式", inp),
       h("div", { class: "row sub" }, chips(["+", "−", "×", "÷"], function (v) { insertAt(inp, v); })),
