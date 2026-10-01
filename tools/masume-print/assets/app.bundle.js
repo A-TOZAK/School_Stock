@@ -4884,7 +4884,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     /** 長さの入れ物。値は b.v に入れる（ui.num は部品そのものの値しか扱わないため）。 */
     function vNum(pp) {
       var deg = pp[3] === "deg", lo = deg ? 1 : (pp[0] === "s" ? -100 : 0.1), hi = deg ? 179 : 10000;
-      var inp = h("input", { type: "number", value: b.v[pp[0]], min: lo, max: hi, step: deg ? 1 : 0.1, inputmode: "decimal" });
+      var inp = h("input", { type: "number", value: b.v[pp[0]], min: lo, max: hi, step: deg ? 1 : 0.1, inputmode: "decimal", style: "width:5.2em" });
       inp.addEventListener("input", function () {
         var v = parseFloat(inp.value);
         if (isNaN(v)) return;

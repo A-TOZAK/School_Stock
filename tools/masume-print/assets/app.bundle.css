@@ -467,3 +467,5 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 
 /* 算数の図形：わくの中のどこを押しても選べる */
 .blk.zukei { cursor: move; }
+/* 左の道具と設定らんの名前は、文節で折る（「算数の図／形」と折れないように） */
+#tools button span, #panel .ptitle { word-break: auto-phrase; }
