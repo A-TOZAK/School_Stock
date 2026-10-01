@@ -4518,6 +4518,454 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
 })();
 
 ;
+/* マス目プリントメーカー：算数の図形
+ * 正方形・長方形・三角形・ひし形・平行四辺形・台形・円を、長さを数で入れて正しい形で描く。
+ * 頂点の記号（ABCD）、辺の長さ（5cm など）、高さ、直角の印、角度を書きこめる。
+ * 長さが mm か cm のときは「実際の長さ」で描ける（100%で刷ると、ものさしで測れる）。
+ * m・km のときや、大きすぎるときは、いちばん長い所を決めた大きさに縮めて描く。
+ * app-render.js と app-panel.js のあとに読みこむ。
+ */
+(function () {
+  "use strict";
+  var App = window.App, h = App.h, s = App.s;
+  var UNIT_MM = { mm: 1, cm: 10, m: 1000, km: 1000000 };
+  var D2R = Math.PI / 180;
+
+  // ---------- 形の決まり ----------
+  // p＝入れる長さ（key, 名前, 既定の値, 種類）。種類 "len"＝長さ、"deg"＝角度。
+  // on＝辺の長さを最初から書く辺（A→B、B→C … の順）。
+  var SHAPES = {
+    seihoukei: { name: "正方形", p: [["a", "1つの辺", 4]], on: [0, 1, 0, 0] },
+    chouhoukei: { name: "長方形", p: [["a", "横", 6], ["b", "たて", 4]], on: [1, 1, 0, 0] },
+    sankaku: { name: "三角形（3つの辺）", p: [["a", "辺BC", 6], ["b", "辺CA", 5], ["c", "辺AB", 4]], on: [1, 1, 1], height: true },
+    chokkaku: { name: "直角三角形", p: [["a", "底辺", 6], ["b", "高さ", 4]], on: [1, 1, 0] },
+    nitouhen: { name: "二等辺三角形", p: [["a", "底辺", 4], ["b", "等しい辺", 5]], on: [1, 1, 1], height: true },
+    seisankaku: { name: "正三角形", p: [["a", "1つの辺", 5]], on: [0, 1, 0], height: true },
+    hishigata: { name: "ひし形", p: [["a", "1つの辺", 4], ["ang", "角度", 60, "deg"]], on: [0, 1, 0, 0], height: true, angle: true },
+    hishigata2: { name: "ひし形（対角線で）", p: [["p", "横の対角線", 6], ["q", "たての対角線", 4]], on: [0, 0, 0, 0], diag: true },
+    heikou: { name: "平行四辺形", p: [["a", "底辺", 6], ["b", "となりの辺", 4], ["ang", "角度", 60, "deg"]], on: [1, 1, 0, 0], height: true, angle: true },
+    daikei: { name: "台形", p: [["a", "上底", 3], ["b", "下底", 6], ["hh", "高さ", 4], ["s", "上底のずれ", 1]], on: [0, 1, 0, 1], height: true, hOn: true },
+    en: { name: "円", p: [["r", "半径", 3]], on: [] }
+  };
+  var ORDER = ["seihoukei", "chouhoukei", "sankaku", "chokkaku", "nitouhen", "seisankaku", "hishigata", "hishigata2", "heikou", "daikei", "en"];
+
+  function defaults(shape) {
+    var d = SHAPES[shape], v = {};
+    d.p.forEach(function (p) { v[p[0]] = p[2]; });
+    return v;
+  }
+
+  App.TYPE_NAMES.zukei = "算数の図形";
+  App.make.zukei = function (o) {
+    var shape = o && SHAPES[o.shape] ? o.shape : "chouhoukei";
+    return Object.assign({
+      id: App.uid(), type: "zukei", x: 20, y: 20, shape: shape, v: defaults(shape), unit: "cm", fit: "real", size: 50,
+      vOn: true, letters: shape === "en" ? "ア" : "ABCD", sl: SHAPES[shape].on.map(function (x) { return { on: !!x, t: "" }; }),
+      hOn: !!SHAPES[shape].hOn, hText: "", right: true, angOn: false, angText: "", dOn: true, dText: ["", ""], cl: "r", clText: "",
+      color: "#1b1b1b", width: 0.5, fill: "none", fs: 12, font: "kyokasho"
+    }, o || {});
+  };
+
+  /** 数を、教科書のように書く（5、3.5）。 */
+  function fmt(v) { var r = Math.round(v * 10) / 10; return String(r); }
+  /** 長さの字。小数第1位で割りきれない長さ（√が出る高さなど）は「約」をつける。 */
+  function lenText(b, v) { var exact = Math.abs(v * 10 - Math.round(v * 10)) < 1e-6; return (exact ? "" : "約") + fmt(v) + b.unit; }
+
+  /** 形の頂点（入れた単位のまま、y は下向き）。A を左上（三角形は上）にして、反時計回り。 */
+  function geom(b) {
+    var v = b.v, sh = b.shape, g = { pts: [], err: "" };
+    function pos(k) { return v[k] > 0; }
+    if (sh === "seihoukei") {
+      g.pts = [[0, 0], [0, v.a], [v.a, v.a], [v.a, 0]];
+    } else if (sh === "chouhoukei") {
+      g.pts = [[0, 0], [0, v.b], [v.a, v.b], [v.a, 0]];
+    } else if (sh === "sankaku") {
+      var a = v.a, bb = v.b, c = v.c;
+      if (!(a + bb > c && bb + c > a && c + a > bb)) { g.err = "この3つの長さでは三角形ができません（どの2つの辺をたしても、のこりの辺より長くなるようにします）"; return g; }
+      var x = (c * c - bb * bb + a * a) / (2 * a), y = Math.sqrt(Math.max(0, c * c - x * x));
+      g.pts = [[x, 0], [0, y], [a, y]];
+      g.foot = [x, y];
+    } else if (sh === "chokkaku") {
+      g.pts = [[0, 0], [0, v.b], [v.a, v.b]];
+    } else if (sh === "nitouhen") {
+      if (!(v.b > v.a / 2)) { g.err = "等しい辺は、底辺の半分より長くします"; return g; }
+      var hy = Math.sqrt(v.b * v.b - v.a * v.a / 4);
+      g.pts = [[v.a / 2, 0], [0, hy], [v.a, hy]];
+      g.foot = [v.a / 2, hy];
+    } else if (sh === "seisankaku") {
+      var ey = v.a * Math.sqrt(3) / 2;
+      g.pts = [[v.a / 2, 0], [0, ey], [v.a, ey]];
+      g.foot = [v.a / 2, ey];
+    } else if (sh === "hishigata" || sh === "heikou") {
+      var side = sh === "hishigata" ? v.a : v.b, base = v.a, t = v.ang * D2R;
+      if (!(v.ang > 0 && v.ang < 180)) { g.err = "角度は 1〜179度で入れます"; return g; }
+      var dx = side * Math.cos(t), hgt = side * Math.sin(t);
+      g.pts = [[dx, 0], [0, hgt], [base, hgt], [base + dx, 0]];
+      g.foot = [dx, hgt];
+      g.angAt = 1;
+    } else if (sh === "hishigata2") {
+      g.pts = [[v.p / 2, 0], [0, v.q / 2], [v.p / 2, v.q], [v.p, v.q / 2]];
+    } else if (sh === "daikei") {
+      if (!(v.a > 0 && v.b > 0 && v.hh > 0)) { g.err = "長さを入れてください"; return g; }
+      g.pts = [[v.s, 0], [0, v.hh], [v.b, v.hh], [v.s + v.a, 0]];
+      g.foot = [v.s + v.a / 2 > 0 && v.s + v.a / 2 < v.b ? v.s + v.a / 2 : v.s, v.hh];
+      g.footFrom = [g.foot[0], 0];
+    } else if (sh === "en") {
+      g.circle = { r: v.r };
+      g.pts = [];
+    }
+    var bad = SHAPES[sh].p.some(function (p) { return p[3] !== "deg" && p[0] !== "s" && !pos(p[0]); });
+    if (bad) { g.err = "長さは 0 より大きい数で入れます"; g.pts = []; g.circle = null; }
+    return g;
+  }
+
+  /** 1単位が紙の上で何mmか。 */
+  function mmPerUnit(b, g) {
+    if (b.fit === "real" && (b.unit === "mm" || b.unit === "cm")) return UNIT_MM[b.unit];
+    var w, hh;
+    if (g.circle) { w = hh = g.circle.r * 2; }
+    else {
+      var xs = g.pts.map(function (p) { return p[0]; }), ys = g.pts.map(function (p) { return p[1]; });
+      w = Math.max.apply(null, xs) - Math.min.apply(null, xs); hh = Math.max.apply(null, ys) - Math.min.apply(null, ys);
+    }
+    return b.size / Math.max(w, hh, 1e-6);
+  }
+  App.zukeiIsReal = function (b) { return b.fit === "real" && (b.unit === "mm" || b.unit === "cm"); };
+
+  // ---------- 字の幅をはかる ----------
+  var cv = null;
+  function textW(str, fsMm, fontCss) {
+    cv = cv || document.createElement("canvas").getContext("2d");
+    cv.font = "100px " + fontCss;
+    return cv.measureText(str).width / 100 * fsMm;
+  }
+
+  function sub(p, q) { return [p[0] - q[0], p[1] - q[1]]; }
+  function add(p, q) { return [p[0] + q[0], p[1] + q[1]]; }
+  function mul(p, k) { return [p[0] * k, p[1] * k]; }
+  function nrm(p) { var l = Math.hypot(p[0], p[1]) || 1; return [p[0] / l, p[1] / l]; }
+  function dist(p, q) { return Math.hypot(p[0] - q[0], p[1] - q[1]); }
+
+  /** 図形を描く。紙の上の大きさ（mm）を b.w、b.h に入れる。 */
+  function fillZukei(el, b) {
+    el.innerHTML = "";
+    var g = geom(b);
+    if (g.err) {
+      b.w = 80; b.h = 14;
+      el.appendChild(h("div", { class: "hissan-err no-print" }, g.err));
+      return;
+    }
+    var k = mmPerUnit(b, g), fcss = App.fontCss(b.font), fs = b.fs * 0.3528, th = fs * 1.1;
+    var P = g.pts.map(function (p) { return mul(p, k); });
+    var n = P.length, letters = Array.from(b.letters || "");
+    var items = [];   // 描くもの（あとでまとめて位置をずらす）
+    var box = { x0: 1e9, y0: 1e9, x1: -1e9, y1: -1e9 };
+    function grow(x, y) { box.x0 = Math.min(box.x0, x); box.y0 = Math.min(box.y0, y); box.x1 = Math.max(box.x1, x); box.y1 = Math.max(box.y1, y); }
+    function label(str, c, dir, gap) {
+      // c から dir の向きへ、字のわくがふれない所まで離して置く
+      var tw = textW(str, fs, fcss), d = nrm(dir), ext = Math.abs(d[0]) * tw / 2 + Math.abs(d[1]) * th / 2;
+      var at = add(c, mul(d, gap + ext));
+      items.push({ t: "text", x: at[0], y: at[1], str: str, r: { x0: at[0] - tw / 2, x1: at[0] + tw / 2, y0: at[1] - th / 2, y1: at[1] + th / 2 } });
+      grow(at[0] - tw / 2, at[1] - th / 2); grow(at[0] + tw / 2, at[1] + th / 2);
+    }
+    /** わく r が、図形の辺・線・書いた字のどれにもふれないか。 */
+    function segHits(p, q, r) {
+      // 線分を細かく区切って、わくの中に入る点があるかを見る（図形の大きさなら、これで足りる）
+      for (var i = 0; i <= 40; i++) { var x = p[0] + (q[0] - p[0]) * i / 40, y = p[1] + (q[1] - p[1]) * i / 40; if (x > r.x0 && x < r.x1 && y > r.y0 && y < r.y1) return true; }
+      return false;
+    }
+    function clear(r) {
+      return !items.some(function (it) {
+        if (it.t === "poly") return it.pts.some(function (p, i) { return segHits(p, it.pts[(i + 1) % it.pts.length], r); });
+        if (it.t === "line") return segHits(it.p, it.q, r);
+        if (it.t === "text" && it.r) return !(r.x1 < it.r.x0 || r.x0 > it.r.x1 || r.y1 < it.r.y0 || r.y0 > it.r.y1);
+        return false;
+      });
+    }
+    function line(p, q, dash, w) { items.push({ t: "line", p: p, q: q, dash: dash, w: w }); grow(p[0], p[1]); grow(q[0], q[1]); }
+    function rightMark(c, u1, u2, size) {
+      var a1 = add(c, mul(u1, size)), a2 = add(add(c, mul(u1, size)), mul(u2, size)), a3 = add(c, mul(u2, size));
+      items.push({ t: "path", d: "M" + a1 + "L" + a2 + "L" + a3, w: 0.3 });
+    }
+
+    if (g.circle) {
+      var r = g.circle.r * k, C = [r, r];
+      items.push({ t: "circle", c: C, r: r });
+      grow(0, 0); grow(2 * r, 2 * r);
+      items.push({ t: "dot", c: C });
+      if (b.cl === "r" || b.cl === "d") {
+        var from = b.cl === "d" ? [0, r] : C, to = [2 * r, r];
+        line(from, to, null, 0.4);
+        var lt = b.clText || lenText(b, b.cl === "d" ? g.circle.r * 2 : g.circle.r);
+        label(lt, [(from[0] + to[0]) / 2 + (b.cl === "r" ? 0 : r / 2), r], [0, -1], 1.2);
+      }
+      if (b.vOn && letters[0]) label(letters[0], C, [-0.6, -1], 1.2);
+    } else {
+      items.push({ t: "poly", pts: P });
+      P.forEach(function (p) { grow(p[0], p[1]); });
+      var cen = P.reduce(function (acc, p) { return add(acc, mul(p, 1 / n)); }, [0, 0]);
+      // 直角の印
+      var ms = Math.min(2.6, Math.min.apply(null, P.map(function (p, i) { return dist(p, P[(i + 1) % n]); })) * 0.22);
+      if (b.right) P.forEach(function (p, i) {
+        var u1 = nrm(sub(P[(i + n - 1) % n], p)), u2 = nrm(sub(P[(i + 1) % n], p));
+        if (Math.abs(u1[0] * u2[0] + u1[1] * u2[1]) < 1e-4) rightMark(p, u1, u2, ms);
+      });
+      // 辺の長さ
+      (b.sl || []).forEach(function (sl, i) {
+        if (!sl || !sl.on || i >= n) return;
+        var p = P[i], q = P[(i + 1) % n], m = mul(add(p, q), 0.5), e = sub(q, p);
+        var nv = nrm([e[1], -e[0]]);
+        if ((m[0] - cen[0]) * nv[0] + (m[1] - cen[1]) * nv[1] < 0) nv = mul(nv, -1);
+        var len = dist(g.pts[i], g.pts[(i + 1) % n]);
+        label(sl.t || lenText(b, len), m, nv, 1.2);
+      });
+      // 対角線（ひし形）
+      if (SHAPES[b.shape].diag && b.dOn) {
+        line(P[0], P[2], null, 0.3); line(P[1], P[3], null, 0.3);
+        if (b.right) { var O = mul(add(P[0], P[2]), 0.5); rightMark(O, nrm(sub(P[3], O)), nrm(sub(P[0], O)), Math.min(2.2, ms)); }
+        var dt = b.dText || ["", ""];
+        if (dt[0] !== "-") label(dt[0] || lenText(b, b.v.p), [P[1][0] + (P[3][0] - P[1][0]) * 0.75, P[1][1]], [0, 1], 0.8);
+        if (dt[1] !== "-") label(dt[1] || lenText(b, b.v.q), [P[0][0], P[0][1] + (P[2][1] - P[0][1]) * 0.25], [1, 0], 0.8);
+      }
+      // 高さ（点線）。足が底辺の外に出るときは、底辺をのばす
+      if (SHAPES[b.shape].height && b.hOn && g.foot) {
+        var top = g.footFrom ? mul(g.footFrom, k) : P[0], ft = mul(g.foot, k), bl = P[1], br = P[2];
+        if (dist(top, ft) > 0.5) {
+          line(top, ft, "dash", 0.35);
+          if (ft[0] < bl[0] - 0.1) line(ft, bl, "dash", 0.3);
+          if (ft[0] > br[0] + 0.1) line(br, ft, "dash", 0.3);
+          if (b.right) rightMark(ft, [ft[0] > br[0] - 0.1 ? -1 : 1, 0], [0, -1], Math.min(2.2, ms));
+          var hv = Math.abs(g.foot[1] - (g.footFrom ? g.footFrom[1] : g.pts[0][1]));
+          // 字は、線にも、ほかの字にもぶつからない所を、高さの線にそって探す（右→左の順）
+          // 細い図形で入らないときは、字を少し小さくして探しなおす
+          var hs = b.hText || lenText(b, hv), best = null, hk = 1;
+          [1, 0.85, 0.72].some(function (kk) {
+            var htw = textW(hs, fs * kk, fcss), hth = th * kk;
+            [0.5, 0.35, 0.65, 0.22, 0.8, 0.14].some(function (t) {
+              return [1, -1].some(function (sd) {
+                var c = add(ft, mul(sub(top, ft), t)), cx = c[0] + sd * (1.0 + htw / 2);
+                var r = { x0: cx - htw / 2 - 0.3, x1: cx + htw / 2 + 0.3, y0: c[1] - hth / 2, y1: c[1] + hth / 2 };
+                if (clear(r)) { best = [cx, c[1], htw, hth]; return true; }
+                return false;
+              });
+            });
+            hk = kk;
+            return !!best;
+          });
+          if (!best) { var c0 = add(ft, mul(sub(top, ft), 0.5)), w0 = textW(hs, fs, fcss); hk = 1; best = [c0[0] + (ft[0] < bl[0] - 0.1 ? -1 : 1) * (1.0 + w0 / 2), c0[1], w0, th]; }
+          items.push({ t: "text", x: best[0], y: best[1], str: hs, k: hk });
+          grow(best[0] - best[2] / 2, best[1] - best[3] / 2); grow(best[0] + best[2] / 2, best[1] + best[3] / 2);
+        }
+      }
+      // 角度（平行四辺形・ひし形の左下の角）
+      if (SHAPES[b.shape].angle && b.angOn && g.angAt != null) {
+        var V = P[g.angAt], ua = nrm(sub(P[g.angAt - 1], V)), uc = nrm(sub(P[g.angAt + 1], V));
+        var rr = Math.min(5, ms * 2.2), s1 = add(V, mul(uc, rr)), s2 = add(V, mul(ua, rr));
+        items.push({ t: "path", d: "M" + s1 + "A" + rr + " " + rr + " 0 0 0 " + s2, w: 0.3 });
+        label(b.angText || fmt(b.v.ang) + "°", add(V, mul(nrm(add(ua, uc)), rr + 0.8)), nrm(add(ua, uc)), 0.6);
+      }
+      // 頂点の記号
+      if (b.vOn) P.forEach(function (p, i) {
+        if (!letters[i]) return;
+        var d = add(nrm(sub(p, P[(i + n - 1) % n])), nrm(sub(p, P[(i + 1) % n])));
+        if (Math.hypot(d[0], d[1]) < 1e-6) d = sub(p, cen);
+        label(letters[i], p, d, 1.0);
+      });
+    }
+
+    // ずらして描く（いちばん左上の字や線が、部品のわくの左上に来るように）
+    var pad = 0.6, ox = pad - box.x0, oy = pad - box.y0, W = box.x1 - box.x0 + pad * 2, H = box.y1 - box.y0 + pad * 2;
+    b.w = Math.round(W * 100) / 100; b.h = Math.round(H * 100) / 100;
+    function o(p) { return (p[0] + ox) + " " + (p[1] + oy); }
+    var svg = s("svg", { viewBox: "0 0 " + W + " " + H, preserveAspectRatio: "none", style: "font-family:" + fcss });
+    var col = b.color, sw = b.width;
+    items.forEach(function (it) {
+      if (it.t === "poly") {
+        svg.appendChild(s("path", { d: "M" + it.pts.map(o).join("L") + "Z", fill: b.fill === "none" ? "none" : b.fill, stroke: col, "stroke-width": sw, "stroke-linejoin": "miter" }));
+      } else if (it.t === "circle") {
+        svg.appendChild(s("circle", { cx: it.c[0] + ox, cy: it.c[1] + oy, r: Math.max(0.1, it.r), fill: b.fill === "none" ? "none" : b.fill, stroke: col, "stroke-width": sw }));
+      } else if (it.t === "dot") {
+        svg.appendChild(s("circle", { cx: it.c[0] + ox, cy: it.c[1] + oy, r: 0.6, fill: col }));
+      } else if (it.t === "line") {
+        svg.appendChild(s("line", { x1: it.p[0] + ox, y1: it.p[1] + oy, x2: it.q[0] + ox, y2: it.q[1] + oy, stroke: col, "stroke-width": it.w, "stroke-dasharray": it.dash ? "1.4 1" : null }));
+      } else if (it.t === "path") {
+        // 数をずらす：「M1,2L3,4」の形の座標を1つずつ動かす
+        var d = it.d.replace(/(-?[\d.e-]+),(-?[\d.e-]+)/g, function (_, x, y) { return (+x + ox) + " " + (+y + oy); });
+        svg.appendChild(s("path", { d: d, fill: "none", stroke: col, "stroke-width": it.w }));
+      } else if (it.t === "text") {
+        svg.appendChild(s("text", { x: it.x + ox, y: it.y + oy, "text-anchor": "middle", "dominant-baseline": "central", "font-size": fs * (it.k || 1), fill: col }, it.str));
+      }
+    });
+    el.appendChild(svg);
+  }
+
+  var fill0 = App.fillBlock;
+  App.fillBlock = function (el, b) {
+    if (b.type === "zukei") { fillZukei(el, b); App.placeBlock(el, b); return; }
+    fill0(el, b);
+  };
+
+  // ---------- 用紙の拡大・縮小 ----------
+  var scale0 = App.scaleDoc;
+  App.scaleDoc = function (d, k) {
+    scale0(d, k);
+    d.pages.forEach(function (pg) {
+      pg.blocks.forEach(function (b) {
+        if (b.type !== "zukei") return;
+        b.fs = Math.round(b.fs * k * 100) / 100;
+        b.width = Math.max(0.1, Math.round(b.width * k * 100) / 100);
+        // 実際の長さで描いていた図は、拡大すると実際の長さでなくなる。大きさを決める描き方に切りかえる
+        var g = geom(b);
+        if (!g.err) { var mm = mmPerUnit(b, g), ext = g.circle ? g.circle.r * 2 : Math.max.apply(null, [0, 1].map(function (j) { var a = g.pts.map(function (p) { return p[j]; }); return Math.max.apply(null, a) - Math.min.apply(null, a); })); b.fit = "size"; b.size = Math.round(ext * mm * k * 10) / 10; }
+      });
+    });
+  };
+
+  // ---------- 外から来たデータを確かめる ----------
+  var COLOR = /^#(?:[0-9a-f]{3}|[0-9a-f]{6}|[0-9a-f]{8})$/i;
+  function num(v, def, lo, hi) { v = typeof v === "string" ? parseFloat(v) : v; return typeof v === "number" && isFinite(v) ? Math.min(hi, Math.max(lo, v)) : def; }
+  function str(v, max) { return typeof v === "string" ? v.slice(0, max) : ""; }
+  var norm0 = App.normalizeDoc;
+  App.normalizeDoc = function (d) {
+    d = norm0(d);
+    if (!d) return d;
+    d.pages.forEach(function (pg) {
+      pg.blocks.forEach(function (b) {
+        if (b.type !== "zukei") return;
+        if (!SHAPES[b.shape]) b.shape = "chouhoukei";
+        var def = defaults(b.shape), v = b.v && typeof b.v === "object" ? b.v : {};
+        b.v = {};
+        SHAPES[b.shape].p.forEach(function (p) { b.v[p[0]] = num(v[p[0]], def[p[0]], p[3] === "deg" ? 1 : (p[0] === "s" ? -10000 : 0.01), p[3] === "deg" ? 179 : 10000); });
+        b.unit = UNIT_MM[b.unit] ? b.unit : "cm";
+        b.fit = b.fit === "size" ? "size" : "real";
+        b.size = num(b.size, 50, 5, 400);
+        b.vOn = b.vOn !== false; b.letters = str(b.letters, 8);
+        var on = SHAPES[b.shape].on;
+        b.sl = on.map(function (x, i) { var o = Array.isArray(b.sl) && b.sl[i] && typeof b.sl[i] === "object" ? b.sl[i] : { on: !!x }; return { on: !!o.on, t: str(o.t, 16) }; });
+        b.hOn = !!b.hOn; b.hText = str(b.hText, 16);
+        b.angOn = !!b.angOn; b.angText = str(b.angText, 16);
+        b.dOn = b.dOn !== false; b.dText = [0, 1].map(function (i) { return str(Array.isArray(b.dText) ? b.dText[i] : "", 16); });
+        b.cl = ["r", "d", "none"].indexOf(b.cl) >= 0 ? b.cl : "r"; b.clText = str(b.clText, 16);
+        b.color = typeof b.color === "string" && COLOR.test(b.color) ? b.color : "#1b1b1b";
+        b.fill = b.fill === "none" || (typeof b.fill === "string" && COLOR.test(b.fill)) ? b.fill : "none";
+        b.width = num(b.width, 0.5, 0.1, 5);
+        b.fs = num(b.fs, 12, 6, 40);
+        b.right = b.right !== false;
+      });
+    });
+    return d;
+  };
+
+  // ---------- 点検 ----------
+  var inspect0 = App.inspect;
+  App.inspect = function () {
+    var out = inspect0();
+    App.doc.pages.forEach(function (pg, pi) {
+      pg.blocks.forEach(function (b, i) {
+        if (b.type !== "zukei") return;
+        var g = geom(b);
+        if (g.err) out.push((pi + 1) + "ページ目 算数の図形#" + i + "：" + g.err);
+      });
+    });
+    return out;
+  };
+
+  // ---------- 設定（リボン） ----------
+  /** app-panel.js から呼ばれる。ui は、設定の部品を作る関数のあつまり。 */
+  App.zukeiPanel = function (p, b, ui) {
+    var sh = SHAPES[b.shape], letters = Array.from(b.letters || "");
+    function L(i) { return letters[i] || "ABCD".charAt(i); }
+    function textIn(value, placeholder, onInput, width) {
+      var inp = h("input", { type: "text", value: value || "", placeholder: placeholder, spellcheck: "false", style: "width:" + (width || 6) + "em" });
+      inp.addEventListener("input", function () { onInput(inp.value); ui.touch(b, "zt"); });
+      return inp;
+    }
+
+    /** 長さの入れ物。値は b.v に入れる（ui.num は部品そのものの値しか扱わないため）。 */
+    function vNum(pp) {
+      var deg = pp[3] === "deg", lo = deg ? 1 : (pp[0] === "s" ? -100 : 0.1), hi = deg ? 179 : 10000;
+      var inp = h("input", { type: "number", value: b.v[pp[0]], min: lo, max: hi, step: deg ? 1 : 0.1, inputmode: "decimal" });
+      inp.addEventListener("input", function () {
+        var v = parseFloat(inp.value);
+        if (isNaN(v)) return;
+        b.v[pp[0]] = Math.min(hi, Math.max(lo, v));
+        ui.touch(b, "zv-" + pp[0]);
+      });
+      inp.addEventListener("change", function () { inp.value = b.v[pp[0]]; ui.touch(b, null, true); });
+      return h("span", { class: "num" }, inp, h("span", { class: "unit" }, deg ? "度" : b.unit));
+    }
+
+    // 形
+    var shapeSel = ui.select(ORDER.map(function (k) { return [k, SHAPES[k].name]; }), b.shape, function (v) {
+      var keep = b.unit, fit = b.fit, size = b.size, fresh = App.make.zukei({ shape: v });
+      Object.keys(fresh).forEach(function (k) { if (k !== "id" && k !== "x" && k !== "y") b[k] = fresh[k]; });
+      b.unit = keep; b.fit = fit; b.size = size;
+      ui.touch(b, null, true);
+    });
+    p.appendChild(ui.group(null, ui.row("形", shapeSel)));
+
+    // 長さ
+    var g = ui.group("長さ");
+    var body = g.querySelector(".grp-body");
+    sh.p.forEach(function (pp) {
+      var name = pp[1].replace(/辺([A-D])([A-D])/, function (_, x, y) { return "辺" + L("ABCD".indexOf(x)) + L("ABCD".indexOf(y)); });
+      body.appendChild(ui.row(name, vNum(pp)));
+    });
+    body.appendChild(ui.row("単位", ui.seg([["mm", "mm"], ["cm", "cm"], ["m", "m"], ["km", "km"]], b.unit, function (v) {
+      b.unit = v;
+      if (v === "m" || v === "km") b.fit = "size";
+      ui.touch(b, null, true);
+    })));
+    var real = App.zukeiIsReal(b);
+    var canReal = b.unit === "mm" || b.unit === "cm";
+    body.appendChild(ui.row("描く大きさ", ui.seg(canReal ? [["real", "実際の長さ"], ["size", "大きさを決める"]] : [["size", "大きさを決める"]], real ? "real" : "size", function (v) { b.fit = v; ui.touch(b, null, true); }),
+      real ? "100%（実際のサイズ）で印刷すると、ものさしで測った長さが入れた長さになります。" : "いちばん長い所を、この大きさにして描きます。長さの比はそのままです。"));
+    if (!real) body.appendChild(ui.row("いちばん長い所", ui.num(b, "size", { min: 5, max: 400, step: 1, unit: "mm" })));
+    p.appendChild(g);
+
+    // 書きこみ
+    var w = ui.group("書きこみ"), wb = w.querySelector(".grp-body");
+    wb.appendChild(h("div", { class: "row" }, ui.check(b.shape === "en" ? "中心の記号" : "頂点の記号", b.vOn, function (v) { b.vOn = v; ui.touch(b, null, true); }),
+      b.vOn ? textIn(b.letters, b.shape === "en" ? "ア" : "ABCD", function (v) { b.letters = v.slice(0, 8); }, 5) : null));
+    if (b.shape === "en") {
+      wb.appendChild(ui.row("長さを書く線", ui.seg([["r", "半径"], ["d", "直径"], ["none", "なし"]], b.cl, function (v) { b.cl = v; ui.touch(b, null, true); })));
+      if (b.cl !== "none") wb.appendChild(ui.row("書く字", textIn(b.clText, lenText(b, b.cl === "d" ? b.v.r * 2 : b.v.r), function (v) { b.clText = v; })));
+    }
+    (b.sl || []).forEach(function (sl, i) {
+      var n = b.sl.length, nm = "辺" + L(i) + L((i + 1) % n);
+      var gg = geom(b), len = gg.err ? 0 : dist(gg.pts[i], gg.pts[(i + 1) % n]);
+      wb.appendChild(h("div", { class: "row" }, ui.check(nm, sl.on, function (v) { sl.on = v; ui.touch(b, null, true); }),
+        sl.on ? textIn(sl.t, lenText(b, len), function (v) { sl.t = v; }) : null));
+    });
+    if (sh.diag) {
+      wb.appendChild(h("div", { class: "row" }, ui.check("対角線", b.dOn, function (v) { b.dOn = v; ui.touch(b, null, true); })));
+      if (b.dOn) {
+        wb.appendChild(ui.row("横の対角線", textIn(b.dText[0], lenText(b, b.v.p), function (v) { b.dText[0] = v; })));
+        wb.appendChild(ui.row("たての対角線", textIn(b.dText[1], lenText(b, b.v.q), function (v) { b.dText[1] = v; })));
+      }
+    }
+    if (sh.height) {
+      wb.appendChild(h("div", { class: "row" }, ui.check("高さ", b.hOn, function (v) { b.hOn = v; ui.touch(b, null, true); }),
+        b.hOn ? textIn(b.hText, "", function (v) { b.hText = v; }) : null));
+    }
+    if (sh.angle) {
+      wb.appendChild(h("div", { class: "row" }, ui.check("角度", b.angOn, function (v) { b.angOn = v; ui.touch(b, null, true); }),
+        b.angOn ? textIn(b.angText, fmt(b.v.ang) + "°", function (v) { b.angText = v; }) : null));
+    }
+    if (b.shape !== "en") wb.appendChild(ui.check("直角の印", b.right, function (v) { b.right = v; ui.touch(b); }));
+    wb.appendChild(h("p", { class: "hint" }, "字を変えると、長さのかわりにその字を書きます（□cm、？ など）。空にすると、入れた長さにもどります。"));
+    p.appendChild(w);
+
+    // 線と字
+    p.appendChild(ui.group("線と字",
+      ui.row("線の色", ui.swatches(App.LINE_COLORS, b.color, function (v) { b.color = v; ui.touch(b); })),
+      ui.row("線の太さ", ui.num(b, "width", { min: 0.1, max: 3, step: 0.1, unit: "mm" })),
+      ui.row("塗りつぶし", ui.swatches(App.FILL_COLORS, b.fill, function (v) { b.fill = v; ui.touch(b); })),
+      ui.row("字の大きさ", ui.num(b, "fs", { min: 6, max: 40, step: 1, unit: "pt" }))));
+  };
+})();
+
+;
 /* マス目プリントメーカー：はじめの画面（ひな形を絵で見て選ぶ）と、計算プリントを作る画面
  * index.html では app-panel.js より前に読みこむ（はじめて開いたかどうかを、起動の前に見るため）。
  */
@@ -5227,6 +5675,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     arrow: ["M5 19L19 5", "M11 5h8v8"],
     rect: ["M4 6h16v12H4z"],
     ellipse: [s("ellipse", { cx: 12, cy: 12, rx: 8.5, ry: 6.5 })],
+    zukei: ["M3 19h11L9 6z", s("circle", { cx: 17.5, cy: 8.5, r: 3.5 })],
     hissan: ["M9 9c1.6 1.6 1.6 6.4 0 8", "M9 9h11", "M4.5 11.5v4", "M13 5v2M17 5v2M13 12v3M17 12v3"],
     shiki: ["M8 5v5M8 14v5", "M5.5 12h5", "M14 9h6M14 15h6"],
     image: ["M4 5h16v14H4z", "M4 16l4.5-4.5 3.5 3.5 3-3 5 5", s("circle", { cx: 9, cy: 9.5, r: 1.4 })],
@@ -5352,6 +5801,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     else if (b.type === "hissan") hissanPanel(p, b);
     else if (b.type === "shiki") shikiPanel(p, b);
     else if (b.type === "image") imagePanel(p, b);
+    else if (b.type === "zukei" && App.zukeiPanel) App.zukeiPanel(p, b, { group: group, row: row, num: num, seg: seg, check: check, swatches: swatches, select: select, touch: touch });
     else if (b.type === "eisen" && App.eisenPanel) App.eisenPanel(p, b, { group: group, row: row, num: num, seg: seg, check: check, swatches: swatches, select: select, touch: touch });
     p.appendChild(commonPanel(b));
     foldGroups(p, b.type === "masu" ? ["罫線", "原稿用紙設定"] : []);
@@ -5794,6 +6244,7 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
     box.appendChild(h("hr"));
     tool("hissan", "筆算", "筆算を置く", function () { App.addBlock("hissan"); });
     tool("shiki", "数式", "分数などの数式を置く", function () { App.addBlock("shiki"); });
+    tool("zukei", "算数の図形", "正方形・三角形・円などを、長さを入れて正しい形で置く", function () { App.addBlock("zukei"); });
     tool("image", "画像", "画像を置く（紙の上にファイルを落としても、Ctrl+V で貼っても置けます）", function () {
       pickImage(function (src, w, hh) { App.addBlock("image", { src: src, w: 60, h: 60 * hh / w }); });
     });

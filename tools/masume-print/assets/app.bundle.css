@@ -464,3 +464,6 @@ body.dropping .stage { outline: 3px dashed var(--ai); outline-offset: -10px; bac
 .blk.eisen .el { cursor: text; }
 .blk.eisen .el:empty::before { content: ""; }
 .selbox.editing.eisen { border-style: dashed; }
+
+/* 算数の図形：わくの中のどこを押しても選べる */
+.blk.zukei { cursor: move; }
