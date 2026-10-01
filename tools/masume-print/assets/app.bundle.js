@@ -4682,6 +4682,19 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         return false;
       });
     }
+    /** 候補（中心 c から向き d へ）を順にためし、線にも字にもふれない最初の所に置く。なければ最初の候補。 */
+    function labelFit(str, cands) {
+      var tw = textW(str, fs, fcss), pick = null;
+      cands.some(function (o) {
+        var d = nrm(o.d), ext = Math.abs(d[0]) * tw / 2 + Math.abs(d[1]) * th / 2, at = add(o.c, mul(d, 0.8 + ext));
+        var r = { x0: at[0] - tw / 2 - 0.3, x1: at[0] + tw / 2 + 0.3, y0: at[1] - th / 2, y1: at[1] + th / 2 };
+        if (clear(r)) { pick = at; return true; }
+        return false;
+      });
+      if (!pick) { var d0 = nrm(cands[0].d); pick = add(cands[0].c, mul(d0, 0.8 + Math.abs(d0[0]) * tw / 2 + Math.abs(d0[1]) * th / 2)); }
+      items.push({ t: "text", x: pick[0], y: pick[1], str: str, r: { x0: pick[0] - tw / 2, x1: pick[0] + tw / 2, y0: pick[1] - th / 2, y1: pick[1] + th / 2 } });
+      grow(pick[0] - tw / 2, pick[1] - th / 2); grow(pick[0] + tw / 2, pick[1] + th / 2);
+    }
     function line(p, q, dash, w) { items.push({ t: "line", p: p, q: q, dash: dash, w: w }); grow(p[0], p[1]); grow(q[0], q[1]); }
     function rightMark(c, u1, u2, size) {
       var a1 = add(c, mul(u1, size)), a2 = add(add(c, mul(u1, size)), mul(u2, size)), a3 = add(c, mul(u2, size));
@@ -4724,8 +4737,11 @@ window.MASUME_EXAMPLES = [{"key":"kokugo-1nen-nazori","name":"国語 1年　ひ�
         line(P[0], P[2], null, 0.3); line(P[1], P[3], null, 0.3);
         if (b.right) { var O = mul(add(P[0], P[2]), 0.5); rightMark(O, nrm(sub(P[3], O)), nrm(sub(P[0], O)), Math.min(2.2, ms)); }
         var dt = b.dText || ["", ""];
-        if (dt[0] !== "-") label(dt[0] || lenText(b, b.v.p), [P[1][0] + (P[3][0] - P[1][0]) * 0.75, P[1][1]], [0, 1], 0.8);
-        if (dt[1] !== "-") label(dt[1] || lenText(b, b.v.q), [P[0][0], P[0][1] + (P[2][1] - P[0][1]) * 0.25], [1, 0], 0.8);
+        // 横の対角線の字は線の上か下、たての対角線の字は線の右か左。辺や字にふれない所を探す
+        if (dt[0] !== "-") labelFit(dt[0] || lenText(b, b.v.p), [0.72, 0.28, 0.6, 0.4].reduce(function (a, t) {
+          var c = [P[1][0] + (P[3][0] - P[1][0]) * t, P[1][1]]; return a.concat([{ c: c, d: [0, -1] }, { c: c, d: [0, 1] }]); }, []));
+        if (dt[1] !== "-") labelFit(dt[1] || lenText(b, b.v.q), [0.28, 0.72, 0.4, 0.6].reduce(function (a, t) {
+          var c = [P[0][0], P[0][1] + (P[2][1] - P[0][1]) * t]; return a.concat([{ c: c, d: [1, 0] }, { c: c, d: [-1, 0] }]); }, []));
       }
       // 高さ（点線）。足が底辺の外に出るときは、底辺をのばす
       if (SHAPES[b.shape].height && b.hOn && g.foot) {
