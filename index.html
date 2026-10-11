@@ -114,6 +114,17 @@
   .lk b { font-size:15.5px; font-weight:700; }
   .lk span { font-size:12.5px; color:var(--sub); line-height:1.8; }
   .lk .go { font-size:12.5px; font-weight:700; color:var(--accent); margin-top:2px; }
+  .ev { display:grid; grid-template-columns:minmax(0,1.25fr) 1fr; gap:20px 28px; align-items:center; border:1px solid var(--ink); padding:20px; margin-bottom:16px; }
+  .ev .ev-img { display:block; border:1px solid var(--line); line-height:0; }
+  .ev .ev-img img { width:100%; height:auto; }
+  .ev .lt { font-size:10.5px; font-weight:700; letter-spacing:0.16em; color:var(--accent); }
+  .ev b { display:block; font-size:17px; font-weight:700; line-height:1.6; margin:4px 0 8px; }
+  .ev p { font-size:12.5px; color:var(--sub); line-height:1.8; margin:0 0 4px; }
+  .ev .when { font-size:13.5px; font-weight:700; color:var(--ink); }
+  .ev .nb { display:inline-block; }
+  .ev .btn { display:inline-block; margin-top:12px; padding:10px 18px; border:1px solid var(--ink); font-size:13.5px; font-weight:700; color:var(--ink); transition:box-shadow .15s; }
+  .ev .btn:hover { box-shadow:4px 4px 0 var(--ink); }
+  @media (max-width:720px) { .ev { grid-template-columns:1fr; padding:16px; } }
   .feature { display:grid; grid-template-columns:1.15fr 1fr; gap:0; border:1px solid var(--ink); margin-top:16px; }
   .feature .fimg { border-right:1px solid var(--ink); background:var(--wash); }
   .feature .fimg img { display:block; width:100%; height:100%; object-fit:cover; }
@@ -1017,6 +1028,18 @@
 
   <section id="learn">
     <div class="shelf-head"><span class="sn">10</span><span class="sl">LEARN｜つながる・まなぶ</span></div>
+    <!-- イベント枠：終わったら data-until の翌日から自動で隠れる -->
+    <div class="ev" data-until="2026-10-26">
+      <a class="ev-img" href="https://peatix.com/event/5225719" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-kindai-img')}catch(e){}}"><img src="assets/event/geg-kindai-20261020.jpg" width="1200" height="586" loading="lazy" alt="GEG九州・沖縄コラボ企画第3弾のチラシ。近畿大学附属福岡高校における生成AIの活用事例。2026年10月20日（火）20時30分から21時。担当は石川直希さんと井上雄介さん"></a>
+      <div>
+        <span class="lt">EVENT｜オンライン学習会</span>
+        <b><span class="nb">近畿大学附属福岡高校における</span><span class="nb">生成AIの活用事例</span></b>
+        <p class="when"><span class="nb">2026年10月20日（火）</span><span class="nb">20:30から21:00</span><br><span class="nb">オンライン・参加無料</span></p>
+        <p>GEG九州・沖縄コラボ企画の第3弾です。近畿大学附属福岡高校数学科の石川直希先生と井上雄介先生に、学校での生成AIの使い方をお話しいただきます。</p>
+        <a class="btn" href="https://peatix.com/event/5225719" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-kindai')}catch(e){}}">Peatixで申し込む ↗</a>
+      </div>
+    </div>
+    <script>(function(){var e=document.querySelector('.ev[data-until]');if(e&&new Date()>new Date(e.dataset.until+'T23:59:59+09:00'))e.remove();})();</script>
     <div class="links">
       <a class="lk" href="https://sites.google.com/view/geg-chikuho/news-letter/20260705" target="_blank" rel="noopener">
         <span class="lt">NEWS LETTER</span>
