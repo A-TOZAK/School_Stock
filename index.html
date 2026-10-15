@@ -170,6 +170,36 @@
   @media (prefers-reduced-motion:reduce){ .aie-btns button.copied{animation:none} .aie-btns .chk path{animation:none; stroke-dashoffset:0} }
   .aie-note { display:none; font-size:12.5px; color:var(--ink); border-top:1px solid var(--line); padding-top:12px; margin-top:14px; }
   .aie-note.show { display:block; }
+  /* 学年と教科でさがす（2026-10-15 GEG旭川でいただいた声から） */
+  .ss { border:1px solid var(--ink); margin-top:40px; padding:24px 26px 22px; background:var(--paper); }
+  .ss h2 { font-size:20px; font-weight:700; margin:0 0 4px; }
+  .ss > p { font-size:13px; color:var(--sub); margin-bottom:14px; word-break:auto-phrase; }
+  .ss form { display:flex; gap:8px; }
+  .ss input[type=search] { flex:1; min-width:0; font-family:inherit; font-size:16px; padding:10px 12px; border:1px solid var(--ink); border-radius:0; background:var(--paper); color:var(--ink); }
+  .ss input[type=search]:focus { outline:2px solid var(--accent); outline-offset:1px; }
+  .ss form button { font-family:inherit; font-size:14px; font-weight:700; padding:0 18px; border:1px solid var(--black); background:var(--black); color:#fff; cursor:pointer; white-space:nowrap; }
+  .ss-row { display:flex; flex-wrap:wrap; align-items:center; gap:6px; margin-top:12px; }
+  .ss-row > span { font-size:12px; font-weight:700; color:var(--sub); width:3em; }
+  .ss-row button { font-family:inherit; font-size:13.5px; font-weight:700; min-width:3.2em; padding:6px 12px; border:1px solid var(--line); background:var(--wash); color:var(--ink); cursor:pointer; }
+  .ss-row button:hover { border-color:var(--ink); }
+  .ss-row button.on { background:var(--black); border-color:var(--black); color:#fff; }
+  .ss-row .ss-clear { margin-left:auto; border:0; background:none; color:var(--sub); font-weight:400; font-size:12.5px; text-decoration:underline; min-width:0; padding:6px 4px; }
+  .ss-status { font-size:13.5px; font-weight:700; margin-top:16px; }
+  .ss-status:empty { display:none; }
+  .ss-group { border-top:1px solid var(--line); padding-top:12px; margin-top:14px; }
+  .ss-gh { display:flex; justify-content:space-between; align-items:baseline; gap:12px; }
+  .ss-gh h3 { font-size:14.5px; font-weight:700; }
+  .ss-gh h3 small { font-size:12px; font-weight:400; color:var(--sub); margin-left:8px; }
+  .ss-shelf { font-size:12.5px; font-weight:700; white-space:nowrap; }
+  .ss-group ul { list-style:none; display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:6px; margin-top:8px; }
+  .ss-group li[hidden] { display:none; }
+  .ss-group li a { display:flex; flex-wrap:wrap; align-items:baseline; gap:2px 8px; padding:8px 10px; border:1px solid var(--line); color:var(--ink); line-height:1.5; height:100%; }
+  .ss-group li a:hover { border-color:var(--ink); }
+  .ss-group li b { font-size:14px; font-weight:700; }
+  .ss-group li span { font-size:12px; color:var(--sub); }
+  .ss-group li i { font-style:normal; font-size:10.5px; font-weight:700; color:var(--accent); border:1px solid currentColor; padding:0 4px; margin-left:auto; }
+  .ss-more { font-family:inherit; font-size:12.5px; margin-top:8px; padding:6px 12px; border:1px solid var(--line); background:var(--paper); color:var(--ink); cursor:pointer; }
+  @media (max-width:600px){ .ss { padding:20px 16px 18px; } .ss-row > span { width:100%; } .ss-group ul { grid-template-columns:1fr; } }
   .foot { background:var(--black); color:#b9bcc2; margin-top:60px; }
   .foot-in { max-width:960px; margin:0 auto; padding:34px 24px 38px; font-size:12.5px; line-height:2; }
   .foot .fw { color:#fff; font-weight:700; letter-spacing:0.26em; font-size:12px; margin-bottom:10px; }
@@ -212,6 +242,7 @@
   <div class="drawer-head"><b>SITE MAP</b><button class="drawer-close" id="drawerClose" aria-label="閉じる">×</button></div>
   <nav>
     <a href="./">棚トップ<small>School Stock の入り口</small></a>
+    <a href="#sagasu">学年と教科でさがす<small>「3年 算数」のように、棚全体からプリントをさがす</small></a>
     <a href="#ai-erabi">教材えらびをAIに相談<small>ChatGPT・Gemini・Claude が棚の中からえらぶ</small></a>
     <div class="dr-sec">SOZAI｜授業の素材</div>
     <a href="sozai/">授業素材ライブラリ<small>スライド・プリント・おたよりに使えるイラストと写真 全837点</small></a>
@@ -304,6 +335,28 @@
 </section>
 
 <div class="container">
+
+  <section id="sagasu" aria-label="学年と教科でさがす">
+    <div class="ss">
+      <h2>学年と教科でさがす</h2>
+      <p>学年と教科のボタンを押すか、「3年 算数」「わり算」のように言葉を入れてください。棚にあるプリントをまとめて表示します。</p>
+      <form role="search">
+        <input type="search" name="q" placeholder="例：3年 算数　／　4年 漢字　／　わり算" aria-label="教材をさがす言葉" autocomplete="off">
+        <button type="submit">さがす</button>
+      </form>
+      <div class="ss-row" role="group" aria-label="学年">
+        <span>学年</span>
+        <button type="button" data-g="1" aria-pressed="false">1年</button><button type="button" data-g="2" aria-pressed="false">2年</button><button type="button" data-g="3" aria-pressed="false">3年</button><button type="button" data-g="4" aria-pressed="false">4年</button><button type="button" data-g="5" aria-pressed="false">5年</button><button type="button" data-g="6" aria-pressed="false">6年</button><button type="button" data-g="7" aria-pressed="false">中学</button>
+      </div>
+      <div class="ss-row" role="group" aria-label="教科">
+        <span>教科</span>
+        <button type="button" data-s="国語" aria-pressed="false">国語</button><button type="button" data-s="算数" aria-pressed="false">算数</button><button type="button" data-s="理科" aria-pressed="false">理科</button><button type="button" data-s="社会" aria-pressed="false">社会</button><button type="button" data-s="体育" aria-pressed="false">体育</button><button type="button" data-s="英語" aria-pressed="false">英語</button>
+        <button type="button" class="ss-clear">選択を外す</button>
+      </div>
+      <p class="ss-status" role="status" aria-live="polite"></p>
+      <div class="ss-results"></div>
+    </div>
+  </section>
 
   <section id="event" aria-label="イベントのお知らせ">
     <!-- イベント枠：終わったら data-until の翌日から自動で隠れる -->
@@ -1181,5 +1234,6 @@
 <script src="/School_Stock/assets/counter.js" defer></script>
 <script src="/School_Stock/assets/soudan.js" defer></script>
 <script src="/School_Stock/assets/ai-erabi.js" defer></script>
+<script src="/School_Stock/assets/search.js" defer></script>
 </body>
 </html>
