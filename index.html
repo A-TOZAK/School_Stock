@@ -116,12 +116,15 @@
   .lk .go { font-size:12.5px; font-weight:700; color:var(--accent); margin-top:2px; }
   .ev { display:grid; grid-template-columns:minmax(0,1.25fr) 1fr; gap:20px 28px; align-items:center; border:1px solid var(--ink); padding:20px; margin:16px 0; }
   #event .ev { margin:32px 0 0; }
+  #event .ev + .ev { margin-top:16px; }
   .ev .ev-img { display:block; border:1px solid var(--line); line-height:0; }
   .ev .ev-img img { width:100%; height:auto; }
   .ev .lt { font-size:10.5px; font-weight:700; letter-spacing:0.16em; color:var(--accent); }
   .ev b { display:block; font-size:17px; font-weight:700; line-height:1.6; margin:4px 0 8px; }
   .ev p { font-size:12.5px; color:var(--sub); line-height:1.8; margin:0 0 4px; }
   .ev .when { font-size:13.5px; font-weight:700; color:var(--ink); }
+  .ev .ev-cd { font-size:13px; font-weight:700; color:var(--ink); margin:0 0 8px; }
+  .ev .ev-cd strong { font-size:30px; line-height:1; margin:0 4px; color:var(--accent); font-variant-numeric:tabular-nums; }
   .ev .nb { display:inline-block; }
   .ev .btn { display:inline-block; margin-top:12px; padding:10px 18px; border:1px solid var(--ink); font-size:13.5px; font-weight:700; color:var(--ink); transition:box-shadow .15s; }
   .ev .btn:hover { box-shadow:4px 4px 0 var(--ink); }
@@ -360,6 +363,17 @@
 
   <section id="event" aria-label="イベントのお知らせ">
     <!-- イベント枠：終わったら data-until の翌日から自動で隠れる -->
+    <div class="ev" data-until="2026-12-12">
+      <a class="ev-img" href="https://peatix.com/event/5235381" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-mining-img')}catch(e){}}"><img src="assets/event/geg-chikuho-20261212.jpg" width="1200" height="587" loading="lazy" alt="GEG Chikuho 5周年、GEG九州・沖縄合同イベントのチラシ。Mining Possibility 可能性の採掘。私たちは何を目指して筑豊の子たちを育てていくのか。2026年12月12日（土）13時から17時"></a>
+      <div>
+        <span class="lt">EVENT｜GEG Chikuho 5周年</span>
+        <b><span class="nb">Mining Possibility</span> <span class="nb">可能性の採掘</span></b>
+        <p class="ev-cd" data-at="2026-12-12T13:00:00+09:00" hidden>開催まで あと<strong>--</strong>日</p>
+        <p class="when"><span class="nb">2026年12月12日（土）</span><span class="nb">13:00から17:00</span><br><span class="nb">いいかねPalette（福岡県田川市）・参加無料</span></p>
+        <p>筑豊の小学校・中学校・高校の先生が集まり、「私たちは何を目指して筑豊の子たちを育てていくのか」を校種をこえて話し合う半日です。Google認定教育者の試験も会場で受けられます。申込の締切は12月10日（木）です。</p>
+        <a class="btn" href="https://peatix.com/event/5235381" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-mining')}catch(e){}}">Peatixで申し込む ↗</a>
+      </div>
+    </div>
     <div class="ev" data-until="2026-10-26">
       <a class="ev-img" href="https://peatix.com/event/5225719" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-kindai-img')}catch(e){}}"><img src="assets/event/geg-kindai-20261020.jpg" width="1200" height="586" loading="lazy" alt="GEG九州・沖縄コラボ企画第3弾のチラシ。近畿大学附属福岡高校における生成AIの活用事例。2026年10月20日（火）20時30分から21時。担当は石川直希さんと井上雄介さん"></a>
       <div>
@@ -370,7 +384,7 @@
         <a class="btn" href="https://peatix.com/event/5225719" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:event-geg-kindai')}catch(e){}}">Peatixで申し込む ↗</a>
       </div>
     </div>
-    <script>(function(){var e=document.querySelector('.ev[data-until]');if(e&&new Date()>new Date(e.dataset.until+'T23:59:59+09:00'))e.remove();})();</script>
+    <script>(function(){var n=new Date();document.querySelectorAll('.ev[data-until]').forEach(function(e){if(n>new Date(e.dataset.until+'T23:59:59+09:00'))e.remove();});document.querySelectorAll('.ev-cd[data-at]').forEach(function(c){var j=new Date(n.getTime()+324e5),a=c.dataset.at.split('T')[0].split('-'),d=Math.round((Date.UTC(+a[0],a[1]-1,+a[2])-Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate()))/864e5);if(d<=0){c.textContent='本日開催';}else{c.querySelector('strong').textContent=d;}c.hidden=false;});})();</script>
   </section>
 
   <section id="ai-erabi" aria-label="教材えらびをAIに相談">
