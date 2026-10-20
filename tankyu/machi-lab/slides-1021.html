@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>10月21日のスライド｜安心・安全なまちづくり</title>
+<meta name="robots" content="noindex">
+<link href="https://fonts.googleapis.com/css2?family=BIZ+UDPGothic:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --sumi:#1b1b1b; --kami:#fffdf8; --ai:#1f4b8e; --aka:#b0413e;
+    --midori:#3d6b4e; --usu:#6f6f68; --line:#ddd8cc; --ki:#f7e9b8;
+    --fj:"UD デジタル 教科書体 N-B","BIZ UDPGothic","Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  html,body{height:100%;background:#2a2c30;font-family:var(--fj);color:var(--sumi);overflow:hidden}
+
+  #stage{position:fixed;inset:0;display:flex;align-items:center;justify-content:center}
+  #slide{flex:none;width:1280px;height:720px;background:var(--kami);position:relative;
+         transform-origin:center center;overflow:hidden}
+
+  /* ===== スライドの枠 ===== */
+  .s{position:absolute;inset:0;padding:34px 60px 30px;display:flex;flex-direction:column}
+  .s h1,.s h2,.s .box,.s .sub,.s li,.s p,.s td{word-break:auto-phrase}
+  .s .hd{display:flex;justify-content:space-between;align-items:center;flex:0 0 auto;
+         border-bottom:2px solid var(--sumi);padding-bottom:9px;font-size:19px;color:var(--usu)}
+  .s .hd b{color:var(--sumi);font-size:21px}
+  .s .bd{flex:1;display:flex;flex-direction:column;justify-content:center;
+         padding:20px 0 8px;min-height:0;overflow:hidden}
+  .s .ft{flex:0 0 auto;font-size:17px;color:var(--usu);border-top:1px solid var(--line);
+         padding-top:8px;line-height:1.5}
+  .s .ft b{color:var(--midori)}
+
+  /* 表紙 */
+  .s.hyoshi{background:var(--sumi)}
+  .s.hyoshi .hd{color:#a9a9a2;border-bottom-color:#55554e}
+  .s.hyoshi .hd b{color:#fff}
+  .s.hyoshi .ft{color:#a9a9a2;border-top-color:#3d3d38}
+  .s.hyoshi .unit{font-size:22px;color:#a9a9a2;margin-bottom:16px}
+  .s.hyoshi h1{font-size:66px;color:#fff;line-height:1.35}
+  .s.hyoshi .sub{font-size:26px;color:#d8d4c8;margin-top:20px;line-height:1.6}
+
+  /* めあて */
+  .meate .lab{font-size:24px;color:var(--ai);margin-bottom:16px}
+  .meate .box{border:4px solid var(--sumi);background:#fff;padding:34px 40px;
+              font-size:46px;line-height:1.55}
+  .meate .box em{font-style:normal;background:linear-gradient(transparent 60%,var(--ki) 60%)}
+  .meate .say{font-size:24px;color:var(--usu);margin-top:20px}
+
+  /* 流れ */
+  h2.h{font-size:38px;margin-bottom:20px;line-height:1.4}
+  .nagare{border-top:2px solid var(--sumi)}
+  .nagare .r{display:grid;grid-template-columns:60px 96px 1fr;gap:20px;align-items:center;
+             border-bottom:1px solid var(--line);padding:14px 0;font-size:28px;line-height:1.5}
+  .nagare .n{background:var(--ai);color:#fff;width:44px;height:44px;border-radius:50%;
+             display:flex;align-items:center;justify-content:center;font-size:23px}
+  .nagare .m{color:var(--aka);font-size:25px}
+
+  /* 指示 */
+  .yaru{border:3px solid var(--ai);background:#fff}
+  .yaru .t{background:var(--ai);color:#fff;font-size:25px;padding:10px 24px}
+  .yaru ul{list-style:none;padding:20px 30px}
+  .yaru li{font-size:31px;line-height:1.6;padding:8px 0 8px 46px;position:relative}
+  .yaru li::before{content:"";position:absolute;left:10px;top:21px;width:15px;height:15px;
+                   background:var(--ai);border-radius:50%}
+  .yaru li b{background:linear-gradient(transparent 60%,var(--ki) 60%)}
+  .min{display:inline-block;background:var(--aka);color:#fff;font-size:23px;
+       padding:6px 20px;margin-top:16px}
+
+  /* 注意 */
+  .chui{border:3px solid var(--aka);background:#fdf5f4;padding:22px 30px}
+  .chui p{font-size:29px;line-height:1.6}
+  .chui p + p{margin-top:12px}
+
+  /* 問い */
+  .toi{border-left:12px solid var(--ai);padding:12px 0 12px 32px}
+  .toi .lab{font-size:23px;color:var(--ai);margin-bottom:10px}
+  .toi h2{font-size:50px;line-height:1.45}
+
+  /* 資料 */
+  .zu{text-align:center}
+  .zu img{max-height:360px;margin:0 auto;object-fit:contain}
+  .zu .cap{font-size:22px;color:var(--usu);margin-top:14px;line-height:1.6}
+  table.t{width:100%;border-collapse:collapse;font-size:25px}
+  table.t th,table.t td{border-bottom:1px solid var(--line);padding:11px 16px;
+                        text-align:left;line-height:1.5;vertical-align:top}
+  table.t th{background:#f4f1e6;white-space:nowrap;width:1%}
+  .two{display:grid;grid-template-columns:1fr 1fr;gap:26px}
+  .two .c{border:2px solid var(--sumi);padding:22px 26px}
+  .two .c h4{font-size:28px;margin-bottom:10px;line-height:1.45}
+  .two .c p{font-size:23px;line-height:1.65}
+  .two .c.a{background:#f4f1e6}
+  .two .c.b{border-color:var(--aka);background:#fdf5f4}
+  .two .c.b h4{color:var(--aka)}
+  ul.pl{list-style:none}
+  ul.pl li{font-size:27px;line-height:1.6;padding:9px 0 9px 38px;position:relative}
+  ul.pl li::before{content:"";position:absolute;left:8px;top:22px;width:13px;height:13px;
+                   background:var(--midori);border-radius:50%}
+  p.nt{font-size:23px;color:var(--usu);line-height:1.6;margin-top:16px}
+  .src{font-size:18px;color:var(--usu);margin-top:12px;line-height:1.5}
+
+  /* ふりかえり */
+  .furi .re{background:#f4f1e6;border-left:8px solid var(--sumi);padding:14px 24px;
+            font-size:26px;line-height:1.5;margin-bottom:20px}
+  .furi .re span{font-size:20px;color:var(--usu);display:block;margin-bottom:4px}
+  .furi ul{list-style:none}
+  .furi li{font-size:28px;line-height:1.55;padding:10px 0 10px 52px;position:relative;
+           border-bottom:1px solid var(--line)}
+  .furi li:last-child{border-bottom:none}
+  .furi li .w{position:absolute;left:0;top:11px;background:var(--sumi);color:#fff;
+              width:36px;height:36px;border-radius:6px;display:flex;align-items:center;
+              justify-content:center;font-size:20px}
+
+  /* ===== 操作 ===== */
+  #bar{position:fixed;left:0;right:0;bottom:0;height:44px;background:rgba(20,21,24,.94);
+       color:#c9ced6;display:flex;align-items:center;gap:16px;padding:0 16px;font-size:13px;z-index:50}
+  #bar button{background:none;border:1px solid #4a5058;color:#c9ced6;font-family:var(--fj);
+              font-size:12.5px;padding:5px 12px;cursor:pointer;border-radius:3px}
+  #bar button:hover{background:#4a5058;color:#fff}
+  #bar .grow{flex:1}
+  #bar .now{color:#fff}
+  #prog{position:fixed;left:0;bottom:44px;height:3px;background:var(--ai);z-index:50;width:0}
+  #menu{position:fixed;inset:0;background:rgba(20,21,24,.97);z-index:60;overflow:auto;
+        padding:44px 6vw 80px;display:none}
+  #menu.on{display:block}
+  #menu h2{color:#fff;font-size:23px;margin-bottom:6px}
+  #menu p{color:#8f959e;font-size:14px;margin-bottom:24px}
+  #menu .g{display:grid;grid-template-columns:repeat(auto-fill,minmax(310px,1fr));gap:10px}
+  #menu a{display:block;border:1px solid #3d4249;padding:13px 16px;color:#e6e8ec;
+          text-decoration:none;font-size:15px;line-height:1.55}
+  #menu a:hover{background:var(--ai);border-color:var(--ai);color:#fff}
+  #menu a .d{display:block;font-size:12.5px;color:#8f959e;margin-top:3px}
+  #menu a:hover .d{color:#cfe0ff}
+
+  @media print{
+    @page{size:1280px 720px;margin:0}
+    html,body{overflow:visible;background:#fff;height:auto}
+    #stage{position:static;display:block}
+    #slide{width:1280px;height:auto;transform:none!important}
+    #bar,#prog,#menu{display:none!important}
+    .s{position:relative;inset:auto;width:1280px;height:720px;page-break-after:always;display:flex!important}
+    .s.hyoshi{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  }
+</style>
+</head>
+<body>
+
+<div id="stage"><div id="slide"></div></div>
+<div id="prog"></div>
+<div id="bar">
+  <button onclick="go(-1)">◀ 前</button>
+  <button onclick="go(1)">次 ▶</button>
+  <span class="now" id="now"></span>
+  <span class="grow"></span>
+  <span id="cnt"></span>
+  <button onclick="toggleMenu()">目次（M）</button>
+  <button onclick="window.print()">全部PDFに</button>
+</div>
+<div id="menu">
+  <h2>目次</h2>
+  <p>クリックでその時間の先頭へ　閉じるのは M か Esc　←→ かスペースで送る　F で全画面</p>
+  <div class="g" id="menuList"></div>
+</div>
+
+<script>
+/* ============================================================
+   単元計画（正本）の展開表を、そのまま授業スライドにしたもの。
+   1時間 ＝ 表紙 → めあて → 流れ → 指示・資料 → ふりかえり
+   各スライドの下段は先生用の手立て。子どもは上だけ見ればよい。
+   直すときは、下の LESSONS だけ触ればよい。
+   ============================================================ */
+
+const LESSONS = [
+{
+  no:"4校時", day:"10月21日", tag:"ふり返る・出し合う",
+  midashi:"これまでをふり返り<br>やってみたいことを出そう",
+  sub:"3か月プロジェクトのはじまり",
+  meate:"これまでの学習をふり返り<br><em>やってみたいこと</em>を出し合おう",
+  nagare:[["15分","これまでの学習をふり返る"],["15分","2つの見方で分ける"],["15分","やってみたいことを出す"]],
+  slides:[
+    {t:"zu", h:"これまでの学習", table:[["7月","はじめの考えを書いた"],["夏休み","4つの目でまちを調べた"],["9月2日","点字の体験"],["9月9日","手話の体験"],["9月30日","車いす・アイマスクの体験"]],
+     ft:"板書写真とワークシートを見返してから話させる"},
+    {t:"toi", lab:"思い出そう", h:"7月のわたしは<br>安心・安全なまちを<br>何と書いた？", ft:"第1時の板書写真があれば映す"},
+    {t:"toi", lab:"体験で", h:"分かったことは<br>何だろう", ft:"さわって読む字がある　まちの方にかべがある　などを拾う"},
+    {t:"two", h:"2つの見方", a:{h:"ぼうさい", p:"自分でそなえる<br>自分と家族の命を<br>自分たちでまもる"}, b:{h:"ふくし", p:"だれもがくらしやすい<br>目や耳や足が不自由な人も<br>こまらないまち"},
+     ft:"ぼうさいは自分でそなえる（自助）にしぼる"},
+    {t:"yaru", h:"どっちに入るかな", li:["ひなん所までの道を知る","目が見えない人に音で知らせる","家の人ともちものを決める","車いすが通れる道にする"], min:"ノートの②に書く",
+     ft:"どっちにも入るものはまん中へ"},
+    {t:"toi", lab:"重ねると", h:"さいがいのとき<br>だれがこまるかな", ft:"耳が聞こえない人は放送が分からない　などを引き出す"},
+    {t:"chui", h:"2つが重なるところ", ps:["ふだんこまることは","さいがいのとき もっと大きくなる"], ft:"8月からの単元の背骨　ここで子どもの言葉にする"},
+    {t:"yaru", h:"やってみたいことを出そう", li:["<b>1人3つ以上</b>","ふきだしくんに 1まいに1つ","ぼうさいとふくしでページを分ける","名前は出席番号だけ"], min:"15分",
+     ft:"まだ「むり」と言わせない　当日中にスクリーンショットで残す"},
+  ],
+  furi:["やりたいことは いくつ出た？","いちばん心にのこった体験は？"],
+  furiFt:"5校時はこのボードをそのまま使う"
+},
+{
+  no:"5校時", day:"10月21日", tag:"集める・チームをつくる",
+  midashi:"アイデアを集めて<br>プロジェクトチームをつくろう",
+  sub:"11月から3か月 自分たちでやってみる",
+  meate:"アイデアを集めて<br>3か月取り組む<em>プロジェクトチーム</em>をつくろう",
+  nagare:[["15分","アイデアをふやす"],["20分","にているものを集める"],["10分","3か月の見通しと入りたいチーム"]],
+  slides:[
+    {t:"list", h:"アイデアをふやす約束", li:["たくさん出す","「いいね」と受けとる","友だちのアイデアにのっかる","まだ「むり」と言わない"]},
+    {t:"toi", lab:"じゅんばん", h:"自分 → 友だち → AI", ft:"先に自分で考えさせてからAIを使う"},
+    {t:"toi", lab:"AIに聞いてみよう", h:"ほかに<br>だれがこまる？", note:"先生のGeminiに聞いて 出てきた人を見てみよう",
+     ft:"答えをもらう道具にしない　出てきた人から子どもに選ばせる"},
+    {t:"list", h:"AIをつかうときの約束", li:["先に自分で考える","名前・写真・住所・家のことは入れない","こたえをそのまま使わない","チームの名前は自分たちで決める"]},
+    {t:"yaru", h:"にているものを集めよう", li:["AIが番号でまとめる","<b>名前はみんなでつける</b>","5つくらいにしぼる"], min:"20分",
+     ft:"Geminiには束の名前をつけさせない　1チーム4〜6人"},
+    {t:"zu", h:"プロジェクトのたね（れい）", table:[["家のそなえ","家のもちものを調べて チェック表にする"],["ひなん所マップ","ひなん所までの道を歩いて 地図にする"],["点字あんない","学校の中に 点字のあんないをつくる"],["車いすの道","車いすで通れる道を調べて つたえる"],["体験を教える","アイマスク体験を 下の学年に教える"]],
+     ft:"子どもから出たものに置きかえる"},
+    {t:"zu", h:"3か月の見通し", table:[["11月","調べる・つくる"],["12月","ためす・なおす"],["1月","とどける"],["2月","10さいを祝う会で おうちの人につたえる"]]},
+    {t:"yaru", h:"入りたいチームを書こう", li:["第1希望","第2希望","そのわけ"], min:"ノートの⑥に書く",
+     ft:"チーム決めは10月28日　希望は先生が集めて組む"},
+  ],
+  furi:["友だちのアイデアで なるほどと思ったものは？","3か月で いちばんやってみたいことは？"],
+  furiFt:"次の時間（10月28日）にチームをつくる"
+},
+];
+
+/* ============================================================
+   ここから下は組み立て。ふつうは触らない。
+   ============================================================ */
+function esc(x){ return x==null?"":x; }
+
+function frame(L,i,total,inner,ft){
+  return `<div class="hd"><span><b>${L.no}</b>　${L.day}　${L.tag}</span>
+            <span>${i}／${total}</span></div>
+          <div class="bd">${inner}</div>
+          <div class="ft">${ft?('先生：'+ft):'&nbsp;'}</div>`;
+}
+
+function build(){
+  const deck=[];
+  LESSONS.forEach(L=>{
+    const parts=[];
+    parts.push({cls:"hyoshi", inner:
+      `<div class="unit">総合的な学習の時間　4年　安心・安全なまちづくり</div>
+       <h1>${L.midashi}</h1><div class="sub">${L.sub}</div>`, ft:""});
+    parts.push({cls:"meate", inner:
+      `<div class="lab">今日のめあて</div><div class="box">${L.meate}</div>
+       <div class="say">ノートに書こう</div>`,
+       ft:"めあては音読させてから書かせる　板書にも残す"});
+    parts.push({cls:"", inner:
+      `<h2 class="h">今日の 流れ</h2><div class="nagare">${L.nagare.map((r,k)=>
+        `<div class="r"><span class="n">${k+1}</span><span class="m">${r[0]}</span><span>${r[1]}</span></div>`).join("")}</div>`,
+       ft:"時間は目安　ずれたらその場で言い直してよい"});
+
+    (L.slides||[]).forEach(s=>{
+      let h="";
+      if(s.t==="yaru"){
+        h=`<h2 class="h">${s.h}</h2>
+           <div class="yaru"><div class="t">やること</div>
+             <ul>${s.li.map(x=>`<li>${x}</li>`).join("")}</ul></div>
+           <div>${s.min?`<span class="min">${s.min}</span>`:""}</div>`;
+      } else if(s.t==="toi"){
+        h=`<div class="toi"><div class="lab">${esc(s.lab)}</div><h2>${s.h}</h2></div>
+           ${s.note?`<p class="nt">${s.note}</p>`:""}${s.src?`<p class="src">${s.src}</p>`:""}`;
+      } else if(s.t==="chui"){
+        h=`<h2 class="h">${s.h}</h2><div class="chui">${s.ps.map(p=>`<p>${p}</p>`).join("")}</div>`;
+      } else if(s.t==="list"){
+        h=`<h2 class="h">${s.h}</h2><ul class="pl">${s.li.map(x=>`<li>${x}</li>`).join("")}</ul>
+           ${s.note?`<p class="nt">${s.note}</p>`:""}`;
+      } else if(s.t==="two"){
+        h=`<h2 class="h">${s.h}</h2>
+           <div class="two"><div class="c a"><h4>${s.a.h}</h4><p>${s.a.p}</p></div>
+             <div class="c b"><h4>${s.b.h}</h4><p>${s.b.p}</p></div></div>
+           ${s.note?`<p class="nt">${s.note}</p>`:""}${s.src?`<p class="src">${s.src}</p>`:""}`;
+      } else if(s.t==="zu"){
+        h=`<h2 class="h">${s.h}</h2>`+
+          (s.img?`<div class="zu"><img src="${s.img}" alt=""><div class="cap">${esc(s.cap)}</div></div>`:"")+
+          (s.table?`<table class="t">${s.table.map(r=>`<tr><th>${r[0]}</th><td>${r[1]}</td></tr>`).join("")}</table>`:"")+
+          (s.src?`<p class="src">${s.src}</p>`:"");
+      }
+      parts.push({cls:"", inner:h, ft:s.ft});
+    });
+
+    parts.push({cls:"furi", inner:
+      `<div class="re"><span>今日のめあて</span>${L.meate.replace(/<\/?em>/g,"")}</div>
+       <ul>${L.furi.map((x,k)=>`<li><span class="w">${k+1}</span>${x}</li>`).join("")}</ul>`,
+       ft:L.furiFt});
+
+    parts.forEach((p,k)=>{
+      deck.push({l:(k===0?L.no+"　"+L.midashi.replace(/<br>/g," "):null), d:(k===0?L.day:null),
+                 cls:p.cls, h:frame(L,k+1,parts.length,p.inner,p.ft)});
+    });
+  });
+  return deck;
+}
+
+const DECK=build();
+const el=document.getElementById('slide');
+let i=0;
+function render(){
+  const s=DECK[i];
+  el.innerHTML=`<div class="s ${s.cls||''}">${s.h}</div>`;
+  document.getElementById('cnt').textContent=(i+1)+" / "+DECK.length;
+  document.getElementById('prog').style.width=((i+1)/DECK.length*100)+"%";
+  let lab="",d="";
+  for(let k=i;k>=0;k--){ if(DECK[k].l){ lab=DECK[k].l; d=DECK[k].d||""; break; } }
+  document.getElementById('now').textContent=lab+(d?"（"+d+"）":"");
+  location.hash="s"+i;
+}
+function go(n){ i=Math.max(0,Math.min(DECK.length-1,i+n)); render(); }
+function jump(n){ i=n; render(); closeMenu(); }
+const ml=document.getElementById('menuList');
+DECK.forEach((s,n)=>{
+  if(!s.l) return;
+  const a=document.createElement('a');
+  a.href="#"; a.innerHTML=s.l+(s.d?`<span class="d">${s.d}</span>`:"");
+  a.onclick=e=>{e.preventDefault(); jump(n);};
+  ml.appendChild(a);
+});
+function toggleMenu(){ document.getElementById('menu').classList.toggle('on'); }
+function closeMenu(){ document.getElementById('menu').classList.remove('on'); }
+function fit(){
+  const w=(window.innerWidth-24)/1280, h=(window.innerHeight-56)/720;
+  el.style.transform="scale("+Math.min(w,h)+")";
+}
+window.addEventListener('resize',fit);
+document.addEventListener('keydown',e=>{
+  if(e.key==='ArrowRight'||e.key===' '||e.key==='PageDown'){e.preventDefault();go(1);}
+  else if(e.key==='ArrowLeft'||e.key==='PageUp'){e.preventDefault();go(-1);}
+  else if(e.key==='Home'){jump(0);} else if(e.key==='End'){jump(DECK.length-1);}
+  else if(e.key==='m'||e.key==='M'){toggleMenu();}
+  else if(e.key==='Escape'){closeMenu();}
+  else if(e.key==='f'||e.key==='F'){
+    if(document.fullscreenElement) document.exitFullscreen();
+    else document.documentElement.requestFullscreen();
+  }
+});
+el.addEventListener('click',()=>go(1));
+window.addEventListener('beforeprint',()=>{
+  el.innerHTML=DECK.map(s=>`<div class="s ${s.cls||''}">${s.h}</div>`).join("");
+});
+window.addEventListener('afterprint',render);
+const H=(location.hash||"");
+if(/^#t\d/.test(H)){                       // #t3 → 第3時の先頭
+  const n="第"+H.replace("#t","")+"時";
+  const k=DECK.findIndex(x=>x.l&&x.l.indexOf(n)===0);
+  if(k>=0) i=k;
+}else{
+  const hh=parseInt(H.replace("#s",""),10);
+  if(!isNaN(hh)&&hh>=0&&hh<DECK.length) i=hh;
+}
+render(); fit();
+</script>
+</body>
+</html>
