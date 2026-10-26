@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>つかえるプリント まちがい報告｜School Stock</title>
+<!-- つかえるプリントの解答面のQRから飛んでくる転送用ページ（2026-10-27）。
+     ?のあとがプリントのID（例 kakezan2_3＝単元の接頭辞とまい目）。
+     受け口はふりかえりプリントと同じフォーム。「プリントID」欄に「つかえる <ID>」、
+     「どこですか？」に「そのほか」を入れた状態で開く。 -->
+<style>
+body{ font-family:"Hiragino Sans","Hiragino Kaku Gothic ProN",sans-serif; margin:0;
+  padding:15vh 24px; text-align:center; color:#1a1a1a; background:#fbfaf7; line-height:1.8; }
+a{ color:#166156; }
+</style>
+<link rel="manifest" href="/School_Stock/manifest.webmanifest">
+<meta name="theme-color" content="#0e0f11">
+<link rel="apple-touch-icon" href="/School_Stock/assets/favicon-180.png">
+<meta name="apple-mobile-web-app-title" content="School Stock">
+</head>
+<body>
+<p>まちがい報告フォームへ移動します。</p>
+<p><a id="go" href="https://docs.google.com/forms/d/e/1FAIpQLScdKGs5RNfwWce23lJWmN1o0JynTG3VgAAtxXWODFUkb499UQ/viewform">移動しないときはこちら</a></p>
+<script>
+(function(){
+  var FORM = "https://docs.google.com/forms/d/e/1FAIpQLScdKGs5RNfwWce23lJWmN1o0JynTG3VgAAtxXWODFUkb499UQ/viewform";
+  var id = decodeURIComponent(location.search.replace(/^\?/, "")).replace(/[^A-Za-z0-9_]/g, "").slice(0, 40);
+  var url = FORM;
+  if (id) {
+    url += "?usp=pp_url&entry.53134997=" + encodeURIComponent("つかえる " + id)
+         + "&entry.537550055=" + encodeURIComponent("そのほか");
+  }
+  document.getElementById("go").href = url;
+  location.replace(url);
+})();
+</script>
+</body>
+</html>
