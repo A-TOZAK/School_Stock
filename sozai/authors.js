@@ -2,7 +2,7 @@
 const AUTHORS = {
  "makabe": {
   "romaji": "Makabe",
-  "count": 125
+  "count": 128
  },
  "masuda": {
   "romaji": "Masuda",
