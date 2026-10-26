@@ -35,6 +35,19 @@
 
   var BANNERS = [
     {
+      id: "event-geg-mining",
+      from: [2026, 10, 26], to: [2026, 12, 12],
+      place: "furikaeri",
+      img: "event-geg-mining.webp",
+      alt: "GEG Chikuho 5周年、GEG九州・沖縄合同イベントのチラシ。Mining Possibility 可能性の採掘。2026年12月12日（土）13時から17時",
+      label: "イベントのお知らせ",
+      title: ["GEG Chikuho 5周年", "Mining Possibility"],
+      lead: ["12月12日（土）13時から17時に、", "田川市のいいかねPaletteで開きます。", "筑豊の先生が校種をこえて話し合う半日です。", "参加は無料です。"],
+      btn: "Peatixで申し込む",
+      href: "https://peatix.com/event/5235381",
+      ext: true
+    },
+    {
       id: "jiten-kokugo",
       from: [2026, 9, 18], to: [2026, 10, 31],
       place: "furikaeri",
