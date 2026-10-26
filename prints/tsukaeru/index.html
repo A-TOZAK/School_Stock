@@ -101,6 +101,20 @@
   .secdl a { font-size:12px; font-weight:700; color:var(--ink); border:1px solid var(--ink); padding:5px 11px; white-space:nowrap; }
   .secdl a:hover { background:var(--black); color:#fff; }
   .secdl small { font-size:11px; color:var(--sub); flex-basis:100%; }
+  /* NEW 2026-10-26：11月末に外す */
+  .new { font-style:normal; font-size:10.5px; font-weight:700; letter-spacing:.14em; color:#fff; background:var(--accent); padding:2px 7px; vertical-align:2px; font-family:"Helvetica Neue",Arial,sans-serif; }
+  .tags .new { align-self:center; }
+  .card[id] { scroll-margin-top:210px; }
+  .news { border:1px solid var(--accent); background:#f2f6fd; padding:16px 18px; margin:0 0 20px; max-width:760px; }
+  .news-t { font-size:14px; font-weight:700; color:var(--ink); line-height:1.7; }
+  .news-t .new { margin-right:8px; }
+  .news-list { margin:10px 0 12px; display:flex; flex-direction:column; gap:6px; }
+  .news-row { display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; font-size:13px; line-height:1.6; }
+  .news-row b { font-size:12px; color:var(--sub); min-width:5.5em; white-space:nowrap; }
+  .news-row a { color:var(--accent); text-decoration:underline; text-underline-offset:3px; }
+  .news .fbtn { font-size:12.5px; padding:6px 12px; }
+  @media (max-width:560px){ .news-row { gap:2px 12px; } .news-row b { flex-basis:100%; } .news-list { gap:10px; } .card[id] { scroll-margin-top:340px; } }
+  /* /NEW 2026-10-26 */
   .soon { border:1px solid var(--line); background:var(--wash); padding:18px 20px; margin:30px 0 4px; }
   .soon b { display:block; font-size:14.5px; margin-bottom:3px; }
   .soon p { font-size:13px; color:var(--sub); }
@@ -160,6 +174,21 @@
     <span class="kicker">PRINTS｜つかえるシリーズ</span>
     <h1>つかえるシリーズ</h1>
     <p class="lead">教科をまたいで同じ形でつくっている、活用問題のシリーズです。1単元＝4まい＋解答。1まい目で全員の足場をつくってから、学力テストで出るような読み取り・思考・記述に登っていきます。式・図・文章はすべて自作、© School Stock。</p>
+    <!-- NEW 2026-10-26：11月末に外す -->
+    <div class="news" id="news-20261026">
+      <p class="news-t"><em class="new">NEW</em>10月26日に、1〜3年の3学期に使う17単元を足しました。カードに NEW の印があります。</p>
+      <div class="news-list">
+        <div class="news-row"><b>1年　算数</b><a href="#u-tsukaeru_s1_ookikazu">大きい かず</a><a href="#u-tsukaeru_s1_hyakukei">100までの かずの けいさん</a></div>
+        <div class="news-row"><b>2年　算数</b><a href="#u-tsukaeru_s2_kakekimari">かけ算のきまり</a><a href="#u-tsukaeru_s2_meetoru">100cmをこえる長さ</a><a href="#u-tsukaeru_s2_ichiman">1000をこえる数</a><a href="#u-tsukaeru_s2_hako">はこの形</a><a href="#u-tsukaeru_s2_bunsuu">分数</a></div>
+        <div class="news-row"><b>2年　国語</b><a href="#u-tsukaeru_k2_nakama">なかまのことばとはんたいのことば</a></div>
+        <div class="news-row"><b>3年　算数</b><a href="#u-tsukaeru_s3_sankaku">三角形</a><a href="#u-tsukaeru_s3_shousuu">小数</a><a href="#u-tsukaeru_s3_kakehissan2k">2けたをかけるかけ算の筆算</a><a href="#u-tsukaeru_s3_shikakushiki">□を使った式</a></div>
+        <div class="news-row"><b>3年　国語</b><a href="#u-tsukaeru_k3_kangae">考えと理由をつないで書く</a><a href="#u-tsukaeru_k3_shugo">主語とじゅつ語、くわしく表す言葉</a></div>
+        <div class="news-row"><b>3年　理科</b><a href="#u-tsukaeru_r3_jishaku">じしゃくのせいしつ</a></div>
+        <div class="news-row"><b>3年　社会</b><a href="#u-tsukaeru_sh3_dogu">かわる道具とくらし</a><a href="#u-tsukaeru_sh3_utsuri">市のうつりかわり</a></div>
+      </div>
+      <button type="button" class="fbtn" id="newOnly" aria-pressed="false">今回足した単元だけを見る</button>
+    </div>
+    <!-- /NEW 2026-10-26：11月末に外す -->
     <div class="steps">
       <div class="step"><span class="sn">1</span><b>きそ</b><small>知識・技能。10分で全員の足場をつくる1まい。</small></div>
       <div class="step"><span class="sn">2</span><b>よみとる</b><small>資料から事実を読み取り、ひと足の判断まで。</small></div>
@@ -167,11 +196,11 @@
       <div class="step"><span class="sn">4</span><b>あらわす</b><small>誤答の分析と、指定語句をつかった記述。</small></div>
     </div>
     <div class="meta">
-      <span><b>全118単元</b>（各4まい＋解答4枚・計8枚）</span>
-      <span>算数 37（1年 1／3年 6／4年 13／5年 12／6年 5）</span>
-      <span>国語 32（1年 7／2年 5／3年 1／4年 10／5年 5／6年 4）</span>
-      <span>理科 16（3年 3／4年 7／5年 3／6年 3）</span>
-      <span>社会 16（3年 1／4年 5／5年 8／6年 2・先生向け資料編つき）</span>
+      <span><b>全135単元</b>（各4まい＋解答4枚・計8枚）</span>
+      <span>算数 48（1年 3／2年 5／3年 10／4年 13／5年 12／6年 5）</span>
+      <span>国語 35（1年 7／2年 6／3年 3／4年 10／5年 5／6年 4）</span>
+      <span>理科 17（3年 4／4年 7／5年 3／6年 3）</span>
+      <span>社会 18（3年 3／4年 5／5年 8／6年 2・先生向け資料編つき）</span>
       <span>数学 17（中3 8／中2 5／中1 4）</span>
       <span>© School Stock</span>
     </div>
@@ -186,13 +215,13 @@
       <span class="fl">学年</span>
       <button class="fbtn on" data-band="all">すべて</button><button class="fbtn" data-band="g1">1年</button><button class="fbtn" data-band="g2">2年</button><button class="fbtn" data-band="g3">3年</button><button class="fbtn" data-band="g4">4年</button><button class="fbtn" data-band="g5">5年</button><button class="fbtn" data-band="g6">6年</button><button class="fbtn" data-band="c1">中1</button><button class="fbtn" data-band="c2">中2</button><button class="fbtn" data-band="c3">中3</button>
     </div>
-    <p class="count"><b id="shown">118</b> 単元を表示中</p>
+    <p class="count"><b id="shown">135</b> 単元を表示中</p>
   </div>
 
   <section data-sec id="sec-sansu-g1">
     <div class="sec-head"><span class="sec-no">01</span><span class="sec-label">MATH</span></div>
     <h2>つかえる算数　1年</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　1年は分かち書き・全ルビ・なぞりの足場つきです。ながさとかさを、じかにくらべる・なにかのいくつぶんでくらべる、の順にたどります。</p>
+    <p class="sec-note"><span class="cnt">全3単元</span>　1年は分かち書き・全ルビ・なぞりの足場つきです。ながさとかさのくらべかた、100までの大きい数、100までの数の計算を、使う時期の順にならべています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g1_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g1_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g1_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g1_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="sansu" data-band="g1" data-hay="ながさと かさの くらべかた ながさ・かさ 1年 つかえる算数">
@@ -207,12 +236,104 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_nagasakasa_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_s1_ookikazu" data-new="2026-10-26" data-subj="sansu" data-band="g1" data-hay="大きい かず 100までの数 十のくらい 一のくらい 数の大小 1年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s1_ookikazu.png" alt="大きい かず"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 1年</span><span class="tag">100までの かず</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu.pdf">大きい かず</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_ookikazu_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s1_hyakukei" data-new="2026-10-26" data-subj="sansu" data-band="g1" data-hay="100までの かずの けいさん たし算 ひき算 何十 2けた 1年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s1_hyakukei.png" alt="100までの かずの けいさん"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 1年</span><span class="tag">100までの たしざん・ひきざん</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei.pdf">100までの かずの けいさん</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s1_hyakukei_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+    </div>
+  </section>
+  <section data-sec id="sec-sansu-g2">
+    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">MATH</span></div>
+    <h2>つかえる算数　2年</h2>
+    <p class="sec-note"><span class="cnt">全5単元</span>　2年は分かち書きとルビつきです。かけ算のきまり、100cmをこえる長さ、1000をこえる数、はこの形、分数を、使う時期の順にならべています。</p>
+    <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g2_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g2_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g2_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g2_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
+    <div class="grid">
+<div class="card" id="u-tsukaeru_s2_kakekimari" data-new="2026-10-26" data-subj="sansu" data-band="g2" data-hay="かけ算のきまり 九九 かける数 ふえ方 だん 2年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s2_kakekimari.png" alt="かけ算のきまり"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 2年</span><span class="tag">九九のきまり</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari.pdf">かけ算のきまり</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_kakekimari_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s2_meetoru" data-new="2026-10-26" data-subj="sansu" data-band="g2" data-hay="100cmをこえる長さ メートル m cm ものさし 長さ 2年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s2_meetoru.png" alt="100cmをこえる長さ"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 2年</span><span class="tag">m・cm</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru.pdf">100cmをこえる長さ</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_meetoru_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s2_ichiman" data-new="2026-10-26" data-subj="sansu" data-band="g2" data-hay="1000をこえる数 一万 4けたの数 千のくらい 数の直線 2年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s2_ichiman.png" alt="1000をこえる数"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 2年</span><span class="tag">4けたの数・一万</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman.pdf">1000をこえる数</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_ichiman_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s2_hako" data-new="2026-10-26" data-subj="sansu" data-band="g2" data-hay="はこの形 箱 面 辺 頂点 ひご 2年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s2_hako.png" alt="はこの形"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 2年</span><span class="tag">めん・へん・ちょう点</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako.pdf">はこの形</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_hako_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s2_bunsuu" data-new="2026-10-26" data-subj="sansu" data-band="g2" data-hay="分数 分数 半分 おる もとの大きさ 2年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s2_bunsuu.png" alt="分数"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 2年</span><span class="tag">2分の1・4分の1</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu.pdf">分数</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s2_bunsuu_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-sansu-g3">
-    <div class="sec-head"><span class="sec-no">02</span><span class="sec-label">MATH</span></div>
+    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">MATH</span></div>
     <h2>つかえる算数　3年</h2>
-    <p class="sec-note"><span class="cnt">全6単元</span>　啓林館の配当順にならべています。長さと重さは地図やはかりの図から、表とグラフは二次元の表から読み取る形にしています。</p>
+    <p class="sec-note"><span class="cnt">全10単元</span>　啓林館の配当順にならべています。長さと重さは地図やはかりの図から、表とグラフは二次元の表から読み取る形にしています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g3_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g3_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g3_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g3_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="sansu" data-band="g3" data-hay="長さ まきじゃく km 道のり きょり 地図 3年 つかえる算数">
@@ -287,10 +408,58 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_en_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_s3_sankaku" data-new="2026-10-26" data-subj="sansu" data-band="g3" data-hay="三角形 二等辺三角形 正三角形 角 コンパス 作図 3年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s3_sankaku.png" alt="三角形"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 3年</span><span class="tag">二等辺三角形・正三角形</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku.pdf">三角形</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_sankaku_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s3_shousuu" data-new="2026-10-26" data-subj="sansu" data-band="g3" data-hay="小数 0.1 小数点 小数のたし算 ひき算 3年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s3_shousuu.png" alt="小数"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 3年</span><span class="tag">小数のしくみ</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu.pdf">小数</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shousuu_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s3_kakehissan2k" data-new="2026-10-26" data-subj="sansu" data-band="g3" data-hay="2けたをかけるかけ算の筆算 かけ算 筆算 2けた 3年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s3_kakehissan2k.png" alt="2けたをかけるかけ算の筆算"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 3年</span><span class="tag">2けた×2けた</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k.pdf">2けたをかけるかけ算の筆算</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_kakehissan2k_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_s3_shikakushiki" data-new="2026-10-26" data-subj="sansu" data-band="g3" data-hay="□を使った式 □ はじめの数 式 文章題 3年 つかえる算数">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_s3_shikakushiki.png" alt="□を使った式"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">算数 3年</span><span class="tag">わからない数を□に</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki.pdf">□を使った式</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_s3_shikakushiki_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-sansu-g4">
-    <div class="sec-head"><span class="sec-no">03</span><span class="sec-label">MATH</span></div>
+    <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">MATH</span></div>
     <h2>つかえる算数　4年</h2>
     <p class="sec-note"><span class="cnt">全13単元</span>　啓林館の年間指導計画に沿った配当順です。4月から3月までの一年ぶんがそろっています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g4_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g4_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g4_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g4_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -454,7 +623,7 @@
     </div>
   </section>
   <section data-sec id="sec-sansu-g5">
-    <div class="sec-head"><span class="sec-no">04</span><span class="sec-label">MATH</span></div>
+    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">MATH</span></div>
     <h2>つかえる算数　5年</h2>
     <p class="sec-note"><span class="cnt">全12単元</span>　啓林館の配当順にならべています。分数、割合（百分率と歩合）、単位量あたりの大きさ、平均を足して、一年ぶんがほぼそろいました。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g5_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g5_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g5_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g5_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -606,7 +775,7 @@
     </div>
   </section>
   <section data-sec id="sec-sansu-g6">
-    <div class="sec-head"><span class="sec-no">05</span><span class="sec-label">MATH</span></div>
+    <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">MATH</span></div>
     <h2>つかえる算数　6年</h2>
     <p class="sec-note"><span class="cnt">全5単元</span>　分数のかけ算とわり算、比、拡大図と縮図、比例と反比例、データの活用です。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g6_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g6_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g6_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sansu_g6_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -674,7 +843,7 @@
     </div>
   </section>
   <section data-sec id="sec-kokugo-g1">
-    <div class="sec-head"><span class="sec-no">06</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">07</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　1年</h2>
     <p class="sec-note"><span class="cnt">全7単元</span>　1・2年は分かち書き・全ルビ・なぞりの足場つきです。読む・書く・話す・ことばの単元を、学習指導要領の指導事項から立てています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g1_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g1_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g1_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g1_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -766,9 +935,9 @@
     </div>
   </section>
   <section data-sec id="sec-kokugo-g2">
-    <div class="sec-head"><span class="sec-no">07</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">08</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　2年</h2>
-    <p class="sec-note"><span class="cnt">全5単元</span>　主語と述語、手紙、ようすを思いうかべて読む、書きぬきなど、2年の指導事項から単元を立てています。</p>
+    <p class="sec-note"><span class="cnt">全6単元</span>　主語と述語、手紙、ようすを思いうかべて読む、書きぬきなど、2年の指導事項から単元を立てています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g2_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g2_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g2_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g2_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="kokugo" data-band="g2" data-hay="同じところとちがうところ 比べる 共通 相違 2年 つかえる国語">
@@ -831,12 +1000,24 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_kakinuki_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_k2_nakama" data-new="2026-10-26" data-subj="kokugo" data-band="g2" data-hay="なかまのことばとはんたいのことば なかまのことば はんたいのことば 反対語 2年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k2_nakama.png" alt="なかまのことばとはんたいのことば"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">国語 2年</span><span class="tag">なかまのことば・反対のことば</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama.pdf">なかまのことばとはんたいのことば</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k2_nakama_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-kokugo-g3">
-    <div class="sec-head"><span class="sec-no">08</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">09</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　3年</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　引用のしかたと出典の示し方です。本のページと調べたメモを行き来しながら読みます。</p>
+    <p class="sec-note"><span class="cnt">全3単元</span>　引用のしかたと出典の示し方、考えと理由をつないで書くこと、主語とじゅつ語とくわしく表す言葉です。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g3_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g3_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g3_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g3_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="kokugo" data-band="g3" data-hay="引用して書く 出典 かぎかっこ 調べたメモ 報告文 3年 つかえる国語">
@@ -851,10 +1032,34 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_inyou_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_k3_kangae" data-new="2026-10-26" data-subj="kokugo" data-band="g3" data-hay="考えと理由をつないで書く 考え 理由 なぜなら 意見文 3年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k3_kangae.png" alt="考えと理由をつないで書く"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">国語 3年</span><span class="tag">考えと理由</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae.pdf">考えと理由をつないで書く</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_kangae_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_k3_shugo" data-new="2026-10-26" data-subj="kokugo" data-band="g3" data-hay="主語とじゅつ語、くわしく表す言葉 主語 述語 じゅつ語 修飾語 くわしく表す言葉 3年 つかえる国語">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_k3_shugo.png" alt="主語とじゅつ語、くわしく表す言葉"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">国語 3年</span><span class="tag">主語・述語・修飾語</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo.pdf">主語とじゅつ語、くわしく表す言葉</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_k3_shugo_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-kokugo-g4">
-    <div class="sec-head"><span class="sec-no">09</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">10</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　4年</h2>
     <p class="sec-note"><span class="cnt">全10単元</span>　読むこと、書くこと、話すこと・聞くこと、言葉のきまりの順にならべています。教科書の教材名は使わず、学習指導要領の指導事項から単元を立てています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g4_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g4_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g4_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g4_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -982,7 +1187,7 @@
     </div>
   </section>
   <section data-sec id="sec-kokugo-g5">
-    <div class="sec-head"><span class="sec-no">10</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">11</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　5年</h2>
     <p class="sec-note"><span class="cnt">全5単元</span>　事実と意見、和語・漢語・外来語、引用、文章と図表、資料を使った提案です。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g5_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g5_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g5_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g5_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1050,7 +1255,7 @@
     </div>
   </section>
   <section data-sec id="sec-kokugo-g6">
-    <div class="sec-head"><span class="sec-no">11</span><span class="sec-label">JAPANESE</span></div>
+    <div class="sec-head"><span class="sec-no">12</span><span class="sec-label">JAPANESE</span></div>
     <h2>つかえる国語　6年</h2>
     <p class="sec-note"><span class="cnt">全4単元</span>　提案文、人物の生き方と表現、出典の確かめ方、推薦文です。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g6_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g6_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g6_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_kokugo_g6_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1106,9 +1311,9 @@
     </div>
   </section>
   <section data-sec id="sec-rika-g3">
-    <div class="sec-head"><span class="sec-no">12</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">13</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　3年</h2>
-    <p class="sec-note"><span class="cnt">全3単元</span>　理科の学習が始まる学年です。風とゴム、こん虫、太陽とかげの単元で、比べて調べることをつかみます。</p>
+    <p class="sec-note"><span class="cnt">全4単元</span>　理科の学習が始まる学年です。風とゴム、こん虫、太陽とかげ、じしゃくの単元で、比べて調べることをつかみます。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g3_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g3_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g3_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g3_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="rika" data-band="g3" data-hay="風やゴムのはたらき 風の力 ゴムの力 車 実験 3年 つかえる理科">
@@ -1147,10 +1352,22 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_kage_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_r3_jishaku" data-new="2026-10-26" data-subj="rika" data-band="g3" data-hay="じしゃくのせいしつ 磁石 N極 S極 鉄 引きつける 実験 3年 つかえる理科">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_r3_jishaku.png" alt="じしゃくのせいしつ"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">理科 3年</span><span class="tag">磁石</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku.pdf">じしゃくのせいしつ</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_r3_jishaku_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-rika-g4">
-    <div class="sec-head"><span class="sec-no">13</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">14</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　4年</h2>
     <p class="sec-note"><span class="cnt">全7単元</span>　観察や実験の場面から「調べる問題」を見出して、予想→結果→考察へ登ります。資料の数字には出典と年次を入れています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g4_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g4_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g4_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g4_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1242,7 +1459,7 @@
     </div>
   </section>
   <section data-sec id="sec-rika-g5">
-    <div class="sec-head"><span class="sec-no">14</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">15</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　5年</h2>
     <p class="sec-note"><span class="cnt">全3単元</span>　流れる水、物のとけ方、台風と天気の変化です。5年の「条件をそろえて調べる」を、実験や観測の記録から組み立てます。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g5_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g5_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g5_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g5_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1287,7 +1504,7 @@
     </div>
   </section>
   <section data-sec id="sec-rika-g6">
-    <div class="sec-head"><span class="sec-no">15</span><span class="sec-label">SCIENCE</span></div>
+    <div class="sec-head"><span class="sec-no">16</span><span class="sec-label">SCIENCE</span></div>
     <h2>つかえる理科　6年</h2>
     <p class="sec-note"><span class="cnt">全3単元</span>　てこと大地のつくり・変化です。実験や観察の記録から、きまりや理由を説明するところまで登ります。資料の数字には出典と年次を入れています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g6_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g6_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g6_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_rika_g6_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1333,9 +1550,9 @@
     </div>
   </section>
   <section data-sec id="sec-shakai-g3">
-    <div class="sec-head"><span class="sec-no">16</span><span class="sec-label">SOCIAL</span></div>
+    <div class="sec-head"><span class="sec-no">17</span><span class="sec-label">SOCIAL</span></div>
     <h2>つかえる社会　3年</h2>
-    <p class="sec-note"><span class="cnt">全1単元</span>　消防のしくみを、地域の実データ（出典と年次を紙面に印字）から読み取ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
+    <p class="sec-note"><span class="cnt">全3単元</span>　消防のしくみ、昔の道具とくらし、飯塚市のうつりかわりを、実データ（出典と年次を紙面に印字）から読み取ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g3_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g3_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g3_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g3_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
     <div class="grid">
 <div class="card" data-subj="shakai" data-band="g3" data-hay="火事からまちを守る 消防 3年 つかえる社会">
@@ -1351,10 +1568,36 @@
 <div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_kaji_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
   </div>
 </div>
+<div class="card" id="u-tsukaeru_sh3_dogu" data-new="2026-10-26" data-subj="shakai" data-band="g3" data-hay="かわる道具とくらし 昔の道具 くらしのうつりかわり せんたく板 かまど 年表 3年 つかえる社会">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh3_dogu.png" alt="かわる道具とくらし"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">社会 3年</span><span class="tag">昔の道具</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu.pdf">かわる道具とくらし</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_shiryohen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料編</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_dogu_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
+<div class="card" id="u-tsukaeru_sh3_utsuri" data-new="2026-10-26" data-subj="shakai" data-band="g3" data-hay="市のうつりかわり 飯塚市 人口 土地の使われ方 交通 公共しせつ 年表 3年 つかえる社会">
+  <a class="th" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri.pdf"><div class="thumb"><img loading="lazy" src="thumb/tsukaeru_sh3_utsuri.png" alt="市のうつりかわり"></div></a>
+  <div class="b">
+    <div class="tags"><!-- NEW 2026-10-26：11月末に外す --><em class="new">NEW</em><!-- /NEW 2026-10-26：11月末に外す --><span class="tag type">社会 3年</span><span class="tag">飯塚市のうつりかわり</span></div>
+    <a class="tt" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri.pdf">市のうつりかわり</a>
+    <div class="acts">
+      <span class="more">4まい＋解答（8枚）</span>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>全部</a>
+      <a class="dl" href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_shiryohen.pdf" download><svg viewBox="0 0 17 17" fill="none" aria-hidden="true"><path d="M8.5 2v8m0 0L5 6.7M8.5 10l3.5-3.3M2.5 13.5h12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>資料編</a>
+    </div>
+<div class="dls"><span class="lab">分けて</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_mondai.pdf" download title="問題面4枚">問題だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_kotae.pdf" download title="解答面4枚">解答だけ</a><span class="sep"></span><span class="lab">まい目</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_m1.pdf" download title="1まい目（問題＋解答の2枚）">1</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_m2.pdf" download title="2まい目（問題＋解答の2枚）">2</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_m3.pdf" download title="3まい目（問題＋解答の2枚）">3</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sh3_utsuri_m4.pdf" download title="4まい目（問題＋解答の2枚）">4</a></div>
+  </div>
+</div>
     </div>
   </section>
   <section data-sec id="sec-shakai-g4">
-    <div class="sec-head"><span class="sec-no">17</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <div class="sec-head"><span class="sec-no">18</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　4年</h2>
     <p class="sec-note"><span class="cnt">全5単元</span>　地域の実データ（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g4_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g4_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g4_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g4_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1426,7 +1669,7 @@
     </div>
   </section>
   <section data-sec id="sec-shakai-g5">
-    <div class="sec-head"><span class="sec-no">18</span><span class="sec-label">SOCIAL STUDIES</span></div>
+    <div class="sec-head"><span class="sec-no">19</span><span class="sec-label">SOCIAL STUDIES</span></div>
     <h2>つかえる社会　5年</h2>
     <p class="sec-note"><span class="cnt">全8単元</span>　実際の統計（出典と年次を紙面に印字）で読み取り・記述まで登ります。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g5_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g5_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g5_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g5_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1538,7 +1781,7 @@
     </div>
   </section>
   <section data-sec id="sec-shakai-g6">
-    <div class="sec-head"><span class="sec-no">19</span><span class="sec-label">SOCIAL</span></div>
+    <div class="sec-head"><span class="sec-no">20</span><span class="sec-label">SOCIAL</span></div>
     <h2>つかえる社会　6年</h2>
     <p class="sec-note"><span class="cnt">全2単元</span>　明治の国づくりと日本国憲法です。年表や条文、統計から読み取り、自分の言葉で説明します。先生向けの資料編A4×1枚つき（子どもに配る紙ではありません）。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g6_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g6_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g6_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_shakai_g6_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1572,7 +1815,7 @@
     </div>
   </section>
   <section data-sec id="sec-sugaku-c3">
-    <div class="sec-head"><span class="sec-no">20</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">21</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中3</h2>
     <p class="sec-note"><span class="cnt">全8単元</span>　中3の1年ぶんがそろいました（学習時期の順）。全国学力・学習状況調査（中3）の問い方の型と正答率の穴をもとに、記述には「見本」と結論文の形を添えています。あいているところは、途中の計算に使えます。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c3_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c3_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c3_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c3_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1676,7 +1919,7 @@
     </div>
   </section>
   <section data-sec id="sec-sugaku-c2">
-    <div class="sec-head"><span class="sec-no">21</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">22</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中2</h2>
     <p class="sec-note"><span class="cnt">全5単元</span>　2学期からの5単元です（学習時期の順）。証明は「方針を選ぶ」ところから、確率と箱ひげ図は数え方と読み方の型を置いています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c2_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c2_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c2_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c2_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1744,7 +1987,7 @@
     </div>
   </section>
   <section data-sec id="sec-sugaku-c1">
-    <div class="sec-head"><span class="sec-no">22</span><span class="sec-label">MATH（JHS）</span></div>
+    <div class="sec-head"><span class="sec-no">23</span><span class="sec-label">MATH（JHS）</span></div>
     <h2>つかえる数学　中1</h2>
     <p class="sec-note"><span class="cnt">全4単元</span>　一次方程式、比例と反比例、平面図形、空間図形です（学習時期の順）。作図と展開図は、手を動かす前の見通しに重さを置いています。</p>
     <div class="secdl"><span class="lab">この学年をまい目ごとに</span><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c1_mai1.pdf" download>1まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c1_mai2.pdf" download>2まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c1_mai3.pdf" download>3まい目だけ</a><a href="/School_Stock_files/prints/tsukaeru/pdf/tsukaeru_sugaku_c1_mai4.pdf" download>4まい目だけ</a><small>その学年の全単元の◯まい目を、問題＋解答の順に1本にまとめたものです。</small></div>
@@ -1835,11 +2078,11 @@ document.getElementById('menuBtn').addEventListener('click',open);document.getEl
 s.addEventListener('click',close);document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});})();
 </script>
 <script>
-(function(){var state={subj:'all',band:'all'};
+(function(){var state={subj:'all',band:'all',newOnly:false};
 function apply(){var shown=0;
 document.querySelectorAll('section[data-sec]').forEach(function(sec){var vis=0;
 sec.querySelectorAll('.card').forEach(function(c){
-var ok=(state.subj==='all'||c.dataset.subj===state.subj)&&(state.band==='all'||c.dataset.band===state.band);
+var ok=(state.subj==='all'||c.dataset.subj===state.subj)&&(state.band==='all'||c.dataset.band===state.band)&&(!state.newOnly||!!c.dataset.new);
 c.style.display=ok?'':'none';if(ok)vis++;});
 sec.style.display=vis===0?'none':'';shown+=vis;});
 document.getElementById('shown').textContent=shown;}
@@ -1847,6 +2090,14 @@ document.querySelectorAll('.fbtn[data-subj]').forEach(function(b){b.addEventList
 state.subj=b.dataset.subj;document.querySelectorAll('.fbtn[data-subj]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
 document.querySelectorAll('.fbtn[data-band]').forEach(function(b){b.addEventListener('click',function(){
 state.band=b.dataset.band;document.querySelectorAll('.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x===b);});apply();});});
+/* NEW 2026-10-26：11月末に外す */
+var nb=document.getElementById('newOnly');
+function resetSB(){state.subj='all';state.band='all';document.querySelectorAll('.fbtn[data-subj],.fbtn[data-band]').forEach(function(x){x.classList.toggle('on',x.dataset.subj==='all'||x.dataset.band==='all');});}
+if(nb){nb.addEventListener('click',function(){state.newOnly=!state.newOnly;nb.classList.toggle('on',state.newOnly);nb.setAttribute('aria-pressed',state.newOnly?'true':'false');
+nb.textContent=state.newOnly?'すべての単元にもどす':'今回足した単元だけを見る';apply();});}
+document.querySelectorAll('.news-row a[href^="#u-"]').forEach(function(a){a.addEventListener('click',function(){var c=document.getElementById(a.getAttribute('href').slice(1));
+if(c&&c.style.display==='none'){resetSB();apply();}});});
+/* /NEW 2026-10-26 */
 })();
 </script>
 <script src="/School_Stock/assets/counter-config.js"></script>
