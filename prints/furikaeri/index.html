@@ -199,6 +199,41 @@ h2 small{ font-size:13px; color:var(--sub); letter-spacing:.06em; margin-left:12
 </div></nav>
 
 <div class="container">
+  <!-- 一番上のイベント告知：data-until の翌日から自動で隠れる。中身は tana.py の TOP_EVENT -->
+  <style>
+  .tev{ margin:20px 0 0; background:var(--accent); color:#fff; display:grid; grid-template-columns:minmax(0,1.15fr) 1fr; gap:18px 28px; align-items:center; padding:22px; }
+  .tev .tev-img{ display:block; line-height:0; background:#fff; }
+  .tev .tev-img img{ width:100%; height:auto; }
+  .tev .tev-tag{ display:inline-block; background:#fff; color:var(--accent); font-size:12px; font-weight:700; letter-spacing:.14em; padding:3px 10px; }
+  .tev .tev-cd{ font-size:15px; font-weight:700; margin:10px 0 0; }
+  .tev .tev-cd strong{ font-size:40px; line-height:1; margin:0 4px; letter-spacing:0; }
+  .tev .tev-t{ display:block; font-size:26px; font-weight:700; line-height:1.4; margin:8px 0 6px; letter-spacing:.02em; }
+  .tev .tev-t span{ display:inline-block; }
+  .tev .tev-when{ font-size:15px; font-weight:700; line-height:1.7; margin:0; }
+  .tev .tev-when span{ display:inline-block; }
+  .tev .tev-p span{ display:inline-block; }
+  .tev .tev-p{ font-size:13.5px; line-height:1.8; margin:8px 0 0; color:#fff; opacity:.95; }
+  .tev .tev-btn{ display:inline-block; margin-top:14px; background:#fff; color:var(--accent); font-size:16px; font-weight:700; letter-spacing:.06em; padding:13px 26px; }
+  @media (hover:hover){ .tev .tev-btn:hover{ background:var(--ink); color:#fff; } }
+  @media (max-width:760px){
+    .tev{ grid-template-columns:1fr; padding:16px; gap:12px; margin-top:14px; }
+    .tev .tev-t{ font-size:22px; }
+    .tev .tev-btn{ display:block; text-align:center; }
+  }
+  @media print{ .tev{ display:none !important; } }
+  </style>
+  <aside class="tev" data-until="2026-12-12" aria-label="イベントのお知らせ">
+    <a class="tev-img" href="https://peatix.com/event/5235381" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:furikaeri-top-event-img')}catch(e){}}"><img src="/School_Stock/assets/event/geg-chikuho-20261212.jpg" width="1200" height="587" alt="GEG Chikuho 5周年、GEG九州・沖縄合同イベントのチラシ。Mining Possibility 可能性の採掘。2026年12月12日（土）13時から17時"></a>
+    <div>
+      <span class="tev-tag">EVENT｜参加無料</span>
+      <p class="tev-cd" data-at="2026-12-12" hidden>開催まで あと<strong>--</strong>日</p>
+      <b class="tev-t"><span>GEG Chikuho 5周年</span> <span>Mining Possibility</span></b>
+      <p class="tev-when"><span>2026年12月12日（土）</span><span>13:00から17:00</span><br><span>いいかねPalette（福岡県田川市）</span></p>
+      <p class="tev-p"><span>筑豊の小学校・中学校・高校の先生が集まり、これからの子どもたちの育て方を校種をこえて話し合う半日です。</span><span>申込の締切は12月10日（木）です。</span></p>
+      <a class="tev-btn" href="https://peatix.com/event/5235381" target="_blank" rel="noopener" onclick="if(window.SS_BUMP){try{SS_BUMP('cta:furikaeri-top-event')}catch(e){}}">Peatixで申し込む ↗</a>
+    </div>
+  </aside>
+  <script>(function(){var n=new Date();document.querySelectorAll('.tev[data-until]').forEach(function(e){if(n>new Date(e.dataset.until+'T23:59:59+09:00'))e.remove();});document.querySelectorAll('.tev-cd[data-at]').forEach(function(c){var j=new Date(n.getTime()+324e5),a=c.dataset.at.split('-'),d=Math.round((Date.UTC(+a[0],a[1]-1,+a[2])-Date.UTC(j.getUTCFullYear(),j.getUTCMonth(),j.getUTCDate()))/864e5);if(d<=0){c.textContent='本日開催';}else{c.querySelector('strong').textContent=d;}c.hidden=false;});})();</script>
   <div class="crumb"><a href="../../">棚トップ</a> ＞ <a href="../../#prints">教科のプリント</a> ＞ ふりかえりプリント</div>
 
   <div class="hero">
