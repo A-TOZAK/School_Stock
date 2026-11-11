@@ -18,7 +18,7 @@ const AUTHORS = {
  },
  "riko": {
   "romaji": "Chihaya",
-  "count": 845
+  "count": 854
  },
  "himi": {
   "romaji": "Himi",
