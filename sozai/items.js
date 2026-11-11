@@ -44393,5 +44393,50 @@ const SOZAI = [
   "img": "img/ww_yoshoku_taberu_ko.jpg",
   "thumb": "img/ww_yoshoku_taberu_ko_thumb.jpg",
   "mono": "img/ww_yoshoku_taberu_ko_mono.jpg"
+ },
+ {
+  "id": "ww_washoku_taberu_ko",
+  "title": "和食を食べる子（茶わんを持って、いただきます）",
+  "author": "riko",
+  "type": "illust",
+  "subject": "国語",
+  "grade": "4年",
+  "unit": "新聞づくり・和食と洋食",
+  "scenes": [
+   "新聞づくり（和食と洋食をくらべる）",
+   "食文化の調べ学習"
+  ],
+  "uses": [
+   "挿絵",
+   "プリント・ワークシート",
+   "掲示",
+   "スライド",
+   "白黒印刷"
+  ],
+  "description": "左手で茶わんを持ち、箸は箸置きにおいた、食べはじめる前の女の子の絵です。箸は横向きにおき、箸先は女の子から見て左を向いています。",
+  "howto": "和食は器を手に持って食べる、という食べ方のちがいを書く記事に使えます。洋食を食べる子の絵と対になっています。正面から見た絵なので、見る人には左右が逆に見えます。「この子から見て、箸先は左、茶わんは左手」と一言そえると、まねするときのまちがいを防げます。",
+  "tags": [
+   "国語",
+   "新聞",
+   "新聞づくり",
+   "和食",
+   "わしょく",
+   "洋食",
+   "ようしょく",
+   "和と洋",
+   "食文化",
+   "4年",
+   "食べ方",
+   "マナー",
+   "子ども",
+   "箸",
+   "箸置き",
+   "茶わん",
+   "女の子",
+   "器を持つ"
+  ],
+  "img": "img/ww_washoku_taberu_ko.jpg",
+  "thumb": "img/ww_washoku_taberu_ko_thumb.jpg",
+  "mono": "img/ww_washoku_taberu_ko_mono.jpg"
  }
 ];
