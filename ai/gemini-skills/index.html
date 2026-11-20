@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geminiのスキル｜授業の準備をGeminiに覚えてもらう｜School Stock</title>
+<meta name="description" content="授業の計画を貼るだけで、ノートの見本、学びにくさのある子への手立ての表、授業のあとに見返すページなどができる、Geminiのスキルを6つ置いています。学校のアカウントでスキルが出ないときのプロンプトもあります。">
+<link rel="canonical" href="https://a-tozak.github.io/School_Stock/ai/gemini-skills/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="Geminiのスキル｜授業の準備をGeminiに覚えてもらう">
+<meta property="og:description" content="授業の計画を貼るだけで、ノートの見本や手立ての表ができるGeminiのスキルを6つ置いています。">
+<meta property="og:url" content="https://a-tozak.github.io/School_Stock/ai/gemini-skills/">
+<style>
+  :root {
+    --ink:#15181c; --black:#0e0f11; --paper:#ffffff; --wash:#f6f6f4; --line:#e6e6e3; --sub:#6b7077; --accent:#2b5fd9;
+    --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+    --font-mono:"SF Mono",Menlo,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-ja); font-size:16px; line-height:1.85; }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 16px; }
+  header { border-bottom:1px solid var(--line); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; height:52px; font-size:13px; }
+  header b { font-weight:700; letter-spacing:.02em; color:var(--black); }
+  header a { color:var(--sub); text-decoration:none; }
+  .ja-phrase { word-break:auto-phrase; text-wrap:pretty; }
+
+  .hero { padding-top:56px; padding-bottom:40px; }
+  .hero h1 { font-size:clamp(30px, 6vw, 48px); line-height:1.3; margin:0 0 16px; color:var(--black); letter-spacing:-.01em; }
+  .hero .sub { margin:0 0 20px; font-size:clamp(18px, 3vw, 22px); font-weight:700; color:var(--accent); }
+  .hero p { margin:0 0 16px; max-width:42em; }
+  .index { list-style:none; margin:28px 0 0; padding:0; border-top:2px solid var(--black); columns:2; column-gap:32px; }
+  .index li { break-inside:avoid; border-bottom:1px solid var(--line); }
+  .index a { display:flex; gap:12px; padding:10px 0; color:var(--black); text-decoration:none; font-weight:700; }
+  .index a span { font-family:Georgia, serif; color:var(--accent); font-weight:700; min-width:1.6em; }
+  .index a:hover { color:var(--accent); }
+
+  section { padding:44px 0; border-top:1px solid var(--line); }
+  h2 { font-size:22px; margin:0 0 20px; color:var(--black); }
+  .lead { margin:0 0 18px; max-width:44em; }
+
+  .sk { padding:28px 0 32px; border-top:2px solid var(--black); }
+  .sk + .sk { margin-top:8px; }
+  .sk-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin-bottom:12px; }
+  .sk-head .no { font-family:Georgia, serif; font-size:26px; line-height:1; color:var(--accent); font-weight:700; }
+  .sk-head h3 { font-size:20px; margin:0; color:var(--black); }
+  .sk-head code { font-family:var(--font-mono); font-size:13px; color:var(--sub); }
+  .tag { font-size:12px; font-weight:700; border:1px solid var(--black); padding:0 8px; line-height:1.8; }
+  figure.zu { margin:0 0 18px; padding:2% 5%; background:#fff; border:1px solid var(--line); }
+  figure.zu img { width:100%; height:auto; display:block; }
+  table.dare { width:100%; border-collapse:collapse; font-size:15px; margin:0 0 18px; }
+  .dare th, .dare td { text-align:left; vertical-align:top; padding:10px 10px 10px 0; border-bottom:1px solid var(--line); }
+  .dare th { width:9em; font-size:13px; color:var(--sub); font-weight:700; white-space:nowrap; }
+  .btns { display:flex; gap:10px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border:1px solid var(--black);
+         background:var(--paper); color:var(--black); font:inherit; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer; border-radius:2px; }
+  .btn.primary { background:var(--black); color:#fff; }
+  .btn:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  details.files { margin-top:16px; max-width:46em; }
+  details.files summary { cursor:pointer; font-size:14px; color:var(--sub); }
+  .flist { list-style:none; margin:8px 0 0; padding:0; border-top:1px solid var(--line); }
+  .flist li { display:flex; flex-wrap:wrap; gap:4px 16px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .flist a { font-family:var(--font-mono); font-weight:700; min-width:14em; }
+  .flist span { color:var(--sub); }
+  .src { margin:12px 0 0; font-size:13px; color:var(--sub); }
+
+  .howto { margin:0 0 20px; padding-left:1.4em; max-width:46em; }
+  .howto li { margin-bottom:8px; }
+  .note-box { margin:0; padding:12px 16px; max-width:46em; font-size:15px; background:var(--wash); border-left:3px solid var(--accent); }
+  .notes { margin:0; padding-left:1.2em; max-width:46em; }
+  .notes li { margin-bottom:8px; }
+
+  footer { border-top:1px solid var(--line); padding:28px 0 40px; font-size:13px; color:var(--sub); }
+  footer a { color:var(--sub); }
+
+  @media (max-width:720px) {
+    .hero { padding-top:36px; padding-bottom:28px; }
+    .index { columns:1; }
+    .dare th { width:auto; display:block; padding-bottom:0; border-bottom:0; }
+    .dare td { display:block; padding-top:2px; }
+    .dare tr { display:block; border-bottom:1px solid var(--line); }
+    .dare td { border-bottom:0; }
+    .flist a { min-width:0; }
+    .btn { flex:1 1 100%; }
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap"><b>School Stock</b><a href="/School_Stock/#ai">棚へ</a></div></header>
+
+<main>
+  <div class="wrap hero">
+    <h1 class="ja-phrase">Geminiのスキル</h1>
+    <p class="sub ja-phrase">毎回同じように頼んでいる授業の準備を、Geminiに覚えておいてもらいます</p>
+    <p class="ja-phrase">授業の計画を貼ると、手が止まる子に渡すノートの見本、学びにくさのある子への手立ての表、授業のあとに子どもが見返すページなどができます。小学校の学級担任が、自分の学級で使ってきた頼み方をまとめたものです。</p>
+    <p class="ja-phrase">スキルは、Geminiに仕事の進め方を覚えておいてもらうしくみです。一度取りこめば、入力欄で「@」と名前を打つだけで呼び出せます。プロンプトを毎回貼る必要はありません。</p>
+    <p class="note-box ja-phrase">子どもの名前や、学校の外に出せない情報は貼らないでください。子どもの書いたものを扱うときは、名前の列を消して、学校のアカウントのGeminiを使います。個人のアカウントで試すときは、「試しに貼る見本」だけにしてください。</p>
+    <ol class="index" id="index"></ol>
+  </div>
+
+  <section id="list">
+    <div class="wrap">
+      <h2>スキルの一覧（6つ）</h2>
+      <p class="lead ja-phrase">「見本をコピー」は、架空の学級で作った入力の例をコピーします。取りこんだあと、まずこれを貼って、どんなものができるかを見てください。</p>
+
+      <article class="sk" id="bansho-note">
+        <div class="sk-head"><span class="no">01</span><h3 class="ja-phrase">ノートの見本（板書計画とノート）</h3><code>@bansho-note</code></div>
+        <figure class="zu"><img src="img/bansho-note.webp" width="1672" height="941" loading="lazy" alt="図解。手が止まる子に、ノートの見本を渡す。本時の計画をGeminiに貼る、配るノート・記入例・板書計画の3枚に組み立てる、B4で刷ってその子の机に渡す。休んで戻ってきた子にも渡せます。方眼のノートと鉛筆の絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">書き方が分からず手が止まる子と、休んで戻ってきた子が助かります。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">本時の計画から、配るノートと、ノートの記入例と、板書計画の3枚ができます。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">この子に渡したい、と思う時間の前の日に使います。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="/bansho-note-gemini/">ページをひらく</a></div>
+        
+      </article>
+      <article class="sk" id="ruidai-furikaeri">
+        <div class="sk-head"><span class="no">02</span><h3 class="ja-phrase">算数の類題と振り返りの紙</h3><code>@ruidai-furikaeri</code><span class="tag">Canvasを使う</span></div>
+        <figure class="zu"><img src="img/ruidai-furikaeri.webp" width="1672" height="941" loading="lazy" alt="図解。授業のあとに、自分でためして自分で丸つけ。その時間の計画か問題を貼る、類題3問・答えの帯・まねしてよい言葉のある紙を作る、子どもがといて丸つけしてふり返りを書く。先生用の答えと検算の記録もつきます。問題の欄と折った答えの帯がある紙の絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">授業のあとに自分でためして丸つけをしたい子と、振り返りに何を書けばよいか分からず手が止まる子が助かります。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">1時間分の計画か問題から、類題3問前後と、自分で丸つけする答えの帯と、まねしてよい言葉つきの振り返りの欄があるA4の紙と、先生用の答えと検算の記録ができます。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">算数の授業の前の日か当日の朝に、その時間の問題を貼って使います。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="ruidai-furikaeri/ruidai-furikaeri.zip" download="ruidai-furikaeri.zip">スキルをダウンロード</a><button class="btn copy" type="button" data-src="ruidai-furikaeri/prompt.md">プロンプトをコピー</button><button class="btn copy" type="button" data-src="ruidai-furikaeri/tameshi.md" data-part>見本をコピー</button></div>
+        <details class="files"><summary>中のファイル（4つ）</summary><ul class="flist"><li><a href="ruidai-furikaeri/SKILL.md" download>SKILL.md</a><span>スキルの本体です</span></li><li><a href="ruidai-furikaeri/furikaeri-kotoba.md" download>furikaeri-kotoba.md</a><span>まねしてよい言葉の型と例、例を少しずつ減らす表</span></li><li><a href="ruidai-furikaeri/kanji.md" download>kanji.md</a><span>学年別漢字配当表（1026字）</span></li><li><a href="ruidai-furikaeri/ruidai-no-tsukurikata.md" download>ruidai-no-tsukurikata.md</a><span>類題の作り方と検算のやり方</span></li></ul></details><p class="src">元にした実践：4月から毎時間続けている、算数の類題と手書きの振り返りの実践</p>
+      </article>
+      <article class="sk" id="tangen-site">
+        <div class="sk-head"><span class="no">03</span><h3 class="ja-phrase">授業のあとに見返す単元のページ</h3><code>@tangen-site</code><span class="tag">Canvasを使う</span></div>
+        <figure class="zu"><img src="img/tangen-site.webp" width="1672" height="941" loading="lazy" alt="図解。分かるまで、何度でも見返せるページ。単元の計画を貼る、学習の地図・手順の図・大事な言葉・たしかめ問題のページを作る、Googleサイトにのせてクラスルームで配る。子どもは自分のChromebookで見返します。Chromebookを見る子どもの絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">黒板とノートで説明を聞いても、まだ分からなかった子が助かります。分かるまで、授業のあとに自分のChromebookで見返せます。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">単元の計画を貼ると、学習の地図、手順の図、大事な言葉、何度でもやり直せるたしかめ問題が1ページになったHTMLができます。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">単元の初めに作ってGoogleサイトにのせ、Classroomで配っておきます。毎時間のあとに、子どもが見返せます。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="tangen-site/tangen-site.zip" download="tangen-site.zip">スキルをダウンロード</a><button class="btn copy" type="button" data-src="tangen-site/prompt.md">プロンプトをコピー</button><button class="btn copy" type="button" data-src="tangen-site/tameshi.md" data-part>見本をコピー</button></div>
+        <details class="files"><summary>中のファイル（4つ）</summary><ul class="flist"><li><a href="tangen-site/SKILL.md" download>SKILL.md</a><span>スキルの本体です</span></li><li><a href="tangen-site/kanji.md" download>kanji.md</a><span>学年別漢字配当表（1026字）</span></li><li><a href="tangen-site/mihon.md" download>mihon.md</a><span>見本の作りの説明（よかったところと直したところ）</span></li><li><a href="tangen-site/yakusoku.md" download>yakusoku.md</a><span>ページの約束（学年ごとの見出しの言葉、出す前の点検10項目）</span></li></ul></details><p class="src">元にした実践：Gemini授業準備キットの単元サイトのプロンプトと、4年理科で作った見本</p>
+      </article>
+      <article class="sk" id="hairyo-kufu">
+        <div class="sk-head"><span class="no">04</span><h3 class="ja-phrase">学びにくさのある子への手立て</h3><code>@hairyo-kufu</code></div>
+        <figure class="zu"><img src="img/hairyo-kufu.webp" width="1672" height="941" loading="lazy" alt="図解。つまずきやすい子への手立てを、場面ごとに。単元の計画と気になる様子を貼る、時間と場面・起こりやすい困難さ・手立ての表になる、単元に入る前や個別の指導計画に使う。ねらいは変えずに、学び方を変えます。表をはさんだクリップボードと付せんの絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">読む、書く、聞く、待つなどでつまずきやすい子と、その子を受けもつ学級担任が助かります。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">単元の計画から、授業の場面ごとに、起こりやすい困難さと手立てを、解説の配慮の例を引いた表にします。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">単元に入る前に手立てを考えるときや、個別の指導計画に配慮を書くときに使います。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="hairyo-kufu/hairyo-kufu.zip" download="hairyo-kufu.zip">スキルをダウンロード</a><button class="btn copy" type="button" data-src="hairyo-kufu/prompt.md">プロンプトをコピー</button><button class="btn copy" type="button" data-src="hairyo-kufu/tameshi.md" data-part>見本をコピー</button></div>
+        <details class="files"><summary>中のファイル（4つ）</summary><ul class="flist"><li><a href="hairyo-kufu/SKILL.md" download>SKILL.md</a><span>スキルの本体です</span></li><li><a href="hairyo-kufu/hairyo-rei-1.md" download>hairyo-rei-1.md</a><span>解説の配慮の例（国語、社会、算数、理科、生活、音楽、図画工作）</span></li><li><a href="hairyo-kufu/hairyo-rei-2.md" download>hairyo-rei-2.md</a><span>解説の配慮の例（家庭、体育、外国語活動、外国語、道徳、総合、特別活動）</span></li><li><a href="hairyo-kufu/kanji.md" download>kanji.md</a><span>学年別漢字配当表（1026字）</span></li></ul></details><p class="src">元にした実践：Gemini授業準備キットの合理的配慮のプロンプトと、学習指導要領解説13教科の配慮の例を集めた表</p>
+      </article>
+      <article class="sk" id="kyozai-kenkyu">
+        <div class="sk-head"><span class="no">05</span><h3 class="ja-phrase">単元に入る前の教材研究</h3><code>@kyozai-kenkyu</code></div>
+        <figure class="zu"><img src="img/kyozai-kenkyu.webp" width="1672" height="941" loading="lazy" alt="図解。単元に入る前の確かめを、1つの資料に。単元の計画を貼る、学習指導要領での位置・つまずきと問い返し・先生が確かめることなど6つの見出しにまとまる、要確認の印を解説で確かめる。解説のPDFを添付すると、引用つきで作り直せます。開いた本と紙の絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">単元に入る前に、学習指導要領や解説を開いて確かめる時間がなかなか取れない先生が助かります。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">学習指導要領での位置、解説の指導のポイント、つまずきと問い返し、準備と安全、教材のアイデア、先生が確かめることの6つの見出しの資料ができます。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">新しい単元に入る前の週に、単元の計画を貼って、授業の前に確かめることを洗い出すときに使います。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="kyozai-kenkyu/kyozai-kenkyu.zip" download="kyozai-kenkyu.zip">スキルをダウンロード</a><button class="btn copy" type="button" data-src="kyozai-kenkyu/prompt.md">プロンプトをコピー</button><button class="btn copy" type="button" data-src="kyozai-kenkyu/tameshi.md" data-part>見本をコピー</button></div>
+        <details class="files"><summary>中のファイル（3つ）</summary><ul class="flist"><li><a href="kyozai-kenkyu/SKILL.md" download>SKILL.md</a><span>スキルの本体です</span></li><li><a href="kyozai-kenkyu/mihon-rika4-kuuki.md" download>mihon-rika4-kuuki.md</a><span>見本の資料（4年理科「とじこめた空気と水」）</span></li><li><a href="kyozai-kenkyu/shirabekata.md" download>shirabekata.md</a><span>学習指導要領の調べ方（番号の書き方、13教科の領域、Gemini Notebookの手順）</span></li></ul></details><p class="src">元にした実践：Gemini授業準備キットの教材研究のプロンプトと、4年理科と算数で試した出力</p>
+      </article>
+      <article class="sk" id="jissen-ichimai">
+        <div class="sk-head"><span class="no">06</span><h3 class="ja-phrase">校内研修の15分で、実践を1枚に</h3><code>@jissen-ichimai</code><span class="tag">Canvasを使う</span></div>
+        <figure class="zu"><img src="img/jissen-ichimai.webp" width="1672" height="941" loading="lazy" alt="図解。話した実践が、そのまま1枚になる。0から5分に話す、5から10分に困りごと・試したこと・使った道具・最初の一歩に整える、10から15分に校内のGoogleサイトに1ページとして貼る。うまくいかなかった話でも大丈夫です。ノートパソコンに向かって話す先生の絵。"></figure>
+        <table class="dare">
+          <tr><th>誰が助かるか</th><td class="ja-phrase">同じことで困っている、同じ学校の次の先生が助かります。</td></tr>
+          <tr><th>できるもの</th><td class="ja-phrase">先生が1〜2分話した「この学期、こう使ってみた」が、校内のGoogleサイトに貼る1枚と、研修の係に渡す一覧用のカードになります。</td></tr>
+          <tr><th>使う場面</th><td class="ja-phrase">校内研修の15分で、一人ずつ自分の実践を1枚にして、その場でGoogleサイトに貼るときに使います。</td></tr>
+        </table>
+        <div class="btns"><a class="btn primary" href="jissen-ichimai/jissen-ichimai.zip" download="jissen-ichimai.zip">スキルをダウンロード</a><button class="btn copy" type="button" data-src="jissen-ichimai/prompt.md">プロンプトをコピー</button><button class="btn copy" type="button" data-src="jissen-ichimai/tameshi.md" data-part>見本をコピー</button></div>
+        <details class="files"><summary>中のファイル（4つ）</summary><ul class="flist"><li><a href="jissen-ichimai/SKILL.md" download>SKILL.md</a><span>スキルの本体です</span></li><li><a href="jissen-ichimai/card-kakikata.md" download>card-kakikata.md</a><span>研修の係に渡すカードの書き方と、係が一覧にまとめる手順</span></li><li><a href="jissen-ichimai/ichimai-katachi.md" download>ichimai-katachi.md</a><span>1枚の型と見た目の決まり</span></li><li><a href="jissen-ichimai/mihon-sansu5.md" download>mihon-sansu5.md</a><span>見本の1枚（5年算数）</span></li></ul></details><p class="src">元にした実践：Geminiアイデア村（校内の実践をGoogleサイトに集めるしくみ）の設計</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="torikomi">
+    <div class="wrap">
+      <h2 class="ja-phrase">スキルの取りこみ方</h2>
+      <p class="lead ja-phrase">はじめの1回だけです。どのスキルも同じ手順です。</p>
+      <ol class="howto">
+        <li>上の「スキルをダウンロード」を押して、ZIPを保存します。Windowsでは、ZIPを右クリックして「すべて展開」を選びます。Chromebookでは、ダブルクリックで開けます。スキルの名前のフォルダに、ファイルが入っています。</li>
+        <li>Geminiの<a href="https://gemini.google.com/customize/skills" target="_blank" rel="noopener">スキルの画面</a>を開きます。入力欄で「@」を打ち、「スキル」を選んでも開けます。</li>
+        <li>右上の「作成」から「アップロード」を選びます。</li>
+        <li>「スキルのアップロード」の画面で「ファイル」を押し、フォルダの中のファイルをまとめて選びます。CtrlキーとAキーを一緒に押すと、全部を選べます。</li>
+        <li>名前、説明、カスタム指示が入ったことを確かめて、右上の「作成」を押します。スキルの一覧の「有効」に名前が出れば、取りこみは終わりです。</li>
+        <li>新しいチャットで「@」とスキルの名前を打ち、出てきた候補を選んでから、授業の計画を貼って送ります。「Canvasを使う」の札があるスキルは、送る前に、入力欄の下の「Canvas」を選びます。</li>
+      </ol>
+      <p class="note-box ja-phrase">ZIPを開けないときは、「中のファイル」を1つずつダウンロードして、同じように選びます。スキルが新しくなったときは、古いものを一覧から消してから、取りこみなおします。</p>
+    </div>
+  </section>
+
+  <section id="school">
+    <div class="wrap">
+      <h2 class="ja-phrase">学校のアカウントで、スキルがまだ使えないとき</h2>
+      <p class="lead ja-phrase">Googleの案内では、学校などのGoogle Workspaceでスキルが使えるようになるのは、個人のアカウントより後になります。入力欄で「@」を打ってもスキルが出てこないときは、次のようにします。中身は同じです。</p>
+      <ol class="howto">
+        <li>使うスキルの「プロンプトをコピー」を押します。個人のアカウントでスキルを試すときは、「見本をコピー」で写した見本だけを貼ってください。本物の子どもの様子は、学校のアカウントで、このやり方で使います。</li>
+        <li>Geminiの入力欄の＋から「ファイルをアップロード」を選び、「中のファイル」のうち SKILL.md 以外のファイルを添付します。</li>
+        <li>入力欄にプロンプトを貼ります。【例：…】と書いてあるところを、自分の計画や話に書きかえて送ります。書きかえなかった【例：…】の欄は、書かれていないものとして扱われます。</li>
+        <li>直すときは、同じ会話の中で続けます。</li>
+      </ol>
+      <p class="note-box ja-phrase">学校のアカウントでGeminiが使えるかどうか、ファイルを添付できるかどうかは、自治体や学校の設定で変わります。学校の情報担当の先生に確かめてください。</p>
+    </div>
+  </section>
+
+  <section id="mae">
+    <div class="wrap">
+      <h2>使う前に</h2>
+      <ul class="notes">
+        <li class="ja-phrase">学習指導要領や解説の文は、解説のPDFを添付したときだけ引用します。添付がないときは、項目の番号と【要確認】が出ます。番号は、解説で確かめてから使ってください。</li>
+        <li class="ja-phrase">教科書の本文や市販のテストの問題は貼らないでください。スキルは、数や場面を作り直して問題を作ります。</li>
+        <li class="ja-phrase">教科の専門家ではない私が、調べながら作ったものです。できたものにおかしなところがあれば、手で直して使ってください。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© School Stock　作成：外﨑顯博　／　<a href="/School_Stock/about/terms.html">利用規約</a>　／　<a href="/School_Stock/ai/">プロンプト集</a></div></footer>
+
+<script>
+(function () {
+  "use strict";
+  var ol = document.getElementById("index");
+  document.querySelectorAll(".sk").forEach(function (sk) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.href = "#" + sk.id;
+    a.innerHTML = "<span>" + sk.querySelector(".no").textContent + "</span>";
+    a.appendChild(document.createTextNode(sk.querySelector("h3").textContent));
+    li.appendChild(a); ol.appendChild(li);
+  });
+  document.querySelectorAll("button.copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var label = btn.textContent;
+      fetch(btn.getAttribute("data-src")).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.text();
+      }).then(function (t) {
+        var m = t.match(/<!-- ここから貼る -->\n?([\s\S]*?)\n?<!-- ここまで貼る -->/);
+        if (btn.hasAttribute("data-part")) { if (!m) throw new Error("no part"); t = m[1].trim() + "\n"; }
+        return navigator.clipboard.writeText(t);
+      }).then(function () {
+        btn.textContent = "コピーしました";
+        setTimeout(function () { btn.textContent = label; }, 2000);
+      }).catch(function () {
+        window.open(btn.getAttribute("data-src"), "_blank");
+      });
+    });
+  });
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>

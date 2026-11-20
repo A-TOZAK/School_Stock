@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Geminiのスキル｜授業の準備をGeminiに覚えてもらう｜School Stock</title>
+<meta name="description" content="授業の計画を貼るだけで、ノートの見本、学びにくさのある子への手立ての表、授業のあとに見返すページなどができる、Geminiのスキルを{{COUNT}}つ置いています。学校のアカウントでスキルが出ないときのプロンプトもあります。">
+<link rel="canonical" href="{{URL}}">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="School Stock">
+<meta property="og:title" content="Geminiのスキル｜授業の準備をGeminiに覚えてもらう">
+<meta property="og:description" content="授業の計画を貼るだけで、ノートの見本や手立ての表ができるGeminiのスキルを{{COUNT}}つ置いています。">
+<meta property="og:url" content="{{URL}}">
+<style>
+  :root {
+    --ink:#15181c; --black:#0e0f11; --paper:#ffffff; --wash:#f6f6f4; --line:#e6e6e3; --sub:#6b7077; --accent:#2b5fd9;
+    --font-ja:"Hiragino Sans","Hiragino Kaku Gothic ProN","Noto Sans JP","Yu Gothic Medium",sans-serif;
+    --font-mono:"SF Mono",Menlo,monospace;
+  }
+  * { box-sizing:border-box; }
+  html { -webkit-text-size-adjust:100%; }
+  body { margin:0; background:var(--paper); color:var(--ink); font-family:var(--font-ja); font-size:16px; line-height:1.85; }
+  a { color:var(--accent); }
+  .wrap { max-width:960px; margin:0 auto; padding:0 16px; }
+  header { border-bottom:1px solid var(--line); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; height:52px; font-size:13px; }
+  header b { font-weight:700; letter-spacing:.02em; color:var(--black); }
+  header a { color:var(--sub); text-decoration:none; }
+  .ja-phrase { word-break:auto-phrase; text-wrap:pretty; }
+
+  .hero { padding-top:56px; padding-bottom:40px; }
+  .hero h1 { font-size:clamp(30px, 6vw, 48px); line-height:1.3; margin:0 0 16px; color:var(--black); letter-spacing:-.01em; }
+  .hero .sub { margin:0 0 20px; font-size:clamp(18px, 3vw, 22px); font-weight:700; color:var(--accent); }
+  .hero p { margin:0 0 16px; max-width:42em; }
+  .index { list-style:none; margin:28px 0 0; padding:0; border-top:2px solid var(--black); columns:2; column-gap:32px; }
+  .index li { break-inside:avoid; border-bottom:1px solid var(--line); }
+  .index a { display:flex; gap:12px; padding:10px 0; color:var(--black); text-decoration:none; font-weight:700; }
+  .index a span { font-family:Georgia, serif; color:var(--accent); font-weight:700; min-width:1.6em; }
+  .index a:hover { color:var(--accent); }
+
+  section { padding:44px 0; border-top:1px solid var(--line); }
+  h2 { font-size:22px; margin:0 0 20px; color:var(--black); }
+  .lead { margin:0 0 18px; max-width:44em; }
+
+  .sk { padding:28px 0 32px; border-top:2px solid var(--black); }
+  .sk + .sk { margin-top:8px; }
+  .sk-head { display:flex; flex-wrap:wrap; align-items:baseline; gap:6px 14px; margin-bottom:12px; }
+  .sk-head .no { font-family:Georgia, serif; font-size:26px; line-height:1; color:var(--accent); font-weight:700; }
+  .sk-head h3 { font-size:20px; margin:0; color:var(--black); }
+  .sk-head code { font-family:var(--font-mono); font-size:13px; color:var(--sub); }
+  .tag { font-size:12px; font-weight:700; border:1px solid var(--black); padding:0 8px; line-height:1.8; }
+  figure.zu { margin:0 0 18px; padding:2% 5%; background:#fff; border:1px solid var(--line); }
+  figure.zu img { width:100%; height:auto; display:block; }
+  table.dare { width:100%; border-collapse:collapse; font-size:15px; margin:0 0 18px; }
+  .dare th, .dare td { text-align:left; vertical-align:top; padding:10px 10px 10px 0; border-bottom:1px solid var(--line); }
+  .dare th { width:9em; font-size:13px; color:var(--sub); font-weight:700; white-space:nowrap; }
+  .btns { display:flex; gap:10px; flex-wrap:wrap; }
+  .btn { display:inline-flex; align-items:center; justify-content:center; min-height:46px; padding:0 20px; border:1px solid var(--black);
+         background:var(--paper); color:var(--black); font:inherit; font-size:15px; font-weight:700; text-decoration:none; cursor:pointer; border-radius:2px; }
+  .btn.primary { background:var(--black); color:#fff; }
+  .btn:focus-visible { outline:3px solid var(--accent); outline-offset:2px; }
+  details.files { margin-top:16px; max-width:46em; }
+  details.files summary { cursor:pointer; font-size:14px; color:var(--sub); }
+  .flist { list-style:none; margin:8px 0 0; padding:0; border-top:1px solid var(--line); }
+  .flist li { display:flex; flex-wrap:wrap; gap:4px 16px; padding:9px 0; border-bottom:1px solid var(--line); font-size:14px; }
+  .flist a { font-family:var(--font-mono); font-weight:700; min-width:14em; }
+  .flist span { color:var(--sub); }
+  .src { margin:12px 0 0; font-size:13px; color:var(--sub); }
+
+  .howto { margin:0 0 20px; padding-left:1.4em; max-width:46em; }
+  .howto li { margin-bottom:8px; }
+  .note-box { margin:0; padding:12px 16px; max-width:46em; font-size:15px; background:var(--wash); border-left:3px solid var(--accent); }
+  .notes { margin:0; padding-left:1.2em; max-width:46em; }
+  .notes li { margin-bottom:8px; }
+
+  footer { border-top:1px solid var(--line); padding:28px 0 40px; font-size:13px; color:var(--sub); }
+  footer a { color:var(--sub); }
+
+  @media (max-width:720px) {
+    .hero { padding-top:36px; padding-bottom:28px; }
+    .index { columns:1; }
+    .dare th { width:auto; display:block; padding-bottom:0; border-bottom:0; }
+    .dare td { display:block; padding-top:2px; }
+    .dare tr { display:block; border-bottom:1px solid var(--line); }
+    .dare td { border-bottom:0; }
+    .flist a { min-width:0; }
+    .btn { flex:1 1 100%; }
+  }
+</style>
+</head>
+<body>
+<header><div class="wrap"><b>School Stock</b><a href="/School_Stock/#ai">棚へ</a></div></header>
+
+<main>
+  <div class="wrap hero">
+    <h1 class="ja-phrase">Geminiのスキル</h1>
+    <p class="sub ja-phrase">毎回同じように頼んでいる授業の準備を、Geminiに覚えておいてもらいます</p>
+    <p class="ja-phrase">授業の計画を貼ると、手が止まる子に渡すノートの見本、学びにくさのある子への手立ての表、授業のあとに子どもが見返すページなどができます。小学校の学級担任が、自分の学級で使ってきた頼み方をまとめたものです。</p>
+    <p class="ja-phrase">スキルは、Geminiに仕事の進め方を覚えておいてもらうしくみです。一度取りこめば、入力欄で「@」と名前を打つだけで呼び出せます。プロンプトを毎回貼る必要はありません。</p>
+    <p class="note-box ja-phrase">子どもの名前や、学校の外に出せない情報は貼らないでください。子どもの書いたものを扱うときは、名前の列を消して、学校のアカウントのGeminiを使います。個人のアカウントで試すときは、「試しに貼る見本」だけにしてください。</p>
+    <ol class="index" id="index"></ol>
+  </div>
+
+  <section id="list">
+    <div class="wrap">
+      <h2>スキルの一覧（{{COUNT}}つ）</h2>
+      <p class="lead ja-phrase">「見本をコピー」は、架空の学級で作った入力の例をコピーします。取りこんだあと、まずこれを貼って、どんなものができるかを見てください。</p>
+{{CARDS}}
+    </div>
+  </section>
+
+  <section id="torikomi">
+    <div class="wrap">
+      <h2 class="ja-phrase">スキルの取りこみ方</h2>
+      <p class="lead ja-phrase">はじめの1回だけです。どのスキルも同じ手順です。</p>
+      <ol class="howto">
+        <li>上の「スキルをダウンロード」を押して、ZIPを保存します。Windowsでは、ZIPを右クリックして「すべて展開」を選びます。Chromebookでは、ダブルクリックで開けます。スキルの名前のフォルダに、ファイルが入っています。</li>
+        <li>Geminiの<a href="https://gemini.google.com/customize/skills" target="_blank" rel="noopener">スキルの画面</a>を開きます。入力欄で「@」を打ち、「スキル」を選んでも開けます。</li>
+        <li>右上の「作成」から「アップロード」を選びます。</li>
+        <li>「スキルのアップロード」の画面で「ファイル」を押し、フォルダの中のファイルをまとめて選びます。CtrlキーとAキーを一緒に押すと、全部を選べます。</li>
+        <li>名前、説明、カスタム指示が入ったことを確かめて、右上の「作成」を押します。スキルの一覧の「有効」に名前が出れば、取りこみは終わりです。</li>
+        <li>新しいチャットで「@」とスキルの名前を打ち、出てきた候補を選んでから、授業の計画を貼って送ります。「Canvasを使う」の札があるスキルは、送る前に、入力欄の下の「Canvas」を選びます。</li>
+      </ol>
+      <p class="note-box ja-phrase">ZIPを開けないときは、「中のファイル」を1つずつダウンロードして、同じように選びます。スキルが新しくなったときは、古いものを一覧から消してから、取りこみなおします。</p>
+    </div>
+  </section>
+
+  <section id="school">
+    <div class="wrap">
+      <h2 class="ja-phrase">学校のアカウントで、スキルがまだ使えないとき</h2>
+      <p class="lead ja-phrase">Googleの案内では、学校などのGoogle Workspaceでスキルが使えるようになるのは、個人のアカウントより後になります。入力欄で「@」を打ってもスキルが出てこないときは、次のようにします。中身は同じです。</p>
+      <ol class="howto">
+        <li>使うスキルの「プロンプトをコピー」を押します。個人のアカウントでスキルを試すときは、「見本をコピー」で写した見本だけを貼ってください。本物の子どもの様子は、学校のアカウントで、このやり方で使います。</li>
+        <li>Geminiの入力欄の＋から「ファイルをアップロード」を選び、「中のファイル」のうち SKILL.md 以外のファイルを添付します。</li>
+        <li>入力欄にプロンプトを貼ります。【例：…】と書いてあるところを、自分の計画や話に書きかえて送ります。書きかえなかった【例：…】の欄は、書かれていないものとして扱われます。</li>
+        <li>直すときは、同じ会話の中で続けます。</li>
+      </ol>
+      <p class="note-box ja-phrase">学校のアカウントでGeminiが使えるかどうか、ファイルを添付できるかどうかは、自治体や学校の設定で変わります。学校の情報担当の先生に確かめてください。</p>
+    </div>
+  </section>
+
+  <section id="mae">
+    <div class="wrap">
+      <h2>使う前に</h2>
+      <ul class="notes">
+        <li class="ja-phrase">学習指導要領や解説の文は、解説のPDFを添付したときだけ引用します。添付がないときは、項目の番号と【要確認】が出ます。番号は、解説で確かめてから使ってください。</li>
+        <li class="ja-phrase">教科書の本文や市販のテストの問題は貼らないでください。スキルは、数や場面を作り直して問題を作ります。</li>
+        <li class="ja-phrase">教科の専門家ではない私が、調べながら作ったものです。できたものにおかしなところがあれば、手で直して使ってください。</li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© School Stock　作成：外﨑顯博　／　<a href="/School_Stock/about/terms.html">利用規約</a>　／　<a href="/School_Stock/ai/">プロンプト集</a></div></footer>
+
+<script>
+(function () {
+  "use strict";
+  var ol = document.getElementById("index");
+  document.querySelectorAll(".sk").forEach(function (sk) {
+    var li = document.createElement("li"), a = document.createElement("a");
+    a.href = "#" + sk.id;
+    a.innerHTML = "<span>" + sk.querySelector(".no").textContent + "</span>";
+    a.appendChild(document.createTextNode(sk.querySelector("h3").textContent));
+    li.appendChild(a); ol.appendChild(li);
+  });
+  document.querySelectorAll("button.copy").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var label = btn.textContent;
+      fetch(btn.getAttribute("data-src")).then(function (r) {
+        if (!r.ok) throw new Error(r.status);
+        return r.text();
+      }).then(function (t) {
+        var m = t.match(/<!-- ここから貼る -->\n?([\s\S]*?)\n?<!-- ここまで貼る -->/);
+        if (btn.hasAttribute("data-part")) { if (!m) throw new Error("no part"); t = m[1].trim() + "\n"; }
+        return navigator.clipboard.writeText(t);
+      }).then(function () {
+        btn.textContent = "コピーしました";
+        setTimeout(function () { btn.textContent = label; }, 2000);
+      }).catch(function () {
+        window.open(btn.getAttribute("data-src"), "_blank");
+      });
+    });
+  });
+})();
+</script>
+<script src="/School_Stock/assets/counter-config.js"></script>
+<script src="/School_Stock/assets/counter.js" defer></script>
+<script src="/School_Stock/assets/soudan.js" defer></script>
+</body>
+</html>
